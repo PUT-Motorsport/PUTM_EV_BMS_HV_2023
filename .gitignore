@@ -24,3 +24,24 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+# 3d files 
+*.step
+*.wrl
+
+# Compile files
+*.bin
+*.elf
+*.map
+*.list
+*.mk
+
+# Other files
+*.zip
+*.html
+
+# Folders 
+*/bom/*
+*/fp-info-cache/*
+*/Debug/*
+*/.metadata/*
