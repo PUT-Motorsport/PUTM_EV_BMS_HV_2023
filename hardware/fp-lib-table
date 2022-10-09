@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name PUTM_EV_BMS_footprint)(type KiCad)(uri ${KIPRJMOD}/PUTM_EV_BMS_footprint.pretty)(options "")(descr ""))
+)
