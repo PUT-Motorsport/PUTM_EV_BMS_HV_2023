@@ -470,6 +470,62 @@
     [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
       "Memory"
+    ],
+    [
+      "f6683fe9-2c85-409b-a1b8-5fd45fab368a",
+      "HV Section Power Isolation"
+    ],
+    [
+      "66c3869d-de11-4d8d-b4de-9d98c32ec205",
+      "Power"
+    ],
+    [
+      "ea56acf7-f5fd-4c63-98d3-3d3c8162bd86",
+      "USB Power Isolation"
+    ],
+    [
+      "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
+      "Communication"
+    ],
+    [
+      "a48618af-dcf7-4729-8090-6fc5457faac9",
+      "LTC 1 Iso Com"
+    ],
+    [
+      "d53c4c5b-a4f8-4654-804b-b1333b9d4506",
+      "LTC 2 Iso Com"
+    ],
+    [
+      "d3d45b10-2d5f-4953-9ccf-4b0c82a2ee03",
+      "Settings"
+    ],
+    [
+      "e984fece-9b6f-4d4c-8b6d-5d4b318580bd",
+      "DIN_1_OPTO"
+    ],
+    [
+      "6fae9d98-0aef-4e25-93df-6942ca6ef947",
+      "DIN_2_OPTO"
+    ],
+    [
+      "0a55cbb7-2308-41e4-b939-fcf728ae4d8d",
+      "DIN_3_OPTO"
+    ],
+    [
+      "968e9677-c642-4396-a9b5-fae6d6d9ad5b",
+      "DIN_4_OPTO"
+    ],
+    [
+      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
+      "Measurements"
+    ],
+    [
+      "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",
+      "Isolated acu measurement"
+    ],
+    [
+      "6b03d8c8-5f6c-4244-9202-23821031eb5e",
+      "Isolated car measurement"
     ]
   ],
   "text_variables": {}
