@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name PUTM_EV_BMS_library)(type Legacy)(uri ${KIPRJMOD}/PUTM_EV_BMS_library.lib)(options "")(descr ""))
+  (lib (name "PUTM_EV_BMS_library")(type "Legacy")(uri "${KIPRJMOD}/footprint/PUTM_EV_BMS_library.lib")(options "")(descr ""))
+  (lib (name "Molex 4 pin 90 deg")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-8420445/M80-8420445.kicad_sym")(options "")(descr ""))
 )

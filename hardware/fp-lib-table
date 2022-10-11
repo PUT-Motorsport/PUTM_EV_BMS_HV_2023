@@ -1,3 +1,5 @@
 (fp_lib_table
-  (lib (name PUTM_EV_BMS_footprint)(type KiCad)(uri ${KIPRJMOD}/PUTM_EV_BMS_footprint.pretty)(options "")(descr ""))
+  (lib (name "AM1LS")(type "KiCad")(uri "${KIPRJMOD}/footprint/AM1LS")(options "")(descr ""))
+  (lib (name "Molex 4 pin 90 deg")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-8420445")(options "")(descr ""))
+  (lib (name "RELAY_ALD105W")(type "KiCad")(uri "${KIPRJMOD}/footprint/RELAY_ALD105W")(options "")(descr ""))
 )
