@@ -1,6 +1,6 @@
 (footprint "M80-8420345" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 6345AE65)
+  (tedit 634EFDD0)
   (descr "M80-8420345")
   (tags "Connector")
   (attr through_hole)
@@ -34,7 +34,7 @@
   (pad "MH" thru_hole circle (at -2.25 0.5) (size 1.4 1.4) (drill 0.9) (layers *.Cu *.Mask) (tstamp 5b5af4a2-eb2c-4530-90d8-d7a1b678f6fa))
   (pad "MH" thru_hole circle (at -2.25 5.25) (size 1.4 1.4) (drill 0.9) (layers *.Cu *.Mask) (tstamp 65315027-49f1-497b-8e15-3d83445dc764))
   (pad "MH" thru_hole circle (at 6.25 0.5) (size 1.4 1.4) (drill 0.9) (layers *.Cu *.Mask) (tstamp 80780d68-561f-4809-882a-86bcd95baa8d))
-  (model "M80-8420345.stp"
+  (model "${KIPRJMOD}/footprint/M80-8420345/M80-8420345.stp"
     (offset (xyz 1.99999997 -0.6999999776 1.99999997))
     (scale (xyz 1 1 1))
     (rotate (xyz -180 0 0))
