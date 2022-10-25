@@ -3719,6 +3719,9 @@
     (path "/568caa85-d8c4-4885-aabf-c5422dff8b33/e1725484-d591-47bd-b076-0d0a360a15b7"
       (reference "R97") (unit 1) (value "100k") (footprint "Resistor_SMD:R_1206_3216Metric")
     )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/29ac9c48-38c0-461c-a4cf-fc43307afdba"
+      (reference "R?") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0603_1608Metric")
+    )
     (path "/00000000-0000-0000-0000-000060188b10"
       (reference "SW1") (unit 1) (value "RESET") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
     )
