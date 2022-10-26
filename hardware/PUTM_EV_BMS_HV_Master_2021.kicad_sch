@@ -3140,6 +3140,12 @@
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/6b03d8c8-5f6c-4244-9202-23821031eb5e/e18777b3-c053-4d79-8601-0d0e67971969"
       (reference "#PWR0190") (unit 1) (value "ISO_GND") (footprint "")
     )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/35941ea4-fc8f-4d0a-a7eb-cf8ddf3e543a"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/c3e1ab7f-5892-4d33-a679-3892266c97f9"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/66c3869d-de11-4d8d-b4de-9d98c32ec205/ddeb9dfe-eb2d-4bf5-bf14-a97849901813"
       (reference "BT1") (unit 1) (value "KEYSTONE 103") (footprint "Battery:BatteryHolder_Keystone_103_1x20mm")
     )
@@ -3722,6 +3728,9 @@
     (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/29ac9c48-38c0-461c-a4cf-fc43307afdba"
       (reference "R?") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/8e11fcb8-dba7-4dff-98f2-9596f538a057"
+      (reference "R?") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0603_1608Metric")
+    )
     (path "/00000000-0000-0000-0000-000060188b10"
       (reference "SW1") (unit 1) (value "RESET") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
     )
@@ -3767,9 +3776,6 @@
     (path "/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506/75aa199e-971f-4c5a-8cad-d0acbb2766f4"
       (reference "U13") (unit 1) (value "LTC6820IMS") (footprint "Package_SO:MSOP-16_3x4.039mm_P0.5mm")
     )
-    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/ca11c93d-ea54-4a3a-bc29-0e1a67c01808"
-      (reference "U14") (unit 1) (value "74LVC1G79GV.125") (footprint "Package_TO_SOT_SMD:SOT-23-5")
-    )
     (path "/81dc0685-0bdd-4dc2-8f76-92836044cf1e/290e701a-349a-43de-b25a-7290c134e730"
       (reference "U15") (unit 1) (value "FT230XS") (footprint "Package_SO:SSOP-16_3.9x4.9mm_P0.635mm")
     )
@@ -3790,6 +3796,9 @@
     )
     (path "/81dc0685-0bdd-4dc2-8f76-92836044cf1e/baec7492-a508-4783-8268-bed5ed8cfe30"
       (reference "U21") (unit 1) (value "MCP2562-E-SN") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
+    )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/d3f1e268-b9d2-40d6-b105-7d0f9054938f"
+      (reference "U?") (unit 1) (value "74AUP1G32") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00006bbc52dc"
       (reference "Y1") (unit 1) (value "32.768kHz") (footprint "Crystal:Crystal_AT310_D3.0mm_L10.0mm_Vertical")
