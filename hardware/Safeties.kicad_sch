@@ -680,7 +680,7 @@
   )
 
   (no_connect (at 59.055 164.465) (uuid 94585ba5-8dc9-4784-8576-d8ccf6fead7b))
-  (no_connect (at 30.48 164.465) (uuid 94585ba5-8dc9-4784-8576-d8ccf6fead7b))
+  (no_connect (at 30.48 164.465) (uuid 94585ba5-8dc9-4784-8576-d8ccf6fead7c))
 
   (wire (pts (xy 154.94 99.06) (xy 154.94 93.98))
     (stroke (width 0) (type default) (color 0 0 0 0))
