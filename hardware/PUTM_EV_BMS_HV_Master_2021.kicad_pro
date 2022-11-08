@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.254
+          "min_clearance": 0.508
         }
       },
       "diff_pair_dimensions": [
@@ -91,12 +91,12 @@
         "skew_out_of_range": "error",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
-        "track_dangling": "warning",
+        "track_dangling": "error",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
         "unresolved_variable": "error",
-        "via_dangling": "warning",
+        "via_dangling": "error",
         "zone_has_empty_net": "error",
         "zones_intersect": "error"
       },
@@ -106,16 +106,16 @@
         "allow_blind_buried_vias": false,
         "allow_microvias": false,
         "max_error": 0.005,
-        "min_clearance": 0.21,
+        "min_clearance": 0.127,
         "min_copper_edge_clearance": 0.024999999999999998,
-        "min_hole_clearance": 0.25,
-        "min_hole_to_hole": 0.25,
+        "min_hole_clearance": 0.254,
+        "min_hole_to_hole": 0.254,
         "min_microvia_diameter": 0.19999999999999998,
         "min_microvia_drill": 0.09999999999999999,
         "min_silk_clearance": 0.0,
-        "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.19999999999999998,
-        "min_via_annular_width": 0.049999999999999996,
+        "min_through_hole_diameter": 0.19999999999999998,
+        "min_track_width": 0.127,
+        "min_via_annular_width": 0.15,
         "min_via_diameter": 0.39999999999999997,
         "use_height_for_length_calcs": true
       },
@@ -124,7 +124,9 @@
         0.254,
         0.381,
         0.508,
-        0.762
+        0.762,
+        1.27,
+        2.54
       ],
       "via_dimensions": [
         {
@@ -136,7 +138,7 @@
           "drill": 0.3
         }
       ],
-      "zones_allow_external_fillets": false,
+      "zones_allow_external_fillets": true,
       "zones_use_no_outline": true
     },
     "layer_presets": []
@@ -372,7 +374,42 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.25,
+        "track_width": 0.127,
+        "via_diameter": 0.4,
+        "via_drill": 0.2,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.127,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "nets": [
+          "+24V",
+          "+3.3VA",
+          "+3V3",
+          "+5V",
+          "+BATT",
+          "/Communication/VCCIO",
+          "/Power/USB_+5V_ISO",
+          "GND",
+          "ISO_+5V",
+          "ISO_GND",
+          "Net-(C1-Pad1)",
+          "Net-(P1-Pad5)",
+          "USB_+5V",
+          "USB_GND",
+          "VBUS",
+          "VDD"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.512,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -506,20 +543,12 @@
       "Settings"
     ],
     [
-      "e984fece-9b6f-4d4c-8b6d-5d4b318580bd",
-      "DIN_1 opto"
+      "940d36fb-8f48-4fee-84f0-e5e0ba24df3f",
+      "OptoIO3"
     ],
     [
-      "6fae9d98-0aef-4e25-93df-6942ca6ef947",
-      "DIN_2 opto"
-    ],
-    [
-      "0a55cbb7-2308-41e4-b939-fcf728ae4d8d",
-      "Ext reset opto"
-    ],
-    [
-      "968e9677-c642-4396-a9b5-fae6d6d9ad5b",
-      "DIN_3 opto"
+      "b8954743-0175-4ee0-bad0-8f0716e13306",
+      "OptoIO2"
     ],
     [
       "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
@@ -532,6 +561,10 @@
     [
       "6b03d8c8-5f6c-4244-9202-23821031eb5e",
       "Isolated car measurement"
+    ],
+    [
+      "0cfbae80-dcae-461f-a490-df9e44932062",
+      "OptoIO1"
     ]
   ],
   "text_variables": {}
