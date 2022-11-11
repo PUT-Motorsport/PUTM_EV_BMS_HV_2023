@@ -3615,7 +3615,7 @@
       (reference "#PWR0191") (unit 1) (value "HV_+5V") (footprint "")
     )
     (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/976a27c2-83d9-4e7e-aa84-83f0286fd11b"
-      (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
+      (reference "#PWR0192") (unit 1) (value "+5V") (footprint "")
     )
     (path "/66c3869d-de11-4d8d-b4de-9d98c32ec205/ddeb9dfe-eb2d-4bf5-bf14-a97849901813"
       (reference "BT1") (unit 1) (value "KEYSTONE 103") (footprint "Battery:BatteryHolder_Keystone_103_1x20mm")
@@ -3806,11 +3806,11 @@
     (path "/66c3869d-de11-4d8d-b4de-9d98c32ec205/500309e0-f95a-4ef5-9ad2-91d15140cee1"
       (reference "D8") (unit 1) (value "BAT54C") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/7da36fa0-b9f7-44d5-b5d8-72142e4abe12"
+      (reference "D9") (unit 1) (value "LED_Small_ALT") (footprint "LED_SMD:LED_0603_1608Metric")
+    )
     (path "/81dc0685-0bdd-4dc2-8f76-92836044cf1e/4f147a29-2cee-46e6-bb41-e4ee5786a5a0"
       (reference "D10") (unit 1) (value "PESD2CAN.215") (footprint "Package_TO_SOT_SMD:SOT-23")
-    )
-    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/7da36fa0-b9f7-44d5-b5d8-72142e4abe12"
-      (reference "D?") (unit 1) (value "LED_Small_ALT") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/568caa85-d8c4-4885-aabf-c5422dff8b33/1c115f23-ebbd-4b2b-9a55-38e1c0cb0eca"
       (reference "F1") (unit 1) (value "0.5A") (footprint "Fuse:Fuse_1206_3216Metric")
@@ -4142,6 +4142,9 @@
     (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/940d36fb-8f48-4fee-84f0-e5e0ba24df3f/51d5ba25-8b8d-4f79-9a3d-bbeabf459718"
       (reference "R76") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/88ee7645-f56f-4ca0-9796-1b853b7a9067"
+      (reference "R77") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0603_1608Metric")
+    )
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/a02f2126-6e3e-4700-80d3-4aeefce899b4"
       (reference "R78") (unit 1) (value "100") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
@@ -4195,9 +4198,6 @@
     )
     (path "/d3d45b10-2d5f-4953-9ccf-4b0c82a2ee03/c643e76b-7d3d-428e-b3ae-5e4b227400ce"
       (reference "R96") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/88ee7645-f56f-4ca0-9796-1b853b7a9067"
-      (reference "R?") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/00000000-0000-0000-0000-000060188b10"
       (reference "SW1") (unit 1) (value "RESET") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
