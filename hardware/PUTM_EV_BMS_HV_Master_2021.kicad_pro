@@ -428,10 +428,7 @@
           "+3V3",
           "+5V",
           "+BATT",
-          "/Communication/VCCIO",
-          "/Power/USB_+5V_ISO",
           "GND",
-          "ISO_+5V",
           "ISO_GND",
           "Net-(BT1-Pad1)",
           "Net-(C1-Pad1)",
@@ -517,48 +514,32 @@
       "Safeties and related"
     ],
     [
-      "38c24427-3c37-4831-960e-55ff712346ca",
-      "Air pre"
+      "67d08ddd-b8e9-4f40-a055-93108463bf84",
+      "HP_PullDown1"
     ],
     [
-      "e87e7bdc-77a9-4d43-9131-3ac63681d4f7",
-      "Air M"
+      "649ea10f-ddf7-49be-afe9-7c2c999df872",
+      "HP_PullDown2"
     ],
     [
-      "6f618cd5-81b5-423e-a062-dd87d05af169",
-      "Air P"
+      "a0f7a551-6aec-4fc2-800f-300fc4bd6106",
+      "HV Section Power Isolation"
     ],
     [
       "7554c4c4-748b-4454-b2a4-dabbac5fabba",
       "PullDown"
     ],
     [
-      "2e424c0e-1342-4ba9-a98a-892bba77b63e",
-      "PullDownSafety"
-    ],
-    [
-      "2e424c0e-1342-4ba9-a98a-892bba77b63e",
-      "PullDownSafety"
-    ],
-    [
-      "2e424c0e-1342-4ba9-a98a-892bba77b63e",
-      "PullDownSafety"
+      "a0f7a551-6aec-4fc2-800f-300fc4bd6106",
+      "HV Section Power Isolation"
     ],
     [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
       "Memory"
     ],
     [
-      "f6683fe9-2c85-409b-a1b8-5fd45fab368a",
-      "HV Section Power Isolation"
-    ],
-    [
       "66c3869d-de11-4d8d-b4de-9d98c32ec205",
       "Power"
-    ],
-    [
-      "ea56acf7-f5fd-4c63-98d3-3d3c8162bd86",
-      "USB Power Isolation"
     ],
     [
       "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
@@ -587,6 +568,10 @@
     [
       "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
       "Measurements"
+    ],
+    [
+      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
+      "HP_PullDown"
     ],
     [
       "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",

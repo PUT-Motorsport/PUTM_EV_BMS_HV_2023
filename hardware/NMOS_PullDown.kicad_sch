@@ -287,7 +287,7 @@
     (uuid ddf5b6cc-1b26-467a-885c-60619285162b)
   )
 
-  (symbol (lib_id "Transistor_FET:2N7002") (at 145.415 94.615 0)
+  (symbol (lib_id "Transistor_FET:2N7002") (at 145.415 94.615 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 2ea32781-8cc9-4e14-8066-d4076691f359)
     (property "Reference" "Q4" (id 0) (at 150.5966 93.4466 0)
@@ -307,7 +307,7 @@
     (pin "3" (uuid b04d89a9-c2ce-496b-8413-43ebe102b382))
   )
 
-  (symbol (lib_id "Device:R_Small") (at 139.065 98.425 0)
+  (symbol (lib_id "Device:R_Small") (at 139.065 98.425 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 67fbf622-da2d-4ee2-9726-e3649538a329)
     (property "Reference" "R61" (id 0) (at 140.5636 97.2566 0)
@@ -326,7 +326,7 @@
     (pin "2" (uuid 7750ce66-7b22-419f-905e-65e8c3039861))
   )
 
-  (symbol (lib_id "Device:R_Small") (at 135.255 94.615 270)
+  (symbol (lib_id "Device:R_Small") (at 135.255 94.615 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid af0d9b8c-9f6d-4237-bc3e-9cf556cb6c53)
     (property "Reference" "R59" (id 0) (at 135.255 89.6366 90))
@@ -341,7 +341,7 @@
     (pin "2" (uuid 19913adf-2a2e-442f-aef0-692789ffda2b))
   )
 
-  (symbol (lib_id "power:GND") (at 147.955 103.505 0)
+  (symbol (lib_id "power:GND") (at 147.955 103.505 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid cfbaceb0-71d5-4245-af6e-ba5f3c4efc77)
     (property "Reference" "#PWR0129" (id 0) (at 147.955 109.855 0)
