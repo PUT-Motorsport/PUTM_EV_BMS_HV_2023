@@ -403,8 +403,7 @@
           "DIN_2",
           "DIN_3",
           "EXT_RESET",
-          "SAFETY_AIR",
-          "SENSOR_SIGNAL"
+          "SAFETY_AIR"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",

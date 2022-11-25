@@ -7,4 +7,6 @@
   (lib (name "Opto 2 ch")(type "KiCad")(uri "${KIPRJMOD}/footprint/FOD8802DR2/FOD8802DR2.kicad_sym")(options "")(descr ""))
   (lib (name "ADUM7440ARQZ")(type "KiCad")(uri "${KIPRJMOD}/footprint/ADUM7440ARQZ/ADUM7440ARQZ.kicad_sym")(options "")(descr ""))
   (lib (name "MCP3561T-E_NC")(type "KiCad")(uri "${KIPRJMOD}/footprint/MCP3561T-E_NC/MCP3561T-E_NC.kicad_sym")(options "")(descr ""))
+  (lib (name "MCP1501-10E_SN")(type "KiCad")(uri "${KIPRJMOD}/footprint/MCP1501-10E_SN/MCP1501-10E_SN.kicad_sym")(options "")(descr ""))
+  (lib (name "ADA4505-1ARJZ-R7")(type "KiCad")(uri "${KIPRJMOD}/footprint/ADA4505-1ARJZ-R7/ADA4505-1ARJZ-R7.kicad_sym")(options "")(descr ""))
 )
