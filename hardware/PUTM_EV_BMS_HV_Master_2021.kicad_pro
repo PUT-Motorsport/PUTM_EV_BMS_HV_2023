@@ -44,7 +44,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "45_degree_only": false,
+          "45_degree_only": true,
           "min_clearance": 0.0
         }
       },
@@ -431,7 +431,6 @@
           "ISO_GND",
           "Net-(BT1-Pad1)",
           "Net-(C1-Pad1)",
-          "Net-(P1-Pad5)",
           "USB_+5V",
           "USB_GND",
           "VBUS",
@@ -474,7 +473,7 @@
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
       "label_size_ratio": 0.25,
-      "pin_symbol_size": 0.0,
+      "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.08
     },
     "legacy_lib_dir": "",
@@ -565,12 +564,12 @@
       "OptoIO2"
     ],
     [
-      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
-      "Measurements"
-    ],
-    [
       "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
       "HP_PullDown"
+    ],
+    [
+      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
+      "Measurements"
     ],
     [
       "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",

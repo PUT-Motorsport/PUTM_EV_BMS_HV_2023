@@ -1076,7 +1076,7 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 0619e192-653d-4446-8616-d7e533b8dfbb)
   )
-  (wire (pts (xy 78.74 41.275) (xy 76.2 41.91))
+  (wire (pts (xy 78.74 41.91) (xy 76.2 41.91))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 072f379c-4e76-4f1c-905c-675ff168ae82)
   )
@@ -1361,6 +1361,10 @@
   (wire (pts (xy 245.11 152.4) (xy 246.38 152.4))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 8847e751-6992-4f80-92c5-c3bef4b5dbf6)
+  )
+  (wire (pts (xy 78.74 39.37) (xy 78.74 41.91))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 8982a036-67b0-46af-83a9-1f3f0cb9af77)
   )
   (wire (pts (xy 123.19 109.855) (xy 125.73 109.855))
     (stroke (width 0) (type default) (color 0 0 0 0))
@@ -2244,10 +2248,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "CUR_SENS_REF" (shape input) (at 78.74 41.275 0) (fields_autoplaced)
+  (global_label "CUR_SENS_REF" (shape input) (at 78.74 39.37 90) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid be590c45-397e-4713-ab7b-dfeb96ed023c)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 95.2761 41.1956 0)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 78.6606 22.8339 90)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -3222,8 +3226,8 @@
     (path "/d3d45b10-2d5f-4953-9ccf-4b0c82a2ee03" (page "18"))
     (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/940d36fb-8f48-4fee-84f0-e5e0ba24df3f" (page "19"))
     (path "/81dc0685-0bdd-4dc2-8f76-92836044cf1e/b8954743-0175-4ee0-bad0-8f0716e13306" (page "21"))
-    (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03" (page "23"))
     (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/fd8c1b79-afed-4653-bb63-44888bf7ecb3" (page "23"))
+    (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03" (page "23"))
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260" (page "24"))
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/6b03d8c8-5f6c-4244-9202-23821031eb5e" (page "25"))
     (path "/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062" (page "26"))
@@ -3554,14 +3558,14 @@
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/6b03d8c8-5f6c-4244-9202-23821031eb5e/c4f43878-06e4-40c6-9e68-d26b54791239"
       (reference "#PWR0181") (unit 1) (value "GND") (footprint "")
     )
-    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/976a27c2-83d9-4e7e-aa84-83f0286fd11b"
-      (reference "#PWR0192") (unit 1) (value "+5V") (footprint "")
+    (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/4d685d28-82a8-4b66-8595-b56b352d024f"
+      (reference "#PWR0182") (unit 1) (value "+3.3V") (footprint "")
     )
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/1ea820be-8637-4045-bb25-65f2e6b38534"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0183") (unit 1) (value "GND") (footprint "")
     )
-    (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/4d685d28-82a8-4b66-8595-b56b352d024f"
-      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
+    (path "/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/976a27c2-83d9-4e7e-aa84-83f0286fd11b"
+      (reference "#PWR0192") (unit 1) (value "+5V") (footprint "")
     )
     (path "/66c3869d-de11-4d8d-b4de-9d98c32ec205/ddeb9dfe-eb2d-4bf5-bf14-a97849901813"
       (reference "BT1") (unit 1) (value "KEYSTONE 103") (footprint "Battery:BatteryHolder_Keystone_103_1x20mm")
@@ -3783,7 +3787,7 @@
       (reference "IC5") (unit 1) (value "ADUM7440ARQZ") (footprint "SOP64P600X175-16N")
     )
     (path "/e61cc821-5479-4c04-b5ab-4a32f17b4f03/0ed0fccf-7332-4a4b-a5be-653ad796ee03"
-      (reference "IC?") (unit 1) (value "ADA4505-1ARJZ-R7") (footprint "SOT95P280X145-5N")
+      (reference "IC6") (unit 1) (value "ADA4505-1ARJZ-R7") (footprint "SOT95P280X145-5N")
     )
     (path "/568caa85-d8c4-4885-aabf-c5422dff8b33/5d810376-fb11-4708-9087-e616d0e24c83"
       (reference "J1") (unit 1) (value "USB_C_Receptacle_USB2.0") (footprint "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12")
