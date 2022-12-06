@@ -9,4 +9,7 @@
   (lib (name "MCP3561T-E_NC")(type "KiCad")(uri "${KIPRJMOD}/footprint/MCP3561T-E_NC/MCP3561T-E_NC.kicad_sym")(options "")(descr ""))
   (lib (name "MCP1501-10E_SN")(type "KiCad")(uri "${KIPRJMOD}/footprint/MCP1501-10E_SN/MCP1501-10E_SN.kicad_sym")(options "")(descr ""))
   (lib (name "ADA4505-1ARJZ-R7")(type "KiCad")(uri "${KIPRJMOD}/footprint/ADA4505-1ARJZ-R7/ADA4505-1ARJZ-R7.kicad_sym")(options "")(descr ""))
+  (lib (name "MCP3562T-E_NC")(type "KiCad")(uri "${KIPRJMOD}/footprint/MCP3562T-E_NC/MCP3562T-E_NC.kicad_sym")(options "")(descr ""))
+  (lib (name "REF196GSZ-REEL")(type "KiCad")(uri "${KIPRJMOD}/footprint/REF196GSZ/REF196GSZ-REEL.kicad_sym")(options "")(descr ""))
+  (lib (name "M300-MV31045M1")(type "KiCad")(uri "${KIPRJMOD}/footprint/M300-MV3104M1/M300-MV31045M1.kicad_sym")(options "")(descr ""))
 )

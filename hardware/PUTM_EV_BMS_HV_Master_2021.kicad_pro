@@ -393,9 +393,6 @@
         "nets": [
           "/SAFETY_DETECTION",
           "/Safeties and related/AMS_FAULT",
-          "AIR_M",
-          "AIR_P",
-          "AIR_PRE",
           "AMS_FAULT_COCKPIT",
           "AMS_SAFETY_1",
           "AMS_SAFETY_2",
@@ -430,7 +427,6 @@
           "GND",
           "ISO_GND",
           "Net-(BT1-Pad1)",
-          "Net-(C1-Pad1)",
           "USB_+5V",
           "USB_GND",
           "VBUS",
@@ -513,23 +509,11 @@
     ],
     [
       "67d08ddd-b8e9-4f40-a055-93108463bf84",
-      "HP_PullDown1"
+      "AIR_M"
     ],
     [
       "649ea10f-ddf7-49be-afe9-7c2c999df872",
-      "HP_PullDown2"
-    ],
-    [
-      "a0f7a551-6aec-4fc2-800f-300fc4bd6106",
-      "HV Section Power Isolation"
-    ],
-    [
-      "7554c4c4-748b-4454-b2a4-dabbac5fabba",
-      "PullDown"
-    ],
-    [
-      "a0f7a551-6aec-4fc2-800f-300fc4bd6106",
-      "HV Section Power Isolation"
+      "AIR_PRE"
     ],
     [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
@@ -564,12 +548,12 @@
       "OptoIO2"
     ],
     [
-      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
-      "HP_PullDown"
-    ],
-    [
       "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
       "Measurements"
+    ],
+    [
+      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
+      "AIR_P"
     ],
     [
       "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",
