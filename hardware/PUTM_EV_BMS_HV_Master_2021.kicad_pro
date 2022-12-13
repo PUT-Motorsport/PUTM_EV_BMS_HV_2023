@@ -399,8 +399,7 @@
           "DIN_1",
           "DIN_2",
           "DIN_3",
-          "EXT_RESET",
-          "SAFETY_AIR"
+          "EXT_RESET"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -425,7 +424,6 @@
           "+5V",
           "+BATT",
           "GND",
-          "ISO_GND",
           "Net-(BT1-Pad1)",
           "USB_+5V",
           "USB_GND",
@@ -548,12 +546,12 @@
       "OptoIO2"
     ],
     [
-      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
-      "Measurements"
-    ],
-    [
       "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
       "AIR_P"
+    ],
+    [
+      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
+      "Measurements"
     ],
     [
       "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",

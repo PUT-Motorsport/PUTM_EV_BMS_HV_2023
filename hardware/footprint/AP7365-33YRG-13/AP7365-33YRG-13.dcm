@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP7365-33YRG-13
+D LDO Voltage Regulators LDO 3.3V OUT 600mA 35uA 2 to 6 Vin
+K
+F https://componentsearchengine.com//AP7365-33YRG-13.pdf
+$ENDCMP
+#
+#End Doc Library
