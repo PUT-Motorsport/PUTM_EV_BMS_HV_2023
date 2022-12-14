@@ -34,8 +34,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 1.0,
-          "width": 2.4
+          "height": 0.8,
+          "width": 0.2
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -44,7 +44,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "45_degree_only": true,
+          "45_degree_only": false,
           "min_clearance": 0.0
         }
       },
@@ -546,12 +546,12 @@
       "OptoIO2"
     ],
     [
-      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
-      "AIR_P"
-    ],
-    [
       "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
       "Measurements"
+    ],
+    [
+      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
+      "AIR_P"
     ],
     [
       "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",
