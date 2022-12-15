@@ -15,4 +15,6 @@
   (lib (name "M300-MV3104M1")(type "KiCad")(uri "${KIPRJMOD}/footprint/M300-MV3104M1")(options "")(descr ""))
   (lib (name "M80-5012622")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5012622")(options "")(descr ""))
   (lib (name "AP7365-33YRG-13")(type "KiCad")(uri "${KIPRJMOD}/footprint/AP7365-33YRG-13")(options "")(descr ""))
+  (lib (name "M80-5L10442MC")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5L10442MC")(options "")(descr ""))
+  (lib (name "M80-5302642")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5302642")(options "")(descr ""))
 )
