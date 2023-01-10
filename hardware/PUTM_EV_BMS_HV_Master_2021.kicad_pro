@@ -44,8 +44,8 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "45_degree_only": false,
-          "min_clearance": 0.0
+          "45_degree_only": true,
+          "min_clearance": 0.508
         }
       },
       "diff_pair_dimensions": [
@@ -126,6 +126,7 @@
         0.381,
         0.508,
         0.762,
+        1.016,
         1.27,
         2.54
       ],
@@ -423,6 +424,9 @@
           "+3V3",
           "+5V",
           "+BATT",
+          "AIR_M-",
+          "AIR_P-",
+          "AIR_PRE-",
           "GND",
           "Net-(BT1-Pad1)",
           "USB_+5V",
@@ -432,7 +436,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.512,
+        "track_width": 0.508,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
