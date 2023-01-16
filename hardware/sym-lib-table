@@ -16,4 +16,5 @@
   (lib (name "AP7365-33YRG-13")(type "KiCad")(uri "${KIPRJMOD}/footprint/AP7365-33YRG-13/AP7365-33YRG-13.kicad_sym")(options "")(descr ""))
   (lib (name "M80-5L10442MC")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5L10442MC/M80-5L10442MC.kicad_sym")(options "")(descr ""))
   (lib (name "M80-5302642")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5302642/M80-5302642.kicad_sym")(options "")(descr ""))
+  (lib (name "STM32G484RET6")(type "KiCad")(uri "${KIPRJMOD}/footprint/STM32G484RET6/STM32G484RET6.kicad_sym")(options "")(descr ""))
 )
