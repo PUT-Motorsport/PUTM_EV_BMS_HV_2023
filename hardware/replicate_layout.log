@@ -1,54 +1,54 @@
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 359:Plugin executed on: 'win32'
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 360:Plugin executed with python version: '3.9.14 (main, Feb 13 2023, 04:48:26) [MSC v.1934 64 bit (AMD64)]'
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 361:KiCad build version: 7.0.1
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 362:Plugin version: 2.0.10
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 363:Frame repr: <wx._core.Frame object at 0x000001B8D65D9F70>
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 387:Preparing replicator with P2 as a reference
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.replicate_layout 113:getting a list of all footprints on board
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 435:source anchor footprint is 'P2'
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 359:Plugin executed on: 'win32'
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 360:Plugin executed with python version: '3.9.14 (main, Feb 13 2023, 04:48:26) [MSC v.1934 64 bit (AMD64)]'
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 361:KiCad build version: 7.0.1
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 362:Plugin version: 2.0.10
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 363:Frame repr: <wx._core.Frame object at 0x0000021AC3AB8040>
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 387:Preparing replicator with P2 as a reference
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.replicate_layout 113:getting a list of all footprints on board
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 435:source anchor footprint is 'P2'
 Located on: ['Measurements', 'Isolated car measurement']
 With filenames: ['Measurements.kicad_sch', 'IsolatedMeasurement.kicad_sch']
 With sheet_id:['Measurements', 'Isolated car measurement']
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 442:Corresponding footprints are 
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 442:Corresponding footprints are 
 [('P2', ['Measurements', 'Isolated car measurement']), ('P1', ['Measurements', 'Isolated acu measurement'])]
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 454:Showing dialog
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.replicate_layout 390:constructing a list of sheets suitable for replication on level:'Isolated car measurement', file:'IsolatedMeasurement.kicad_sch'
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.replicate_layout 427:suitable sheets are:[['Measurements', 'Isolated acu measurement']]
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1347:Level selected: ['Measurements', 'Isolated car measurement']
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1182:Filtering list of tracks
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 460:Toolbar position: wx.Point(1694, 125)
-05-02 17:25:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 465:Dialog position: wx.Point(1330, 125)
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 390:constructing a list of sheets suitable for replication on level:'Isolated car measurement', file:'IsolatedMeasurement.kicad_sch'
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 427:suitable sheets are:[['Measurements', 'Isolated acu measurement']]
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 207:Replicating layout
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 236:Starting replication of sheets: [['Measurements', 'Isolated acu measurement']]
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 454:Showing dialog
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.replicate_layout 390:constructing a list of sheets suitable for replication on level:'Isolated car measurement', file:'IsolatedMeasurement.kicad_sch'
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.replicate_layout 427:suitable sheets are:[['Measurements', 'Isolated acu measurement']]
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1347:Level selected: ['Measurements', 'Isolated car measurement']
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1182:Filtering list of tracks
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 460:Toolbar position: wx.Point(3614, 117)
+05-04 00:09:33 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 465:Dialog position: wx.Point(3250, 117)
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 390:constructing a list of sheets suitable for replication on level:'Isolated car measurement', file:'IsolatedMeasurement.kicad_sch'
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 427:suitable sheets are:[['Measurements', 'Isolated acu measurement']]
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 207:Replicating layout
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 236:Starting replication of sheets: [['Measurements', 'Isolated acu measurement']]
 on level: ['Measurements', 'Isolated car measurement']
 with tracks=True, zone=True, text=True, text=True, intersecting=False, remove=False, locked footprints=False, group_only=False
-05-02 17:25:38 root 299:updating GUI message: 'Preparing for replication'
-05-02 17:25:38 root 304:updating GUI with: 0
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 306:Getting the list of source footprints
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 316:Getting the list of all the remaining footprints
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 323:Getting source tracks
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1182:Filtering list of tracks
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 327:Getting source zones
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 331:Getting source text items
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 335:Getting source drawing items
-05-02 17:25:38 root 299:updating GUI message: 'Replicating footprints'
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 739:Replicating footprints
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 745:Replicating footprints on sheet ['Measurements', 'Isolated acu measurement']
-05-02 17:25:38 root 304:updating GUI with: 62
-05-02 17:25:38 root 299:updating GUI message: 'Replicating tracks'
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 904:Replicating tracks
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 910:Replicating tracks on sheet ['Measurements', 'Isolated acu measurement']
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 734:Net pairs for sheet ['Measurements', 'Isolated acu measurement'] :[('unconnected-(IC4-~{IRQ}{slash}MDAT-Pad15)', 'unconnected-(IC2-~{IRQ}{slash}MDAT-Pad15)'), ('Net-(IC4-AVDD)', 'Net-(IC2-AVDD)'), ('/SCK', '/SCK'), ('/MOSI', '/MOSI'), ('Net-(IC11-VI)', 'Net-(IC6-VI)'), ('Net-(R6-Pad1)', 'Net-(R5-Pad1)'), ('/Measurements/Isolated car measurement/HV_~{CS}', '/Measurements/Isolated acu measurement/HV_~{CS}'), ('/Measurements/Isolated car measurement/HV_+3.3V', '/Measurements/Isolated acu measurement/HV_+3.3V'), ('/Measurements/Isolated car measurement/3V_REF', '/Measurements/Isolated acu measurement/3V_REF'), ('/Measurements/Isolated car measurement/V_HV-', '/Measurements/Isolated acu measurement/V_HV-'), ('Net-(R2-Pad1)', 'Net-(R1-Pad1)'), ('Net-(R4-Pad1)', 'Net-(R3-Pad1)'), ('/~{MES_CAR_CS}', '/~{MES_ACU_CS}'), ('/Measurements/Isolated car measurement/HV_SDI', '/Measurements/Isolated acu measurement/HV_SDI'), ('/Measurements/Isolated car measurement/HV_SCK', '/Measurements/Isolated acu measurement/HV_SCK'), ('+5V', '+5V'), ('/Measurements/Isolated car measurement/HV_SDO', '/Measurements/Isolated acu measurement/HV_SDO'), ('/MISO', '/MISO'), ('Net-(P2-VIN+)', 'Net-(P1-VIN+)'), ('', ''), ('GND', 'GND'), ('unconnected-(IC4-MCLK-Pad16)', 'unconnected-(IC2-MCLK-Pad16)'), ('+3V3', '+3V3'), ('HV_CAR-', 'HV_ACU-'), ('/Measurements/Isolated car measurement/V_HV+', '/Measurements/Isolated acu measurement/V_HV+'), ('HV_CAR+', 'HV_ACU+')]
-05-02 17:25:38 root 299:updating GUI message: 'Replicating zones'
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 962:Replicating zones
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 969:Replicating zones on sheet ['Measurements', 'Isolated acu measurement']
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 734:Net pairs for sheet ['Measurements', 'Isolated acu measurement'] :[('unconnected-(IC4-~{IRQ}{slash}MDAT-Pad15)', 'unconnected-(IC2-~{IRQ}{slash}MDAT-Pad15)'), ('Net-(IC4-AVDD)', 'Net-(IC2-AVDD)'), ('/SCK', '/SCK'), ('/MOSI', '/MOSI'), ('Net-(IC11-VI)', 'Net-(IC6-VI)'), ('Net-(R6-Pad1)', 'Net-(R5-Pad1)'), ('/Measurements/Isolated car measurement/HV_~{CS}', '/Measurements/Isolated acu measurement/HV_~{CS}'), ('/Measurements/Isolated car measurement/HV_+3.3V', '/Measurements/Isolated acu measurement/HV_+3.3V'), ('/Measurements/Isolated car measurement/3V_REF', '/Measurements/Isolated acu measurement/3V_REF'), ('/Measurements/Isolated car measurement/V_HV-', '/Measurements/Isolated acu measurement/V_HV-'), ('Net-(R2-Pad1)', 'Net-(R1-Pad1)'), ('Net-(R4-Pad1)', 'Net-(R3-Pad1)'), ('/~{MES_CAR_CS}', '/~{MES_ACU_CS}'), ('/Measurements/Isolated car measurement/HV_SDI', '/Measurements/Isolated acu measurement/HV_SDI'), ('/Measurements/Isolated car measurement/HV_SCK', '/Measurements/Isolated acu measurement/HV_SCK'), ('+5V', '+5V'), ('/Measurements/Isolated car measurement/HV_SDO', '/Measurements/Isolated acu measurement/HV_SDO'), ('/MISO', '/MISO'), ('Net-(P2-VIN+)', 'Net-(P1-VIN+)'), ('', ''), ('GND', 'GND'), ('unconnected-(IC4-MCLK-Pad16)', 'unconnected-(IC2-MCLK-Pad16)'), ('+3V3', '+3V3'), ('HV_CAR-', 'HV_ACU-'), ('/Measurements/Isolated car measurement/V_HV+', '/Measurements/Isolated acu measurement/V_HV+'), ('HV_CAR+', 'HV_ACU+')]
-05-02 17:25:38 root 299:updating GUI message: 'Replicating text'
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1040:Replicating text
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1047:Replicating text on sheet ['Measurements', 'Isolated acu measurement']
-05-02 17:25:38 root 299:updating GUI message: 'Replicating drawings'
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1080:Replicating drawings
-05-02 17:25:38 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1086:Replicating drawings on sheet ['Measurements', 'Isolated acu measurement']
-05-02 17:25:39 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 223:Replication complete
+05-04 00:09:34 root 299:updating GUI message: 'Preparing for replication'
+05-04 00:09:34 root 304:updating GUI with: 0
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 306:Getting the list of source footprints
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 316:Getting the list of all the remaining footprints
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 323:Getting source tracks
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1182:Filtering list of tracks
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 327:Getting source zones
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 331:Getting source text items
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 335:Getting source drawing items
+05-04 00:09:34 root 299:updating GUI message: 'Replicating footprints'
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 739:Replicating footprints
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 745:Replicating footprints on sheet ['Measurements', 'Isolated acu measurement']
+05-04 00:09:34 root 304:updating GUI with: 25
+05-04 00:09:34 root 299:updating GUI message: 'Replicating tracks'
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 904:Replicating tracks
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 910:Replicating tracks on sheet ['Measurements', 'Isolated acu measurement']
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 734:Net pairs for sheet ['Measurements', 'Isolated acu measurement'] :[('unconnected-(IC4-MCLK-Pad16)', 'unconnected-(IC2-MCLK-Pad16)'), ('Net-(IC4-AVDD)', 'Net-(IC2-AVDD)'), ('GND', 'GND'), ('/Measurements/Isolated car measurement/V_HV-', '/Measurements/Isolated acu measurement/V_HV-'), ('/~{MES_CAR_CS}', '/~{MES_ACU_CS}'), ('HV_CAR+', 'HV_ACU+'), ('Net-(R4-Pad1)', 'Net-(R3-Pad1)'), ('unconnected-(IC4-~{IRQ}{slash}MDAT-Pad15)', 'unconnected-(IC2-~{IRQ}{slash}MDAT-Pad15)'), ('+5V', '+5V'), ('/Measurements/Isolated car measurement/HV_SCK', '/Measurements/Isolated acu measurement/HV_SCK'), ('HV_CAR-', 'HV_ACU-'), ('/Measurements/Isolated car measurement/HV_SDI', '/Measurements/Isolated acu measurement/HV_SDI'), ('Net-(IC11-VI)', 'Net-(IC6-VI)'), ('Net-(R2-Pad1)', 'Net-(R1-Pad1)'), ('/Measurements/Isolated car measurement/HV_SDO', '/Measurements/Isolated acu measurement/HV_SDO'), ('Net-(P2-VIN+)', 'Net-(P1-VIN+)'), ('Net-(R6-Pad1)', 'Net-(R5-Pad1)'), ('/Measurements/Isolated car measurement/HV_+3.3V', '/Measurements/Isolated acu measurement/HV_+3.3V'), ('+3V3', '+3V3'), ('/Measurements/Isolated car measurement/3V_REF', '/Measurements/Isolated acu measurement/3V_REF'), ('MISO', 'MISO'), ('MOSI', 'MOSI'), ('', ''), ('/Measurements/Isolated car measurement/HV_~{CS}', '/Measurements/Isolated acu measurement/HV_~{CS}'), ('SCK', 'SCK'), ('/Measurements/Isolated car measurement/V_HV+', '/Measurements/Isolated acu measurement/V_HV+')]
+05-04 00:09:34 root 299:updating GUI message: 'Replicating zones'
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 962:Replicating zones
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 969:Replicating zones on sheet ['Measurements', 'Isolated acu measurement']
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 734:Net pairs for sheet ['Measurements', 'Isolated acu measurement'] :[('unconnected-(IC4-MCLK-Pad16)', 'unconnected-(IC2-MCLK-Pad16)'), ('Net-(IC4-AVDD)', 'Net-(IC2-AVDD)'), ('GND', 'GND'), ('/Measurements/Isolated car measurement/V_HV-', '/Measurements/Isolated acu measurement/V_HV-'), ('/~{MES_CAR_CS}', '/~{MES_ACU_CS}'), ('HV_CAR+', 'HV_ACU+'), ('Net-(R4-Pad1)', 'Net-(R3-Pad1)'), ('unconnected-(IC4-~{IRQ}{slash}MDAT-Pad15)', 'unconnected-(IC2-~{IRQ}{slash}MDAT-Pad15)'), ('+5V', '+5V'), ('/Measurements/Isolated car measurement/HV_SCK', '/Measurements/Isolated acu measurement/HV_SCK'), ('HV_CAR-', 'HV_ACU-'), ('/Measurements/Isolated car measurement/HV_SDI', '/Measurements/Isolated acu measurement/HV_SDI'), ('Net-(IC11-VI)', 'Net-(IC6-VI)'), ('Net-(R2-Pad1)', 'Net-(R1-Pad1)'), ('/Measurements/Isolated car measurement/HV_SDO', '/Measurements/Isolated acu measurement/HV_SDO'), ('Net-(P2-VIN+)', 'Net-(P1-VIN+)'), ('Net-(R6-Pad1)', 'Net-(R5-Pad1)'), ('/Measurements/Isolated car measurement/HV_+3.3V', '/Measurements/Isolated acu measurement/HV_+3.3V'), ('+3V3', '+3V3'), ('/Measurements/Isolated car measurement/3V_REF', '/Measurements/Isolated acu measurement/3V_REF'), ('MISO', 'MISO'), ('MOSI', 'MOSI'), ('', ''), ('/Measurements/Isolated car measurement/HV_~{CS}', '/Measurements/Isolated acu measurement/HV_~{CS}'), ('SCK', 'SCK'), ('/Measurements/Isolated car measurement/V_HV+', '/Measurements/Isolated acu measurement/V_HV+')]
+05-04 00:09:34 root 299:updating GUI message: 'Replicating text'
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1040:Replicating text
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1047:Replicating text on sheet ['Measurements', 'Isolated acu measurement']
+05-04 00:09:34 root 299:updating GUI message: 'Replicating drawings'
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1080:Replicating drawings
+05-04 00:09:34 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1086:Replicating drawings on sheet ['Measurements', 'Isolated acu measurement']
+05-04 00:09:36 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 223:Replication complete

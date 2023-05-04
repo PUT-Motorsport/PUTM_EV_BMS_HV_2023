@@ -1,4 +1,5 @@
 (sym_lib_table
+  (version 7)
   (lib (name "PUTM_EV_BMS_library")(type "KiCad")(uri "${KIPRJMOD}/footprint/PUTM_EV_BMS_library.kicad_sym")(options "")(descr ""))
   (lib (name "Harwin 4 pin 90 deg")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-8420445/M80-8420445.kicad_sym")(options "")(descr ""))
   (lib (name "Harwin 3 pin 90 deg")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-8420345/M80-8420345.kicad_sym")(options "")(descr ""))
@@ -17,4 +18,5 @@
   (lib (name "M80-5L10442MC")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5L10442MC/M80-5L10442MC.kicad_sym")(options "")(descr ""))
   (lib (name "M80-5302642")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5302642/M80-5302642.kicad_sym")(options "")(descr ""))
   (lib (name "STM32G484RET6")(type "KiCad")(uri "${KIPRJMOD}/footprint/STM32G484RET6/STM32G484RET6.kicad_sym")(options "")(descr ""))
+  (lib (name "M80-5L10642MC")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5L10642MC/M80-5L10642MC.kicad_sym")(options "")(descr ""))
 )
