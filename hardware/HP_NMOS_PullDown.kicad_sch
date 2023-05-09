@@ -302,10 +302,6 @@
     (uuid fc637324-0ec6-4e32-a4fe-925940358e37)
   )
 
-  (wire (pts (xy 82.55 163.83) (xy 82.55 166.37))
-    (stroke (width 0) (type default))
-    (uuid 0e7f548e-fde6-4a32-aec9-704f2213055c)
-  )
   (wire (pts (xy 132.715 86.995) (xy 135.255 86.995))
     (stroke (width 0) (type default))
     (uuid 12e6a1a7-b0f9-4a64-a94d-7872e5e6da44)
