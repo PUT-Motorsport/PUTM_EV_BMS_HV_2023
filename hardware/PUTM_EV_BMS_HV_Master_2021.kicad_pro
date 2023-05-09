@@ -46,7 +46,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": true,
-          "min_clearance": 0.0
+          "min_clearance": 0.508
         }
       },
       "diff_pair_dimensions": [
@@ -67,7 +67,7 @@
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
-        "courtyards_overlap": "error",
+        "courtyards_overlap": "ignore",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
@@ -140,9 +140,9 @@
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 5,
           "td_on_pad_in_zone": false,
-          "td_onpadsmd": true,
+          "td_onpadsmd": false,
           "td_onroundshapesonly": false,
-          "td_ontrackend": false,
+          "td_ontrackend": true,
           "td_onviapad": true
         }
       ],
@@ -440,8 +440,25 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.127,
-        "via_diameter": 0.4,
-        "via_drill": 0.2,
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.127,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Analog_signal",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.508,
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -457,8 +474,8 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.254,
-        "via_diameter": 0.4,
-        "via_drill": 0.2,
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -550,7 +567,7 @@
         "pattern": "AIR_PRE-"
       },
       {
-        "netclass": "Power",
+        "netclass": "Default",
         "pattern": "GND"
       },
       {
@@ -572,6 +589,14 @@
       {
         "netclass": "Power",
         "pattern": "VDD"
+      },
+      {
+        "netclass": "Analog_signal",
+        "pattern": "CUR_SENS_REF"
+      },
+      {
+        "netclass": "Analog_signal",
+        "pattern": "CUR_SENS_SIG"
       }
     ]
   },
@@ -652,12 +677,40 @@
       "AIR_PRE"
     ],
     [
+      "9e653d28-f1c3-45a5-9d43-63c5d53de50e",
+      "OptoIO2"
+    ],
+    [
+      "ec6354b8-3aa0-4986-9bb0-f936060b4d56",
+      "Fan low side driver 2"
+    ],
+    [
+      "4b9fce07-f075-4aec-bd3a-2cc8d2465a53",
+      "Fan low side driver 3"
+    ],
+    [
+      "f0444f92-b7ef-40df-b219-ae3ca6754286",
+      "Fan low side driver 4"
+    ],
+    [
+      "3bdf3e63-db06-4489-843c-40336b7b22f8",
+      "Fan low side driver 5"
+    ],
+    [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
       "Memory"
     ],
     [
+      "daf8b322-01dd-446b-9474-a54548001751",
+      "Fan low side driver 6"
+    ],
+    [
       "66c3869d-de11-4d8d-b4de-9d98c32ec205",
       "Power"
+    ],
+    [
+      "2858aedd-8480-47be-b5f3-f06b807d82d6",
+      "Fan low side driver 7"
     ],
     [
       "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
@@ -676,12 +729,12 @@
       "Settings"
     ],
     [
-      "940d36fb-8f48-4fee-84f0-e5e0ba24df3f",
-      "OptoIO3"
+      "ba7f6eba-eb84-4567-9005-77208e6eb457",
+      "Fan drivers"
     ],
     [
-      "b8954743-0175-4ee0-bad0-8f0716e13306",
-      "OptoIO2"
+      "ce1d9a8b-d4b7-4d85-81bb-9249ce3cc6c9",
+      "Fan low side driver 1"
     ],
     [
       "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
