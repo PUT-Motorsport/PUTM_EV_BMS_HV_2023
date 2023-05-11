@@ -567,7 +567,7 @@
         "pattern": "AIR_PRE-"
       },
       {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "GND"
       },
       {
