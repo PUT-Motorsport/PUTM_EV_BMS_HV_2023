@@ -526,7 +526,7 @@
     (property "Footprint" "Package_SO:MSOP-16_3x4.039mm_P0.5mm" (at 131.445 103.505 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 136.525 97.155 0)
+    (property "Datasheet" "https://eu.mouser.com/datasheet/2/609/LTC6820-3125934.pdf" (at 136.525 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f5936d53-22e5-4cbe-b197-0d30b2e92138))

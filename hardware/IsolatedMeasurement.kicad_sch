@@ -1923,7 +1923,7 @@
   (symbol (lib_id "Device:R_Small") (at 39.37 59.69 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3bde08fb-070a-4bb4-8da0-a10146d09e80)
-    (property "Reference" "R1" (at 43.4975 58.5597 0)
+    (property "Reference" "R60" (at 43.4975 58.5597 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "200k" (at 43.4975 60.8711 0)
@@ -1943,7 +1943,7 @@
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
-          (reference "R1") (unit 1)
+          (reference "R60") (unit 1)
         )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/6b03d8c8-5f6c-4244-9202-23821031eb5e"
           (reference "R2") (unit 1)
