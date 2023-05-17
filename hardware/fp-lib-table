@@ -27,4 +27,5 @@
   (lib (name "TLP2367")(type "KiCad")(uri "${KIPRJMOD}/footprint/TLP2367")(options "")(descr ""))
   (lib (name "M80-5T10442MC")(type "KiCad")(uri "${KIPRJMOD}/footprint/M80-5T10442MC")(options "")(descr ""))
   (lib (name "30R400UMR")(type "KiCad")(uri "${KIPRJMOD}/footprint/30R400UMR")(options "")(descr ""))
+  (lib (name "Logos")(type "KiCad")(uri "${KIPRJMOD}/footprint/Logos.pretty")(options "")(descr ""))
 )
