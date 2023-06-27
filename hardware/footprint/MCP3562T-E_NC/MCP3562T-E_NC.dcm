@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP3562T-E_NC
+D Analog to Digital Converters - ADC 24-bit delta-sigma ADC, Dual channel, 3V,UQFN20
+K
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en609858
+$ENDCMP
+#
+#End Doc Library
