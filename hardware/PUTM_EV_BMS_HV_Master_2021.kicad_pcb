@@ -17193,7 +17193,7 @@
   (dimension locked (type aligned) (layer "Eco1.User") (tstamp 3d5cced7-0349-4e3d-8ae3-934adf213886)
     (pts (xy 162.717722 176.984645) (xy 62.717722 176.984645))
     (height -8.62)
-    (gr_text "100.0000 mm" (at 112.717722 184.454645) (layer "Eco1.User") (tstamp 3d5cced7-0349-4e3d-8ae3-934adf213886)
+    (gr_text locked "100.0000 mm" (at 112.717722 184.454645) (layer "Eco1.User") (tstamp 3d5cced7-0349-4e3d-8ae3-934adf213886)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (format (prefix "") (suffix "") (units 2) (units_format 1) (precision 4))
