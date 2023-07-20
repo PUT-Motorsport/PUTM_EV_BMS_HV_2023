@@ -27,7 +27,8 @@ enum struct PecStatus
 	Error
 };
 
-template < size_t chain_size >
+static constexpr size_t chain_size = 1;
+
 class LTCController
 {
 	public:

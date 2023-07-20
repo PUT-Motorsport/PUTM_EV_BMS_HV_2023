@@ -14,7 +14,7 @@
 
 const size_t num_of_dev = 3;
 
-SPI_HandleTypeDef * hspi = &hspi3;
+static SPI_HandleTypeDef * hspi = &hspi3;
 
 extern GpioOut led_warning;
 

@@ -10,62 +10,51 @@
 #include "PerypherialManagers/LTC6811CmdCodes.hpp"
 #include "task.h"
 
-template < size_t chain_size >
-LTCController< chain_size >::LTCController(GpioOut gpio, SPI_HandleTypeDef* hspi) : hspi(hspi), gpio(gpio)
+LTCController::LTCController(GpioOut gpio, SPI_HandleTypeDef* hspi) : hspi(hspi), gpio(gpio)
 {
-	usingLock(gpio, [&]()
-	{
-		gpio.deactivate();
-	});
+	gpio.deactivate();
 }
 
-template < size_t chain_size >
-void LTCController< chain_size >::wakeUp()
+void LTCController::wakeUp()
 {
 	uint8_t dummy_cmd = 0;
 	SpiDmaHandle temp =
 	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
 		.cs = &this->gpio,
-		.dataSize = 1,
 		.hspi = this->hspi,
-		.pRxData = nullptr,
 		.pTxData = &dummy_cmd,
-		.taskToNotify = xTaskGetCurrentTaskHandle()
+		.pRxData = nullptr,
+		.dataSize = 1,
 	};
 
 	SpiDmaManager::spiRequestAndWait(temp);
 	osDelay(Config::twake_full);
 	SpiDmaManager::spiRequestAndWait(temp);
 	osDelay(Config::twake_full);
-	//HAL_SPI_Transmit(hspi, &dummy_cmd, 1, 100);
-	//HAL_Delay(Config::twake_full);
-	//HAL_SPI_Transmit(hspi, &dummy_cmd, 1, 100);
-	//HAL_Delay(Config::twake_full);
 }
 
-template < size_t chain_size >
-void LTCController< chain_size >::handleWatchDog()
+void LTCController::handleWatchDog()
 {
 	//TODO: also some dummy rdcnfg?
 
 	uint8_t dummy_cmd = 0;
 	SpiDmaHandle temp =
 	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
 		.cs = &this->gpio,
-		.dataSize = 1,
 		.hspi = this->hspi,
-		.pRxData = nullptr,
 		.pTxData = &dummy_cmd,
-		.taskToNotify = xTaskGetCurrentTaskHandle()
+		.pRxData = nullptr,
+		.dataSize = 1,
 	};
 
 	SpiDmaManager::spiRequestAndWait(temp);
 	osDelay(Config::twake_full);
 }
 
-template < size_t chain_size >
 template < class WrRdReg >
-HAL_StatusTypeDef LTCController< chain_size >::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
+HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
 {
 	HAL_StatusTypeDef status = HAL_OK;
 
@@ -90,12 +79,12 @@ HAL_StatusTypeDef LTCController< chain_size >::rawWrite(WCmd cmd, std::array< Wr
 
 	SpiDmaHandle temp =
 	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
 		.cs = &this->gpio,
-		.dataSize = stxdata.size(),
 		.hspi = this->hspi,
-		.pRxData = nullptr,
 		.pTxData = stxdata.begin(),
-		.taskToNotify = xTaskGetCurrentTaskHandle()
+		.pRxData = nullptr,
+		.dataSize = stxdata.size(),
 	};
 
 	SpiDmaManager::spiRequestAndWait(temp);
@@ -103,8 +92,7 @@ HAL_StatusTypeDef LTCController< chain_size >::rawWrite(WCmd cmd, std::array< Wr
 	return status;
 }
 
-template < size_t chain_size >
-HAL_StatusTypeDef LTCController< chain_size >::rawWrite(WCmd cmd)
+HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd)
 {
 	HAL_StatusTypeDef status = HAL_OK;
 
@@ -119,12 +107,12 @@ HAL_StatusTypeDef LTCController< chain_size >::rawWrite(WCmd cmd)
 
 	SpiDmaHandle temp =
 	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
 		.cs = &this->gpio,
-		.dataSize = stxdata.size(),
 		.hspi = this->hspi,
-		.pRxData = nullptr,
 		.pTxData = stxdata.begin(),
-		.taskToNotify = xTaskGetCurrentTaskHandle()
+		.pRxData = nullptr,
+		.dataSize = stxdata.size(),
 	};
 
 	SpiDmaManager::spiRequestAndWait(temp);
@@ -132,10 +120,8 @@ HAL_StatusTypeDef LTCController< chain_size >::rawWrite(WCmd cmd)
 	return status;
 }
 
-
-template < size_t chain_size >
 template < class RdReg >
-HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
+HAL_StatusTypeDef LTCController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
 {
 	HAL_StatusTypeDef status = HAL_OK;
 
@@ -151,12 +137,12 @@ HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < Rd
 
 	SpiDmaHandle temp =
 	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
 		.cs = &this->gpio,
-		.dataSize = stxdata.size(),
 		.hspi = this->hspi,
-		.pRxData = nullptr,
 		.pTxData = stxdata.begin(),
-		.taskToNotify = xTaskGetCurrentTaskHandle()
+		.pRxData = nullptr,
+		.dataSize = stxdata.size(),
 	};
 
 	SpiDmaManager::spiRequestAndWait(temp);
@@ -171,7 +157,7 @@ HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < Rd
 
 	for(auto rdit = rdata.begin(), dit = data.begin(); rdit != rdata.end() && dit != data.end();)
 	{
-		*dit = deserializeRegisterGroup(rdit);
+		*dit = deserializeRegisterGroup<RdReg>(rdit);
 		dit++;
 		rdit += 8;
 	}
@@ -179,9 +165,8 @@ HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < Rd
 	return status;
 }
 
-template < size_t chain_size >
 template< class RdReg >
-HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
+HAL_StatusTypeDef LTCController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
 {
 	HAL_StatusTypeDef status = HAL_OK;
 
@@ -197,12 +182,12 @@ HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < Rd
 
 	SpiDmaHandle temp =
 	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
 		.cs = &this->gpio,
-		.dataSize = stxdata.size(),
 		.hspi = this->hspi,
-		.pRxData = nullptr,
 		.pTxData = stxdata.begin(),
-		.taskToNotify = xTaskGetCurrentTaskHandle()
+		.pRxData = nullptr,
+		.dataSize = stxdata.size(),
 	};
 
 	SpiDmaManager::spiRequestAndWait(temp);
@@ -214,10 +199,12 @@ HAL_StatusTypeDef LTCController< chain_size >::rawRead(RCmd cmd, std::array < Rd
 	temp.dataSize = rdata.size();
 
 	SpiDmaManager::spiRequestAndWait(temp);
-
-	for(auto rdit = rdata.begin(), dit = data.begin(), psit = pec_status.begin(); rdit != rdata.end() && dit != data.end();)
+	auto rdit = rdata.begin();
+	auto dit = data.begin();
+	auto psit = pec_status.begin();
+	for(; rdit != rdata.end() && dit != data.end();)
 	{
-		*dit = deserializeRegisterGroup(rdit);
+		*dit = deserializeRegisterGroup<RdReg>(rdit);
 		dit++;
 
 		auto pec = calcPEC(rdit, rdit + 6);
