@@ -220,22 +220,14 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 
 void LtcController::wakeUp()
 {
-	uint8_t dummy_cmd = 0;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr, //&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = &dummy_cmd,
-		.pRxData = nullptr,
-		.dataSize = 1,
-	};
+	WCmd dummy { 0x0000 };
 
 	gpio.activate();
-	SpiDmaController::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-	SpiDmaController::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
+	for(size_t i = 0; i < 2; i++)
+	{
+		rawWrite(dummy);
+		osDelay(Config::twake_full);
+	}
 	gpio.deactivate();
 }
 
@@ -262,24 +254,24 @@ void LtcController::handleWatchDog()
 
 PollStatus LtcController::pollAdcStatus()
 {
-	rawWrite(CMD_PLADC);
-
-	uint8_t result;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr, //&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = nullptr,
-		.pRxData = &result,
-		.dataSize = 1,
-	};
-
 	gpio.activate();
-	SpiDmaController::spiRequestAndWait(temp);
+	rawWrite(CMD_PLADC);
+//
+//	uint8_t result;
+//	SpiDmaHandle temp =
+//	{
+//		.taskToNotify = xTaskGetCurrentTaskHandle(),
+//		.cs = nullptr, //&this->gpio,
+//		.hspi = this->hspi,
+//		.pTxData = nullptr,
+//		.pRxData = &result,
+//		.dataSize = 1,
+//	};
+//
+//	SpiDmaController::spiRequestAndWait(temp);
 	gpio.deactivate();
 
-	if(result == 0) return PollStatus::Busy;
+	//if(result == 0) return PollStatus::Busy;
 	return PollStatus::Done;
 }
 
@@ -330,7 +322,7 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
 
 	//while(pollAdcStatus() == PollStatus::Busy)
-	osDelay(10);
+	osDelay(1);
 
 	for(size_t i = 0; i < 4; i++)
 	{

@@ -18,10 +18,5 @@ std::array < uint8_t, 2 > calcPEC (uint8_t const *begin, uint8_t const *end)
 		remainder = (remainder << 8 ) ^ pec_table[address];
 	}
 	remainder *= 2;
-//FIXME: not sure if remainder should be shifted to left by 1 cuz
-//algorithm gives a 15bit valuea and it should be send in the
-//[16:0] = { 15..0 0 } som im not sure if the provided by the doc
-//code takes it into account
-#warning "not sure if remainder should be shifted to left by 1"
-	return { uint8_t(remainder >> 8), uint8_t(remainder) } ;
+	return { uint8_t(remainder >> 8) , uint8_t(remainder) } ;
 }
