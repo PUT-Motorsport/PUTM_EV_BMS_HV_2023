@@ -5,12 +5,13 @@
  *      Author: Piotr Lesicki
  */
 
-#include <PerypherialManagers/LtcController.hpp>
+#include "PerypherialManagers/LtcController.hpp"
 #include "app_freertos.h"
 #include "main.h"
 #include "PerypherialManagers/Gpio.hpp"
 
 static SPI_HandleTypeDef * hspi = &hspi2;
+static std::array < std::array < float, 12 >, 1> volts;
 
 void vLTCManagerTask(void *argument)
 {
@@ -21,7 +22,7 @@ void vLTCManagerTask(void *argument)
 
 	while(true)
 	{
-
+		ltc_ctrl.readVoltages(volts);
 		osDelay(100);
 	}
 

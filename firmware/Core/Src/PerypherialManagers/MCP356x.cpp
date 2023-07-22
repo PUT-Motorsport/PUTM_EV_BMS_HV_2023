@@ -35,7 +35,7 @@ void MCP3561x::poolSatusByte()
 		.dataSize = 1
 	};
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 
 	status_byte = rx_buff;
 }

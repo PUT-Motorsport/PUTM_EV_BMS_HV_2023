@@ -8,8 +8,8 @@
 #ifndef INC_PERYPHERIALMANAGERS_MCP356X_HPP_
 #define INC_PERYPHERIALMANAGERS_MCP356X_HPP_
 
+#include <PerypherialManagers/SpiDmaController.hpp>
 #include "Gpio.hpp"
-#include "SpiDmaManager.hpp"
 #include "PerypherialManagers/LocableResource.hpp"
 #include "etl/array.h"
 

@@ -11,13 +11,13 @@
 #include "PerypherialManagers/LTC6811Lib.hpp"
 #include "PerypherialManagers/LTC6811CmdCodes.hpp"
 #include "PerypherialManagers/PEC15.hpp"
-#include "PerypherialManagers/SpiDmaManager.hpp"
 #include "PerypherialManagers/Gpio.hpp"
 
 #include <main.h>
 #include <array>
 #include <type_traits>
 #include <math.h>
+#include <PerypherialManagers/SpiDmaController.hpp>
 #include <algorithm>
 #include <spi.h>
 

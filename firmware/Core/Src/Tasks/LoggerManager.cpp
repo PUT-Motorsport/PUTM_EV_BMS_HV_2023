@@ -5,9 +5,9 @@
  *      Author: piotr
  */
 
+#include <PerypherialManagers/SpiDmaController.hpp>
 #include "app_freertos.h"
 #include "main.h"
-#include "PerypherialManagers/SpiDmaManager.hpp"
 
 void vLoggerManagerTask(void *argument)
 {

@@ -350,14 +350,14 @@ struct LTC6811
 
 
 	template < class Reg >
-	static inline bool RegEq(Reg reg1, Reg reg2)
+	static constexpr bool RegEq(Reg reg1, Reg reg2)
 	{
 		return reg1 == reg2;
 	}
 };
 
 template <>
-bool LTC6811::RegEq(Config cfg1, Config cfg2)
+constexpr bool LTC6811::RegEq(Config cfg1, Config cfg2)
 {
 	if (cfg1.gpio1 		!= cfg2.gpio1) 		return false;
 	if (cfg1.gpio2 		!= cfg2.gpio2) 		return false;

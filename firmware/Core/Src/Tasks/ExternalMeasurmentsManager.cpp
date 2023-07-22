@@ -5,7 +5,7 @@
  *      Author: Piotr Lesicki
  */
 
-#include "PerypherialManagers/SpiDmaManager.hpp"
+#include <PerypherialManagers/SpiDmaController.hpp>
 #include "PerypherialManagers/MCP356x.hpp"
 #include "app_freertos.h"
 #include "spi.h"

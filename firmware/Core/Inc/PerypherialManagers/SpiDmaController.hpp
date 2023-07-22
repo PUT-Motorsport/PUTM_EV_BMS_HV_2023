@@ -25,7 +25,7 @@ struct SpiDmaHandle
 	size_t dataSize;
 };
 
-class SpiDmaManager
+class SpiDmaController
 {
 	public:
 		static void initSpiDmaManager();

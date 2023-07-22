@@ -6,7 +6,7 @@
  */
 
 #include <PerypherialManagers/LtcController.hpp>
-#include "PerypherialManagers/SpiDmaManager.hpp"
+#include <PerypherialManagers/SpiDmaController.hpp>
 #include "PerypherialManagers/LTC6811CmdCodes.hpp"
 #include "task.h"
 
@@ -50,65 +50,6 @@ LtcController::LtcController(GpioOut gpio, SPI_HandleTypeDef* hspi) : hspi(hspi)
 	}
 }
 
-void LtcController::wakeUp()
-{
-	uint8_t dummy_cmd = 0;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
-		.hspi = this->hspi,
-		.pTxData = &dummy_cmd,
-		.pRxData = nullptr,
-		.dataSize = 1,
-	};
-
-	SpiDmaManager::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-	SpiDmaManager::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-}
-
-void LtcController::handleWatchDog()
-{
-	//TODO: also some dummy rdcnfg?
-
-	uint8_t dummy_cmd = 0;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
-		.hspi = this->hspi,
-		.pTxData = &dummy_cmd,
-		.pRxData = nullptr,
-		.dataSize = 1,
-	};
-
-	SpiDmaManager::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-}
-
-PollStatus LtcController::pollAdcStatus()
-{
-	rawWrite(CMD_PLADC);
-
-	uint8_t result;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
-		.hspi = this->hspi,
-		.pTxData = nullptr,
-		.pRxData = &result,
-		.dataSize = 1,
-	};
-
-	SpiDmaManager::spiRequestAndWait(temp);
-
-	if(result == 0) return PollStatus::Busy;
-	return PollStatus::Done;
-}
-
 template < class WrRdReg >
 LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
 {
@@ -136,14 +77,14 @@ LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size 
 	SpiDmaHandle temp =
 	{
 		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
+		.cs = nullptr,//&this->gpio,
 		.hspi = this->hspi,
 		.pTxData = stxdata.begin(),
 		.pRxData = nullptr,
 		.dataSize = stxdata.size(),
 	};
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 
 	return status;
 }
@@ -164,14 +105,14 @@ LtcCtrlStatus LtcController::rawWrite(WCmd cmd)
 	SpiDmaHandle temp =
 	{
 		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
+		.cs = nullptr,//&this->gpio,
 		.hspi = this->hspi,
 		.pTxData = stxdata.begin(),
 		.pRxData = nullptr,
 		.dataSize = stxdata.size(),
 	};
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 
 	return status;
 }
@@ -194,14 +135,14 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 	SpiDmaHandle temp =
 	{
 		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
+		.cs = nullptr,//&this->gpio,
 		.hspi = this->hspi,
 		.pTxData = stxdata.begin(),
 		.pRxData = nullptr,
 		.dataSize = stxdata.size(),
 	};
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 
 	std::array < uint8_t, chain_size * 8 > rdata;
 
@@ -209,7 +150,7 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 	temp.pRxData = rdata.begin();
 	temp.dataSize = rdata.size();
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 
 	for(auto rdit = rdata.begin(), dit = data.begin(); rdit != rdata.end() && dit != data.end();)
 	{
@@ -239,14 +180,14 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 	SpiDmaHandle temp =
 	{
 		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->gpio,
+		.cs = nullptr,//&this->gpio,
 		.hspi = this->hspi,
 		.pTxData = stxdata.begin(),
 		.pRxData = nullptr,
 		.dataSize = stxdata.size(),
 	};
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 
 	std::array < uint8_t, chain_size * 8 > rdata;
 
@@ -254,11 +195,11 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 	temp.pRxData = rdata.begin();
 	temp.dataSize = rdata.size();
 
-	SpiDmaManager::spiRequestAndWait(temp);
+	SpiDmaController::spiRequestAndWait(temp);
 	auto rdit = rdata.begin();
 	auto dit = data.begin();
 	auto psit = pec_status.begin();
-	for(; rdit != rdata.end() && dit != data.end();)
+	for(; rdit != rdata.end() || dit != data.end();)
 	{
 		*dit = deserializeRegisterGroup<RdReg>(rdit);
 		dit++;
@@ -277,22 +218,88 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 	return status;
 }
 
+void LtcController::wakeUp()
+{
+	uint8_t dummy_cmd = 0;
+	SpiDmaHandle temp =
+	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
+		.cs = nullptr, //&this->gpio,
+		.hspi = this->hspi,
+		.pTxData = &dummy_cmd,
+		.pRxData = nullptr,
+		.dataSize = 1,
+	};
+
+	gpio.activate();
+	SpiDmaController::spiRequestAndWait(temp);
+	osDelay(Config::twake_full);
+	SpiDmaController::spiRequestAndWait(temp);
+	osDelay(Config::twake_full);
+	gpio.deactivate();
+}
+
+void LtcController::handleWatchDog()
+{
+	//TODO: also some dummy rdcnfg?
+
+	uint8_t dummy_cmd = 0;
+	SpiDmaHandle temp =
+	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
+		.cs = nullptr,//&this->gpio,
+		.hspi = this->hspi,
+		.pTxData = &dummy_cmd,
+		.pRxData = nullptr,
+		.dataSize = 1,
+	};
+
+	gpio.activate();
+	SpiDmaController::spiRequestAndWait(temp);
+	osDelay(Config::twake_full);
+	gpio.deactivate();
+}
+
+PollStatus LtcController::pollAdcStatus()
+{
+	rawWrite(CMD_PLADC);
+
+	uint8_t result;
+	SpiDmaHandle temp =
+	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
+		.cs = nullptr, //&this->gpio,
+		.hspi = this->hspi,
+		.pTxData = nullptr,
+		.pRxData = &result,
+		.dataSize = 1,
+	};
+
+	gpio.activate();
+	SpiDmaController::spiRequestAndWait(temp);
+	gpio.deactivate();
+
+	if(result == 0) return PollStatus::Busy;
+	return PollStatus::Done;
+}
 
 LtcCtrlStatus LtcController::configure()
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	bool status_lock = false;
 
-	rawWrite(CMD_WRCFGA, configs);
-	osDelay(1);
 	std::array < LTC6811::Config, chain_size > configs_buff;
 	std::array < PecStatus, chain_size > pecs;
 
+	gpio.activate();
+	rawWrite(CMD_WRCFGA, configs);
+	osDelay(10);
 	rawRead(CMD_RDCFGA, configs_buff, pecs);
+	gpio.deactivate();
 
 	for(size_t i = 0; i < chain_size; i++)
 	{
-		if(not LTC6811::RegEq<Reg>(configs[i], configs_buff[i]))
+		if(not LTC6811::RegEq(configs[i], configs_buff[i]))
 		{
 			if(!status_lock)
 			{
@@ -317,41 +324,39 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < PecStatus, chain_size > pecs;
-	std::array < LTC6811::CellVoltage, chain_size > cell_v_buff;
+	std::array < std::array < LTC6811::CellVoltage, chain_size >, 4 > cell_v_buff;
 
-	auto calcVoltages = [&](size_t stage)
-		{
-			for(size_t i = 0; i < chain_size; i++)
-			{
-				//TODO: cos innego ogarnąć jak pec error?
-				//bo imo zwracanie -1 jest takie mało optymalne?
-				if(pecs[i] == PecStatus::Error)
-				{
-					status = LtcCtrlStatus::PecError;
-					for(size_t j = 0; j < 3; j ++)
-						vol[i][j + stage] = -1.f;
-				}
-				else
-				{
-					for(size_t j = 0; j < 3; j ++)
-						vol[i][j + stage] = LTC6811::CellVConv(cell_v_buff[i].cell[j].val);
-				}
-			}
-		};
-
+	gpio.activate();
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
 
-	while(pollAdcStatus() == PollStatus::Busy)
-		osDelay(10);
+	//while(pollAdcStatus() == PollStatus::Busy)
+	osDelay(10);
 
-	rawRead(CMD_RDCVA, cell_v_buff, pecs);
-	calcVoltages(0);
-	rawRead(CMD_RDCVB, cell_v_buff, pecs);
-	calcVoltages(1);
-	rawRead(CMD_RDCVC, cell_v_buff, pecs);
-	calcVoltages(2);
-	rawRead(CMD_RDCVD, cell_v_buff, pecs);
-	calcVoltages(3);
+	for(size_t i = 0; i < 4; i++)
+	{
+		rawRead(CMD_RDCVA, cell_v_buff[i], pecs);
+	}
+	gpio.deactivate();
+
+	for(size_t stage = 0; stage < 4; stage++)
+	{
+		for(size_t i = 0; i < chain_size; i++)
+		{
+			//TODO: cos innego ogarnąć jak pec error?
+			//bo imo zwracanie -1 jest takie mało optymalne?
+			if(pecs[i] == PecStatus::Error)
+			{
+				status = LtcCtrlStatus::PecError;
+				for(size_t j = 0; j < 3; j ++)
+					vol[i][j + stage] = -1.f;
+			}
+			else
+			{
+				for(size_t j = 0; j < 3; j ++)
+					vol[i][j + stage] = LTC6811::CellVConv(cell_v_buff[stage][i].cell[j].val);
+			}
+		}
+	}
 
 	return status;
 }
