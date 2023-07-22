@@ -11,7 +11,7 @@
 #include "Interfaces/ILocable.hpp"
 #include "main.h"
 
-class Gpio : public ILocable
+class Gpio //: public ILocable
 {
 	public:
 		Gpio(const GPIO_TypeDef * const port, const uint32_t pin, const bool is_inverted);

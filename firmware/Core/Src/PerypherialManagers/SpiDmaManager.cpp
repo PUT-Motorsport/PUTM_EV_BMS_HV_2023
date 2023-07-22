@@ -41,10 +41,7 @@ void SpiDmaManager::addRequest(SpiDmaHandle rSpiDmaHandle)
 	xQueueSendToBack(queueHandle, &rSpiDmaHandle, portMAX_DELAY);
 	if(uxQueueMessagesWaiting(queueHandle) == 1)
 	{
-		usingLock(rSpiDmaHandle.cs, [&]()
-		{
-			rSpiDmaHandle.cs->activate();
-		});
+		rSpiDmaHandle.cs->activate();
 		if(rSpiDmaHandle.pTxData != nullptr && rSpiDmaHandle.pRxData == nullptr)
 			HAL_SPI_Transmit_DMA(rSpiDmaHandle.hspi, rSpiDmaHandle.pTxData, rSpiDmaHandle.dataSize);
 		else if(rSpiDmaHandle.pRxData != nullptr && rSpiDmaHandle.pTxData == nullptr)
@@ -78,10 +75,7 @@ inline void HAL_SPI_Handle(SPI_HandleTypeDef * hspi)
 	xQueueReceiveFromISR(queueHandle, &spiDmaHandle, &pxHigherPriorityTaskWoken);
 	yield = yield || pxHigherPriorityTaskWoken;
 
-	usingLockFromISR(spiDmaHandle.cs, [&]()
-	{
-		spiDmaHandle.cs->deactivate();
-	}, yield);
+	spiDmaHandle.cs->deactivate();
 
 	xTaskNotifyFromISR(spiDmaHandle.taskToNotify, bit31, eSetBits, &pxHigherPriorityTaskWoken);
 	yield = yield || pxHigherPriorityTaskWoken;

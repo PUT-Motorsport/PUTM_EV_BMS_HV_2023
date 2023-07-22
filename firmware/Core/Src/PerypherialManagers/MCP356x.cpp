@@ -9,9 +9,9 @@
 
 MCP3561x::MCP3561x(GpioOut cs, SPI_HandleTypeDef *hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
 {
-	cs.lock();
+	//cs.lock();
 	cs.deactivate();
-	cs.unlock();
+	//cs.unlock();
 }
 
 bool MCP3561x::statusByteOk()

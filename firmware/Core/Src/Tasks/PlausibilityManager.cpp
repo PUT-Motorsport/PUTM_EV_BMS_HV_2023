@@ -17,10 +17,7 @@ void vPlausibilityManagerTask(void *argument)
 {
 	while(true)
 	{
-		usingLock(led_ok, [&]()
-		{
-			led_ok.toggle();
-		});
+		led_ok.toggle();
 		osDelay(100);
 	}
 }

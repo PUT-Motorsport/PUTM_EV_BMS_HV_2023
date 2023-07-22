@@ -27,42 +27,69 @@ enum struct PecStatus
 	Error
 };
 
-static constexpr size_t chain_size = 1;
+enum struct PollStatus
+{
+	Busy,
+	Done
+};
 
-class LTCController
+enum struct LtcCtrlStatus
+{
+	Ok					= 0x00,
+	Error				= 0x01,
+	PecError			= 0x02,
+	RegValMismatchError = 0x03
+};
+
+static constexpr size_t chain_size = 1;
+static constexpr double undervoltage = 2.0;
+static constexpr double overvoltage = 3.0;
+
+class LtcController
 {
 	public:
-		LTCController() = delete;
-		LTCController(GpioOut gpio, SPI_HandleTypeDef* hspi);
+		LtcController() = delete;
+		LtcController(GpioOut gpio, SPI_HandleTypeDef* hspi);
 
 		/*
 		 * direct read
 		 */
 		template < class RdReg >
-		HAL_StatusTypeDef rawRead(RCmd cmd, std::array < RdReg, chain_size > &data);
+		LtcCtrlStatus rawRead(RCmd cmd, std::array < RdReg, chain_size > &data);
 
 		template < class RdReg >
-		HAL_StatusTypeDef rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status);
+		LtcCtrlStatus rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status);
 
 		/*
 		 * direct write overrides current mem
 		 */
 		template < class WrRdReg >
-		HAL_StatusTypeDef rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data);
-		HAL_StatusTypeDef rawWrite(WCmd cmd);
+		LtcCtrlStatus rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data);
+		LtcCtrlStatus rawWrite(WCmd cmd);
 
-		void wakeUp();
+		LtcCtrlStatus configure();
+		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, chain_size > &vol);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled
 		 * to be send
 		 */
 		void handleWatchDog();
+		void wakeUp();
+
+		PollStatus pollAdcStatus();
 
 	private:
 
 		SPI_HandleTypeDef* hspi;
 		GpioOut gpio;
+
+		//uint16_t(0x0fff) - 12bit mask
+		static constexpr uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(undervoltage * 625.0 - 1.0)));
+		static constexpr uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(undervoltage * 625.0)));
+
+		std::array < LTC6811::Config, chain_size > configs;
+		std::array < LTC6811::Communication, chain_size > comm_settings;
 
 		bool lock_cs;
 

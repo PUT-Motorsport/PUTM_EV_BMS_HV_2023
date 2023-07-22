@@ -5,17 +5,52 @@
  *      Author: piotr
  */
 
-#include "PerypherialManagers/LTCController.hpp"
+#include <PerypherialManagers/LtcController.hpp>
 #include "PerypherialManagers/SpiDmaManager.hpp"
 #include "PerypherialManagers/LTC6811CmdCodes.hpp"
 #include "task.h"
 
-LTCController::LTCController(GpioOut gpio, SPI_HandleTypeDef* hspi) : hspi(hspi), gpio(gpio)
+LtcController::LtcController(GpioOut gpio, SPI_HandleTypeDef* hspi) : hspi(hspi), gpio(gpio)
 {
 	gpio.deactivate();
+
+	for(auto conf : configs)
+	{
+		// set gpio pull down to OFF
+		conf.gpio1 = 1;
+		conf.gpio2 = 1;
+		conf.gpio3 = 1;
+		conf.gpio4 = 1;
+		conf.gpio5 = 1;
+		// set reference to shut down after conversion
+		conf.refon = 0;
+		// set adc clock to use higher speeds
+		conf.adcopt = 0;
+		// set all discharges to off
+		conf.dcc1 	= 0;
+		conf.dcc2 	= 0;
+		conf.dcc3 	= 0;
+		conf.dcc4 	= 0;
+		conf.dcc5 	= 0;
+		conf.dcc6 	= 0;
+		conf.dcc7 	= 0;
+		conf.dcc8 	= 0;
+		conf.dcc9 	= 0;
+		conf.dcc10 	= 0;
+		conf.dcc11 	= 0;
+		conf.dcc12 	= 0;
+		//set under voltage comparison voltage
+		conf.vuv_lsb = uint8_t(vuv & 0xff);
+		conf.vuv_msb = uint8_t((vuv >> 8) & 0x0f);
+		//set over voltage comparison voltage
+		conf.vov_lsb = uint8_t(vuv & 0x0f);
+		conf.vov_msb = uint8_t((vuv >> 4) & 0xff);
+		//set discharge time
+		conf.dcto = uint8_t(LTC6811::DischargeTime::Disable);
+	}
 }
 
-void LTCController::wakeUp()
+void LtcController::wakeUp()
 {
 	uint8_t dummy_cmd = 0;
 	SpiDmaHandle temp =
@@ -34,7 +69,7 @@ void LTCController::wakeUp()
 	osDelay(Config::twake_full);
 }
 
-void LTCController::handleWatchDog()
+void LtcController::handleWatchDog()
 {
 	//TODO: also some dummy rdcnfg?
 
@@ -53,10 +88,31 @@ void LTCController::handleWatchDog()
 	osDelay(Config::twake_full);
 }
 
-template < class WrRdReg >
-HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
+PollStatus LtcController::pollAdcStatus()
 {
-	HAL_StatusTypeDef status = HAL_OK;
+	rawWrite(CMD_PLADC);
+
+	uint8_t result;
+	SpiDmaHandle temp =
+	{
+		.taskToNotify = xTaskGetCurrentTaskHandle(),
+		.cs = &this->gpio,
+		.hspi = this->hspi,
+		.pTxData = nullptr,
+		.pRxData = &result,
+		.dataSize = 1,
+	};
+
+	SpiDmaManager::spiRequestAndWait(temp);
+
+	if(result == 0) return PollStatus::Busy;
+	return PollStatus::Done;
+}
+
+template < class WrRdReg >
+LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
 	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
@@ -71,7 +127,7 @@ HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_s
 	for(auto dit = data.rbegin(); dit != data.rend(); dit++)
 	{
 		auto sd = serializeRegisterGroup(*dit);
-		auto sd_pec = calcPEC(sd);
+		auto sd_pec = calcPEC(sd.begin(), sd.end());
 		std::copy(sd.begin(), sd.end(), stdit);
 		std::copy(sd_pec.begin(), sd_pec.end(), stdit);
 		stdit += 8;
@@ -92,9 +148,9 @@ HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_s
 	return status;
 }
 
-HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd)
+LtcCtrlStatus LtcController::rawWrite(WCmd cmd)
 {
-	HAL_StatusTypeDef status = HAL_OK;
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
 	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
@@ -121,9 +177,9 @@ HAL_StatusTypeDef LTCController::rawWrite(WCmd cmd)
 }
 
 template < class RdReg >
-HAL_StatusTypeDef LTCController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
+LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
 {
-	HAL_StatusTypeDef status = HAL_OK;
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
 	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
@@ -166,9 +222,9 @@ HAL_StatusTypeDef LTCController::rawRead(RCmd cmd, std::array < RdReg, chain_siz
 }
 
 template< class RdReg >
-HAL_StatusTypeDef LTCController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
+LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
 {
-	HAL_StatusTypeDef status = HAL_OK;
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
 	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
@@ -217,6 +273,85 @@ HAL_StatusTypeDef LTCController::rawRead(RCmd cmd, std::array < RdReg, chain_siz
 		psit++;
 	}
 
+
+	return status;
+}
+
+
+LtcCtrlStatus LtcController::configure()
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	bool status_lock = false;
+
+	rawWrite(CMD_WRCFGA, configs);
+	osDelay(1);
+	std::array < LTC6811::Config, chain_size > configs_buff;
+	std::array < PecStatus, chain_size > pecs;
+
+	rawRead(CMD_RDCFGA, configs_buff, pecs);
+
+	for(size_t i = 0; i < chain_size; i++)
+	{
+		if(not LTC6811::RegEq<Reg>(configs[i], configs_buff[i]))
+		{
+			if(!status_lock)
+			{
+				status = LtcCtrlStatus::RegValMismatchError;
+				status_lock = true;
+			}
+		}
+		if(pecs[i] == PecStatus::Error)
+		{
+			if(!status_lock)
+			{
+				status = LtcCtrlStatus::PecError;
+				status_lock = true;
+			}
+		}
+	}
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, chain_size > &vol)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	std::array < PecStatus, chain_size > pecs;
+	std::array < LTC6811::CellVoltage, chain_size > cell_v_buff;
+
+	auto calcVoltages = [&](size_t stage)
+		{
+			for(size_t i = 0; i < chain_size; i++)
+			{
+				//TODO: cos innego ogarnąć jak pec error?
+				//bo imo zwracanie -1 jest takie mało optymalne?
+				if(pecs[i] == PecStatus::Error)
+				{
+					status = LtcCtrlStatus::PecError;
+					for(size_t j = 0; j < 3; j ++)
+						vol[i][j + stage] = -1.f;
+				}
+				else
+				{
+					for(size_t j = 0; j < 3; j ++)
+						vol[i][j + stage] = LTC6811::CellVConv(cell_v_buff[i].cell[j].val);
+				}
+			}
+		};
+
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
+
+	while(pollAdcStatus() == PollStatus::Busy)
+		osDelay(10);
+
+	rawRead(CMD_RDCVA, cell_v_buff, pecs);
+	calcVoltages(0);
+	rawRead(CMD_RDCVB, cell_v_buff, pecs);
+	calcVoltages(1);
+	rawRead(CMD_RDCVC, cell_v_buff, pecs);
+	calcVoltages(2);
+	rawRead(CMD_RDCVD, cell_v_buff, pecs);
+	calcVoltages(3);
 
 	return status;
 }

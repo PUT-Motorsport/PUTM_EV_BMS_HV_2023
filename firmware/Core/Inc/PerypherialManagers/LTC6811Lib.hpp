@@ -14,6 +14,7 @@
 
 #include <cstring>
 #include <type_traits>
+#include <math.h>
 
 #include "main.h"
 
@@ -58,22 +59,20 @@ struct LTC6811
 {
 	constexpr static float cell_v_conv_coef = 0.000'1f;
 	constexpr static float tmp_conv_coef = 0.000'1f / 0.007'5f;
-	struct DataConverter
+
+	// convert ADC to cell voltage returns in [V]
+	static inline float CellVConv(uint16_t value)
 	{
-		// convert ADC to cell voltage returns in [V]
-		static inline float CellVConv(uint16_t value)
-		{
-			return float(value) * cell_v_conv_coef;
-		}
+		return float(value) * cell_v_conv_coef;
+	}
 
-		// internal die temperature returns in [*C]
-		static inline float IntTmpConv(uint16_t value)
-		{
-			return float(value) * tmp_conv_coef - 273.f;
-		}
-	};
+	// internal die temperature returns in [*C]
+	static inline float IntTmpConv(uint16_t value)
+	{
+		return float(value) * tmp_conv_coef - 273.f;
+	}
 
-	enum DischargeTime
+	enum struct DischargeTime : uint8_t
 	{
 		Disable = 0x0,
 		_0_5min = 0x1,
@@ -93,45 +92,18 @@ struct LTC6811
 		_120min	= 0xf
 	};
 
-//	config
-	struct Config
+	enum struct Gpio
 	{
-//		Write: 0 -> GPIOx Pin Pull-Down ON; 1-> GPIOx Pin Pull-Down OFF (Default)
-//		Read: 0 -> GPIOx Pin at Logic 0; 1 -> GPIOx Pin at Logic 1
-		bool gpio_control;
-//		1 -> Reference Remains Powered Up Until Watchdog Timeout
-//		0 -> Reference Shuts Down after Conversions (Default)
-		bool reference_powered_up;
-//		0 -> Selects Modes 27kHz, 7kHz or 26Hz with MD[1:0] Bits in ADC Conversion Commands (Default).
-//		1 -> Selects Modes 14kHz, 3kHz or 2kHz with MD[1:0] Bits in ADC Conversion Commands.
-		bool adc_mode_option;
-// 		Undervoltage comparison voltage (1.f - 7.5536f)
-		float undervoltage;
-// 		Overvoltage comparison voltage (0.f - 6.5536f)
-		float overvoltage;
-//		enable discharge of cell 1 - 12
-		struct
-		{
-			bool discharge_cell_1;
-			bool discharge_cell_2;
-			bool discharge_cell_3;
-			bool discharge_cell_4;
-			bool discharge_cell_5;
-			bool discharge_cell_6;
-			bool discharge_cell_7;
-			bool discharge_cell_8;
-			bool discharge_cell_9;
-			bool discharge_cell_10;
-			bool discharge_cell_11;
-			bool discharge_cell_12;
-		};
-//		discharge time
-		DischargeTime discharge_time;
-	} config;
+		_0,
+		_1,
+		_2,
+		_3,
+		_4
+	};
 
 	//data management
-	struct RegisterStructure
-	{
+	//struct Reg
+	//{
 		// config registers rd/wr
 		struct Config : public WrRdRegisterGroup
 		{
@@ -188,7 +160,8 @@ struct LTC6811
 		{
 			struct Cell
 			{
-				uint8_t bytes[2];
+				//uint8_t bytes[2];
+				uint16_t val;
 			} cell[3];
 		};
 		// gpio[0:2] voltage A  rd
@@ -196,7 +169,8 @@ struct LTC6811
 		{
 			struct Gpio
 			{
-				uint8_t bytes[2];
+				//uint8_t bytes[2];
+				uint16_t val;
 			} gpio[3];
 		};
 		// gpio[3:4] + ref voltage A  rd
@@ -204,23 +178,29 @@ struct LTC6811
 		{
 			struct Gpio
 			{
-				uint8_t bytes[2];
+				//uint8_t bytes[2];
+				uint16_t val;
 			} gpio[2];
 			struct Ref
 			{
-				uint8_t bytes[2];
+				//uint8_t bytes[2];
+				uint16_t val;
 			} ref[2];
 		};
 		// status rd
 		struct StatusA : public RdRegisterGroup
 		{
-			uint8_t sc[2];
-			uint8_t itmp[2];
-			uint8_t va[2];
+			//uint8_t sc[2];
+			uint16_t sc;
+			//uint8_t itmp[2];
+			uint16_t itmp;
+			//uint8_t va[2];
+			uint16_t va;
 		};
 		struct StatusB : public RdRegisterGroup
 		{
-			uint8_t vd[2];
+			//uint8_t vd[2];
+			uint16_t vd;
 			struct
 			{
 				uint8_t c1ov : 1;
@@ -366,11 +346,44 @@ struct LTC6811
 			};
 		};
 #endif
-	};
+	//};
 
-	LTC6811(Config config);
 
-	void overrideConfig(Config config);
+	template < class Reg >
+	static inline bool RegEq(Reg reg1, Reg reg2)
+	{
+		return reg1 == reg2;
+	}
 };
+
+template <>
+bool LTC6811::RegEq(Config cfg1, Config cfg2)
+{
+	if (cfg1.gpio1 		!= cfg2.gpio1) 		return false;
+	if (cfg1.gpio2 		!= cfg2.gpio2) 		return false;
+	if (cfg1.gpio3 		!= cfg2.gpio3) 		return false;
+	if (cfg1.gpio4 		!= cfg2.gpio4) 		return false;
+	if (cfg1.gpio5 		!= cfg2.gpio5) 		return false;
+	if (cfg1.refon 		!= cfg2.refon) 		return false;
+	if (cfg1.adcopt 	!= cfg2.adcopt) 	return false;
+	if (cfg1.dcc1 		!= cfg2.dcc1) 		return false;
+	if (cfg1.dcc2 		!= cfg2.dcc2) 		return false;
+	if (cfg1.dcc3 		!= cfg2.dcc3) 		return false;
+	if (cfg1.dcc4 		!= cfg2.dcc4) 		return false;
+	if (cfg1.dcc5 		!= cfg2.dcc5) 		return false;
+	if (cfg1.dcc6 		!= cfg2.dcc6) 		return false;
+	if (cfg1.dcc7 		!= cfg2.dcc7) 		return false;
+	if (cfg1.dcc8 		!= cfg2.dcc8) 		return false;
+	if (cfg1.dcc9 		!= cfg2.dcc9) 		return false;
+	if (cfg1.dcc10 		!= cfg2.dcc10) 		return false;
+	if (cfg1.dcc11 		!= cfg2.dcc11)		return false;
+	if (cfg1.dcc12 		!= cfg2.dcc12)		return false;
+	if (cfg1.vuv_lsb 	!= cfg2.vuv_lsb) 	return false;
+	if (cfg1.vuv_msb	!= cfg2.vuv_msb) 	return false;
+	if (cfg1.vov_lsb 	!= cfg2.vov_lsb) 	return false;
+	if (cfg1.vov_msb 	!= cfg2.vov_msb)	return false;
+	if (cfg1.dcto 		!= cfg2.dcto) 		return false;
+	return true;
+}
 
 #endif /* INC_PUTM_LTC_6811_LTC6804_LIB_LTC6811LIB_HPP_ */
