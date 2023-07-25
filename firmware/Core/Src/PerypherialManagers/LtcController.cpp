@@ -220,15 +220,13 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 
 void LtcController::wakeUp()
 {
-	WCmd dummy { 0x0000 };
-
-	gpio.activate();
-	for(size_t i = 0; i < 2; i++)
+	for(size_t i = 0; i < 4; i++)
 	{
-		rawWrite(dummy);
-		osDelay(Config::twake_full);
+		gpio.activate();
+		osDelay(1);
+		gpio.deactivate();
+		osDelay(1);
 	}
-	gpio.deactivate();
 }
 
 void LtcController::handleWatchDog()
@@ -322,12 +320,12 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
 
 	//while(pollAdcStatus() == PollStatus::Busy)
-	osDelay(1);
+	osDelay(10);
 
-	for(size_t i = 0; i < 4; i++)
-	{
-		rawRead(CMD_RDCVA, cell_v_buff[i], pecs);
-	}
+	rawRead(CMD_RDCVA, cell_v_buff[0], pecs);
+	rawRead(CMD_RDCVB, cell_v_buff[1], pecs);
+	rawRead(CMD_RDCVC, cell_v_buff[2], pecs);
+	rawRead(CMD_RDCVD, cell_v_buff[3], pecs);
 	gpio.deactivate();
 
 	for(size_t stage = 0; stage < 4; stage++)
@@ -336,6 +334,7 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 		{
 			//TODO: cos innego ogarnąć jak pec error?
 			//bo imo zwracanie -1 jest takie mało optymalne?
+			//FIXME: coś średnio działa
 			if(pecs[i] == PecStatus::Error)
 			{
 				status = LtcCtrlStatus::PecError;

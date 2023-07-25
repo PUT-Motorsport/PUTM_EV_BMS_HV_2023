@@ -25,5 +25,4 @@ void vLTCManagerTask(void *argument)
 		auto dr_v_status = ltc_ctrl.readVoltages(volts);
 		osDelay(100);
 	}
-
 }
