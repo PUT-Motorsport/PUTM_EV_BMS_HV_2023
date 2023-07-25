@@ -18,11 +18,11 @@ void vLTCManagerTask(void *argument)
 	LtcController ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
 
 	ltc_ctrl.wakeUp();
-	auto cfg_status = ltc_ctrl.configure();
+	ltc_ctrl.configure();
 
 	while(true)
 	{
-		auto dr_v_status = ltc_ctrl.readVoltages(volts);
+		ltc_ctrl.readVoltages(volts);
 		osDelay(100);
 	}
 }

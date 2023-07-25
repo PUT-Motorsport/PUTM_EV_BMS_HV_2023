@@ -18,6 +18,7 @@
 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <PerypherialManagers/SpiDmaController.hpp>
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
@@ -34,7 +35,6 @@
 /* USER CODE BEGIN Includes */
 #include "app_freertos.h"
 #include "PerypherialManagers/Gpio.hpp"
-#include "PerypherialManagers/SpiDmaController.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

@@ -44,7 +44,7 @@ struct RCmd
 template < typename Cmd >
 std::array < uint8_t, 2 > serializeCmd(Cmd cmd)
 {
-	return { uint8_t(cmd.value >> 8) , uint8_t(cmd.value) };
+	return { uint8_t(cmd.value >> 8), uint8_t(cmd.value) };
 }
 
 // or operator for 16bit sized enums

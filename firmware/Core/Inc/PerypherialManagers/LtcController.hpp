@@ -43,7 +43,7 @@ enum struct LtcCtrlStatus
 
 static constexpr size_t chain_size = 1;
 static constexpr double undervoltage = 2.0;
-static constexpr double overvoltage = 4.0;
+static constexpr double overvoltage = 3.0;
 
 class LtcController
 {
