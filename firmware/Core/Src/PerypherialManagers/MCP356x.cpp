@@ -7,11 +7,9 @@
 
 #include "PerypherialManagers/MCP356x.hpp"
 
-MCP3561x::MCP3561x(GpioOut cs, SPI_HandleTypeDef *hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
+MCP3561x::MCP3561x(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
 {
-	//cs.lock();
 	cs.deactivate();
-	//cs.unlock();
 }
 
 bool MCP3561x::statusByteOk()
@@ -21,21 +19,11 @@ bool MCP3561x::statusByteOk()
 
 void MCP3561x::poolSatusByte()
 {
-	//tx_buffer[0] = prepCmd(MCP356xCommand::PoolStatus);
 	uint8_t tx_buff = prepCmd(MCP356xCommand::PoolStatus);
 	uint8_t rx_buff;
 
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = &this->cs,
-		.hspi = this->hspi,
-		.pTxData = &tx_buff,
-		.pRxData = &rx_buff,
-		.dataSize = 1
-	};
-
-	SpiDmaController::spiRequestAndWait(temp);
+	SpiTxRxRequest request(cs, hspi, &tx_buff, &rx_buff, 1);
+	SpiDmaController::spiRequestAndWait(request);
 
 	status_byte = rx_buff;
 }

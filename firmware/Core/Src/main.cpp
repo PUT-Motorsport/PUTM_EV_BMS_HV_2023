@@ -18,7 +18,6 @@
 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <PerypherialManagers/SpiDmaController.hpp>
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
@@ -35,6 +34,7 @@
 /* USER CODE BEGIN Includes */
 #include "app_freertos.h"
 #include "PerypherialManagers/Gpio.hpp"
+#include "PerypherialManagers/SpiDmaController.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -122,7 +122,7 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC3_Init();
   /* USER CODE BEGIN 2 */
-  SpiDmaController::initSpiDmaManager();
+  //SpiDmaController::initSpiDmaManager();
   led_ok.deactivate();
   led_warning.deactivate();
   led_error.deactivate();

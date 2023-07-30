@@ -18,6 +18,7 @@ PERFORMANCE OF THIS SOFTWARE.
 #include <main.h>
 #include <array>
 #include <cstring>
+#include <tuple>
 
 #define USE_PREGENERATED_PEC_TABLE 1
 
@@ -103,7 +104,7 @@ constexpr static uint16_t pec_table[] =
 //	return { uint8_t(remainder >> 8), uint8_t(remainder)} ;
 //}
 
-std::array < uint8_t, 2 > calcPEC (uint8_t const *begin, uint8_t const *end);
+std::tuple< uint8_t, uint8_t > calcPEC (uint8_t const *begin, uint8_t const *end);
 #endif /* INC_PUTM_LTC_6811_LTC6804_LIB_PEC15_HPP_ */
 
 /*

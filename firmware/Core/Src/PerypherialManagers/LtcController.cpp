@@ -9,82 +9,70 @@
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include "PerypherialManagers/LTC6811CmdCodes.hpp"
 #include "task.h"
+#include <tuple>
 
-LtcController::LtcController(GpioOut gpio, SPI_HandleTypeDef* hspi) : hspi(hspi), gpio(gpio)
+
+LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), cs(cs)
 {
-	gpio.deactivate();
+	cs.deactivate();
 
-	for(auto conf : configs)
+	for(auto cfg : configs)
 	{
 		// set gpio pull down to OFF
-		conf.gpio1 = 1;
-		conf.gpio2 = 1;
-		conf.gpio3 = 1;
-		conf.gpio4 = 1;
-		conf.gpio5 = 1;
+		cfg.gpio1 = 1;
+		cfg.gpio2 = 1;
+		cfg.gpio3 = 1;
+		cfg.gpio4 = 1;
+		cfg.gpio5 = 1;
 		// set reference to shut down after conversion
-		conf.refon = 0;
+		cfg.refon = 0;
 		// set adc clock to use higher speeds
-		conf.adcopt = 0;
+		cfg.adcopt = 0;
 		// set all discharges to off
-		conf.dcc1 	= 0;
-		conf.dcc2 	= 0;
-		conf.dcc3 	= 0;
-		conf.dcc4 	= 0;
-		conf.dcc5 	= 0;
-		conf.dcc6 	= 0;
-		conf.dcc7 	= 0;
-		conf.dcc8 	= 0;
-		conf.dcc9 	= 0;
-		conf.dcc10 	= 0;
-		conf.dcc11 	= 0;
-		conf.dcc12 	= 0;
+		cfg.dcc1 	= 0;
+		cfg.dcc2 	= 0;
+		cfg.dcc3 	= 0;
+		cfg.dcc4 	= 0;
+		cfg.dcc5 	= 0;
+		cfg.dcc6 	= 0;
+		cfg.dcc7 	= 0;
+		cfg.dcc8 	= 0;
+		cfg.dcc9 	= 0;
+		cfg.dcc10 	= 0;
+		cfg.dcc11 	= 0;
+		cfg.dcc12 	= 0;
 		//set under voltage comparison voltage
-		conf.vuv_lsb = uint8_t(vuv & 0xff);
-		conf.vuv_msb = uint8_t((vuv >> 8) & 0x0f);
+		cfg.vuv_lsb = uint8_t(vuv & 0xff);
+		cfg.vuv_msb = uint8_t((vuv >> 8) & 0x0f);
 		//set over voltage comparison voltage
-		conf.vov_lsb = uint8_t(vuv & 0x0f);
-		conf.vov_msb = uint8_t((vuv >> 4) & 0xff);
+		cfg.vov_lsb = uint8_t(vuv & 0x0f);
+		cfg.vov_msb = uint8_t((vuv >> 4) & 0xff);
 		//set discharge time
-		conf.dcto = uint8_t(LTC6811::DischargeTime::Disable);
+		cfg.dcto = uint8_t(DischargeTime::Disable);
 	}
 }
 
-template < class WrRdReg >
+template < WriteReadRegisterGroup WrRdReg >
 LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
-	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
+	std::array < uint8_t, 4 + chain_size * 8 > stxdata;
+	auto stxdit = stxdata.begin();
 
-	std::array < uint8_t, chain_size * 8 + 4 > stxdata;
-	auto stdit = stxdata.begin();
-	std::copy(scmd.begin(), scmd.end(), stdit);
-	stdit += 2;
-	std::copy(scmd_pec.begin(), scmd_pec.end(), stdit);
-	stdit += 2;
+	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
+	stxdit += 4;
 
-	for(auto dit = data.rbegin(); dit != data.rend(); dit++)
+	for(auto& d : data)
 	{
-		auto sd = serializeRegisterGroup(*dit);
-		auto sd_pec = calcPEC(sd.begin(), sd.end());
-		std::copy(sd.begin(), sd.end(), stdit);
-		std::copy(sd_pec.begin(), sd_pec.end(), stdit);
-		stdit += 8;
+		serializeRegisterGroup(stxdit, d);
+		std::tie(stxdit[6], stxdit[7]) = calcPEC(stxdit, stxdit + 6);
+		stxdit += 8;
 	}
 
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr,//&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = stxdata.begin(),
-		.pRxData = nullptr,
-		.dataSize = stxdata.size(),
-	};
-
-	SpiDmaController::spiRequestAndWait(temp);
+	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
+	SpiDmaController::spiRequestAndWait(request);
 
 	return status;
 }
@@ -93,229 +81,125 @@ LtcCtrlStatus LtcController::rawWrite(WCmd cmd)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
-	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
+	std::array < uint8_t, 4 > stxdata;
+	auto stxdit = stxdata.begin();
 
-	std::array < uint8_t,  4 > stxdata;
-	auto stdit = stxdata.begin();
-	std::copy(scmd.begin(), scmd.end(), stdit);
-	stdit += 2;
-	std::copy(scmd_pec.begin(), scmd_pec.end(), stdit);
+	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
+	stxdit += 4;
 
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr,//&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = stxdata.begin(),
-		.pRxData = nullptr,
-		.dataSize = stxdata.size(),
-	};
-
-	SpiDmaController::spiRequestAndWait(temp);
+	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
+	SpiDmaController::spiRequestAndWait(request);
 
 	return status;
 }
 
-template < class RdReg >
+template < ReadRegisterGroup RdReg >
 LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
-	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
+	std::array < uint8_t, 4 + chain_size * 8 > stxdata;
+	std::array < uint8_t, 4 + chain_size * 8 > srxdata;
+	auto stxdit = stxdata.begin();
+	auto srxdit = srxdata.begin() + 4;
 
-	std::array < uint8_t, 4 > stxdata;
-	auto stdit = stxdata.begin();
-	std::copy(scmd.begin(), scmd.end(), stdit);
-	stdit += 2;
-	std::copy(scmd_pec.begin(), scmd_pec.end(), stdit);
-	stdit += 2;
+	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
 
-	SpiDmaHandle temp =
+	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
+	SpiDmaController::spiRequestAndWait(request);
+
+	for(auto& d : data)
 	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr,//&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = stxdata.begin(),
-		.pRxData = nullptr,
-		.dataSize = stxdata.size(),
-	};
-
-	SpiDmaController::spiRequestAndWait(temp);
-
-	std::array < uint8_t, chain_size * 8 > rdata;
-
-	temp.pTxData = nullptr;
-	temp.pRxData = rdata.begin();
-	temp.dataSize = rdata.size();
-
-	SpiDmaController::spiRequestAndWait(temp);
-
-	for(auto rdit = rdata.begin(), dit = data.begin(); rdit != rdata.end() && dit != data.end();)
-	{
-		*dit = deserializeRegisterGroup<RdReg>(rdit);
-		dit++;
-		rdit += 8;
+		d = deserializeRegisterGroup< RdReg >(srxdit);
+		srxdit += 8;
 	}
 
 	return status;
 }
 
-template< class RdReg >
+template< ReadRegisterGroup RdReg >
 LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 2 > scmd = serializeCmd(cmd);
-	std::array < uint8_t, 2 > scmd_pec = calcPEC(scmd.begin(), scmd.end());
+	std::array < uint8_t, 4 + chain_size * 8 > stxdata;
+	std::array < uint8_t, 4 + chain_size * 8 > srxdata;
+	auto stxdit = stxdata.begin();
+	auto srxdit = srxdata.begin() + 4;
+	auto pecit = pec_status.begin();
 
-	std::array < uint8_t, 4 > stxdata;
-	auto stdit = stxdata.begin();
-	std::copy(scmd.begin(), scmd.end(), stdit);
-	stdit += 2;
-	std::copy(scmd_pec.begin(), scmd_pec.end(), stdit);
-	stdit += 2;
+	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
 
-	SpiDmaHandle temp =
+	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
+	SpiDmaController::spiRequestAndWait(request);
+
+	for(auto& d : data)
 	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr,//&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = stxdata.begin(),
-		.pRxData = nullptr,
-		.dataSize = stxdata.size(),
-	};
-
-	SpiDmaController::spiRequestAndWait(temp);
-
-	std::array < uint8_t, chain_size * 8 > rdata;
-
-	temp.pTxData = nullptr;
-	temp.pRxData = rdata.begin();
-	temp.dataSize = rdata.size();
-
-	SpiDmaController::spiRequestAndWait(temp);
-	auto rdit = rdata.begin();
-	auto dit = data.begin();
-	auto psit = pec_status.begin();
-	for(; rdit != rdata.end() || dit != data.end();)
-	{
-		*dit = deserializeRegisterGroup<RdReg>(rdit);
-		dit++;
-
-		auto pec = calcPEC(rdit, rdit + 6);
-		rdit += 6;
-
-		if (pec[0] != rdit[0] || pec[1] != rdit[1]) *psit = PecStatus::Error;
-		else *psit = PecStatus::Ok;
-
-		rdit += 2;
-		psit++;
+		deserializeRegisterGroup(d, srxdit);
+		auto [ pec1, pec0 ] = calcPEC(srxdit, srxdit + 6);
+		if( pec1 != srxdit[6] || pec0 != srxdit[7]) *pecit = PecStatus::Error;
+		else *pecit = PecStatus::Ok;
+		srxdit += 8;
+		pecit++;
 	}
-
 
 	return status;
 }
 
 void LtcController::wakeUp()
 {
-	uint8_t dummy_cmd = 0;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr, //&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = &dummy_cmd,
-		.pRxData = nullptr,
-		.dataSize = 1,
-	};
-
-	gpio.activate();
-	SpiDmaController::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-	SpiDmaController::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-	gpio.deactivate();
+	cs.activate();
+	osDelay(twake_full);
+	cs.deactivate();
+	osDelay(twake_full);
 }
 
 void LtcController::handleWatchDog()
 {
-	//TODO: also some dummy rdcnfg?
+	auto cmd = CMD_RDCFGA;
 
-	uint8_t dummy_cmd = 0;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr,//&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = &dummy_cmd,
-		.pRxData = nullptr,
-		.dataSize = 1,
-	};
+	std::array < uint8_t, 4 > stxdata;
+	auto stxdit = stxdata.begin();
 
-	gpio.activate();
-	SpiDmaController::spiRequestAndWait(temp);
-	osDelay(Config::twake_full);
-	gpio.deactivate();
+	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
+	stxdit += 4;
+
+	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
+	SpiDmaController::spiRequestAndWait(request);
 }
 
 PollStatus LtcController::pollAdcStatus()
 {
-	rawWrite(CMD_PLADC);
+	std::array < uint8_t, 4 + chain_size > tx;
+	std::array < uint8_t, 4 + chain_size > rx;
 
-	uint8_t result;
-	SpiDmaHandle temp =
-	{
-		.taskToNotify = xTaskGetCurrentTaskHandle(),
-		.cs = nullptr, //&this->gpio,
-		.hspi = this->hspi,
-		.pTxData = nullptr,
-		.pRxData = &result,
-		.dataSize = 1,
-	};
+	std::tie(tx[0], tx[1]) = serializeCmd(CMD_PLADC);
+	std::tie(tx[2], tx[3]) = calcPEC(tx.begin(), tx.begin() + 2);
 
-	gpio.activate();
-	SpiDmaController::spiRequestAndWait(temp);
-	gpio.deactivate();
+	SpiTxRxRequest request(cs, hspi, tx.begin(), rx.begin(), tx.size());
+	SpiDmaController::spiRequestAndWait(request);
 
-	if(result == 0) return PollStatus::Busy;
+	//fill first 4 vals since they are trash anyway
+	std::fill(rx.begin(), rx.begin() + 4, 1);
+	for(auto s : rx)
+		if(s == 0) return PollStatus::Busy;
 	return PollStatus::Done;
 }
 
 LtcCtrlStatus LtcController::configure()
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	bool status_lock = false;
 
-	std::array < LTC6811::Config, chain_size > configs_buff;
-	std::array < PecStatus, chain_size > pecs;
+	//std::array < Config, chain_size > configs_buff;
+	//std::array < PecStatus, chain_size > pecs;
 
-	gpio.activate();
+	wakeUp();
 	rawWrite(CMD_WRCFGA, configs);
-	osDelay(10);
-	rawRead(CMD_RDCFGA, configs_buff, pecs);
-	gpio.deactivate();
-
-	for(size_t i = 0; i < chain_size; i++)
-	{
-		if(not LTC6811::RegEq(configs[i], configs_buff[i]))
-		{
-			if(!status_lock)
-			{
-				status = LtcCtrlStatus::RegValMismatchError;
-				status_lock = true;
-			}
-		}
-		if(pecs[i] == PecStatus::Error)
-		{
-			if(!status_lock)
-			{
-				status = LtcCtrlStatus::PecError;
-				status_lock = true;
-			}
-		}
-	}
+	//TODO: check config? for now i threw it out
 
 	return status;
 }
@@ -323,41 +207,69 @@ LtcCtrlStatus LtcController::configure()
 LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, chain_size > &vol)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < PecStatus, chain_size > pecs;
-	std::array < std::array < LTC6811::CellVoltage, chain_size >, 4 > cell_v_buff;
+	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
+	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
 
-	gpio.activate();
+	//wakeUp();
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
 
-	//while(pollAdcStatus() == PollStatus::Busy)
 	osDelay(10);
 
-	rawRead(CMD_RDCVA, cell_v_buff[0], pecs);
-	rawRead(CMD_RDCVB, cell_v_buff[1], pecs);
-	rawRead(CMD_RDCVC, cell_v_buff[2], pecs);
-	rawRead(CMD_RDCVD, cell_v_buff[3], pecs);
-	gpio.deactivate();
+	//wakeUp();
+	rawRead(CMD_RDCVA, raw[0], pecs[0]);
+	rawRead(CMD_RDCVB, raw[1], pecs[1]);
+	rawRead(CMD_RDCVC, raw[2], pecs[2]);
+	rawRead(CMD_RDCVD, raw[3], pecs[3]);
 
-	for(size_t stage = 0; stage < 4; stage++)
+	for(size_t ltc = 0; ltc < chain_size; ltc++)
 	{
-		for(size_t i = 0; i < chain_size; i++)
+		for(size_t cell = 0; cell < 12; cell++)
 		{
-			//TODO: cos innego ogarnąć jak pec error?
-			//bo imo zwracanie -1 jest takie mało optymalne?
-			//FIXME: coś średnio działa
-			if(pecs[i] == PecStatus::Error)
-			{
-				status = LtcCtrlStatus::PecError;
-				for(size_t j = 0; j < 3; j ++)
-					vol[i][j + stage] = -1.f;
-			}
+			size_t reg = cell / 4;
+			size_t rcell = cell % 3;
+			if(pecs[reg][ltc] == PecStatus::Ok)
+				vol[ltc][cell] = convRawToU(raw[reg][ltc].cell[rcell].val);
 			else
-			{
-				for(size_t j = 0; j < 3; j ++)
-					vol[i][j + stage] = LTC6811::CellVConv(cell_v_buff[stage][i].cell[j].val);
-			}
+				vol[ltc][cell] = -1.f;
 		}
 	}
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::balance(std::array < std::array < bool, 12 >, chain_size > &bal)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	std::array < std::array < PecStatus, chain_size >, 2 > pecs;
+	std::array < std::array < CellVoltage, chain_size >, 2 > raw;
+
+	//wakeUp();
+	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
+
+	osDelay(10);
+
+	//wakeUp();
+	rawRead(CMD_RDAUXA, raw[0], pecs[0]);
+	rawRead(CMD_RDAUXB, raw[1], pecs[1]);
+
+//	for(size_t ltc = 0; ltc < chain_size; ltc++)
+//	{
+//		for(size_t temp = 0; temp < 6)
+//	}
 
 	return status;
 }

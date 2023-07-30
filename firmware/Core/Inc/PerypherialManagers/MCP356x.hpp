@@ -11,15 +11,6 @@
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include "Gpio.hpp"
 #include "PerypherialManagers/LocableResource.hpp"
-#include "etl/array.h"
-
-//using namespace etl;
-
-struct MCP356xconfig
-{
-	static inline constexpr size_t tx_buffer_size = 8;
-	static inline constexpr size_t rx_buffer_size = 8;
-};
 
 enum struct MCP356xVersion
 {
@@ -76,21 +67,15 @@ enum struct MCP356xRegisterAddress : uint8_t
 class MCP3561x
 {
 	public:
-		explicit MCP3561x(GpioOut cs, SPI_HandleTypeDef *hspi, MCP356xVersion version);
+		explicit MCP3561x(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version);
 
 		MCP356xAddress address = MCP356xAddress::_1;
 
 		MCP356xVersion version;
 
-		// TODO: do przemyślenia - to be fair można by użyć dynamicznej
-		// alokacji pamięci, skoro free rtos daje fajne rozwiązania do
-		// tego
-		// etl::array<uint8_t, MCP356xconfig::rx_buffer_size> rx_buffer;
-		// etl::array<uint8_t, MCP356xconfig::tx_buffer_size> tx_buffer;
-
 		uint8_t status_byte;
 
-		SPI_HandleTypeDef *hspi;
+		SPI_HandleTypeDef &hspi;
 
 		GpioOut cs;
 

@@ -17,9 +17,9 @@ void SpiDmaController::initSpiDmaManager()
 	xTxRxQueue3 = xQueueCreateStatic( queueSize, txRxStructSize, ucTxRxQueue3StorageArea, &xStaticTxRxQueue3 );
 }
 
-void SpiDmaController::spiRequestAndWait(SpiDmaHandle handle)
+void SpiDmaController::spiRequestAndWait(SpiRequest &request)
 {
-	addRequest(handle);
+	addRequest(request.handle);
 	waitForNotify();
 }
 
@@ -32,10 +32,9 @@ QueueHandle_t SpiDmaController::assignQueue(SPI_HandleTypeDef * hspi)
 	return nullptr;
 }
 
-void SpiDmaController::addRequest(SpiDmaHandle rSpiDmaHandle)
+void SpiDmaController::addRequest(SpiDmaHandle &rSpiDmaHandle)
 {
 	QueueHandle_t queueHandle = assignQueue(rSpiDmaHandle.hspi);
-	//TODO: ???
 	if(queueHandle == nullptr); //Error
 
 	xQueueSendToBack(queueHandle, &rSpiDmaHandle, portMAX_DELAY);
@@ -61,9 +60,9 @@ void SpiDmaController::waitForNotify()
 	}
 }
 
-inline void HAL_SPI_Handle(SPI_HandleTypeDef * hspi)
+void HAL_SPI_Handle(SPI_HandleTypeDef * hspi)
 {
-	SpiDmaHandle spiDmaHandle = { 0 };
+	SpiDmaController::SpiDmaHandle spiDmaHandle = { 0 };
 	QueueHandle_t queueHandle = SpiDmaController::assignQueue(hspi);
 	//TODO: ???
 	if(queueHandle == nullptr); //Error
@@ -97,3 +96,26 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi)
 {
 	HAL_SPI_Handle(hspi);
 }
+
+SpiDmaController::StaticInitializer::StaticInitializer()
+{
+	SpiDmaController::initSpiDmaManager();
+}
+
+SpiRequest::SpiRequest(TaskHandle_t taskToNotify, GpioOut const *cs, SPI_HandleTypeDef const *hspi, uint8_t *pTxData, uint8_t *pRxData, size_t dataSize) :
+handle(taskToNotify, (GpioOut*)cs, (SPI_HandleTypeDef*)hspi, pTxData, pRxData, dataSize) { }
+
+SpiTxRequest::SpiTxRequest(SPI_HandleTypeDef const &hspi, uint8_t *tx_begin, size_t size) :
+SpiRequest(xTaskGetCurrentTaskHandle(), nullptr, &hspi, tx_begin, nullptr, size) { }
+SpiTxRequest::SpiTxRequest(GpioOut const &cs, SPI_HandleTypeDef const &hspi, uint8_t *tx_begin, size_t size) :
+SpiRequest(xTaskGetCurrentTaskHandle(), &cs, &hspi, tx_begin, nullptr, size) { }
+
+SpiRxRequest::SpiRxRequest(SPI_HandleTypeDef const &hspi, uint8_t *rx_begin, size_t size) :
+SpiRequest(xTaskGetCurrentTaskHandle(), nullptr, &hspi, nullptr, rx_begin, size) { }
+SpiRxRequest::SpiRxRequest(GpioOut const &cs, SPI_HandleTypeDef const &hspi, uint8_t *rx_begin, size_t size) :
+SpiRequest(xTaskGetCurrentTaskHandle(), &cs, &hspi, nullptr, rx_begin, size) { }
+
+SpiTxRxRequest::SpiTxRxRequest(SPI_HandleTypeDef const &hspi, uint8_t *tx_begin, uint8_t *rx_begin, size_t size) :
+SpiRequest(xTaskGetCurrentTaskHandle(), nullptr, &hspi, tx_begin, rx_begin, size) { }
+SpiTxRxRequest::SpiTxRxRequest(GpioOut const &cs, SPI_HandleTypeDef const &hspi, uint8_t *tx_begin, uint8_t *rx_begin, size_t size) :
+SpiRequest(xTaskGetCurrentTaskHandle(), &cs, &hspi, tx_begin, rx_begin, size) { }

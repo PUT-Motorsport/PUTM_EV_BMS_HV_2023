@@ -1205,36 +1205,96 @@
       "Safeties and related"
     ],
     [
-      "38c24427-3c37-4831-960e-55ff712346ca",
-      "Air pre"
+      "67d08ddd-b8e9-4f40-a055-93108463bf84",
+      "AIR_M"
     ],
     [
-      "e87e7bdc-77a9-4d43-9131-3ac63681d4f7",
-      "Air M"
+      "649ea10f-ddf7-49be-afe9-7c2c999df872",
+      "AIR_PRE"
     ],
     [
-      "6f618cd5-81b5-423e-a062-dd87d05af169",
-      "Air P"
+      "9e653d28-f1c3-45a5-9d43-63c5d53de50e",
+      "OptoIO2"
     ],
     [
-      "7554c4c4-748b-4454-b2a4-dabbac5fabba",
-      "PullDown"
+      "ec6354b8-3aa0-4986-9bb0-f936060b4d56",
+      "Fan low side driver 2"
     ],
     [
-      "2e424c0e-1342-4ba9-a98a-892bba77b63e",
-      "PullDownSafety"
+      "4b9fce07-f075-4aec-bd3a-2cc8d2465a53",
+      "Fan low side driver 3"
     ],
     [
-      "2e424c0e-1342-4ba9-a98a-892bba77b63e",
-      "PullDownSafety"
+      "f0444f92-b7ef-40df-b219-ae3ca6754286",
+      "Fan low side driver 4"
     ],
     [
-      "2e424c0e-1342-4ba9-a98a-892bba77b63e",
-      "PullDownSafety"
+      "3bdf3e63-db06-4489-843c-40336b7b22f8",
+      "Fan low side driver 5"
     ],
     [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
       "Memory"
+    ],
+    [
+      "daf8b322-01dd-446b-9474-a54548001751",
+      "Fan low side driver 6"
+    ],
+    [
+      "66c3869d-de11-4d8d-b4de-9d98c32ec205",
+      "Power"
+    ],
+    [
+      "2858aedd-8480-47be-b5f3-f06b807d82d6",
+      "Fan low side driver 7"
+    ],
+    [
+      "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
+      "Communication"
+    ],
+    [
+      "a48618af-dcf7-4729-8090-6fc5457faac9",
+      "LTC 1 Iso Com"
+    ],
+    [
+      "d53c4c5b-a4f8-4654-804b-b1333b9d4506",
+      "LTC 2 Iso Com"
+    ],
+    [
+      "d3d45b10-2d5f-4953-9ccf-4b0c82a2ee03",
+      "Settings"
+    ],
+    [
+      "ba7f6eba-eb84-4567-9005-77208e6eb457",
+      "Fan drivers"
+    ],
+    [
+      "ce1d9a8b-d4b7-4d85-81bb-9249ce3cc6c9",
+      "Fan low side driver 1"
+    ],
+    [
+      "9303788e-9b51-4c30-8dd4-36d461f60057",
+      "OptoIO3"
+    ],
+    [
+      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
+      "Measurements"
+    ],
+    [
+      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
+      "AIR_P"
+    ],
+    [
+      "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",
+      "Isolated acu measurement"
+    ],
+    [
+      "6b03d8c8-5f6c-4244-9202-23821031eb5e",
+      "Isolated car measurement"
+    ],
+    [
+      "0cfbae80-dcae-461f-a490-df9e44932062",
+      "OptoIO1"
     ]
   ],
   "text_variables": {}

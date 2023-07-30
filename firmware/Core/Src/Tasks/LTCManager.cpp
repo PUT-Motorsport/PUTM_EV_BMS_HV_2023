@@ -10,14 +10,14 @@
 #include "main.h"
 #include "PerypherialManagers/Gpio.hpp"
 
-static SPI_HandleTypeDef * hspi = &hspi2;
-static std::array < std::array < float, 12 >, 1> volts;
+static SPI_HandleTypeDef &hspi = hspi2;
+static std::array < std::array < float, 12 >, chain_size> volts;
 
 void vLTCManagerTask(void *argument)
 {
 	LtcController ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
 
-	ltc_ctrl.wakeUp();
+	//ltc_ctrl.wakeUp();
 	ltc_ctrl.configure();
 
 	while(true)

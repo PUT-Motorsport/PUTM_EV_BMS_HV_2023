@@ -27,10 +27,16 @@
 #include <bitset>
 #include <type_traits>
 #include <array>
+#include <cstring>
+
+#include <tuple>
+
+#define LTC6804_COMPATIBLE_ONLY 0
 
 //using Word = std::bitset< 16 >;
 // W/Rcmd wraps a value useful for discerning the
 // required value in functions / methods
+
 struct WCmd
 {
 	uint16_t value;
@@ -41,21 +47,20 @@ struct RCmd
 	uint16_t value;
 };
 
-template < typename Cmd >
-std::array < uint8_t, 2 > serializeCmd(Cmd cmd)
+template < typename T >
+concept LtcCommand = std::is_base_of< WCmd, T >::value || std::is_base_of< RCmd, T >::value && sizeof(T) == 2;
+
+template < LtcCommand Cmd >
+std::tuple< uint8_t, uint8_t > serializeCmd(Cmd cmd)
 {
 	return { uint8_t(cmd.value >> 8), uint8_t(cmd.value) };
 }
 
 // or operator for 16bit sized enums
-template
-<
-	typename T,
-	std::enable_if_t
-	<
-		std::is_enum_v<T> && sizeof(T) == 2,
-	bool> = true
->
+template < typename T >
+concept Enum = std::is_enum< T >::value;
+
+template < Enum T >
 constexpr static inline uint16_t operator | (uint16_t n, T e)
 {
 	return static_cast<uint16_t>(e) | n;
@@ -67,7 +72,7 @@ constexpr static inline uint16_t operator | (uint16_t n, T e)
  */
 enum struct Mode : uint16_t
 {
-#if not LTC6804_COMPATIBLE_ONLY == 1
+#if LTC6804_COMPATIBLE_ONLY == 0
 	Slow 		= 0b00'00'0000000,
 #endif
 	Fast 		= 0b00'01'0000000,
@@ -104,8 +109,8 @@ enum struct Cell : uint16_t
  */
 enum struct Pull : uint16_t
 {
-	down 		= 0b0000'0'000000,
-	up 			= 0b0000'1'000000
+	Down 		= 0b0000'0'000000,
+	Up 			= 0b0000'1'000000
 };
 
 /*
@@ -141,6 +146,26 @@ enum struct StatusGroup : uint16_t
 	ITMP 		= 0b00000000'010,
 	VA 			= 0b00000000'011,
 	VD 			= 0b00000000'100
+};
+
+enum struct DischargeTime : uint8_t
+{
+	Disable = 0x0,
+	_0_5min = 0x1,
+	_1min	= 0x2,
+	_2min	= 0x3,
+	_3min	= 0x4,
+	_4min 	= 0x5,
+	_5min	= 0x6,
+	_10min 	= 0x7,
+	_15min	= 0x8,
+	_20min	= 0x9,
+	_30min 	= 0xa,
+	_40min	= 0xb,
+	_60min	= 0xc,
+	_75min	= 0xd,
+	_90min	= 0xe,
+	_120min	= 0xf
 };
 
 /*
