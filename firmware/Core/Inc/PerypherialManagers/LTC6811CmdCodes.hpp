@@ -48,7 +48,7 @@ struct RCmd
 };
 
 template < typename T >
-concept LtcCommand = std::is_base_of< WCmd, T >::value || std::is_base_of< RCmd, T >::value && sizeof(T) == 2;
+concept LtcCommand = std::is_base_of< WCmd, T >::value or std::is_base_of< RCmd, T >::value and sizeof(T) == 2;
 
 template < LtcCommand Cmd >
 std::tuple< uint8_t, uint8_t > serializeCmd(Cmd cmd)

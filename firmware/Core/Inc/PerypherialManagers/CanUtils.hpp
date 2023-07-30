@@ -12,5 +12,4 @@
 
 bool startCan(FDCAN_HandleTypeDef &hfdcan);
 
-
 #endif /* INC_CAN_UTILS_HPP_ */

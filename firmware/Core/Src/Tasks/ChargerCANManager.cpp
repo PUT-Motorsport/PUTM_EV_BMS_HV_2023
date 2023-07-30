@@ -8,13 +8,14 @@
 #include "app_freertos.h"
 #include "PerypherialManagers/Charger.hpp"
 #include "main.h"
-#include "can_utils.hpp"
+#include "PerypherialManagers/CanUtils.hpp"
+#include "fdcan.h"
 
-extern FDCAN_HandleTypeDef hfdcan2;
+FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 
 void vChargerCANManagerTask(void *argument)
 {
-	startCan(hfdcan2);
+	startCan(hfdcan);
 	bool charging_enable{false};
 	float charge_voltage = 135.0f * 4.15f;
 	float charge_current = 2.0f;

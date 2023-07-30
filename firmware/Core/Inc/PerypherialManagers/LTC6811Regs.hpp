@@ -269,10 +269,10 @@ struct Pwm : public IWriteReadRegisterGroup
 #endif
 
 template < typename RegisterGroup >
-concept WriteReadRegisterGroup = std::is_base_of<IWriteReadRegisterGroup, RegisterGroup>::value && (sizeof(RegisterGroup) == 6);
+concept WriteReadRegisterGroup = std::is_base_of<IWriteReadRegisterGroup, RegisterGroup>::value and (sizeof(RegisterGroup) == 6);
 
 template < typename RegisterGroup >
-concept ReadRegisterGroup = std::is_base_of<IReadRegisterGroup, RegisterGroup>::value && (sizeof(RegisterGroup) == 6);
+concept ReadRegisterGroup = std::is_base_of<IReadRegisterGroup, RegisterGroup>::value and (sizeof(RegisterGroup) == 6);
 
 template < WriteReadRegisterGroup RegisterGroup >
 void serializeRegisterGroup(uint8_t *destination, RegisterGroup &source)
