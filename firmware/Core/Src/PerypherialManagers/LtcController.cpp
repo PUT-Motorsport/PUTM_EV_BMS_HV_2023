@@ -11,6 +11,7 @@
 #include "task.h"
 #include <tuple>
 
+using namespace LTC6811;
 
 LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), cs(cs)
 {
@@ -254,8 +255,12 @@ LtcCtrlStatus LtcController::balance(std::array < std::array < bool, 12 >, chain
 LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, chain_size >, 2 > pecs;
-	std::array < std::array < CellVoltage, chain_size >, 2 > raw;
+	//std::array < std::array < PecStatus, chain_size >, 2 > pecs;
+	//std::array < std::array < CellVoltage, chain_size >, 2 > raw;
+	std::array < PecStatus, chain_size > pec_a;
+	std::array < PecStatus, chain_size > pec_b;
+	std::array < AuxilliaryVoltageA, chain_size > aux_a;
+	std::array < AuxilliaryVoltageB, chain_size > aux_b;
 
 	//wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
@@ -263,13 +268,30 @@ LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >,
 	osDelay(10);
 
 	//wakeUp();
-	rawRead(CMD_RDAUXA, raw[0], pecs[0]);
-	rawRead(CMD_RDAUXB, raw[1], pecs[1]);
+	rawRead(CMD_RDAUXA, aux_a, pecs[0]);
+	rawRead(CMD_RDAUXB,	aux_b, pecs[1]);
 
-//	for(size_t ltc = 0; ltc < chain_size; ltc++)
-//	{
-//		for(size_t temp = 0; temp < 6)
-//	}
+	for(size_t ltc = 0; ltc < chain_size; ltc++)
+	{
+		for(size_t gpio = 0; gpio < 3; gpio++)
+		{
+			if(pec_a[ltc] != PecStatus::Ok)
+				aux[ltc][gpio] = -1.f;
+			else
+				aux[ltc][gpio] = convRawToGT(aux_a[ltc].gpio[gpio]);
+		}
+		for(size_t gpio = 0; gpio < 2; gpio++)
+		{
+			if(pec_b[ltc] != PecStatus::Ok)
+				aux[ltc][gpio] = -1.f;
+			else
+				aux[ltc][gpio] = convRawToGT(aux_b[ltc].gpio[gpio]);
+		}
+		if(pec_b[ltc] != PecStatus::Ok)
+			aux[ltc][gpio] = -1.f;
+		else
+			aux[ltc][gpio] = convRawToU(aux_b[ltc].ref);
+	}
 
 	return status;
 }

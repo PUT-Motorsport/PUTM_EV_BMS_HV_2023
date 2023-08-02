@@ -61,18 +61,18 @@ class LtcController
 		/*
 		 * direct read
 		 */
-		template < ReadRegisterGroup RdReg >
-		LtcCtrlStatus rawRead(RCmd cmd, std::array < RdReg, chain_size > &data);
+		template < LTC6811::ReadRegisterGroup RdReg >
+		LtcCtrlStatus rawRead(LTC6811::RCmd cmd, std::array < RdReg, chain_size > &data);
 
-		template < ReadRegisterGroup RdReg >
-		LtcCtrlStatus rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status);
+		template < LTC6811::ReadRegisterGroup RdReg >
+		LtcCtrlStatus rawRead(LTC6811::RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status);
 
 		/*
 		 * direct write overrides current mem
 		 */
-		template < WriteReadRegisterGroup WrRdReg >
-		LtcCtrlStatus rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data);
-		LtcCtrlStatus rawWrite(WCmd cmd);
+		template < LTC6811::WriteReadRegisterGroup WrRdReg >
+		LtcCtrlStatus rawWrite(LTC6811::WCmd cmd, std::array< WrRdReg, chain_size > const &data);
+		LtcCtrlStatus rawWrite(LTC6811::WCmd cmd);
 
 		LtcCtrlStatus configure();
 		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, chain_size > &vol);
@@ -97,6 +97,7 @@ class LtcController
 		constexpr static uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(undervoltage * 625.0 - 1.0)));
 		constexpr static uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(undervoltage * 625.0)));
 		constexpr static float u_conv_coef = 0.000'1f;
+		constexpr static float g_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
 
 		// convert ADC to cell voltage returns in [V]
@@ -111,7 +112,13 @@ class LtcController
 			return float(value) * t_conv_coef - 273.f;
 		}
 
-		std::array < Config, chain_size > configs;
+		// convert gpio readings to temp
+		constexpr float convRawToGT(uint16_t value)
+		{
+			return float(value) * g_conv_coef;
+		}
+
+		std::array < LTC6811::Config, chain_size > configs;
 		//std::array < Communication, chain_size > comm_settings;
 
 		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(chain_size) * 0.3f)), uint32_t(1), uint32_t(UINT32_MAX));

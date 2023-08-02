@@ -5,12 +5,13 @@
  *      Author: piotr
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_MCP356X_HPP_
-#define INC_PERYPHERIALMANAGERS_MCP356X_HPP_
+#ifndef INC_PERYPHERIALMANAGERS_MCP356CONTROLLER_HPP_
+#define INC_PERYPHERIALMANAGERS_MCP356CONTROLLER_HPP_
 
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include "Gpio.hpp"
 #include "PerypherialManagers/LocableResource.hpp"
+#include "PerypherialManagers/MCP356xRegs.hpp"
 
 enum struct MCP356xVersion
 {
@@ -64,16 +65,16 @@ enum struct MCP356xRegisterAddress : uint8_t
 	CRCCFG = 	0b00'1111'00,
 };
 
-class MCP3561x
+class MCP356Controller
 {
 	public:
-		explicit MCP3561x(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version);
+		explicit MCP356Controller(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version);
 
-		MCP356xAddress address = MCP356xAddress::_1;
+		constexpr static MCP356xAddress address = MCP356xAddress::_1;
 
 		MCP356xVersion version;
 
-		uint8_t status_byte;
+		MCP356x::StatusByte status_byte;
 
 		SPI_HandleTypeDef &hspi;
 
@@ -84,10 +85,19 @@ class MCP3561x
 		uint8_t prepCmd(MCP356xCommand cmd);
 		uint8_t prepCmd(MCP356xRegisterAddress reg_addr, MCP356xCommandType type);
 
-		void poolSatusByte();
+		MCP356x::StatusByte poolSatusByte();
+
+		void configure(MCP356x::Config config);
+
+		void request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair);
+		bool dataReady();
+		uint32_t readData();
 
 		//SpiDmaHandle prepReqPoolStatusByte();
 	protected:
+		MCP356x::Config config;
+
+		//std::array < uint32_t*, 16 > binded_values;
 };
 
-#endif /* INC_PERYPHERIALMANAGERS_MCP356X_HPP_ */
+#endif /* INC_PERYPHERIALMANAGERS_MCP356CONTROLLER_HPP_ */
