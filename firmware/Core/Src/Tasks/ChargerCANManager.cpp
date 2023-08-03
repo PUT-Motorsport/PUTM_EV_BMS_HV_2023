@@ -2,16 +2,21 @@
  * ChargerCANManager.cpp
  *
  *  Created on: Jul 4, 2023
- *      Author: piotr
+ *      Author: jan
  */
 
-#include "app_freertos.h"
-#include "PerypherialManagers/Charger.hpp"
-#include "main.h"
 #include "PerypherialManagers/CanUtils.hpp"
+#include "PerypherialManagers/Charger.hpp"
+#include "app_freertos.h"
 #include "fdcan.h"
+#include "main.h"
 
-FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+
+bool charger_connected()
+{
+	return not HAL_GPIO_ReadPin(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin);
+}
 
 void vChargerCANManagerTask(void *argument)
 {
@@ -23,20 +28,24 @@ void vChargerCANManagerTask(void *argument)
 
 	while (true)
 	{
-		bool charger_connected = not HAL_GPIO_ReadPin(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin);
-		if(charger_connected){
+		if (charger_connected())
+		{
 			osDelay(100);
-			charger_rx.update();
+
+			// TODO select balance cell
+
+			// TODO change charing current if balancing
+
+			while (get_can_fifo_message_count(hfdcan))
+			{
+				charger_rx.update();
+			}
 			ChargerCanTxMessage frame{charge_voltage, charge_current, charging_enable};
 			frame.send();
 		}
-		else {
-			osDelay(3000);
+		else
+		{
+			osDelay(1000);
 		}
-
 	}
 }
-
-
-
-

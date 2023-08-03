@@ -72,13 +72,13 @@ class MCP356Controller
 
 		constexpr static MCP356xAddress address = MCP356xAddress::_1;
 
-		MCP356xVersion version;
-
 		MCP356x::StatusByte status_byte;
+
+		GpioOut cs;
 
 		SPI_HandleTypeDef &hspi;
 
-		GpioOut cs;
+		MCP356xVersion version;
 
 		bool statusByteOk();
 

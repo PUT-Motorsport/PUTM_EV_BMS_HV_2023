@@ -43,3 +43,9 @@ bool startCan(FDCAN_HandleTypeDef &hfdcan){
 		}
 		return true;
 }
+
+
+
+uint32_t get_can_fifo_message_count(FDCAN_HandleTypeDef &hfdcan){
+	return HAL_FDCAN_GetRxFifoFillLevel(&hfdcan, FDCAN_RX_FIFO0);
+}
