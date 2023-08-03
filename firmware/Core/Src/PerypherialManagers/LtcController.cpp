@@ -17,7 +17,7 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 {
 	cs.deactivate();
 
-	for(auto cfg : configs)
+	for(auto &cfg : configs)
 	{
 		// set gpio pull down to OFF
 		cfg.gpio1 = 1;
@@ -30,18 +30,18 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 		// set adc clock to use higher speeds
 		cfg.adcopt = 0;
 		// set all discharges to off
-		cfg.dcc1 	= 0;
-		cfg.dcc2 	= 0;
-		cfg.dcc3 	= 0;
-		cfg.dcc4 	= 0;
-		cfg.dcc5 	= 0;
-		cfg.dcc6 	= 0;
-		cfg.dcc7 	= 0;
-		cfg.dcc8 	= 0;
-		cfg.dcc9 	= 0;
-		cfg.dcc10 	= 0;
-		cfg.dcc11 	= 0;
-		cfg.dcc12 	= 0;
+		cfg.dcc1 	= 1;
+		cfg.dcc2 	= 1;
+		cfg.dcc3 	= 1;
+		cfg.dcc4 	= 1;
+		cfg.dcc5 	= 1;
+		cfg.dcc6 	= 1;
+		cfg.dcc7 	= 1;
+		cfg.dcc8 	= 1;
+		cfg.dcc9 	= 1;
+		cfg.dcc10 	= 1;
+		cfg.dcc11 	= 1;
+		cfg.dcc12 	= 1;
 		//set under voltage comparison voltage
 		cfg.vuv_lsb = uint8_t(vuv & 0xff);
 		cfg.vuv_msb = uint8_t((vuv >> 8) & 0x0f);
@@ -49,7 +49,7 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 		cfg.vov_lsb = uint8_t(vuv & 0x0f);
 		cfg.vov_msb = uint8_t((vuv >> 4) & 0xff);
 		//set discharge time
-		cfg.dcto = uint8_t(DischargeTime::Disable);
+		cfg.dcto = uint8_t(DischargeTime::_0_5min);
 	}
 }
 
@@ -292,6 +292,33 @@ LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >,
 		else
 			aux[ltc][5] = convRawToU(aux_b[ltc].ref.val);
 	}
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+
+
+	for(size_t i = 0; i < chain_size; i++)
+	{
+		configs[i].dcc1 	= dis[i][0];
+		configs[i].dcc2 	= dis[i][1];
+		configs[i].dcc3 	= dis[i][2];
+		configs[i].dcc4 	= dis[i][3];
+		configs[i].dcc5 	= dis[i][4];
+		configs[i].dcc6 	= dis[i][5];
+		configs[i].dcc7 	= dis[i][6];
+		configs[i].dcc8 	= dis[i][7];
+		configs[i].dcc9 	= dis[i][8];
+		configs[i].dcc10 	= dis[i][9];
+		configs[i].dcc11 	= dis[i][10];
+		configs[i].dcc12 	= dis[i][11];
+	}
+
+	wakeUp();
+	rawWrite(CMD_WRCFGA, configs);
 
 	return status;
 }

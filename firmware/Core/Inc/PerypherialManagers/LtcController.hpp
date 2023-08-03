@@ -79,6 +79,7 @@ class LtcController
 		LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
 		LtcCtrlStatus balance(std::array < std::array < bool, 12 >, chain_size > &bal);
 		LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
+		LtcCtrlStatus setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled

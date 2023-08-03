@@ -65,7 +65,7 @@ void MCP356Controller::configure(Config config)
 	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), 5);
 	SpiDmaController::spiRequestAndWait(request);
 
-	status_byte = (StatusByte)srxdata[0];
+	deserializeReg(status_byte, 1, stxdata.begin());
 }
 
 void MCP356Controller::request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair)
@@ -89,7 +89,7 @@ void MCP356Controller::request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > cha
 	request = SpiTxRxRequest(cs, hspi, &stxdata, &srxdata, 1);
 	SpiDmaController::spiRequestAndWait(request);
 
-	status_byte = (StatusByte)srxdata;
+	deserializeReg(status_byte, 1, &stxdata);
 }
 
 bool MCP356Controller::dataReady()
@@ -107,7 +107,7 @@ uint32_t MCP356Controller::readData()
 	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), 2);
 	SpiDmaController::spiRequestAndWait(request);
 
-	status_byte = (StatusByte)srxdata[0];
+	deserializeReg(status_byte, 1, stxdata.begin());
 
 	return srxdata[1];
 }
