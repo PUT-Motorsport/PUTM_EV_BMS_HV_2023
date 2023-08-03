@@ -49,8 +49,8 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 		//set over voltage comparison voltage
 		configs[i].vov_lsb = uint8_t(vuv & 0x0f);
 		configs[i].vov_msb = uint8_t((vuv >> 4) & 0xff);
-		//set discharge time
-		configs[i].dcto = uint8_t(DischargeTime::_0_5min);
+		//set soft watch dog timer discharge time (can't be used in our case)
+		configs[i].dcto = uint8_t(DischargeTime::Disable);
 	}
 }
 
@@ -153,12 +153,12 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 
 void LtcController::wakeUp()
 {
-	cs.activate();
-	osDelay(twake_full);
 	uint8_t dummy = 0;
+	cs.activate();
 	SpiTxRequest request(hspi, &dummy, 1);
 	SpiDmaController::spiRequestAndWait(request);
 	cs.deactivate();
+	osDelay(twake_full);
 }
 
 void LtcController::handleWatchDog()
@@ -215,9 +215,9 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
 
 	wakeUp();
-	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
 
-	//osDelay(10);
+	osDelay(tadc);
 
 	wakeUp();
 	rawRead(CMD_RDCVA, raw[0], pecs[0]);
@@ -232,7 +232,7 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	{
 		for(size_t cell = 0; cell < 12; cell++)
 		{
-			size_t reg = cell / 4;
+			size_t reg = cell / 3;
 			size_t rcell = cell % 3;
 			if(pecs[reg][ltc] == PecStatus::Ok)
 				vol[ltc][cell] = convRawToU(raw[reg][ltc].cell[rcell].val);
@@ -261,20 +261,19 @@ LtcCtrlStatus LtcController::balance(std::array < std::array < bool, 12 >, chain
 LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	//std::array < std::array < PecStatus, chain_size >, 2 > pecs;
-	//std::array < std::array < CellVoltage, chain_size >, 2 > raw;
 	std::array < PecStatus, chain_size > pec_a;
 	std::array < PecStatus, chain_size > pec_b;
 	std::array < AuxilliaryVoltageA, chain_size > aux_a;
 	std::array < AuxilliaryVoltageB, chain_size > aux_b;
 
-	//wakeUp();
+	wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
 
-	osDelay(10);
+	osDelay(tadc);
 
-	//wakeUp();
+	wakeUp();
 	rawRead(CMD_RDAUXA, aux_a, pec_a);
+	wakeUp();
 	rawRead(CMD_RDAUXB,	aux_b, pec_b);
 
 	for(size_t ltc = 0; ltc < chain_size; ltc++)

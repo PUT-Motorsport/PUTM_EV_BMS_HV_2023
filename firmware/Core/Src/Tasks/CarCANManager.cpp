@@ -11,7 +11,7 @@
 #include "app_freertos.h"
 #include "fdcan.h"
 #include "main.h"
-#include "stackData.hpp"
+#include <StackData.hpp>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 
@@ -24,13 +24,15 @@ auto voltages_message(size_t &cell_index)
 		return static_cast<uint16_t>(voltage * 1'000 - 2'850);
 	};
 
-	const PUTM_CAN::BMS_HV_cell_voltages frame = {
+	const PUTM_CAN::BMS_HV_cell_voltages frame =
+	{
 		.cell_start = static_cast<uint8_t>(cell_index),
 		.v_cell_start = voltage_to_can(fsd.ltcData.volt.at(cell_index)),
 		.v_cell_start_plus_1 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 1)),
 		.v_cell_start_plus_2 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 2)),
 		.v_cell_start_plus_3 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 3)),
-		.cell_end = static_cast<uint8_t>(cell_index + 3)};
+		.cell_end = static_cast<uint8_t>(cell_index + 3)
+	};
 
 	if (cell_index + 4 < fsd.ltcData.volt.size())
 	{

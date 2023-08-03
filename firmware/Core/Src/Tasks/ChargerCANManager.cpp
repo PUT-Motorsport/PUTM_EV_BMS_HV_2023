@@ -33,7 +33,7 @@ void vChargerCANManagerTask(void *argument)
 
 			// TODO change charing current if balancing
 
-			while (get_can_fifo_message_count(hfdcan))
+			while (getCanFifoMessageCount(hfdcan))
 			{
 				charger_rx.update();
 			}

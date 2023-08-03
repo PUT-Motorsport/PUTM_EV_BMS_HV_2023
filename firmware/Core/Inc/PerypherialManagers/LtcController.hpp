@@ -21,10 +21,6 @@
 #include <algorithm>
 #include <spi.h>
 
-static constexpr size_t chain_size = 15;
-static constexpr float undervoltage = 2.f;
-static constexpr float overvoltage = 4.f;
-
 enum struct PecStatus
 {
 	Ok,
@@ -100,6 +96,8 @@ class LtcController
 		constexpr static float u_conv_coef = 0.000'1f;
 		constexpr static float g_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
+		constexpr static float twake_full_coef = 0.2f;
+		constexpr static size_t tadc = 15;
 
 		// convert ADC to cell voltage returns in [V]
 		constexpr float convRawToU(uint16_t value)
@@ -122,7 +120,7 @@ class LtcController
 		std::array < LTC6811::Config, chain_size > configs;
 		//std::array < Communication, chain_size > comm_settings;
 
-		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(chain_size) * 0.3f)), uint32_t(1), uint32_t(UINT32_MAX));
+		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(chain_size) * twake_full_coef)), uint32_t(1), uint32_t(UINT32_MAX));
 };
 
 #endif /* INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_ */

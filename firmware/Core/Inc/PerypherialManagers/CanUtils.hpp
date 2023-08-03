@@ -12,7 +12,6 @@
 
 bool startCan(FDCAN_HandleTypeDef &hfdcan);
 
-uint32_t get_can_fifo_message_count(FDCAN_HandleTypeDef &hfdcan);
-
+uint32_t getCanFifoMessageCount(FDCAN_HandleTypeDef &hfdcan);
 
 #endif /* INC_CAN_UTILS_HPP_ */
