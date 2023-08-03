@@ -10,13 +10,9 @@
 #include "app_freertos.h"
 #include "fdcan.h"
 #include "main.h"
+#include "PerypherialManagers/Gpio.hpp"
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
-
-bool charger_connected()
-{
-	return not HAL_GPIO_ReadPin(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin);
-}
 
 void vChargerCANManagerTask(void *argument)
 {
@@ -25,10 +21,11 @@ void vChargerCANManagerTask(void *argument)
 	float charge_voltage = 135.0f * 4.15f;
 	float charge_current = 2.0f;
 	ChargerCanRxMessageHandler charger_rx{};
+	GpioIn charger_conected(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, false);
 
 	while (true)
 	{
-		if (charger_connected())
+		if (charger_conected.isActive())
 		{
 			osDelay(100);
 
