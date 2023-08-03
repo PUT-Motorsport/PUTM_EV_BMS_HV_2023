@@ -21,7 +21,7 @@
 #include <algorithm>
 #include <spi.h>
 
-static constexpr size_t chain_size = 3;
+static constexpr size_t chain_size = 15;
 static constexpr float undervoltage = 2.f;
 static constexpr float overvoltage = 4.f;
 

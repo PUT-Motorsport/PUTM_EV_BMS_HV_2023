@@ -17,39 +17,40 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 {
 	cs.deactivate();
 
-	for(auto &cfg : configs)
+	//for(auto cfg : configs)
+	for(size_t i = 0; i < chain_size; i++)
 	{
 		// set gpio pull down to OFF
-		cfg.gpio1 = 1;
-		cfg.gpio2 = 1;
-		cfg.gpio3 = 1;
-		cfg.gpio4 = 1;
-		cfg.gpio5 = 1;
+		configs[i].gpio1 = 1;
+		configs[i].gpio2 = 1;
+		configs[i].gpio3 = 1;
+		configs[i].gpio4 = 1;
+		configs[i].gpio5 = 1;
 		// set reference to shut down after conversion
-		cfg.refon = 0;
+		configs[i].refon = 0;
 		// set adc clock to use higher speeds
-		cfg.adcopt = 0;
+		configs[i].adcopt = 0;
 		// set all discharges to off
-		cfg.dcc1 	= 1;
-		cfg.dcc2 	= 1;
-		cfg.dcc3 	= 1;
-		cfg.dcc4 	= 1;
-		cfg.dcc5 	= 1;
-		cfg.dcc6 	= 1;
-		cfg.dcc7 	= 1;
-		cfg.dcc8 	= 1;
-		cfg.dcc9 	= 1;
-		cfg.dcc10 	= 1;
-		cfg.dcc11 	= 1;
-		cfg.dcc12 	= 1;
+		configs[i].dcc1 = 0;
+		configs[i].dcc2 = 0;
+		configs[i].dcc3 = 0;
+		configs[i].dcc4 = 0;
+		configs[i].dcc5 = 0;
+		configs[i].dcc6 = 0;
+		configs[i].dcc7 = 0;
+		configs[i].dcc8 = 0;
+		configs[i].dcc9 = 0;
+		configs[i].dcc10 = 0;
+		configs[i].dcc11 = 0;
+		configs[i].dcc12 = 0;
 		//set under voltage comparison voltage
-		cfg.vuv_lsb = uint8_t(vuv & 0xff);
-		cfg.vuv_msb = uint8_t((vuv >> 8) & 0x0f);
+		configs[i].vuv_lsb = uint8_t(vuv & 0xff);
+		configs[i].vuv_msb = uint8_t((vuv >> 8) & 0x0f);
 		//set over voltage comparison voltage
-		cfg.vov_lsb = uint8_t(vuv & 0x0f);
-		cfg.vov_msb = uint8_t((vuv >> 4) & 0xff);
+		configs[i].vov_lsb = uint8_t(vuv & 0x0f);
+		configs[i].vov_msb = uint8_t((vuv >> 4) & 0xff);
 		//set discharge time
-		cfg.dcto = uint8_t(DischargeTime::_0_5min);
+		configs[i].dcto = uint8_t(DischargeTime::_0_5min);
 	}
 }
 
@@ -154,8 +155,10 @@ void LtcController::wakeUp()
 {
 	cs.activate();
 	osDelay(twake_full);
+	uint8_t dummy = 0;
+	SpiTxRequest request(hspi, &dummy, 1);
+	SpiDmaController::spiRequestAndWait(request);
 	cs.deactivate();
-	osDelay(twake_full);
 }
 
 void LtcController::handleWatchDog()
@@ -211,15 +214,18 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
 	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
 
-	//wakeUp();
+	wakeUp();
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
 
-	osDelay(10);
+	//osDelay(10);
 
-	//wakeUp();
+	wakeUp();
 	rawRead(CMD_RDCVA, raw[0], pecs[0]);
+	wakeUp();
 	rawRead(CMD_RDCVB, raw[1], pecs[1]);
+	wakeUp();
 	rawRead(CMD_RDCVC, raw[2], pecs[2]);
+	wakeUp();
 	rawRead(CMD_RDCVD, raw[3], pecs[3]);
 
 	for(size_t ltc = 0; ltc < chain_size; ltc++)

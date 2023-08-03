@@ -63,7 +63,7 @@ const osThreadAttr_t PlausibilityManager_attributes = {
 };
 /* Definitions for LTCManager */
 osThreadId_t LTCManagerHandle;
-uint32_t LTCManagerBuffer[ 512 ];
+uint32_t LTCManagerBuffer[ 1024 ];
 osStaticThreadDef_t LTCManagerControlBlock;
 const osThreadAttr_t LTCManager_attributes = {
   .name = "LTCManager",
