@@ -268,8 +268,8 @@ LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >,
 	osDelay(10);
 
 	//wakeUp();
-	rawRead(CMD_RDAUXA, aux_a, pecs[0]);
-	rawRead(CMD_RDAUXB,	aux_b, pecs[1]);
+	rawRead(CMD_RDAUXA, aux_a, pec_a);
+	rawRead(CMD_RDAUXB,	aux_b, pec_b);
 
 	for(size_t ltc = 0; ltc < chain_size; ltc++)
 	{
@@ -278,19 +278,19 @@ LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >,
 			if(pec_a[ltc] != PecStatus::Ok)
 				aux[ltc][gpio] = -1.f;
 			else
-				aux[ltc][gpio] = convRawToGT(aux_a[ltc].gpio[gpio]);
+				aux[ltc][gpio] = convRawToGT(aux_a[ltc].gpio[gpio].val);
 		}
 		for(size_t gpio = 0; gpio < 2; gpio++)
 		{
 			if(pec_b[ltc] != PecStatus::Ok)
 				aux[ltc][gpio] = -1.f;
 			else
-				aux[ltc][gpio] = convRawToGT(aux_b[ltc].gpio[gpio]);
+				aux[ltc][gpio] = convRawToGT(aux_b[ltc].gpio[gpio].val);
 		}
 		if(pec_b[ltc] != PecStatus::Ok)
-			aux[ltc][gpio] = -1.f;
+			aux[ltc][5] = -1.f;
 		else
-			aux[ltc][gpio] = convRawToU(aux_b[ltc].ref);
+			aux[ltc][5] = convRawToU(aux_b[ltc].ref.val);
 	}
 
 	return status;

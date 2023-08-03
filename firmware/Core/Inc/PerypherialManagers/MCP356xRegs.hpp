@@ -197,7 +197,7 @@ namespace MCP356x
 		uint8_t dr_status : 1;
 		uint8_t undefined : 1;
 	};
-	enum struct MuxIn
+	enum struct MuxIn : uint8_t
 	{
 		Ch0 = 		0b0000,
 		Ch1 = 		0b0001,
@@ -269,7 +269,7 @@ namespace MCP356x
 	template < typename Reg >
 	constexpr void deserializeReg(Reg& destination, size_t size, uint8_t *source)
 	{
-		std::memcpy((void*)destination, (const void *)&source, size);
+		std::memcpy((void*)&destination, (const void *)source, size);
 	}
 }
 

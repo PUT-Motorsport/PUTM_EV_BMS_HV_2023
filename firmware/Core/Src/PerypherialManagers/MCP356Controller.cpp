@@ -24,18 +24,18 @@ MCP356Controller::MCP356Controller(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xV
 
 bool MCP356Controller::statusByteOk()
 {
-	return ((status_byte & 0b01000000) >> 1) ^ (status_byte & 0b001000000);
+	return not status_byte.dr_status;
 }
 
 StatusByte MCP356Controller::poolSatusByte()
 {
-	uint8_t tx_buff = prepCmd(MCP356xCommand::PoolStatus);
-	uint8_t rx_buff;
+	uint8_t stxdata = prepCmd(MCP356xCommand::PoolStatus);
+	uint8_t srxdata;
 
-	SpiTxRxRequest request(cs, hspi, &tx_buff, &rx_buff, 1);
+	SpiTxRxRequest request(cs, hspi, &stxdata, &srxdata, 1);
 	SpiDmaController::spiRequestAndWait(request);
 
-	status_byte = (StatusByte)srxdata;
+	deserializeReg(status_byte, 1, &srxdata);
 
 	return status_byte;
 }
@@ -57,10 +57,10 @@ void MCP356Controller::configure(Config config)
 	std::array < uint8_t, 5 > stxdata;
 	std::array < uint8_t, 5 > srxdata;
 	stxdata[0] = prepCmd(MCP356xRegisterAddress::CONFIG0, MCP356xCommandType::IncWrite);
-	stxdata[1] = uint8_t(config.config0);
-	stxdata[2] = uint8_t(config.config1);
-	stxdata[3] = uint8_t(config.config2);
-	stxdata[4] = uint8_t(config.config3);
+	serializeReg(stxdata.begin() + 1, 1, config.config0);
+	serializeReg(stxdata.begin() + 2, 1, config.config1);
+	serializeReg(stxdata.begin() + 3, 1, config.config2);
+	serializeReg(stxdata.begin() + 4, 1, config.config3);
 
 	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), 5);
 	SpiDmaController::spiRequestAndWait(request);
@@ -72,12 +72,13 @@ void MCP356Controller::request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > cha
 {
 	Mux selection =
 	{
-		.in_m = channel_pair.first,
-		.in_p = channel_pair.second
+		.in_m = uint8_t(channel_pair.first),
+		.in_p = uint8_t(channel_pair.second)
 	};
 
-	uint8_t stxdata = uint8_t(selection);
 	uint8_t srxdata = 0;
+	uint8_t stxdata = 0;
+	serializeReg(&stxdata, 1, selection);
 
 	SpiTxRxRequest request(cs, hspi, &stxdata, &srxdata, 1);
 	SpiDmaController::spiRequestAndWait(request);
