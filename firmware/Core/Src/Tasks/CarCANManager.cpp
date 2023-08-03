@@ -14,11 +14,39 @@
 #include "stackData.hpp"
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
-size_t send_voltages_message(size_t cell_index);
+
+auto voltages_message(size_t &cell_index)
+{
+	const FullStackData &fsd = FullStackDataInstance::getConst();
+
+	auto voltage_to_can = [](float voltage) -> uint16_t
+	{
+		return static_cast<uint16_t>(voltage * 1'000 - 2'850);
+	};
+
+	const PUTM_CAN::BMS_HV_cell_voltages frame = {
+		.cell_start = static_cast<uint8_t>(cell_index),
+		.v_cell_start = voltage_to_can(fsd.ltcData.volt.at(cell_index)),
+		.v_cell_start_plus_1 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 1)),
+		.v_cell_start_plus_2 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 2)),
+		.v_cell_start_plus_3 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 3)),
+		.cell_end = static_cast<uint8_t>(cell_index + 3)};
+
+	if (cell_index + 4 < fsd.ltcData.volt.size())
+	{
+		cell_index = cell_index + 4;
+	}
+	else
+	{
+		cell_index = 0;
+	}
+
+	return PUTM_CAN::Can_tx_message(frame, PUTM_CAN::can_tx_header_BMS_HV_cell_voltages);
+}
 
 void vCarCANManagerTask(void *argument)
 {
-	size_t cell_send_index{};
+	size_t cell_send_index{0};
 	startCan(hfdcan);
 	while (true)
 	{
@@ -39,46 +67,11 @@ void vCarCANManagerTask(void *argument)
 
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
 
-		if (status not_eq HAL_OK)
+		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
+
+		if (status not_eq HAL_OK or status_2 not_eq HAL_OK)
 		{
-			// FIXME Handle error
+			// Error_Handler();
 		}
-
-		cell_send_index = send_voltages_message(cell_send_index);
-	}
-}
-
-
-size_t send_voltages_message(size_t cell_index)
-{
-	const FullStackData &fsd = FullStackDataInstance::getConst();
-
-	auto voltage_to_can = [](float voltage) -> uint16_t
-	{
-		return static_cast<uint16_t>(voltage * 1'000 - 2'850);
-	};
-
-	const PUTM_CAN::BMS_HV_cell_voltages frame = {
-		.cell_start = static_cast<uint8_t>(cell_index),
-		.v_cell_start = voltage_to_can(fsd.ltcData.volt.at(cell_index)),
-		.v_cell_start_plus_1 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 1)),
-		.v_cell_start_plus_2 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 2)),
-		.v_cell_start_plus_3 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 3)),
-		.cell_end = static_cast<uint8_t>(cell_index + 3)
-	};
-
-	auto status = PUTM_CAN::Can_tx_message(frame, PUTM_CAN::can_tx_header_BMS_HV_cell_voltages).send(hfdcan);
-	if (status not_eq HAL_OK)
-	{
-		// FIXME Handle error
-	}
-
-	if (cell_index + 4 < fsd.ltcData.volt.size())
-	{
-		return cell_index + 4;
-	}
-	else
-	{
-		return 0;
 	}
 }
