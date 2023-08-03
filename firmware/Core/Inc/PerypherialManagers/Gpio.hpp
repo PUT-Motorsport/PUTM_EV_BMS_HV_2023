@@ -20,11 +20,10 @@ class Gpio //: public ILocable
 
 	protected:
 		bool state;
+		const GPIO_TypeDef * const port;
+		const uint32_t pin;
 		bool is_inverted;
 
-		const uint32_t pin;
-
-		const GPIO_TypeDef * const port;
 };
 
 class GpioOut : public Gpio
