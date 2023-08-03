@@ -1,0 +1,17 @@
+@startuml
+title AIR State Machine
+
+[*] --> AIR_Open
+
+AIR_Open : AIR_P = 0\nAIR_N = 0\nAIR_Precharge = 0
+AIR_Closed : AIR_P = 1\nAIR_N = 1\nAIR_Precharge = 0
+Precharge : AIR_P = 0\nAIR_N = 1\nAIR_Precharge = 1
+
+state AIR_Closed #pink;line:red;line.bold;
+state Precharge #pink;line:red;line.bold;
+
+AIR_Open --> Precharge : Shutdown circuit closed\nand\nTS activation button
+Precharge --> AIR_Closed : after 5s timer
+Precharge --> AIR_Open : Shutdown circuit open
+AIR_Closed --> AIR_Open : Shutdown circuit open
+@enduml
