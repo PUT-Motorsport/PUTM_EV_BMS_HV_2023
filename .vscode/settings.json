@@ -1,0 +1,9 @@
+{
+    "ros.distro": "humble",
+    "files.associations": {
+        "initializer_list": "cpp",
+        "ranges": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp"
+    }
+}

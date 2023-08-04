@@ -8,11 +8,12 @@
 #ifndef STACKDATA_HPP_
 #define STACKDATA_HPP_
 
+#include "Interfaces/StateErrorWarning.hpp"
 #include <array>
 #include <atomic>
 
 constexpr static size_t bat_stack_size = 135;
-constexpr static size_t temp_stack_size = 65; // 3 * 5 FIXME: do sprawdzenia ile temperatur
+constexpr static size_t temp_stack_size = 65; // 3 * 5 FIXME: check temp sensor count
 
 struct FullStackData
 {
@@ -45,20 +46,30 @@ struct FullStackData
 		std::atomic<bool> p_state;
 		std::atomic<bool> m_state;
 	} air;
+
+	struct State
+	{
+		std::optional<CHECKS::CriticalError> error{std::nullopt};
+		std::optional<CHECKS::Warning> warning{std::nullopt};
+	} state;
+
+	constexpr FullStackData() = default;
+	FullStackData(const FullStackData &) = delete;
+	FullStackData &operator=(const FullStackData &) = delete;
 };
 
 class FullStackDataInstance
 {
 public:
-	static FullStackData &get()
+	static FullStackData &getAndModify()
 	{
-		static FullStackData instance{};
+		static FullStackData instance;
 		return instance;
 	}
 
-	static const FullStackData &getConst()
+	static const FullStackData &get()
 	{
-		return get();
+		return getAndModify();
 	}
 };
 
