@@ -12,14 +12,6 @@ using namespace MCP356x;
 MCP356Controller::MCP356Controller(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
 {
 	cs.deactivate();
-
-	uint8_t stxdata = prepCmd(MCP356xCommand::PoolStatus);
-	uint8_t srxdata;
-
-	SpiTxRxRequest request(cs, hspi, &stxdata, &srxdata, 1);
-	SpiDmaController::spiRequestAndWait(request);
-
-	status_byte = (StatusByte)srxdata;
 }
 
 bool MCP356Controller::statusByteOk()
@@ -68,7 +60,7 @@ void MCP356Controller::configure(Config config)
 	deserializeReg(status_byte, 1, stxdata.begin());
 }
 
-void MCP356Controller::request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair)
+void setMeasurement(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair)
 {
 	Mux selection =
 	{
@@ -79,17 +71,17 @@ void MCP356Controller::request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > cha
 	uint8_t srxdata = 0;
 	uint8_t stxdata = 0;
 	serializeReg(&stxdata, 1, selection);
+}
 
-	SpiTxRxRequest request(cs, hspi, &stxdata, &srxdata, 1);
-	SpiDmaController::spiRequestAndWait(request);
-
-	stxdata = prepCmd(MCP356xCommand::AdcRestart);
-	srxdata = 0;
-
-	request = SpiTxRxRequest(cs, hspi, &stxdata, &srxdata, 1);
-	SpiDmaController::spiRequestAndWait(request);
-
-	deserializeReg(status_byte, 1, &stxdata);
+void MCP356Controller::request()
+{
+//	stxdata = prepCmd(MCP356xCommand::AdcRestart);
+//	srxdata = 0;
+//
+//	request = SpiTxRxRequest(cs, hspi, &stxdata, &srxdata, 1);
+//	SpiDmaController::spiRequestAndWait(request);
+//
+//	deserializeReg(status_byte, 1, &stxdata);
 }
 
 bool MCP356Controller::dataReady()

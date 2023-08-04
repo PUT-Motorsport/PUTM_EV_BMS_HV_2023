@@ -89,7 +89,8 @@ class MCP356Controller
 
 		void configure(MCP356x::Config config);
 
-		void request(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair);
+		void setMeasurement(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair);
+		void request();
 		bool dataReady();
 		uint32_t readData();
 
