@@ -8,6 +8,7 @@
 #define PUTM_USE_CAN_FD
 
 #include <MainHeader.hpp>
+#include <PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 

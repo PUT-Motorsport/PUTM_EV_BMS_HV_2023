@@ -8,7 +8,7 @@
 #ifndef INC_MAINHEADER_HPP_
 #define INC_MAINHEADER_HPP_
 
-#define PUTM_USE_CAN_FD
+//#define PUTM_USE_CAN_FD
 
 #include <main.h>
 #include <cmsis_os.h>
@@ -42,7 +42,7 @@
 #include <type_traits>
 #include <utility>
 #include <variant>
-#include <PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp>
+// #include <PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp>
 #include <Config.hpp>
 #include <StackData.hpp>
 #include <PerypherialManagers/Utils.hpp>
@@ -55,11 +55,11 @@
 #include <PerypherialManagers/ChargeBalanceController.hpp>
 #include <PerypherialManagers/Charger.hpp>
 #include <PerypherialManagers/PlausibilityChecker.hpp>
-#include <PerypherialManagers/LTC6811Regs.hpp>
-#include <PerypherialManagers/LTC6811Cmd.hpp>
+#include <Interfaces/LTC6811Regs.hpp>
+#include <Interfaces/LTC6811Cmd.hpp>
 #include <PerypherialManagers/LTC6811Controller.hpp>
-#include <PerypherialManagers/MCP356xCmd.hpp>
-#include <PerypherialManagers/MCP356xRegs.hpp>
+#include <Interfaces/MCP356xCmd.hpp>
+#include <Interfaces/MCP356xRegs.hpp>
 #include <PerypherialManagers/MCP356xController.hpp>
 #include <app_freertos.h>
 
