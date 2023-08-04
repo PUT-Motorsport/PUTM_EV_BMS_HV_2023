@@ -10,14 +10,15 @@
 
 #include <array>
 #include <atomic>
+#include "Config.hpp"
 
 struct FullStackData
 {
 	struct LTCData
 	{
-		std::array<std::array<std::atomic<float>, 12>, chain_size > voltages;
-		std::array<std::array<std::atomic<bool>, 12>, chain_size > discharge;
-		std::array<std::array<std::atomic<float>, 5>, chain_size > temp;
+		std::array<std::atomic<float>, cell_count> voltages;
+		std::array<std::atomic<bool>, cell_count> discharge;
+		std::array<std::atomic<float>, temp_count> temp;
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;

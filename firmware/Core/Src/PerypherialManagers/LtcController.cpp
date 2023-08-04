@@ -321,7 +321,7 @@ LtcCtrlStatus LtcController::setDischarge(std::array< std::array< bool, 12 >, ch
 	return status;
 }
 
-LtcCtrlStatus LtcController::readVoltages(std::array< std::array< std::atomic < float >, 12 >, chain_size > &vol)
+LtcCtrlStatus LtcController::readVoltages(std::array< std::atomic<float>, cell_count > &vol)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
@@ -341,41 +341,45 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< std::atomic < 
 	wakeUp();
 	rawRead(CMD_RDCVD, raw[3], pecs[3]);
 
-	for(size_t ltc = 0; ltc < chain_size; ltc++)
+	static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
+	for(size_t cell = 0; cell < cell_count; cell++)
 	{
-		for(size_t cell = 0; cell < 12; cell++)
-		{
-			size_t reg = cell / 3;
-			size_t rcell = cell % 3;
-			if(pecs[reg][ltc] == PecStatus::Ok)
-				vol[ltc][cell] = convRawToU(raw[reg][ltc].cell[rcell].val);
-			else
-				vol[ltc][cell] = -1.f;
-		}
+		size_t ltc = cell / 9;
+		size_t ltc_cell = cell_to_ltc_cell[cell % 9];
+		size_t reg = ltc_cell / 3;
+		size_t reg_cell = ltc_cell % 3;
+
+		if(pecs[reg][ltc] == PecStatus::Ok)
+			vol[cell] = convRawToU(raw[reg][ltc].cell[reg_cell].val);
+		else
+			vol[cell] = -1.f;
 	}
 
 	return status;
 }
-//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
-//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
-LtcCtrlStatus LtcController::setDischarge(std::array< std::array< std::atomic < bool >, 12 >, chain_size > &dis)
+
+LtcCtrlStatus LtcController::setDischarge(std::array< std::atomic<float>, cell_count > &dis)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	for(size_t i = 0; i < chain_size; i++)
+	//static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
+
+	for(size_t cell = 0; cell < cell_count; cell += 9)
 	{
-		configs[i].dcc1 	= dis[i][0];
-		configs[i].dcc2 	= dis[i][1];
-		configs[i].dcc3 	= dis[i][2];
-		configs[i].dcc4 	= dis[i][3];
-		configs[i].dcc5 	= dis[i][4];
-		configs[i].dcc6 	= dis[i][5];
-		configs[i].dcc7 	= dis[i][6];
-		configs[i].dcc8 	= dis[i][7];
-		configs[i].dcc9 	= dis[i][8];
-		configs[i].dcc10 	= dis[i][9];
-		configs[i].dcc11 	= dis[i][10];
-		configs[i].dcc12 	= dis[i][11];
+		size_t ltc = cell / 9;
+
+		configs[ltc].dcc1 	= dis[cell + 0];
+		configs[ltc].dcc2 	= dis[cell + 1];
+		configs[ltc].dcc3 	= dis[cell + 2];
+		configs[ltc].dcc4 	= dis[cell + 3];
+		//configs[ltc].dcc5 	= dis[cell + ];
+		configs[ltc].dcc6 	= dis[cell + 4];
+		configs[ltc].dcc7 	= dis[cell + 5];
+		configs[ltc].dcc8 	= dis[cell + 6];
+		configs[ltc].dcc9 	= dis[cell + 7];
+		configs[ltc].dcc10 	= dis[cell + 8];
+		//configs[ltc].dcc11 	= dis[cell + ];
+		//configs[ltc].dcc12 	= dis[cell + ];
 	}
 
 	wakeUp();
