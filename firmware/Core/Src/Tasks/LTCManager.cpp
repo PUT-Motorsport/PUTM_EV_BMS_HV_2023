@@ -11,26 +11,26 @@
 #include "PerypherialManagers/Gpio.hpp"
 
 static SPI_HandleTypeDef &hspi = hspi2;
+static LtcController ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
+
 static std::array < std::array < float, 12 >, chain_size > volts;
 static std::array < std::array < bool, 12 >, chain_size > discharge;
 
+extern GpioIn charger_conected;
+
 void vLTCManagerTask(void *argument)
 {
-	LtcController ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
-	for(auto &dis : discharge)
-	{
-		for(auto &d : dis)
-		{
-			d = true;
-		}
-	}
-
 	ltc_ctrl.configure();
 	//ltc_ctrl.setDischarge(discharge);
 
 	while(true)
 	{
 		ltc_ctrl.readVoltages(volts);
+
+		if(charger_conected.isActive())
+		{
+
+		}
 
 		osDelay(100);
 	}

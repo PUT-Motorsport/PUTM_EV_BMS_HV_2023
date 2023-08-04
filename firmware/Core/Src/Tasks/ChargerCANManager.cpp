@@ -13,6 +13,7 @@
 #include "PerypherialManagers/Gpio.hpp"
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+extern GpioIn charger_conected;
 
 void vChargerCANManagerTask(void *argument)
 {
@@ -21,7 +22,6 @@ void vChargerCANManagerTask(void *argument)
 	float charge_voltage = 135.0f * 4.15f;
 	float charge_current = 2.0f;
 	ChargerCanRxMessageHandler charger_rx{};
-	GpioIn charger_conected(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, false);
 
 	while (true)
 	{

@@ -12,6 +12,7 @@
 #include "PerypherialManagers/LTC6811Regs.hpp"
 #include "PerypherialManagers/PEC15.hpp"
 #include "PerypherialManagers/Gpio.hpp"
+#include "Config.hpp"
 
 #include <main.h>
 #include <array>
@@ -20,6 +21,7 @@
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include <algorithm>
 #include <spi.h>
+#include <atomic>
 
 enum struct PecStatus
 {
@@ -73,9 +75,14 @@ class LtcController
 		LtcCtrlStatus configure();
 		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, chain_size > &vol);
 		LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
-		LtcCtrlStatus balance(std::array < std::array < bool, 12 >, chain_size > &bal);
 		LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
 		LtcCtrlStatus setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis);
+
+		//atomic versions
+		LtcCtrlStatus readVoltages(std::array< std::array< std::atomic < float >, 12 >, chain_size > &vol);
+		//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
+		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
+		LtcCtrlStatus setDischarge(std::array< std::array< std::atomic < bool >, 12 >, chain_size > &dis);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled

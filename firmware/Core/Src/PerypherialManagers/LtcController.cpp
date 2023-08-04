@@ -251,13 +251,6 @@ LtcCtrlStatus LtcController::diagnose(std::array < LtcDiagnosisStatus, chain_siz
 	return status;
 }
 
-LtcCtrlStatus LtcController::balance(std::array < std::array < bool, 12 >, chain_size > &bal)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	return status;
-}
-
 LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
@@ -305,6 +298,69 @@ LtcCtrlStatus LtcController::setDischarge(std::array< std::array< bool, 12 >, ch
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
+
+	for(size_t i = 0; i < chain_size; i++)
+	{
+		configs[i].dcc1 	= dis[i][0];
+		configs[i].dcc2 	= dis[i][1];
+		configs[i].dcc3 	= dis[i][2];
+		configs[i].dcc4 	= dis[i][3];
+		configs[i].dcc5 	= dis[i][4];
+		configs[i].dcc6 	= dis[i][5];
+		configs[i].dcc7 	= dis[i][6];
+		configs[i].dcc8 	= dis[i][7];
+		configs[i].dcc9 	= dis[i][8];
+		configs[i].dcc10 	= dis[i][9];
+		configs[i].dcc11 	= dis[i][10];
+		configs[i].dcc12 	= dis[i][11];
+	}
+
+	wakeUp();
+	rawWrite(CMD_WRCFGA, configs);
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::readVoltages(std::array< std::array< std::atomic < float >, 12 >, chain_size > &vol)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
+	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
+
+	wakeUp();
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+
+	osDelay(tadc);
+
+	wakeUp();
+	rawRead(CMD_RDCVA, raw[0], pecs[0]);
+	wakeUp();
+	rawRead(CMD_RDCVB, raw[1], pecs[1]);
+	wakeUp();
+	rawRead(CMD_RDCVC, raw[2], pecs[2]);
+	wakeUp();
+	rawRead(CMD_RDCVD, raw[3], pecs[3]);
+
+	for(size_t ltc = 0; ltc < chain_size; ltc++)
+	{
+		for(size_t cell = 0; cell < 12; cell++)
+		{
+			size_t reg = cell / 3;
+			size_t rcell = cell % 3;
+			if(pecs[reg][ltc] == PecStatus::Ok)
+				vol[ltc][cell] = convRawToU(raw[reg][ltc].cell[rcell].val);
+			else
+				vol[ltc][cell] = -1.f;
+		}
+	}
+
+	return status;
+}
+//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
+//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
+LtcCtrlStatus LtcController::setDischarge(std::array< std::array< std::atomic < bool >, 12 >, chain_size > &dis)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	for(size_t i = 0; i < chain_size; i++)
 	{
