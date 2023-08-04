@@ -12,26 +12,32 @@
 #include "fdcan.h"
 #include "main.h"
 #include "stackData.hpp"
+#include <algorithm>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 
 auto voltages_message(size_t &cell_index)
 {
-	const FullStackData &fsd = FullStackDataInstance::getConst();
+	const FullStackData &fsd = FullStackDataInstance::get();
 
 	auto voltage_to_can = [](float voltage) -> uint16_t
 	{
 		return static_cast<uint16_t>(voltage * 1'000 - 2'850);
 	};
 
-	const PUTM_CAN::BMS_HV_cell_voltages frame = {
-		.cell_start = static_cast<uint8_t>(cell_index),
-		.v_cell_start = voltage_to_can(fsd.ltcData.volt.at(cell_index)),
-		.v_cell_start_plus_1 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 1)),
-		.v_cell_start_plus_2 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 2)),
-		.v_cell_start_plus_3 = voltage_to_can(fsd.ltcData.volt.at(cell_index + 3)),
-		.cell_end = static_cast<uint8_t>(cell_index + 3)};
+	auto clmp = [&](size_t index) -> size_t {
+		return std::clamp(index, (size_t)0, (size_t)fsd.ltcData.volt.size() -1);
+	};
 
+	const PUTM_CAN::BMS_HV_cell_voltages frame = {
+		.cell_start = static_cast<uint8_t>(clmp(cell_index)),
+		.v_cell_start = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index))),
+		.v_cell_start_plus_1 = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index + 1))),
+		.v_cell_start_plus_2 = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index + 2))),
+		.v_cell_start_plus_3 = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index + 3))),
+		.cell_end = static_cast<uint8_t>(clmp(cell_index + 3))};
+
+	// FIXME
 	if (cell_index + 4 < fsd.ltcData.volt.size())
 	{
 		cell_index = cell_index + 4;
@@ -56,7 +62,7 @@ void vCarCANManagerTask(void *argument)
 			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
 		}
 
-		const FullStackData &fsd = FullStackDataInstance::getConst();
+		const FullStackData &fsd = FullStackDataInstance::get();
 
 		PUTM_CAN::BMS_HV_main main_frame = {
 			.voltage_sum = static_cast<uint16_t>(fsd.ltcData.bat_volt),
