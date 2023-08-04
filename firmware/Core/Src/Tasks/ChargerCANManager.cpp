@@ -6,11 +6,12 @@
  */
 
 #include "PerypherialManagers/CanUtils.hpp"
+#include "PerypherialManagers/ChargeBalanceController.hpp"
 #include "PerypherialManagers/Charger.hpp"
+#include "PerypherialManagers/Gpio.hpp"
 #include "app_freertos.h"
 #include "fdcan.h"
 #include "main.h"
-#include "PerypherialManagers/Gpio.hpp"
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 extern GpioIn charger_conected;
@@ -18,6 +19,10 @@ extern GpioIn charger_conected;
 void vChargerCANManagerTask(void *argument)
 {
 	startCan(hfdcan);
+
+	ChargeBalanceController balanceController(FullStackDataInstance::getAndModify());
+	balanceController.disable_balance();
+
 	bool charging_enable{false};
 	float charge_voltage = 135.0f * 4.15f;
 	float charge_current = 2.0f;
@@ -25,24 +30,19 @@ void vChargerCANManagerTask(void *argument)
 
 	while (true)
 	{
-		if (charger_conected.isActive())
+		osDelay(100);
+		if (not charger_conected.isActive())
 		{
-			osDelay(100);
-
-			// TODO select balance cell
-
-			// TODO change charing current if balancing
-
-			while (getCanFifoMessageCount(hfdcan))
-			{
-				charger_rx.update();
-			}
-			ChargerCanTxMessage frame{charge_voltage, charge_current, charging_enable};
-			frame.send();
+			continue;
 		}
-		else
+
+		balanceController.update();
+
+		while (getCanFifoMessageCount(hfdcan))
 		{
-			osDelay(1000);
+			charger_rx.update();
 		}
+		ChargerCanTxMessage frame{charge_voltage, charge_current, charging_enable};
+		frame.send();
 	}
 }
