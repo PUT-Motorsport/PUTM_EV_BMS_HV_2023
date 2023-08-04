@@ -12,6 +12,7 @@
 #include "PerypherialManagers/LTC6811Regs.hpp"
 #include "PerypherialManagers/PEC15.hpp"
 #include "PerypherialManagers/Gpio.hpp"
+#include "Config.hpp"
 
 #include <main.h>
 #include <array>
@@ -20,10 +21,7 @@
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include <algorithm>
 #include <spi.h>
-
-static constexpr size_t chain_size = 15;
-static constexpr float undervoltage = 2.f;
-static constexpr float overvoltage = 4.f;
+#include <atomic>
 
 enum struct PecStatus
 {
@@ -77,9 +75,14 @@ class LtcController
 		LtcCtrlStatus configure();
 		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, chain_size > &vol);
 		LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
-		LtcCtrlStatus balance(std::array < std::array < bool, 12 >, chain_size > &bal);
 		LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
 		LtcCtrlStatus setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis);
+
+		//atomic versions
+		LtcCtrlStatus readVoltages(std::array< std::atomic<float>, cell_count > &vol);
+		//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
+		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
+		LtcCtrlStatus setDischarge(std::array< std::atomic<float>, cell_count > &dis);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled
@@ -100,6 +103,8 @@ class LtcController
 		constexpr static float u_conv_coef = 0.000'1f;
 		constexpr static float g_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
+		constexpr static float twake_full_coef = 0.2f;
+		constexpr static size_t tadc = 15;
 
 		// convert ADC to cell voltage returns in [V]
 		constexpr float convRawToU(uint16_t value)
@@ -122,7 +127,7 @@ class LtcController
 		std::array < LTC6811::Config, chain_size > configs;
 		//std::array < Communication, chain_size > comm_settings;
 
-		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(chain_size) * 0.3f)), uint32_t(1), uint32_t(UINT32_MAX));
+		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(chain_size) * twake_full_coef)), uint32_t(1), uint32_t(UINT32_MAX));
 };
 
 #endif /* INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_ */

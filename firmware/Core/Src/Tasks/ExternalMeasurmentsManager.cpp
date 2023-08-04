@@ -12,8 +12,6 @@
 #include "etl/array.h"
 #include "main.h"
 
-const size_t num_of_dev = 3;
-
 static SPI_HandleTypeDef &hspi = hspi3;
 
 extern GpioOut led_warning;
@@ -24,7 +22,7 @@ void vExternalMeasurmentsManagerTask(void *argument)
 	MCP356Controller acu(GpioOut(NMES_ACU_CS_GPIO_Port, NMES_ACU_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
 	MCP356Controller isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pin, true), hspi, MCP356xVersion::MCP3562);
 
-	etl::array< MCP356Controller*, num_of_dev > devices = { &car, &acu, &isens };
+	etl::array< MCP356Controller*, 3 > devices = { &car, &acu, &isens };
 
 	while(true)
 	{

@@ -11,29 +11,33 @@
 #include "Interfaces/StateErrorWarning.hpp"
 #include <array>
 #include <atomic>
+<<<<<<< HEAD:firmware/Core/Inc/stackData.hpp
 
 constexpr static size_t bat_stack_size = 135;
 constexpr static size_t temp_stack_size = 65; // 3 * 5 FIXME: check temp sensor count
+=======
+#include "Config.hpp"
+>>>>>>> main:firmware/Core/Inc/StackData.hpp
 
 struct FullStackData
 {
 	struct LTCData
 	{
-		std::array<std::atomic<float>, bat_stack_size> volt;
-		std::array<std::atomic<bool>, bat_stack_size> balance;
-		std::array<std::atomic<float>, temp_stack_size> temp;
+		std::array<std::atomic<float>, cell_count> voltages;
+		std::array<std::atomic<bool>, cell_count> discharge;
+		std::array<std::atomic<float>, temp_count> temp;
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
 		std::atomic<float> soc;
-	} ltcData;
+	} ltc_data;
 
 	struct ExternalData
 	{
 		std::atomic<float> car_volt;
 		std::atomic<float> acu_volt;
 		std::atomic<float> acu_curr;
-	} externalData;
+	} external_data;
 
 	struct Other
 	{
@@ -60,6 +64,7 @@ struct FullStackData
 
 class FullStackDataInstance
 {
+<<<<<<< HEAD:firmware/Core/Inc/stackData.hpp
 public:
 	static FullStackData &getAndModify()
 	{
@@ -71,6 +76,19 @@ public:
 	{
 		return getAndModify();
 	}
+=======
+	public:
+		static FullStackData &get()
+		{
+			static FullStackData instance{};
+			return instance;
+		}
+
+		static const FullStackData &getConst()
+		{
+			return get();
+		}
+>>>>>>> main:firmware/Core/Inc/StackData.hpp
 };
 
 #endif /* STACKDATA_HPP_ */

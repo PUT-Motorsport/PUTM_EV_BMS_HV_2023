@@ -49,8 +49,8 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 		//set over voltage comparison voltage
 		configs[i].vov_lsb = uint8_t(vuv & 0x0f);
 		configs[i].vov_msb = uint8_t((vuv >> 4) & 0xff);
-		//set discharge time
-		configs[i].dcto = uint8_t(DischargeTime::_0_5min);
+		//set soft watch dog timer discharge time (can't be used in our case)
+		configs[i].dcto = uint8_t(DischargeTime::Disable);
 	}
 }
 
@@ -153,12 +153,12 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 
 void LtcController::wakeUp()
 {
-	cs.activate();
-	osDelay(twake_full);
 	uint8_t dummy = 0;
+	cs.activate();
 	SpiTxRequest request(hspi, &dummy, 1);
 	SpiDmaController::spiRequestAndWait(request);
 	cs.deactivate();
+	osDelay(twake_full);
 }
 
 void LtcController::handleWatchDog()
@@ -215,9 +215,9 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
 
 	wakeUp();
-	rawWrite(CMD_ADCV(Mode::Normal, Discharge::Permitted, Cell::All));
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
 
-	//osDelay(10);
+	osDelay(tadc);
 
 	wakeUp();
 	rawRead(CMD_RDCVA, raw[0], pecs[0]);
@@ -232,7 +232,7 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	{
 		for(size_t cell = 0; cell < 12; cell++)
 		{
-			size_t reg = cell / 4;
+			size_t reg = cell / 3;
 			size_t rcell = cell % 3;
 			if(pecs[reg][ltc] == PecStatus::Ok)
 				vol[ltc][cell] = convRawToU(raw[reg][ltc].cell[rcell].val);
@@ -251,30 +251,22 @@ LtcCtrlStatus LtcController::diagnose(std::array < LtcDiagnosisStatus, chain_siz
 	return status;
 }
 
-LtcCtrlStatus LtcController::balance(std::array < std::array < bool, 12 >, chain_size > &bal)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	return status;
-}
-
 LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	//std::array < std::array < PecStatus, chain_size >, 2 > pecs;
-	//std::array < std::array < CellVoltage, chain_size >, 2 > raw;
 	std::array < PecStatus, chain_size > pec_a;
 	std::array < PecStatus, chain_size > pec_b;
 	std::array < AuxilliaryVoltageA, chain_size > aux_a;
 	std::array < AuxilliaryVoltageB, chain_size > aux_b;
 
-	//wakeUp();
+	wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
 
-	osDelay(10);
+	osDelay(tadc);
 
-	//wakeUp();
+	wakeUp();
 	rawRead(CMD_RDAUXA, aux_a, pec_a);
+	wakeUp();
 	rawRead(CMD_RDAUXB,	aux_b, pec_b);
 
 	for(size_t ltc = 0; ltc < chain_size; ltc++)
@@ -321,6 +313,73 @@ LtcCtrlStatus LtcController::setDischarge(std::array< std::array< bool, 12 >, ch
 		configs[i].dcc10 	= dis[i][9];
 		configs[i].dcc11 	= dis[i][10];
 		configs[i].dcc12 	= dis[i][11];
+	}
+
+	wakeUp();
+	rawWrite(CMD_WRCFGA, configs);
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::readVoltages(std::array< std::atomic<float>, cell_count > &vol)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
+	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
+
+	wakeUp();
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+
+	osDelay(tadc);
+
+	wakeUp();
+	rawRead(CMD_RDCVA, raw[0], pecs[0]);
+	wakeUp();
+	rawRead(CMD_RDCVB, raw[1], pecs[1]);
+	wakeUp();
+	rawRead(CMD_RDCVC, raw[2], pecs[2]);
+	wakeUp();
+	rawRead(CMD_RDCVD, raw[3], pecs[3]);
+
+	static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
+	for(size_t cell = 0; cell < cell_count; cell++)
+	{
+		size_t ltc = cell / 9;
+		size_t ltc_cell = cell_to_ltc_cell[cell % 9];
+		size_t reg = ltc_cell / 3;
+		size_t reg_cell = ltc_cell % 3;
+
+		if(pecs[reg][ltc] == PecStatus::Ok)
+			vol[cell] = convRawToU(raw[reg][ltc].cell[reg_cell].val);
+		else
+			vol[cell] = -1.f;
+	}
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::setDischarge(std::array< std::atomic<float>, cell_count > &dis)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+
+	//static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
+
+	for(size_t cell = 0; cell < cell_count; cell += 9)
+	{
+		size_t ltc = cell / 9;
+
+		configs[ltc].dcc1 	= dis[cell + 0];
+		configs[ltc].dcc2 	= dis[cell + 1];
+		configs[ltc].dcc3 	= dis[cell + 2];
+		configs[ltc].dcc4 	= dis[cell + 3];
+		//configs[ltc].dcc5 	= dis[cell + ];
+		configs[ltc].dcc6 	= dis[cell + 4];
+		configs[ltc].dcc7 	= dis[cell + 5];
+		configs[ltc].dcc8 	= dis[cell + 6];
+		configs[ltc].dcc9 	= dis[cell + 7];
+		configs[ltc].dcc10 	= dis[cell + 8];
+		//configs[ltc].dcc11 	= dis[cell + ];
+		//configs[ltc].dcc12 	= dis[cell + ];
 	}
 
 	wakeUp();
