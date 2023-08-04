@@ -386,7 +386,7 @@ LtcCtrlStatus LtcController::setDischarge(const std::array< std::atomic<bool>, c
 	return status;
 }
 
-LtcCtrlStatus LtcController::readGpioTemp(std::array< std::atomic < float >, temp_count > &raw_temp)
+LtcCtrlStatus LtcController::readGpioTemp(std::array< std::atomic < float >, temp_count > &temp)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < std::array < PecStatus, chain_size >, 1 > pecs;

@@ -14,13 +14,9 @@
 static SPI_HandleTypeDef &hspi = hspi2;
 static LtcController ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
 
-//static std::array < std::array < float, 12 >, chain_size > volts;
-//static std::array < std::array < bool, 12 >, chain_size > discharge;
-
 void vLTCManagerTask(void *argument)
 {
 	ltc_ctrl.configure();
-	//ltc_ctrl.setDischarge(discharge);
 
 	while(true)
 	{
