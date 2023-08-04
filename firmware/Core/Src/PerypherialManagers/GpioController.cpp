@@ -5,7 +5,7 @@
  *      Author: Piotr Lesicki
  */
 
-#include "PerypherialManagers/Gpio.hpp"
+#include <PerypherialManagers/GpioController.hpp>
 
 Gpio::Gpio(const GPIO_TypeDef * const port, const uint32_t pin, const bool is_inverted) : port(port), pin(pin), is_inverted(is_inverted) { }
 

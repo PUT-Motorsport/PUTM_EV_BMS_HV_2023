@@ -5,8 +5,8 @@
  *      Author: Piotr Lesicki
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_GPIO_HPP_
-#define INC_PERYPHERIALMANAGERS_GPIO_HPP_
+#ifndef INC_PERYPHERIALMANAGERS_GPIOCONTROLLER_HPP_
+#define INC_PERYPHERIALMANAGERS_GPIOCONTROLLER_HPP_
 
 #include "main.h"
 
@@ -50,4 +50,4 @@ class GpioIn : public Gpio
 		~GpioIn() { };
 };
 
-#endif /* INC_PERYPHERIALMANAGERS_GPIO_HPP_ */
+#endif /* INC_PERYPHERIALMANAGERS_GPIOCONTROLLER_HPP_ */

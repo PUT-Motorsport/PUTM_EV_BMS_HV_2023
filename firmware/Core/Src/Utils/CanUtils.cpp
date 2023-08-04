@@ -5,7 +5,7 @@
  *      Author: jan
  */
 
-#include "PerypherialManagers/CanUtils.hpp"
+#include "Utils/CanUtils.hpp"
 
 bool startCan(FDCAN_HandleTypeDef &hfdcan){
 
@@ -42,8 +42,6 @@ bool startCan(FDCAN_HandleTypeDef &hfdcan){
 		}
 		return true;
 }
-
-
 
 uint32_t getCanFifoMessageCount(FDCAN_HandleTypeDef &hfdcan){
 	return HAL_FDCAN_GetRxFifoFillLevel(&hfdcan, FDCAN_RX_FIFO0);

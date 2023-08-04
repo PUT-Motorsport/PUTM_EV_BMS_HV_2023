@@ -5,7 +5,7 @@
  *      Author: piotr
  */
 
-#include "PerypherialManagers/PEC15.hpp"
+#include "Utils/PEC15.hpp"
 
 std::tuple< uint8_t, uint8_t > calcPEC (uint8_t const *begin, uint8_t const *end)
 {

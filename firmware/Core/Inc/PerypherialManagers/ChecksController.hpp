@@ -5,8 +5,8 @@
  *      Author: jan
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_CHECKS_HPP_
-#define INC_PERYPHERIALMANAGERS_CHECKS_HPP_
+#ifndef INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_
+#define INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_
 
 namespace CHECKS
 {
@@ -34,6 +34,7 @@ namespace CHECKS
         {
             return std::make_pair(CriticalErrorsEnum::OverVoltage, std::distance(std::begin(stackData.ltc_data.voltages), iter));
         }
+        return std::nullopt;
     }
 
     constexpr ErrorOrWarning underTemperature(const FullStackData &stackData)
@@ -61,4 +62,4 @@ namespace CHECKS
 
 }
 
-#endif /* INC_PERYPHERIALMANAGERS_CHECKS_HPP_ */
+#endif /* INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_ */

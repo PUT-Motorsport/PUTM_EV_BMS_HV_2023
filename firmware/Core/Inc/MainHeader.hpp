@@ -45,16 +45,16 @@
 // #include <PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp>
 #include <Config.hpp>
 #include <StackData.hpp>
-#include <PerypherialManagers/Utils.hpp>
-#include <PerypherialManagers/CanUtils.hpp>
-#include <PerypherialManagers/Gpio.hpp>
-#include <PerypherialManagers/PEC15.hpp>
+#include <Utils/Utils.hpp>
+#include <Utils/CanUtils.hpp>
+#include <Utils/PEC15.hpp>
+#include <PerypherialManagers/GpioController.hpp>
 #include <Interfaces/StateErrorWarning.hpp>
-#include <PerypherialManagers/Checks.hpp>
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include <PerypherialManagers/ChargeBalanceController.hpp>
-#include <PerypherialManagers/Charger.hpp>
-#include <PerypherialManagers/PlausibilityChecker.hpp>
+#include <PerypherialManagers/ChargerController.hpp>
+#include <PerypherialManagers/ChecksController.hpp>
+#include <PerypherialManagers/PlausibilityCheckerController.hpp>
 #include <Interfaces/LTC6811Regs.hpp>
 #include <Interfaces/LTC6811Cmd.hpp>
 #include <PerypherialManagers/LTC6811Controller.hpp>
