@@ -19,5 +19,4 @@ constexpr static inline uint16_t operator | (uint16_t n, T e)
 	return static_cast<uint16_t>(e) | n;
 }
 
-
 #endif /* INC_PERYPHERIALMANAGERS_UTILS_HPP_ */

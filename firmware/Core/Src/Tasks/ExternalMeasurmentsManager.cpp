@@ -11,10 +11,12 @@
 #include "spi.h"
 #include "etl/array.h"
 #include "main.h"
+#include "StackData.hpp"
 
 static SPI_HandleTypeDef &hspi = hspi3;
 
 extern GpioOut led_warning;
+extern GpioIn charger_conected;
 
 void vExternalMeasurmentsManagerTask(void *argument)
 {
@@ -26,6 +28,7 @@ void vExternalMeasurmentsManagerTask(void *argument)
 
 	while(true)
 	{
+		FullStackDataInstance::getAndModify().ltc_data.charger_connected = charger_conected.isActive();
 		for (auto dev : devices)
 			dev->poolSatusByte();
 
