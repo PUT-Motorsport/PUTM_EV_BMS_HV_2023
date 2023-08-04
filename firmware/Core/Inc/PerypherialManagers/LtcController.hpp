@@ -82,7 +82,7 @@ class LtcController
 		LtcCtrlStatus readVoltages(std::array< std::atomic<float>, cell_count > &vol);
 		//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
 		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
-		LtcCtrlStatus setDischarge(std::array< std::atomic<float>, cell_count > &dis);
+		LtcCtrlStatus setDischarge(const std::array< std::atomic<bool>, cell_count > &dis);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled

@@ -18,12 +18,13 @@ struct FullStackData
 	struct LTCData
 	{
 		std::array<std::atomic<float>, cell_count> voltages;
-		std::array<std::atomic<bool>, cell_count> discharge;
+		std::array<std::atomic<bool>, cell_count> discharge { 0 };
 		std::array<std::atomic<float>, temp_count> temp;
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
 		std::atomic<float> soc;
+		std::atomic<bool> charger_connected { false };
 	} ltc_data;
 
 	struct ExternalData

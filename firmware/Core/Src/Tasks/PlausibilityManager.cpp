@@ -20,7 +20,6 @@ static const FullStackData& fullstackdata_debug {FullStackDataInstance::get()};
 
 void vPlausibilityManagerTask(void *argument)
 {
-
 	PlausibilityChecker checker(FullStackDataInstance::get());
 
 	while (true)

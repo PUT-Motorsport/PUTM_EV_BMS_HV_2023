@@ -66,9 +66,9 @@ LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size 
 	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
 	stxdit += 4;
 
-	for(auto& d : data)
+	for(auto rdit = data.rbegin(); rdit != data.rend(); rdit++)
 	{
-		serializeRegisterGroup(stxdit, d);
+		serializeRegisterGroup(stxdit, *rdit);
 		std::tie(stxdit[6], stxdit[7]) = calcPEC(stxdit, stxdit + 6);
 		stxdit += 8;
 	}
@@ -358,22 +358,22 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::atomic<float>, cell_c
 	return status;
 }
 
-LtcCtrlStatus LtcController::setDischarge(std::array< std::atomic<float>, cell_count > &dis)
+LtcCtrlStatus LtcController::setDischarge(const std::array< std::atomic<bool>, cell_count > &dis)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	//static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
 
-	for(size_t cell = 0; cell < cell_count; cell += 9)
+	for(size_t ltc = 0; ltc < chain_size; ltc += 1)
 	{
-		size_t ltc = cell / 9;
+		size_t cell = ltc * 9;
 
 		configs[ltc].dcc1 	= dis[cell + 0];
 		configs[ltc].dcc2 	= dis[cell + 1];
 		configs[ltc].dcc3 	= dis[cell + 2];
 		configs[ltc].dcc4 	= dis[cell + 3];
-		//configs[ltc].dcc5 	= dis[cell + ];
-		configs[ltc].dcc6 	= dis[cell + 4];
+		configs[ltc].dcc5 	= dis[cell + 4];
+		//configs[ltc].dcc6 	= dis[cell + 4];
 		configs[ltc].dcc7 	= dis[cell + 5];
 		configs[ltc].dcc8 	= dis[cell + 6];
 		configs[ltc].dcc9 	= dis[cell + 7];
