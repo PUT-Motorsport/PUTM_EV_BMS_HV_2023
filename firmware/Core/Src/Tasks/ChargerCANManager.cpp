@@ -12,6 +12,8 @@
 #include "app_freertos.h"
 #include "fdcan.h"
 #include "main.h"
+#include "PerypherialManagers/Gpio.hpp"
+#include "StackData.hpp"
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 extern GpioIn charger_conected;
@@ -30,8 +32,7 @@ void vChargerCANManagerTask(void *argument)
 
 	while (true)
 	{
-		osDelay(100);
-		if (not charger_conected.isActive())
+		if (FullStackDataInstance::get().ltc_data.charger_connected)
 		{
 			continue;
 		}

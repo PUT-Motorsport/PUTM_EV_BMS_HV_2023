@@ -87,6 +87,15 @@ namespace LTC6811
 			uint16_t val;
 		} cell[3];
 	};
+	// generic reg gpio[0:2] OR gpio[3:4] + ref voltage   rd
+	struct AuxilliaryVoltage : public IReadRegisterGroup
+	{
+		struct Gpio
+		{
+			//uint8_t bytes[2];
+			uint16_t val;
+		} gpio[3];
+	};
 	// gpio[0:2] voltage A  rd
 	struct AuxilliaryVoltageA : public IReadRegisterGroup
 	{

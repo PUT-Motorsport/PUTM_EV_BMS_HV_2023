@@ -25,11 +25,11 @@ void vPlausibilityManagerTask(void *argument)
 	while (true)
 	{
 		osDelay(100);
+		led_ok.toggle();
 
 		CHECKS::ErrorOrWarning optonalError = checker.check();
 		if (not optonalError.has_value())
 		{
-			led_ok.toggle();
 			continue;
 		}
 

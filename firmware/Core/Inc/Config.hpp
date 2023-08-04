@@ -16,6 +16,6 @@ static constexpr float undervoltage = 2.f;
 static constexpr float overvoltage = 4.f;
 
 static constexpr size_t cell_count = chain_size * 9;
-static constexpr size_t temp_count = chain_size * 5;
+static constexpr size_t temp_count = chain_size * 3;
 
 #endif /* INC_INTERFACES_CONFIG_HPP_ */

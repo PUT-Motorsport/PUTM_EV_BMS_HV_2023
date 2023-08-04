@@ -51,7 +51,7 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE END Variables */
 /* Definitions for PlausibilityManager */
 osThreadId_t PlausibilityManagerHandle;
-uint32_t PlausibilityManagerBuffer[ 128 ];
+uint32_t PlausibilityManagerBuffer[ 1024 ];
 osStaticThreadDef_t PlausibilityManagerControlBlock;
 const osThreadAttr_t PlausibilityManager_attributes = {
   .name = "PlausibilityManager",
@@ -75,7 +75,7 @@ const osThreadAttr_t LTCManager_attributes = {
 };
 /* Definitions for ExternalMeasurmentsManager */
 osThreadId_t ExternalMeasurmentsManagerHandle;
-uint32_t ExternalMeasurmentsManagerBuffer[ 128 ];
+uint32_t ExternalMeasurmentsManagerBuffer[ 1024 ];
 osStaticThreadDef_t ExternalMeasurmentsManagerControlBlock;
 const osThreadAttr_t ExternalMeasurmentsManager_attributes = {
   .name = "ExternalMeasurmentsManager",
@@ -87,7 +87,7 @@ const osThreadAttr_t ExternalMeasurmentsManager_attributes = {
 };
 /* Definitions for LoggerManager */
 osThreadId_t LoggerManagerHandle;
-uint32_t LoggerManagerrBuffer[ 128 ];
+uint32_t LoggerManagerrBuffer[ 1024 ];
 osStaticThreadDef_t LoggerManagerrControlBlock;
 const osThreadAttr_t LoggerManager_attributes = {
   .name = "LoggerManager",
@@ -99,7 +99,7 @@ const osThreadAttr_t LoggerManager_attributes = {
 };
 /* Definitions for USBCommandManager */
 osThreadId_t USBCommandManagerHandle;
-uint32_t myTask05Buffer[ 128 ];
+uint32_t myTask05Buffer[ 1024 ];
 osStaticThreadDef_t myTask05ControlBlock;
 const osThreadAttr_t USBCommandManager_attributes = {
   .name = "USBCommandManager",
@@ -111,21 +111,31 @@ const osThreadAttr_t USBCommandManager_attributes = {
 };
 /* Definitions for CarCANManager */
 osThreadId_t CarCANManagerHandle;
+uint32_t CarCANManagerBuffer[ 1024 ];
+osStaticThreadDef_t CarCANManagerControlBlock;
 const osThreadAttr_t CarCANManager_attributes = {
   .name = "CarCANManager",
-  .priority = (osPriority_t) osPriorityLow,
-  .stack_size = 128 * 4
+  .stack_mem = &CarCANManagerBuffer[0],
+  .stack_size = sizeof(CarCANManagerBuffer),
+  .cb_mem = &CarCANManagerControlBlock,
+  .cb_size = sizeof(CarCANManagerControlBlock),
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for ChargerCANManager */
 osThreadId_t ChargerCANManagerHandle;
+uint32_t ChargerCANManagerBuffer[ 1024 ];
+osStaticThreadDef_t ChargerCANManagerControlBlock;
 const osThreadAttr_t ChargerCANManager_attributes = {
   .name = "ChargerCANManager",
-  .priority = (osPriority_t) osPriorityLow,
-  .stack_size = 128 * 4
+  .stack_mem = &ChargerCANManagerBuffer[0],
+  .stack_size = sizeof(ChargerCANManagerBuffer),
+  .cb_mem = &ChargerCANManagerControlBlock,
+  .cb_size = sizeof(ChargerCANManagerControlBlock),
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for SOCManager */
 osThreadId_t SOCManagerHandle;
-uint32_t SOCManagerBuffer[ 128 ];
+uint32_t SOCManagerBuffer[ 1024 ];
 osStaticThreadDef_t SOCManagerControlBlock;
 const osThreadAttr_t SOCManager_attributes = {
   .name = "SOCManager",

@@ -20,6 +20,7 @@ struct FullStackData
 		std::array<std::atomic<float>, cell_count> voltages;
 		std::array<std::atomic<bool>, cell_count> discharge{0};
 		std::array<std::atomic<float>, temp_count> temp;
+		//std::array<std::atomic<uint16_t> temp_count>
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;

@@ -83,6 +83,7 @@ class LtcController
 		//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag);
 		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux);
 		LtcCtrlStatus setDischarge(const std::array< std::atomic<bool>, cell_count > &dis);
+		LtcCtrlStatus readGpioTemp(std::array< std::atomic < float >, temp_count > &temp);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled
@@ -101,7 +102,6 @@ class LtcController
 		constexpr static uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(undervoltage * 625.0 - 1.0)));
 		constexpr static uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(undervoltage * 625.0)));
 		constexpr static float u_conv_coef = 0.000'1f;
-		constexpr static float g_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
 		constexpr static float twake_full_coef = 0.2f;
 		constexpr static size_t tadc = 15;
@@ -121,7 +121,7 @@ class LtcController
 		// convert gpio readings to temp
 		constexpr float convRawToGT(uint16_t value)
 		{
-			return float(value) * g_conv_coef;
+			return float(value) * 1.f;
 		}
 
 		std::array < LTC6811::Config, chain_size > configs;

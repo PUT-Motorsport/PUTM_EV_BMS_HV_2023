@@ -25,6 +25,8 @@ void vSOCManagerTask(void *argument)
 //		}
 //		num++;
 //		if (num >= cell_count) num = 0;
-		osDelay(500);
+
+
+		osDelay(100);
 	}
 }

@@ -362,8 +362,6 @@ LtcCtrlStatus LtcController::setDischarge(const std::array< std::atomic<bool>, c
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	//static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
-
 	for(size_t ltc = 0; ltc < chain_size; ltc += 1)
 	{
 		size_t cell = ltc * 9;
@@ -384,6 +382,38 @@ LtcCtrlStatus LtcController::setDischarge(const std::array< std::atomic<bool>, c
 
 	wakeUp();
 	rawWrite(CMD_WRCFGA, configs);
+
+	return status;
+}
+
+LtcCtrlStatus LtcController::readGpioTemp(std::array< std::atomic < float >, temp_count > &raw_temp)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	std::array < std::array < PecStatus, chain_size >, 1 > pecs;
+	std::array < std::array < AuxilliaryVoltage, chain_size >, 1 > aux;
+
+	wakeUp();
+	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
+
+	osDelay(tadc);
+
+	wakeUp();
+	rawRead(CMD_RDAUXA, aux[0], pecs[0]);
+	//wakeUp();
+	//rawRead(CMD_RDAUXB,	aux[1], pecs[1]);
+
+	for(size_t t = 0; t < temp_count; t++)
+	{
+		size_t ltc = t / 3;
+		size_t ltc_temp = t % 3;
+		size_t reg = ltc_temp / 3;
+		size_t reg_temp = ltc_temp % 3;
+
+		if(pecs[reg][ltc] != PecStatus::Ok)
+			temp.at(t) = -1.f;
+		else
+			temp.at(t) = convRawToGT(aux.at(reg).at(ltc).gpio[reg_temp].val);
+	}
 
 	return status;
 }

@@ -26,11 +26,12 @@ void vLTCManagerTask(void *argument)
 	{
 		//ltc_ctrl.readVoltages(volts);
 		ltc_ctrl.readVoltages(FullStackDataInstance::getAndModify().ltc_data.voltages);
+		ltc_ctrl.readGpioTemp(FullStackDataInstance::getAndModify().ltc_data.temp);
 
-		//if(full_stack_i.get().ltc_data.charger_connected)
-		//{
+		if(FullStackDataInstance::get().ltc_data.charger_connected)
+		{
 			ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
-		//}
+		}
 
 		osDelay(100);
 	}
