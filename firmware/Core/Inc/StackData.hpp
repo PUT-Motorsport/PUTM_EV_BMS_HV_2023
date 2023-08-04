@@ -8,24 +8,24 @@
 #ifndef STACKDATA_HPP_
 #define STACKDATA_HPP_
 
+#include "Config.hpp"
 #include "Interfaces/StateErrorWarning.hpp"
 #include <array>
 #include <atomic>
-#include "Config.hpp"
 
 struct FullStackData
 {
 	struct LTCData
 	{
 		std::array<std::atomic<float>, cell_count> voltages;
-		std::array<std::atomic<bool>, cell_count> discharge { 0 };
+		std::array<std::atomic<bool>, cell_count> discharge{0};
 		std::array<std::atomic<float>, temp_count> temp;
 		//std::array<std::atomic<uint16_t> temp_count>
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
 		std::atomic<float> soc;
-		std::atomic<bool> charger_connected { false };
+		std::atomic<bool> charger_connected{false};
 	} ltc_data;
 
 	struct ExternalData
@@ -52,6 +52,15 @@ struct FullStackData
 		std::optional<CHECKS::CriticalError> error{std::nullopt};
 		std::optional<CHECKS::Warning> warning{std::nullopt};
 	} state;
+
+	struct ChargeBalance
+	{
+		std::atomic<bool> balance_enable{false};
+		std::atomic<float> max_cell_voltage{4.15f};
+		std::atomic<float> min_cell_voltage{3.0f};
+		std::atomic<float> avg_cell_voltage{0.0f};
+		std::atomic<float> std_dev_cell_voltage{0.0f};
+	} charge_balance;
 
 	constexpr FullStackData() = default;
 	FullStackData(const FullStackData &) = delete;
