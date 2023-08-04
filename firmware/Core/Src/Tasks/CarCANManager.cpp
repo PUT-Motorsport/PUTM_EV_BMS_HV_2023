@@ -26,19 +26,19 @@ auto voltages_message(size_t &cell_index)
 	};
 
 	auto clmp = [&](size_t index) -> size_t {
-		return std::clamp(index, (size_t)0, (size_t)fsd.ltcData.volt.size() -1);
+		return std::clamp(index, (size_t)0, (size_t)fsd.ltc_data.voltages.size() -1);
 	};
 
 	const PUTM_CAN::BMS_HV_cell_voltages frame = {
 		.cell_start = static_cast<uint8_t>(clmp(cell_index)),
-		.v_cell_start = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index))),
-		.v_cell_start_plus_1 = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index + 1))),
-		.v_cell_start_plus_2 = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index + 2))),
-		.v_cell_start_plus_3 = voltage_to_can(fsd.ltcData.volt.at(clmp(cell_index + 3))),
+		.v_cell_start = voltage_to_can(fsd.ltc_data.voltages.at(clmp(cell_index))),
+		.v_cell_start_plus_1 = voltage_to_can(fsd.ltc_data.voltages.at(clmp(cell_index + 1))),
+		.v_cell_start_plus_2 = voltage_to_can(fsd.ltc_data.voltages.at(clmp(cell_index + 2))),
+		.v_cell_start_plus_3 = voltage_to_can(fsd.ltc_data.voltages.at(clmp(cell_index + 3))),
 		.cell_end = static_cast<uint8_t>(clmp(cell_index + 3))};
 
 	// FIXME
-	if (cell_index + 4 < fsd.ltcData.volt.size())
+	if (cell_index + 4 < fsd.ltc_data.voltages.size())
 	{
 		cell_index = cell_index + 4;
 	}
@@ -57,7 +57,7 @@ void vCarCANManagerTask(void *argument)
 	while (true)
 	{
 		osDelay(10);
-		while (get_can_fifo_message_count(hfdcan))
+		while (getCanFifoMessageCount(hfdcan))
 		{
 			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
 		}
@@ -65,11 +65,11 @@ void vCarCANManagerTask(void *argument)
 		const FullStackData &fsd = FullStackDataInstance::get();
 
 		PUTM_CAN::BMS_HV_main main_frame = {
-			.voltage_sum = static_cast<uint16_t>(fsd.ltcData.bat_volt),
-			.current = static_cast<int16_t>(fsd.externalData.acu_curr * 100.0f),
-			.temp_max = static_cast<uint8_t>(fsd.ltcData.max_temp),
-			.temp_avg = static_cast<uint8_t>(fsd.ltcData.min_temp),
-			.soc = static_cast<uint16_t>(fsd.ltcData.soc * 1000)};
+			.voltage_sum = static_cast<uint16_t>(fsd.ltc_data.bat_volt),
+			.current = static_cast<int16_t>(fsd.external_data.acu_curr * 100.0f),
+			.temp_max = static_cast<uint8_t>(fsd.ltc_data.max_temp),
+			.temp_avg = static_cast<uint8_t>(fsd.ltc_data.min_temp),
+			.soc = static_cast<uint16_t>(fsd.ltc_data.soc * 1000)};
 
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
 

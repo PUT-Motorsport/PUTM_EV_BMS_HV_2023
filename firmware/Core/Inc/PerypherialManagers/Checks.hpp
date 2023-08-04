@@ -9,7 +9,7 @@
 #define INC_PERYPHERIALMANAGERS_CHECKS_HPP_
 
 #include "Interfaces/StateErrorWarning.hpp"
-#include "stackData.hpp"
+#include "StackData.hpp"
 #include <algorithm>
 #include <cstdint>
 #include <optional>
@@ -26,44 +26,44 @@ namespace CHECKS
 
     constexpr ErrorOrWarning underVoltage(const FullStackData &stackData)
     {
-        auto iter = std::ranges::find_if(stackData.ltcData.volt, [](const auto &cellVoltage)
+        auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
                                          { return cellVoltage < CELL_MIN_VOLTAGE; });
-        if (iter not_eq std::end(stackData.ltcData.volt))
+        if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
-            return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(std::begin(stackData.ltcData.volt), iter));
+            return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(std::begin(stackData.ltc_data.voltages), iter));
         }
         return std::nullopt;
     }
 
     constexpr ErrorOrWarning overVoltage(const FullStackData &stackData)
     {
-        auto iter = std::ranges::find_if(stackData.ltcData.volt, [](const auto &cellVoltage)
+        auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
                                          { return cellVoltage > CELL_MAX_VOLTAGE; });
-        if (iter not_eq std::end(stackData.ltcData.volt))
+        if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
-            return std::make_pair(CriticalErrorsEnum::OverVoltage, std::distance(std::begin(stackData.ltcData.volt), iter));
+            return std::make_pair(CriticalErrorsEnum::OverVoltage, std::distance(std::begin(stackData.ltc_data.voltages), iter));
         }
     }
 
     constexpr ErrorOrWarning underTemperature(const FullStackData &stackData)
     {
-        auto iter = std::ranges::find_if(stackData.ltcData.temp, [](const auto &cellTemperature)
+        auto iter = std::ranges::find_if(stackData.ltc_data.temp, [](const auto &cellTemperature)
                                          { return cellTemperature < CELL_MIN_TEMPERATURE; });
-        if (iter not_eq std::end(stackData.ltcData.temp))
+        if (iter not_eq std::end(stackData.ltc_data.temp))
         {
-            return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltcData.temp), iter));
+            return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltc_data.temp), iter));
         }
         return std::nullopt;
     }
 
     constexpr ErrorOrWarning overTemperature(const FullStackData &stackData)
     {
-        auto iter = std::ranges::find_if(stackData.ltcData.temp, [](const auto &cellTemperature)
+        auto iter = std::ranges::find_if(stackData.ltc_data.temp, [](const auto &cellTemperature)
                                          { return cellTemperature > CELL_MAX_TEMPERATURE; });
 
-        if (iter not_eq std::end(stackData.ltcData.temp))
+        if (iter not_eq std::end(stackData.ltc_data.temp))
         {
-            return std::make_pair(CriticalErrorsEnum::OverTemperature, std::distance(std::begin(stackData.ltcData.temp), iter));
+            return std::make_pair(CriticalErrorsEnum::OverTemperature, std::distance(std::begin(stackData.ltc_data.temp), iter));
         }
         return std::nullopt;
     }

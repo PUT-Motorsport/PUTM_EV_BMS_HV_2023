@@ -9,7 +9,7 @@
 #include "PerypherialManagers/PlausibilityChecker.hpp"
 #include "app_freertos.h"
 #include "main.h"
-#include "stackData.hpp"
+#include "StackData.hpp"
 
 extern GpioOut led_ok;
 extern GpioOut led_warning;

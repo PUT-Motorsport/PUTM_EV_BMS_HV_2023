@@ -11,13 +11,7 @@
 #include "Interfaces/StateErrorWarning.hpp"
 #include <array>
 #include <atomic>
-<<<<<<< HEAD:firmware/Core/Inc/stackData.hpp
-
-constexpr static size_t bat_stack_size = 135;
-constexpr static size_t temp_stack_size = 65; // 3 * 5 FIXME: check temp sensor count
-=======
 #include "Config.hpp"
->>>>>>> main:firmware/Core/Inc/StackData.hpp
 
 struct FullStackData
 {
@@ -64,7 +58,6 @@ struct FullStackData
 
 class FullStackDataInstance
 {
-<<<<<<< HEAD:firmware/Core/Inc/stackData.hpp
 public:
 	static FullStackData &getAndModify()
 	{
@@ -76,19 +69,6 @@ public:
 	{
 		return getAndModify();
 	}
-=======
-	public:
-		static FullStackData &get()
-		{
-			static FullStackData instance{};
-			return instance;
-		}
-
-		static const FullStackData &getConst()
-		{
-			return get();
-		}
->>>>>>> main:firmware/Core/Inc/StackData.hpp
 };
 
 #endif /* STACKDATA_HPP_ */
