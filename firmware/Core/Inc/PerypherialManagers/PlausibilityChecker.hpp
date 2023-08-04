@@ -8,15 +8,7 @@
 #ifndef INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKER_HPP_
 #define INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKER_HPP_
 
-#include "PerypherialManagers/Checks.hpp"
-#include "StackData.hpp"
-#include <algorithm>
-#include <array>
-#include <cstdint>
-#include <optional>
-#include <ranges>
-#include <utility>
-#include <variant>
+#include <MainHeader.hpp>
 
 class PlausibilityChecker
 {

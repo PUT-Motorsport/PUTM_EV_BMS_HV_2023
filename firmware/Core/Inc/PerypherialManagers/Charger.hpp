@@ -8,9 +8,7 @@
 #ifndef INC_PERYPHERIALMANAGERS_CHARGER_HPP_
 #define INC_PERYPHERIALMANAGERS_CHARGER_HPP_
 
-#include "fdcan.h"
-#include <array>
-#include <span>
+#include "MainHeader.hpp"
 
 class ChargerCanTxMessage
 {

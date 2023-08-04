@@ -5,15 +5,11 @@
  *      Author: piotr
  */
 
-#include <PerypherialManagers/LtcController.hpp>
-#include <PerypherialManagers/SpiDmaController.hpp>
-#include "PerypherialManagers/LTC6811CmdCodes.hpp"
-#include "task.h"
-#include <tuple>
+#include <PerypherialManagers/LTC6811Controller.hpp>
 
 using namespace LTC6811;
 
-LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), cs(cs)
+LTC6811Controller::LTC6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), cs(cs)
 {
 	cs.deactivate();
 
@@ -55,7 +51,7 @@ LtcController::LtcController(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), 
 }
 
 template < WriteReadRegisterGroup WrRdReg >
-LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
+LtcCtrlStatus LTC6811Controller::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -79,7 +75,7 @@ LtcCtrlStatus LtcController::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size 
 	return status;
 }
 
-LtcCtrlStatus LtcController::rawWrite(WCmd cmd)
+LtcCtrlStatus LTC6811Controller::rawWrite(WCmd cmd)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -97,7 +93,7 @@ LtcCtrlStatus LtcController::rawWrite(WCmd cmd)
 }
 
 template < ReadRegisterGroup RdReg >
-LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
+LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -122,7 +118,7 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 }
 
 template< ReadRegisterGroup RdReg >
-LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
+LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -151,7 +147,7 @@ LtcCtrlStatus LtcController::rawRead(RCmd cmd, std::array < RdReg, chain_size > 
 	return status;
 }
 
-void LtcController::wakeUp()
+void LTC6811Controller::wakeUp()
 {
 	uint8_t dummy = 0;
 	cs.activate();
@@ -161,7 +157,7 @@ void LtcController::wakeUp()
 	osDelay(twake_full);
 }
 
-void LtcController::handleWatchDog()
+void LTC6811Controller::handleWatchDog()
 {
 	auto cmd = CMD_RDCFGA;
 
@@ -176,7 +172,7 @@ void LtcController::handleWatchDog()
 	SpiDmaController::spiRequestAndWait(request);
 }
 
-PollStatus LtcController::pollAdcStatus()
+PollStatus LTC6811Controller::pollAdcStatus()
 {
 	std::array < uint8_t, 4 + chain_size > tx;
 	std::array < uint8_t, 4 + chain_size > rx;
@@ -194,7 +190,7 @@ PollStatus LtcController::pollAdcStatus()
 	return PollStatus::Done;
 }
 
-LtcCtrlStatus LtcController::configure()
+LtcCtrlStatus LTC6811Controller::configure()
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -208,7 +204,7 @@ LtcCtrlStatus LtcController::configure()
 	return status;
 }
 
-LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, chain_size > &vol)
+LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::array< float, 12 >, chain_size > &vol)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
@@ -244,14 +240,14 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::array< float, 12 >, c
 	return status;
 }
 
-LtcCtrlStatus LtcController::diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag)
+LtcCtrlStatus LTC6811Controller::diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	return status;
 }
 
-LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
+LtcCtrlStatus LTC6811Controller::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < PecStatus, chain_size > pec_a;
@@ -294,7 +290,7 @@ LtcCtrlStatus LtcController::readGpioAndRef2(std::array< std::array< float, 6 >,
 	return status;
 }
 
-LtcCtrlStatus LtcController::setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis)
+LtcCtrlStatus LTC6811Controller::setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -321,7 +317,7 @@ LtcCtrlStatus LtcController::setDischarge(std::array< std::array< bool, 12 >, ch
 	return status;
 }
 
-LtcCtrlStatus LtcController::readVoltages(std::array< std::atomic<float>, cell_count > &vol)
+LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::atomic<float>, cell_count > &vol)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
@@ -358,7 +354,7 @@ LtcCtrlStatus LtcController::readVoltages(std::array< std::atomic<float>, cell_c
 	return status;
 }
 
-LtcCtrlStatus LtcController::setDischarge(const std::array< std::atomic<bool>, cell_count > &dis)
+LtcCtrlStatus LTC6811Controller::setDischarge(const std::array< std::atomic<bool>, cell_count > &dis)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
@@ -386,7 +382,7 @@ LtcCtrlStatus LtcController::setDischarge(const std::array< std::atomic<bool>, c
 	return status;
 }
 
-LtcCtrlStatus LtcController::readGpioTemp(std::array< std::atomic < float >, temp_count > &temp)
+LtcCtrlStatus LTC6811Controller::readGpioTemp(std::array< std::atomic < float >, temp_count > &temp)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 	std::array < std::array < PecStatus, chain_size >, 1 > pecs;

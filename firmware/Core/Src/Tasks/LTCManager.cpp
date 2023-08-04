@@ -5,14 +5,11 @@
  *      Author: Piotr Lesicki
  */
 
-#include "PerypherialManagers/LtcController.hpp"
-#include "app_freertos.h"
-#include "main.h"
-#include "PerypherialManagers/Gpio.hpp"
-#include "StackData.hpp"
+
+#include <MainHeader.hpp>
 
 static SPI_HandleTypeDef &hspi = hspi2;
-static LtcController ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
+static LTC6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
 
 void vLTCManagerTask(void *argument)
 {

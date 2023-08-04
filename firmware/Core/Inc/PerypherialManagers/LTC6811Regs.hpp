@@ -8,9 +8,7 @@
 #ifndef INC_PERYPHERIALMANAGERS_LTC6811REGS_HPP_
 #define INC_PERYPHERIALMANAGERS_LTC6811REGS_HPP_
 
-#include "PerypherialManagers/LTC6811CmdCodes.hpp"
-#include <cstring>
-#include <concepts>
+#include "MainHeader.hpp"
 
 namespace LTC6811
 {

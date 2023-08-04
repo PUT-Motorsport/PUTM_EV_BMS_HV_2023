@@ -6,7 +6,6 @@
  */
 
 #include <PerypherialManagers/SpiDmaController.hpp>
-#include "task.h"
 
 static constexpr uint32_t bit31 = (1 << 31);
 

@@ -5,8 +5,7 @@
  *      Author: Piotr Lesicki
  */
 
-#include "app_freertos.h"
-#include "main.h"
+#include <MainHeader.hpp>
 
 void vUSBCommandManagerTask(void *argument)
 {

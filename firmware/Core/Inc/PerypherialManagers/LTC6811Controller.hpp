@@ -8,20 +8,7 @@
 #ifndef INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_
 #define INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_
 
-#include "PerypherialManagers/LTC6811CmdCodes.hpp"
-#include "PerypherialManagers/LTC6811Regs.hpp"
-#include "PerypherialManagers/PEC15.hpp"
-#include "PerypherialManagers/Gpio.hpp"
-#include "Config.hpp"
-
-#include <main.h>
-#include <array>
-#include <type_traits>
-#include <math.h>
-#include <PerypherialManagers/SpiDmaController.hpp>
-#include <algorithm>
-#include <spi.h>
-#include <atomic>
+#include "MainHeader.hpp"
 
 enum struct PecStatus
 {
@@ -50,11 +37,11 @@ enum struct LtcDiagnosisStatus
 	Failed
 };
 
-class LtcController
+class LTC6811Controller
 {
 	public:
-		LtcController() = delete;
-		LtcController(GpioOut cs, SPI_HandleTypeDef &hspi);
+		LTC6811Controller() = delete;
+		LTC6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi);
 
 		/*
 		 * direct read

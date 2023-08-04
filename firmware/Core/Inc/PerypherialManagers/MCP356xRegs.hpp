@@ -8,12 +8,37 @@
 #ifndef INC_PERYPHERIALMANAGERS_MCP356XREGS_HPP_
 #define INC_PERYPHERIALMANAGERS_MCP356XREGS_HPP_
 
-#include "main.h"
-#include <cstring>
+#include "MainHeader.hpp"
 
 namespace MCP356x
 {
-	struct StatusByte
+	struct IWriteReadRegister { };
+	struct IReadRegister { };
+	struct IAdcVariant { };
+
+	struct AdcVariantAlignRight : IAdcVariant, IReadRegister
+	{
+		uint32_t value : 24;
+		uint32_t unused : 8;
+	};
+	struct AdcVariantAlignLeft : IAdcVariant, IReadRegister
+	{
+		uint32_t unused : 8;
+		uint32_t value : 24;
+	};
+	struct AdcVariantAlignRightSgn : IAdcVariant, IReadRegister
+	{
+		uint32_t value : 24;
+		uint32_t sgn : 8;
+	} ;
+	struct AdcVariantAlignRightSgnId : IAdcVariant, IReadRegister
+	{
+		uint32_t value : 24;
+		uint32_t sgn : 4;
+		uint32_t id : 4;
+	};
+
+	struct StatusByte : IReadRegister
 	{
 		uint8_t por_status : 1;
 		uint8_t crccfg_status : 1;
@@ -23,36 +48,12 @@ namespace MCP356x
 		uint8_t dev_addr1 : 1;
 		uint8_t ignore : 2;
 	};
+
 	enum struct ChannelId : uint8_t
 	{
-		asd,
+		not_defined
 	};
-	struct Adcdata
-	{
-		union
-		{
-			struct
-			{
-				uint32_t value : 24;
-			} _24bit;
-			struct
-			{
-				uint32_t unsued : 8;
-				uint32_t value : 24;
-			} _32bit_left;
-			struct
-			{
-				uint32_t value : 24;
-				uint32_t sgn : 8;
-			} _32bit_right_sgn;
-			struct
-			{
-				uint32_t value : 24;
-				uint32_t sgn : 4;
-				uint32_t id : 4;
-			};
-		} data;
-	};
+
 	enum struct AdcMode : uint8_t
 	{
 		ShutDown = 		0b00,
@@ -77,7 +78,7 @@ namespace MCP356x
 		Active = 	0b11,
 		ShutDown =	0b00,
 	};
-	struct Config0
+	struct Config0 : IWriteReadRegister
 	{
 		uint8_t adc_mode : 2;
 		uint8_t bias_current : 2;
@@ -110,7 +111,7 @@ namespace MCP356x
 		_4,
 		_8
 	};
-	struct Config1
+	struct Config1 : IWriteReadRegister
 	{
 		uint8_t reserved_set_to_00 : 2;
 		uint8_t oversampling_ratio : 4;
@@ -139,7 +140,7 @@ namespace MCP356x
 		_1,
 		_2
 	};
-	struct Config2
+	struct Config2 : IWriteReadRegister
 	{
 		uint8_t reserved_set_to_11 : 2;
 		uint8_t az_mux : 1;
@@ -164,7 +165,7 @@ namespace MCP356x
 		OneShotStandby,
 		Continuous
 	};
-	struct Config3
+	struct Config3 : IWriteReadRegister
 	{
 		uint8_t en_gain_cal : 1;
 		uint8_t en_off_cal : 1;
@@ -187,7 +188,7 @@ namespace MCP356x
 	{
 		return uint8_t(irq_pin_state) | uint8_t(irq_pin_mdat);
 	}
-	struct IRQ
+	struct IRQ : IWriteReadRegister
 	{
 		uint8_t en_stop : 1;
 		uint8_t en_fastcmd : 1;
@@ -215,7 +216,7 @@ namespace MCP356x
 		TempDM = 	0b1110,
 		Vcm =		0b1111
 	};
-	struct Mux
+	struct Mux : IWriteReadRegister
 	{
 		uint8_t in_m : 4;
 		uint8_t in_p : 4;
@@ -231,22 +232,22 @@ namespace MCP356x
 		_256,
 		_512
 	};
-	struct Scan
+	struct Scan : IWriteReadRegister
 	{
 		uint32_t chanel_selection : 16;
 		uint32_t undefined : 4;
 		uint32_t reserved_set_to_0 : 1;
 		uint32_t delay : 3;
 	};
-	struct Timer
+	struct Timer : IWriteReadRegister
 	{
 		uint32_t value : 24;
 	};
-	struct Offset
+	struct Offset : IWriteReadRegister
 	{
 		uint32_t value : 24;
 	};
-	struct GainCal
+	struct GainCal : IWriteReadRegister
 	{
 		uint32_t value : 24;
 	};
@@ -260,16 +261,26 @@ namespace MCP356x
 		MCP356x::Config3 config3;
 	};
 
-	template < typename Reg >
-	constexpr void serializeReg(uint8_t *destination, size_t size, Reg& source)
+
+	template < typename Register >
+	concept WriteReadRegister = std::is_base_of<IWriteReadRegister, Register>::value;
+
+	template < typename Register >
+	concept ReadRegister = std::is_base_of<IReadRegister, Register>::value;
+
+	template < typename Variant >
+	concept AdcVariant = std::is_base_of<IAdcVariant, Variant>::value and sizeof(Variant) == 4;
+
+	template < WriteReadRegister Register >
+	void serializeRegister(uint8_t *destination, Register const &source)
 	{
-		std::memcpy((void*)destination, (const void *)&source, size);
+		std::memcpy(destination, &source, sizeof(Register));
 	}
 
-	template < typename Reg >
-	constexpr void deserializeReg(Reg& destination, size_t size, uint8_t *source)
+	template < ReadRegister Register >
+	void deserializeRegister(Register &destination, uint8_t const *source)
 	{
-		std::memcpy((void*)&destination, (const void *)source, size);
+		std::memcpy(&destination, source, sizeof(Register));
 	}
 }
 

@@ -6,7 +6,6 @@
  */
 
 #include "PerypherialManagers/CanUtils.hpp"
-#include "main.h"
 
 bool startCan(FDCAN_HandleTypeDef &hfdcan){
 

@@ -6,13 +6,8 @@
  */
 
 #define PUTM_USE_CAN_FD
-#include "PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp"
-#include "PerypherialManagers/CanUtils.hpp"
-#include "app_freertos.h"
-#include "fdcan.h"
-#include "main.h"
-#include <algorithm>
-#include <StackData.hpp>
+
+#include <MainHeader.hpp>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 

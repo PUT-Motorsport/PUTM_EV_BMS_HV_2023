@@ -15,10 +15,7 @@ PERFORMANCE OF THIS SOFTWARE.
 #ifndef INC_PUTM_LTC_6811_LTC6804_LIB_PEC15_HPP_
 #define INC_PUTM_LTC_6811_LTC6804_LIB_PEC15_HPP_
 
-#include <main.h>
-#include <array>
-#include <cstring>
-#include <tuple>
+#include "MainHeader.hpp"
 
 #define USE_PREGENERATED_PEC_TABLE 1
 

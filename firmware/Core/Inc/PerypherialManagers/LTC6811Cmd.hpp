@@ -24,13 +24,7 @@
 #ifndef INC_PUTM_LTC_6811_LTC6804_LIB_LTC6811_CMD_CODES_HPP_
 #define INC_PUTM_LTC_6811_LTC6804_LIB_LTC6811_CMD_CODES_HPP_
 
-#include <bitset>
-#include <type_traits>
-#include <array>
-#include <cstring>
-#include <tuple>
-
-#include "Utils.hpp"
+#include "MainHeader.hpp"
 
 #define LTC6804_COMPATIBLE_ONLY 0
 
@@ -267,21 +261,21 @@ namespace LTC6811
 	/*
 	 * Start Cell Voltage ADC Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_ADCV(Mode mode, Discharge discharge, Cell cell)
+	constexpr static inline WCmd CMD_ADCV(Mode mode, Discharge discharge, Cell cell)
 	{
 		return WCmd{ 0b01001100000 | mode | discharge | cell };
 	}
 	/*
 	 * Start Open Wire ADC Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_ADOW(Mode mode, Pull pull, Discharge discharge, Cell cell)
+	constexpr static inline WCmd CMD_ADOW(Mode mode, Pull pull, Discharge discharge, Cell cell)
 	{
 		return WCmd{ 0b01000101000 | mode | pull | discharge | cell };
 	}
 	/*
 	 * Start Self Test Cell Voltage Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_CVST(Mode mode, TestMode tmode)
+	constexpr static inline WCmd CMD_CVST(Mode mode, TestMode tmode)
 	{
 		return WCmd{ 0b01000000111 | mode | tmode };
 	}
@@ -289,7 +283,7 @@ namespace LTC6811
 	 * Start Overlap Measurement of Cell 7 Voltage
 	 */
 	#if LTC6804_COMPATIBLE_ONLY == 0
-	constexpr static inline auto CMD_ADOL(Mode mode, Discharge discharge)
+	constexpr static inline WCmd CMD_ADOL(Mode mode, Discharge discharge)
 	{
 		return WCmd{ 0b01000000001 | mode | discharge };
 	}
@@ -297,7 +291,7 @@ namespace LTC6811
 	/*
 	 * Start GPIOs ADC Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_ADAX(Mode mode, Pin gpio)
+	constexpr static inline WCmd CMD_ADAX(Mode mode, Pin gpio)
 	{
 		return WCmd{ 0b10001100000 | mode | gpio };
 	}
@@ -306,7 +300,7 @@ namespace LTC6811
 	 * Poll Status
 	 */
 	#if LTC6804_COMPATIBLE_ONLY == 0
-	constexpr static inline auto CMD_ADAXD(Mode mode, Pin gpio)
+	constexpr static inline WCmd CMD_ADAXD(Mode mode, Pin gpio)
 	{
 		return WCmd{ 0b10000000000 | mode | gpio };
 	}
@@ -314,21 +308,21 @@ namespace LTC6811
 	/*
 	 * Start Self Test GPIOs Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_AXST(Mode mode, TestMode tmode)
+	constexpr static inline WCmd CMD_AXST(Mode mode, TestMode tmode)
 	{
 		return WCmd{ 0b10000000111 | mode | tmode };
 	}
 	/*
 	 * Start Self Test GPIOs Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_ADSTAT(Mode mode, StatusGroup group)
+	constexpr static inline WCmd CMD_ADSTAT(Mode mode, StatusGroup group)
 	{
 		return WCmd{ 0b10000001000 | mode | group };
 	}
 	/*
 	 * Start Self Test Status Group Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_STATST(Mode mode, TestMode tmode)
+	constexpr static inline WCmd CMD_STATST(Mode mode, TestMode tmode)
 	{
 		return WCmd{ 0b10001100111 | mode | tmode };
 	}
@@ -336,7 +330,7 @@ namespace LTC6811
 	 * Start Combined Cell Voltage and GPIO1, GPIO2
 	 * Conversion and Poll Status
 	 */
-	constexpr static inline auto CMD_ADCVAX(Mode mode, Discharge discharge)
+	constexpr static inline WCmd CMD_ADCVAX(Mode mode, Discharge discharge)
 	{
 		return WCmd{ 0b10001101111 | mode | discharge };
 	}
@@ -345,7 +339,7 @@ namespace LTC6811
 	 * Status
 	 */
 	#if LTC6804_COMPATIBLE_ONLY == 0
-	constexpr static inline auto CMD_ADCVSC(Mode mode, Discharge discharge)
+	constexpr static inline WCmd CMD_ADCVSC(Mode mode, Discharge discharge)
 	{
 		return WCmd{ 0b10001100111 | mode | discharge };
 	}

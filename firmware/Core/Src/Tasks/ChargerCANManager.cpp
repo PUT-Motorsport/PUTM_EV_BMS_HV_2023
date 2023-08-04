@@ -5,15 +5,7 @@
  *      Author: jan
  */
 
-#include "PerypherialManagers/CanUtils.hpp"
-#include "PerypherialManagers/ChargeBalanceController.hpp"
-#include "PerypherialManagers/Charger.hpp"
-#include "PerypherialManagers/Gpio.hpp"
-#include "app_freertos.h"
-#include "fdcan.h"
-#include "main.h"
-#include "PerypherialManagers/Gpio.hpp"
-#include "StackData.hpp"
+#include <MainHeader.hpp>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 extern GpioIn charger_conected;
