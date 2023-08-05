@@ -17,9 +17,9 @@ struct FullStackData
 {
 	struct LTCData
 	{
-		std::array<std::atomic<float>, cell_count> voltages;
-		std::array<std::atomic<bool>, cell_count> discharge{0};
-		std::array<std::atomic<float>, temp_count> temp;
+		std::array<std::atomic<float>, Ltc::CELL_COUNT> voltages;
+		std::array<std::atomic<bool>, Ltc::CELL_COUNT> discharge { false };
+		std::array<std::atomic<float>, Ltc::TEMP_COUNT> temp;
 		//std::array<std::atomic<uint16_t> temp_count>
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
@@ -55,11 +55,11 @@ struct FullStackData
 
 	struct ChargeBalance
 	{
-		std::atomic<bool> balance_enable{false};
-		std::atomic<float> max_cell_voltage{4.15f};
-		std::atomic<float> min_cell_voltage{3.0f};
-		std::atomic<float> avg_cell_voltage{0.0f};
-		std::atomic<float> std_dev_cell_voltage{0.0f};
+		std::atomic<bool> balance_enable { false };
+		std::atomic<float> max_cell_voltage { 4.15f };
+		std::atomic<float> min_cell_voltage { 3.0f };
+		std::atomic<float> avg_cell_voltage { 0.0f };
+		std::atomic<float> std_dev_cell_voltage { 0.0f };
 	} charge_balance;
 
 	constexpr FullStackData() = default;

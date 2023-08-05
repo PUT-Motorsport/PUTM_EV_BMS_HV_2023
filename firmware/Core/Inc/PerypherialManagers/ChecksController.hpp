@@ -11,15 +11,11 @@
 #include <main.h>
 #include <algorithm>
 
+#include <Config.hpp>
 #include <Interfaces/StateErrorWarning.hpp>
 
 namespace Checks
 {
-    constexpr static float CELL_MAX_VOLTAGE = 4.175f;
-    constexpr static float CELL_MIN_VOLTAGE = 3.0f;
-    constexpr static float CELL_MAX_TEMPERATURE = 50.0f;
-    constexpr static float CELL_MIN_TEMPERATURE = -20.0f;
-
     constexpr ErrorOrWarning underVoltage(const FullStackData &stackData)
     {
         auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)

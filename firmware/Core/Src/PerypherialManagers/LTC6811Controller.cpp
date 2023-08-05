@@ -10,13 +10,14 @@
 #include <PerypherialManagers/SpiDmaController.hpp>
 
 using namespace LTC6811;
+using namespace Ltc;
 
 LTC6811Controller::LTC6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), cs(cs)
 {
 	cs.deactivate();
 
 	//for(auto cfg : configs)
-	for(size_t i = 0; i < chain_size; i++)
+	for(size_t i = 0; i < CHAIN_SIZE; i++)
 	{
 		// set gpio pull down to OFF
 		configs[i].gpio1 = 1;
@@ -53,11 +54,11 @@ LTC6811Controller::LTC6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi
 }
 
 template < WriteReadRegisterGroup WrRdReg >
-LtcCtrlStatus LTC6811Controller::rawWrite(WCmd cmd, std::array< WrRdReg, chain_size > const &data)
+LtcCtrlStatus LTC6811Controller::rawWrite(WCmd cmd, std::array< WrRdReg, CHAIN_SIZE > const &data)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 4 + chain_size * 8 > stxdata;
+	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
 	auto stxdit = stxdata.begin();
 
 	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
@@ -95,12 +96,12 @@ LtcCtrlStatus LTC6811Controller::rawWrite(WCmd cmd)
 }
 
 template < ReadRegisterGroup RdReg >
-LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data)
+LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 4 + chain_size * 8 > stxdata;
-	std::array < uint8_t, 4 + chain_size * 8 > srxdata;
+	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
+	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
 	auto stxdit = stxdata.begin();
 	auto srxdit = srxdata.begin() + 4;
 
@@ -120,12 +121,12 @@ LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, chain_siz
 }
 
 template< ReadRegisterGroup RdReg >
-LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, chain_size > &data, std::array < PecStatus, chain_size > &pec_status)
+LtcCtrlStatus LTC6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data, std::array < PecStatus, CHAIN_SIZE > &pec_status)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 4 + chain_size * 8 > stxdata;
-	std::array < uint8_t, 4 + chain_size * 8 > srxdata;
+	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
+	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
 	auto stxdit = stxdata.begin();
 	auto srxdit = srxdata.begin() + 4;
 	auto pecit = pec_status.begin();
@@ -176,8 +177,8 @@ void LTC6811Controller::handleWatchDog()
 
 PollStatus LTC6811Controller::pollAdcStatus()
 {
-	std::array < uint8_t, 4 + chain_size > tx;
-	std::array < uint8_t, 4 + chain_size > rx;
+	std::array < uint8_t, 4 + CHAIN_SIZE > tx;
+	std::array < uint8_t, 4 + CHAIN_SIZE > rx;
 
 	std::tie(tx[0], tx[1]) = serializeCmd(CMD_PLADC);
 	std::tie(tx[2], tx[3]) = calcPEC(tx.begin(), tx.begin() + 2);
@@ -206,11 +207,11 @@ LtcCtrlStatus LTC6811Controller::configure()
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::array< float, 12 >, chain_size > &vol)
+LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::array< float, 12 >, CHAIN_SIZE > &vol)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
-	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
+	std::array < std::array < PecStatus, CHAIN_SIZE >, 4 > pecs;
+	std::array < std::array < CellVoltage, CHAIN_SIZE >, 4 > raw;
 
 	wakeUp();
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
@@ -226,7 +227,7 @@ LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::array< float, 12 
 	wakeUp();
 	rawRead(CMD_RDCVD, raw[3], pecs[3]);
 
-	for(size_t ltc = 0; ltc < chain_size; ltc++)
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{
 		for(size_t cell = 0; cell < 12; cell++)
 		{
@@ -242,20 +243,20 @@ LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::array< float, 12 
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::diagnose(std::array < LtcDiagnosisStatus, chain_size > &diag)
+LtcCtrlStatus LTC6811Controller::diagnose(std::array < LtcDiagnosisStatus, CHAIN_SIZE > &diag)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::readGpioAndRef2(std::array< std::array< float, 6 >, chain_size > &aux)
+LtcCtrlStatus LTC6811Controller::readGpioAndRef2(std::array< std::array< float, 6 >, CHAIN_SIZE > &aux)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < PecStatus, chain_size > pec_a;
-	std::array < PecStatus, chain_size > pec_b;
-	std::array < AuxilliaryVoltageA, chain_size > aux_a;
-	std::array < AuxilliaryVoltageB, chain_size > aux_b;
+	std::array < PecStatus, CHAIN_SIZE > pec_a;
+	std::array < PecStatus, CHAIN_SIZE > pec_b;
+	std::array < AuxilliaryVoltageA, CHAIN_SIZE > aux_a;
+	std::array < AuxilliaryVoltageB, CHAIN_SIZE > aux_b;
 
 	wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
@@ -267,7 +268,7 @@ LtcCtrlStatus LTC6811Controller::readGpioAndRef2(std::array< std::array< float, 
 	wakeUp();
 	rawRead(CMD_RDAUXB,	aux_b, pec_b);
 
-	for(size_t ltc = 0; ltc < chain_size; ltc++)
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{
 		for(size_t gpio = 0; gpio < 3; gpio++)
 		{
@@ -292,12 +293,12 @@ LtcCtrlStatus LTC6811Controller::readGpioAndRef2(std::array< std::array< float, 
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::setDischarge(std::array< std::array< bool, 12 >, chain_size > &dis)
+LtcCtrlStatus LTC6811Controller::setDischarge(std::array< std::array< bool, 12 >, CHAIN_SIZE > &dis)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
 
-	for(size_t i = 0; i < chain_size; i++)
+	for(size_t i = 0; i < CHAIN_SIZE; i++)
 	{
 		configs[i].dcc1 	= dis[i][0];
 		configs[i].dcc2 	= dis[i][1];
@@ -319,11 +320,11 @@ LtcCtrlStatus LTC6811Controller::setDischarge(std::array< std::array< bool, 12 >
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::atomic<float>, cell_count > &vol)
+LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::atomic<float>, CELL_COUNT > &vol)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, chain_size >, 4 > pecs;
-	std::array < std::array < CellVoltage, chain_size >, 4 > raw;
+	std::array < std::array < PecStatus, CHAIN_SIZE >, 4 > pecs;
+	std::array < std::array < CellVoltage, CHAIN_SIZE >, 4 > raw;
 
 	wakeUp();
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
@@ -340,7 +341,7 @@ LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::atomic<float>, ce
 	rawRead(CMD_RDCVD, raw[3], pecs[3]);
 
 	static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
-	for(size_t cell = 0; cell < cell_count; cell++)
+	for(size_t cell = 0; cell < CELL_COUNT; cell++)
 	{
 		size_t ltc = cell / 9;
 		size_t ltc_cell = cell_to_ltc_cell[cell % 9];
@@ -356,11 +357,11 @@ LtcCtrlStatus LTC6811Controller::readVoltages(std::array< std::atomic<float>, ce
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::setDischarge(const std::array< std::atomic<bool>, cell_count > &dis)
+LtcCtrlStatus LTC6811Controller::setDischarge(const std::array< std::atomic<bool>, CELL_COUNT > &dis)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	for(size_t ltc = 0; ltc < chain_size; ltc += 1)
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc += 1)
 	{
 		size_t cell = ltc * 9;
 
@@ -384,11 +385,11 @@ LtcCtrlStatus LTC6811Controller::setDischarge(const std::array< std::atomic<bool
 	return status;
 }
 
-LtcCtrlStatus LTC6811Controller::readGpioTemp(std::array< std::atomic < float >, temp_count > &temp)
+LtcCtrlStatus LTC6811Controller::readGpioTemp(std::array< std::atomic < float >, TEMP_COUNT > &temp)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, chain_size >, 1 > pecs;
-	std::array < std::array < AuxilliaryVoltage, chain_size >, 1 > aux;
+	std::array < std::array < PecStatus, CHAIN_SIZE >, 1 > pecs;
+	std::array < std::array < AuxilliaryVoltage, CHAIN_SIZE >, 1 > aux;
 
 	wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
@@ -400,7 +401,7 @@ LtcCtrlStatus LTC6811Controller::readGpioTemp(std::array< std::atomic < float >,
 	//wakeUp();
 	//rawRead(CMD_RDAUXB,	aux[1], pecs[1]);
 
-	for(size_t t = 0; t < temp_count; t++)
+	for(size_t t = 0; t < TEMP_COUNT; t++)
 	{
 		size_t ltc = t / 3;
 		size_t ltc_temp = t % 3;
