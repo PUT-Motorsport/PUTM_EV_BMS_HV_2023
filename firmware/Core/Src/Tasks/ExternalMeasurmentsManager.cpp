@@ -9,16 +9,16 @@
 #include <spi.h>
 
 #include <app_freertos.h>
+#include <PerypherialManagers/Mcp356xController.hpp>
 #include <StackData.hpp>
-#include <PerypherialManagers/MCP356xController.hpp>
 
 //using AdcVar = MCP356x::AdcVariantAlignRightSgn;
 
 static SPI_HandleTypeDef &hspi = hspi3;
 
-static MCP356xController car(GpioOut(NMES_CAR_CS_GPIO_Port, NMES_CAR_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
-static MCP356xController acu(GpioOut(NMES_ACU_CS_GPIO_Port, NMES_ACU_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
-static MCP356xController isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pin, true), hspi, MCP356xVersion::MCP3562);
+static Mcp356xController car(GpioOut(NMES_CAR_CS_GPIO_Port, NMES_CAR_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
+static Mcp356xController acu(GpioOut(NMES_ACU_CS_GPIO_Port, NMES_ACU_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
+static Mcp356xController isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pin, true), hspi, MCP356xVersion::MCP3562);
 
 //static std::array < std::pair < MCP356x::MuxIn, MCP356x::MuxIn >, 3 > adc_requests
 //{

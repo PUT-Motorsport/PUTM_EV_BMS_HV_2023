@@ -19,7 +19,7 @@ namespace Checks
     constexpr ErrorOrWarning underVoltage(const FullStackData &stackData)
     {
         auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
-                                         { return cellVoltage < CELL_MIN_VOLTAGE; });
+                                         { return cellVoltage < ChecksConfig::CELL_MIN_VOLTAGE; });
         if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
             return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(std::begin(stackData.ltc_data.voltages), iter));
@@ -30,7 +30,7 @@ namespace Checks
     constexpr ErrorOrWarning overVoltage(const FullStackData &stackData)
     {
         auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
-                                         { return cellVoltage > CELL_MAX_VOLTAGE; });
+                                         { return cellVoltage > ChecksConfig::CELL_MAX_VOLTAGE; });
         if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
             return std::make_pair(CriticalErrorsEnum::OverVoltage, std::distance(std::begin(stackData.ltc_data.voltages), iter));
@@ -41,7 +41,7 @@ namespace Checks
     constexpr ErrorOrWarning underTemperature(const FullStackData &stackData)
     {
         auto iter = std::ranges::find_if(stackData.ltc_data.temp, [](const auto &cellTemperature)
-                                         { return cellTemperature < CELL_MIN_TEMPERATURE; });
+                                         { return cellTemperature < ChecksConfig::CELL_MIN_TEMPERATURE; });
         if (iter not_eq std::end(stackData.ltc_data.temp))
         {
             return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltc_data.temp), iter));
@@ -52,7 +52,7 @@ namespace Checks
     constexpr ErrorOrWarning overTemperature(const FullStackData &stackData)
     {
         auto iter = std::ranges::find_if(stackData.ltc_data.temp, [](const auto &cellTemperature)
-                                         { return cellTemperature > CELL_MAX_TEMPERATURE; });
+                                         { return cellTemperature > ChecksConfig::CELL_MAX_TEMPERATURE; });
 
         if (iter not_eq std::end(stackData.ltc_data.temp))
         {

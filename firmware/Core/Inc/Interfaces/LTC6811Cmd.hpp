@@ -36,7 +36,7 @@
 // W/Rcmd wraps a value useful for discerning the
 // required value in functions / methods
 
-namespace LTC6811
+namespace Ltc6811
 {
 
 	struct WCmd

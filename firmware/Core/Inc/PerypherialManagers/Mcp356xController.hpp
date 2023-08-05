@@ -31,16 +31,14 @@ enum struct MCP356xAddress : uint8_t
 };
 
 //template < MCP356x::AdcVariant Variant >
-class MCP356xController
+class Mcp356xController
 {
 	public:
-		using Variant = MCP356x::AdcVariantAlignRightSgn;
-
-		explicit MCP356xController(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version);
+		explicit Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version);
 
 		constexpr static MCP356xAddress address = MCP356xAddress::_1;
 
-		MCP356x::StatusByte status_byte;
+		Mcp356x::StatusByte status_byte;
 
 		const GpioOut cs;
 
@@ -48,27 +46,40 @@ class MCP356xController
 
 		MCP356xVersion version;
 
-		template < MCP356x::WriteReadRegister Registers >
-		void rawWrite(MCP356x::WCmd cmd, Registers regs);
-		template < MCP356x::ReadRegister Register >
-		void rawRead(MCP356x::RCmd cmd, Register &reg);
-		void rawFast(MCP356x::FCmd cmd);
+		template < Mcp356x::WriteReadRegister Registers >
+		void rawWrite(Mcp356x::WCmd cmd, Registers regs);
+		template < Mcp356x::ReadRegister Register >
+		void rawRead(Mcp356x::RCmd cmd, Register &reg);
+		void rawFast(Mcp356x::FCmd cmd);
 
-		MCP356x::StatusByte poolSatusByte();
+		Mcp356x::StatusByte poolSatusByte();
 
-		void configure(MCP356x::Config config);
+		void configure(Mcp356x::Config config);
 
 		bool statusByteOk();
-		void setChannels(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair);
+		void setChannels(std::pair < Mcp356x::MuxIn , Mcp356x::MuxIn > channel_pair);
 		void restartAdc();
 		bool dataReady();
+		//template < MCP356x::AdcVariant Variant >
 		int32_t readData();
 
 		//SpiDmaHandle prepReqPoolStatusByte();
 	protected:
-		MCP356x::Config config;
+		Mcp356x::Config config;
+
+		template < Mcp356x::AdcVariant Variant >
+		inline int32_t readDataVariant();
 
 		//std::array < uint32_t*, 16 > binded_values;
 };
+
+template <>
+inline int32_t Mcp356xController::readDataVariant< Mcp356x::AdcVariantAlignLeft >();
+
+template <>
+inline int32_t Mcp356xController::readDataVariant< Mcp356x::AdcVariantAlignRight >();
+
+template <>
+inline int32_t Mcp356xController::readDataVariant< Mcp356x::AdcVariantAlignRightSgn >();
 
 #endif /* INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_ */

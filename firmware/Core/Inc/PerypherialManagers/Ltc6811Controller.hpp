@@ -46,40 +46,40 @@ enum struct LtcDiagnosisStatus
 	Failed
 };
 
-class LTC6811Controller
+class Ltc6811Controller
 {
 	public:
-		LTC6811Controller() = delete;
-		LTC6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi);
+		Ltc6811Controller() = delete;
+		Ltc6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi);
 
 		/*
 		 * direct read
 		 */
-		template < LTC6811::ReadRegisterGroup RdReg >
-		LtcCtrlStatus rawRead(LTC6811::RCmd cmd, std::array < RdReg, Ltc::CHAIN_SIZE > &data);
+		template < Ltc6811::ReadRegisterGroup RdReg >
+		LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data);
 
-		template < LTC6811::ReadRegisterGroup RdReg >
-		LtcCtrlStatus rawRead(LTC6811::RCmd cmd, std::array < RdReg, Ltc::CHAIN_SIZE > &data, std::array < PecStatus, Ltc::CHAIN_SIZE > &pec_status);
+		template < Ltc6811::ReadRegisterGroup RdReg >
+		LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data, std::array < PecStatus, LtcConfig::CHAIN_SIZE > &pec_status);
 
 		/*
 		 * direct write overrides current mem
 		 */
-		template < LTC6811::WriteReadRegisterGroup WrRdReg >
-		LtcCtrlStatus rawWrite(LTC6811::WCmd cmd, std::array< WrRdReg, Ltc::CHAIN_SIZE > const &data);
-		LtcCtrlStatus rawWrite(LTC6811::WCmd cmd);
+		template < Ltc6811::WriteReadRegisterGroup WrRdReg >
+		LtcCtrlStatus rawWrite(Ltc6811::WCmd cmd, std::array< WrRdReg, LtcConfig::CHAIN_SIZE > const &data);
+		LtcCtrlStatus rawWrite(Ltc6811::WCmd cmd);
 
 		LtcCtrlStatus configure();
-		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, Ltc::CHAIN_SIZE > &vol);
-		LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, Ltc::CHAIN_SIZE > &diag);
-		LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, Ltc::CHAIN_SIZE > &aux);
-		LtcCtrlStatus setDischarge(std::array< std::array< bool, 12 >, Ltc::CHAIN_SIZE > &dis);
+		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, LtcConfig::CHAIN_SIZE > &vol);
+		LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, LtcConfig::CHAIN_SIZE > &diag);
+		LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, LtcConfig::CHAIN_SIZE > &aux);
+		LtcCtrlStatus setDischarge(std::array< std::array< bool, 12 >, LtcConfig::CHAIN_SIZE > &dis);
 
 		//atomic versions
-		LtcCtrlStatus readVoltages(std::array< std::atomic<float>, Ltc::CELL_COUNT > &vol);
+		LtcCtrlStatus readVoltages(std::array< std::atomic<float>, LtcConfig::CELL_COUNT > &vol);
 		//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, Ltc::CHAIN_SIZE > &diag);
 		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, Ltc::CHAIN_SIZE > &aux);
-		LtcCtrlStatus setDischarge(const std::array< std::atomic<bool>, Ltc::CELL_COUNT > &dis);
-		LtcCtrlStatus readGpioTemp(std::array< std::atomic < float >, Ltc::TEMP_COUNT > &temp);
+		LtcCtrlStatus setDischarge(const std::array< std::atomic<bool>, LtcConfig::CELL_COUNT > &dis);
+		LtcCtrlStatus readGpioTemp(std::array< std::atomic < float >, LtcConfig::TEMP_COUNT > &temp);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled
@@ -95,8 +95,8 @@ class LTC6811Controller
 		GpioOut cs;
 
 		//uint16_t(0x0fff) - 12bit mask
-		constexpr static uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(Ltc::UNDERVOLTAGE * 625.0 - 1.0)));
-		constexpr static uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(Ltc::UNDERVOLTAGE * 625.0)));
+		constexpr static uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(LtcConfig::UNDERVOLTAGE * 625.0 - 1.0)));
+		constexpr static uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(LtcConfig::UNDERVOLTAGE * 625.0)));
 		constexpr static float u_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
 		constexpr static float twake_full_coef = 0.2f;
@@ -120,10 +120,10 @@ class LTC6811Controller
 			return float(value) * 1.f;
 		}
 
-		std::array < LTC6811::Config, Ltc::CHAIN_SIZE > configs;
+		std::array < Ltc6811::Config, LtcConfig::CHAIN_SIZE > configs;
 		//std::array < Communication, chain_size > comm_settings;
 
-		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(Ltc::CHAIN_SIZE) * twake_full_coef)), uint32_t(1), uint32_t(UINT32_MAX));
+		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(LtcConfig::CHAIN_SIZE) * twake_full_coef)), uint32_t(1), uint32_t(UINT32_MAX));
 };
 
 #endif /* INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_ */

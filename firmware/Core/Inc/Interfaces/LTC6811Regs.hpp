@@ -12,7 +12,7 @@
 #include <concepts>
 #include <cstring>
 
-namespace LTC6811
+namespace Ltc6811
 {
 	//enum struct Pin
 	//{

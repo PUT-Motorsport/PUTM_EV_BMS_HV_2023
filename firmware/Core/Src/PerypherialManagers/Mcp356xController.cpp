@@ -5,20 +5,18 @@
  *      Author: Piotr Lesicki
  */
 
-#include <PerypherialManagers/MCP356xController.hpp>
+#include <PerypherialManagers/Mcp356xController.hpp>
 #include <PerypherialManagers/SpiDmaController.hpp>
 
-using namespace MCP356x;
+using namespace Mcp356x;
 
-//template < AdcVariant Variant >
-MCP356xController::MCP356xController(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
+Mcp356xController::Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
 {
 	cs.deactivate();
 }
 
-//template < AdcVariant Variant >
 template < WriteReadRegister Register >
-void MCP356xController::rawWrite(WCmd cmd, Register reg)
+void Mcp356xController::rawWrite(WCmd cmd, Register reg)
 {
 	cmd.value = cmd.value | address;
 	std::array < uint8_t, 1 + sizeof(Register) > stxdata { 0 };
@@ -33,9 +31,8 @@ void MCP356xController::rawWrite(WCmd cmd, Register reg)
 	deserializeRegister(status_byte, srxdata.begin());
 }
 
-//template < AdcVariant Variant >
 template < ReadRegister Register >
-void MCP356xController::rawRead(RCmd cmd, Register &reg)
+void Mcp356xController::rawRead(RCmd cmd, Register &reg)
 {
 	cmd.value = cmd.value | address;
 	std::array < uint8_t, 1 + sizeof(Register) > stxdata { 0 };
@@ -50,8 +47,7 @@ void MCP356xController::rawRead(RCmd cmd, Register &reg)
 	deserializeRegister(reg, srxdata.begin() + 1);
 }
 
-//template < AdcVariant Variant >
-void MCP356xController::rawFast(FCmd cmd)
+void Mcp356xController::rawFast(FCmd cmd)
 {
 	cmd.value = cmd.value | address;
 	uint8_t stxdata = 0;
@@ -65,22 +61,19 @@ void MCP356xController::rawFast(FCmd cmd)
 	deserializeRegister(status_byte, &srxdata);
 }
 
-//template < AdcVariant Variant >
-bool MCP356xController::statusByteOk()
+bool Mcp356xController::statusByteOk()
 {
 	return status_byte.dev_addr0 xor status_byte.ndev_addr0;
 }
 
-//template < AdcVariant Variant >
-StatusByte MCP356xController::poolSatusByte()
+StatusByte Mcp356xController::poolSatusByte()
 {
 	rawFast(CMD_POOL_STATUS);
 
 	return status_byte;
 }
 
-//template < AdcVariant Variant >
-void MCP356xController::configure(Config config)
+void Mcp356xController::configure(Config config)
 {
 	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG0), config.config0);
 	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG1), config.config1);
@@ -88,8 +81,7 @@ void MCP356xController::configure(Config config)
 	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG3), config.config3);
 }
 
-//template < AdcVariant Variant >
-void MCP356xController::setChannels(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair)
+void Mcp356xController::setChannels(std::pair < Mcp356x::MuxIn , Mcp356x::MuxIn > channel_pair)
 {
 	Mux selection =
 	{
@@ -100,46 +92,67 @@ void MCP356xController::setChannels(std::pair < MCP356x::MuxIn , MCP356x::MuxIn 
 	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::MUX), selection);
 }
 
-//template < AdcVariant Variant >
-void MCP356xController::restartAdc()
+void Mcp356xController::restartAdc()
 {
 	rawFast(CMD_ADC_RESTART);
 }
 
-//template < AdcVariant Variant >
-bool MCP356xController::dataReady()
+bool Mcp356xController::dataReady()
 {
 	return not (bool)poolSatusByte().dr_status;
 }
 
-//template < AdcVariant Variant >
-int32_t MCP356xController::readData()
+int32_t Mcp356xController::readData()
 {
-	int32_t result = 0;
+	return readDataVariant< Mcp356xConfig::ADC_VARIANT >();
+}
+
+template < Mcp356x::AdcVariant Variant >
+inline int32_t Mcp356xController::readDataVariant()
+{
+	return 0;
+}
+
+template <>
+inline int32_t Mcp356xController::readDataVariant< AdcVariantAlignRight >()
+{
 	// the value is represent as if it was a signed int25 or int24
 	// so we need to represent it as a signed int32
-	if constexpr (std::same_as< Variant, AdcVariantAlignRight >)
-	{
-		AdcVariantAlignRight frame;
-		rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
-		if(frame.sgn) result = 0xff'80'00'00 | frame.value;
-		else result = frame.value;
-	}
-	else if constexpr (std::same_as< Variant, AdcVariantAlignLeft >)
-	{
-		AdcVariantAlignLeft frame;
-		rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
-		if(frame.sgn) result = 0xff'80'00'00 | frame.value;
-		else result = frame.value;
-	}
-	else if constexpr (std::same_as< Variant, AdcVariantAlignRightSgn >)
-	{
-		AdcVariantAlignRightSgn frame;
-		rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
-		if(frame.sgn) result = 0xff'00'00'00 | frame.value;
-		else result = frame.value;
-	}
-	return 0;
+
+	int32_t result = 0;
+	AdcVariantAlignRight frame;
+	rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
+	if(frame.sgn) result = 0xff'80'00'00 | frame.value;
+	else result = frame.value;
+	return result;
+}
+
+template <>
+inline int32_t Mcp356xController::readDataVariant< AdcVariantAlignLeft >()
+{
+	// the value is represent as if it was a signed int25 or int24
+	// so we need to represent it as a signed int32
+
+	int32_t result = 0;
+	AdcVariantAlignLeft frame;
+	rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
+	if(frame.sgn) result = 0xff'80'00'00 | frame.value;
+	else result = frame.value;
+	return result;
+}
+
+template <>
+inline int32_t Mcp356xController::readDataVariant< AdcVariantAlignRightSgn >()
+{
+	// the value is represent as if it was a signed int25 or int24
+	// so we need to represent it as a signed int32
+
+	int32_t result = 0;
+	AdcVariantAlignRightSgn frame;
+	rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
+	if(frame.sgn) result = 0xff'00'00'00 | frame.value;
+	else result = frame.value;
+	return result;
 }
 
 //template <>

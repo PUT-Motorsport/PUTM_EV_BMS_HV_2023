@@ -35,9 +35,9 @@
 #include <FreeRTOS.h>
 #include <app_freertos.h>
 #include <PerypherialManagers/SpiDmaController.hpp>
-#include <PerypherialManagers/MCP356xController.hpp>
-#include <PerypherialManagers/LTC6811Controller.hpp>
 #include <PerypherialManagers/GpioController.hpp>
+#include <PerypherialManagers/Ltc6811Controller.hpp>
+#include <PerypherialManagers/Mcp356xController.hpp>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

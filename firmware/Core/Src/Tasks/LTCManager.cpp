@@ -10,11 +10,11 @@
 #include <spi.h>
 
 #include <app_freertos.h>
+#include <PerypherialManagers/Ltc6811Controller.hpp>
 #include <StackData.hpp>
-#include <PerypherialManagers/LTC6811Controller.hpp>
 
 static SPI_HandleTypeDef &hspi = hspi2;
-static LTC6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
+static Ltc6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
 
 void vLTCManagerTask(void *argument)
 {

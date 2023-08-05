@@ -13,7 +13,7 @@
 
 #include <Utils/Utils.hpp>
 
-namespace MCP356x
+namespace Mcp356x
 {
 	enum struct MCP356xRegisterAddress : uint8_t
 	{

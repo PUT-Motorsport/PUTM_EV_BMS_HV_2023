@@ -12,7 +12,7 @@
 #include <concepts>
 #include <cstring>
 
-namespace MCP356x
+namespace Mcp356x
 {
 	struct IWriteReadRegister { };
 	struct IReadRegister { };
@@ -259,10 +259,10 @@ namespace MCP356x
 
 	struct Config
 	{
-		MCP356x::Config0 config0;
-		MCP356x::Config1 config1;
-		MCP356x::Config2 config2;
-		MCP356x::Config3 config3;
+		Mcp356x::Config0 config0;
+		Mcp356x::Config1 config1;
+		Mcp356x::Config2 config2;
+		Mcp356x::Config3 config3;
 	};
 
 
