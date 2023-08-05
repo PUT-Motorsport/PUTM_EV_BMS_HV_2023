@@ -11,6 +11,11 @@
 #include <main.h>
 #include <array>
 
+// TODO: use command format?
+// substitute send and processFrame with protected execute(&hfdcan)
+// and add class (CommandController/Executer) that will take ref to the GenericCanTx/RxMesage
+// and will execute it
+
 class ChargerCanTxMessage
 {
 	private:

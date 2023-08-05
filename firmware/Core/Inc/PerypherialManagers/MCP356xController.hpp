@@ -42,13 +42,11 @@ class MCP356xController
 
 		MCP356x::StatusByte status_byte;
 
-		GpioOut cs;
+		const GpioOut cs;
 
-		SPI_HandleTypeDef &hspi;
+		const SPI_HandleTypeDef &hspi;
 
 		MCP356xVersion version;
-
-		bool statusByteOk();
 
 		template < MCP356x::WriteReadRegister Registers >
 		void rawWrite(MCP356x::WCmd cmd, Registers regs);
@@ -60,6 +58,7 @@ class MCP356xController
 
 		void configure(MCP356x::Config config);
 
+		bool statusByteOk();
 		void setChannels(std::pair < MCP356x::MuxIn , MCP356x::MuxIn > channel_pair);
 		void restartAdc();
 		bool dataReady();

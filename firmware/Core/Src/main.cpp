@@ -58,16 +58,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-struct DeviceConfig
-{
-	static inline bool debug_leds_inverted = true;
-};
+GpioOut led_ok { LED1_GPIO_Port, LED1_Pin, true };
+GpioOut led_warning { LED2_GPIO_Port, LED2_Pin, true };
+GpioOut led_error { LED3_GPIO_Port, LED3_Pin, true };
 
-GpioOut led_ok(LED1_GPIO_Port, LED1_Pin, DeviceConfig::debug_leds_inverted);
-GpioOut led_warning(LED2_GPIO_Port, LED2_Pin, DeviceConfig::debug_leds_inverted);
-GpioOut led_error(LED3_GPIO_Port, LED3_Pin, DeviceConfig::debug_leds_inverted);
-
-GpioIn charger_conected(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, false);
+GpioIn charger_conected { CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, false };
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
