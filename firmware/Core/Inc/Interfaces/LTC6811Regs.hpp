@@ -219,49 +219,58 @@ namespace Ltc6811
 			uint8_t sctl12 : 4;
 		};
 	};
+
+	enum struct PwmValue : uint8_t
+	{
+		Disable
+	};
 	// PWM rd/wr
 	struct Pwm : public IWriteReadRegisterGroup
 	{
 		struct
 		{
-			uint8_t pwm1 : 4;
-			uint8_t pwm2 : 4;
+			PwmValue pwm1 : 4;
+			PwmValue pwm2 : 4;
 		};
 		struct
 		{
-			uint8_t pwm3 : 4;
-			uint8_t pwm4 : 4;
+			PwmValue pwm3 : 4;
+			PwmValue pwm4 : 4;
 		};
 		struct
 		{
-			uint8_t pwm5 : 4;
-			uint8_t pwm6 : 4;
+			PwmValue pwm5 : 4;
+			PwmValue pwm6 : 4;
 		};
 		struct
 		{
-			uint8_t pwm7 : 4;
-			uint8_t pwm8 : 4;
+			PwmValue pwm7 : 4;
+			PwmValue pwm8 : 4;
 		};
 		struct
 		{
-			uint8_t pwm9 : 4;
-			uint8_t pwm10 : 4;
+			PwmValue pwm9 : 4;
+			PwmValue pwm10 : 4;
 		};
 		struct
 		{
-			uint8_t pwm11 : 4;
-			uint8_t pwm12: 4;
+			PwmValue pwm11 : 4;
+			PwmValue pwm12: 4;
 		};
 	};
 	#endif
 
 	template < typename RegisterGroup >
 	concept WriteReadRegisterGroup = 	std::is_base_of<IWriteReadRegisterGroup, RegisterGroup>::value	and
-										sizeof(RegisterGroup) == 6;
+										sizeof(RegisterGroup) == 6										and
+										std::is_standard_layout< RegisterGroup >::value					and
+										std::is_trivial< RegisterGroup >::value;
 
 	template < typename RegisterGroup >
 	concept ReadRegisterGroup = std::is_base_of<IReadRegisterGroup, RegisterGroup>::value 	and
-								sizeof(RegisterGroup) == 6;
+								sizeof(RegisterGroup) == 6									and
+								std::is_standard_layout< RegisterGroup >::value				and
+								std::is_trivial< RegisterGroup >::value;
 
 	template < WriteReadRegisterGroup RegisterGroup >
 	void serializeRegisterGroup(uint8_t *destination, RegisterGroup &source)
