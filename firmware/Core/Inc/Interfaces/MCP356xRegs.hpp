@@ -53,10 +53,10 @@ namespace Mcp356x
 		uint8_t ignore : 2;
 	};
 
-	enum struct ChannelId : uint8_t
-	{
-		not_defined
-	};
+//	enum struct ChannelId : uint8_t
+//	{
+//		not_defined
+//	};
 
 	enum struct AdcMode : uint8_t
 	{
@@ -84,10 +84,10 @@ namespace Mcp356x
 	};
 	struct Config0 : IWriteReadRegister
 	{
-		uint8_t adc_mode : 2;
-		uint8_t bias_current : 2;
-		uint8_t clk_sel : 2;
-		uint8_t shut_down : 2;
+		AdcMode adc_mode : 2;
+		BiasCurrent bias_current : 2;
+		ClockSelect clk_sel : 2;
+		ShutDown shut_down : 2;
 	};
 	enum struct OversamplingRatio : uint8_t
 	{
@@ -118,17 +118,17 @@ namespace Mcp356x
 	struct Config1 : IWriteReadRegister
 	{
 		uint8_t reserved_set_to_00 : 2;
-		uint8_t oversampling_ratio : 4;
-		uint8_t aclk_prescaller_div : 2;
+		OversamplingRatio oversampling_ratio : 4;
+		AClkPrescallerDiv aclk_prescaller_div : 2;
 	};
-	enum struct az_mux : uint8_t
+	enum struct AzMux : uint8_t
 	{
 		disabled,
 		active
 	};
-	enum struct gain : uint8_t
+	enum struct Gain : uint8_t
 	{
-		_0_333, // 1/3
+		_0_33, // 1/3
 		_1,
 		_2,
 		_4,
@@ -137,7 +137,7 @@ namespace Mcp356x
 		_32,
 		_64
 	};
-	enum struct boost : uint8_t
+	enum struct Boost : uint8_t
 	{
 		_0_5,
 		_0_66,
@@ -147,9 +147,9 @@ namespace Mcp356x
 	struct Config2 : IWriteReadRegister
 	{
 		uint8_t reserved_set_to_11 : 2;
-		uint8_t az_mux : 1;
-		uint8_t gain : 3;
-		uint8_t boost : 2;
+		AzMux az_mux : 1;
+		Gain gain : 3;
+		Boost boost : 2;
 	};
 	enum struct CrcFormat : uint8_t
 	{
@@ -174,9 +174,9 @@ namespace Mcp356x
 		uint8_t en_gain_cal : 1;
 		uint8_t en_off_cal : 1;
 		uint8_t en_crc : 1;
-		uint8_t crc_format : 1;
-		uint8_t data_format : 2;
-		uint8_t conv_mode : 2;
+		CrcFormat crc_format : 1;
+		DataFormat data_format : 2;
+		ConvMode conv_mode : 2;
 	};
 	enum struct IrqPinState : uint8_t
 	{
@@ -188,15 +188,12 @@ namespace Mcp356x
 		All,
 		PorAndCrcOnly
 	};
-	constexpr uint8_t IrqMode(IrqPinState irq_pin_state, IrqMdatSelection irq_pin_mdat)
-	{
-		return uint8_t(irq_pin_state) | uint8_t(irq_pin_mdat);
-	}
 	struct IRQ : IWriteReadRegister
 	{
 		uint8_t en_stop : 1;
 		uint8_t en_fastcmd : 1;
-		uint8_t irq_mode : 2;
+		IrqPinState irq_pin_state: 1;
+		IrqMdatSelection irq_mdat_selection : 1;
 		uint8_t por_status : 1;
 		uint8_t crcconf_status : 1;
 		uint8_t dr_status : 1;
@@ -222,8 +219,8 @@ namespace Mcp356x
 	};
 	struct Mux : IWriteReadRegister
 	{
-		uint8_t in_m : 4;
-		uint8_t in_p : 4;
+		MuxIn in_m : 4;
+		MuxIn in_p : 4;
 	};
 	enum struct DelayMul : uint8_t
 	{
@@ -241,7 +238,7 @@ namespace Mcp356x
 		uint32_t chanel_selection : 16;
 		uint32_t undefined : 4;
 		uint32_t reserved_set_to_0 : 1;
-		uint32_t delay : 3;
+		DelayMul delay : 3;
 	};
 	struct Timer : IWriteReadRegister
 	{
@@ -257,23 +254,31 @@ namespace Mcp356x
 	};
 	//there are other reserved / unused
 
-	struct Config
+	// config groped into one larger register (sizeof = 4)
+	// for write optimization
+	struct ConfigGroup : IWriteReadRegister
 	{
-		Mcp356x::Config0 config0;
-		Mcp356x::Config1 config1;
-		Mcp356x::Config2 config2;
-		Mcp356x::Config3 config3;
+		Config0 config0;
+		Config1 config1;
+		Config2 config2;
+		Config3 config3;
 	};
 
+	template < typename Register >
+	concept WriteReadRegister = std::is_base_of< IWriteReadRegister, Register >::value 	and
+								std::is_standard_layout< Register >::value				and
+								std::is_trivial< Register >::value;
 
 	template < typename Register >
-	concept WriteReadRegister = std::is_base_of<IWriteReadRegister, Register>::value;
-
-	template < typename Register >
-	concept ReadRegister = std::is_base_of<IReadRegister, Register>::value;
+	concept ReadRegister = 	std::is_base_of< IReadRegister, Register >::value 	and
+							std::is_standard_layout< Register >::value			and
+							std::is_trivial< Register >::value;
 
 	template < typename Variant >
-	concept AdcVariant = std::is_base_of<IAdcVariant, Variant>::value and sizeof(Variant) == 4;
+	concept AdcVariant = 	std::is_base_of< IAdcVariant, Variant >::value 	and
+							sizeof(Variant) == 4							and
+							std::is_standard_layout< Variant >::value		and
+							std::is_trivial< Variant >::value;
 
 	template < WriteReadRegister Register >
 	void serializeRegister(uint8_t *destination, Register const &source)

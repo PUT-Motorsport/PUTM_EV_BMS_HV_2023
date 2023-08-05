@@ -16,23 +16,31 @@
 
 static SPI_HandleTypeDef &hspi = hspi3;
 
-static Mcp356xController car(GpioOut(NMES_CAR_CS_GPIO_Port, NMES_CAR_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
-static Mcp356xController acu(GpioOut(NMES_ACU_CS_GPIO_Port, NMES_ACU_CS_Pin, true), hspi, MCP356xVersion::MCP3561);
-static Mcp356xController isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pin, true), hspi, MCP356xVersion::MCP3562);
+static Mcp356xController car(GpioOut(NMES_CAR_CS_GPIO_Port, NMES_CAR_CS_Pin, true), hspi, Mcp356xVersion::MCP3561);
+static Mcp356xController acu(GpioOut(NMES_ACU_CS_GPIO_Port, NMES_ACU_CS_Pin, true), hspi, Mcp356xVersion::MCP3561);
+static Mcp356xController isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pin, true), hspi, Mcp356xVersion::MCP3562);
 
-//std::pair < Mcp356x::MuxIn, Mcp356x::MuxIn > kek1 = { Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1 };
+static std::array < Mcp356xController*, 3 > mcps { &car, &acu, &isens };
 
-static std::array < std::pair < Mcp356x::MuxIn, Mcp356x::MuxIn >, 3 > adc_requests
+static Mcp356x::ConfigGroup std_config =
 {
-	//car
-	std::pair < Mcp356x::MuxIn, Mcp356x::MuxIn > { Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1 },
-	//acu
-	std::pair < Mcp356x::MuxIn, Mcp356x::MuxIn > { Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1 },
-	//isens
-	std::pair < Mcp356x::MuxIn, Mcp356x::MuxIn > { Mcp356x::MuxIn::Ch2, Mcp356x::MuxIn::Ch3 }
-};
+	.config0 =
+	{
 
-static std::array < Mcp356xController*, 3 > mcps_ref { &car, &acu, &isens };
+	},
+	.config1 =
+	{
+
+	},
+	.config2 =
+	{
+
+	},
+	.config3 =
+	{
+
+	}
+};
 
 static GpioIn charger_conected { CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin };
 static GpioIn safety_detect { SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin };
@@ -42,6 +50,15 @@ static GpioIn air_m_detect { AIR_M_DETECT_GPIO_Port, AIR_M_DETECT_Pin };
 
 void vExternalMeasurmentsManagerTask(void *argument)
 {
+	for(auto mcp : mcps)
+	{
+		mcp->configure(std_config);
+	}
+
+	car.setChannels(Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
+	acu.setChannels(Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
+	isens.setChannels(Mcp356x::MuxIn::Ch2, Mcp356x::MuxIn::Ch3);
+
 	while(true)
 	{
 		FullStackDataInstance::set().ltc_data.charger_connected = charger_conected.isActive();

@@ -10,7 +10,7 @@
 
 using namespace Mcp356x;
 
-Mcp356xController::Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi, MCP356xVersion version) : cs(cs), hspi(hspi), version(version)
+Mcp356xController::Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi, Mcp356xVersion version) : cs(cs), hspi(hspi), version(version)
 {
 	cs.deactivate();
 }
@@ -73,23 +73,20 @@ StatusByte Mcp356xController::poolSatusByte()
 	return status_byte;
 }
 
-void Mcp356xController::configure(Config config)
+void Mcp356xController::configure(ConfigGroup config)
 {
-	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG0), config.config0);
-	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG1), config.config1);
-	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG2), config.config2);
-	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::CONFIG3), config.config3);
+	rawFast(CMD_FULL_RESET);
+	rawWrite(CMD_INC_WRITE(Mcp356xRegisterAddress::CONFIG0), config);
 }
 
-void Mcp356xController::setChannels(std::pair < Mcp356x::MuxIn , Mcp356x::MuxIn > channel_pair)
+void Mcp356xController::setChannels(MuxIn channel_p, MuxIn channel_m)
 {
 	Mux selection =
 	{
-		.in_m = uint8_t(channel_pair.first),
-		.in_p = uint8_t(channel_pair.second)
+		.in_m = channel_m,
+		.in_p = channel_p
 	};
-
-	rawWrite(CMD_INC_WRITE(MCP356xRegisterAddress::MUX), selection);
+	rawWrite(CMD_INC_WRITE(Mcp356xRegisterAddress::MUX), selection);
 }
 
 void Mcp356xController::restartAdc()
@@ -121,7 +118,7 @@ inline int32_t Mcp356xController::readDataVariant< AdcVariantAlignRight >()
 
 	int32_t result = 0;
 	AdcVariantAlignRight frame;
-	rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
+	rawRead(CMD_STATIC_READ(Mcp356xRegisterAddress::ADCDATA), frame);
 	if(frame.sgn) result = 0xff'80'00'00 | frame.value;
 	else result = frame.value;
 	return result;
@@ -135,7 +132,7 @@ inline int32_t Mcp356xController::readDataVariant< AdcVariantAlignLeft >()
 
 	int32_t result = 0;
 	AdcVariantAlignLeft frame;
-	rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
+	rawRead(CMD_STATIC_READ(Mcp356xRegisterAddress::ADCDATA), frame);
 	if(frame.sgn) result = 0xff'80'00'00 | frame.value;
 	else result = frame.value;
 	return result;
@@ -149,7 +146,7 @@ inline int32_t Mcp356xController::readDataVariant< AdcVariantAlignRightSgn >()
 
 	int32_t result = 0;
 	AdcVariantAlignRightSgn frame;
-	rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
+	rawRead(CMD_STATIC_READ(Mcp356xRegisterAddress::ADCDATA), frame);
 	if(frame.sgn) result = 0xff'00'00'00 | frame.value;
 	else result = frame.value;
 	return result;

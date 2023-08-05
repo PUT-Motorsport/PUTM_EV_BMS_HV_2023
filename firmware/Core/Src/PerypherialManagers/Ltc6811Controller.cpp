@@ -43,13 +43,11 @@ Ltc6811Controller::Ltc6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi
 		configs[i].dcc11 = 0;
 		configs[i].dcc12 = 0;
 		//set under voltage comparison voltage
-		configs[i].vuv_lsb = uint8_t(vuv & 0xff);
-		configs[i].vuv_msb = uint8_t((vuv >> 8) & 0x0f);
+		configs[i].vuv = vuv;
 		//set over voltage comparison voltage
-		configs[i].vov_lsb = uint8_t(vuv & 0x0f);
-		configs[i].vov_msb = uint8_t((vuv >> 4) & 0xff);
+		configs[i].vov = vov;
 		//set soft watch dog timer discharge time (can't be used in our case)
-		configs[i].dcto = uint8_t(DischargeTime::Disable);
+		configs[i].dcto = DischargeTime::Disable;
 	}
 }
 

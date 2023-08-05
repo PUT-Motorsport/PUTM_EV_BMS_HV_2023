@@ -15,7 +15,7 @@
 
 namespace Mcp356x
 {
-	enum struct MCP356xRegisterAddress : uint8_t
+	enum struct Mcp356xRegisterAddress : uint8_t
 	{
 		ADCDATA = 	0b00'0000'00,
 		CONFIG0 = 	0b00'0001'00,
@@ -55,7 +55,7 @@ namespace Mcp356x
 	constexpr FCmd CMD_FULL_SHUTDOWN	{ 0b00'1101'00 };
 	constexpr FCmd CMD_FULL_RESET 		{ 0b00'1110'00 };
 
-	static constexpr RCmd CMD_STATIC_READ(MCP356xRegisterAddress addr)
+	static constexpr RCmd CMD_STATIC_READ(Mcp356xRegisterAddress addr)
 	{
 		return RCmd( 0b000000'01 | addr );
 	}
@@ -63,7 +63,7 @@ namespace Mcp356x
 //	{
 //		return { 0b000000'11 | addr }; //IncrementalRead
 //	}
-	static constexpr WCmd CMD_INC_WRITE(MCP356xRegisterAddress addr)
+	static constexpr WCmd CMD_INC_WRITE(Mcp356xRegisterAddress addr)
 	{
 		return WCmd( 0b000000'10 | addr ); //IncrementalWrite
 	}
