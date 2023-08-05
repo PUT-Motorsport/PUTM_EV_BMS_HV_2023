@@ -23,7 +23,7 @@ void vChargerCANManagerTask(void *argument)
 	startCan(hfdcan);
 
 	ChargeBalanceController balanceController(FullStackDataInstance::getAndModify());
-	balanceController.disable_balance();
+	balanceController.disableBalance();
 
 	bool charging_enable{false};
 	float charge_voltage = 135.0f * 4.15f;

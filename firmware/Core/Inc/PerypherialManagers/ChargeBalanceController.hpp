@@ -31,18 +31,18 @@ public:
         float avg_v = std::accumulate(v.begin(), v.end(), 0.0f) / v.size();
         fsd.charge_balance.avg_cell_voltage = avg_v;
 
+        //FIXME imo float potrzebujemy precyzji double?
         float variance = std::accumulate(v.begin(), v.end(), 0.0, [&](double acc, double x)
-                                         { return acc + (x - avg_v) * (x - avg_v); }) /
-                         v.size();
+                                         { return acc + (x - avg_v) * (x - avg_v); }) / v.size();
         fsd.charge_balance.std_dev_cell_voltage = std::sqrt(variance);
     }
 
-    constexpr void disable_balance()
+    constexpr void disableBalance()
     {
         std::ranges::fill(fsd.ltc_data.discharge, false);
     }
 
-    constexpr void recalc_balance()
+    constexpr void recalcBalance()
     {
         for (size_t i = 0; i < fsd.ltc_data.voltages.size(); i++)
         {

@@ -116,24 +116,26 @@ bool MCP356xController::dataReady()
 int32_t MCP356xController::readData()
 {
 	int32_t result = 0;
+	// the value is represent as if it was a signed int25 or int24
+	// so we need to represent it as a signed int32
 	if constexpr (std::same_as< Variant, AdcVariantAlignRight >)
 	{
 		AdcVariantAlignRight frame;
 		rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
-		result = frame.value;
+		if(frame.sgn) result = 0xff'80'00'00 | frame.value;
+		else result = frame.value;
 	}
 	else if constexpr (std::same_as< Variant, AdcVariantAlignLeft >)
 	{
 		AdcVariantAlignLeft frame;
 		rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
-		result = frame.value;
+		if(frame.sgn) result = 0xff'80'00'00 | frame.value;
+		else result = frame.value;
 	}
 	else if constexpr (std::same_as< Variant, AdcVariantAlignRightSgn >)
 	{
 		AdcVariantAlignRightSgn frame;
 		rawRead(CMD_STATIC_READ(MCP356xRegisterAddress::ADCDATA), frame);
-		// the value is represent as if it was a signed int25
-		// so we need to represent it as a signed int32
 		if(frame.sgn) result = 0xff'00'00'00 | frame.value;
 		else result = frame.value;
 	}

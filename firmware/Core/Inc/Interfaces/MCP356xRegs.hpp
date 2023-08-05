@@ -20,13 +20,15 @@ namespace MCP356x
 
 	struct AdcVariantAlignRight : IAdcVariant, IReadRegister
 	{
-		uint32_t value : 24;
+		uint32_t sgn : 1;
+		uint32_t value : 23;
 		uint32_t unused : 8;
 	};
 	struct AdcVariantAlignLeft : IAdcVariant, IReadRegister
 	{
 		uint32_t unused : 8;
-		uint32_t value : 24;
+		uint32_t sgn : 1;
+		uint32_t value : 23;
 	};
 	struct AdcVariantAlignRightSgn : IAdcVariant, IReadRegister
 	{
