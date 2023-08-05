@@ -20,15 +20,19 @@ namespace Mcp356x
 
 	struct AdcVariantAlignRight : IAdcVariant, IReadRegister
 	{
-		uint32_t sgn : 1;
-		uint32_t value : 23;
-		uint32_t unused : 8;
+		public:
+			uint32_t sgn : 1;
+			uint32_t value : 23;
+		private:
+			uint32_t unused : 8;
 	};
 	struct AdcVariantAlignLeft : IAdcVariant, IReadRegister
 	{
-		uint32_t unused : 8;
-		uint32_t sgn : 1;
-		uint32_t value : 23;
+		private:
+			uint32_t unused : 8;
+		public:
+			uint32_t sgn : 1;
+			uint32_t value : 23;
 	};
 	struct AdcVariantAlignRightSgn : IAdcVariant, IReadRegister
 	{
@@ -44,13 +48,15 @@ namespace Mcp356x
 
 	struct StatusByte : IReadRegister
 	{
-		uint8_t por_status : 1;
-		uint8_t crccfg_status : 1;
-		uint8_t dr_status : 1;
-		uint8_t ndev_addr0 : 1;
-		uint8_t dev_addr0 : 1;
-		uint8_t dev_addr1 : 1;
-		uint8_t ignore : 2;
+		public:
+			uint8_t por_status : 1;
+			uint8_t crccfg_status : 1;
+			uint8_t dr_status : 1;
+			uint8_t ndev_addr0 : 1;
+			uint8_t dev_addr0 : 1;
+			uint8_t dev_addr1 : 1;
+		private:
+			uint8_t ignore : 2;
 	};
 
 //	enum struct ChannelId : uint8_t
@@ -117,9 +123,11 @@ namespace Mcp356x
 	};
 	struct Config1 : IWriteReadRegister
 	{
-		uint8_t reserved_set_to_00 : 2;
-		OversamplingRatio oversampling_ratio : 4;
-		AClkPrescallerDiv aclk_prescaller_div : 2;
+		private:
+			uint8_t reserved_set_to_00 : 2 { 0b00 };
+		public:
+			OversamplingRatio oversampling_ratio : 4;
+			AClkPrescallerDiv aclk_prescaller_div : 2;
 	};
 	enum struct AzMux : uint8_t
 	{
@@ -146,10 +154,12 @@ namespace Mcp356x
 	};
 	struct Config2 : IWriteReadRegister
 	{
-		uint8_t reserved_set_to_11 : 2;
-		AzMux az_mux : 1;
-		Gain gain : 3;
-		Boost boost : 2;
+		private:
+			uint8_t reserved_set_to_11 : 2 { 0b11 };
+		public:
+			AzMux az_mux : 1;
+			Gain gain : 3;
+			Boost boost : 2;
 	};
 	enum struct CrcFormat : uint8_t
 	{
@@ -190,14 +200,16 @@ namespace Mcp356x
 	};
 	struct IRQ : IWriteReadRegister
 	{
-		uint8_t en_stop : 1;
-		uint8_t en_fastcmd : 1;
-		IrqPinState irq_pin_state: 1;
-		IrqMdatSelection irq_mdat_selection : 1;
-		uint8_t por_status : 1;
-		uint8_t crcconf_status : 1;
-		uint8_t dr_status : 1;
-		uint8_t undefined : 1;
+		public:
+			uint8_t en_stop : 1;
+			uint8_t en_fastcmd : 1;
+			IrqPinState irq_pin_state: 1;
+			IrqMdatSelection irq_mdat_selection : 1;
+			uint8_t por_status : 1;
+			uint8_t crcconf_status : 1;
+			uint8_t dr_status : 1;
+		private:
+			uint8_t undefined : 1;
 	};
 	enum struct MuxIn : uint8_t
 	{
@@ -235,10 +247,13 @@ namespace Mcp356x
 	};
 	struct Scan : IWriteReadRegister
 	{
-		uint32_t chanel_selection : 16;
-		uint32_t undefined : 4;
-		uint32_t reserved_set_to_0 : 1;
-		DelayMul delay : 3;
+		public:
+			uint32_t chanel_selection : 16;
+			uint32_t undefined : 4;
+		private:
+			uint32_t reserved_set_to_0 : 1 { 0b0 };
+		public:
+			DelayMul delay : 3;
 	};
 	struct Timer : IWriteReadRegister
 	{
@@ -265,20 +280,17 @@ namespace Mcp356x
 	};
 
 	template < typename Register >
-	concept WriteReadRegister = std::is_base_of< IWriteReadRegister, Register >::value 	and
-								std::is_standard_layout< Register >::value				and
-								std::is_trivial< Register >::value;
+	concept WriteReadRegister = std::is_base_of< IWriteReadRegister, Register >::value	and
+								not std::is_polymorphic< Register >::value;
 
 	template < typename Register >
-	concept ReadRegister = 	std::is_base_of< IReadRegister, Register >::value 	and
-							std::is_standard_layout< Register >::value			and
-							std::is_trivial< Register >::value;
+	concept ReadRegister = 	std::is_base_of< IReadRegister, Register >::value	and
+							not std::is_polymorphic< Register >::value;
 
 	template < typename Variant >
 	concept AdcVariant = 	std::is_base_of< IAdcVariant, Variant >::value 	and
-							sizeof(Variant) == 4							and
-							std::is_standard_layout< Variant >::value		and
-							std::is_trivial< Variant >::value;
+							not std::is_polymorphic< Variant >::value 		and
+							sizeof(Variant) == 4;
 
 	template < WriteReadRegister Register >
 	void serializeRegister(uint8_t *destination, Register const &source)

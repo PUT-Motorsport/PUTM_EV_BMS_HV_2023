@@ -69,6 +69,4 @@ namespace Mcp356x
 	}
 }
 
-
-
 #endif /* INC_PERYPHERIALMANAGERS_MCP356XCMD_HPP_ */

@@ -262,15 +262,13 @@ namespace Ltc6811
 
 	template < typename RegisterGroup >
 	concept WriteReadRegisterGroup = 	std::is_base_of<IWriteReadRegisterGroup, RegisterGroup>::value	and
-										sizeof(RegisterGroup) == 6										and
-										std::is_standard_layout< RegisterGroup >::value					and
-										std::is_trivial< RegisterGroup >::value;
+										not std::is_polymorphic< RegisterGroup >::value						and
+										sizeof(RegisterGroup) == 6;
 
 	template < typename RegisterGroup >
 	concept ReadRegisterGroup = std::is_base_of<IReadRegisterGroup, RegisterGroup>::value 	and
-								sizeof(RegisterGroup) == 6									and
-								std::is_standard_layout< RegisterGroup >::value				and
-								std::is_trivial< RegisterGroup >::value;
+								not std::is_polymorphic< RegisterGroup >::value					and
+								sizeof(RegisterGroup) == 6;
 
 	template < WriteReadRegisterGroup RegisterGroup >
 	void serializeRegisterGroup(uint8_t *destination, RegisterGroup &source)
