@@ -7,7 +7,8 @@
 
 #include "Utils/CanUtils.hpp"
 
-bool startCan(FDCAN_HandleTypeDef &hfdcan){
+bool startCan(FDCAN_HandleTypeDef &hfdcan)
+{
 
 	constexpr static FDCAN_FilterTypeDef sFilterConfig = []
 		{
@@ -43,6 +44,7 @@ bool startCan(FDCAN_HandleTypeDef &hfdcan){
 		return true;
 }
 
-uint32_t getCanFifoMessageCount(FDCAN_HandleTypeDef &hfdcan){
+uint32_t getCanFifoMessageCount(FDCAN_HandleTypeDef &hfdcan)
+{
 	return HAL_FDCAN_GetRxFifoFillLevel(&hfdcan, FDCAN_RX_FIFO0);
 }

@@ -20,7 +20,8 @@ private:
 	const FullStackData &stackData;
 
 	// TODO: add more checks
-	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 4> checks{
+	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 4> checks
+	{
 		Checks::underVoltage,
 		Checks::overVoltage,
 		Checks::underTemperature,
@@ -28,9 +29,7 @@ private:
 	};
 
 public:
-	PlausibilityChecker(const FullStackData &stackData) : stackData(stackData)
-	{
-	}
+	PlausibilityChecker(const FullStackData &stackData) : stackData(stackData) { }
 
 	constexpr Checks::ErrorOrWarning check() const
 	{
