@@ -126,13 +126,14 @@ namespace Mcp356x
 		private:
 			uint8_t reserved_set_to_00 : 2 { 0b00 };
 		public:
+			Config1(OversamplingRatio ovr, AClkPrescallerDiv acpd) : oversampling_ratio(ovr), aclk_prescaller_div(acpd) { }
 			OversamplingRatio oversampling_ratio : 4;
 			AClkPrescallerDiv aclk_prescaller_div : 2;
 	};
-	enum struct AzMux : uint8_t
+	enum struct AutoZeroMux : uint8_t
 	{
-		disabled,
-		active
+		Disabled,
+		Active
 	};
 	enum struct Gain : uint8_t
 	{
@@ -157,7 +158,8 @@ namespace Mcp356x
 		private:
 			uint8_t reserved_set_to_11 : 2 { 0b11 };
 		public:
-			AzMux az_mux : 1;
+			Config2(AutoZeroMux am, Gain g, Boost b) : az_mux(am), gain(g), boost(b) { }
+			AutoZeroMux az_mux : 1;
 			Gain gain : 3;
 			Boost boost : 2;
 	};
@@ -169,9 +171,9 @@ namespace Mcp356x
 	enum struct DataFormat : uint8_t
 	{
 		_24bit,
-		_32bit_left,
-		_32bit_right_sgn,
-		_32bit_right_sgn_id
+		_24bit_left,
+		_24bit_right_sgn,
+		_24bit_right_sgn_id
 	};
 	enum struct ConvMode : uint8_t
 	{
@@ -181,9 +183,9 @@ namespace Mcp356x
 	};
 	struct Config3 : IWriteReadRegister
 	{
-		uint8_t en_gain_cal : 1;
-		uint8_t en_off_cal : 1;
-		uint8_t en_crc : 1;
+		bool en_gain_cal : 1;
+		bool en_off_cal : 1;
+		bool en_crc : 1;
 		CrcFormat crc_format : 1;
 		DataFormat data_format : 2;
 		ConvMode conv_mode : 2;

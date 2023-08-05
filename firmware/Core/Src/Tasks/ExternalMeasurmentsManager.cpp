@@ -26,19 +26,30 @@ static Mcp356x::ConfigGroup std_config =
 {
 	.config0 =
 	{
-
+		.adc_mode = Mcp356x::AdcMode::Conversion,
+		.bias_current = Mcp356x::BiasCurrent::_0uA,
+		.clk_sel = Mcp356x::ClockSelect::InternalNoOutput,
+		.shut_down = Mcp356x::ShutDown::Active
 	},
 	.config1 =
 	{
-
+		.oversampling_ratio = Mcp356x::OversamplingRatio::_256,
+		.aclk_prescaller_div = Mcp356x::AClkPrescallerDiv::_2
 	},
 	.config2 =
 	{
-
+		.az_mux = Mcp356x::AutoZeroMux::Disabled,
+		.gain = Mcp356x::Gain::_1,
+		.boost = Mcp356x::Boost::_1,
 	},
 	.config3 =
 	{
-
+		.en_gain_cal = false,
+		.en_off_cal = false,
+		.en_crc = false,
+		.crc_format = Mcp356x::CrcFormat::_16bit,
+		.data_format = Mcp356x::DataFormat::_24bit_right_sgn,
+		.conv_mode = Mcp356x::ConvMode::Continuous
 	}
 };
 

@@ -10,6 +10,7 @@
 
 #include <main.h>
 #include <array>
+#include <variant>
 
 #include <PerypherialManagers/GpioController.hpp>
 #include <Interfaces/MCP356xCmd.hpp>
