@@ -22,7 +22,7 @@
 #include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
-//#include "app_fatfs.h"
+#include "app_fatfs.h"
 #include "fdcan.h"
 #include "rtc.h"
 #include "spi.h"
@@ -32,7 +32,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <MainHeader.hpp>
+#include <FreeRTOS.h>
+#include <app_freertos.h>
+#include <PerypherialManagers/SpiDmaController.hpp>
+#include <PerypherialManagers/MCP356xController.hpp>
+#include <PerypherialManagers/LTC6811Controller.hpp>
+#include <PerypherialManagers/GpioController.hpp>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

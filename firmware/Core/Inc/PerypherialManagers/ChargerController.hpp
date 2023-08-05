@@ -8,7 +8,8 @@
 #ifndef INC_PERYPHERIALMANAGERS_CHARGERCONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_CHARGERCONTROLLER_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <array>
 
 class ChargerCanTxMessage
 {

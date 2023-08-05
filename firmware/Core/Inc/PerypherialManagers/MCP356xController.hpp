@@ -8,7 +8,13 @@
 #ifndef INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <array>
+
+#include <PerypherialManagers/GpioController.hpp>
+#include <Interfaces/MCP356xCmd.hpp>
+#include <Interfaces/MCP356xRegs.hpp>
+#include <Config.hpp>
 
 enum struct MCP356xVersion
 {

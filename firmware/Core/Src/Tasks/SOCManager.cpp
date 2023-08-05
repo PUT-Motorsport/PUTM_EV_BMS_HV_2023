@@ -5,7 +5,10 @@
  *      Author: Piotr Lesicki
  */
 
-#include <MainHeader.hpp>
+#include <main.h>
+
+#include <app_freertos.h>
+#include <StackData.hpp>
 
 void vSOCManagerTask(void *argument)
 {

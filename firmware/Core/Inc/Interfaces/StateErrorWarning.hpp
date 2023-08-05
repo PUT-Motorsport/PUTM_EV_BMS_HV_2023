@@ -8,7 +8,9 @@
 #ifndef INC_INTERFACES_STATEERRORWARNING_HPP_
 #define INC_INTERFACES_STATEERRORWARNING_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <optional>
+#include <variant>
 
 enum struct CriticalErrorsEnum : uint8_t
 {

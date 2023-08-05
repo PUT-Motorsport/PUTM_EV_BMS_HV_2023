@@ -8,7 +8,9 @@
 #ifndef INC_PERYPHERIALMANAGERS_MCP356XREGS_HPP_
 #define INC_PERYPHERIALMANAGERS_MCP356XREGS_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <concepts>
+#include <cstring>
 
 namespace MCP356x
 {

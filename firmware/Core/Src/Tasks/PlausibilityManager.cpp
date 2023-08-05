@@ -5,7 +5,12 @@
  *      Author: Jan Węgrzynowski
  */
 
-#include <MainHeader.hpp>
+#include <main.h>
+
+#include <app_freertos.h>
+#include <StackData.hpp>
+#include <PerypherialManagers/GpioController.hpp>
+#include <PerypherialManagers/PlausibilityCheckerController.hpp>
 
 extern GpioOut led_ok;
 extern GpioOut led_warning;

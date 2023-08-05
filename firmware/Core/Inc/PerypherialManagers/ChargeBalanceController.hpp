@@ -8,7 +8,10 @@
 #ifndef INC_PERYPHERIALMANAGERS_CHARGEBALANCECONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_CHARGEBALANCECONTROLLER_HPP_
 
-#include <MainHeader.hpp>
+#include <main.h>
+#include <algorithm>
+#include <numeric>
+#include <cmath>
 
 class ChargeBalanceController
 {

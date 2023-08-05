@@ -8,7 +8,7 @@
 #ifndef INC_CAN_UTILS_HPP_
 #define INC_CAN_UTILS_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
 
 bool startCan(FDCAN_HandleTypeDef &hfdcan);
 

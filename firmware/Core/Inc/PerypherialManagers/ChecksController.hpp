@@ -8,6 +8,11 @@
 #ifndef INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_
 
+#include <main.h>
+#include <algorithm>
+
+#include <Interfaces/StateErrorWarning.hpp>
+
 namespace CHECKS
 {
     constexpr static float CELL_MAX_VOLTAGE = 4.175f;

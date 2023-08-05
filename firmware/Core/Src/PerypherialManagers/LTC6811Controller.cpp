@@ -5,7 +5,9 @@
  *      Author: piotr
  */
 
+#include <Utils/PEC15.hpp>
 #include <PerypherialManagers/LTC6811Controller.hpp>
+#include <PerypherialManagers/SpiDmaController.hpp>
 
 using namespace LTC6811;
 

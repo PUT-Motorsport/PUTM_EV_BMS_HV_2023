@@ -6,6 +6,7 @@
  */
 
 #include <PerypherialManagers/MCP356xController.hpp>
+#include <PerypherialManagers/SpiDmaController.hpp>
 
 using namespace MCP356x;
 

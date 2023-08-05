@@ -8,7 +8,8 @@
 #ifndef INC_PERYPHERIALMANAGERS_UTILS_HPP_
 #define INC_PERYPHERIALMANAGERS_UTILS_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <concepts>
 
 // or operator for 16bit sized enums
 template < typename T >

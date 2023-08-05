@@ -8,7 +8,16 @@
 #ifndef INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_
 #define INC_PUTM_LTC_6811_LTC6804_LIB_LIB_LTCSPICOMMCTRL_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <array>
+#include <atomic>
+#include <cmath>
+#include <algorithm>
+
+#include <PerypherialManagers/GpioController.hpp>
+#include <Interfaces/LTC6811Cmd.hpp>
+#include <Interfaces/LTC6811Regs.hpp>
+#include <Config.hpp>
 
 enum struct PecStatus
 {

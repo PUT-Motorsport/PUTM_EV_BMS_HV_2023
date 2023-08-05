@@ -8,7 +8,7 @@
 #ifndef INC_PERYPHERIALMANAGERS_GPIOCONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_GPIOCONTROLLER_HPP_
 
-#include "main.h"
+#include <main.h>
 
 class Gpio //: public ILocable
 {

@@ -8,7 +8,11 @@
 #ifndef INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_
 
-#include <MainHeader.hpp>
+#include <main.h>
+#include <array>
+
+#include <Interfaces/StateErrorWarning.hpp>
+#include <PerypherialManagers/ChecksController.hpp>
 
 class PlausibilityChecker
 {

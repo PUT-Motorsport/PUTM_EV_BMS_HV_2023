@@ -5,7 +5,12 @@
  *      Author: Piotr Lesicki
  */
 
-#include <MainHeader.hpp>
+#include <main.h>
+#include <spi.h>
+
+#include <app_freertos.h>
+#include <StackData.hpp>
+#include <PerypherialManagers/MCP356xController.hpp>
 
 //using AdcVar = MCP356x::AdcVariantAlignRightSgn;
 

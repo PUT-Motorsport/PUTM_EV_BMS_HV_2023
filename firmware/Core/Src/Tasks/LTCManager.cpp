@@ -6,7 +6,12 @@
  */
 
 
-#include <MainHeader.hpp>
+#include <main.h>
+#include <spi.h>
+
+#include <app_freertos.h>
+#include <StackData.hpp>
+#include <PerypherialManagers/LTC6811Controller.hpp>
 
 static SPI_HandleTypeDef &hspi = hspi2;
 static LTC6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);

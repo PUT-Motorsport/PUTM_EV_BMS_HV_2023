@@ -5,6 +5,8 @@
  *      Author: Piotr Lesicki
  */
 
+#include <spi.h>
+
 #include <PerypherialManagers/SpiDmaController.hpp>
 
 static constexpr uint32_t bit31 = (1 << 31);

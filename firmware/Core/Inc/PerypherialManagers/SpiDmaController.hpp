@@ -8,7 +8,12 @@
 #ifndef INC_SPI_SPIDMAMANAGER_HPP_
 #define INC_SPI_SPIDMAMANAGER_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <FreeRTOS.h>
+#include <task.h>
+#include <queue.h>
+
+#include <PerypherialManagers/GpioController.hpp>
 
 class SpiRequest;
 

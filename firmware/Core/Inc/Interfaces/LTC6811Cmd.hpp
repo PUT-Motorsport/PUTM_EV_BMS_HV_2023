@@ -24,7 +24,11 @@
 #ifndef INC_PUTM_LTC_6811_LTC6804_LIB_LTC6811_CMD_CODES_HPP_
 #define INC_PUTM_LTC_6811_LTC6804_LIB_LTC6811_CMD_CODES_HPP_
 
-#include "MainHeader.hpp"
+#include <main.h>
+#include <concepts>
+#include <tuple>
+
+#include <Utils/Utils.hpp>
 
 #define LTC6804_COMPATIBLE_ONLY 0
 
