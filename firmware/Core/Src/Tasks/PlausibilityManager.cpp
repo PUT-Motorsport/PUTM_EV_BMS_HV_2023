@@ -28,19 +28,19 @@ void vPlausibilityManagerTask(void *argument)
 		osDelay(100);
 		led_ok.toggle();
 
-		CHECKS::ErrorOrWarning optonalError = checker.check();
+		Checks::ErrorOrWarning optonalError = checker.check();
 		if (not optonalError.has_value())
 		{
 			continue;
 		}
 
-		if (std::holds_alternative<CHECKS::CriticalError>(*optonalError))
+		if (std::holds_alternative<Checks::CriticalError>(*optonalError))
 		{
-			FullStackDataInstance::getAndModify().state.error = std::get<CHECKS::CriticalError>(*optonalError);
+			FullStackDataInstance::getAndModify().state.error = std::get<Checks::CriticalError>(*optonalError);
 		}
 		else
 		{
-			FullStackDataInstance::getAndModify().state.warning = std::get<CHECKS::Warning>(*optonalError);
+			FullStackDataInstance::getAndModify().state.warning = std::get<Checks::Warning>(*optonalError);
 		}
 	}
 }

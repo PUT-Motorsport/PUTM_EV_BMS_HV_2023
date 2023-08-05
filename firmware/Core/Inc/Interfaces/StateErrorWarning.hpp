@@ -43,7 +43,7 @@ enum struct WarningsEnum : uint8_t
     BallanceError_200mV,
 };
 
-namespace CHECKS
+namespace Checks
 {
     using CriticalError = std::pair<CriticalErrorsEnum, size_t>; // cell number
     using Warning = std::pair<WarningsEnum, size_t>;             // cell number

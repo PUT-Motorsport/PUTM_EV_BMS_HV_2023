@@ -20,11 +20,11 @@ private:
 	const FullStackData &stackData;
 
 	// TODO: add more checks
-	const std::array<CHECKS::ErrorOrWarning (*)(const FullStackData &), 4> checks{
-		CHECKS::underVoltage,
-		CHECKS::overVoltage,
-		CHECKS::underTemperature,
-		CHECKS::overTemperature,
+	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 4> checks{
+		Checks::underVoltage,
+		Checks::overVoltage,
+		Checks::underTemperature,
+		Checks::overTemperature,
 	};
 
 public:
@@ -32,11 +32,11 @@ public:
 	{
 	}
 
-	constexpr CHECKS::ErrorOrWarning check() const
+	constexpr Checks::ErrorOrWarning check() const
 	{
 		for (const auto check : checks)
 		{
-			CHECKS::ErrorOrWarning evaluatedCheck = check(stackData);
+			Checks::ErrorOrWarning evaluatedCheck = check(stackData);
 			if (evaluatedCheck.has_value())
 			{
 				return evaluatedCheck.value();

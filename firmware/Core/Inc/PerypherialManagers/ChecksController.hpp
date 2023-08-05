@@ -13,7 +13,7 @@
 
 #include <Interfaces/StateErrorWarning.hpp>
 
-namespace CHECKS
+namespace Checks
 {
     constexpr static float CELL_MAX_VOLTAGE = 4.175f;
     constexpr static float CELL_MIN_VOLTAGE = 3.0f;

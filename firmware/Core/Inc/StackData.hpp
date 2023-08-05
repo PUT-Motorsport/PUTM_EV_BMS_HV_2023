@@ -49,8 +49,8 @@ struct FullStackData
 
 	struct State
 	{
-		std::optional<CHECKS::CriticalError> error{std::nullopt};
-		std::optional<CHECKS::Warning> warning{std::nullopt};
+		std::optional<Checks::CriticalError> error{std::nullopt};
+		std::optional<Checks::Warning> warning{std::nullopt};
 	} state;
 
 	struct ChargeBalance
