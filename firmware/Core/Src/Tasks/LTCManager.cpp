@@ -23,8 +23,8 @@ void vLTCManagerTask(void *argument)
 	while(true)
 	{
 		//ltc_ctrl.readVoltages(volts);
-		ltc_ctrl.readVoltages(FullStackDataInstance::getAndModify().ltc_data.voltages);
-		ltc_ctrl.readGpioTemp(FullStackDataInstance::getAndModify().ltc_data.temp);
+		ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
+		ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
 
 		if(FullStackDataInstance::get().ltc_data.charger_connected)
 		{

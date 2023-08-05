@@ -16,13 +16,12 @@
 #include <PerypherialManagers/ChargerController.hpp>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
-extern GpioIn charger_conected;
 
 void vChargerCANManagerTask(void *argument)
 {
 	startCan(hfdcan);
 
-	ChargeBalanceController balanceController(FullStackDataInstance::getAndModify());
+	ChargeBalanceController balanceController(FullStackDataInstance::set());
 	balanceController.disableBalance();
 
 	bool charging_enable{false};

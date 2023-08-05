@@ -61,8 +61,6 @@
 GpioOut led_ok { LED1_GPIO_Port, LED1_Pin, true };
 GpioOut led_warning { LED2_GPIO_Port, LED2_Pin, true };
 GpioOut led_error { LED3_GPIO_Port, LED3_Pin, true };
-
-GpioIn charger_conected { CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, false };
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

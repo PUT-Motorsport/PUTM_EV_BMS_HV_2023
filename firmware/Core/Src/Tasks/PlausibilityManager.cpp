@@ -36,11 +36,11 @@ void vPlausibilityManagerTask(void *argument)
 
 		if (std::holds_alternative<Checks::CriticalError>(*optonalError))
 		{
-			FullStackDataInstance::getAndModify().state.error = std::get<Checks::CriticalError>(*optonalError);
+			FullStackDataInstance::set().state.error = std::get<Checks::CriticalError>(*optonalError);
 		}
 		else
 		{
-			FullStackDataInstance::getAndModify().state.warning = std::get<Checks::Warning>(*optonalError);
+			FullStackDataInstance::set().state.warning = std::get<Checks::Warning>(*optonalError);
 		}
 	}
 }

@@ -25,7 +25,7 @@ struct FullStackData
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
 		std::atomic<float> soc;
-		std::atomic<bool> charger_connected{false};
+		std::atomic<bool> charger_connected { false };
 	} ltc_data;
 
 	struct ExternalData
@@ -33,6 +33,7 @@ struct FullStackData
 		std::atomic<float> car_volt;
 		std::atomic<float> acu_volt;
 		std::atomic<float> acu_curr;
+		std::atomic<bool> safety_state { false };
 	} external_data;
 
 	struct Other
@@ -42,9 +43,9 @@ struct FullStackData
 
 	struct Air
 	{
-		std::atomic<bool> pre_state;
-		std::atomic<bool> p_state;
-		std::atomic<bool> m_state;
+		std::atomic<bool> pre_state { false };
+		std::atomic<bool> p_state { false };
+		std::atomic<bool> m_state { false };
 	} air;
 
 	struct State
@@ -70,7 +71,8 @@ struct FullStackData
 class FullStackDataInstance
 {
 public:
-	static FullStackData &getAndModify()
+	//TODO: set()?
+	static FullStackData &set()
 	{
 		static FullStackData instance;
 		return instance;
@@ -78,7 +80,7 @@ public:
 
 	static const FullStackData &get()
 	{
-		return getAndModify();
+		return set();
 	}
 };
 
