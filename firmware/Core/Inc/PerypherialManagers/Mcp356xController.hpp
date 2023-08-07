@@ -10,7 +10,6 @@
 
 #include <main.h>
 #include <array>
-#include <variant>
 
 #include <PerypherialManagers/GpioController.hpp>
 #include <Interfaces/MCP356xCmd.hpp>
@@ -51,6 +50,9 @@ class Mcp356xController
 		template < Mcp356x::ReadRegister Register >
 		void rawRead(Mcp356x::RCmd cmd, Register &reg);
 		void rawFast(Mcp356x::FCmd cmd);
+		void readCfg(Mcp356x::ConfigGroup &cfg);
+		void readMux(Mcp356x::Mux &mux);
+		void readIrq(Mcp356x::Irq &irq);
 
 		Mcp356x::StatusByte poolSatusByte();
 
@@ -61,19 +63,13 @@ class Mcp356xController
 		void restartAdc();
 		bool dataReady();
 		int32_t readData();
+		double readVoltage();
 
+		double gain { 1.f };
+		double offset { 0.f };
 	protected:
-		template < Mcp356x::AdcVariant Variant >
-		inline int32_t readDataVariant();
+	private:
+		Mcp356x::DataFormat adc_variant;
 };
-
-template <>
-inline int32_t Mcp356xController::readDataVariant< Mcp356x::AdcVariantAlignLeft >();
-
-template <>
-inline int32_t Mcp356xController::readDataVariant< Mcp356x::AdcVariantAlignRight >();
-
-template <>
-inline int32_t Mcp356xController::readDataVariant< Mcp356x::AdcVariantAlignRightSgn >();
 
 #endif /* INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_ */

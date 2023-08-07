@@ -57,15 +57,15 @@ namespace Mcp356x
 
 	static constexpr RCmd CMD_STATIC_READ(Mcp356xRegisterAddress addr)
 	{
-		return RCmd( 0b000000'01 | addr );
+		return RCmd { 0b000000'01 | addr };
 	}
-//	constexpr RCmd CMD_INC_READ(MCP356xRegisterAddress addr)
-//	{
-//		return { 0b000000'11 | addr }; //IncrementalRead
-//	}
+	constexpr RCmd CMD_INC_READ(Mcp356xRegisterAddress addr)
+	{
+		return RCmd { 0b000000'11 | addr }; //IncrementalRead
+	}
 	static constexpr WCmd CMD_INC_WRITE(Mcp356xRegisterAddress addr)
 	{
-		return WCmd( 0b000000'10 | addr ); //IncrementalWrite
+		return WCmd { 0b000000'10 | addr }; //IncrementalWrite
 	}
 }
 

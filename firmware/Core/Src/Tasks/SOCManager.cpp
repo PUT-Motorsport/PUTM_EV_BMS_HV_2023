@@ -9,6 +9,7 @@
 
 #include <app_freertos.h>
 #include <StackData.hpp>
+#include <Config.hpp>
 
 void vSOCManagerTask(void *argument)
 {
@@ -16,17 +17,20 @@ void vSOCManagerTask(void *argument)
 
 	while(true)
 	{
-//		for(size_t i = 0; i < cell_count; i++)
+//		for(size_t i = 0; i < LtcConfig::CHAIN_SIZE; i++)
 //		{
-//			if(num == i)
-//				FullStackDataInstance::getAndModify().ltc_data.discharge[i] = true;
-//			else
-//				FullStackDataInstance::getAndModify().ltc_data.discharge[i] = false;
+//			for(size_t j = 0; j < 9; j ++)
+//			{
+//				size_t index = i * 9;
+//				if(num == j)
+//					FullStackDataInstance::set().ltc_data.discharge[index + j] = true;
+//				else
+//					FullStackDataInstance::set().ltc_data.discharge[index + j] = false;
+//			}
 //		}
 //		num++;
-//		if (num >= cell_count) num = 0;
+//		if (num >= 9) num = 0;
 
-
-		osDelay(100);
+		osDelay(500);
 	}
 }

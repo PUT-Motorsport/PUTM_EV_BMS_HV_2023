@@ -33,6 +33,9 @@ struct FullStackData
 		std::atomic<float> car_volt;
 		std::atomic<float> acu_volt;
 		std::atomic<float> acu_curr;
+		std::atomic<float> car_volt_calib;
+		std::atomic<float> acu_volt_calib;
+		std::atomic<float> acu_curr_calib;
 		std::atomic<bool> safety_state { false };
 	} external_data;
 
@@ -62,6 +65,11 @@ struct FullStackData
 		std::atomic<float> avg_cell_voltage { 0.0f };
 		std::atomic<float> std_dev_cell_voltage { 0.0f };
 	} charge_balance;
+
+	struct UsbEvents
+	{
+		std::atomic<bool> discharge_optical_visualisation { false };
+	} usb_events;
 
 	constexpr FullStackData() = default;
 	FullStackData(const FullStackData &) = delete;
