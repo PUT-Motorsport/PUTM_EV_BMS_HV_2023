@@ -2731,7 +2731,7 @@
     (property "Value" "4A" (at 60.96 104.14 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "30R400UMR" (at -39.04 118.11 0)
+    (property "Footprint" "30R400UMR:30R400UMR" (at -39.04 118.11 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
     (property "Datasheet" "" (at -139.04 118.11 0)

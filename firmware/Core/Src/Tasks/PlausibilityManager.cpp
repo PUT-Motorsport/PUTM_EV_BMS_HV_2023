@@ -17,7 +17,9 @@ extern GpioOut led_warning;
 extern GpioOut led_error;
 
 // FIXME only for debug
+#ifdef DEBUG
 static const FullStackData& fullstackdata_debug {FullStackDataInstance::get()};
+#endif
 
 void vPlausibilityManagerTask(void *argument)
 {

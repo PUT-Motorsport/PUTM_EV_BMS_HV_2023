@@ -49,8 +49,12 @@ namespace Ltc6811
 		uint16_t value;
 	};
 
-	template < typename T >
-	concept LtcCommand = std::is_base_of< WCmd, T >::value or std::is_base_of< RCmd, T >::value and sizeof(T) == 2;
+	template < typename Cmd >
+	concept LtcCommand = 	std::is_base_of< WCmd, Cmd >::value 	or
+							std::is_base_of< RCmd, Cmd >::value		and
+							sizeof(Cmd) == 2 						and
+							std::is_standard_layout< Cmd >::value	and
+							std::is_trivial< Cmd >::value;
 
 	template < LtcCommand Cmd >
 	std::tuple< uint8_t, uint8_t > serializeCmd(Cmd cmd)
@@ -140,7 +144,7 @@ namespace Ltc6811
 		VD 			= 0b00000000'100
 	};
 
-	enum struct DischargeTime : uint8_t
+	enum struct DischargeTime : uint16_t
 	{
 		Disable = 0x0,
 		_0_5min = 0x1,

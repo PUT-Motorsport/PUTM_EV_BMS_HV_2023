@@ -18,45 +18,47 @@ namespace Mcp356x
 	struct IReadRegister { };
 	struct IAdcVariant { };
 
+	// all registers are shifted out in reverse order - byte2 byte1 byte0 instead of 0, 1, 3
 	struct AdcVariantAlignRight : IAdcVariant, IReadRegister
 	{
-		uint32_t sgn : 1;
-		uint32_t value : 23;
-		uint32_t unused : 8;
+		uint8_t bytes[4];
 	};
 	struct AdcVariantAlignLeft : IAdcVariant, IReadRegister
 	{
-		uint32_t unused : 8;
-		uint32_t sgn : 1;
-		uint32_t value : 23;
+		private:
+			uint8_t ignore;
+		public:
+			uint8_t bytes[3];
 	};
 	struct AdcVariantAlignRightSgn : IAdcVariant, IReadRegister
 	{
-		uint32_t value : 24;
-		uint32_t sgn : 8;
-	} ;
+		uint8_t sgn;
+		uint8_t bytes[3];
+	};
 	struct AdcVariantAlignRightSgnId : IAdcVariant, IReadRegister
 	{
-		uint32_t value : 24;
-		uint32_t sgn : 4;
-		uint32_t id : 4;
+		uint8_t id : 4;
+		uint8_t sgn : 4;
+		uint8_t bytes[3];
 	};
 
 	struct StatusByte : IReadRegister
 	{
-		uint8_t por_status : 1;
-		uint8_t crccfg_status : 1;
-		uint8_t dr_status : 1;
-		uint8_t ndev_addr0 : 1;
-		uint8_t dev_addr0 : 1;
-		uint8_t dev_addr1 : 1;
-		uint8_t ignore : 2;
+		public:
+			uint8_t por_status : 1;
+			uint8_t crccfg_status : 1;
+			uint8_t dr_status : 1;
+			uint8_t ndev_addr0 : 1;
+			uint8_t dev_addr0 : 1;
+			uint8_t dev_addr1 : 1;
+		private:
+			uint8_t ignore : 2;
 	};
 
-	enum struct ChannelId : uint8_t
-	{
-		not_defined
-	};
+//	enum struct ChannelId : uint8_t
+//	{
+//		not_defined
+//	};
 
 	enum struct AdcMode : uint8_t
 	{
@@ -84,10 +86,10 @@ namespace Mcp356x
 	};
 	struct Config0 : IWriteReadRegister
 	{
-		uint8_t adc_mode : 2;
-		uint8_t bias_current : 2;
-		uint8_t clk_sel : 2;
-		uint8_t shut_down : 2;
+		AdcMode adc_mode : 2 { 0 };
+		BiasCurrent bias_current : 2 { 0 };
+		ClockSelect clk_sel : 2 { 0 };
+		ShutDown shut_down : 2 { 0 };
 	};
 	enum struct OversamplingRatio : uint8_t
 	{
@@ -117,18 +119,22 @@ namespace Mcp356x
 	};
 	struct Config1 : IWriteReadRegister
 	{
-		uint8_t reserved_set_to_00 : 2;
-		uint8_t oversampling_ratio : 4;
-		uint8_t aclk_prescaller_div : 2;
+		private:
+			uint8_t reserved_set_to_00 : 2 { 0b00 };
+		public:
+			Config1(OversamplingRatio ovr, AClkPrescallerDiv acpd) : oversampling_ratio(ovr), aclk_prescaller_div(acpd) { }
+			Config1() = default;
+			OversamplingRatio oversampling_ratio : 4 { 0 };
+			AClkPrescallerDiv aclk_prescaller_div : 2 { 0 };
 	};
-	enum struct az_mux : uint8_t
+	enum struct AutoZeroMux : uint8_t
 	{
-		disabled,
-		active
+		Disabled,
+		Enabled
 	};
-	enum struct gain : uint8_t
+	enum struct Gain : uint8_t
 	{
-		_0_333, // 1/3
+		_0_33, // 1/3
 		_1,
 		_2,
 		_4,
@@ -137,7 +143,7 @@ namespace Mcp356x
 		_32,
 		_64
 	};
-	enum struct boost : uint8_t
+	enum struct Boost : uint8_t
 	{
 		_0_5,
 		_0_66,
@@ -146,10 +152,14 @@ namespace Mcp356x
 	};
 	struct Config2 : IWriteReadRegister
 	{
-		uint8_t reserved_set_to_11 : 2;
-		uint8_t az_mux : 1;
-		uint8_t gain : 3;
-		uint8_t boost : 2;
+		private:
+			uint8_t reserved_set_to_11 : 2 { 0b11 };
+		public:
+			Config2(AutoZeroMux am, Gain g, Boost b) : az_mux(am), gain(g), boost(b) { }
+			Config2() = default;
+			AutoZeroMux az_mux : 1 { 0 };
+			Gain gain : 3 { 0 };
+			Boost boost : 2 { 0 };
 	};
 	enum struct CrcFormat : uint8_t
 	{
@@ -159,9 +169,9 @@ namespace Mcp356x
 	enum struct DataFormat : uint8_t
 	{
 		_24bit,
-		_32bit_left,
-		_32bit_right_sgn,
-		_32bit_right_sgn_id
+		_24bit_left,
+		_24bit_right_sgn,
+		_24bit_right_sgn_id
 	};
 	enum struct ConvMode : uint8_t
 	{
@@ -171,12 +181,12 @@ namespace Mcp356x
 	};
 	struct Config3 : IWriteReadRegister
 	{
-		uint8_t en_gain_cal : 1;
-		uint8_t en_off_cal : 1;
-		uint8_t en_crc : 1;
-		uint8_t crc_format : 1;
-		uint8_t data_format : 2;
-		uint8_t conv_mode : 2;
+		bool en_gain_cal : 1 { 0 };
+		bool en_off_cal : 1 { 0 };
+		bool en_crc : 1 { 0 };
+		CrcFormat crc_format : 1 { 0 };
+		DataFormat data_format : 2 { 0 };
+		ConvMode conv_mode : 2 { 0 };
 	};
 	enum struct IrqPinState : uint8_t
 	{
@@ -188,19 +198,22 @@ namespace Mcp356x
 		All,
 		PorAndCrcOnly
 	};
-	constexpr uint8_t IrqMode(IrqPinState irq_pin_state, IrqMdatSelection irq_pin_mdat)
+	struct __packed Irq : IWriteReadRegister
 	{
-		return uint8_t(irq_pin_state) | uint8_t(irq_pin_mdat);
-	}
-	struct IRQ : IWriteReadRegister
-	{
-		uint8_t en_stop : 1;
-		uint8_t en_fastcmd : 1;
-		uint8_t irq_mode : 2;
-		uint8_t por_status : 1;
-		uint8_t crcconf_status : 1;
-		uint8_t dr_status : 1;
-		uint8_t undefined : 1;
+		public:
+			Irq(bool _1, bool _2, IrqPinState _3, IrqMdatSelection _4) :
+				en_stop{ _1 }, en_fastcmd{ _2 }, irq_pin_state{ _3 }, irq_mdat_selection{ _4 }
+				{ }
+			Irq() = default;
+			bool en_stop : 1 { 0 };
+			bool en_fastcmd : 1 { 0 };
+			IrqPinState irq_pin_state: 1 { 0 };
+			IrqMdatSelection irq_mdat_selection : 1 { 0 };
+			const uint8_t por_status : 1 { 0 };
+			const uint8_t crcconf_status : 1 { 0 };
+			const uint8_t dr_status : 1 { 0 };
+		private:
+			uint8_t undefined : 1 { 0 };
 	};
 	enum struct MuxIn : uint8_t
 	{
@@ -222,8 +235,8 @@ namespace Mcp356x
 	};
 	struct Mux : IWriteReadRegister
 	{
-		uint8_t in_m : 4;
-		uint8_t in_p : 4;
+		MuxIn in_m : 4;
+		MuxIn in_p : 4;
 	};
 	enum struct DelayMul : uint8_t
 	{
@@ -238,42 +251,88 @@ namespace Mcp356x
 	};
 	struct Scan : IWriteReadRegister
 	{
-		uint32_t chanel_selection : 16;
-		uint32_t undefined : 4;
-		uint32_t reserved_set_to_0 : 1;
-		uint32_t delay : 3;
+		public:
+			uint32_t chanel_selection : 16 { 0 };
+		private:
+			uint32_t undefined : 4 { 0 };
+			uint32_t reserved_set_to_0 : 1 { 0b0 };
+		public:
+			DelayMul delay : 3 { 0 };
 	};
-	struct Timer : IWriteReadRegister
+	struct __packed Timer : IWriteReadRegister
 	{
-		uint32_t value : 24;
+		uint8_t value[3];
 	};
-	struct Offset : IWriteReadRegister
+	struct __packed Offset : IWriteReadRegister
 	{
-		uint32_t value : 24;
+		uint8_t value[3];
 	};
-	struct GainCal : IWriteReadRegister
+	struct __packed GainCal : IWriteReadRegister
 	{
-		uint32_t value : 24;
-	};
-	//there are other reserved / unused
-
-	struct Config
-	{
-		Mcp356x::Config0 config0;
-		Mcp356x::Config1 config1;
-		Mcp356x::Config2 config2;
-		Mcp356x::Config3 config3;
+		uint8_t value[3];
 	};
 
+struct ConfigGroup : public IWriteReadRegister
+{
+	public:
+		ConfigGroup(AdcMode _1, BiasCurrent _2, ClockSelect _3, ShutDown _4, OversamplingRatio _5,
+					AClkPrescallerDiv _6, AutoZeroMux _7, Gain _8, Boost _9, bool _10, bool _11,
+					bool _12, CrcFormat _13, DataFormat _14, ConvMode _15, bool _16, bool _17,
+					IrqPinState _18, IrqMdatSelection _19) :
+					adc_mode{ _1 }, bias_current{ _2 }, clk_sel{ _3}, shut_down{ _4 },
+					reserved_set_to_00{ 0b00 }, oversampling_ratio{ _5 }, aclk_prescaller_div{ _6 },
+					reserved_set_to_11{ 0b11 }, az_mux{ _7 }, gain{ _8 }, boost{ _9 },
+					en_gain_cal{ _10 }, en_off_cal{ _11 }, en_crc{ _12 }, crc_format{ _13 },
+					data_format{ _14 }, conv_mode{ _15 },
+					en_stop{ _16 }, en_fastcmd{ _17 }, irq_pin_state{ _18 }, irq_mdat_selection{ _19 }
+					{ }
+		ConfigGroup() = default;
+		AdcMode adc_mode : 2 { 0 };
+		BiasCurrent bias_current : 2 { 0 };
+		ClockSelect clk_sel : 2 { 0 };
+		ShutDown shut_down : 2 { 0 };
+	private:
+		uint8_t reserved_set_to_00 : 2 { 0b00 };
+	public:
+		OversamplingRatio oversampling_ratio : 4 { 0 };
+		AClkPrescallerDiv aclk_prescaller_div : 2 { 0 };
+	private:
+		uint8_t reserved_set_to_11 : 2 { 0b11 };
+	public:
+		AutoZeroMux az_mux : 1 { 0 };
+		Gain gain : 3 { 0 };
+		Boost boost : 2 { 0 };
+		bool en_gain_cal : 1 { 0 };
+		bool en_off_cal : 1 { 0 };
+		bool en_crc : 1 { 0 };
+		CrcFormat crc_format : 1 { 0 };
+		DataFormat data_format : 2 { 0 };
+		ConvMode conv_mode : 2 { 0 };
+	public:
+		bool en_stop : 1 { 0 };
+		bool en_fastcmd : 1 { 0 };
+		IrqPinState irq_pin_state: 1 { 0 };
+		IrqMdatSelection irq_mdat_selection : 1 { 0 };
+		const uint8_t por_status : 1 { 0 };
+		const uint8_t crcconf_status : 1 { 0 };
+		const uint8_t dr_status : 1 { 0 };
+	private:
+		uint8_t undefined : 1 { 0 };
+};
 
 	template < typename Register >
-	concept WriteReadRegister = std::is_base_of<IWriteReadRegister, Register>::value;
+	concept WriteReadRegister = std::is_base_of< IWriteReadRegister, Register >::value	and
+								not std::is_polymorphic< Register >::value;
 
 	template < typename Register >
-	concept ReadRegister = std::is_base_of<IReadRegister, Register>::value;
+	concept ReadRegister = 	std::is_base_of< IReadRegister, Register >::value		or
+							std::is_base_of< IWriteReadRegister, Register >::value 	and
+							not std::is_polymorphic< Register >::value;
 
 	template < typename Variant >
-	concept AdcVariant = std::is_base_of<IAdcVariant, Variant>::value and sizeof(Variant) == 4;
+	concept AdcVariant = 	std::is_base_of< IAdcVariant, Variant >::value 	and
+							not std::is_polymorphic< Variant >::value 		and
+							sizeof(Variant) == 4;
 
 	template < WriteReadRegister Register >
 	void serializeRegister(uint8_t *destination, Register const &source)
@@ -284,7 +343,10 @@ namespace Mcp356x
 	template < ReadRegister Register >
 	void deserializeRegister(Register &destination, uint8_t const *source)
 	{
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wclass-memaccess"
 		std::memcpy(&destination, source, sizeof(Register));
+#pragma GCC diagnostic pop
 	}
 }
 

@@ -32,7 +32,16 @@ namespace ChecksConfig
 
 namespace Mcp356xConfig
 {
-	using ADC_VARIANT = Mcp356x::AdcVariantAlignRightSgn;
+	constexpr static double ADC_REF_P = 3.0;
+	constexpr static double ADC_REF_M = 0.0;
+	constexpr static double ADC_REF = ADC_REF_P - ADC_REF_M;
+}
+
+namespace ExternalConfig
+{
+	constexpr static double ADC_VOLT_R = 2'000.0;
+	constexpr static double ADC_VOLT_COEF = (800'000.0 + ADC_VOLT_R) / ADC_VOLT_R;
+	constexpr static double ADC_CURR_COEF = 200.0 / 1.25;
 }
 
 #endif /* INC_INTERFACES_CONFIG_HPP_ */
