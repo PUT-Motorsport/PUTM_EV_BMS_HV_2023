@@ -1676,7 +1676,7 @@
     (property "Value" "ALDP105W" (at 228.6 37.465 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "RELAY_ALDP105W" (at 228.6 50.8 0)
+    (property "Footprint" "RELAY_ALD105W:RELAY_ALDP105W" (at 228.6 50.8 0)
       (effects (font (size 1.27 1.27)) (justify left bottom) hide)
     )
     (property "Datasheet" "" (at 228.6 50.8 0)
