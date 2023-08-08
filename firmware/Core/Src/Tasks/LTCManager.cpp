@@ -18,16 +18,16 @@ static Ltc6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true
 
 enum struct States
 {
-	//Init,
+	Init,
 	Normal,
 	Charging,
 	OpticalVisualization
-} static state;
+} static state { States::Init };
 
 static inline void init()
 {
-	ltc_ctrl.configure();
 	state = States::Normal;
+	ltc_ctrl.configure();
 }
 
 static inline void normal()
@@ -80,14 +80,14 @@ static inline void opticalVisualization()
 
 void vLTCManagerTask(void *argument)
 {
-	init();
+	//init();
 	while(true)
 	{
 		switch(state)
 		{
-//			case States::Init:
-//				init();
-//				break;
+			case States::Init:
+				init();
+				break;
 			case States::Normal:
 				normal();
 				break;
@@ -96,6 +96,9 @@ void vLTCManagerTask(void *argument)
 				break;
 			case States::OpticalVisualization:
 				opticalVisualization();
+				break;
+			default:
+				state = States::Normal;
 				break;
 		}
 

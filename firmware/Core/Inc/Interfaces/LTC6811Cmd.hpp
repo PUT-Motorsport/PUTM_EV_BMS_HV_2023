@@ -68,7 +68,7 @@ namespace Ltc6811
 	 */
 	enum struct Mode : uint16_t
 	{
-	#if LTC6804_COMPATIBLE_ONLY == 0
+	#ifdef LTC6804_COMPATIBLE_ONLY
 		Slow 		= 0b00'00'0000000,
 	#endif
 		Fast 		= 0b00'01'0000000,

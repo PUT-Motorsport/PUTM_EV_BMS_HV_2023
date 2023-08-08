@@ -153,7 +153,7 @@ int32_t Mcp356xController::readData()
 			AdcVariantAlignRightSgn frame;
 			rawRead(CMD_STATIC_READ(Mcp356xRegisterAddress::ADCDATA), frame);
 //			adcRead(frame);
-			uint32_t buff = uint32_t(frame.sgn) | uint32_t(frame.bytes[0]) << 16 | uint32_t(frame.bytes[1]) << 8 | uint32_t(frame.bytes[2]);
+			uint32_t buff = uint32_t(frame.sgn) << 24 | uint32_t(frame.bytes[0]) << 16 | uint32_t(frame.bytes[1]) << 8 | uint32_t(frame.bytes[2]);
 			result = int32_t(buff);
 		} break;
 		case Mcp356x::DataFormat::_24bit_right_sgn_id :

@@ -80,6 +80,7 @@ class Ltc6811Controller
 		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, Ltc::CHAIN_SIZE > &aux);
 		LtcCtrlStatus setDischarge(const std::array< std::atomic<bool>, LtcConfig::CELL_COUNT > &dis);
 		LtcCtrlStatus readGpioTemp(std::array< std::atomic < float >, LtcConfig::TEMP_COUNT > &temp);
+		LtcCtrlStatus readStackVoltage(std::atomic<float> &stack_vol);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled
@@ -118,6 +119,12 @@ class Ltc6811Controller
 		constexpr float convRawToGT(uint16_t value)
 		{
 			return float(value) * 1.f;
+		}
+
+		//convert soc reg to stack voltage
+		constexpr float convRawToSU(uint16_t value)
+		{
+			return float(value * 20) * u_conv_coef;
 		}
 
 		std::array < Ltc6811::Config, LtcConfig::CHAIN_SIZE > configs;
