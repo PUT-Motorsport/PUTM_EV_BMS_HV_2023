@@ -111,7 +111,7 @@ LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZ
 
 	for(auto& d : data)
 	{
-		d = deserializeRegisterGroup< RdReg >(srxdit);
+		deserializeRegisterGroup(d, srxdit);
 		srxdit += 8;
 	}
 
@@ -396,8 +396,6 @@ LtcCtrlStatus Ltc6811Controller::readGpioTemp(std::array< std::atomic < float >,
 
 	wakeUp();
 	rawRead(CMD_RDAUXA, aux[0], pecs[0]);
-	//wakeUp();
-	//rawRead(CMD_RDAUXB,	aux[1], pecs[1]);
 
 	for(size_t t = 0; t < TEMP_COUNT; t++)
 	{
@@ -411,6 +409,35 @@ LtcCtrlStatus Ltc6811Controller::readGpioTemp(std::array< std::atomic < float >,
 		else
 			temp.at(t) = convRawToGT(aux.at(reg).at(ltc).gpio[reg_temp].val);
 	}
+
+	return status;
+}
+
+LtcCtrlStatus Ltc6811Controller::readStackVoltage(std::atomic<float> &stack_vol)
+{
+	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	std::array < StatusA , CHAIN_SIZE > ltc_status_a_reg;
+	std::array < PecStatus, CHAIN_SIZE > pecs;
+
+	wakeUp();
+	rawWrite(CMD_ADCVSC(Mode::Normal, Discharge::Permitted));
+
+	osDelay(tadc);
+
+	wakeUp();
+	rawRead(CMD_RDSTATA, ltc_status_a_reg, pecs);
+
+	float accumulator = 0.f;
+
+	for(size_t i = 0; i < CHAIN_SIZE; i++)
+	{
+		if(pecs.at(i) != PecStatus::Ok)
+			accumulator = -1.f;
+		else
+			accumulator += convRawToSU(ltc_status_a_reg.at(i).sc);
+	}
+
+	stack_vol = accumulator;
 
 	return status;
 }

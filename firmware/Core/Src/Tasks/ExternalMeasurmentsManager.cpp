@@ -17,13 +17,29 @@
 
 //using AdcVar = MCP356x::AdcVariantAlignRightSgn;
 
+enum struct State
+{
+	Init,
+	Measure,
+	Calibrate1,
+	Calibrate2
+} static state { State::Init };
+
+#ifdef DEBUG
+static float car_volt;
+static float acu_volt;
+static float isens_volt;
+#endif
+
 static SPI_HandleTypeDef &hspi = hspi3;
 
 static Mcp356xController car(GpioOut(NMES_CAR_CS_GPIO_Port, NMES_CAR_CS_Pin, true), hspi, Mcp356xVersion::MCP3561);
 static Mcp356xController acu(GpioOut(NMES_ACU_CS_GPIO_Port, NMES_ACU_CS_Pin, true), hspi, Mcp356xVersion::MCP3561);
 static Mcp356xController isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pin, true), hspi, Mcp356xVersion::MCP3562);
 
-static std::array < Mcp356xController*, 3 > mcps { &car, &acu, &isens };
+static State car_state;
+static State acu_state;
+static State isens_state;
 
 static Mcp356x::ConfigGroup std_config =
 {
@@ -31,7 +47,7 @@ static Mcp356x::ConfigGroup std_config =
 	.bias_current = Mcp356x::BiasCurrent::_0uA,
 	.clk_sel = Mcp356x::ClockSelect::InternalNoOutput,
 	.shut_down = Mcp356x::ShutDown::Active,
-	.oversampling_ratio = Mcp356x::OversamplingRatio::_1024,
+	.oversampling_ratio = Mcp356x::OversamplingRatio::_4096,
 	.aclk_prescaller_div = Mcp356x::AClkPrescallerDiv::_2,
 	// AutoZeroMux will perform Chx - Chy & Chy - Chx (minimizes mes offset)
 	.az_mux = Mcp356x::AutoZeroMux::Enabled,
@@ -56,31 +72,57 @@ static GpioIn air_pre_detect { AIR_PRE_DETECT_GPIO_Port, AIR_PRE_DETECT_Pin };
 static GpioIn air_p_detect { AIR_P_DETECT_GPIO_Port, AIR_P_DETECT_Pin };
 static GpioIn air_m_detect { AIR_M_DETECT_GPIO_Port, AIR_M_DETECT_Pin };
 
-static double car_volt;
-static double acu_volt;
-static double isens_curr;
+constexpr auto set = [](Mcp356xController & dev, Mcp356x::MuxIn ch_p, Mcp356x::MuxIn ch_n)
+{
+	dev.setChannels(ch_p, ch_n);
+	dev.restartAdc();
+};
+
+static void init(Mcp356xController& dev, State &state, Mcp356x::MuxIn ch_p, Mcp356x::MuxIn ch_m)
+{
+	state = State::Measure;
+	dev.configure(std_config);
+	set(dev, ch_p, ch_m);
+}
+
+static  void measure(Mcp356xController& dev, State &state, std::atomic<float> &mes)
+{
+	if(dev.dataReady())
+	{
+		state = State::Calibrate1;
+		auto org_volt = dev.readVoltage();
+		set(dev, Mcp356x::MuxIn::Vcm, Mcp356x::MuxIn::Agnd);
+		mes = org_volt;
+#ifdef DEBUG
+		if(&dev == &car) car_volt = org_volt;
+		else if(&dev == &acu) acu_volt = org_volt;
+		else if(&dev == &isens) isens_volt = org_volt;
+#endif
+	}
+}
+
+static void calibration1(Mcp356xController& dev, State &state)
+{
+	if(dev.dataReady())
+	{
+		state = State::Calibrate2;
+		dev.gain *= std::clamp(dev.readVoltage() / 1.2, 0.25, 4.0);
+		set(dev, Mcp356x::MuxIn::RefInM, Mcp356x::MuxIn::Agnd);
+	}
+}
+
+static void calibration2(Mcp356xController& dev, State &state, Mcp356x::MuxIn ch_p, Mcp356x::MuxIn ch_m)
+{
+//	if(dev.dataReady())
+//	{
+		state = State::Measure;
+//		dev.offset = 0.0 - dev.readVoltage();
+		set(dev, ch_p, ch_m);
+//	}
+}
 
 void vExternalMeasurmentsManagerTask(void *argument)
 {
-	bool carAdcCalib = true;
-	bool acuAdcCalib = true;
-	bool isensAdcCalib = true;
-
-	constexpr auto setCar = 	[]{ car.setChannels(Mcp356x::MuxIn::Ch1, Mcp356x::MuxIn::Ch0); car.restartAdc(); };
-	constexpr auto setAcu = 	[]{ acu.setChannels(Mcp356x::MuxIn::Ch1, Mcp356x::MuxIn::Ch0); acu.restartAdc(); };
-	constexpr auto setIsens = 	[]{ isens.setChannels(Mcp356x::MuxIn::Ch3, Mcp356x::MuxIn::Ch2); isens.restartAdc(); };
-
-	constexpr auto setCarCalib = 	[]{ car.setChannels(Mcp356x::MuxIn::Vcm, Mcp356x::MuxIn::Agnd); car.restartAdc(); };
-	constexpr auto setAcuCalib = 	[]{ acu.setChannels(Mcp356x::MuxIn::Vcm, Mcp356x::MuxIn::Agnd); acu.restartAdc(); };
-	constexpr auto setIsensCalib = 	[]{ isens.setChannels(Mcp356x::MuxIn::Vcm, Mcp356x::MuxIn::Agnd); isens.restartAdc(); };
-
-	for(auto& mcp : mcps)
-		mcp->configure(std_config);
-
-	setCar();
-	setAcu();
-	setIsens();
-
 	while(true)
 	{
 		FullStackDataInstance::set().ltc_data.charger_connected = charger_conected.isActive();
@@ -89,62 +131,47 @@ void vExternalMeasurmentsManagerTask(void *argument)
 		FullStackDataInstance::set().air.p_state = air_p_detect.isActive();
 		FullStackDataInstance::set().air.pre_state = air_pre_detect.isActive();
 
-		if(car.dataReady())
+		switch(car_state)
 		{
-			auto org_car_volt = car.readVoltage();
-			if(not carAdcCalib) //normal
-			{
-				setCarCalib();
-				FullStackDataInstance::set().external_data.car_volt = org_car_volt * ExternalConfig::ADC_VOLT_COEF;
-				car_volt = org_car_volt;
-			}
-			else //calibration
-			{
-				setCar();
-				FullStackDataInstance::set().external_data.car_volt_calib = org_car_volt;
-				double ratio = org_car_volt / 1.2;
-				ratio = std::clamp(ratio, 0.25, 4.0);
-				car.gain *= ratio;
-			}
-			carAdcCalib = !carAdcCalib;
+			case State::Init:
+				init(car, car_state, Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
+				break;
+			case State::Measure:
+				measure(car, car_state, FullStackDataInstance::set().external_data.car_volt);
+				break;
+			case State::Calibrate1:
+				calibration1(car, car_state);
+				break;
+			case State::Calibrate2:
+				calibration2(car, car_state, Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
 		}
-		if(acu.dataReady())
+		switch(acu_state)
 		{
-			auto org_acu_volt = acu.readVoltage();
-			if(not acuAdcCalib) //normal
-			{
-				setAcuCalib();
-				FullStackDataInstance::set().external_data.acu_volt = org_acu_volt * ExternalConfig::ADC_VOLT_COEF;
-				acu_volt = org_acu_volt;
-			}
-			else //calibration
-			{
-				setAcu();
-				FullStackDataInstance::set().external_data.acu_volt_calib = org_acu_volt;
-				double ratio = org_acu_volt / 1.2;
-				ratio = std::clamp(ratio, 0.25, 4.0);
-				acu.gain *= ratio;
-			}
-			acuAdcCalib = !acuAdcCalib;
+			case State::Init:
+				init(acu, acu_state, Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
+				break;
+			case State::Measure:
+				measure(acu, acu_state, FullStackDataInstance::set().external_data.acu_volt);
+				break;
+			case State::Calibrate1:
+				calibration1(acu, acu_state);
+				break;
+			case State::Calibrate2:
+				calibration2(acu, acu_state, Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
 		}
-		if(isens.dataReady())
+		switch(isens_state)
 		{
-			auto org_acu_curr = isens.readVoltage();
-			if(not isensAdcCalib) //normal
-			{
-				setIsensCalib();
-				FullStackDataInstance::set().external_data.acu_curr = org_acu_curr * ExternalConfig::ADC_CURR_COEF;
-				isens_curr = org_acu_curr;
-			}
-			else //calibration
-			{
-				setIsens();
-				FullStackDataInstance::set().external_data.acu_curr_calib = org_acu_curr;
-				double ratio = org_acu_curr / 1.2;
-				ratio = std::clamp(ratio, 0.25, 4.0);
-				isens.gain *= ratio;
-			}
-			isensAdcCalib = !isensAdcCalib;
+			case State::Init:
+				init(isens, isens_state, Mcp356x::MuxIn::Ch2, Mcp356x::MuxIn::Ch3);
+				break;
+			case State::Measure:
+				measure(isens, isens_state, FullStackDataInstance::set().external_data.acu_curr);
+				break;
+			case State::Calibrate1:
+				calibration1(isens, isens_state);
+				break;
+			case State::Calibrate2:
+				calibration2(isens, isens_state, Mcp356x::MuxIn::Ch2, Mcp356x::MuxIn::Ch3);
 		}
 
 		osDelay(100);
