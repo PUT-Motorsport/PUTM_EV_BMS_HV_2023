@@ -80,13 +80,13 @@ class FullStackDataInstance
 {
 public:
 	//TODO: set()?
-	static FullStackData &set()
+	inline static FullStackData &set()
 	{
 		static FullStackData instance;
 		return instance;
 	}
 
-	static const FullStackData &get()
+	inline static const FullStackData &get()
 	{
 		return set();
 	}

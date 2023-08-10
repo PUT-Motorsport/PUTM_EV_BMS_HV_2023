@@ -31,18 +31,22 @@ void vChargerCANManagerTask(void *argument)
 
 	while (true)
 	{
-		if (FullStackDataInstance::get().ltc_data.charger_connected)
-		{
-			continue;
-		}
+//		if (not FullStackDataInstance::get().ltc_data.charger_connected)
+//		{
+//			continue;
+//		}
 
 		balanceController.update();
+		balanceController.recalcBalance();
+		osDelay(5000);
+		balanceController.disableBalance();
+		osDelay(5000);
 
-		while (getCanFifoMessageCount(hfdcan))
-		{
-			charger_rx.update();
-		}
-		ChargerCanTxMessage frame{charge_voltage, charge_current, charging_enable};
-		frame.send();
+//		while (getCanFifoMessageCount(hfdcan))
+//		{
+//			charger_rx.update();
+//		}
+//		ChargerCanTxMessage frame{charge_voltage, charge_current, charging_enable};
+//		frame.send();
 	}
 }
