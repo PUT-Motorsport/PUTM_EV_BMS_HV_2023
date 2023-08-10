@@ -41,30 +41,32 @@ static State car_state;
 static State acu_state;
 static State isens_state;
 
-static Mcp356x::ConfigGroup std_config =
+static Mcp356x::ConfigGroup std_config = []()
 {
-	.adc_mode = Mcp356x::AdcMode::StandBy,
-	.bias_current = Mcp356x::BiasCurrent::_0uA,
-	.clk_sel = Mcp356x::ClockSelect::InternalNoOutput,
-	.shut_down = Mcp356x::ShutDown::Active,
-	.oversampling_ratio = Mcp356x::OversamplingRatio::_4096,
-	.aclk_prescaller_div = Mcp356x::AClkPrescallerDiv::_2,
+	Mcp356x::ConfigGroup c;
+	c.adc_mode = Mcp356x::AdcMode::StandBy;
+	c.bias_current = Mcp356x::BiasCurrent::_0uA;
+	c.clk_sel = Mcp356x::ClockSelect::InternalNoOutput;
+	c.shut_down = Mcp356x::ShutDown::Active;
+	c.oversampling_ratio = Mcp356x::OversamplingRatio::_4096;
+	c.aclk_prescaller_div = Mcp356x::AClkPrescallerDiv::_2;
 	// AutoZeroMux will perform Chx - Chy & Chy - Chx (minimizes mes offset)
-	.az_mux = Mcp356x::AutoZeroMux::Enabled,
-	.gain = Mcp356x::Gain::_2,
-	.boost = Mcp356x::Boost::_1,
-	.en_gain_cal = false,
-	.en_off_cal = false,
-	.en_crc = false,
-	.crc_format = Mcp356x::CrcFormat::_16bit,
-	.data_format = Mcp356x::DataFormat::_24bit_right_sgn,
-	.conv_mode = Mcp356x::ConvMode::OneShotStandby,
-	.en_stop = true,
-	.en_fastcmd = true,
+	c.az_mux = Mcp356x::AutoZeroMux::Enabled;
+	c.gain = Mcp356x::Gain::_2;
+	c.boost = Mcp356x::Boost::_1;
+	c.en_gain_cal = false;
+	c.en_off_cal = false;
+	c.en_crc = false;
+	c.crc_format = Mcp356x::CrcFormat::_16bit;
+	c.data_format = Mcp356x::DataFormat::_24bit_right_sgn;
+	c.conv_mode = Mcp356x::ConvMode::OneShotStandby;
+	c.en_stop = true;
+	c.en_fastcmd = true;
 	// IrqPinState must be HighState
-	.irq_pin_state = Mcp356x::IrqPinState::HighState,
-	.irq_mdat_selection = Mcp356x::IrqMdatSelection::All,
-};
+	c.irq_pin_state = Mcp356x::IrqPinState::HighState;
+	c.irq_mdat_selection = Mcp356x::IrqMdatSelection::All;
+	return c;
+}();
 
 static GpioIn charger_conected { CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin };
 static GpioIn safety_detect { SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin };
