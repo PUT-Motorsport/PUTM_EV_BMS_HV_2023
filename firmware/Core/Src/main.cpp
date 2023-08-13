@@ -61,6 +61,7 @@
 GpioOut led_ok { LED1_GPIO_Port, LED1_Pin, true };
 GpioOut led_warning { LED2_GPIO_Port, LED2_Pin, true };
 GpioOut led_error { LED3_GPIO_Port, LED3_Pin, true };
+GpioIn  pre_AIR {SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin, true};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,7 +107,7 @@ int main(void)
   MX_DMA_Init();
   MX_FDCAN2_Init();
   MX_FDCAN3_Init();
-  MX_RTC_Init();
+//  MX_RTC_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_SPI3_Init();

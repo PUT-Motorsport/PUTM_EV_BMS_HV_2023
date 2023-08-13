@@ -53,7 +53,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+#define PUTM_USE_CAN_FD
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

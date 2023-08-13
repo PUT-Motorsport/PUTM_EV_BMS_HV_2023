@@ -53,6 +53,7 @@ struct FullStackData
 
 	struct State
 	{
+		std::atomic<bool> ts_activation_button{false};
 		std::optional<Checks::CriticalError> error{std::nullopt};
 		std::optional<Checks::Warning> warning{std::nullopt};
 	} state;

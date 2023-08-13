@@ -4,9 +4,6 @@
  *  Created on: Jul 4, 2023
  *      Author: jan
  */
-
-#define PUTM_USE_CAN_FD
-
 #include <main.h>
 #include <fdcan.h>
 #include <algorithm>
@@ -74,8 +71,11 @@ void vCarCANManagerTask(void *argument)
 			.soc = static_cast<uint16_t>(fsd.ltc_data.soc * 1000)};
 
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
-
 		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
+
+		if(PUTM_CAN::can.get_aq_ts_button_new_data()){
+			FullStackDataInstance::set().state.ts_activation_button = true;
+		}
 
 		if (status not_eq HAL_OK or status_2 not_eq HAL_OK)
 		{

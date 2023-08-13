@@ -17,6 +17,13 @@
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 
+// FIXME only for debug
+#ifdef DEBUG
+static const FullStackData& fullstackdata_debug {FullStackDataInstance::get()};
+static std::array<float, 135> voltages{};
+static std::array<float, 135> discharge{};
+#endif
+
 void vChargerCANManagerTask(void *argument)
 {
 	startCan(hfdcan);
@@ -35,12 +42,21 @@ void vChargerCANManagerTask(void *argument)
 //		{
 //			continue;
 //		}
+     	std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
+     					  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
+
+
 
 		balanceController.update();
-		balanceController.recalcBalance();
-		osDelay(5000);
+//		balanceController.recalcBalance();
+		osDelay(10'000);
+
+     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
+     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
+
+
 		balanceController.disableBalance();
-		osDelay(5000);
+		osDelay(4'000);
 
 //		while (getCanFifoMessageCount(hfdcan))
 //		{

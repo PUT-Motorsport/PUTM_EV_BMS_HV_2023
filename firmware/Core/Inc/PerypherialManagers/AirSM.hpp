@@ -20,7 +20,6 @@ enum struct AIRstateEnum
 class AccumulatorIsolationRelaySM
 {
 	constexpr static uint32_t PRECHARGE_TIME{5000}; // ms
-
 	bool TS_active_allowed{false};
 	AIRstateEnum state{AIRstateEnum::Open};
 	uint32_t precharge_start{0};
@@ -33,7 +32,6 @@ public:
 
 	constexpr void update(uint32_t tick)
 	{
-
 		if (not TS_active_allowed)
 		{
 			state = AIRstateEnum::Open;
@@ -43,12 +41,12 @@ public:
 		{
 		case AIRstateEnum::Open:
 		{
-			if (TS_active_allowed)
-			{
-				state = AIRstateEnum::Precharge;
-				precharge_start = tick;
-			}
-			break;
+			return;
+		}
+
+		case AIRstateEnum::Closed:
+		{
+			return;
 		}
 
 		case AIRstateEnum::Precharge:
@@ -59,15 +57,21 @@ public:
 			}
 			break;
 		}
-
-		case AIRstateEnum::Closed:
-			return;
 		}
 	}
 
 	constexpr AIRstateEnum get() const
 	{
 		return state;
+	}
+
+	constexpr void TS_activation_button(uint32_t tick)
+	{
+		if (AIRstateEnum::Open == state and TS_active_allowed)
+		{
+			state = AIRstateEnum::Precharge;
+			precharge_start = tick;
+		}
 	}
 };
 
