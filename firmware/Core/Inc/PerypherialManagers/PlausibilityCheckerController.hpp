@@ -20,12 +20,14 @@ private:
 	const FullStackData &stackData;
 
 	// TODO: add more checks
-	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 4> checks
+	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 5> checks
 	{
-		Checks::underVoltage,
+		//Checks::underVoltage,
 		Checks::overVoltage,
 		Checks::underTemperature,
 		Checks::overTemperature,
+		Checks::overCurrent,
+		Checks::CurrentSensorDisconnect
 	};
 
 public:

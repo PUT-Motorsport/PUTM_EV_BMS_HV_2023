@@ -34,6 +34,12 @@ public:
         float variance = std::accumulate(v.begin(), v.end(), 0.0, [&](float acc, float x)
                                          { return acc + (x - avg_v) * (x - avg_v); }) / v.size();
         fsd.charge_balance.std_dev_cell_voltage = std::sqrt(variance);
+
+        std::array<float, 135> vc;
+        std::copy(v.begin(), v.end(), vc.begin());
+        size_t n = vc.size() / 2;
+        std::nth_element(vc.begin(), vc.begin()+n, vc.end());
+        fsd.charge_balance.median_cell_voltage = vc[n];
     }
 
     constexpr void disableBalance()
@@ -45,7 +51,7 @@ public:
     {
         for (size_t i = 0; i < fsd.ltc_data.voltages.size(); i++)
         {
-            const bool balance = (fsd.ltc_data.voltages[i] > fsd.charge_balance.max_cell_voltage - 0.008f);
+            const bool balance = (fsd.ltc_data.voltages[i] > fsd.charge_balance.median_cell_voltage);
             fsd.ltc_data.discharge[i] = balance;
         }
     }

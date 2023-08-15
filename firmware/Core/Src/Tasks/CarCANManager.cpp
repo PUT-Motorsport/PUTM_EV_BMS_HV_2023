@@ -13,7 +13,8 @@
 #include <PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp>
 #include <Utils/CanUtils.hpp>
 
-static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
+//static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
+bool can_init;
 
 auto voltages_message(size_t &cell_index)
 {
@@ -52,13 +53,13 @@ auto voltages_message(size_t &cell_index)
 void vCarCANManagerTask(void *argument)
 {
 	size_t cell_send_index{0};
-	startCan(hfdcan);
+	can_init = startCan(hfdcan3);
 	while (true)
 	{
 		osDelay(10);
-		while (getCanFifoMessageCount(hfdcan))
+		while (getCanFifoMessageCount(hfdcan3))
 		{
-			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
+			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan3));
 		}
 
 		const FullStackData &fsd = FullStackDataInstance::get();
@@ -68,10 +69,10 @@ void vCarCANManagerTask(void *argument)
 			.current = static_cast<int16_t>(fsd.external_data.acu_curr * 100.0f),
 			.temp_max = static_cast<uint8_t>(fsd.ltc_data.max_temp),
 			.temp_avg = static_cast<uint8_t>(fsd.ltc_data.min_temp),
-			.soc = static_cast<uint16_t>(fsd.ltc_data.soc * 1000)};
+			.soc = static_cast<uint16_t>(fsd.ltc_data.soc * 1'000)};
 
-		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
-		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
+		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan3);
+		auto status_2 = voltages_message(cell_send_index).send(hfdcan3);
 
 		if(PUTM_CAN::can.get_aq_ts_button_new_data()){
 			FullStackDataInstance::set().state.ts_activation_button = true;

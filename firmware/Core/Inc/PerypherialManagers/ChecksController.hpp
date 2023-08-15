@@ -61,6 +61,24 @@ namespace Checks
         return std::nullopt;
     }
 
+    inline ErrorOrWarning overCurrent(const FullStackData &stackData){
+    	bool overcurrent = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
+    	bool disconnect = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
+    	if(overcurrent and not disconnect){
+    		return std::make_pair(CriticalErrorsEnum::OverCurrent, 0);
+    	}
+    	return std::nullopt;
+    }
+
+    inline ErrorOrWarning CurrentSensorDisconnect(const FullStackData &stackData){
+    	bool disconnect = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
+    	if(disconnect){
+    		return std::make_pair(CriticalErrorsEnum::CurrentSensorDisconnected, 0);
+    	}
+    	return std::nullopt;
+    }
+
+
 }
 
 #endif /* INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_ */

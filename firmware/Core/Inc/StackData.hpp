@@ -24,7 +24,7 @@ struct FullStackData
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
 		std::atomic<float> soc;
-		std::atomic<bool> charger_connected { false };
+		std::atomic<bool> charger_connected { true };
 	} ltc_data;
 
 	struct ExternalData
@@ -57,9 +57,11 @@ struct FullStackData
 	struct ChargeBalance
 	{
 		std::atomic<bool> balance_enable { false };
+		std::atomic<bool> charging_enable {false};
 		std::atomic<float> max_cell_voltage { 4.15f };
 		std::atomic<float> min_cell_voltage { 3.0f };
 		std::atomic<float> avg_cell_voltage { 0.0f };
+		std::atomic<float> median_cell_voltage { 0.0f };
 		std::atomic<float> std_dev_cell_voltage { 0.0f };
 	} charge_balance;
 
