@@ -129,18 +129,24 @@ void vExternalMeasurmentsManagerTask(void *argument)
 	{
 		FullStackDataInstance::set().ltc_data.charger_connected = charger_conected.isActive();
 		FullStackDataInstance::set().external_data.safety_state = safety_detect.isActive();
-		FullStackDataInstance::set().air.m_state = air_m_detect.isActive();
-		FullStackDataInstance::set().air.p_state = air_p_detect.isActive();
-		FullStackDataInstance::set().air.pre_state = air_pre_detect.isActive();
+
+		FullStackDataInstance::set().air_detect.m_state = air_m_detect.isActive();
+		FullStackDataInstance::set().air_detect.p_state = air_p_detect.isActive();
+		FullStackDataInstance::set().air_detect.pre_state = air_pre_detect.isActive();
 
 		switch(car_state)
 		{
 			case State::Init:
 				init(car, car_state, Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
 				break;
-			case State::Measure:
-				measure(car, car_state, FullStackDataInstance::set().external_data.car_volt);
+			case State::Measure:{
+				// FIXME
+				std::atomic<float> raw_data{};
+				measure(car, car_state, raw_data);
+				float voltage = (raw_data + 0.000237896238f) * 25.0f / 0.060577739f;
+				FullStackDataInstance::set().external_data.car_volt = voltage;
 				break;
+			}
 			case State::Calibrate1:
 				calibration1(car, car_state);
 				break;
@@ -166,9 +172,14 @@ void vExternalMeasurmentsManagerTask(void *argument)
 			case State::Init:
 				init(isens, isens_state, Mcp356x::MuxIn::Ch2, Mcp356x::MuxIn::Ch3);
 				break;
-			case State::Measure:
-				measure(isens, isens_state, FullStackDataInstance::set().external_data.acu_curr);
+			case State::Measure:{
+				// FIXME
+				std::atomic<float> raw_data{};
+				measure(isens, isens_state, raw_data);
+				float current = (raw_data - 0.0235465225f) * 10.0f / 0.061959736f;
+				FullStackDataInstance::set().external_data.acu_curr = current;
 				break;
+			}
 			case State::Calibrate1:
 				calibration1(isens, isens_state);
 				break;

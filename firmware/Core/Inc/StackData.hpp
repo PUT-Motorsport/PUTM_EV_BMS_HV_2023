@@ -20,7 +20,6 @@ struct FullStackData
 		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> voltages;
 		std::array<std::atomic<bool>, LtcConfig::CELL_COUNT> discharge { false };
 		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp;
-		//std::array<std::atomic<uint16_t> temp_count>
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
@@ -33,9 +32,6 @@ struct FullStackData
 		std::atomic<float> car_volt;
 		std::atomic<float> acu_volt;
 		std::atomic<float> acu_curr;
-		std::atomic<float> car_volt_calib;
-		std::atomic<float> acu_volt_calib;
-		std::atomic<float> acu_curr_calib;
 		std::atomic<bool> safety_state { false };
 	} external_data;
 
@@ -44,12 +40,12 @@ struct FullStackData
 		std::atomic<int> imd_state;
 	} other;
 
-	struct Air
+	struct Air_detect
 	{
 		std::atomic<bool> pre_state { false };
 		std::atomic<bool> p_state { false };
 		std::atomic<bool> m_state { false };
-	} air;
+	} air_detect;
 
 	struct State
 	{
