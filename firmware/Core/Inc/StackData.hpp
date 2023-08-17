@@ -78,7 +78,6 @@ struct FullStackData
 class FullStackDataInstance
 {
 public:
-	//TODO: set()?
 	inline static FullStackData &set()
 	{
 		static FullStackData instance;

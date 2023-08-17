@@ -45,7 +45,6 @@ void vPlausibilityManagerTask(void *argument)
 		if(FullStackDataInstance::get().state.ts_activation_button or ts_act_test){
 			AIRsm.TS_activation_button(HAL_GetTick());
 			FullStackDataInstance::set().state.ts_activation_button = false;
-			ts_act_test = false;
 		}
 
 
