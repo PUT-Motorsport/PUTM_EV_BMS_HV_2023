@@ -2,7 +2,7 @@
  * SOCManager.cpp
  *
  *  Created on: Jul 4, 2023
- *      Author: Jan
+ *      Author: Jan Węgrzynowski
  */
 
 #include <main.h>
@@ -37,12 +37,13 @@ void vSOCManagerTask(void *argument)
 	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
 		auto &cell_soc = soc_array[i];
 		EKF_init(&cell_soc.x, &cell_soc.P);
-		EKF_set_SoC_based_on_voltage(&cell_soc.x, FullStackDataInstance::get().ltc_data.voltages[i]);
+		EKF_set_SoC_based_on_voltage(&cell_soc.x, FullStackDataInstance::get().ltc_data.voltages[i].load());
 	}
 
 
 	while(true)
 	{
+		osDelay(100);
 		const float single_cell_current = FullStackDataInstance::get().external_data.acu_curr *  0.5f;
 
 		for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
@@ -50,7 +51,5 @@ void vSOCManagerTask(void *argument)
 			const float cell_voltage = FullStackDataInstance::get().ltc_data.voltages[i];
 			EKF_update(&cell_soc.x, &cell_soc.P, cell_voltage, single_cell_current, false);
 		}
-
-		osDelay(100);
 	}
 }

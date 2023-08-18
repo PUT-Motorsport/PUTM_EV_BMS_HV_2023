@@ -27,11 +27,11 @@ static const Vector_col B = {
 
 /// @brief Battery model output matrix created with Ts = 0.1s
 static const Vector_row C = {
-    .data = {0.0f, 8.04557200e-07f, -8.03998286e-07f}
+    .data = {0.0f, 2.33058931e-05f, -2.32660122e-05f}
 };
 
 /// @brief Battery model output matrix created with Ts = 0.1
-static const float D = {0.00063034f};
+static const float D = {0.00698732f};
 
 /// Battery model process noise covariance matrix tuned with Ts = 0.1s
 static const Matrix Q = {
@@ -41,7 +41,7 @@ static const Matrix Q = {
 };
 
 /// @brief Battery model measurement noise covariance matrix tuned with Ts = 0.1
-static const float R = 2500000.0f;
+static const float R = 2500000.0f / 10.0;
  /// @brief Increase measurement noise covariance when charging to avoid overestimation of SOC
 static const float R_charge = R * 99.0f;
 

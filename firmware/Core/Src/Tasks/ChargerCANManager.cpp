@@ -24,6 +24,13 @@ static std::array<float, 135> voltages{};
 static std::array<float, 135> discharge{};
 #endif
 
+// FIXME move inside the task
+static ChargerCanRxMessageHandler charger_rx{};
+
+bool charging_enable{true};
+float charge_voltage = 135.0f * 4.15f;
+float charge_current = 8.0f;
+
 void vChargerCANManagerTask(void *argument)
 {
 	startCan(hfdcan);
@@ -31,39 +38,40 @@ void vChargerCANManagerTask(void *argument)
 	ChargeBalanceController balanceController(FullStackDataInstance::set());
 	balanceController.disableBalance();
 
-	bool charging_enable{false};
 
-	float charge_voltage = 135.0f * 4.15f;
-	float charge_current = 2.0f;
-	ChargerCanRxMessageHandler charger_rx{};
 
 	uint32_t balance_start{};
 	uint32_t balance_end{};
 
 	while (true)
 	{
+		osDelay(100);
+
 		if (not FullStackDataInstance::get().ltc_data.charger_connected)
 		{
 			continue;
 		}
 
-//     	std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
-//     					  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
-//
-//     	FullStackDataInstance::set().ltc_data.voltages[116] = 3.8;
-//		balanceController.update();
-//		FullStackDataInstance::set().ltc_data.voltages[116] = 3.8;
-//		balanceController.recalcBalance();
-//		osDelay(10'000);
-//
-//     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
-//     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
-//
-//		balanceController.disableBalance();
-//		osDelay(4'000);
+		constexpr static size_t BALANCE_TIME = 10'000;
+		if(HAL_GetTick() > balance_start + BALANCE_TIME){
+	     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
+	     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
+
+			balanceController.disableBalance();
+			balance_end = HAL_GetTick();
+		}
 
 
-		// TODO with 10Hz loop frequency
+		constexpr static size_t BALANCE_WAIT_TIME = 5'000;
+		if(HAL_GetTick() > balance_end + BALANCE_WAIT_TIME){
+			std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
+							  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
+			balanceController.update();
+			balanceController.recalcBalance();
+			balance_start = HAL_GetTick();
+		}
+
+
 		while (getCanFifoMessageCount(hfdcan))
 		{
 			charger_rx.update();
