@@ -47,20 +47,20 @@ void vChargerCANManagerTask(void *argument)
 			continue;
 		}
 
-     	std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
-     					  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
-
-     	FullStackDataInstance::set().ltc_data.voltages[116] = 3.8;
-		balanceController.update();
-		FullStackDataInstance::set().ltc_data.voltages[116] = 3.8;
-		balanceController.recalcBalance();
-		osDelay(10'000);
-
-     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
-     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
-
-		balanceController.disableBalance();
-		osDelay(4'000);
+//     	std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
+//     					  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
+//
+//     	FullStackDataInstance::set().ltc_data.voltages[116] = 3.8;
+//		balanceController.update();
+//		FullStackDataInstance::set().ltc_data.voltages[116] = 3.8;
+//		balanceController.recalcBalance();
+//		osDelay(10'000);
+//
+//     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
+//     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
+//
+//		balanceController.disableBalance();
+//		osDelay(4'000);
 
 
 		// TODO with 10Hz loop frequency

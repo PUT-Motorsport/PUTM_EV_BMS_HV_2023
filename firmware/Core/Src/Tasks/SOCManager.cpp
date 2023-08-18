@@ -2,7 +2,7 @@
  * SOCManager.cpp
  *
  *  Created on: Jul 4, 2023
- *      Author: Piotr Lesicki
+ *      Author: Jan
  */
 
 #include <main.h>
@@ -12,18 +12,45 @@
 #include <Config.hpp>
 #include <PerypherialManagers/GpioController.hpp>
 
-GpioOut air_p { SIG_AIR_P_GPIO_Port, SIG_AIR_P_Pin, false };
-GpioOut air_m { SIG_AIR_M_GPIO_Port, SIG_AIR_M_Pin, false };
-GpioOut air_pre { SIG_AIR_PRE_GPIO_Port, SIG_AIR_PRE_Pin, false };
+
+extern "C" {
+#include "SoC_EKF.h"
+}
+
+
+struct CellData{
+	Vector_col x{};
+	Matrix P{};
+};
+
+
+static std::array<CellData,135> soc_array{};
+
 
 void vSOCManagerTask(void *argument)
 {
+
+	while(FullStackDataInstance::get().ltc_data.voltages.back() not_eq 0){
+		osDelay(1000);
+	}
+
+	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
+		auto &cell_soc = soc_array[i];
+		EKF_init(&cell_soc.x, &cell_soc.P);
+		EKF_set_SoC_based_on_voltage(&cell_soc.x, FullStackDataInstance::get().ltc_data.voltages[i]);
+	}
+
+
 	while(true)
 	{
-//		air_p.toggle();
-//		air_m.toggle();
-//		air_pre.toggle();
+		const float single_cell_current = FullStackDataInstance::get().external_data.acu_curr *  0.5f;
 
-		osDelay(10000);
+		for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
+			auto &cell_soc = soc_array[i];
+			const float cell_voltage = FullStackDataInstance::get().ltc_data.voltages[i];
+			EKF_update(&cell_soc.x, &cell_soc.P, cell_voltage, single_cell_current, false);
+		}
+
+		osDelay(100);
 	}
 }
