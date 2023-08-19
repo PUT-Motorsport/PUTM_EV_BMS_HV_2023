@@ -4,14 +4,14 @@
  *  Created on: Jul 4, 2023
  *      Author: jan
  */
-#include <main.h>
-#include <fdcan.h>
 #include <algorithm>
+#include <fdcan.h>
+#include <main.h>
 
-#include <app_freertos.h>
-#include <StackData.hpp>
 #include <PUTM_EV_CAN_LIBRARY/lib/can_interface.hpp>
+#include <StackData.hpp>
 #include <Utils/CanUtils.hpp>
+#include <app_freertos.h>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 
@@ -24,8 +24,9 @@ auto voltages_message(size_t &cell_index)
 		return static_cast<uint16_t>(voltage * 1'000 - 2'850);
 	};
 
-	auto clmp = [&](size_t index) -> size_t {
-		return std::clamp(index, (size_t)0, (size_t)fsd.ltc_data.voltages.size() -1);
+	auto clmp = [&](size_t index) -> size_t
+	{
+		return std::clamp(index, (size_t)0, (size_t)fsd.ltc_data.voltages.size() - 1);
 	};
 
 	const PUTM_CAN::BMS_HV_cell_voltages frame = {
@@ -73,7 +74,8 @@ void vCarCANManagerTask(void *argument)
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
 		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
 
-		if(PUTM_CAN::can.get_aq_ts_button_new_data()){
+		if (PUTM_CAN::can.get_aq_ts_button_new_data())
+		{
 			FullStackDataInstance::set().state.ts_activation_button = true;
 		}
 

@@ -50,6 +50,8 @@ void vSOCManagerTask(void *argument)
 			auto &cell_soc = soc_array[i];
 			const float cell_voltage = FullStackDataInstance::get().ltc_data.voltages[i];
 			EKF_update(&cell_soc.x, &cell_soc.P, cell_voltage, single_cell_current, false);
+			FullStackDataInstance::set().soc.cells_soc[i] = EKF_get_SoC(&cell_soc.x);
 		}
+
 	}
 }

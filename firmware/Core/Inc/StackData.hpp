@@ -65,6 +65,11 @@ struct FullStackData
 		std::atomic<float> std_dev_cell_voltage { 0.0f };
 	} charge_balance;
 
+	struct SoC {
+		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> cells_soc;
+	} soc;
+
+
 	struct UsbEvents
 	{
 		std::atomic<bool> discharge_optical_visualisation { false };
