@@ -143,7 +143,7 @@ void vExternalMeasurmentsManagerTask(void *argument)
 				// FIXME
 				std::atomic<float> raw_data{};
 				measure(car, car_state, raw_data);
-				float voltage = (raw_data + 0.000237896238f) * 25.0f / 0.060577739f;
+				float voltage = -1.0f * (raw_data +0.000221111884f) * 50.411f / 0.114356004f;
 				FullStackDataInstance::set().external_data.car_volt = voltage;
 				break;
 			}
@@ -158,9 +158,13 @@ void vExternalMeasurmentsManagerTask(void *argument)
 			case State::Init:
 				init(acu, acu_state, Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
 				break;
-			case State::Measure:
-				measure(acu, acu_state, FullStackDataInstance::set().external_data.acu_volt);
+			case State::Measure: {
+				std::atomic<float> raw_data{};
+				measure(acu, acu_state, raw_data);
+				float voltage = -1.0f * (raw_data -0.000586072507f) * 60.41f / 0.147790566f;
+				FullStackDataInstance::set().external_data.acu_volt = voltage;
 				break;
+			}
 			case State::Calibrate1:
 				calibration1(acu, acu_state);
 				break;

@@ -2,7 +2,7 @@
  * ChargerCANManager.cpp
  *
  *  Created on: Jul 4, 2023
- *      Author: jan
+ *      Author: Jan
  */
 
 #include <main.h>
@@ -37,8 +37,6 @@ void vChargerCANManagerTask(void *argument)
 
 	ChargeBalanceController balanceController(FullStackDataInstance::set());
 	balanceController.disableBalance();
-
-
 
 	uint32_t balance_start{};
 	uint32_t balance_end{};
