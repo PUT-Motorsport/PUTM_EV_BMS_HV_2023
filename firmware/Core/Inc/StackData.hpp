@@ -20,6 +20,7 @@ struct FullStackData
 		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> voltages;
 		std::array<std::atomic<bool>, LtcConfig::CELL_COUNT> discharge { false };
 		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp;
+		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp_C;
 		std::atomic<float> min_temp;
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
@@ -63,12 +64,16 @@ struct FullStackData
 		std::atomic<float> avg_cell_voltage { 0.0f };
 		std::atomic<float> median_cell_voltage { 0.0f };
 		std::atomic<float> std_dev_cell_voltage { 0.0f };
+		std::atomic<float> voltage_sum {0.0f};
 	} charge_balance;
 
 	struct SoC {
 		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> cells_soc;
 	} soc;
 
+	struct Charger {
+		std::atomic<bool> charged_detected;
+	} charger;
 
 	struct UsbEvents
 	{

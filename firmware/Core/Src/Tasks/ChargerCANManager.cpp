@@ -27,9 +27,11 @@ static std::array<float, 135> discharge{};
 // FIXME move inside the task
 static ChargerCanRxMessageHandler charger_rx{};
 
+bool balance_enable = false;
 bool charging_enable{true};
 float charge_voltage = 135.0f * 4.15f;
 float charge_current = 8.0f;
+
 
 void vChargerCANManagerTask(void *argument)
 {
@@ -38,37 +40,41 @@ void vChargerCANManagerTask(void *argument)
 	ChargeBalanceController balanceController(FullStackDataInstance::set());
 	balanceController.disableBalance();
 
-	uint32_t balance_start{};
-	uint32_t balance_end{};
+	uint32_t balance_start{HAL_GetTick()};
+	bool balance_toggle = false;
 
 	while (true)
 	{
-		osDelay(100);
+		osDelay(200);
 
-		if (not FullStackDataInstance::get().ltc_data.charger_connected)
+		std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
+						  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
+
+		balanceController.update();
+
+		FullStackDataInstance::set().charger.charged_detected = not HAL_GPIO_ReadPin(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin);
+
+		if (not FullStackDataInstance::get().charger.charged_detected)
 		{
 			continue;
 		}
 
+
 		constexpr static size_t BALANCE_TIME = 10'000;
 		if(HAL_GetTick() > balance_start + BALANCE_TIME){
-	     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
-	     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
 
-			balanceController.disableBalance();
-			balance_end = HAL_GetTick();
-		}
+			if(balance_toggle and balance_enable){
+				balanceController.recalcBalance();
+			}
+			else {
+		     	std::ranges::copy(FullStackDataInstance::get().ltc_data.discharge.begin(),
+		     					  FullStackDataInstance::get().ltc_data.discharge.end(), discharge.begin());
 
-
-		constexpr static size_t BALANCE_WAIT_TIME = 5'000;
-		if(HAL_GetTick() > balance_end + BALANCE_WAIT_TIME){
-			std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
-							  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
-			balanceController.update();
-			balanceController.recalcBalance();
+				balanceController.disableBalance();
+			}
+			balance_toggle = not balance_toggle;
 			balance_start = HAL_GetTick();
 		}
-
 
 		while (getCanFifoMessageCount(hfdcan))
 		{

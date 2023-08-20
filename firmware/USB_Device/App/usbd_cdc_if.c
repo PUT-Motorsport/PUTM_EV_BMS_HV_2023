@@ -22,7 +22,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+#include "Utils/UsbUtils.hpp"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,7 +94,7 @@ uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-
+struct UsbDataStruct usb_data;
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -263,6 +263,14 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+
+  usb_data.len = (uint8_t)(*Len);
+  memcpy(&usb_data.buff[0] + usb_data.ctr, Buf, usb_data.len);
+
+  usb_data.ctr += usb_data.len;
+
+  usb_data.new_data = '\n' == *Buf;
+
   return (USBD_OK);
   /* USER CODE END 6 */
 }

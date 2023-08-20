@@ -127,7 +127,7 @@ void vExternalMeasurmentsManagerTask(void *argument)
 {
 	while(true)
 	{
-		FullStackDataInstance::set().ltc_data.charger_connected = charger_conected.isActive();
+		FullStackDataInstance::set().ltc_data.charger_connected = not charger_conected.isActive();
 		FullStackDataInstance::set().external_data.safety_state = safety_detect.isActive();
 
 		FullStackDataInstance::set().air_detect.m_state = air_m_detect.isActive();

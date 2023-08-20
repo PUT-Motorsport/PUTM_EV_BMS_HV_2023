@@ -30,9 +30,11 @@ static std::array<CellData,135> soc_array{};
 void vSOCManagerTask(void *argument)
 {
 
-	while(FullStackDataInstance::get().ltc_data.voltages.back() not_eq 0){
-		osDelay(1000);
-	}
+	osDelay(5'000);
+
+//	while(FullStackDataInstance::get().ltc_data.voltages.back() == 0){
+//		osDelay(1000);
+//	}
 
 	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
 		auto &cell_soc = soc_array[i];

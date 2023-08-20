@@ -30,6 +30,7 @@ public:
         fsd.charge_balance.min_cell_voltage = min_v;
         float avg_v = std::accumulate(v.begin(), v.end(), 0.0f) / v.size();
         fsd.charge_balance.avg_cell_voltage = avg_v;
+        fsd.charge_balance.voltage_sum = avg_v * v.size();
 
         float variance = std::accumulate(v.begin(), v.end(), 0.0, [&](float acc, float x)
                                          { return acc + (x - avg_v) * (x - avg_v); }) / v.size();
@@ -37,7 +38,7 @@ public:
 
         std::array<float, 135> vc;
         std::copy(v.begin(), v.end(), vc.begin());
-        size_t n = vc.size() / 2;
+        size_t n = 135 - 10; //vc.size() / 2;
         std::nth_element(vc.begin(), vc.begin()+n, vc.end());
         fsd.charge_balance.median_cell_voltage = vc[n];
     }

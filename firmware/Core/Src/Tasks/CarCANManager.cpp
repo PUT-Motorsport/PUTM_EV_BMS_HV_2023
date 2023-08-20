@@ -65,11 +65,11 @@ void vCarCANManagerTask(void *argument)
 		const FullStackData &fsd = FullStackDataInstance::get();
 
 		PUTM_CAN::BMS_HV_main main_frame = {
-			.voltage_sum = static_cast<uint16_t>(fsd.ltc_data.bat_volt),
+			.voltage_sum = static_cast<uint16_t>(fsd.charge_balance.voltage_sum) * 100.0f,
 			.current = static_cast<int16_t>(fsd.external_data.acu_curr * 100.0f),
 			.temp_max = static_cast<uint8_t>(fsd.ltc_data.max_temp),
 			.temp_avg = static_cast<uint8_t>(fsd.ltc_data.min_temp),
-			.soc = static_cast<uint16_t>(fsd.ltc_data.soc * 1'000)};
+			.soc = static_cast<uint16_t>(fsd.soc.cells_soc.front() * 1'000)};
 
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
 		auto status_2 = voltages_message(cell_send_index).send(hfdcan);

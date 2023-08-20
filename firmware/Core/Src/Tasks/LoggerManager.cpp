@@ -13,7 +13,7 @@
 void vLoggerManagerTask(void *argument)
 {
   osDelay(2000);
-  HAL_GPIO_WritePin(AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, GPIO_PIN_SET);
+
 	while(true)
 	{
 		osDelay(100);
