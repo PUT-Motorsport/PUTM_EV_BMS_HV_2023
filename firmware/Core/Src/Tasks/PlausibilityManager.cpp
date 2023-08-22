@@ -23,16 +23,36 @@ extern GpioIn  pre_AIR;
 bool ts_act_test = {false};
 AIRstateEnum test_air_state;
 
+void AMS_LIGHT(bool on){
+	HAL_GPIO_WritePin(FAN_CTRL1_GPIO_Port, FAN_CTRL1_Pin, GPIO_PinState(on));
+}
+
+void AMS_FAULT(){
+	HAL_GPIO_WritePin(AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, GPIO_PIN_SET);
+	AMS_LIGHT(true);
+}
+
 void vPlausibilityManagerTask(void *argument)
 {
+
 	PlausibilityChecker checker(FullStackDataInstance::get());
 	AccumulatorIsolationRelaySM AIRsm;
 	AIRdriver airs;
+
+	bool ams_fault{false};
 
 	while (true)
 	{
 		osDelay(10);
 		led_ok.toggle();
+
+		if(HAL_GetTick() < 2'850){ //ms
+			AMS_LIGHT(true);
+			continue;
+		}
+		else {
+			AMS_LIGHT(ams_fault);
+		}
 
 		// AIRs
 		auto ts_allowed = pre_AIR.isActive();
@@ -48,7 +68,7 @@ void vPlausibilityManagerTask(void *argument)
 		}
 
 		Checks::ErrorOrWarning optonalError = checker.check();
-		if (not optonalError.has_value() or HAL_GetTick() < 15'000)
+		if (not optonalError.has_value())
 		{
 			continue;
 		}
@@ -56,7 +76,8 @@ void vPlausibilityManagerTask(void *argument)
 		if (std::holds_alternative<Checks::CriticalError>(*optonalError))
 		{
 			FullStackDataInstance::set().state.error = std::get<Checks::CriticalError>(*optonalError);
-			HAL_GPIO_WritePin(AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, GPIO_PIN_SET);
+			ams_fault = true;
+			AMS_FAULT();
 		}
 		else
 		{

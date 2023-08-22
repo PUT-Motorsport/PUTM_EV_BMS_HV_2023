@@ -29,14 +29,11 @@ static std::array<float, 135> soc{};
 // FIXME move inside the task
 static ChargerCanRxMessageHandler charger_rx{};
 
-bool balance_enable = true;
-bool charging_enable{true};
-float charge_voltage = 135.0f * 4.15f;
-float charge_current = 8.0f;
 
 
 void vChargerCANManagerTask(void *argument)
 {
+	constexpr static float charge_voltage = 135.0f * 4.15f;
 	startCan(hfdcan);
 
 	ChargeBalanceController balanceController(FullStackDataInstance::set());
@@ -72,7 +69,7 @@ void vChargerCANManagerTask(void *argument)
 		constexpr static size_t BALANCE_TIME = 10'000;
 		if(HAL_GetTick() > balance_start + BALANCE_TIME){
 
-			if(balance_toggle and balance_enable){
+			if(balance_toggle and FullStackDataInstance::get().charger.balance_enable){
 				balanceController.recalcBalance();
 			}
 			else {
@@ -89,7 +86,9 @@ void vChargerCANManagerTask(void *argument)
 		{
 			charger_rx.update();
 		}
-		ChargerCanTxMessage frame{charge_voltage, charge_current, charging_enable};
+		ChargerCanTxMessage frame{charge_voltage,
+								  FullStackDataInstance::get().charger.charge_current,
+								  FullStackDataInstance::get().charger.charging_enable};
 		frame.send();
 	}
 }

@@ -7,13 +7,14 @@
 
 #include <main.h>
 
+#include "PerypherialManagers/UsbCommands.hpp"
 #include "embedded_json/include/embedded_json.hpp"
 #include <StackData.hpp>
+#include <Utils/UsbUtils.hpp>
 #include <app_freertos.h>
 #include <string.h>
 #include <usb_device.h>
 #include <usbd_cdc_if.h>
-#include <Utils/UsbUtils.hpp>
 
 // https://community.st.com/t5/embedded-software-mcus/way-to-be-notified-on-cdc-transmit-complete/td-p/412336
 
@@ -21,12 +22,58 @@ extern struct UsbDataStruct usb_data;
 static constexpr size_t max_size = 5000;
 embeddedjson::Json<max_size> json;
 
-
 void vUSBCommandManagerTask(void *argument)
 {
 
+	BMS_command_parser commands;
+
 	while (true)
 	{
+		osDelay(500);
+
+		auto message = commands.parse(usb_data.buff, usb_data.len);
+		if (message.has_value())
+		{
+			switch (*message)
+			{
+			case Command_type::StartCharging:
+				FullStackDataInstance::set().charger.charging_enable = true;
+				break;
+
+			case Command_type::StopCharging:
+				FullStackDataInstance::set().charger.charging_enable = false;
+				break;
+
+			case Command_type::StartBalance:
+				FullStackDataInstance::set().charger.balance_enable = true;
+				break;
+
+			case Command_type::StopBalance:
+				FullStackDataInstance::set().charger.balance_enable = false;
+				break;
+
+			case Command_type::SetChargeCurrent_1A:
+				FullStackDataInstance::set().charger.charge_current = 1.0f;
+				break;
+
+			case Command_type::SetChargeCurrent_2A:
+				FullStackDataInstance::set().charger.charge_current = 2.0f;
+				break;
+
+			case Command_type::SetChargeCurrent_4A:
+				FullStackDataInstance::set().charger.charge_current = 4.0f;
+				break;
+
+			case Command_type::SetChargeCurrent_8A:
+				FullStackDataInstance::set().charger.charge_current = 8.0f;
+				break;
+
+			case Command_type::SetChargeCurrent_12A:
+				FullStackDataInstance::set().charger.charge_current = 12.0f;
+				break;
+			}
+		}
+
 		json.clear();
 		json.add("current", FullStackDataInstance::get().external_data.acu_curr.load());
 		json.add("acc_voltage", FullStackDataInstance::get().external_data.acu_volt.load());
@@ -41,6 +88,5 @@ void vUSBCommandManagerTask(void *argument)
 		{
 			osDelay(100);
 		}
-		osDelay(1000);
 	}
 }

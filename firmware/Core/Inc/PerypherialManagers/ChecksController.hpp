@@ -17,7 +17,7 @@
 namespace Checks
 {
 
-    ErrorOrWarning underVoltage(const FullStackData &stackData)
+    static ErrorOrWarning underVoltage(const FullStackData &stackData)
     {
     	static int32_t error_cntr{0};
         auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
@@ -36,11 +36,11 @@ namespace Checks
         return std::nullopt;
     }
 
-    ErrorOrWarning overVoltage(const FullStackData &stackData)
+    static ErrorOrWarning overVoltage(const FullStackData &stackData)
     {
     	static int32_t error_cntr{0};
 
-    	if(stackData.charge_balance.balance_enable){
+    	if(stackData.charger.balance_enable){
     		return std::nullopt;
     	}
 
@@ -61,7 +61,7 @@ namespace Checks
         return std::nullopt;
     }
 
-    ErrorOrWarning underTemperature(const FullStackData &stackData)
+    static ErrorOrWarning underTemperature(const FullStackData &stackData)
     {
     	static int32_t error_cntr{0};
         auto iter = std::ranges::find_if(stackData.ltc_data.temp_C, [](const auto &cellTemperature)
@@ -80,7 +80,7 @@ namespace Checks
         return std::nullopt;
     }
 
-    ErrorOrWarning overTemperature(const FullStackData &stackData)
+    static ErrorOrWarning overTemperature(const FullStackData &stackData)
     {
     	static int32_t error_cntr{0};
         auto iter = std::ranges::find_if(stackData.ltc_data.temp_C, [](const auto &cellTemperature)
@@ -100,7 +100,7 @@ namespace Checks
         return std::nullopt;
     }
 
-    ErrorOrWarning overCurrent(const FullStackData &stackData)
+    static ErrorOrWarning overCurrent(const FullStackData &stackData)
     {
     	static int32_t error_cntr{0};
         bool overcurrent = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
@@ -119,7 +119,7 @@ namespace Checks
         return std::nullopt;
     }
 
-    ErrorOrWarning CurrentSensorDisconnect(const FullStackData &stackData)
+    static ErrorOrWarning CurrentSensorDisconnect(const FullStackData &stackData)
     {
     	static int32_t error_cntr{0};
     	bool disconnect = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
