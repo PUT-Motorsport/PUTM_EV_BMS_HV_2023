@@ -19,13 +19,12 @@ class PlausibilityChecker
 private:
 	const FullStackData &stackData;
 
-	// TODO: add more checks
-	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 4> checks
+	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 6> checks
 	{
 		Checks::underVoltage,
 		Checks::overVoltage,
-		//Checks::underTemperature,
-		//Checks::overTemperature,
+		Checks::underTemperature,
+		Checks::overTemperature,
 		Checks::overCurrent,
 		Checks::CurrentSensorDisconnect
 	};
@@ -35,7 +34,7 @@ public:
 
 	constexpr Checks::ErrorOrWarning check() const
 	{
-		for (const auto check : checks)
+		for (const auto& check : checks)
 		{
 			Checks::ErrorOrWarning evaluatedCheck = check(stackData);
 			if (evaluatedCheck.has_value())

@@ -26,10 +26,14 @@ namespace ChecksConfig
 {
 	constexpr static float CELL_MAX_VOLTAGE = 4.175f;
 	constexpr static float CELL_MIN_VOLTAGE = 3.0f;
+	constexpr static int32_t VOLTAGE_ERROR_COUNT_MAX = 20;
 	constexpr static float CELL_MAX_TEMPERATURE = 50.0f;
 	constexpr static float CELL_MIN_TEMPERATURE = -20.0f;
+	constexpr static int32_t TEMP_ERROR_COUNT_MAX = 40;
 	constexpr static float BATTERY_MAX_CURRENT = 200.0f;
 	constexpr static float BATTERY_SENSOR_DISCONNECT = 350.0f;
+	constexpr static int32_t CURRENT_ERROR_COUNT_MAX = 40;
+
 }
 
 namespace Mcp356xConfig

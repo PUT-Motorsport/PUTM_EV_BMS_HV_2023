@@ -4,6 +4,9 @@
         "initializer_list": "cpp",
         "ranges": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     }
 }

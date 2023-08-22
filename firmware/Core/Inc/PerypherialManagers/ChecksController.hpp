@@ -8,95 +8,133 @@
 #ifndef INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_
 #define INC_PERYPHERIALMANAGERS_CHECKSCONTROLLER_HPP_
 
-#include <main.h>
 #include <algorithm>
+#include <main.h>
 
 #include <Config.hpp>
 #include <Interfaces/StateErrorWarning.hpp>
 
 namespace Checks
 {
-    inline static ErrorOrWarning underVoltage(const FullStackData &stackData)
+
+    ErrorOrWarning underVoltage(const FullStackData &stackData)
     {
-    	static std::array<int8_t, LtcConfig::CELL_COUNT> undervoltage_error_array{};
-
-    	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
-
-    		const float cell_voltage = stackData.ltc_data.voltages[i];
-    		const bool under_voltage = cell_voltage < ChecksConfig::CELL_MIN_VOLTAGE;
-    		int8_t& error_count = undervoltage_error_array[i];
-
-    		if(under_voltage){
-    			error_count++;
-    		}
-    		else if(error_count not_eq 0){
-    			error_count--;
-    		}
-    	}
-
-        auto iter = std::ranges::find_if(undervoltage_error_array, [](const auto &error_count)
-                                         { return error_count > 25; });
-
-        if (iter not_eq std::end(undervoltage_error_array))
-        {
-            return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(undervoltage_error_array.begin(), iter));
-        }
-
-        return std::nullopt;
-    }
-
-    constexpr ErrorOrWarning overVoltage(const FullStackData &stackData)
-    {
-
-    	auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
-                                         { return cellVoltage > ChecksConfig::CELL_MAX_VOLTAGE; });
+    	static int32_t error_cntr{0};
+        auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
+                                         { return cellVoltage < ChecksConfig::CELL_MIN_VOLTAGE; });
         if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
-            return std::make_pair(CriticalErrorsEnum::OverVoltage, std::distance(std::begin(stackData.ltc_data.voltages), iter));
+        	++error_cntr;
+        }
+        else if(error_cntr > 0){
+        	--error_cntr;
+        }
+
+        if(error_cntr > ChecksConfig::VOLTAGE_ERROR_COUNT_MAX){
+        	return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(std::begin(stackData.ltc_data.temp_C), iter));
         }
         return std::nullopt;
     }
 
-    constexpr ErrorOrWarning underTemperature(const FullStackData &stackData)
+    ErrorOrWarning overVoltage(const FullStackData &stackData)
     {
+    	static int32_t error_cntr{0};
+
+    	if(stackData.charge_balance.balance_enable){
+    		return std::nullopt;
+    	}
+
+    	auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
+                                         { return cellVoltage < ChecksConfig::CELL_MIN_VOLTAGE; });
+
+        if (iter not_eq std::end(stackData.ltc_data.voltages))
+        {
+        	++error_cntr;
+        }
+        else if(error_cntr > 0){
+        	--error_cntr;
+        }
+
+        if(error_cntr > ChecksConfig::VOLTAGE_ERROR_COUNT_MAX){
+        	return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(std::begin(stackData.ltc_data.temp_C), iter));
+        }
+        return std::nullopt;
+    }
+
+    ErrorOrWarning underTemperature(const FullStackData &stackData)
+    {
+    	static int32_t error_cntr{0};
         auto iter = std::ranges::find_if(stackData.ltc_data.temp_C, [](const auto &cellTemperature)
                                          { return cellTemperature < ChecksConfig::CELL_MIN_TEMPERATURE; });
         if (iter not_eq std::end(stackData.ltc_data.temp_C))
         {
-            return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltc_data.temp_C), iter));
+        	++error_cntr;
+        }
+        else if(error_cntr > 0){
+        	--error_cntr;
+        }
+
+        if(error_cntr > ChecksConfig::TEMP_ERROR_COUNT_MAX){
+        	return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltc_data.temp_C), iter));
         }
         return std::nullopt;
     }
 
-    constexpr ErrorOrWarning overTemperature(const FullStackData &stackData)
+    ErrorOrWarning overTemperature(const FullStackData &stackData)
     {
+    	static int32_t error_cntr{0};
         auto iter = std::ranges::find_if(stackData.ltc_data.temp_C, [](const auto &cellTemperature)
                                          { return cellTemperature > ChecksConfig::CELL_MAX_TEMPERATURE; });
 
         if (iter not_eq std::end(stackData.ltc_data.temp_C))
         {
-            return std::make_pair(CriticalErrorsEnum::OverTemperature, std::distance(std::begin(stackData.ltc_data.temp_C), iter));
+        	++error_cntr;
+        }
+        else if(error_cntr > 0){
+        	--error_cntr;
+        }
+
+        if(error_cntr > ChecksConfig::TEMP_ERROR_COUNT_MAX){
+        	return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltc_data.temp_C), iter));
         }
         return std::nullopt;
     }
 
-    inline ErrorOrWarning overCurrent(const FullStackData &stackData){
-    	bool overcurrent = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
-    	bool disconnect = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
-    	if(overcurrent and not disconnect){
-    		return std::make_pair(CriticalErrorsEnum::OverCurrent, 0);
-    	}
-    	return std::nullopt;
+    ErrorOrWarning overCurrent(const FullStackData &stackData)
+    {
+    	static int32_t error_cntr{0};
+        bool overcurrent = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
+        bool disconnect = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_SENSOR_DISCONNECT;
+        if (overcurrent and not disconnect)
+        {
+        	++error_cntr;
+        }
+        else if(error_cntr > 0){
+        	--error_cntr;
+        }
+
+        if(error_cntr > ChecksConfig::CURRENT_ERROR_COUNT_MAX	){
+        	return std::make_pair(CriticalErrorsEnum::OverCurrent, 0);
+        }
+        return std::nullopt;
     }
 
-    inline ErrorOrWarning CurrentSensorDisconnect(const FullStackData &stackData){
+    ErrorOrWarning CurrentSensorDisconnect(const FullStackData &stackData)
+    {
+    	static int32_t error_cntr{0};
     	bool disconnect = std::abs(stackData.external_data.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
-    	if(disconnect){
+    	if (disconnect)
+    	{
+    		++error_cntr;
+    	}
+    	else if(error_cntr > 0){
+    		--error_cntr;
+    	}
+    	if(error_cntr > ChecksConfig::CURRENT_ERROR_COUNT_MAX	){
     		return std::make_pair(CriticalErrorsEnum::CurrentSensorDisconnected, 0);
     	}
     	return std::nullopt;
     }
-
 
 }
 

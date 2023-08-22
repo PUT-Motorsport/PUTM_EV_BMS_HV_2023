@@ -53,11 +53,10 @@ void vPlausibilityManagerTask(void *argument)
 			continue;
 		}
 
-
 		if (std::holds_alternative<Checks::CriticalError>(*optonalError))
 		{
 			FullStackDataInstance::set().state.error = std::get<Checks::CriticalError>(*optonalError);
-			//HAL_GPIO_WritePin(AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, GPIO_PIN_SET);
 		}
 		else
 		{
