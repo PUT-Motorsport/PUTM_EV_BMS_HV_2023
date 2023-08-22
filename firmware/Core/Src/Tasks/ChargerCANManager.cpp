@@ -55,7 +55,6 @@ void vChargerCANManagerTask(void *argument)
 		std::ranges::copy(FullStackDataInstance::get().soc.cells_soc.begin(),
 						  FullStackDataInstance::get().soc.cells_soc.end(), soc.begin());
 
-
 		balanceController.update();
 
 		FullStackDataInstance::set().charger.charged_detected = not HAL_GPIO_ReadPin(CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin);
@@ -66,10 +65,11 @@ void vChargerCANManagerTask(void *argument)
 		}
 
 
-		constexpr static size_t BALANCE_TIME = 10'000;
+		constexpr static size_t BALANCE_TIME = 7'000;
 		if(HAL_GetTick() > balance_start + BALANCE_TIME){
 
-			if(balance_toggle and FullStackDataInstance::get().charger.balance_enable){
+			if(balance_toggle and FullStackDataInstance::get().charger.balance_enable
+							  and not FullStackDataInstance::get().charger.charging_enable){
 				balanceController.recalcBalance();
 			}
 			else {

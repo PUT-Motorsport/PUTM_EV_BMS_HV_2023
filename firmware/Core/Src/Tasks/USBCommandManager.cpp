@@ -31,7 +31,7 @@ void vUSBCommandManagerTask(void *argument)
 	{
 		osDelay(500);
 
-		auto message = commands.parse(usb_data.buff, usb_data.len);
+		auto message = commands.parse(usb_data.buff, usb_data.ctr);
 		if (message.has_value())
 		{
 			switch (*message)

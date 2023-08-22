@@ -19,9 +19,6 @@ extern GpioOut led_warning;
 extern GpioOut led_error;
 extern GpioIn  pre_AIR;
 
-// FIXME to remove after testing/debuging
-bool ts_act_test = {false};
-AIRstateEnum test_air_state;
 
 void AMS_LIGHT(bool on){
 	HAL_GPIO_WritePin(FAN_CTRL1_GPIO_Port, FAN_CTRL1_Pin, GPIO_PinState(on));
@@ -59,7 +56,6 @@ void vPlausibilityManagerTask(void *argument)
 		AIRsm.set_TS(ts_allowed);
 		AIRsm.update(HAL_GetTick());
 		airs.SetState(AIRsm.get());
-		test_air_state = AIRsm.get();
 
 		const bool charger_mode = FullStackDataInstance::get().charger.charged_detected;
 		if(FullStackDataInstance::get().state.ts_activation_button or charger_mode){

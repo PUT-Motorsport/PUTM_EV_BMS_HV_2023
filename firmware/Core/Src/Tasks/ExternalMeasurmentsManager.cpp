@@ -180,7 +180,7 @@ void vExternalMeasurmentsManagerTask(void *argument)
 				// FIXME
 				std::atomic<float> raw_data{};
 				measure(isens, isens_state, raw_data);
-				float current = (raw_data - 0.0235465225f) * 10.0f / 0.061959736f;
+				float current = ((raw_data - 0.0235465225f) * 10.0f / 0.061959736f + 0.45f) * -1.0f;
 				FullStackDataInstance::set().external_data.acu_curr = current;
 				break;
 			}

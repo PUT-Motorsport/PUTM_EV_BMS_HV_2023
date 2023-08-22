@@ -45,7 +45,7 @@ namespace Checks
     	}
 
     	auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
-                                         { return cellVoltage < ChecksConfig::CELL_MIN_VOLTAGE; });
+                                         { return cellVoltage > ChecksConfig::CELL_MAX_VOLTAGE; });
 
         if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
