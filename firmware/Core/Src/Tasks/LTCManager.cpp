@@ -12,6 +12,9 @@
 #include <app_freertos.h>
 #include <PerypherialManagers/Ltc6811Controller.hpp>
 #include <StackData.hpp>
+#include <PerypherialManagers/LtcTemperatureCalculation.hpp>
+#include <ranges>
+#include <algorithm>
 
 static SPI_HandleTypeDef &hspi = hspi2;
 static Ltc6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
@@ -23,6 +26,12 @@ enum struct States
 	Charging,
 	OpticalVisualization
 } static state { States::Init };
+
+static inline void calc_temp(){
+	for(size_t i = 0; i < LtcConfig::TEMP_COUNT; ++i){
+		FullStackDataInstance::set().ltc_data.temp_C.at(i) = LtcCalculateTemperature((uint16_t)FullStackDataInstance::get().ltc_data.temp[i]);
+	}
+}
 
 static inline void init()
 {
@@ -39,6 +48,7 @@ static inline void normal()
 
 	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
 	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
+	calc_temp();
 }
 
 static inline void charging()
@@ -49,6 +59,7 @@ static inline void charging()
 	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
 	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
 	ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
+	calc_temp();
 }
 
 static inline void opticalVisualization()
@@ -76,6 +87,7 @@ static inline void opticalVisualization()
 	num++;
 	if (num >= 9) num = 0;
 	ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
+	calc_temp();
 }
 
 void vLTCManagerTask(void *argument)

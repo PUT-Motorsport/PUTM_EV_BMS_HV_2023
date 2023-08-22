@@ -22,12 +22,14 @@ static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 static const FullStackData& fullstackdata_debug {FullStackDataInstance::get()};
 static std::array<float, 135> voltages{};
 static std::array<float, 135> discharge{};
+static std::array<float, 135> temperature{};
+static std::array<float, 135> soc{};
 #endif
 
 // FIXME move inside the task
 static ChargerCanRxMessageHandler charger_rx{};
 
-bool balance_enable = false;
+bool balance_enable = true;
 bool charging_enable{true};
 float charge_voltage = 135.0f * 4.15f;
 float charge_current = 8.0f;
@@ -49,6 +51,13 @@ void vChargerCANManagerTask(void *argument)
 
 		std::ranges::copy(FullStackDataInstance::get().ltc_data.voltages.begin(),
 						  FullStackDataInstance::get().ltc_data.voltages.end(), voltages.begin());
+
+		std::ranges::copy(FullStackDataInstance::get().ltc_data.temp_C.begin(),
+						  FullStackDataInstance::get().ltc_data.temp_C.end(), temperature.begin());
+
+		std::ranges::copy(FullStackDataInstance::get().soc.cells_soc.begin(),
+						  FullStackDataInstance::get().soc.cells_soc.end(), soc.begin());
+
 
 		balanceController.update();
 

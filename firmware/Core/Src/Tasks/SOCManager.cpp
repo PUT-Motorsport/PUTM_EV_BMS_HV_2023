@@ -23,7 +23,6 @@ struct CellData{
 	Matrix P{};
 };
 
-
 static std::array<CellData,135> soc_array{};
 
 
@@ -32,9 +31,6 @@ void vSOCManagerTask(void *argument)
 
 	osDelay(5'000);
 
-//	while(FullStackDataInstance::get().ltc_data.voltages.back() == 0){
-//		osDelay(1000);
-//	}
 
 	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
 		auto &cell_soc = soc_array[i];
@@ -52,7 +48,8 @@ void vSOCManagerTask(void *argument)
 			auto &cell_soc = soc_array[i];
 			const float cell_voltage = FullStackDataInstance::get().ltc_data.voltages[i];
 			EKF_update(&cell_soc.x, &cell_soc.P, cell_voltage, single_cell_current, false);
-			FullStackDataInstance::set().soc.cells_soc[i] = EKF_get_SoC(&cell_soc.x);
+			float soc = EKF_get_SoC(&cell_soc.x);
+			if(soc not_eq 0)FullStackDataInstance::set().soc.cells_soc[i] = soc;
 		}
 
 	}
