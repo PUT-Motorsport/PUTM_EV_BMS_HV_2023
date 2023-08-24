@@ -46,7 +46,6 @@ enum struct WarningsEnum : uint8_t
 namespace Checks
 {
     using CriticalError = std::pair<CriticalErrorsEnum, size_t>; // cell number
-    using Warning = std::pair<WarningsEnum, size_t>;             // cell number
-    using ErrorOrWarning = std::optional<std::variant<CriticalError, Warning>>;
+    using OptionalError = std::optional<CriticalError>;
 }
 #endif /* INC_INTERFACES_STATEERRORWARNING_HPP_ */

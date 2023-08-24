@@ -19,7 +19,7 @@
 // https://community.st.com/t5/embedded-software-mcus/way-to-be-notified-on-cdc-transmit-complete/td-p/412336
 
 extern struct UsbDataStruct usb_data;
-static constexpr size_t max_size = 5000;
+static constexpr size_t max_size = 8000;
 embeddedjson::Json<max_size> json;
 
 void vUSBCommandManagerTask(void *argument)
@@ -50,6 +50,7 @@ void vUSBCommandManagerTask(void *argument)
 
 			case Command_type::StopBalance:
 				FullStackDataInstance::set().charger.balance_enable = false;
+				FullStackDataInstance::set().charger.balance_disable_tick = HAL_GetTick();
 				break;
 
 			case Command_type::SetChargeCurrent_1A:
@@ -82,8 +83,12 @@ void vUSBCommandManagerTask(void *argument)
 		json.add("cell_voltage", FullStackDataInstance::get().ltc_data.voltages);
 		json.add("temperature", FullStackDataInstance::get().ltc_data.temp_C);
 
-		const auto [array, size] = json.get_as_c_array();
+		// FIXME
+		//json.add("discharge", FullStackDataInstance::get().ltc_data.discharge);
+		//json.add("balance", FullStackDataInstance::get().charger.balance_enable.load());
+		//json.add("charging", FullStackDataInstance::get().charger.charging_enable.load());
 
+		const auto [array, size] = json.get_as_c_array();
 		while (CDC_Transmit_FS((uint8_t *)array, size) == USBD_BUSY)
 		{
 			osDelay(100);

@@ -12,6 +12,7 @@
 #include "Interfaces/StateErrorWarning.hpp"
 #include <array>
 #include <atomic>
+#include "etl/flat_map.h"
 
 struct FullStackData
 {
@@ -52,7 +53,6 @@ struct FullStackData
 	{
 		std::atomic<bool> ts_activation_button{false};
 		std::optional<Checks::CriticalError> error{std::nullopt};
-		std::optional<Checks::Warning> warning{std::nullopt};
 	} state;
 
 	struct ChargeBalance
@@ -63,6 +63,7 @@ struct FullStackData
 		std::atomic<float> median_cell_voltage{0.0f};
 		std::atomic<float> std_dev_cell_voltage{0.0f};
 		std::atomic<float> voltage_sum{0.0f};
+		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> pre_balance_voltages;
 	} charge_balance;
 
 	struct SoC
@@ -73,9 +74,9 @@ struct FullStackData
 	struct Charger
 	{
 		std::atomic<bool> charged_detected;
-
 		// set by USB
 		std::atomic<bool> balance_enable{false};
+		std::atomic<uint32_t> balance_disable_tick{};
 		std::atomic<bool> charging_enable{false};
 		std::atomic<float> charge_current{0.0f};
 	} charger;
@@ -85,7 +86,11 @@ struct FullStackData
 		std::atomic<bool> discharge_optical_visualisation{false};
 	} usb_events;
 
-	constexpr FullStackData() = default;
+	struct Time{
+		std::atomic<uint32_t> tick;
+	} time;
+
+	FullStackData() = default;
 	FullStackData(const FullStackData &) = delete;
 	FullStackData &operator=(const FullStackData &) = delete;
 };

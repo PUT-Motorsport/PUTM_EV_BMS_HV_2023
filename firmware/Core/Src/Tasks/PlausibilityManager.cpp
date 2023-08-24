@@ -12,7 +12,7 @@
 #include <PerypherialManagers/GpioController.hpp>
 #include <PerypherialManagers/PlausibilityCheckerController.hpp>
 #include <PerypherialManagers/AIRdriver.hpp>
-#include <etl/circular_buffer.h>
+
 
 extern GpioOut led_ok;
 extern GpioOut led_warning;
@@ -57,27 +57,26 @@ void vPlausibilityManagerTask(void *argument)
 		AIRsm.update(HAL_GetTick());
 		airs.SetState(AIRsm.get());
 
+		// Time update
+		FullStackDataInstance::set().time.tick = HAL_GetTick();
+
 		const bool charger_mode = FullStackDataInstance::get().charger.charged_detected;
 		if(FullStackDataInstance::get().state.ts_activation_button or charger_mode){
 			AIRsm.TS_activation_button(HAL_GetTick());
 			FullStackDataInstance::set().state.ts_activation_button = false;
 		}
 
-		Checks::ErrorOrWarning optonalError = checker.check();
+		Checks::OptionalError optonalError = checker.check();
 		if (not optonalError.has_value())
 		{
 			continue;
 		}
-
-		if (std::holds_alternative<Checks::CriticalError>(*optonalError))
-		{
-			FullStackDataInstance::set().state.error = std::get<Checks::CriticalError>(*optonalError);
+		else {
+			auto error = (*optonalError);
+			FullStackDataInstance::set().state.error = error;
 			ams_fault = true;
 			AMS_FAULT();
 		}
-		else
-		{
-			FullStackDataInstance::set().state.warning = std::get<Checks::Warning>(*optonalError);
-		}
+
 	}
 }

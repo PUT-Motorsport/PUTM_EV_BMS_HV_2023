@@ -190,8 +190,7 @@ void vExternalMeasurmentsManagerTask(void *argument)
 			case State::Calibrate2:
 				calibration2(isens, isens_state, Mcp356x::MuxIn::Ch2, Mcp356x::MuxIn::Ch3);
 		}
-
-		osDelay(100);
+		osDelay(20);
 	}
 }
 

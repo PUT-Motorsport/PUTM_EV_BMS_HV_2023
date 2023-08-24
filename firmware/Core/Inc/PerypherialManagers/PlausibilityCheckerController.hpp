@@ -13,13 +13,14 @@
 
 #include <Interfaces/StateErrorWarning.hpp>
 #include <PerypherialManagers/ChecksController.hpp>
+#include <etl/utility.h>
 
 class PlausibilityChecker
 {
 private:
 	const FullStackData &stackData;
 
-	const std::array<Checks::ErrorOrWarning (*)(const FullStackData &), 6> checks
+	constexpr static std::array<Checks::OptionalError (*)(const FullStackData &), 6> checks
 	{
 		Checks::underVoltage,
 		Checks::overVoltage,
@@ -29,21 +30,34 @@ private:
 		Checks::CurrentSensorDisconnect
 	};
 
+	using ErrorListElement = etl::pair<Checks::CriticalError, bool>;
+	std::array<ErrorListElement, checks.size()> errors{};
+
+	size_t error_count = 0;
+
 public:
 	PlausibilityChecker(const FullStackData &stackData) : stackData(stackData) { }
 
-	constexpr Checks::ErrorOrWarning check() const
+	constexpr Checks::OptionalError check() const
 	{
+		Checks::OptionalError ret = std::nullopt;
+		uint32_t i = 0;
 		for (const auto& check : checks)
 		{
-			Checks::ErrorOrWarning evaluatedCheck = check(stackData);
+			Checks::OptionalError evaluatedCheck = check(stackData);
 			if (evaluatedCheck.has_value())
 			{
-				return evaluatedCheck.value();
+				ret = evaluatedCheck.value();
+				//errors[i] = ErrorListElement{evaluatedCheck.value(), true};
 			}
+			++i;
 		}
-		return std::nullopt;
+		return ret;
 	}
+
+//	constexpr std::array<Checks::CriticalError, checks.size()> get_error_list() const{
+//		return errors;
+//	}
 };
 
 #endif /* INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_ */

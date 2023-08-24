@@ -31,6 +31,11 @@ static inline void calc_temp(){
 	for(size_t i = 0; i < LtcConfig::TEMP_COUNT; ++i){
 		FullStackDataInstance::set().ltc_data.temp_C.at(i) = LtcCalculateTemperature((uint16_t)FullStackDataInstance::get().ltc_data.temp[i]);
 	}
+	const auto& t_array = FullStackDataInstance::set().ltc_data.temp_C;
+	float t_max = *std::ranges::max_element(t_array.begin(), t_array.end());
+	FullStackDataInstance::set().ltc_data.max_temp = t_max;
+	float t_min = *std::ranges::min_element(t_array.begin(), t_array.end());
+	FullStackDataInstance::set().ltc_data.max_temp = t_min;
 }
 
 static inline void init()
