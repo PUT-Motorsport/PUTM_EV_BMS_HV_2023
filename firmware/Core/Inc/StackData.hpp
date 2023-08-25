@@ -53,6 +53,7 @@ struct FullStackData
 	{
 		std::atomic<bool> ts_activation_button{false};
 		std::optional<Checks::CriticalError> error{std::nullopt};
+		std::array<Checks::ErrorListElement, 6> list_of_errors;
 	} state;
 
 	struct ChargeBalance

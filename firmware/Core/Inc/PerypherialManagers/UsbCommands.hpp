@@ -17,6 +17,7 @@
 
 enum struct Command_type
 {
+	CommunicationToggle,
     StartCharging,
     StopCharging,
     StartBalance,
@@ -34,6 +35,7 @@ class BMS_command_parser
     constexpr static std::array<std::pair<std::string_view, Command_type>,
                                 static_cast<size_t>(Command_type::_size)>
         commands = {
+        	std::make_pair("!C-CC@", Command_type::CommunicationToggle),
             std::make_pair("!C-ON@", Command_type::StartCharging),
             std::make_pair("!C-OF@", Command_type::StopCharging),
             std::make_pair("!B-ON@", Command_type::StartBalance),
@@ -73,12 +75,12 @@ public:
         }
 
         // incorrect command
-        if (start_iter == buff.end() or length not_eq 5)
-        {
-            write_index = 0;
-            std::fill(buff.begin(), buff.end(), 0);
-            return std::nullopt;
-        }
+//        if (start_iter == buff.end())
+//        {
+//            write_index = 0;
+//            std::fill(buff.begin(), buff.end(), 0);
+//            return std::nullopt;
+//        }
 
         // command found
         std::string_view command{reinterpret_cast<char *>(buff.data() + std::distance(buff.begin(), start_iter)),
@@ -88,7 +90,7 @@ public:
 
         // clear buffer
         write_index = 0;
-        std::fill(buff.begin(), buff.end(), 0);
+        std::fill(start_iter, end_iter + 1, 0);
         return res;
     }
 };

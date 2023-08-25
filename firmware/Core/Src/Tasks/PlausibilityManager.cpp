@@ -37,10 +37,10 @@ void AMS_FAULT(){
 
 void vPlausibilityManagerTask(void *argument)
 {
-
 	PlausibilityChecker checker(FullStackDataInstance::get());
 	AccumulatorIsolationRelaySM AIRsm;
 	AIRdriver airs;
+	auto& fsd = FullStackDataInstance::set();
 
 	bool ams_fault{false};
 
@@ -63,14 +63,16 @@ void vPlausibilityManagerTask(void *argument)
 		AIRsm.update(HAL_GetTick());
 		airs.SetState(AIRsm.get());
 
-		// Time update
-		FullStackDataInstance::set().time.tick = HAL_GetTick();
+		// Time update for some checks
+		fsd.time.tick = HAL_GetTick();
 
-		const bool charger_mode = FullStackDataInstance::get().charger.charged_detected;
-		if(FullStackDataInstance::get().state.ts_activation_button or charger_mode){
+		const bool charger_mode = fsd.charger.charged_detected;
+		if(fsd.state.ts_activation_button or charger_mode){
 			AIRsm.TS_activation_button(HAL_GetTick());
-			FullStackDataInstance::set().state.ts_activation_button = false;
+			fsd.state.ts_activation_button = false;
 		}
+
+		fsd.state.list_of_errors = checker.get_error_list();
 
 		Checks::OptionalError optonalError = checker.check();
 		if (not optonalError.has_value())
@@ -79,7 +81,7 @@ void vPlausibilityManagerTask(void *argument)
 		}
 		else {
 			auto error = (*optonalError);
-			FullStackDataInstance::set().state.error = error;
+			fsd.state.error = error;
 			ams_fault = true;
 			AMS_FAULT();
 		}

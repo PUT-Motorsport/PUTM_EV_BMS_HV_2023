@@ -41,7 +41,7 @@ static const Matrix Q = {
 };
 
 /// @brief Battery model measurement noise covariance matrix tuned with Ts = 0.1
-static const float R = 2500000.0f / 10.0;
+static const float R = 2500000.0f;
  /// @brief Increase measurement noise covariance when charging to avoid overestimation of SOC
 static const float R_charge = R * 99.0f;
 

@@ -17,8 +17,10 @@
 
 class PlausibilityChecker
 {
+
 private:
 	const FullStackData &stackData;
+
 
 	constexpr static std::array<Checks::OptionalError (*)(const FullStackData &), 6> checks
 	{
@@ -30,17 +32,26 @@ private:
 		Checks::CurrentSensorDisconnect
 	};
 
-	using ErrorListElement = etl::pair<Checks::CriticalError, bool>;
-	std::array<ErrorListElement, checks.size()> errors{};
-
-	size_t error_count = 0;
+	mutable std::array<Checks::ErrorListElement, checks.size()> errors{
+		Checks::ErrorListElement{ Checks::CriticalError{CriticalErrorsEnum::UnderVoltage,0}, false},
+		Checks::ErrorListElement{ Checks::CriticalError{CriticalErrorsEnum::OverVoltage,0}, false},
+		Checks::ErrorListElement{ Checks::CriticalError{CriticalErrorsEnum::UnderTemperature,0}, false},
+		Checks::ErrorListElement{ Checks::CriticalError{CriticalErrorsEnum::OverTemperature,0}, false},
+		Checks::ErrorListElement{ Checks::CriticalError{CriticalErrorsEnum::OverCurrent,0}, false},
+		Checks::ErrorListElement{ Checks::CriticalError{CriticalErrorsEnum::CurrentSensorDisconnected,0}, false},
+	};
 
 public:
-	PlausibilityChecker(const FullStackData &stackData) : stackData(stackData) { }
+	constexpr PlausibilityChecker(const FullStackData &stackData) : stackData(stackData) { }
+
+	constexpr static size_t size(){
+		return checks.size();
+	}
 
 	constexpr Checks::OptionalError check() const
 	{
 		Checks::OptionalError ret = std::nullopt;
+
 		uint32_t i = 0;
 		for (const auto& check : checks)
 		{
@@ -48,16 +59,16 @@ public:
 			if (evaluatedCheck.has_value())
 			{
 				ret = evaluatedCheck.value();
-				//errors[i] = ErrorListElement{evaluatedCheck.value(), true};
+				errors[i] = Checks::ErrorListElement{evaluatedCheck.value(), true};
 			}
 			++i;
 		}
 		return ret;
 	}
 
-//	constexpr std::array<Checks::CriticalError, checks.size()> get_error_list() const{
-//		return errors;
-//	}
+	constexpr std::array<Checks::ErrorListElement, checks.size()> get_error_list() const{
+		return errors;
+	}
 };
 
 #endif /* INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_ */
