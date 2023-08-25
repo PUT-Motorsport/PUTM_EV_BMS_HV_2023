@@ -73,5 +73,4 @@ extern char USERPath[4];   /* USER logical drive path */
 }
 #endif
 
-
 #endif /*__APP_FATFS_H */

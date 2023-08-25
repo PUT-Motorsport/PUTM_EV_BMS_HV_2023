@@ -74,7 +74,7 @@ void vCarCANManagerTask(void *argument)
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
 		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
 
-		if (PUTM_CAN::can.get_aq_ts_button_new_data())
+		if (PUTM_CAN::can.get_steering_wheel_event_new_data())
 		{
 			FullStackDataInstance::set().state.ts_activation_button = true;
 		}
