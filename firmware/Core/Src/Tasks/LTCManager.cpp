@@ -27,9 +27,11 @@ enum struct States
 	OpticalVisualization
 } static state { States::Init };
 
+constexpr static std::array<float, LtcConfig::TEMP_COUNT> offsets = {-1.0153,-0.8715,0.0999,-2.1395,-1.7146,-1.8290,0.3097,-1.3584,-3.7277,-1.4793,1.4041,3.6908,2.5545,3.0929,1.2957,2.8936,0.5405,1.4321,-5.6945,1.2363,3.7853,-1.5610,4.0510,1.7748,-0.1558,1.9776,2.3797,-7.7253,0.6873,3.2048,0.6419,3.6699,1.8971,2.2328,0.3936,1.3936,-4.8421,-3.8094,-1.0708,0.2818,0.1104,-1.2865,-2.0414,-2.1918,-2.5186};
+
 static inline void calc_temp(){
 	for(size_t i = 0; i < LtcConfig::TEMP_COUNT; ++i){
-		FullStackDataInstance::set().ltc_data.temp_C.at(i) = LtcCalculateTemperature((uint16_t)FullStackDataInstance::get().ltc_data.temp[i]);
+		FullStackDataInstance::set().ltc_data.temp_C.at(i) = LtcCalculateTemperature((uint16_t)FullStackDataInstance::get().ltc_data.temp[i]) - offsets[i];
 	}
 	const auto& t_array = FullStackDataInstance::set().ltc_data.temp_C;
 	float t_max = *std::ranges::max_element(t_array.begin(), t_array.end());
