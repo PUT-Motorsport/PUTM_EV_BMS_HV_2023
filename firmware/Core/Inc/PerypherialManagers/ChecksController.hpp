@@ -22,6 +22,7 @@ namespace Checks
         static int32_t error_cntr{0};
         auto iter = std::ranges::find_if(stackData.ltc_data.voltages, [](const auto &cellVoltage)
                                          { return cellVoltage < ChecksConfig::CELL_MIN_VOLTAGE; });
+
         if (iter not_eq std::end(stackData.ltc_data.voltages))
         {
             ++error_cntr;

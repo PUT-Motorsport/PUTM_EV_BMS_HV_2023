@@ -54,12 +54,20 @@ void vCarCANManagerTask(void *argument)
 {
 	size_t cell_send_index{0};
 	startCan(hfdcan);
+
+	uint32_t send_tick{0};
+
 	while (true)
 	{
 		osDelay(10);
 		while (getCanFifoMessageCount(hfdcan3))
 		{
 			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
+		}
+
+		if (PUTM_CAN::can.get_aq_ts_button_new_data())
+		{
+			FullStackDataInstance::set().state.ts_activation_button = true;
 		}
 
 		const FullStackData &fsd = FullStackDataInstance::get();
@@ -72,12 +80,8 @@ void vCarCANManagerTask(void *argument)
 			.soc = static_cast<uint16_t>(fsd.soc.cells_soc.front() * 1'000)};
 
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
-		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
 
-		if (PUTM_CAN::can.get_steering_wheel_event_new_data())
-		{
-			FullStackDataInstance::set().state.ts_activation_button = true;
-		}
+		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
 
 		if (status not_eq HAL_OK or status_2 not_eq HAL_OK)
 		{

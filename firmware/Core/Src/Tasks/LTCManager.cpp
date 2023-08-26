@@ -35,7 +35,7 @@ static inline void calc_temp(){
 	float t_max = *std::ranges::max_element(t_array.begin(), t_array.end());
 	FullStackDataInstance::set().ltc_data.max_temp = t_max;
 	float t_min = *std::ranges::min_element(t_array.begin(), t_array.end());
-	FullStackDataInstance::set().ltc_data.max_temp = t_min;
+	FullStackDataInstance::set().ltc_data.min_temp = t_min;
 }
 
 static inline void init()

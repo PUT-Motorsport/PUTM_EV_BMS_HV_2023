@@ -21,7 +21,7 @@ extern GpioIn  pre_AIR;
 
 
 void AMS_LIGHT(bool on){
-	HAL_GPIO_WritePin(FAN_CTRL1_GPIO_Port, FAN_CTRL1_Pin, GPIO_PinState(on));
+	HAL_GPIO_WritePin(FAN_CTRL1_GPIO_Port, FAN_CTRL1_Pin, GPIO_PinState(not on));
 	if(on){
 		led_error.activate();
 	}
