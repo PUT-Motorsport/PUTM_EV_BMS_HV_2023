@@ -59,7 +59,7 @@ void vCarCANManagerTask(void *argument)
 
 	while (true)
 	{
-		osDelay(10);
+		osDelay(5);
 		while (getCanFifoMessageCount(hfdcan3))
 		{
 			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
@@ -77,7 +77,7 @@ void vCarCANManagerTask(void *argument)
 			.current = static_cast<int16_t>(fsd.external_data.acu_curr * 100.0f),
 			.temp_max = static_cast<uint8_t>(fsd.ltc_data.max_temp),
 			.temp_avg = static_cast<uint8_t>(fsd.ltc_data.min_temp),
-			.soc = static_cast<uint16_t>(fsd.soc.cells_soc.front() * 1'000)};
+			.soc = static_cast<uint16_t>(std::accumulate(fsd.soc.cells_soc.begin(), fsd.soc.cells_soc.end(), 0.0f) / 135.0f * 1'000.0f)};
 
 		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
 
