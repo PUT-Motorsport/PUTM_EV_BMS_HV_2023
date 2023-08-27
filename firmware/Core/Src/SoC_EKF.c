@@ -218,13 +218,15 @@ static inline float get_SoC_based_on_voltage(float voltage){
     size_t i = 0;
 
     const float epsilon = 0.0001f;
-    const size_t MAX_ITER = 20;
+    const size_t MAX_ITER = 40;
 
     while(fabsf(x - x_prev) > epsilon && i++ < MAX_ITER){ // Newton-Raphson method
         x_prev = x;
         float f = poly_eval_horner(BATT_OCV_POLY, BATT_OCV_POLY_COEF_COUNT, x) - voltage;
         float f_prime = poly_eval_horner(BATT_D_OCV_POLY, BATT_D_OCV_POLY_COEF_COUNT, x);
-        x = x_prev - f / f_prime;
+        float d = f / f_prime;
+        d = fmaxf(- 0.04f, fminf(0.04f, d));
+        x = x_prev - d;
         x = fmaxf(0.0f, fminf(1.0f, x));
     }
     return x;

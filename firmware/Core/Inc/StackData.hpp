@@ -70,6 +70,7 @@ struct FullStackData
 	struct SoC
 	{
 		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> cells_soc;
+		std::atomic<float> avg;
 	} soc;
 
 	struct Charger

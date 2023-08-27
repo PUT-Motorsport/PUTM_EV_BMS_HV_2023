@@ -95,7 +95,7 @@ const osThreadAttr_t LoggerManager_attributes = {
   .stack_size = sizeof(LoggerManagerrBuffer),
   .cb_mem = &LoggerManagerrControlBlock,
   .cb_size = sizeof(LoggerManagerrControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityLow4,
 };
 /* Definitions for USBCommandManager */
 osThreadId_t USBCommandManagerHandle;
@@ -143,7 +143,7 @@ const osThreadAttr_t SOCManager_attributes = {
   .stack_size = sizeof(SOCManagerBuffer),
   .cb_mem = &SOCManagerControlBlock,
   .cb_size = sizeof(SOCManagerControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 
 /* Private function prototypes -----------------------------------------------*/

@@ -54,7 +54,8 @@ void vSOCManagerTask(void *argument)
 			FullStackDataInstance::set().soc.cells_soc[i] = soc;
 		}
 
-
+		FullStackDataInstance::set().soc.avg = std::accumulate(FullStackDataInstance::get().soc.cells_soc.begin(),
+															   FullStackDataInstance::get().soc.cells_soc.end(), 0.0f) / 135.0f;
 	}
 }
 
