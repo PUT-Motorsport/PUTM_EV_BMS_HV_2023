@@ -27,11 +27,11 @@ enum struct States
 	OpticalVisualization
 } static state { States::Init };
 
-constexpr static std::array<float, LtcConfig::TEMP_COUNT> offsets = {-1.0153,-0.8715,0.0999,-2.1395,-1.7146,-1.8290,0.3097,-1.3584,-3.7277,-1.4793,1.4041,3.6908,2.5545,3.0929,1.2957,2.8936,0.5405,1.4321,-5.6945,1.2363,3.7853,-1.5610,4.0510,1.7748,-0.1558,1.9776,2.3797,-7.7253,0.6873,3.2048,0.6419,3.6699,1.8971,2.2328,0.3936,1.3936,-4.8421,-3.8094,-1.0708,0.2818,0.1104,-1.2865,-2.0414,-2.1918,-2.5186};
+constexpr static std::array<float, LtcConfig::TEMP_COUNT> offsets = {2.7623,2.7562,2.8488,2.5648,2.3735,2.5216,3.1420,2.5833,2.0216,2.8241,3.1296,3.6019,3.4630,3.4846,2.9691,3.5679,2.9136,3.2685,-2.9940,3.0586,3.6605,-2.9910,3.6883,3.5247,-0.6958,3.3951,3.4414,-3.1295,3.0340,3.6759,0.1325,3.8735,3.4660,3.4846,3.1111,3.1019,1.9599,1.9691,2.4969,2.8858,2.6173,2.3920,2.5185,2.2870,2.2099};
 
 static inline void calc_temp(){
 	for(size_t i = 0; i < LtcConfig::TEMP_COUNT; ++i){
-		FullStackDataInstance::set().ltc_data.temp_C.at(i) = LtcCalculateTemperature((uint16_t)FullStackDataInstance::get().ltc_data.temp[i]) - offsets[i];
+		FullStackDataInstance::set().ltc_data.temp_C.at(i) = LtcCalculateTemperature((uint16_t)FullStackDataInstance::get().ltc_data.temp[i]) - offsets.at(i);
 	}
 	const auto& t_array = FullStackDataInstance::set().ltc_data.temp_C;
 	float t_max = *std::ranges::max_element(t_array.begin(), t_array.end());

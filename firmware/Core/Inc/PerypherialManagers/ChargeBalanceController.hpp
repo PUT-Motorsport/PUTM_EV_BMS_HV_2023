@@ -38,7 +38,7 @@ public:
 
         std::array<float, 135> vc;
         std::copy(v.begin(), v.end(), vc.begin());
-        size_t n = 135 - 20; //vc.size() / 2;
+        size_t n = vc.size() / 2;
         std::nth_element(vc.begin(), vc.begin()+n, vc.end());
         fsd.charge_balance.median_cell_voltage = vc[n];
     }
