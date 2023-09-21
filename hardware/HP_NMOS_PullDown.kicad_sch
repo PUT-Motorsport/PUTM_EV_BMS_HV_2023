@@ -355,11 +355,11 @@
     (uuid f5c93e75-eff8-4ffa-9c05-e9fbfc791338)
   )
 
-  (hierarchical_label "IN" (shape input) (at 146.685 80.645 0) (fields_autoplaced)
+  (hierarchical_label "-" (shape input) (at 146.685 80.645 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 04480344-7155-44b0-841e-7f598a7730a4)
   )
-  (hierarchical_label "OUT" (shape output) (at 146.685 73.025 0) (fields_autoplaced)
+  (hierarchical_label "+" (shape output) (at 146.685 73.025 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 95f3ac80-4a6a-48cb-8fe7-8ab7228d4fa7)
   )

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PESE1-S5-S5-M-TR
+D Isolated DC/DC Converters isolated, 1 W, 4.5~5.5 Vdc input, 5 Vdc, 0.2 A, single unregulated output, SMT, T&T
+K
+F https://datasheet.datasheetarchive.com/originals/distributors/Datasheets_SAMA/0db4d93f3ee2ed7aea140da643d59ed2.pdf
+$ENDCMP
+#
+#End Doc Library

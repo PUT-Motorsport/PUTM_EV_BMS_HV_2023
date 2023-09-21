@@ -1228,36 +1228,16 @@
       "OptoIO2"
     ],
     [
-      "ec6354b8-3aa0-4986-9bb0-f936060b4d56",
-      "Fan low side driver 2"
-    ],
-    [
-      "4b9fce07-f075-4aec-bd3a-2cc8d2465a53",
-      "Fan low side driver 3"
-    ],
-    [
-      "f0444f92-b7ef-40df-b219-ae3ca6754286",
-      "Fan low side driver 4"
-    ],
-    [
-      "3bdf3e63-db06-4489-843c-40336b7b22f8",
-      "Fan low side driver 5"
+      "9cde4b0a-6e18-4fe0-ac4b-ff8845aea205",
+      "OptoIO4"
     ],
     [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
       "Memory"
     ],
     [
-      "daf8b322-01dd-446b-9474-a54548001751",
-      "Fan low side driver 6"
-    ],
-    [
       "66c3869d-de11-4d8d-b4de-9d98c32ec205",
       "Power"
-    ],
-    [
-      "2858aedd-8480-47be-b5f3-f06b807d82d6",
-      "Fan low side driver 7"
     ],
     [
       "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
@@ -1278,10 +1258,6 @@
     [
       "ba7f6eba-eb84-4567-9005-77208e6eb457",
       "Fan drivers"
-    ],
-    [
-      "ce1d9a8b-d4b7-4d85-81bb-9249ce3cc6c9",
-      "Fan low side driver 1"
     ],
     [
       "9303788e-9b51-4c30-8dd4-36d461f60057",

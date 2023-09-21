@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP M300-MV10345M1
+D M300 - 3mm Pitch - SIL Male Throughboard Connector, with Jackscrews, 3 contacts
+K
+F https://cdn.harwin.com/pdfs/M300-MV10345M1.pdf
+$ENDCMP
+#
+#End Doc Library
