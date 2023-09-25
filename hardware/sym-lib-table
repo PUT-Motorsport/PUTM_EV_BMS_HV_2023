@@ -34,5 +34,6 @@
   (lib (name "RTQ2965GSP-QA")(type "KiCad")(uri "${KIPRJMOD}/footprint/RTQ2965GSP-QA/RTQ2965GSP-QA.kicad_sym")(options "")(descr ""))
   (lib (name "M300-MV10345M1")(type "KiCad")(uri "${KIPRJMOD}/footprint/M300-MV10345M1/M300-MV10345M1.kicad_sym")(options "")(descr ""))
   (lib (name "CDMM")(type "KiCad")(uri "${KIPRJMOD}/footprint/CDMM/CDMM.kicad_sym")(options "")(descr ""))
-  (lib (name "Samacsys")(type "KiCad")(uri "${KIPRJMOD}/footprint/Samacsys.kicad_sym")(options "")(descr ""))
+  (lib (name "Samacsys")(type "Legacy")(uri "${KIPRJMOD}/footprint/Samacsys.lib")(options "")(descr ""))
+  (lib (name "Samacsys2")(type "KiCad")(uri "${KIPRJMOD}/footprint/Samacsys2.kicad_sym")(options "")(descr ""))
 )

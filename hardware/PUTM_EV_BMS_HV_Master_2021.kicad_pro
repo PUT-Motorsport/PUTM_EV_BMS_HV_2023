@@ -35,8 +35,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 1.0,
-          "width": 2.4
+          "height": 2.3,
+          "width": 2.5
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -197,7 +197,7 @@
         },
         {
           "diameter": 0.6,
-          "drill": 0.3
+          "drill": 0.4
         }
       ],
       "zones_allow_external_fillets": false,
@@ -1176,7 +1176,7 @@
       "idf": "",
       "netlist": "PUTM_EV_BMS_HV_Master_2021.net",
       "specctra_dsn": "",
-      "step": "",
+      "step": "PUTM_EV_BMS_HV_Master_2021.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -1251,10 +1251,6 @@
       "OptoIO2"
     ],
     [
-      "9cde4b0a-6e18-4fe0-ac4b-ff8845aea205",
-      "OptoIO4"
-    ],
-    [
       "ca1c1e79-e9a2-4576-9c39-8f2bbd369972",
       "Memory"
     ],
@@ -1273,10 +1269,6 @@
     [
       "d53c4c5b-a4f8-4654-804b-b1333b9d4506",
       "LTC 2 Iso Com"
-    ],
-    [
-      "d3d45b10-2d5f-4953-9ccf-4b0c82a2ee03",
-      "Settings"
     ],
     [
       "ba7f6eba-eb84-4567-9005-77208e6eb457",

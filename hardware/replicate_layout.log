@@ -1,5 +1,98 @@
-06-25 11:53:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 359:Plugin executed on: 'win32'
-06-25 11:53:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 360:Plugin executed with python version: '3.9.14 (main, Feb 13 2023, 04:48:26) [MSC v.1934 64 bit (AMD64)]'
-06-25 11:53:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 361:KiCad build version: 7.0.1
-06-25 11:53:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 362:Plugin version: 2.0.10
-06-25 11:53:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 363:Frame repr: <wx._core.Frame object at 0x0000024074DC8040>
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 392:Plugin executed on: 'win32'
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 393:Plugin executed with python version: '3.9.16 (main, May 18 2023, 07:48:16) [MSC v.1936 64 bit (AMD64)]'
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 394:KiCad build version: 7.0.5
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 395:Plugin version: 2.1.3
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 396:Frame repr: <wx._core.Frame object at 0x000001E9D7D45040>
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 420:Preparing replicator with R31 as a reference
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.replicate_layout 117:getting a list of all footprints on board
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 468:source anchor footprint is 'R31'
+Located on: ['Communication', 'OptoIO2']
+With filenames: ['Communication.kicad_sch', 'Opto2CH.kicad_sch']
+With sheet_id:['Communication', 'OptoIO2']
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 475:Corresponding footprints are 
+[('R31', ['Communication', 'OptoIO2']), ('R75', ['Communication', 'OptoIO4']), ('R67', ['Communication', 'OptoIO1']), ('R29', ['Communication', 'OptoIO3'])]
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 487:Showing dialog
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.replicate_layout 424:constructing a list of sheets suitable for replication on level:'OptoIO2', file:'Opto2CH.kicad_sch'
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.replicate_layout 461:suitable sheets are:[['Communication', 'OptoIO1'], ['Communication', 'OptoIO3'], ['Communication', 'OptoIO4']]
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1464:Level selected: ['Communication', 'OptoIO2']
+09-24 19:18:09 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1299:Filtering list of tracks
+09-24 19:18:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 493:Toolbar position: wx.Point(1678, 138)
+09-24 19:18:10 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 498:Dialog position: wx.Point(1239, 138)
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 424:constructing a list of sheets suitable for replication on level:'OptoIO2', file:'Opto2CH.kicad_sch'
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 461:suitable sheets are:[['Communication', 'OptoIO1'], ['Communication', 'OptoIO3'], ['Communication', 'OptoIO4']]
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 240:Replicating layout
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 240:Starting replication of sheets: [['Communication', 'OptoIO1'], ['Communication', 'OptoIO3'], ['Communication', 'OptoIO4']]
+on level: ['Communication', 'OptoIO2']
+with tracks=True, zone=True, text=True, text=True, intersecting=False, remove=False, locked footprints=False, group_only=False
+09-24 19:18:12 root 332:updating GUI message: 'Preparing for replication'
+09-24 19:18:12 root 337:updating GUI with: 0
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 310:Getting the list of source footprints
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 320:Getting the list of all the remaining footprints
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 327:Getting source tracks
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1299:Filtering list of tracks
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 331:Getting source zones
+09-24 19:18:12 root 337:updating GUI with: 50
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 335:Getting source text items
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 339:Getting source drawing items
+09-24 19:18:12 root 332:updating GUI message: 'Replicating footprints'
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 806:Replicating footprints
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Communication', 'OptoIO1']
+09-24 19:18:12 root 337:updating GUI with: 20
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Communication', 'OptoIO3']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 813:Replicating footprints on sheet ['Communication', 'OptoIO4']
+09-24 19:18:12 root 332:updating GUI message: 'Replicating tracks'
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 977:Replicating tracks
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Communication', 'OptoIO1']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'SAFETY_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.24
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'SAFETY_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.24
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Communication', 'OptoIO1'] :[('+3V3', '+3V3'), ('NRST', '/SAFETY_DETECT'), ('/AIR_P_DETECT', '/CHARGER_DETECT'), ('Net-(O1-Pad1)', 'Net-(O2-Pad1)'), ('Net-(O1-Pad3)', 'Net-(O2-Pad3)'), ('GND', 'GND'), ('EXT_RESET', 'SAFETY_TSMS_IN'), ('AIR_P_DETECTION', 'CHARGER_DETECTION')]
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Communication', 'OptoIO3']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'AIR_M_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'AIR_M_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Communication', 'OptoIO3'] :[('EXT_RESET', 'AIR_M_DETECTION'), ('+3V3', '+3V3'), ('NRST', '/AIR_M_DETECT'), ('Net-(O1-Pad3)', 'Net-(O3-Pad3)'), ('/AIR_P_DETECT', '/AIR_PRE_DETECT'), ('AIR_P_DETECTION', 'AIR_PRE_DETECTION'), ('GND', 'GND'), ('Net-(O1-Pad1)', 'Net-(O3-Pad1)')]
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 983:Replicating tracks on sheet ['Communication', 'OptoIO4']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'IMD_SENS_PWM'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['', 'AIR_P_DETECT'] and dst net: ['', 'BOOT'], with src_net_depth=2, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.56
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'IMD_SENS_PWM'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['', 'AIR_P_DETECT'] and dst net: ['', 'BOOT'], with src_net_depth=2, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.56
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Communication', 'OptoIO4'] :[('+3V3', '+3V3'), ('Net-(O1-Pad3)', 'Net-(O4-Pad3)'), ('EXT_RESET', 'IMD_SENSENSOR'), ('/AIR_P_DETECT', '/BOOT'), ('NRST', '/IMD_SENS_PWM'), ('Net-(O1-Pad1)', 'Net-(O4-Pad1)'), ('GND', 'GND'), ('AIR_P_DETECTION', 'BOOT0')]
+09-24 19:18:12 root 337:updating GUI with: 70
+09-24 19:18:12 root 332:updating GUI message: 'Replicating zones'
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1047:Replicating zones
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Communication', 'OptoIO1']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'SAFETY_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.24
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'SAFETY_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.24
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Communication', 'OptoIO1'] :[('+3V3', '+3V3'), ('NRST', '/SAFETY_DETECT'), ('/AIR_P_DETECT', '/CHARGER_DETECT'), ('Net-(O1-Pad1)', 'Net-(O2-Pad1)'), ('Net-(O1-Pad3)', 'Net-(O2-Pad3)'), ('GND', 'GND'), ('EXT_RESET', 'SAFETY_TSMS_IN'), ('AIR_P_DETECTION', 'CHARGER_DETECTION')]
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Communication', 'OptoIO3']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'AIR_M_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'AIR_M_DETECT'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Communication', 'OptoIO3'] :[('EXT_RESET', 'AIR_M_DETECTION'), ('+3V3', '+3V3'), ('NRST', '/AIR_M_DETECT'), ('Net-(O1-Pad3)', 'Net-(O3-Pad3)'), ('/AIR_P_DETECT', '/AIR_PRE_DETECT'), ('AIR_P_DETECTION', 'AIR_PRE_DETECTION'), ('GND', 'GND'), ('Net-(O1-Pad1)', 'Net-(O3-Pad1)')]
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1054:Replicating zones on sheet ['Communication', 'OptoIO4']
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'IMD_SENS_PWM'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['', 'AIR_P_DETECT'] and dst net: ['', 'BOOT'], with src_net_depth=2, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.56
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['NRST'] and dst net: ['', 'IMD_SENS_PWM'], with src_net_depth=1, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.25
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 750:Significant difference between src net: ['', 'AIR_P_DETECT'] and dst net: ['', 'BOOT'], with src_net_depth=2, dst_net_depth=2, src_fp_depth=2, dst_fp_depth=2, match level 0.56
+09-24 19:18:12 com_github_MitjaNemec_ReplicateLayout.replicate_layout 766:Net pairs for sheet ['Communication', 'OptoIO4'] :[('+3V3', '+3V3'), ('Net-(O1-Pad3)', 'Net-(O4-Pad3)'), ('EXT_RESET', 'IMD_SENSENSOR'), ('/AIR_P_DETECT', '/BOOT'), ('NRST', '/IMD_SENS_PWM'), ('Net-(O1-Pad1)', 'Net-(O4-Pad1)'), ('GND', 'GND'), ('AIR_P_DETECTION', 'BOOT0')]
+09-24 19:18:12 root 332:updating GUI message: 'Replicating text'
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1136:Replicating text
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Communication', 'OptoIO1']
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Communication', 'OptoIO3']
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1143:Replicating text on sheet ['Communication', 'OptoIO4']
+09-24 19:18:13 root 332:updating GUI message: 'Replicating drawings'
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1187:Replicating drawings
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Communication', 'OptoIO1']
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Communication', 'OptoIO3']
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.replicate_layout 1193:Replicating drawings on sheet ['Communication', 'OptoIO4']
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 256:Replication complete
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 259:Letting the user know there are some issues with replicated design
+09-24 19:18:13 com_github_MitjaNemec_ReplicateLayout.action_replicate_layout 263:Looks like the design has an exotic connectivity that the plugin might not handle properly
+ Make sure that you check the connectivity around:
+Footprint O3, pad 8
+Footprint R75, pad 1
+Footprint O4, pad 6
+Footprint O2, pad 8
+Footprint R76, pad 1
+Footprint O4, pad 8
+Footprint R67, pad 1
+Footprint R29, pad 1
+

@@ -41,4 +41,10 @@ D Headers & Wire Housings M300, 3MM, 6P 2R, ML VRT HDR PCTL W/JSCRW
 K
 F https://cdn.harwin.com/pdfs/M300-MV30645M1.pdf
 $ENDCMP
+#
+$CMP USB4145-03-0070-C
+D USB Connectors USB-C Rec 3u" Vert 16P SMT 0.7mm TH stakes H7.46mm T+R+Cap
+K
+F https://gct.co/files/drawings/usb4145.pdf
+$ENDCMP
 #End Doc Library
