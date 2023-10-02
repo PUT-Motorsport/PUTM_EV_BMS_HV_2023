@@ -3863,7 +3863,7 @@
     (property "Reference" "C68" (at 260.1468 102.9716 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "100nF" (at 260.1468 105.283 0)
+    (property "Value" "22uF" (at 260.1468 105.283 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 257.81 104.14 0)

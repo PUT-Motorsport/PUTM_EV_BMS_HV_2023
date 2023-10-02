@@ -4919,7 +4919,7 @@
     (property "Reference" "C20" (at 268.605 69.85 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "1nF" (at 270.51 68.58 90)
+    (property "Value" "100nF" (at 270.51 68.58 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 265.43 71.12 0)
