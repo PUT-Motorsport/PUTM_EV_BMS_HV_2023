@@ -47,4 +47,28 @@ D USB Connectors USB-C Rec 3u" Vert 16P SMT 0.7mm TH stakes H7.46mm T+R+Cap
 K
 F https://gct.co/files/drawings/usb4145.pdf
 $ENDCMP
+#
+$CMP M80-5102442
+D Datamate J-Tek DIL Male Vertical 3mm Throughboard Connector, selective gold + tin, with jackscrews + board mount, 12+12 contacts
+K
+F https://cdn.harwin.com/pdfs/M80-510.pdf
+$ENDCMP
+#
+$CMP M80-5102222
+D Datamate J-Tek DIL Male Vertical 3mm Throughboard Connector, selective gold + tin/lead, with jackscrews + board mount, 11+11 contacts
+K
+F https://cdn.harwin.com/pdfs/M80-510.pdf
+$ENDCMP
+#
+$CMP 1447360-8
+D EMI Gaskets, Sheets, Absorbers & Shielding 1.2mm SPRING FINGER
+K
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1447009-6&DocType=Customer+Drawing&DocLang=English
+$ENDCMP
+#
+$CMP M80-5103422
+D 34 Male DIL Vertical Throughboard Conn. Jackscrews, 2.00mm Pitch High-Reliability Connector - Datamate J-Tek
+K
+F https://cdn.harwin.com/pdfs/M80-510.pdf
+$ENDCMP
 #End Doc Library
