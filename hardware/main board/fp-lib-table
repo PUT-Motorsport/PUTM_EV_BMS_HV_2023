@@ -39,4 +39,5 @@
   (lib (name "M300-MV10345M1")(type "KiCad")(uri "${KIPRJMOD}/footprint/M300-MV10345M1")(options "")(descr ""))
   (lib (name "CDMM")(type "KiCad")(uri "${KIPRJMOD}/footprint/CDMM/CDMM.pretty")(options "")(descr ""))
   (lib (name "Samacsys")(type "KiCad")(uri "${KIPRJMOD}/footprint/Samacsys.pretty")(options "")(descr ""))
+  (lib (name "HM2146NLT")(type "KiCad")(uri "${KIPRJMOD}/footprint/HM2146NLT")(options "")(descr ""))
 )
