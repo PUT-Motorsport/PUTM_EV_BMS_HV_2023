@@ -779,11 +779,11 @@
       )
     )
     (symbol "dlw21sn501sk2l:DLW21SN501SK2L" (pin_numbers hide) (pin_names (offset 0.762) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "FL" (at 16.51 7.62 0)
-        (effects (font (size 1.27 1.27)) (justify left))
+      (property "Reference" "FL1" (at -0.381 7.62 0)
+        (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "DLW21SN501SK2L" (at 16.51 5.08 0)
-        (effects (font (size 1.27 1.27)) (justify left))
+      (property "Value" "DLW21SN501SK2L" (at -0.381 5.08 0)
+        (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "Samacsys:DLW21SN121HQ2L" (at 16.51 2.54 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
@@ -791,10 +791,10 @@
       (property "Datasheet" "https://www.murata.com/en-us/products/productdetail?partno=DLW21SN501SK2%23" (at 16.51 0 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
-      (property "Description" "DLW21SN_K2L Series EMI Suppression Filter 500 at 100MHz 250mA 50V" (at 16.51 -2.54 0)
+      (property "Height" "1.4" (at 16.51 -5.08 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
-      (property "Height" "1.4" (at 16.51 -5.08 0)
+      (property "Description" "DLW21SN_K2L Series EMI Suppression Filter 500 at 100MHz 250mA 50V" (at 16.51 -2.54 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
       (property "Mouser Part Number" "81-DLW21SN501SK2L" (at 16.51 -7.62 0)
@@ -1983,6 +1983,9 @@
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
+          (reference "FL1") (unit 1)
+        )
+        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
           (reference "FL1") (unit 1)
         )
       )

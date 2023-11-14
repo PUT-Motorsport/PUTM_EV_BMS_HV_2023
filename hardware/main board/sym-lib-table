@@ -36,4 +36,8 @@
   (lib (name "CDMM")(type "KiCad")(uri "${KIPRJMOD}/footprint/CDMM/CDMM.kicad_sym")(options "")(descr ""))
   (lib (name "Samacsys")(type "Legacy")(uri "${KIPRJMOD}/footprint/Samacsys.lib")(options "")(descr ""))
   (lib (name "Samacsys2")(type "KiCad")(uri "${KIPRJMOD}/footprint/Samacsys2.kicad_sym")(options "")(descr ""))
+  (lib (name "ckc33c472jjgacauto")(type "KiCad")(uri "C:/Users/HP/Desktop/tup top srotom/PUTM_EV_BMS_HV_SLAVE_2024/hardware/footprint/ckc33c472jjgacauto.kicad_sym")(options "")(descr ""))
+  (lib (name "c2824c562jggacauto")(type "KiCad")(uri "C:/Users/HP/Desktop/tup top srotom/PUTM_EV_BMS_HV_SLAVE_2024/hardware/footprint/c2824c562jggacauto.kicad_sym")(options "")(descr ""))
+  (lib (name "XAL5050-103MEC")(type "KiCad")(uri "${KIPRJMOD}/footprint/XAL5050-103MEC/XAL5050-103MEC.kicad_sym")(options "")(descr ""))
+  (lib (name "HM2146NLT")(type "KiCad")(uri "${KIPRJMOD}/footprint/HM2146NLT/HM2146NLT.kicad_sym")(options "")(descr ""))
 )
