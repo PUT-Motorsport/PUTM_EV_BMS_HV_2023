@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ADUM7440ARQZ
+D Analog Devices ADUM7440ARQZ PCB SMT 4-channel Digital Isolator, 1 kVrms, 16-Pin QSOP
+K
+F http://componentsearchengine.com/Datasheets/1/ADUM7440ARQZ.pdf
+$ENDCMP
+#
+#End Doc Library

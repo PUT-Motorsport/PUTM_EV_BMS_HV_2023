@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP ADA4505-1ARJZ-R7
-D 10 A, Rail-to-Rail I/O, Zero Input  Crossover Distortion Amplifiers
-K
-F https://componentsearchengine.com/Datasheets/5/ADA4505-1ARJZ-R7.pdf
-$ENDCMP
-#
-#End Doc Library

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP M80-8512642
+D HARWIN M80-85 Series, 2mm Pitch 26 Way 2 Row Right Angle PCB Header, Solder Termination, 3A
+K
+F https://cdn.harwin.com/pdfs/M80-851.pdf
+$ENDCMP
+#
+#End Doc Library
