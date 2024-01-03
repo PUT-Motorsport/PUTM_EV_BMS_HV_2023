@@ -40,4 +40,5 @@
   (lib (name "c2824c562jggacauto")(type "KiCad")(uri "C:/Users/HP/Desktop/tup top srotom/PUTM_EV_BMS_HV_SLAVE_2024/hardware/footprint/c2824c562jggacauto.kicad_sym")(options "")(descr ""))
   (lib (name "XAL5050-103MEC")(type "KiCad")(uri "${KIPRJMOD}/footprint/XAL5050-103MEC/XAL5050-103MEC.kicad_sym")(options "")(descr ""))
   (lib (name "HM2146NLT")(type "KiCad")(uri "${KIPRJMOD}/footprint/HM2146NLT/HM2146NLT.kicad_sym")(options "")(descr ""))
+  (lib (name "Samacsys_kicad_sym")(type "KiCad")(uri "${KIPRJMOD}/PUTM_Kicad_Library/Samacsys_kicad_sym.kicad_sym")(options "")(descr ""))
 )
