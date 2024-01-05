@@ -5453,7 +5453,7 @@
     (property "Value" "0.5A" (at 157.48 179.07 90)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
-    (property "Footprint" "Fuse:Fuse_1206_3216Metric" (at 157.48 176.53 0)
+    (property "Footprint" "Fuse:Fuse_1210_3225Metric" (at 157.48 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 157.48 176.53 0)
