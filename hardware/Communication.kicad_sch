@@ -1880,7 +1880,7 @@
   (symbol (lib_id "Opto 2 ch:FOD8802DR2_IMG") (at 166.37 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 025a015b-d0c9-4db4-a5b8-c9584ff2c09d)
-    (property "Reference" "O2" (at 153.67 129.54 0)
+    (property "Reference" "O5" (at 153.67 129.54 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "FOD8802DR2_IMG" (at 153.67 132.08 0)
@@ -1914,15 +1914,6 @@
     (pin "8" (uuid 05dbfd4c-0c3a-4457-a09d-1c6eeab326e5))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "O2") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "O1") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "O3") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "O5") (unit 1)
         )
@@ -1997,9 +1988,6 @@
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "FL1") (unit 1)
         )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "FL1") (unit 1)
-        )
       )
     )
   )
@@ -2007,7 +1995,7 @@
   (symbol (lib_id "power:GND") (at 182.88 158.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0b8de56b-2416-44be-ab4c-4a7ad8aa2641)
-    (property "Reference" "#PWR0177" (at 182.88 165.1 0)
+    (property "Reference" "#PWR089" (at 182.88 165.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 183.007 163.1442 0)
@@ -2022,15 +2010,6 @@
     (pin "1" (uuid 326e12f5-924e-4e5c-9f46-cf23b57f46a3))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "#PWR0177") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "#PWR032") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "#PWR063") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "#PWR089") (unit 1)
         )
@@ -2066,7 +2045,7 @@
   (symbol (lib_id "power:GND") (at 175.26 158.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 28d8e96f-3def-4a78-a7d7-8ad8df022865)
-    (property "Reference" "#PWR0177" (at 175.26 165.1 0)
+    (property "Reference" "#PWR083" (at 175.26 165.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 175.387 163.1442 0)
@@ -2081,15 +2060,6 @@
     (pin "1" (uuid 3f1e2244-b347-4dff-bf9f-ef47bbfc698c))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "#PWR0177") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "#PWR032") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "#PWR063") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "#PWR083") (unit 1)
         )
@@ -2150,7 +2120,7 @@
   (symbol (lib_id "Device:R_Small") (at 151.13 134.62 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3e363167-865d-4a32-a827-d55c7d0c7a3b)
-    (property "Reference" "R40" (at 147.32 130.175 90)
+    (property "Reference" "R12" (at 147.32 130.175 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "2.7k" (at 147.32 132.08 90)
@@ -2172,15 +2142,6 @@
     (pin "2" (uuid 976022b3-ce7e-4b3e-bd1f-d14fcb631e52))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "R40") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "R14") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "R24") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "R12") (unit 1)
         )
@@ -2191,7 +2152,7 @@
   (symbol (lib_id "power:VBUS") (at 25.4 130.81 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4658f049-7273-446b-ac8b-b8f0872952d5)
-    (property "Reference" "#PWR0108" (at 25.4 134.62 0)
+    (property "Reference" "#PWR0102" (at 25.4 134.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "VBUS" (at 25.4 125.73 0)
@@ -2206,9 +2167,6 @@
     (pin "1" (uuid 1259be9b-e148-42e1-bab3-cc995651ef81))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "#PWR0108") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "#PWR0102") (unit 1)
         )
@@ -2222,7 +2180,7 @@
     (property "Reference" "U3" (at 238.76 67.31 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MCP2542FDxMF" (at 238.76 69.85 0)
+    (property "Value" "MCP2542FD-E/MF" (at 238.76 69.85 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x3mm_P0.65mm_EP1.55x2.4mm" (at 237.49 69.85 0)
@@ -2231,13 +2189,13 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/MCP2542FD-4FD-MCP2542WFD-4WFD-Data-Sheet20005514B.pdf" (at 237.49 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Manufacturer_Part_Number" "MCP2542FDT-H/MNY" (at 237.49 57.15 0)
+    (property "Manufacturer_Part_Number" "MCP2542FD-E/MF" (at 237.49 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Mouser Part Number" "579-MCP2542FDT-H/MNY" (at 237.49 57.15 0)
+    (property "Mouser Part Number" "579-MCP2542FD-E/MF" (at 237.49 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Microchip-Technology/MCP2542FDT-H-MNY?qs=qdgZG5p0FZ5ii0%252BaLco0zA%3D%3D" (at 237.49 57.15 0)
+    (property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Microchip-Technology/MCP2542FD-E-MF?qs=l7cgNqFNU1jog4BwTzULBw%3D%3D" (at 237.49 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 8494ffbd-fccf-48de-bd52-9a200f0b5f5f))
@@ -2289,7 +2247,7 @@
     (property "Reference" "U6" (at 166.37 66.04 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MCP2542FDxMF" (at 166.37 68.58 0)
+    (property "Value" "MCP2542FD-E/MF" (at 166.37 68.58 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x3mm_P0.65mm_EP1.55x2.4mm" (at 165.1 68.58 0)
@@ -2298,13 +2256,13 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/MCP2542FD-4FD-MCP2542WFD-4WFD-Data-Sheet20005514B.pdf" (at 165.1 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Manufacturer_Part_Number" "MCP2542FDT-H/MNY" (at 165.1 55.88 0)
+    (property "Manufacturer_Part_Number" "MCP2542FD-E/MF" (at 165.1 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Mouser Part Number" "579-MCP2542FDT-H/MNY" (at 165.1 55.88 0)
+    (property "Mouser Part Number" "579-MCP2542FD-E/MF" (at 165.1 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Microchip-Technology/MCP2542FDT-H-MNY?qs=qdgZG5p0FZ5ii0%252BaLco0zA%3D%3D" (at 165.1 55.88 0)
+    (property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Microchip-Technology/MCP2542FD-E-MF?qs=l7cgNqFNU1jog4BwTzULBw%3D%3D" (at 165.1 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 502af79d-3570-4bdf-9277-32463643582f))
@@ -2481,7 +2439,7 @@
   (symbol (lib_id "Device:R_Small") (at 182.88 153.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9b567b89-c315-4841-81bf-17265b9566c6)
-    (property "Reference" "R67" (at 187.96 154.305 0)
+    (property "Reference" "R15" (at 187.96 154.305 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10k" (at 187.96 152.4 0)
@@ -2503,15 +2461,6 @@
     (pin "2" (uuid 0eeaa8c6-815b-42e5-95fd-4ea8026175bb))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "R67") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "R31") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "R29") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "R15") (unit 1)
         )
@@ -2579,7 +2528,7 @@
   (symbol (lib_id "power:+3.3V") (at 175.26 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a2f03b7b-8ff3-48c8-a461-630144599d25)
-    (property "Reference" "#PWR0161" (at 175.26 135.89 0)
+    (property "Reference" "#PWR0105" (at 175.26 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 175.26 128.27 0)
@@ -2594,15 +2543,6 @@
     (pin "1" (uuid 87562647-8e08-4ae5-a2c5-cd654f2c1ae5))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "#PWR0161") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "#PWR033") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "#PWR064") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "#PWR0105") (unit 1)
         )
@@ -2613,7 +2553,7 @@
   (symbol (lib_id "power:GND") (at 154.94 151.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid abaae6b3-f1c3-435a-9c92-4b314254d695)
-    (property "Reference" "#PWR0178" (at 154.94 157.48 0)
+    (property "Reference" "#PWR057" (at 154.94 157.48 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 155.067 155.5242 0)
@@ -2628,15 +2568,6 @@
     (pin "1" (uuid 2248098c-f35f-4040-9c26-5b77fffc0e56))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "#PWR0178") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "#PWR013") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "#PWR062") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "#PWR057") (unit 1)
         )
@@ -2647,7 +2578,7 @@
   (symbol (lib_id "Device:R_Small") (at 175.26 153.67 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bac32666-9cdc-4f21-982c-4215ed52800b)
-    (property "Reference" "R45" (at 177.038 152.5016 0)
+    (property "Reference" "R20" (at 177.038 152.5016 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10k" (at 177.038 154.813 0)
@@ -2669,15 +2600,6 @@
     (pin "2" (uuid ee2fb2ec-c90c-4c14-9e90-d54f77822c57))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "R45") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "R33") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "R35") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "R20") (unit 1)
         )
@@ -2752,7 +2674,7 @@
   (symbol (lib_id "Device:R_Small") (at 151.13 143.51 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e0df53a8-2481-4958-883f-9c558838cd87)
-    (property "Reference" "R44" (at 147.32 139.065 90)
+    (property "Reference" "R13" (at 147.32 139.065 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "2.7k" (at 147.32 140.97 90)
@@ -2774,15 +2696,6 @@
     (pin "2" (uuid b5d68407-9881-4ce5-87a3-c8d9ad6f6c32))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/0cfbae80-dcae-461f-a490-df9e44932062"
-          (reference "R44") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9e653d28-f1c3-45a5-9d43-63c5d53de50e"
-          (reference "R16") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/9303788e-9b51-4c30-8dd4-36d461f60057"
-          (reference "R27") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e"
           (reference "R13") (unit 1)
         )

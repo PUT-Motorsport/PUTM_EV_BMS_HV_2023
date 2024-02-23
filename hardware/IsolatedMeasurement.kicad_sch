@@ -4443,7 +4443,7 @@
   (symbol (lib_id "Device:L_Small") (at 204.47 58.42 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0c109dcc-01ab-438c-a82e-a88c5dfee1d6)
-    (property "Reference" "L11" (at 204.47 59.69 90)
+    (property "Reference" "L2" (at 204.47 59.69 90)
       (effects (font (size 1.27 1.27)) (justify bottom))
     )
     (property "Value" "1mH" (at 204.47 62.23 90)
@@ -4468,9 +4468,6 @@
     (pin "2" (uuid d5cbd727-a818-422e-8652-98280c0702c8))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
-          (reference "L11") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
           (reference "L2") (unit 1)
         )
@@ -4753,7 +4750,7 @@
   (symbol (lib_id "Device:Ferrite_Bead_Small") (at 212.09 58.42 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4f629234-b89a-4d5c-bc6f-b5d74949c80a)
-    (property "Reference" "FB1" (at 212.09 54.61 90)
+    (property "Reference" "FB2" (at 212.09 54.61 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "GZ1608D601TF" (at 207.645 52.705 90)
@@ -4772,9 +4769,6 @@
     (pin "2" (uuid 31af272c-fc8d-4a3c-887a-03f19da05e35))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
-          (reference "FB1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
           (reference "FB2") (unit 1)
         )
@@ -5228,7 +5222,7 @@
   (symbol (lib_id "Device:Ferrite_Bead_Small") (at 209.55 144.78 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cc3c1d91-73eb-4b1f-8856-ba98b73a71a8)
-    (property "Reference" "FB1" (at 209.55 140.97 90)
+    (property "Reference" "FB4" (at 209.55 140.97 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "GZ1608D601TF" (at 205.105 139.065 90)
@@ -5247,9 +5241,6 @@
     (pin "2" (uuid 14050541-23bc-406f-8483-69bd7b7b8a24))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
-          (reference "FB1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
           (reference "FB4") (unit 1)
         )
@@ -5339,7 +5330,7 @@
   (symbol (lib_id "Device:L_Small") (at 201.93 144.78 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e90e4fdc-cb7d-43bf-b42f-14cd1da7b33a)
-    (property "Reference" "L11" (at 198.12 146.05 90)
+    (property "Reference" "L10" (at 198.12 146.05 90)
       (effects (font (size 1.27 1.27)) (justify bottom))
     )
     (property "Value" "1mH" (at 198.12 148.59 90)
@@ -5364,9 +5355,6 @@
     (pin "2" (uuid e5b33ef8-231d-42a6-a769-246a9bc650f2))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
-          (reference "L11") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
           (reference "L10") (unit 1)
         )
@@ -5513,7 +5501,7 @@
   (symbol (lib_id "Device:L_Small") (at 45.72 63.5 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fdd9e5ca-e386-40dd-85bd-1353dc67cce0)
-    (property "Reference" "L11" (at 45.72 58.42 90)
+    (property "Reference" "L8" (at 45.72 58.42 90)
       (effects (font (size 1.27 1.27)) (justify bottom))
     )
     (property "Value" "4.7uH" (at 45.72 60.96 90)
@@ -5538,9 +5526,6 @@
     (pin "2" (uuid 7f062d23-873f-4e4a-b410-f45759256630))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
-          (reference "L11") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
           (reference "L8") (unit 1)
         )

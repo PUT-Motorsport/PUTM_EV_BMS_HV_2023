@@ -1994,7 +1994,7 @@
   (symbol (lib_id "Device:D_Schottky_Small") (at 109.22 110.49 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 046573b8-7be5-4f7b-a60d-61b58a51c49e)
-    (property "Reference" "D15" (at 111.76 108.966 90)
+    (property "Reference" "D2" (at 111.76 108.966 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4A/80V" (at 111.76 111.506 90)
@@ -2019,9 +2019,6 @@
     (pin "2" (uuid 2f5d5205-eed0-4cd1-8ff1-e246e8bdd0d0))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ba7f6eba-eb84-4567-9005-77208e6eb457"
-          (reference "D15") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "D2") (unit 1)
         )
@@ -2152,7 +2149,7 @@
   (symbol (lib_id "Device:R_Small") (at 181.61 104.14 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 183bbdc1-e0c1-4b75-b8da-0c3000efa433)
-    (property "Reference" "R1" (at 182.88 102.87 0)
+    (property "Reference" "R59" (at 182.88 102.87 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "40.2k" (at 182.88 105.41 0)
@@ -2177,9 +2174,6 @@
     (pin "2" (uuid b0181349-477d-42f0-8551-fbf8592cb911))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R59") (unit 1)
         )
@@ -2218,12 +2212,6 @@
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "L4") (unit 1)
         )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
-          (reference "L8") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/6b03d8c8-5f6c-4244-9202-23821031eb5e"
-          (reference "L9") (unit 1)
-        )
       )
     )
   )
@@ -2256,7 +2244,7 @@
   (symbol (lib_id "Device:R_Small") (at 251.46 91.44 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1ca1f812-b9e9-469c-a69b-5bcfe0689c23)
-    (property "Reference" "R1" (at 252.73 90.17 0)
+    (property "Reference" "R17" (at 252.73 90.17 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "4.7R" (at 252.73 92.71 0)
@@ -2281,9 +2269,6 @@
     (pin "2" (uuid 4a95fa24-761e-4bd6-852c-61f5a89d8e55))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R17") (unit 1)
         )
@@ -2610,7 +2595,7 @@
   (symbol (lib_id "Device:R_Small") (at 144.78 120.65 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 40953c73-f26c-4984-a394-f225fada1e43)
-    (property "Reference" "R1" (at 147.32 123.19 90)
+    (property "Reference" "R70" (at 147.32 123.19 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10.5k" (at 149.86 123.19 90)
@@ -2635,9 +2620,6 @@
     (pin "2" (uuid 0e8624d5-1aa9-4508-92dd-01d09406d179))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R70") (unit 1)
         )
@@ -2838,7 +2820,7 @@
   (symbol (lib_id "Device:R_Small") (at 63.5 118.11 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 57056a6e-cf46-4af1-b29f-6f4b41276dd6)
-    (property "Reference" "R1" (at 64.77 116.84 0)
+    (property "Reference" "R61" (at 64.77 116.84 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "20.5k" (at 64.77 119.38 0)
@@ -2863,9 +2845,6 @@
     (pin "2" (uuid ca3b5c83-e96a-4695-b7f0-8e96b2671432))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R61") (unit 1)
         )
@@ -3125,7 +3104,7 @@
   (symbol (lib_id "Device:R_Small") (at 276.86 104.14 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7877f55c-6b1a-40dc-9ff3-107df3ea8f8d)
-    (property "Reference" "R1" (at 278.13 102.87 0)
+    (property "Reference" "R52" (at 278.13 102.87 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "23.2k" (at 278.13 105.41 0)
@@ -3150,9 +3129,6 @@
     (pin "2" (uuid 90dc1478-b42c-4654-91c9-ad053fecc0b1))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R52") (unit 1)
         )
@@ -3188,7 +3164,7 @@
   (symbol (lib_id "Device:R_Small") (at 73.66 120.65 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8520db20-3673-4722-b034-4d9b1568ec52)
-    (property "Reference" "R1" (at 74.93 119.38 0)
+    (property "Reference" "R64" (at 74.93 119.38 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "392k" (at 74.93 121.92 0)
@@ -3213,9 +3189,6 @@
     (pin "2" (uuid 542926f0-3cff-44ea-86fc-5adb94208887))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R64") (unit 1)
         )
@@ -3375,7 +3348,7 @@
   (symbol (lib_id "Device:R_Small") (at 276.86 91.44 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 985687ff-7516-4a84-870f-fc6896b2444a)
-    (property "Reference" "R1" (at 278.13 90.17 0)
+    (property "Reference" "R51" (at 278.13 90.17 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "105k" (at 278.13 92.71 0)
@@ -3400,9 +3373,6 @@
     (pin "2" (uuid 85fee3bd-0041-4394-94e1-73fe88409f80))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R51") (unit 1)
         )
@@ -3599,12 +3569,6 @@
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "L5") (unit 1)
         )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/d2e30d51-b8f8-4bbd-bb5a-76e0eb119260"
-          (reference "L10") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/e61cc821-5479-4c04-b5ab-4a32f17b4f03/6b03d8c8-5f6c-4244-9202-23821031eb5e"
-          (reference "L12") (unit 1)
-        )
       )
     )
   )
@@ -3647,7 +3611,7 @@
   (symbol (lib_id "Device:D_Schottky_Small") (at 39.37 44.45 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c3870dcd-c7a1-4b4d-aef9-88577f1c0641)
-    (property "Reference" "D15" (at 39.37 38.1 0)
+    (property "Reference" "D24" (at 39.37 38.1 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "RB068LAM-30TFTR" (at 39.37 40.64 0)
@@ -3672,9 +3636,6 @@
     (pin "2" (uuid f4be6c7b-6a1f-4045-b0b6-7ace3ccea6d7))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ba7f6eba-eb84-4567-9005-77208e6eb457"
-          (reference "D15") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "D24") (unit 1)
         )
@@ -3973,7 +3934,7 @@
   (symbol (lib_id "Device:R_Small") (at 144.78 110.49 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ed21f99d-2656-4c3c-b86e-e5a065643a74)
-    (property "Reference" "R1" (at 147.32 113.03 90)
+    (property "Reference" "R68" (at 147.32 113.03 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "147k" (at 149.86 113.03 90)
@@ -3998,9 +3959,6 @@
     (pin "2" (uuid 4fa3907b-aef2-4d7d-a844-25aa9b51beb3))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/568caa85-d8c4-4885-aabf-c5422dff8b33"
-          (reference "R1") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
           (reference "R68") (unit 1)
         )

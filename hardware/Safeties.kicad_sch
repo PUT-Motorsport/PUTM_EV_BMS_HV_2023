@@ -1932,7 +1932,7 @@
   (symbol (lib_id "Device:D_Schottky_Small") (at 212.09 81.28 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4467412d-f9b1-4371-86ec-4976be9fcb02)
-    (property "Reference" "D12" (at 205.74 80.01 90)
+    (property "Reference" "D10" (at 205.74 80.01 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "D_Small" (at 201.93 82.55 90)
@@ -1957,15 +1957,6 @@
     (pin "2" (uuid 1972e482-08b7-457f-b7db-d7f2ed7c73ad))
     (instances
       (project "PUTM_EV_BMS_HV_Master_2021"
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/649ea10f-ddf7-49be-afe9-7c2c999df872"
-          (reference "D12") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/67d08ddd-b8e9-4f40-a055-93108463bf84"
-          (reference "D4") (unit 1)
-        )
-        (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e/fd8c1b79-afed-4653-bb63-44888bf7ecb3"
-          (reference "D13") (unit 1)
-        )
         (path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e"
           (reference "D10") (unit 1)
         )
