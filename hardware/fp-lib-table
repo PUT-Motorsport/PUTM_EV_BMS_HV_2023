@@ -40,4 +40,5 @@
   (lib (name "CDMM")(type "KiCad")(uri "${KIPRJMOD}/footprint/CDMM/CDMM.pretty")(options "")(descr ""))
   (lib (name "HM2146NLT")(type "KiCad")(uri "${KIPRJMOD}/footprint/HM2146NLT")(options "")(descr ""))
   (lib (name "Samacsys")(type "KiCad")(uri "${KIPRJMOD}/PUTM_Kicad_Library/Samacsys.pretty")(options "")(descr ""))
+  (lib (name "ftsh-107-01-l-dv-k-a")(type "KiCad")(uri "${KIPRJMOD}/footprint/ftsh-107-01-l-dv-k-a")(options "")(descr ""))
 )

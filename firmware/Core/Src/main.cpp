@@ -22,7 +22,6 @@
 #include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
-#include "app_fatfs.h"
 #include "fdcan.h"
 #include "rtc.h"
 #include "spi.h"
@@ -113,9 +112,6 @@ int main(void)
   MX_SPI3_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
-  if (MX_FATFS_Init() != APP_OK) {
-    Error_Handler();
-  }
   MX_USB_Device_Init();
   MX_TIM3_Init();
   MX_ADC1_Init();
@@ -128,11 +124,14 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
+  osKernelInitialize();
+
+  /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
 
   /* Start scheduler */
   osKernelStart();
+
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
