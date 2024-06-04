@@ -1165,7 +1165,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4A/80V"
+		(property "Value" "VSSB410S-E3/52T"
 			(at 146.685 76.1999 90)
 			(effects
 				(font

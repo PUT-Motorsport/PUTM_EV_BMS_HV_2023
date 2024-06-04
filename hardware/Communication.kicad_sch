@@ -12513,15 +12513,15 @@
 		(dnp no)
 		(uuid "d5f75fe6-e15b-4b4a-b428-4860089bb2c2")
 		(property "Reference" "C27"
-			(at 221.615 28.575 0)
+			(at 226.06 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "5.6nF"
-			(at 221.615 31.115 0)
+		(property "Value" "5.6nF/2000V"
+			(at 226.06 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)

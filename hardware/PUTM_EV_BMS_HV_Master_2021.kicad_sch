@@ -6757,7 +6757,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED_Small_ALT"
+		(property "Value" "SML-D12U1WT86"
 			(at 97.79 151.2824 0)
 			(effects
 				(font
@@ -6844,7 +6844,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED_Small_ALT"
+		(property "Value" "SML-D12U1WT86"
 			(at 97.79 157.6324 0)
 			(effects
 				(font
@@ -6923,21 +6923,19 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000069e22a7a")
 		(property "Reference" "D5"
-			(at 99.06 170.18 0)
+			(at 97.79 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "LED_Small_ALT"
-			(at 98.933 165.1508 90)
+		(property "Value" "SML-D12U1WT86"
+			(at 97.79 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)

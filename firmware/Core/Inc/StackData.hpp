@@ -100,9 +100,9 @@ struct FullStackData
 class FullStackDataInstance
 {
 public:
+	inline static FullStackData instance;
 	inline static FullStackData &set()
 	{
-		static FullStackData instance;
 		return instance;
 	}
 

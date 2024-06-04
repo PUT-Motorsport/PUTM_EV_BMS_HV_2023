@@ -8510,7 +8510,7 @@
 				)
 			)
 		)
-		(property "Value" "0.5A"
+		(property "Value" "0ZCH0050FF2G"
 			(at 153.67 180.34 0)
 			(effects
 				(font
@@ -8670,7 +8670,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Zener_Small"
+		(property "Value" "CDBU0530"
 			(at 135.89 181.61 90)
 			(effects
 				(font
@@ -9615,7 +9615,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Zener_Small"
+		(property "Value" "CDBU0530"
 			(at 113.03 181.61 90)
 			(effects
 				(font
@@ -11505,7 +11505,7 @@
 	)
 	(symbol
 		(lib_id "Samacsys2:M80-5100442")
-		(at 142.24 173.99 0)
+		(at 142.24 173.99 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11530,7 +11530,7 @@
 			)
 		)
 		(property "Footprint" "Samacsys:M80-51004YY"
-			(at 158.75 171.45 0)
+			(at 125.73 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11540,7 +11540,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.harwin.com/pdfs/M80-510.pdf"
-			(at 158.75 173.99 0)
+			(at 125.73 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11550,7 +11550,7 @@
 			)
 		)
 		(property "Description" "4 Male DIL Vertical Throughboard Conn. Jackscrews, 2.00mm Pitch High-Reliability Connector - Datamate J-Tek"
-			(at 158.75 176.53 0)
+			(at 125.73 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11560,7 +11560,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 158.75 179.07 0)
+			(at 125.73 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11570,7 +11570,7 @@
 			)
 		)
 		(property "Mouser Part Number" "855-M80-5100442"
-			(at 158.75 181.61 0)
+			(at 125.73 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11580,7 +11580,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/M80-5100442?qs=wuXwK9wHm9vlrUDxU70C1Q%3D%3D"
-			(at 158.75 184.15 0)
+			(at 125.73 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11590,7 +11590,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Harwin"
-			(at 158.75 186.69 0)
+			(at 125.73 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11600,7 +11600,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "M80-5100442"
-			(at 158.75 189.23 0)
+			(at 125.73 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -55,8 +55,8 @@ class Ltc6811Controller
 		/*
 		 * direct read
 		 */
-		template < Ltc6811::ReadRegisterGroup RdReg >
-		LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data);
+		//template < Ltc6811::ReadRegisterGroup RdReg >
+		//LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data);
 
 		template < Ltc6811::ReadRegisterGroup RdReg >
 		LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data, std::array < PecStatus, LtcConfig::CHAIN_SIZE > &pec_status);

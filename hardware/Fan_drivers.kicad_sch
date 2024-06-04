@@ -2425,7 +2425,7 @@
 		(fields_autoplaced yes)
 		(uuid "2da195f8-4c70-4c81-ac58-b6d4fb731852")
 		(property "Reference" "D18"
-			(at 189.23 111.506 90)
+			(at 189.23 111.5059 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2433,8 +2433,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 189.23 114.046 90)
+		(property "Value" "CDBU0530"
+			(at 189.23 114.0459 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2588,7 +2588,7 @@
 		(fields_autoplaced yes)
 		(uuid "47500650-7f9c-408d-8cab-bab38afa15b9")
 		(property "Reference" "D20"
-			(at 95.25 112.776 90)
+			(at 95.25 112.7759 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2596,8 +2596,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 95.25 115.316 90)
+		(property "Value" "CDBU0530"
+			(at 95.25 115.3159 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2770,7 +2770,7 @@
 		(fields_autoplaced yes)
 		(uuid "4902b677-22dc-4799-b317-d8fcac9a5e78")
 		(property "Reference" "D14"
-			(at 140.97 68.326 90)
+			(at 140.97 68.3259 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2778,8 +2778,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 140.97 70.866 90)
+		(property "Value" "CDBU0530"
+			(at 140.97 70.8659 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3507,7 +3507,7 @@
 		(fields_autoplaced yes)
 		(uuid "961d5bd6-ad2a-4abf-98b6-b592f10f88d7")
 		(property "Reference" "D17"
-			(at 234.95 68.326 90)
+			(at 234.95 68.3259 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3515,8 +3515,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 234.95 70.866 90)
+		(property "Value" "CDBU0530"
+			(at 234.95 70.8659 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4202,7 +4202,7 @@
 		(fields_autoplaced yes)
 		(uuid "d9caeef6-eadb-4fe2-af47-efbb35821a16")
 		(property "Reference" "D19"
-			(at 140.97 111.506 90)
+			(at 140.97 111.5059 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4210,8 +4210,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 140.97 114.046 90)
+		(property "Value" "CDBU0530"
+			(at 140.97 114.0459 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4464,7 +4464,7 @@
 		(fields_autoplaced yes)
 		(uuid "e15e058a-0166-48d7-a0bb-98f352a51458")
 		(property "Reference" "D16"
-			(at 187.96 68.326 90)
+			(at 187.96 68.3259 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4472,8 +4472,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 187.96 70.866 90)
+		(property "Value" "CDBU0530"
+			(at 187.96 70.8659 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4824,7 +4824,7 @@
 		(fields_autoplaced yes)
 		(uuid "e88a217f-0020-4248-9d76-fd8824cae85a")
 		(property "Reference" "D15"
-			(at 95.25 68.326 90)
+			(at 95.25 68.3259 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4832,8 +4832,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Schottky_Small"
-			(at 95.25 70.866 90)
+		(property "Value" "CDBU0530"
+			(at 95.25 70.8659 90)
 			(effects
 				(font
 					(size 1.27 1.27)

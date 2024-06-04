@@ -8,6 +8,7 @@
 #include <PerypherialManagers/Ltc6811Controller.hpp>
 #include <Utils/PEC15.hpp>
 #include <PerypherialManagers/SpiDmaController.hpp>
+#include <algorithm>
 
 using namespace Ltc6811;
 using namespace LtcConfig;
@@ -56,7 +57,7 @@ LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd, std::array< WrRdReg, CHAIN_S
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
+	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
 	auto stxdit = stxdata.begin();
 
 	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
@@ -80,12 +81,11 @@ LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 4 > stxdata;
+	static std::array < uint8_t, 4 > stxdata;
 	auto stxdit = stxdata.begin();
 
 	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
 	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
-	stxdit += 4;
 
 	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
 	SpiDmaController::spiRequestAndWait(request);
@@ -93,38 +93,38 @@ LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd)
 	return status;
 }
 
-template < ReadRegisterGroup RdReg >
-LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
-	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
-	auto stxdit = stxdata.begin();
-	auto srxdit = srxdata.begin() + 4;
-
-	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
-	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
-
-	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
-	SpiDmaController::spiRequestAndWait(request);
-
-	for(auto& d : data)
-	{
-		deserializeRegisterGroup(d, srxdit);
-		srxdit += 8;
-	}
-
-	return status;
-}
+//template < ReadRegisterGroup RdReg >
+//LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data)
+//{
+//	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+//
+//	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
+//	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
+//	auto stxdit = stxdata.begin();
+//	auto srxdit = srxdata.begin() + 3;
+//
+//	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+//	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 1);
+//
+//	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
+//	SpiDmaController::spiRequestAndWait(request);
+//
+//	for(auto& d : data)
+//	{
+//		deserializeRegisterGroup(d, srxdit);
+//		srxdit += 8;
+//	}
+//
+//	return status;
+//}
 
 template< ReadRegisterGroup RdReg >
 LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data, std::array < PecStatus, CHAIN_SIZE > &pec_status)
 {
 	LtcCtrlStatus status = LtcCtrlStatus::Ok;
 
-	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
-	std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
+	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
+	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
 	auto stxdit = stxdata.begin();
 	auto srxdit = srxdata.begin() + 4;
 	auto pecit = pec_status.begin();
@@ -139,7 +139,7 @@ LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZ
 	{
 		deserializeRegisterGroup(d, srxdit);
 		auto [ pec1, pec0 ] = calcPEC(srxdit, srxdit + 6);
-		if( pec1 != srxdit[6] || pec0 != srxdit[7]) *pecit = PecStatus::Error;
+		if( pec1 != *(srxdit + 6) || pec0 != *(srxdit + 7)) *pecit = PecStatus::Error;
 		else *pecit = PecStatus::Ok;
 		srxdit += 8;
 		pecit++;
@@ -167,7 +167,6 @@ void Ltc6811Controller::handleWatchDog()
 
 	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
 	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
-	stxdit += 4;
 
 	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
 	SpiDmaController::spiRequestAndWait(request);
