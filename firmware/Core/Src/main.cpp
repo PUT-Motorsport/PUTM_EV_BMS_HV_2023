@@ -57,10 +57,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-GpioOut led_ok { LED1_GPIO_Port, LED1_Pin, true };
-GpioOut led_warning { LED2_GPIO_Port, LED2_Pin, true };
-GpioOut led_error { LED3_GPIO_Port, LED3_Pin, true };
-GpioIn  pre_AIR {SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin, true};
+GpioOut led_ok 			{ LED1_GPIO_Port, LED1_Pin, true };
+GpioOut led_warning 	{ LED2_GPIO_Port, LED2_Pin, true };
+GpioOut led_error 		{ LED3_GPIO_Port, LED3_Pin, true };
+GpioOut ams_status 		{ AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, false };
+//FIXME: charger and safety were swaped need to change in ioc
+GpioIn  safety_detect 	{ CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, true };
+GpioIn 	charger_detect	{ SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin, true };
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -121,6 +124,10 @@ int main(void)
   led_ok.deactivate();
   led_warning.deactivate();
   led_error.deactivate();
+
+  ams_status.toggle();
+  //HAL_Delay(10);
+  //ams_status.toggle();
   /* USER CODE END 2 */
 
   /* Init scheduler */

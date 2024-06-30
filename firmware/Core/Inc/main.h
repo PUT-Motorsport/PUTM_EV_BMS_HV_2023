@@ -105,12 +105,12 @@ void Error_Handler(void);
 #define LTC_MISO_GPIO_Port GPIOB
 #define LTC_MOSI_Pin GPIO_PIN_15
 #define LTC_MOSI_GPIO_Port GPIOB
-#define SIG_AIR_M_Pin GPIO_PIN_7
-#define SIG_AIR_M_GPIO_Port GPIOC
+#define SIG_AIR_PRE_Pin GPIO_PIN_7
+#define SIG_AIR_PRE_GPIO_Port GPIOC
 #define SIG_AIR_P_Pin GPIO_PIN_8
 #define SIG_AIR_P_GPIO_Port GPIOC
-#define SIG_AIR_PRE_Pin GPIO_PIN_9
-#define SIG_AIR_PRE_GPIO_Port GPIOC
+#define SIG_AIR_M_Pin GPIO_PIN_9
+#define SIG_AIR_M_GPIO_Port GPIOC
 #define NMES_ISENS_CS_Pin GPIO_PIN_8
 #define NMES_ISENS_CS_GPIO_Port GPIOA
 #define NMES_EXT_V_CS_Pin GPIO_PIN_9

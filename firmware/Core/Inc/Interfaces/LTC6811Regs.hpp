@@ -61,7 +61,7 @@ namespace Ltc6811
 		{
 			//uint8_t bytes[2];
 			uint16_t val;
-		} cell[3];
+		} channel[3];
 	};
 	// generic reg gpio[0:2] OR gpio[3:4] + ref voltage   rd
 	struct AuxilliaryVoltage : public IReadRegisterGroup
@@ -276,10 +276,25 @@ namespace Ltc6811
 		std::memcpy(destination, &source, 6);
 	}
 
+//	std::array < uint8_t, 6 > serializeRegisterGroup(RegisterGroup &source)
+//	{
+//		std::array < uint8_t, 6 > destination;
+//		std::memcpy(destination.data(), &source, 6);
+//		return destination;
+//	}
+
+//	template < ReadRegisterGroup RegisterGroup >
+//	void deserializeRegisterGroup(RegisterGroup &destination, uint8_t const *source)
+//	{
+//		std::memcpy(&destination, source, 6);
+//	}
+
 	template < ReadRegisterGroup RegisterGroup >
-	void deserializeRegisterGroup(RegisterGroup &destination, uint8_t const *source)
+	RegisterGroup deserializeRegisterGroup(uint8_t const *source)
 	{
+		static RegisterGroup destination;
 		std::memcpy(&destination, source, 6);
+		return destination;
 	}
 }
 

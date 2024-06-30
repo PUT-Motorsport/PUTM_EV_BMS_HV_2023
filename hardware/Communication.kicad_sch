@@ -9218,7 +9218,7 @@
 	)
 	(hierarchical_label "CHARGER_DETECT"
 		(shape output)
-		(at 68.58 90.17 0)
+		(at 68.58 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9410,7 +9410,7 @@
 	)
 	(hierarchical_label "SAFETY_DETECTION"
 		(shape output)
-		(at 68.58 87.63 0)
+		(at 68.58 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font

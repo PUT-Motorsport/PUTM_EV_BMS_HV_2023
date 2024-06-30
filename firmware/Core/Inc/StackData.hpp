@@ -99,17 +99,17 @@ struct FullStackData
 
 class FullStackDataInstance
 {
-public:
-	inline static FullStackData instance;
-	inline static FullStackData &set()
-	{
-		return instance;
-	}
+	public:
+		inline static FullStackData instance;
+		inline static FullStackData &set()
+		{
+			return instance;
+		}
 
-	inline static const FullStackData &get()
-	{
-		return set();
-	}
+		inline static const FullStackData &get()
+		{
+			return instance;
+		}
 };
 
 #endif /* STACKDATA_HPP_ */

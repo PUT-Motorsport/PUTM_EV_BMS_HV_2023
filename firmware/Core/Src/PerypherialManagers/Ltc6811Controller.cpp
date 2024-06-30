@@ -9,13 +9,14 @@
 #include <Utils/PEC15.hpp>
 #include <PerypherialManagers/SpiDmaController.hpp>
 #include <algorithm>
+#include <bitset>
 
 using namespace Ltc6811;
 using namespace LtcConfig;
 
 Ltc6811Controller::Ltc6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi(hspi), cs(cs)
 {
-	cs.deactivate();
+	//cs.deactivate();
 
 	//for(auto cfg : configs)
 	for(size_t i = 0; i < CHAIN_SIZE; i++)
@@ -52,11 +53,43 @@ Ltc6811Controller::Ltc6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi
 	}
 }
 
-template < WriteReadRegisterGroup WrRdReg >
-LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd, std::array< WrRdReg, CHAIN_SIZE > const &data)
+template < Ltc6811::ReadRegisterGroup RdReg >
+std::array < std::variant < RdReg, LtcError >, CHAIN_SIZE > Ltc6811Controller::rawRead(Ltc6811::RCmd cmd)
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
+	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata { 0 };
+	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata { 0 };
+	static std::array < std::variant < RdReg, LtcError >, CHAIN_SIZE > data;
 
+	auto stxdit = stxdata.begin();
+	auto srxdit = srxdata.begin() + 4;
+
+	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
+	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
+
+	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
+	SpiDmaController::spiRequestAndWait(request);
+
+	for(auto& dit : data)
+	{
+		auto srxditbeg 	= srxdit;
+		auto srxditend 	= srxdit + 6;
+		auto srxp0		= *(srxdit + 6);
+		auto srxp1		= *(srxdit + 7);
+
+		auto [ pec0, pec1 ] = calcPEC(srxditbeg, srxditend);
+		if( pec0 != srxp0 || pec1 != srxp1)
+			dit = LtcError::PecError;
+		else
+			dit = deserializeRegisterGroup<RdReg>(srxdit);
+		srxdit += 8;
+	}
+
+	return data;
+}
+
+template < WriteReadRegisterGroup WrRdReg >
+std::optional < LtcError > Ltc6811Controller::rawWrite(WCmd cmd, std::array < WrRdReg, CHAIN_SIZE > const &data)
+{
 	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
 	auto stxdit = stxdata.begin();
 
@@ -74,13 +107,11 @@ LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd, std::array< WrRdReg, CHAIN_S
 	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
 	SpiDmaController::spiRequestAndWait(request);
 
-	return status;
+	return { };
 }
 
-LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd)
+std::optional < LtcError > Ltc6811Controller::rawWrite(WCmd cmd)
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
 	static std::array < uint8_t, 4 > stxdata;
 	auto stxdit = stxdata.begin();
 
@@ -90,86 +121,20 @@ LtcCtrlStatus Ltc6811Controller::rawWrite(WCmd cmd)
 	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
 	SpiDmaController::spiRequestAndWait(request);
 
-	return status;
-}
-
-//template < ReadRegisterGroup RdReg >
-//LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data)
-//{
-//	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-//
-//	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
-//	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
-//	auto stxdit = stxdata.begin();
-//	auto srxdit = srxdata.begin() + 3;
-//
-//	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
-//	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 1);
-//
-//	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
-//	SpiDmaController::spiRequestAndWait(request);
-//
-//	for(auto& d : data)
-//	{
-//		deserializeRegisterGroup(d, srxdit);
-//		srxdit += 8;
-//	}
-//
-//	return status;
-//}
-
-template< ReadRegisterGroup RdReg >
-LtcCtrlStatus Ltc6811Controller::rawRead(RCmd cmd, std::array < RdReg, CHAIN_SIZE > &data, std::array < PecStatus, CHAIN_SIZE > &pec_status)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > stxdata;
-	static std::array < uint8_t, 4 + CHAIN_SIZE * 8 > srxdata;
-	auto stxdit = stxdata.begin();
-	auto srxdit = srxdata.begin() + 4;
-	auto pecit = pec_status.begin();
-
-	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
-	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
-
-	SpiTxRxRequest request(cs, hspi, stxdata.begin(), srxdata.begin(), stxdata.size());
-	SpiDmaController::spiRequestAndWait(request);
-
-	for(auto& d : data)
-	{
-		deserializeRegisterGroup(d, srxdit);
-		auto [ pec1, pec0 ] = calcPEC(srxdit, srxdit + 6);
-		if( pec1 != *(srxdit + 6) || pec0 != *(srxdit + 7)) *pecit = PecStatus::Error;
-		else *pecit = PecStatus::Ok;
-		srxdit += 8;
-		pecit++;
-	}
-
-	return status;
+	return { };
 }
 
 void Ltc6811Controller::wakeUp()
 {
 	uint8_t dummy = 0;
-	cs.activate();
-	SpiTxRequest request(hspi, &dummy, 1);
+	SpiTxRequest request(cs, hspi, &dummy, 1);
 	SpiDmaController::spiRequestAndWait(request);
-	cs.deactivate();
 	osDelay(twake_full);
 }
 
 void Ltc6811Controller::handleWatchDog()
 {
-	auto cmd = CMD_RDCFGA;
-
-	std::array < uint8_t, 4 > stxdata;
-	auto stxdit = stxdata.begin();
-
-	std::tie(stxdit[0], stxdit[1]) = serializeCmd(cmd);
-	std::tie(stxdit[2], stxdit[3]) = calcPEC(stxdit, stxdit + 2);
-
-	SpiTxRequest request(cs, hspi, stxdata.begin(), stxdata.size());
-	SpiDmaController::spiRequestAndWait(request);
+	rawWrite(CMD_PLADC);
 }
 
 PollStatus Ltc6811Controller::pollAdcStatus()
@@ -190,70 +155,15 @@ PollStatus Ltc6811Controller::pollAdcStatus()
 	return PollStatus::Done;
 }
 
-LtcCtrlStatus Ltc6811Controller::configure()
+std::optional < LtcError > Ltc6811Controller::configure()
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	//std::array < Config, chain_size > configs_buff;
-	//std::array < PecStatus, chain_size > pecs;
-
 	wakeUp();
-	rawWrite(CMD_WRCFGA, configs);
-	//TODO: check config? for now i threw it out
-
-	return status;
+	return rawWrite(CMD_WRCFGA, configs);
 }
 
-LtcCtrlStatus Ltc6811Controller::readVoltages(std::array< std::array< float, 12 >, CHAIN_SIZE > &vol)
+std::array < std::variant < LtcError, float > , LtcConfig::CHAIN_SIZE * 5 > Ltc6811Controller::readGpio()
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, CHAIN_SIZE >, 4 > pecs;
-	std::array < std::array < CellVoltage, CHAIN_SIZE >, 4 > raw;
-
-	wakeUp();
-	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
-
-	osDelay(tadc);
-
-	wakeUp();
-	rawRead(CMD_RDCVA, raw[0], pecs[0]);
-	wakeUp();
-	rawRead(CMD_RDCVB, raw[1], pecs[1]);
-	wakeUp();
-	rawRead(CMD_RDCVC, raw[2], pecs[2]);
-	wakeUp();
-	rawRead(CMD_RDCVD, raw[3], pecs[3]);
-
-	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
-	{
-		for(size_t cell = 0; cell < 12; cell++)
-		{
-			size_t reg = cell / 3;
-			size_t rcell = cell % 3;
-			if(pecs[reg][ltc] == PecStatus::Ok)
-				vol[ltc][cell] = convRawToU(raw[reg][ltc].cell[rcell].val);
-			else
-				vol[ltc][cell] = -1.f;
-		}
-	}
-
-	return status;
-}
-
-LtcCtrlStatus Ltc6811Controller::diagnose(std::array < LtcDiagnosisStatus, CHAIN_SIZE > &diag)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	return status;
-}
-
-LtcCtrlStatus Ltc6811Controller::readGpioAndRef2(std::array< std::array< float, 6 >, CHAIN_SIZE > &aux)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < PecStatus, CHAIN_SIZE > pec_a;
-	std::array < PecStatus, CHAIN_SIZE > pec_b;
-	std::array < AuxilliaryVoltageA, CHAIN_SIZE > aux_a;
-	std::array < AuxilliaryVoltageB, CHAIN_SIZE > aux_b;
+	static std::array < std::variant < LtcError, float >, LtcConfig::CHAIN_SIZE * 5 > array;
 
 	wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
@@ -261,67 +171,44 @@ LtcCtrlStatus Ltc6811Controller::readGpioAndRef2(std::array< std::array< float, 
 	osDelay(tadc);
 
 	wakeUp();
-	rawRead(CMD_RDAUXA, aux_a, pec_a);
+	auto reg_a = rawRead<AuxilliaryVoltageA>(CMD_RDAUXA);
 	wakeUp();
-	rawRead(CMD_RDAUXB,	aux_b, pec_b);
+	auto reg_b = rawRead<AuxilliaryVoltageB>(CMD_RDAUXB);
 
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{
-		for(size_t gpio = 0; gpio < 3; gpio++)
+		size_t offset = ltc * 5;
+		if(std::holds_alternative<AuxilliaryVoltageA>(reg_a[ltc]))
 		{
-			if(pec_a[ltc] != PecStatus::Ok)
-				aux[ltc][gpio] = -1.f;
-			else
-				aux[ltc][gpio] = convRawToGT(aux_a[ltc].gpio[gpio].val);
+			array[0 + offset] = float(std::get<AuxilliaryVoltageA>(reg_a[ltc]).gpio[0].val);
+			array[1 + offset] = float(std::get<AuxilliaryVoltageA>(reg_a[ltc]).gpio[1].val);
+			array[2 + offset] = float(std::get<AuxilliaryVoltageA>(reg_a[ltc]).gpio[2].val);
 		}
-		for(size_t gpio = 0; gpio < 2; gpio++)
-		{
-			if(pec_b[ltc] != PecStatus::Ok)
-				aux[ltc][gpio] = -1.f;
-			else
-				aux[ltc][gpio] = convRawToGT(aux_b[ltc].gpio[gpio].val);
-		}
-		if(pec_b[ltc] != PecStatus::Ok)
-			aux[ltc][5] = -1.f;
 		else
-			aux[ltc][5] = convRawToU(aux_b[ltc].ref.val);
+		{
+			array[0 + offset] = LtcError::Error;
+			array[1 + offset] = LtcError::Error;
+			array[2 + offset] = LtcError::Error;
+		}
+		if(std::holds_alternative<AuxilliaryVoltageB>(reg_b[ltc]))
+		{
+			array[3 + offset] = float(std::get<AuxilliaryVoltageB>(reg_b[ltc]).gpio[0].val);
+			array[4 + offset] = float(std::get<AuxilliaryVoltageB>(reg_b[ltc]).gpio[1].val);
+		}
+		else
+		{
+			array[3 + offset] = LtcError::Error;
+			array[4 + offset] = LtcError::Error;
+		}
 	}
 
-	return status;
+	return array;
 }
 
-LtcCtrlStatus Ltc6811Controller::setDischarge(std::array< std::array< bool, 12 >, CHAIN_SIZE > &dis)
+std::array < std::variant < LtcError, float > , CHAIN_SIZE * 12 > Ltc6811Controller::readVoltages()
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-
-	for(size_t i = 0; i < CHAIN_SIZE; i++)
-	{
-		configs[i].dcc1 	= dis[i][0];
-		configs[i].dcc2 	= dis[i][1];
-		configs[i].dcc3 	= dis[i][2];
-		configs[i].dcc4 	= dis[i][3];
-		configs[i].dcc5 	= dis[i][4];
-		configs[i].dcc6 	= dis[i][5];
-		configs[i].dcc7 	= dis[i][6];
-		configs[i].dcc8 	= dis[i][7];
-		configs[i].dcc9 	= dis[i][8];
-		configs[i].dcc10 	= dis[i][9];
-		configs[i].dcc11 	= dis[i][10];
-		configs[i].dcc12 	= dis[i][11];
-	}
-
-	wakeUp();
-	rawWrite(CMD_WRCFGA, configs);
-
-	return status;
-}
-
-LtcCtrlStatus Ltc6811Controller::readVoltages(std::array< std::atomic<float>, CELL_COUNT > &vol)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, CHAIN_SIZE >, 4 > pecs;
-	std::array < std::array < CellVoltage, CHAIN_SIZE >, 4 > raw;
+	static std::array < std::variant < LtcError, float > , CHAIN_SIZE * 12 > array;
+	static std::array < std::array < std::variant < CellVoltage, LtcError >, CHAIN_SIZE >, 4 > regs;
 
 	wakeUp();
 	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
@@ -329,114 +216,83 @@ LtcCtrlStatus Ltc6811Controller::readVoltages(std::array< std::atomic<float>, CE
 	osDelay(tadc);
 
 	wakeUp();
-	rawRead(CMD_RDCVA, raw[0], pecs[0]);
+	regs[0] = rawRead<CellVoltage>(CMD_RDCVA);
 	wakeUp();
-	rawRead(CMD_RDCVB, raw[1], pecs[1]);
+	regs[1] = rawRead<CellVoltage>(CMD_RDCVB);
 	wakeUp();
-	rawRead(CMD_RDCVC, raw[2], pecs[2]);
+	regs[2] = rawRead<CellVoltage>(CMD_RDCVC);
 	wakeUp();
-	rawRead(CMD_RDCVD, raw[3], pecs[3]);
+	regs[3] = rawRead<CellVoltage>(CMD_RDCVD);
 
-	static constexpr std::array < size_t, 9 > cell_to_ltc_cell { 0, 1, 2, 3, 4, 6, 7, 8, 9 };
-	for(size_t cell = 0; cell < CELL_COUNT; cell++)
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{
-		size_t ltc = cell / 9;
-		size_t ltc_cell = cell_to_ltc_cell[cell % 9];
-		size_t reg = ltc_cell / 3;
-		size_t reg_cell = ltc_cell % 3;
-
-		if(pecs[reg][ltc] == PecStatus::Ok)
-			vol[cell] = convRawToU(raw[reg][ltc].cell[reg_cell].val);
-		else
-			vol[cell] = -1.f;
+		for(size_t r = 0; r < 4; r++)
+		{
+			if(std::holds_alternative<CellVoltage>(regs[r][ltc]))
+			{
+				array[ltc*12 + r*3 + 0] = convRawToU(std::get<CellVoltage>(regs[r][ltc]).channel[0].val);
+				array[ltc*12 + r*3 + 1] = convRawToU(std::get<CellVoltage>(regs[r][ltc]).channel[1].val);
+				array[ltc*12 + r*3 + 2] = convRawToU(std::get<CellVoltage>(regs[r][ltc]).channel[2].val);
+			}
+			else
+			{
+				array[ltc*12 + r*3 + 0] = LtcError::Error;
+				array[ltc*12 + r*3 + 1] = LtcError::Error;
+				array[ltc*12 + r*3 + 2] = LtcError::Error;
+			}
+		}
 	}
 
-	return status;
+	return array;
 }
 
-LtcCtrlStatus Ltc6811Controller::setDischarge(const std::array< std::atomic<bool>, CELL_COUNT > &dis)
+std::optional < LtcError > Ltc6811Controller::setDischarge(const std::array< bool, CHAIN_SIZE * 12 > &dis)
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-
-	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc += 1)
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc)
 	{
-		size_t cell = ltc * 9;
-
-		configs[ltc].dcc1 	= dis[cell + 0];
-		configs[ltc].dcc2 	= dis[cell + 1];
-		configs[ltc].dcc3 	= dis[cell + 2];
-		configs[ltc].dcc4 	= dis[cell + 3];
-		configs[ltc].dcc5 	= dis[cell + 4];
-		//configs[ltc].dcc6 	= dis[cell + 4];
-		configs[ltc].dcc7 	= dis[cell + 5];
-		configs[ltc].dcc8 	= dis[cell + 6];
-		configs[ltc].dcc9 	= dis[cell + 7];
-		configs[ltc].dcc10 	= dis[cell + 8];
-		//configs[ltc].dcc11 	= dis[cell + ];
-		//configs[ltc].dcc12 	= dis[cell + ];
+		configs[ltc].dcc1  = dis[ltc * 12 + 0];
+		configs[ltc].dcc2  = dis[ltc * 12 + 1];
+		configs[ltc].dcc3  = dis[ltc * 12 + 2];
+		configs[ltc].dcc4  = dis[ltc * 12 + 3];
+		configs[ltc].dcc5  = dis[ltc * 12 + 4];
+		configs[ltc].dcc6  = dis[ltc * 12 + 5];
+		configs[ltc].dcc7  = dis[ltc * 12 + 6];
+		configs[ltc].dcc8  = dis[ltc * 12 + 7];
+		configs[ltc].dcc9  = dis[ltc * 12 + 8];
+		configs[ltc].dcc10 = dis[ltc * 12 + 9];
+		configs[ltc].dcc11 = dis[ltc * 12 + 10];
+		configs[ltc].dcc12 = dis[ltc * 12 + 11];
 	}
 
 	wakeUp();
 	rawWrite(CMD_WRCFGA, configs);
 
-	return status;
+	return { };
 }
 
-LtcCtrlStatus Ltc6811Controller::readGpioTemp(std::array< std::atomic < float >, TEMP_COUNT > &temp)
+std::variant < LtcError, float > Ltc6811Controller::readStackVoltage()
 {
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < std::array < PecStatus, CHAIN_SIZE >, 1 > pecs;
-	std::array < std::array < AuxilliaryVoltage, CHAIN_SIZE >, 1 > aux;
-
-	wakeUp();
-	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
-
-	osDelay(tadc);
-
-	wakeUp();
-	rawRead(CMD_RDAUXA, aux[0], pecs[0]);
-
-	for(size_t t = 0; t < TEMP_COUNT; t++)
-	{
-		size_t ltc = t / 3;
-		size_t ltc_temp = t % 3;
-		size_t reg = ltc_temp / 3;
-		size_t reg_temp = ltc_temp % 3;
-
-		if(pecs[reg][ltc] != PecStatus::Ok)
-			temp.at(t) = -1.f;
-		else
-			temp.at(t) = convRawToGT(aux.at(reg).at(ltc).gpio[reg_temp].val);
-	}
-
-	return status;
-}
-
-LtcCtrlStatus Ltc6811Controller::readStackVoltage(std::atomic<float> &stack_vol)
-{
-	LtcCtrlStatus status = LtcCtrlStatus::Ok;
-	std::array < StatusA , CHAIN_SIZE > ltc_status_a_reg;
-	std::array < PecStatus, CHAIN_SIZE > pecs;
-
 	wakeUp();
 	rawWrite(CMD_ADCVSC(Mode::Normal, Discharge::Permitted));
 
 	osDelay(tadc);
 
 	wakeUp();
-	rawRead(CMD_RDSTATA, ltc_status_a_reg, pecs);
+	auto reg = rawRead<StatusA>(CMD_RDSTATA);
 
 	float accumulator = 0.f;
 
 	for(size_t i = 0; i < CHAIN_SIZE; i++)
 	{
-		if(pecs.at(i) != PecStatus::Ok)
-			accumulator = -1.f;
+		if(std::holds_alternative<StatusA>(reg[i]))
+		{
+			accumulator += convRawToSU(std::get<StatusA>(reg[i]).sc);
+		}
 		else
-			accumulator += convRawToSU(ltc_status_a_reg.at(i).sc);
+		{
+			return { LtcError::PecError };
+		}
 	}
 
-	stack_vol = accumulator;
-
-	return status;
+	return { accumulator };
 }

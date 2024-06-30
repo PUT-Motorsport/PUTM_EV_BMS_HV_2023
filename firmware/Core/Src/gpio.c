@@ -56,8 +56,8 @@ void MX_GPIO_Init(void)
                           |AMS_FAULT_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, NCARD_CS_Pin|LED1_Pin|SIG_AIR_M_Pin|SIG_AIR_P_Pin
-                          |SIG_AIR_PRE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, NCARD_CS_Pin|LED1_Pin|SIG_AIR_PRE_Pin|SIG_AIR_P_Pin
+                          |SIG_AIR_M_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED2_Pin|LED3_Pin|NLTC2_CS_Pin|NLTC1_CS_Pin
@@ -87,8 +87,8 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PCPin PCPin PCPin PCPin
                            PCPin */
-  GPIO_InitStruct.Pin = NCARD_CS_Pin|LED1_Pin|SIG_AIR_M_Pin|SIG_AIR_P_Pin
-                          |SIG_AIR_PRE_Pin;
+  GPIO_InitStruct.Pin = NCARD_CS_Pin|LED1_Pin|SIG_AIR_PRE_Pin|SIG_AIR_P_Pin
+                          |SIG_AIR_M_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

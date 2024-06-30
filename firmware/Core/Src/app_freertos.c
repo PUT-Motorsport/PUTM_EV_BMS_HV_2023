@@ -63,7 +63,7 @@ const osThreadAttr_t PlausibilityManager_attributes = {
 };
 /* Definitions for LTCManager */
 osThreadId_t LTCManagerHandle;
-uint32_t LTCManagerBuffer[ 1024 ];
+uint32_t LTCManagerBuffer[ 2048 ];
 osStaticThreadDef_t LTCManagerControlBlock;
 const osThreadAttr_t LTCManager_attributes = {
   .name = "LTCManager",
@@ -75,7 +75,7 @@ const osThreadAttr_t LTCManager_attributes = {
 };
 /* Definitions for ExternalMeasurmentsManager */
 osThreadId_t ExternalMeasurmentsManagerHandle;
-uint32_t ExternalMeasurmentsManagerBuffer[ 1024 ];
+uint32_t ExternalMeasurmentsManagerBuffer[ 2048 ];
 osStaticThreadDef_t ExternalMeasurmentsManagerControlBlock;
 const osThreadAttr_t ExternalMeasurmentsManager_attributes = {
   .name = "ExternalMeasurmentsManager",

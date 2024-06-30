@@ -13,7 +13,10 @@
 
 using namespace Mcp356x;
 
-Mcp356xController::Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi, Mcp356xVersion version) : cs(cs), hspi(hspi), version(version)
+Mcp356xController::Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi) : cs(cs), hspi(hspi) { }
+
+
+void Mcp356xController::init()
 {
 	cs.deactivate();
 }
@@ -172,7 +175,7 @@ int32_t Mcp356xController::readData()
 	return result;
 }
 
-double Mcp356xController::readVoltage()
+float Mcp356xController::readVoltage()
 {
-	return double(readData()) / 8'388'608.0 / gain + offset;
+	return (float(readData()) / 8'388'608.f / gain + offset) * Mcp356xConfig::ADC_REF;
 }

@@ -15,7 +15,7 @@
 #include <PerypherialManagers/ChargeBalanceController.hpp>
 #include <PerypherialManagers/ChargerController.hpp>
 
-static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 
 // FIXME only for debug
 #ifdef DEBUG

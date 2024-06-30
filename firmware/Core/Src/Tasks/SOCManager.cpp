@@ -28,7 +28,7 @@ static std::array<CellData,135> soc_array{};
 
 void vSOCManagerTask(void *argument)
 {
-
+	while(true) osDelay(5000);
 	osDelay(5'000);
 
 

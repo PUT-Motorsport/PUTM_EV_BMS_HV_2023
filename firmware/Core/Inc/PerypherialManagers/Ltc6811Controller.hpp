@@ -13,6 +13,8 @@
 #include <atomic>
 #include <cmath>
 #include <algorithm>
+#include <optional>
+#include <variant>
 
 #include <PerypherialManagers/GpioController.hpp>
 #include <Interfaces/LTC6811Cmd.hpp>
@@ -39,6 +41,13 @@ enum struct LtcCtrlStatus
 	RegValMismatchError = 0x03
 };
 
+enum struct LtcError
+{
+	Error				= 0x00,
+	PecError 			= 0x01,
+	RegValMismatchError	= 0x02
+};
+
 enum struct LtcDiagnosisStatus
 {
 	Passed,
@@ -55,32 +64,22 @@ class Ltc6811Controller
 		/*
 		 * direct read
 		 */
-		//template < Ltc6811::ReadRegisterGroup RdReg >
-		//LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data);
-
 		template < Ltc6811::ReadRegisterGroup RdReg >
-		LtcCtrlStatus rawRead(Ltc6811::RCmd cmd, std::array < RdReg, LtcConfig::CHAIN_SIZE > &data, std::array < PecStatus, LtcConfig::CHAIN_SIZE > &pec_status);
-
+		std::array < std::variant < RdReg, LtcError >, LtcConfig::CHAIN_SIZE > rawRead(Ltc6811::RCmd cmd);
 		/*
 		 * direct write overrides current mem
 		 */
 		template < Ltc6811::WriteReadRegisterGroup WrRdReg >
-		LtcCtrlStatus rawWrite(Ltc6811::WCmd cmd, std::array< WrRdReg, LtcConfig::CHAIN_SIZE > const &data);
-		LtcCtrlStatus rawWrite(Ltc6811::WCmd cmd);
+		std::optional < LtcError > rawWrite(Ltc6811::WCmd cmd, std::array< WrRdReg, LtcConfig::CHAIN_SIZE > const &data);
+		std::optional < LtcError > rawWrite(Ltc6811::WCmd cmd);
 
-		LtcCtrlStatus configure();
-		LtcCtrlStatus readVoltages(std::array< std::array< float, 12 >, LtcConfig::CHAIN_SIZE > &vol);
-		LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, LtcConfig::CHAIN_SIZE > &diag);
-		LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, LtcConfig::CHAIN_SIZE > &aux);
-		LtcCtrlStatus setDischarge(std::array< std::array< bool, 12 >, LtcConfig::CHAIN_SIZE > &dis);
+		//variant versions
+		std::optional < LtcError > configure();
+		std::array < std::variant < LtcError, float > , LtcConfig::CHAIN_SIZE * 12 > readVoltages();
+		std::optional < LtcError > setDischarge(const std::array< bool, LtcConfig::CHAIN_SIZE * 12 > &dis);
+		std::array < std::variant < LtcError, float > , LtcConfig::CHAIN_SIZE * 5 > readGpio();
+		std::variant < LtcError, float > readStackVoltage();
 
-		//atomic versions
-		LtcCtrlStatus readVoltages(std::array< std::atomic<float>, LtcConfig::CELL_COUNT > &vol);
-		//LtcCtrlStatus diagnose(std::array < LtcDiagnosisStatus, Ltc::CHAIN_SIZE > &diag);
-		//LtcCtrlStatus readGpioAndRef2(std::array< std::array< float, 6 >, Ltc::CHAIN_SIZE > &aux);
-		LtcCtrlStatus setDischarge(const std::array< std::atomic<bool>, LtcConfig::CELL_COUNT > &dis);
-		LtcCtrlStatus readGpioTemp(std::array< std::atomic < float >, LtcConfig::TEMP_COUNT > &temp);
-		LtcCtrlStatus readStackVoltage(std::atomic<float> &stack_vol);
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
 		 * use every 2 sec in the case no valid command is scheduled

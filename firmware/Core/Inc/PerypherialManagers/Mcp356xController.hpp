@@ -33,13 +33,13 @@ enum struct Mcp356xAddress : uint8_t
 class Mcp356xController
 {
 	public:
-		explicit Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi, Mcp356xVersion version);
+		explicit Mcp356xController(GpioOut cs, SPI_HandleTypeDef &hspi);
 
 		constexpr static Mcp356xAddress address = Mcp356xAddress::_1;
 
 		Mcp356x::StatusByte status_byte;
 
-		const GpioOut cs;
+		GpioOut cs;
 
 		const SPI_HandleTypeDef &hspi;
 
@@ -57,16 +57,17 @@ class Mcp356xController
 		Mcp356x::StatusByte poolSatusByte();
 
 		void configure(Mcp356x::ConfigGroup config);
+		void init();
 
 		bool statusByteOk();
 		void setChannels(Mcp356x::MuxIn ch_p, Mcp356x::MuxIn ch_m);
 		void restartAdc();
 		bool dataReady();
 		int32_t readData();
-		double readVoltage();
+		float readVoltage();
 
-		double gain { 1.f };
-		double offset { 0.f };
+		float gain { 1.f };
+		float offset { 0.f };
 	protected:
 	private:
 		Mcp356x::DataFormat adc_variant;

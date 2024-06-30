@@ -13,7 +13,7 @@
 #include <Utils/CanUtils.hpp>
 #include <app_freertos.h>
 
-static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
+static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 
 //auto voltages_message(size_t &cell_index)
 //{
@@ -52,20 +52,21 @@ static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 
 void vCarCANManagerTask(void *argument)
 {
-	size_t cell_send_index{0};
 	startCan(hfdcan);
-
-	uint32_t send_tick{0};
 
 	while (true)
 	{
 		osDelay(5);
-		while (getCanFifoMessageCount(hfdcan3))
+		while (getCanFifoMessageCount(hfdcan))
 		{
 			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
 		}
 
-		if (PUTM_CAN::can.get_aq_ts_button_new_data())
+//		if (PUTM_CAN::can.get_aq_ts_button_new_data())
+//		{
+//			FullStackDataInstance::set().state.ts_activation_button = true;
+//		}
+		if (PUTM_CAN::can.get_dashboard_new_data() && PUTM_CAN::can.get_dashboard().ts_activation_button)
 		{
 			FullStackDataInstance::set().state.ts_activation_button = true;
 		}
@@ -79,13 +80,14 @@ void vCarCANManagerTask(void *argument)
 			.temp_avg = static_cast<uint8_t>(fsd.ltc_data.min_temp),
 			.soc = static_cast<uint16_t>(fsd.soc.avg * 1'000.0f)};
 
-//		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
-//
-//		auto status_2 = voltages_message(cell_send_index).send(hfdcan);
-//
-//		if (status not_eq HAL_OK or status_2 not_eq HAL_OK)
-//		{
-//			// Error_Handler();
-//		}
+		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
+
+		auto status_2 = HAL_OK;
+		//auto status_2 = voltages_message(cell_send_index).send(hfdcan);
+
+		if (status not_eq HAL_OK or status_2 not_eq HAL_OK)
+		{
+			Error_Handler();
+		}
 	}
 }
