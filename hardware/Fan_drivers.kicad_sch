@@ -1741,29 +1741,7 @@
 		)
 		(uuid "ff221938-3e9f-4fb5-b6bd-0bad55b4f0b8")
 	)
-	(global_label "FAN5-"
-		(shape input)
-		(at 90.17 119.38 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "374a7fc5-29c9-4df6-a4c4-10b331ea1095")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.6288 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FAN7-"
+	(hierarchical_label "FAN7-"
 		(shape input)
 		(at 184.15 118.11 180)
 		(fields_autoplaced yes)
@@ -1773,19 +1751,9 @@
 			)
 			(justify right)
 		)
-		(uuid "40937391-7b2e-4913-b625-05a1034886d2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 175.6088 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "1e71fbf5-847b-48ac-aa90-5a08b62a25ec")
 	)
-	(global_label "FAN3-"
+	(hierarchical_label "FAN3-"
 		(shape input)
 		(at 182.88 74.93 180)
 		(fields_autoplaced yes)
@@ -1795,105 +1763,7 @@
 			)
 			(justify right)
 		)
-		(uuid "904319ce-703c-4b41-9ba2-9e914c8cb732")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 174.3388 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FAN4-"
-		(shape input)
-		(at 229.87 74.93 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9d1530bb-1348-4e4c-964d-210e92e273d4")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 221.3288 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FAN1-"
-		(shape input)
-		(at 90.17 74.93 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e1183eb8-6968-447c-afed-caee2eb99189")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.6288 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FAN6-"
-		(shape input)
-		(at 135.89 118.11 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f42576fd-2b4a-492c-8195-c3edfacd9303")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 127.3488 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FAN2-"
-		(shape input)
-		(at 135.89 74.93 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fd17c4c3-a3c2-4cf8-a1ca-f3510f948786")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 127.3488 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "2695f1db-c653-4606-8f91-0456f39d3429")
 	)
 	(hierarchical_label "FAN5_CTRL"
 		(shape input)
@@ -1906,6 +1776,18 @@
 			(justify right)
 		)
 		(uuid "4300dfcc-8425-4ea0-90b1-46aa3888afcb")
+	)
+	(hierarchical_label "FAN5-"
+		(shape input)
+		(at 90.17 119.38 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "53f36a66-b353-4076-8fba-16ea61bc9cdd")
 	)
 	(hierarchical_label "FAN1_CTRL"
 		(shape input)
@@ -1966,6 +1848,54 @@
 			(justify right)
 		)
 		(uuid "958c9ed8-92be-4ba3-ab92-1f073251da99")
+	)
+	(hierarchical_label "FAN1-"
+		(shape input)
+		(at 90.17 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c2ece080-6b71-41ad-b82a-deac7fcee1d4")
+	)
+	(hierarchical_label "FAN6-"
+		(shape input)
+		(at 135.89 118.11 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cf5ecb51-c440-4fe3-b086-68eac99f06e9")
+	)
+	(hierarchical_label "FAN2-"
+		(shape input)
+		(at 135.89 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "db5fba4e-fd95-4c79-bad4-f83d2d1d4c50")
+	)
+	(hierarchical_label "FAN4-"
+		(shape input)
+		(at 229.87 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e1aec9cd-8703-4b3a-8030-acbbbd927abf")
 	)
 	(hierarchical_label "FAN2_CTRL"
 		(shape input)

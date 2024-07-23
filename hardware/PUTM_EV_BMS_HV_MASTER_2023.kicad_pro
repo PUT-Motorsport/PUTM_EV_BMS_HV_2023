@@ -80,6 +80,7 @@
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "ignore",
@@ -1229,6 +1230,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
+    "bom_export_filename": "",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -1412,23 +1414,19 @@
     ],
     [
       "6eb4a2b1-8e5b-451b-b593-8aaaa3a4213e",
-      "Safeties and related"
-    ],
-    [
-      "67d08ddd-b8e9-4f40-a055-93108463bf84",
-      "AIR_M"
-    ],
-    [
-      "649ea10f-ddf7-49be-afe9-7c2c999df872",
-      "AIR_PRE"
-    ],
-    [
-      "9e653d28-f1c3-45a5-9d43-63c5d53de50e",
-      "OptoIO2"
+      "Safety"
     ],
     [
       "66c3869d-de11-4d8d-b4de-9d98c32ec205",
       "Power"
+    ],
+    [
+      "a24640b0-8d0d-42e5-aa5b-1913fcfabe79",
+      "Current Sense"
+    ],
+    [
+      "f8c45b7a-8e11-412d-8721-436f394ee8f4",
+      "HV Measurements"
     ],
     [
       "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
@@ -1443,32 +1441,20 @@
       "LTC 2 Iso Com"
     ],
     [
+      "7084a49d-455d-4cdd-914a-a6fa8e6c3cf4",
+      "MCU"
+    ],
+    [
       "ba7f6eba-eb84-4567-9005-77208e6eb457",
       "Fan drivers"
     ],
     [
-      "9303788e-9b51-4c30-8dd4-36d461f60057",
-      "OptoIO3"
+      "60add11e-d8a6-42d7-88f1-a1dd2a405268",
+      "Opto Isolation"
     ],
     [
-      "fd8c1b79-afed-4653-bb63-44888bf7ecb3",
-      "AIR_P"
-    ],
-    [
-      "e61cc821-5479-4c04-b5ab-4a32f17b4f03",
-      "Measurements"
-    ],
-    [
-      "d2e30d51-b8f8-4bbd-bb5a-76e0eb119260",
-      "Isolated acu measurement"
-    ],
-    [
-      "6b03d8c8-5f6c-4244-9202-23821031eb5e",
-      "Isolated car measurement"
-    ],
-    [
-      "0cfbae80-dcae-461f-a490-df9e44932062",
-      "OptoIO1"
+      "084f6cc5-ae27-4f1e-aa54-14c8f7f394d3",
+      "AIR Control"
     ]
   ],
   "text_variables": {}
