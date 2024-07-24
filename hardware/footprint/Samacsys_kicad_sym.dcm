@@ -11,4 +11,10 @@ D Analog to Digital Converters - ADC 24-bit delta-sigma ADC, Quad channel, 3V,UQ
 K
 F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en609858
 $ENDCMP
+#
+$CMP M80-5100442
+D 4 Male DIL Vertical Throughboard Conn. Jackscrews, 2.00mm Pitch High-Reliability Connector - Datamate J-Tek
+K
+F https://cdn.harwin.com/pdfs/M80-510.pdf
+$ENDCMP
 #End Doc Library

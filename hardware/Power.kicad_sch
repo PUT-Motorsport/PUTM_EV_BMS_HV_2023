@@ -3953,19 +3953,6 @@
 		)
 		(uuid d4b3a0f1-6c02-4d45-b135-5c0f0e4df062)
 	)
-	(text "USB 5V"
-		(exclude_from_sim no)
-		(at 66.04 87.63 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "1b3a2997-8cfd-4c5e-a158-c43177f78f1f")
-	)
 	(label "SW_5V"
 		(at 102.87 158.75 0)
 		(fields_autoplaced yes)
