@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP XAL5050-103MEC
-D Fixed Inductors 10uH Shld 20% 4.9A 45mOhms AECQ2{0000}
-K
-F https://componentsearchengine.com/Datasheets/2/XAL5050-103MEC.pdf
-$ENDCMP
-#
-#End Doc Library

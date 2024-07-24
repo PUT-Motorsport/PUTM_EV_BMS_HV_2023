@@ -1303,7 +1303,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "180ff804-0cd9-4954-bf34-9ef1ac05fa12")
-		(property "Reference" "#PWR099"
+		(property "Reference" "#PWR096"
 			(at 134.62 96.52 0)
 			(effects
 				(font
@@ -1348,16 +1348,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4105775c-c033-497e-9379-a4d24c377a4d")
+			(uuid "f6745da0-e9cb-4d5c-90b7-5b7028c230c4")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
 					(reference "#PWR096")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "#PWR099")
 					(unit 1)
 				)
 			)
@@ -1372,7 +1368,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "35c5414b-f7a3-4753-86fb-0ce275c30191")
-		(property "Reference" "#PWR0101"
+		(property "Reference" "#PWR098"
 			(at 160.02 128.905 0)
 			(effects
 				(font
@@ -1417,16 +1413,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ad631152-46af-4514-9bbd-5d1ad316e650")
+			(uuid "41d77c67-884c-4396-adbc-f91fc7832877")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
 					(reference "#PWR098")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -1441,7 +1433,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "75aa199e-971f-4c5a-8cad-d0acbb2766f4")
-		(property "Reference" "U10"
+		(property "Reference" "U?"
 			(at 146.05 89.535 0)
 			(effects
 				(font
@@ -1512,61 +1504,57 @@
 			)
 		)
 		(pin "1"
-			(uuid "f5936d53-22e5-4cbe-b197-0d30b2e92138")
+			(uuid "85c83ae8-1e1d-4210-9713-13319f188dce")
 		)
 		(pin "10"
-			(uuid "9eacb45b-9af9-4af1-82c6-13749a1fc91a")
+			(uuid "3face5e7-56ef-43ee-8975-e13b5131197f")
 		)
 		(pin "11"
-			(uuid "cf0760a3-27d7-4bec-a408-570b848dfdee")
+			(uuid "f78e3baf-de5b-4ed2-99d7-c47a5ddace9f")
 		)
 		(pin "12"
-			(uuid "d5c74108-c22b-4190-ac3a-266e4d7969a3")
+			(uuid "d36f729b-a34f-4f26-807e-4cbebfa90bb0")
 		)
 		(pin "13"
-			(uuid "d1688663-261d-4111-b0d7-03938bcbccd0")
+			(uuid "ce060f41-0f30-4a15-8ffe-a842f575e5ff")
 		)
 		(pin "14"
-			(uuid "94d6f31c-586d-4614-8971-a5c43f3ea80a")
+			(uuid "8c40baee-e378-4397-b9aa-5cdda23a65ea")
 		)
 		(pin "15"
-			(uuid "9f983bf5-2ebb-43e0-8bee-02e997c1aa98")
+			(uuid "48667290-b88e-4652-b229-bee585a7d530")
 		)
 		(pin "16"
-			(uuid "7d4ffca3-2382-43c0-8d4d-710181ef269f")
+			(uuid "945014e7-b6a7-41ae-897e-e87651b67dca")
 		)
 		(pin "2"
-			(uuid "f06e2469-a4c0-4602-9001-16f7e9ae7af2")
+			(uuid "239eeecf-4804-40ab-a9f8-0fd2dd3bb7b8")
 		)
 		(pin "3"
-			(uuid "f4620adc-3830-44f7-96bf-515f89cce1e0")
+			(uuid "6191a870-0c1f-420d-bfcd-d102f2cf80da")
 		)
 		(pin "4"
-			(uuid "a764d8a6-79ee-4ecc-8ae0-c07af2a908a4")
+			(uuid "40288186-abb4-47d9-88ce-a8d749b0412a")
 		)
 		(pin "5"
-			(uuid "ed1f508f-66aa-43d3-9c1e-ceb3308b4af3")
+			(uuid "f2c68b97-d502-47fa-b9d7-b153a78d9731")
 		)
 		(pin "6"
-			(uuid "a5153000-f0e8-4068-a295-d07ab8639e81")
+			(uuid "f6f409c8-f285-41b4-b288-85f0808c31cb")
 		)
 		(pin "7"
-			(uuid "2292857e-136e-4b51-a0a1-d8c714d12de6")
+			(uuid "ebd00849-b462-4f83-99bd-f5fad6433c79")
 		)
 		(pin "8"
-			(uuid "d9667ad7-0b19-4615-9bb9-2145a8c02a75")
+			(uuid "31c5fa67-4905-443a-9ca7-a68ad4e915fb")
 		)
 		(pin "9"
-			(uuid "2d216c0f-048b-4f66-b65f-8623af4e7f2c")
+			(uuid "3cd55934-b47a-4212-ab17-0b6d9f520ed2")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
-					(reference "U9")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "U10")
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
+					(reference "U?")
 					(unit 1)
 				)
 			)
@@ -1581,7 +1569,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8ae15e07-35eb-4ba5-8585-69fd1f6369b1")
-		(property "Reference" "#PWR0100"
+		(property "Reference" "#PWR097"
 			(at 157.48 96.52 0)
 			(effects
 				(font
@@ -1626,16 +1614,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b30af69e-7b9e-47a2-a126-7e4f6705b8cd")
+			(uuid "c202ce0c-8be8-4411-882f-c2977f01c553")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
 					(reference "#PWR097")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "#PWR0100")
 					(unit 1)
 				)
 			)
@@ -1650,7 +1634,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b9ede21d-9a02-46ef-9ca2-2ca896c91e17")
-		(property "Reference" "R47"
+		(property "Reference" "R?"
 			(at 170.815 93.98 90)
 			(effects
 				(font
@@ -1714,19 +1698,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "913648a6-06fa-49d8-999a-d5ee38a5fda0")
+			(uuid "9be9926b-6a03-4d8c-89b5-da279a7ff588")
 		)
 		(pin "2"
-			(uuid "8c9a20d0-09ab-4b9e-943a-c82faf0c42b2")
+			(uuid "f37b78ac-26ab-45d3-943a-de56eb0243ad")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
-					(reference "R45")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "R47")
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
+					(reference "R?")
 					(unit 1)
 				)
 			)
@@ -1741,7 +1721,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bd3f51e3-ada9-40b0-a2fe-143c249ec25f")
-		(property "Reference" "R46"
+		(property "Reference" "R?"
 			(at 161.29 91.44 90)
 			(effects
 				(font
@@ -1803,19 +1783,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "b7fe0efd-25e1-4108-9ec5-87efc02714c1")
+			(uuid "048c94c3-fa9f-4860-bbe5-dbdd1d65e362")
 		)
 		(pin "2"
-			(uuid "3222eba7-bcd1-489f-924a-8a9730a0c2a7")
+			(uuid "467f190f-bfd4-4761-8266-f3a40baa00d7")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
-					(reference "R44")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "R46")
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
+					(reference "R?")
 					(unit 1)
 				)
 			)
@@ -1830,7 +1806,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd119b16-90da-4795-a2f6-7c5253fc35bd")
-		(property "Reference" "C40"
+		(property "Reference" "C?"
 			(at 150.495 116.205 0)
 			(effects
 				(font
@@ -1894,19 +1870,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "9377d806-3382-4712-a6dc-941a4caf8460")
+			(uuid "794590cb-2836-4901-bdba-138c34572d51")
 		)
 		(pin "2"
-			(uuid "ff35dfa5-83fd-453a-b073-692cc092185c")
+			(uuid "171b4b4e-8cfc-4bf0-b829-d185e8303964")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/a48618af-dcf7-4729-8090-6fc5457faac9"
-					(reference "C39")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/81dc0685-0bdd-4dc2-8f76-92836044cf1e/d53c4c5b-a4f8-4654-804b-b1333b9d4506"
-					(reference "C40")
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/197c5009-c3d7-4dc6-bc90-823daf5bf0ad"
+					(reference "C?")
 					(unit 1)
 				)
 			)

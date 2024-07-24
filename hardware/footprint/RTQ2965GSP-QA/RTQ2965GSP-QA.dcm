@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP RTQ2965GSP-QA
-D IC REG BUCK ADJ 5A 8SOP
-K
-F https://www.richtek.com/assets/product_file/RTQ2965-QA/DSQ2965-QA-01.pdf
-$ENDCMP
-#
-#End Doc Library

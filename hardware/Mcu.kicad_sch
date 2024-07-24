@@ -6463,58 +6463,6 @@
 		)
 		(uuid "ffcae2e9-8f50-475a-b931-ac1042058752")
 	)
-	(text "IO power filtraton"
-		(exclude_from_sim no)
-		(at 50.8 146.05 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "6b907bb3-9399-4612-abfd-841d06fe3de8")
-	)
-	(text "Clocks"
-		(exclude_from_sim no)
-		(at 62.23 35.56 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "9859f279-d74d-4f49-a3c9-5e89ae1f6460")
-	)
-	(text "MCU"
-		(exclude_from_sim no)
-		(at 212.09 43.18 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "9922a802-06ac-4bfd-bd56-75a8b139fa02")
-	)
-	(text "Miscellaneous"
-		(exclude_from_sim no)
-		(at 53.34 93.98 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "ad6f82c7-c860-4556-8d3e-f8df3dbdf2fa")
-	)
 	(label "RTC_CLK_OUT"
 		(at 90.17 55.88 0)
 		(fields_autoplaced yes)
@@ -8535,7 +8483,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a1b7c3be-a9ae-4fa1-84ec-3d5b58b1d497")
+			(uuid "a1b7c3be-a9ae-4fa1-84ec-3d5b58b1d498")
 		)
 		(pin "10"
 			(uuid "7458f327-d521-42e2-9da8-c3a11dd19069")
@@ -8553,10 +8501,10 @@
 			(uuid "1064601a-f1b9-4054-b9fd-9c6546863d49")
 		)
 		(pin "15"
-			(uuid "50188db3-7d35-4e90-80ef-8f2f1317119c")
+			(uuid "50188db3-7d35-4e90-80ef-8f2f1317119d")
 		)
 		(pin "16"
-			(uuid "8f2414ce-70b9-4c0b-afe8-da120cfda6d8")
+			(uuid "8f2414ce-70b9-4c0b-afe8-da120cfda6d9")
 		)
 		(pin "17"
 			(uuid "3efb4ce1-7fa8-46d7-8386-a6fe1bed0fe1")
@@ -8592,13 +8540,13 @@
 			(uuid "86e966ad-4e86-46e9-a6f4-b8a941162d36")
 		)
 		(pin "27"
-			(uuid "6c7afaf2-03d0-4805-ac61-8fbb21d3a6c0")
+			(uuid "6c7afaf2-03d0-4805-ac61-8fbb21d3a6c1")
 		)
 		(pin "28"
-			(uuid "35f93208-ac52-49f6-ae98-e517f6234261")
+			(uuid "35f93208-ac52-49f6-ae98-e517f6234262")
 		)
 		(pin "29"
-			(uuid "0fda4b11-81e6-4ae5-9adf-5c674c618bb4")
+			(uuid "0fda4b11-81e6-4ae5-9adf-5c674c618bb5")
 		)
 		(pin "3"
 			(uuid "e57f4e91-2cfc-49f7-8a6d-06d11e3d13af")
@@ -8607,10 +8555,10 @@
 			(uuid "70956b95-5dbe-4198-b3ee-451edcf00319")
 		)
 		(pin "31"
-			(uuid "731a45c9-3f41-46e5-8bb4-da57be403560")
+			(uuid "731a45c9-3f41-46e5-8bb4-da57be403561")
 		)
 		(pin "32"
-			(uuid "8e8c0813-a5de-469a-8066-c61235a7a865")
+			(uuid "8e8c0813-a5de-469a-8066-c61235a7a866")
 		)
 		(pin "33"
 			(uuid "d35eaac8-683e-49e7-b03b-b4e917c63d22")
@@ -8658,10 +8606,10 @@
 			(uuid "74d4f88a-f7a8-4681-802a-07590b2a42d0")
 		)
 		(pin "47"
-			(uuid "c3124f9e-32aa-4d1b-ab7f-2c62b6c247cd")
+			(uuid "c3124f9e-32aa-4d1b-ab7f-2c62b6c247ce")
 		)
 		(pin "48"
-			(uuid "3c451928-58c1-4959-b069-c55f8b94246a")
+			(uuid "3c451928-58c1-4959-b069-c55f8b94246b")
 		)
 		(pin "49"
 			(uuid "c2d37480-1d7b-42b8-9477-a71d24ac0252")
@@ -8712,10 +8660,10 @@
 			(uuid "116ab7da-7e32-4876-b9e2-b5527d258255")
 		)
 		(pin "63"
-			(uuid "52f89dd3-cab5-4567-9d3e-2e0bf355a71a")
+			(uuid "52f89dd3-cab5-4567-9d3e-2e0bf355a71b")
 		)
 		(pin "64"
-			(uuid "d0f8f574-be60-427b-9f65-c948ceef7619")
+			(uuid "d0f8f574-be60-427b-9f65-c948ceef761a")
 		)
 		(pin "7"
 			(uuid "348a35ec-2fac-42c6-8873-941682e4a346")
@@ -10121,7 +10069,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "22uF"
 			(at 90.17 180.1114 0)
 			(effects
 				(font
@@ -10130,7 +10078,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 92.71 179.07 0)
 			(effects
 				(font

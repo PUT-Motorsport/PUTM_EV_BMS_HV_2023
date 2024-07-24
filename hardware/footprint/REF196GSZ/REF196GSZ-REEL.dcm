@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP REF196GSZ-REEL
-D Voltage References 3.3V +/-0.3% 25ppm/C SOIC-8_150mil RoHS
-K
-F https://www.analog.com/media/en/technical-documentation/data-sheets/ref19xseries.pdf
-$ENDCMP
-#
-#End Doc Library
