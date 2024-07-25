@@ -291,13 +291,13 @@
 	)
 	(model "${KIPRJMOD}/footprint/Samacsys.3dshapes/PB134024.stp"
 		(offset
-			(xyz 3.8 -5 0)
+			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz 180 0 0)
 		)
 	)
 )

@@ -320,7 +320,7 @@
 	)
 	(model "${KIPRJMOD}/footprint/Samacsys.3dshapes/M300-MV10345M1.stp"
 		(offset
-			(xyz -3 0 0)
+			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
