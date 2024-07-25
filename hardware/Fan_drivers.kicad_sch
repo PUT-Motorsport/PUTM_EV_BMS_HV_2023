@@ -3343,7 +3343,7 @@
 			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e5")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d25")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d27")
 		)
 		(pin "5"
 			(uuid "3316430e-1759-41db-b4f9-4fab91a5751a")
@@ -3358,7 +3358,7 @@
 			(uuid "97be00b7-6e86-4c05-8247-d8b04ba26548")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c209")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20b")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -3582,25 +3582,25 @@
 			(uuid "04c16e09-e4cc-4c90-b5ed-c336bd9da528")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e4")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e6")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d25")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d28")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57517")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a57519")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6038")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf603a")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a16e")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a170")
 		)
 		(pin "8"
 			(uuid "22dc7580-4a3a-4ae1-a48f-f1e2b7b650a2")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c209")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20c")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -4076,28 +4076,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b413")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b414")
 		)
 		(pin "6"
 			(uuid "3b0b664b-c886-4e06-ae26-4fb3a1a23bfb")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d26")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d29")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57518")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a5751b")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6039")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf603c")
 		)
 		(pin "3"
 			(uuid "d8e6f061-f324-4fc5-80bc-b73adc3eefc4")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e1")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e2")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20a")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20d")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -4163,13 +4163,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b418")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b419")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e9")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ea")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2c")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2d")
 		)
 		(pin "5"
 			(uuid "47a9131f-83b2-474d-b597-8a1fe87b5c17")
@@ -4178,13 +4178,13 @@
 			(uuid "9113d071-e0f2-4b25-8bea-e8888cffd8f3")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a173")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a174")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e6")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e7")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c210")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c211")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -4413,28 +4413,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b413")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b415")
 		)
 		(pin "6"
 			(uuid "f75875e3-3a00-4aa7-8e50-f98f02c63896")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d26")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2a")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57518")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a5751c")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6039")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf603d")
 		)
 		(pin "3"
 			(uuid "cb6cd9ef-bb1a-44ea-8d05-375d0e1cca5e")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e1")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e3")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20a")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20e")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -4500,25 +4500,25 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40c")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40d")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e3")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e7")
 		)
 		(pin "2"
 			(uuid "92fdd942-044e-447d-bafd-e286727d9e0f")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57516")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a5751d")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6037")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf603e")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a16d")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a171")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2da")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2db")
 		)
 		(pin "7"
 			(uuid "71d4010a-9809-4bb2-82cb-3b0a8ed6ee5b")
@@ -4588,25 +4588,25 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40d")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40e")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e4")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e8")
 		)
 		(pin "2"
 			(uuid "8c0af89a-32f1-4151-a14d-fcf6b7d3f216")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57517")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a5751e")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6038")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf603f")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a16e")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a172")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2db")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2dc")
 		)
 		(pin "7"
 			(uuid "767acb60-84d4-4b1a-a2f9-a6acd2679bcd")
@@ -4843,13 +4843,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b418")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b41a")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e9")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6eb")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2c")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2e")
 		)
 		(pin "5"
 			(uuid "b435e375-a790-40d9-9c2a-295fbbc39dd1")
@@ -4858,13 +4858,13 @@
 			(uuid "9b36b931-51ff-4120-884b-0194f5b52992")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a173")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a175")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e6")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e8")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c210")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c212")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -4930,13 +4930,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b419")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b41b")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ea")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ec")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2d")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2f")
 		)
 		(pin "5"
 			(uuid "8613636a-beb0-4711-93d6-dcbc5ccce243")
@@ -4945,13 +4945,13 @@
 			(uuid "34806371-c7e5-43ce-a785-8482d06e021e")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a174")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a176")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e7")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e9")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c211")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c213")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -5217,25 +5217,25 @@
 			(uuid "02bf6a9b-2f07-4de3-9a6e-87929f49e329")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e6")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ed")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d28")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2b")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a5751b")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a5751f")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf603c")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf6040")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a170")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a177")
 		)
 		(pin "8"
 			(uuid "53065854-0630-4d5e-aa34-48fef3e47f0f")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20c")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20f")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
@@ -5302,25 +5302,25 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40c")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40f")
 		)
 		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e3")
+			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ee")
 		)
 		(pin "2"
 			(uuid "6764c8ed-f202-47f5-9721-f803e572ecbf")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57516")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a57520")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6037")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf6041")
 		)
 		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a16d")
+			(uuid "f09b231f-5969-4839-a406-7ccb08d6a178")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2da")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2dd")
 		)
 		(pin "7"
 			(uuid "f74a2041-a30e-4e4d-9fb6-5acdf159f21b")
@@ -6207,28 +6207,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b414")
+			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b416")
 		)
 		(pin "6"
 			(uuid "d53987df-c936-4b11-b59b-cc28ab650660")
 		)
 		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d27")
+			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d30")
 		)
 		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57519")
+			(uuid "3316430e-1759-41db-b4f9-4fab91a57521")
 		)
 		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf603a")
+			(uuid "79ce528b-8b79-4340-8cda-67a987bf6042")
 		)
 		(pin "3"
 			(uuid "a3879870-fb44-4e51-8041-0cf2f8b3c3c2")
 		)
 		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e2")
+			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e4")
 		)
 		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20b")
+			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c214")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"

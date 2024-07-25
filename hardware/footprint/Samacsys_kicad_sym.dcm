@@ -17,4 +17,16 @@ D 4 Male DIL Vertical Throughboard Conn. Jackscrews, 2.00mm Pitch High-Reliabili
 K
 F https://cdn.harwin.com/pdfs/M80-510.pdf
 $ENDCMP
+#
+$CMP PB114024
+D Mini SPDT 10A pcb power relay, 24Vdc SPDT PCB Mount Non-Latching Relay, 24V dc
+K
+F http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=PB&DocType=DS&DocLang=English
+$ENDCMP
+#
+$CMP PB134024
+D Body Features: Product Weight .19 OZ | Product Weight 5.4 G | Insulation Special Features Tracking Index of Relay Base PTI250 | Contact Features: Contact Arrangement 1 Form A (NO) | Contact Current Class 16 AMP | Contact Current Rating (Max) 10 AMP | Contact Material AgNi90/10 | Contact Number of Poles 1 | Dimensions: Insulation Clearance Class 2.5  4 MM | Insulation Clearance Between Contact & Coil 4 MM | Product Length 15 MM | Width Class (Mechanical) 12  16 MM | Insulation Clearance Between Contact
+K
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=PB&DocType=Data%20Sheet&DocLang=English&PartCntxt=3-1415030-1&DocFormat=pdf
+$ENDCMP
 #End Doc Library
