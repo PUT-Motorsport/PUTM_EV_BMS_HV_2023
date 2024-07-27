@@ -1626,208 +1626,6 @@
 				)
 			)
 		)
-		(symbol "CDMM:CDMM2M50D4000DET"
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "RD"
-				(at 0 5.715 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at 1.905 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "CDMM:CDMM"
-				(at 1.905 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 1.905 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "CDMM2M50D4000DET_0_1"
-				(rectangle
-					(start -2.54 3.175)
-					(end 0.635 1.905)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 -2.54) (xy 3.81 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 2.54) (xy 1.905 2.54) (xy 1.905 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 1.27)
-					(end 2.54 -1.905)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "CDMM2M50D4000DET_1_1"
-				(rectangle
-					(start -3.81 4.445)
-					(end 3.81 -3.81)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 2.54) (xy -3.81 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 -1.905) (xy 1.905 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin power_in line
-					(at -6.35 2.54 0)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 6.35 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 6.35 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:C_Small"
 			(pin_numbers hide)
 			(pin_names
@@ -9479,6 +9277,258 @@
 				)
 			)
 		)
+		(symbol "Samacsys_kicad_sym:CDMM20M0F2500DET"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CDMM20M0F2500DET"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Samacsys:CDMM20M0F2500DET"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/68041/cdmm.pdf"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor Networks & Arrays 20Mohms 1% 250:1 ratio 0.5%"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" "4.494"
+				(at 21.59 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "71-CDMM20M0F2500DET"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Vishay"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "CDMM20M0F2500DET"
+				(at 17.78 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "CDMM20M0F2500DET_0_1"
+				(rectangle
+					(start -2.54 3.175)
+					(end 0.635 1.905)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -2.54) (xy 3.81 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 2.54) (xy 3.81 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 2.54) (xy 1.905 2.54) (xy 1.905 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 1.27)
+					(end 2.54 -1.905)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CDMM20M0F2500DET_1_1"
+				(rectangle
+					(start -3.81 4.445)
+					(end 3.81 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.54) (xy -3.81 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -1.905) (xy 1.905 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at -6.35 2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 6.35 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 6.35 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Samacsys_kicad_sym:ISO6760"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -14353,6 +14403,10 @@
 		(at -95.25 257.81)
 		(uuid "d9dfd047-5204-4448-81cd-0265c21a6f2d")
 	)
+	(no_connect
+		(at -241.3 243.84)
+		(uuid "ecc46cf7-145d-4397-8b62-6a92101f4701")
+	)
 	(wire
 		(pts
 			(xy 83.82 180.34) (xy 81.28 180.34)
@@ -18100,19 +18154,6 @@
 		(uuid 0dfe6b84-3b9e-402d-ada7-1973e60fc7c3)
 	)
 	(rectangle
-		(start 346.71 -12.7)
-		(end 435.61 33.02)
-		(stroke
-			(width 0)
-			(type dash)
-			(color 132 132 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 1c0ec85a-f14d-4a0f-a6ce-1a42fdb64e68)
-	)
-	(rectangle
 		(start -86.36 -7.62)
 		(end -13.97 34.29)
 		(stroke
@@ -18203,19 +18244,6 @@
 		)
 		(uuid c43a55db-b416-49e3-94bb-a14a6958022b)
 	)
-	(rectangle
-		(start 274.32 -12.7)
-		(end 344.17 33.02)
-		(stroke
-			(width 0)
-			(type dash)
-			(color 132 132 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid cda1acfd-76b4-4dbe-bf2c-bbe32e8de77f)
-	)
 	(text "LV"
 		(exclude_from_sim no)
 		(at -113.03 350.52 0)
@@ -18256,19 +18284,6 @@
 			(justify right bottom)
 		)
 		(uuid "19aa9cb6-e371-4e38-a481-20fdf3129574")
-	)
-	(text "CURRENT SENS"
-		(exclude_from_sim no)
-		(at 360.68 -1.27 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "27495400-b8df-42fe-b0e4-c26bd7c67518")
 	)
 	(text "24bit ADC"
 		(exclude_from_sim no)
@@ -18450,19 +18465,6 @@
 			(justify left bottom)
 		)
 		(uuid "f045adbe-dacc-4f8f-b5f4-2bc6fe73676a")
-	)
-	(text "AIR CTRL"
-		(exclude_from_sim no)
-		(at 290.83 -1.27 0)
-		(effects
-			(font
-				(size 5 5)
-				(thickness 1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "f10cd616-c799-4ae3-8d64-f7fb98084bd3")
 	)
 	(text "USB"
 		(exclude_from_sim no)
@@ -21294,112 +21296,6 @@
 		)
 	)
 	(symbol
-		(lib_id "CDMM:CDMM2M50D4000DET")
-		(at -280.67 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1003e077-baf9-420e-b82e-6df7de5eb8a1")
-		(property "Reference" "RD1"
-			(at -280.67 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CDMM20M0F2500"
-			(at -280.67 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "CDMM:CDMM"
-			(at -278.765 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/68041/cdmm.pdf"
-			(at -278.765 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at -280.67 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" "https://www.mouser.pl/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
-			(at -280.67 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CDMM20M0F2500DET"
-			(at -280.67 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-CDMM20M0F2500DET"
-			(at -280.67 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
-			(at -280.67 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "50fe13cb-fe07-4220-b3c3-12829d27c391")
-		)
-		(pin "2"
-			(uuid "8d59e230-770a-4ff9-8f8c-59f394eddaea")
-		)
-		(pin "3"
-			(uuid "c15d21b0-cb23-44e6-b281-c347e4936187")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
-					(reference "RD1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_26")
 		(lib_id "power:GND")
 		(at -271.78 118.11 0)
@@ -23718,21 +23614,21 @@
 		(dnp no)
 		(uuid "4df46ba2-c764-4f10-a937-cc93d6155321")
 		(property "Reference" "C47"
-			(at -267.97 -72.39 0)
+			(at -271.78 -74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "100nF"
-			(at -266.7 -74.93 0)
+			(at -271.78 -72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
@@ -25644,6 +25540,130 @@
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Samacsys_kicad_sym:CDMM20M0F2500DET")
+		(at -280.67 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7a085e1c-d07e-48b2-b593-2438aa37ef20")
+		(property "Reference" "J9"
+			(at -280.67 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CDMM20M0F2500DET"
+			(at -280.67 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Samacsys:CDMM20M0F2500DET"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/68041/cdmm.pdf"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor Networks & Arrays 20Mohms 1% 250:1 ratio 0.5%"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "4.494"
+			(at -259.08 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CDMM20M0F2500DET"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Vishay"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CDMM20M0F2500DET"
+			(at -262.89 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "59f8b373-5212-45fd-9995-0abffd02d5ac")
+		)
+		(pin "1"
+			(uuid "84b6ef1d-638b-4da1-9ef0-749b8a186aad")
+		)
+		(pin "3"
+			(uuid "6fd33b44-8575-469f-9627-5b8449e7680d")
+		)
+		(instances
+			(project ""
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -28791,6 +28811,130 @@
 		)
 	)
 	(symbol
+		(lib_id "Samacsys_kicad_sym:CDMM20M0F2500DET")
+		(at -280.67 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d76a46b4-b71e-41bc-9185-22b72817dd15")
+		(property "Reference" "J11"
+			(at -280.67 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CDMM20M0F2500DET"
+			(at -280.67 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Samacsys:CDMM20M0F2500DET"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/68041/cdmm.pdf"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor Networks & Arrays 20Mohms 1% 250:1 ratio 0.5%"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "4.494"
+			(at -259.08 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "71-CDMM20M0F2500DET"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Vishay"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CDMM20M0F2500DET"
+			(at -262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "665e7366-99de-41a0-8e1d-1e986381482c")
+		)
+		(pin "1"
+			(uuid "5440d428-2d8f-4cbc-b1c0-cdc55eaba17b")
+		)
+		(pin "3"
+			(uuid "8647c306-e590-4152-bd5d-76afb6b5b4b0")
+		)
+		(instances
+			(project "PUTM_EV_BMS_HV_MASTER_2023"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at -142.24 257.81 270)
 		(mirror x)
@@ -29433,112 +29577,6 @@
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
 					(reference "H1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CDMM:CDMM2M50D4000DET")
-		(at -280.67 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ebe0f9f5-8a63-4e09-a8dd-11b7c8e8159d")
-		(property "Reference" "RD2"
-			(at -280.67 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CDMM20M0F2500"
-			(at -280.67 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "CDMM:CDMM"
-			(at -278.765 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/68041/cdmm.pdf"
-			(at -278.765 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at -280.67 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" "https://www.mouser.pl/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
-			(at -280.67 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CDMM20M0F2500DET"
-			(at -280.67 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "71-CDMM20M0F2500DET"
-			(at -280.67 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-Techno/CDMM20M0F2500DET?qs=pUKx8fyJudDtrYAwlAh%252BkQ%3D%3D"
-			(at -280.67 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4775695a-7ba2-4a25-8e96-d8cedd344fbf")
-		)
-		(pin "2"
-			(uuid "fa4a82e1-bf3a-4784-a912-916f96be739d")
-		)
-		(pin "3"
-			(uuid "67eb3fc8-ea7d-4574-8e47-fb40aee67d2f")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
-					(reference "RD2")
 					(unit 1)
 				)
 			)
@@ -30356,97 +30394,7 @@
 				(justify left top)
 			)
 		)
-		(pin "OPT_OUT5" input
-			(at 250.19 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "17241375-1786-45ec-8543-392e17d4cc46")
-		)
-		(pin "OPT_OUT6" input
-			(at 250.19 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "4d62aa50-ba91-4a5a-a18e-01d0948df77f")
-		)
-		(pin "OPT_OUT4" input
-			(at 250.19 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "fe313a03-0a80-4f17-9d8f-2dbaa8fd4e32")
-		)
-		(pin "OPT_OUT7" input
-			(at 250.19 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "702beeb8-6be1-4ccd-a1d1-7af861cab467")
-		)
-		(pin "~{OPT_IN4}" input
-			(at 217.17 73.66 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "921264dc-1c60-4827-a4d6-0941b1b69cc5")
-		)
-		(pin "OPT_OUT0" input
-			(at 250.19 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "3e537e05-5ade-466b-a2cb-b9ea235dc68a")
-		)
-		(pin "OPT_OUT3" input
-			(at 250.19 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "59d80fc5-9061-4e6e-97d1-2b32c736db76")
-		)
-		(pin "OPT_OUT1" input
-			(at 250.19 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "f58b7428-d356-40eb-996b-ad9f020320ef")
-		)
-		(pin "OPT_OUT2" input
-			(at 250.19 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "62f5d118-4472-4a4a-ae06-5c31c4b654fb")
-		)
-		(pin "~{OPT_IN0}" input
+		(pin "OPT_IN1" input
 			(at 217.17 63.5 180)
 			(effects
 				(font
@@ -30454,9 +30402,9 @@
 				)
 				(justify left)
 			)
-			(uuid "555a4364-de04-4402-8020-54ca90b9585e")
+			(uuid "55b96062-bcdc-4fa0-9e84-2732c7d49577")
 		)
-		(pin "~{OPT_IN1}" input
+		(pin "OPT_IN2" input
 			(at 217.17 66.04 180)
 			(effects
 				(font
@@ -30464,9 +30412,9 @@
 				)
 				(justify left)
 			)
-			(uuid "b7f4c828-4ad9-4358-8a44-a909873864b9")
+			(uuid "a2f70f73-4690-4df9-99db-c2a010fe4a0e")
 		)
-		(pin "~{OPT_IN2}" input
+		(pin "OPT_IN3" input
 			(at 217.17 68.58 180)
 			(effects
 				(font
@@ -30474,9 +30422,9 @@
 				)
 				(justify left)
 			)
-			(uuid "8fb8966c-add3-4f89-bd35-b8e5aa0cf334")
+			(uuid "aa2be4fc-e8c5-4ca5-9193-c4fb72bb0386")
 		)
-		(pin "~{OPT_IN3}" input
+		(pin "OPT_IN4" input
 			(at 217.17 71.12 180)
 			(effects
 				(font
@@ -30484,29 +30432,39 @@
 				)
 				(justify left)
 			)
-			(uuid "af117ff7-a71d-4627-87ff-f37bb7573634")
+			(uuid "1ffd383a-72c8-4a42-b0eb-70af7955116c")
 		)
-		(pin "~{OPT_IN5}" input
-			(at 217.17 76.2 180)
+		(pin "~{OPT_OUT4}" input
+			(at 250.19 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
-			(uuid "346f3eef-fe70-4f12-89bb-527bac34d1f1")
+			(uuid "60610264-a359-472b-9673-fcff2de1cb10")
 		)
-		(pin "~{OPT_IN6}" input
-			(at 217.17 78.74 180)
+		(pin "~{OPT_OUT3}" input
+			(at 250.19 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
-			(uuid "aa65cb91-cf4e-4893-8b62-da46b45602b9")
+			(uuid "7ae7f09f-b939-445f-a81b-57638d099fd0")
 		)
-		(pin "~{OPT_IN7}" input
+		(pin "~{OPT_OUT8}" input
+			(at 250.19 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ddeb2699-78b6-4615-aedc-56a1e437a745")
+		)
+		(pin "OPT_IN8" input
 			(at 217.17 81.28 180)
 			(effects
 				(font
@@ -30514,7 +30472,87 @@
 				)
 				(justify left)
 			)
-			(uuid "be5a59b0-99e5-43b3-9302-23b7cae4f5bd")
+			(uuid "14d53bef-6441-4177-9015-95bd4662ffab")
+		)
+		(pin "~{OPT_OUT6}" input
+			(at 250.19 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "1d5620ba-7372-4a5c-92d2-a0612416aa79")
+		)
+		(pin "~{OPT_OUT5}" input
+			(at 250.19 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "862c4e74-32b1-4edf-86d3-58d3605d0304")
+		)
+		(pin "~{OPT_OUT7}" input
+			(at 250.19 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "62328954-72e5-4833-8701-495a1104b9e1")
+		)
+		(pin "OPT_IN7" input
+			(at 217.17 78.74 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8465baa9-865f-4c85-8a20-e51c82536b63")
+		)
+		(pin "OPT_IN6" input
+			(at 217.17 76.2 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ecfc756f-bc08-4f20-adf6-59fa249b8dc5")
+		)
+		(pin "OPT_IN5" input
+			(at 217.17 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "da0da3f0-8e98-444a-9061-9418209d2ee5")
+		)
+		(pin "~{OPT_OUT1}" input
+			(at 250.19 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bad825cc-7c9e-45f0-bdfb-3961711cff6c")
+		)
+		(pin "~{OPT_OUT2}" input
+			(at 250.19 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ed34d632-11b5-4f4a-9955-89fb9aff24b1")
 		)
 		(instances
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
