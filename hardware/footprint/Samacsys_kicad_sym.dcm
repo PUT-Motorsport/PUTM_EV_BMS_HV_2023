@@ -35,4 +35,22 @@ D Datamate J-Tek DIL Male Vertical 3mm Throughboard Connector, selective gold + 
 K
 F https://cdn.harwin.com/pdfs/M80-510.pdf
 $ENDCMP
+#
+$CMP M80-5103442
+D Datamate J-Tek DIL Male Vertical 3mm Throughboard Connector, selective gold + tin, with jackscrews + board mount, 17+17 contacts
+K
+F https://cdn.harwin.com/pdfs/M80-510.pdf
+$ENDCMP
+#
+$CMP M80-5100642
+D 6 Male DIL Vertical Throughboard Conn. Jackscrews, 2.00mm Pitch High-Reliability Connector - Datamate J-Tek
+K
+F https://cdn.harwin.com/pdfs/M80-510.pdf
+$ENDCMP
+#
+$CMP FTSH-107-01-L-D-K
+D 14 Position, High Reliability Header Strips, 0.050&quot; pitch
+K
+F http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-d-xxx-xx-mkt.pdf
+$ENDCMP
 #End Doc Library
