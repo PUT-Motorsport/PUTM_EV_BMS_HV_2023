@@ -3378,19 +3378,6 @@
 		(uuid 0e706231-12b7-4633-a99f-a772bd27d039)
 	)
 	(rectangle
-		(start 92.71 13.97)
-		(end 283.21 102.87)
-		(stroke
-			(width 0)
-			(type dash)
-			(color 132 132 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 7cc40a0d-d02c-4d45-a916-9bf20d6bb2e3)
-	)
-	(rectangle
 		(start 13.97 157.48)
 		(end 175.26 196.85)
 		(stroke

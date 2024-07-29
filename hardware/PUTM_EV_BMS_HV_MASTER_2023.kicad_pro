@@ -1419,24 +1419,32 @@
       "Safety"
     ],
     [
-      "66c3869d-de11-4d8d-b4de-9d98c32ec205",
-      "Power"
+      "6dd12385-8249-456a-9bdd-ab767e747ed7",
+      "Isolated ADC"
     ],
     [
-      "81dc0685-0bdd-4dc2-8f76-92836044cf1e",
-      "Communication"
+      "6b45fd0b-238d-49b3-829e-372c6baba47f",
+      "Isolated SPI"
+    ],
+    [
+      "c7d64097-44d3-49d9-9a80-8f2f4ff55e04",
+      "Connectivity"
+    ],
+    [
+      "66c3869d-de11-4d8d-b4de-9d98c32ec205",
+      "Power"
     ],
     [
       "7084a49d-455d-4cdd-914a-a6fa8e6c3cf4",
       "MCU"
     ],
     [
-      "60add11e-d8a6-42d7-88f1-a1dd2a405268",
-      "Opto Isolation"
-    ],
-    [
       "ba7f6eba-eb84-4567-9005-77208e6eb457",
       "Fan drivers"
+    ],
+    [
+      "60add11e-d8a6-42d7-88f1-a1dd2a405268",
+      "Opto Isolation"
     ],
     [
       "084f6cc5-ae27-4f1e-aa54-14c8f7f394d3",
