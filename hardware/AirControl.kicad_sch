@@ -1666,78 +1666,78 @@
 		)
 	)
 	(junction
-		(at 147.32 97.79)
+		(at 120.65 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "455e9ad8-2bdc-4869-a5c0-8d947351a9ac")
 	)
 	(junction
-		(at 137.16 177.8)
+		(at 184.15 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4717f7cb-976b-43f3-ae78-c94567b87fe6")
 	)
 	(junction
-		(at 137.16 53.34)
+		(at 110.49 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "585dc5e3-009d-4061-b4ac-84a659d0a335")
 	)
 	(junction
-		(at 137.16 115.57)
+		(at 110.49 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5a18d94c-037a-425b-806b-37c587c97e9f")
 	)
 	(junction
-		(at 147.32 35.56)
+		(at 120.65 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "69314f59-9b34-4f71-91a1-0b4be750adcc")
 	)
 	(junction
-		(at 137.16 167.64)
+		(at 184.15 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "928afdc0-34e1-4dfe-bcb6-c4b44b2489a3")
 	)
 	(junction
-		(at 137.16 43.18)
+		(at 110.49 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a68866cf-6f3c-4617-bb54-2f866cd51c4a")
 	)
 	(junction
-		(at 137.16 105.41)
+		(at 110.49 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "adfdb6fc-e592-42cc-bfd3-bb15dd25c280")
 	)
 	(junction
-		(at 147.32 160.02)
+		(at 194.31 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f4a84888-5ede-4cd4-b478-ced0036b9727")
 	)
 	(no_connect
-		(at 198.12 151.13)
+		(at 171.45 85.09)
 		(uuid "11d64f1b-ef9a-49df-b059-9173761090ed")
 	)
 	(no_connect
-		(at 190.5 151.13)
+		(at 163.83 85.09)
 		(uuid "182ea172-8c3c-4897-81a4-f54be90db9e4")
 	)
 	(no_connect
-		(at 203.2 151.13)
+		(at 176.53 85.09)
 		(uuid "7afe67a9-0002-4f01-b8b8-cadae8090068")
 	)
 	(no_connect
-		(at 185.42 151.13)
+		(at 158.75 85.09)
 		(uuid "d76922bc-4c61-4882-aaa6-da6fe76b4eb9")
 	)
 	(wire
 		(pts
-			(xy 147.32 160.02) (xy 149.86 160.02)
+			(xy 194.31 121.92) (xy 196.85 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1747,7 +1747,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 53.34) (xy 147.32 53.34)
+			(xy 110.49 76.2) (xy 120.65 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1757,7 +1757,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 35.56) (xy 149.86 35.56)
+			(xy 120.65 58.42) (xy 123.19 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1767,7 +1767,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 167.64) (xy 137.16 167.64)
+			(xy 181.61 129.54) (xy 184.15 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1777,7 +1777,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 110.49) (xy 147.32 115.57)
+			(xy 120.65 133.35) (xy 120.65 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1787,7 +1787,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 167.64) (xy 139.7 167.64)
+			(xy 184.15 129.54) (xy 186.69 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1797,7 +1797,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 33.02) (xy 147.32 35.56)
+			(xy 120.65 55.88) (xy 120.65 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1807,7 +1807,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 25.4) (xy 147.32 25.4)
+			(xy 123.19 48.26) (xy 120.65 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1817,7 +1817,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 115.57) (xy 137.16 118.11)
+			(xy 110.49 138.43) (xy 110.49 140.97)
 		)
 		(stroke
 			(width 0)
@@ -1827,7 +1827,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 50.8) (xy 137.16 53.34)
+			(xy 110.49 73.66) (xy 110.49 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1837,7 +1837,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 87.63) (xy 147.32 90.17)
+			(xy 120.65 110.49) (xy 120.65 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1847,7 +1847,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 177.8) (xy 147.32 177.8)
+			(xy 184.15 139.7) (xy 194.31 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1857,7 +1857,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 35.56) (xy 147.32 38.1)
+			(xy 120.65 58.42) (xy 120.65 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1867,7 +1867,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 25.4) (xy 147.32 27.94)
+			(xy 120.65 48.26) (xy 120.65 50.8)
 		)
 		(stroke
 			(width 0)
@@ -1877,7 +1877,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 177.8) (xy 137.16 180.34)
+			(xy 184.15 139.7) (xy 184.15 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1887,7 +1887,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 97.79) (xy 149.86 97.79)
+			(xy 120.65 120.65) (xy 123.19 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1897,7 +1897,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 167.64) (xy 137.16 170.18)
+			(xy 184.15 129.54) (xy 184.15 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1907,7 +1907,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 43.18) (xy 129.54 43.18)
+			(xy 100.33 66.04) (xy 102.87 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1917,7 +1917,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 43.18) (xy 139.7 43.18)
+			(xy 110.49 66.04) (xy 113.03 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1927,7 +1927,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 43.18) (xy 137.16 43.18)
+			(xy 107.95 66.04) (xy 110.49 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1937,7 +1937,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 97.79) (xy 147.32 100.33)
+			(xy 120.65 120.65) (xy 120.65 123.19)
 		)
 		(stroke
 			(width 0)
@@ -1947,7 +1947,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 172.72) (xy 147.32 177.8)
+			(xy 194.31 134.62) (xy 194.31 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1957,7 +1957,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 53.34) (xy 137.16 55.88)
+			(xy 110.49 76.2) (xy 110.49 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1967,7 +1967,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 105.41) (xy 129.54 105.41)
+			(xy 100.33 128.27) (xy 102.87 128.27)
 		)
 		(stroke
 			(width 0)
@@ -1977,7 +1977,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 43.18) (xy 137.16 45.72)
+			(xy 110.49 66.04) (xy 110.49 68.58)
 		)
 		(stroke
 			(width 0)
@@ -1987,7 +1987,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 149.86) (xy 147.32 149.86)
+			(xy 196.85 111.76) (xy 194.31 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1997,7 +1997,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 105.41) (xy 137.16 105.41)
+			(xy 107.95 128.27) (xy 110.49 128.27)
 		)
 		(stroke
 			(width 0)
@@ -2007,7 +2007,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 157.48) (xy 147.32 160.02)
+			(xy 194.31 119.38) (xy 194.31 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2017,7 +2017,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 105.41) (xy 137.16 107.95)
+			(xy 110.49 128.27) (xy 110.49 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2027,7 +2027,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 160.02) (xy 147.32 162.56)
+			(xy 194.31 121.92) (xy 194.31 124.46)
 		)
 		(stroke
 			(width 0)
@@ -2037,7 +2037,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 95.25) (xy 147.32 97.79)
+			(xy 120.65 118.11) (xy 120.65 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2047,7 +2047,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 115.57) (xy 147.32 115.57)
+			(xy 110.49 138.43) (xy 120.65 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2057,7 +2057,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 149.86) (xy 147.32 152.4)
+			(xy 194.31 111.76) (xy 194.31 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2067,7 +2067,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 87.63) (xy 147.32 87.63)
+			(xy 123.19 110.49) (xy 120.65 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2077,7 +2077,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 167.64) (xy 129.54 167.64)
+			(xy 173.99 129.54) (xy 176.53 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2087,7 +2087,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 113.03) (xy 137.16 115.57)
+			(xy 110.49 135.89) (xy 110.49 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2097,7 +2097,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 105.41) (xy 139.7 105.41)
+			(xy 110.49 128.27) (xy 113.03 128.27)
 		)
 		(stroke
 			(width 0)
@@ -2107,7 +2107,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 175.26) (xy 137.16 177.8)
+			(xy 184.15 137.16) (xy 184.15 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2117,7 +2117,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 48.26) (xy 147.32 53.34)
+			(xy 120.65 71.12) (xy 120.65 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2126,8 +2126,8 @@
 		(uuid "f8ea5102-f49e-47a6-8c23-0e2a273a3a92")
 	)
 	(rectangle
-		(start 102.87 15.24)
-		(end 173.99 73.66)
+		(start 76.2 38.1)
+		(end 147.32 96.52)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2139,8 +2139,8 @@
 		(uuid 21e8c5dd-75b0-44aa-a281-41daf41b194c)
 	)
 	(rectangle
-		(start 176.53 137.16)
-		(end 212.09 162.56)
+		(start 149.86 71.12)
+		(end 185.42 96.52)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2152,8 +2152,8 @@
 		(uuid 4c41c9f3-0458-49ac-9215-ea707cf8056e)
 	)
 	(rectangle
-		(start 102.87 137.16)
-		(end 173.99 195.58)
+		(start 149.86 99.06)
+		(end 220.98 157.48)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2165,8 +2165,8 @@
 		(uuid ad87d66b-288d-42a5-980a-85d985a34326)
 	)
 	(rectangle
-		(start 102.87 76.2)
-		(end 173.99 134.62)
+		(start 76.2 99.06)
+		(end 147.32 157.48)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2179,7 +2179,7 @@
 	)
 	(text "NMOS 1"
 		(exclude_from_sim no)
-		(at 172.72 72.39 0)
+		(at 146.05 95.25 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2193,7 +2193,7 @@
 	)
 	(text "NMOS 2"
 		(exclude_from_sim no)
-		(at 172.72 133.35 0)
+		(at 146.05 156.21 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2207,7 +2207,7 @@
 	)
 	(text "NMOS 3"
 		(exclude_from_sim no)
-		(at 172.72 194.31 0)
+		(at 219.71 156.21 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2221,7 +2221,7 @@
 	)
 	(text "UNUSED"
 		(exclude_from_sim no)
-		(at 210.82 161.29 0)
+		(at 184.15 95.25 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2235,7 +2235,7 @@
 	)
 	(hierarchical_label "DRAIN3"
 		(shape input)
-		(at 149.86 160.02 0)
+		(at 196.85 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2247,7 +2247,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 149.86 87.63 0)
+		(at 123.19 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2259,7 +2259,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 149.86 25.4 0)
+		(at 123.19 48.26 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2271,7 +2271,7 @@
 	)
 	(hierarchical_label "SIGNAL2"
 		(shape input)
-		(at 127 105.41 180)
+		(at 100.33 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2283,7 +2283,7 @@
 	)
 	(hierarchical_label "SIGNAL3"
 		(shape input)
-		(at 127 167.64 180)
+		(at 173.99 129.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2295,7 +2295,7 @@
 	)
 	(hierarchical_label "DRAIN1"
 		(shape input)
-		(at 149.86 35.56 0)
+		(at 123.19 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2307,7 +2307,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 149.86 149.86 0)
+		(at 196.85 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2319,7 +2319,7 @@
 	)
 	(hierarchical_label "DRAIN2"
 		(shape input)
-		(at 149.86 97.79 0)
+		(at 123.19 120.65 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2331,7 +2331,7 @@
 	)
 	(hierarchical_label "SIGNAL1"
 		(shape input)
-		(at 127 43.18 180)
+		(at 100.33 66.04 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2344,7 +2344,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_3")
 		(lib_id "Device:R_Pack04_Split")
-		(at 137.16 172.72 0)
+		(at 184.15 134.62 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2352,7 +2352,7 @@
 		(dnp no)
 		(uuid "02eed700-8e92-4de2-a53a-baddde1c4000")
 		(property "Reference" "RN12"
-			(at 134.62 173.9901 0)
+			(at 181.61 135.8901 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2361,7 +2361,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 134.62 171.4501 0)
+			(at 181.61 133.3501 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2370,7 +2370,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 135.128 172.72 90)
+			(at 182.118 134.62 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2379,7 +2379,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 172.72 0)
+			(at 184.15 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2388,7 +2388,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 137.16 172.72 0)
+			(at 184.15 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2431,7 +2431,7 @@
 	)
 	(symbol
 		(lib_id "Device:Q_NMOS_GDS")
-		(at 144.78 43.18 0)
+		(at 118.11 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2440,7 +2440,7 @@
 		(fields_autoplaced yes)
 		(uuid "0c26befe-33cc-42e7-9cef-1ebc45be22ef")
 		(property "Reference" "Q4"
-			(at 151.13 41.91 0)
+			(at 124.46 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2449,7 +2449,7 @@
 			)
 		)
 		(property "Value" "2SK3065"
-			(at 151.13 44.45 0)
+			(at 124.46 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2458,7 +2458,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-89-3"
-			(at 149.86 40.64 0)
+			(at 123.19 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2467,7 +2467,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.pl/datasheet/2/196/Infineon_IRLL024Z_DataSheet_v01_01_EN-1227867.pdf"
-			(at 144.78 43.18 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2476,7 +2476,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 144.78 43.18 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2485,7 +2485,7 @@
 			)
 		)
 		(property "Url" ""
-			(at 144.78 43.18 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2494,7 +2494,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "IRLL024ZTRPBF"
-			(at 144.78 43.18 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2503,7 +2503,7 @@
 			)
 		)
 		(property "Mouser Part Number" "942-IRLL024ZTRPBF"
-			(at 144.78 43.18 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2512,7 +2512,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Infineon-Technologies/IRLL024ZTRPBF?qs=9%252BKlkBgLFf1b4odHOQZ9nw%3D%3D"
-			(at 144.78 43.18 0)
+			(at 118.11 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2541,7 +2541,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_2")
 		(lib_id "Device:R_Pack04_Split")
-		(at 132.08 43.18 90)
+		(at 105.41 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2550,7 +2550,7 @@
 		(fields_autoplaced yes)
 		(uuid "32c5da5f-965b-4f62-a9ff-d975b92094fc")
 		(property "Reference" "RN11"
-			(at 132.08 38.1 90)
+			(at 105.41 60.96 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2558,7 +2558,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 132.08 40.64 90)
+			(at 105.41 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2566,7 +2566,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 132.08 45.212 90)
+			(at 105.41 68.072 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2575,7 +2575,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 43.18 0)
+			(at 105.41 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2584,7 +2584,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 132.08 43.18 0)
+			(at 105.41 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2627,7 +2627,7 @@
 	)
 	(symbol
 		(lib_id "Device:Q_NMOS_GDS")
-		(at 144.78 105.41 0)
+		(at 118.11 128.27 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2636,7 +2636,7 @@
 		(fields_autoplaced yes)
 		(uuid "5295be6e-711d-4c91-bf0e-655b2460f92e")
 		(property "Reference" "Q5"
-			(at 151.13 104.14 0)
+			(at 124.46 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2645,7 +2645,7 @@
 			)
 		)
 		(property "Value" "2SK3065"
-			(at 151.13 106.68 0)
+			(at 124.46 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2654,7 +2654,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-89-3"
-			(at 149.86 102.87 0)
+			(at 123.19 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2663,7 +2663,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.pl/datasheet/2/196/Infineon_IRLL024Z_DataSheet_v01_01_EN-1227867.pdf"
-			(at 144.78 105.41 0)
+			(at 118.11 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2672,7 +2672,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 144.78 105.41 0)
+			(at 118.11 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2681,7 +2681,7 @@
 			)
 		)
 		(property "Url" ""
-			(at 144.78 105.41 0)
+			(at 118.11 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2690,7 +2690,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "IRLL024ZTRPBF"
-			(at 144.78 105.41 0)
+			(at 118.11 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2699,7 +2699,7 @@
 			)
 		)
 		(property "Mouser Part Number" "942-IRLL024ZTRPBF"
-			(at 144.78 105.41 0)
+			(at 118.11 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2708,7 +2708,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Infineon-Technologies/IRLL024ZTRPBF?qs=9%252BKlkBgLFf1b4odHOQZ9nw%3D%3D"
-			(at 144.78 105.41 0)
+			(at 118.11 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2737,7 +2737,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 137.16 180.34 0)
+		(at 184.15 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2745,7 +2745,7 @@
 		(dnp no)
 		(uuid "5863f9da-fc60-4cf1-a950-bdb4a0680357")
 		(property "Reference" "#PWR081"
-			(at 137.16 186.69 0)
+			(at 184.15 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2754,7 +2754,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 137.287 184.7342 0)
+			(at 184.277 146.6342 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2762,7 +2762,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 180.34 0)
+			(at 184.15 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2771,7 +2771,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 180.34 0)
+			(at 184.15 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2780,7 +2780,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 137.16 180.34 0)
+			(at 184.15 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2803,7 +2803,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_1")
 		(lib_id "Device:R_Pack04_Split")
-		(at 200.66 151.13 270)
+		(at 173.99 85.09 270)
 		(mirror x)
 		(unit 4)
 		(exclude_from_sim no)
@@ -2812,7 +2812,7 @@
 		(dnp no)
 		(uuid "74199137-1205-4f01-9787-db25fc1a0fb6")
 		(property "Reference" "RN12"
-			(at 200.66 146.05 90)
+			(at 173.99 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2820,7 +2820,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 200.66 148.59 90)
+			(at 173.99 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2828,7 +2828,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 200.66 153.162 90)
+			(at 173.99 87.122 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2837,7 +2837,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 200.66 151.13 0)
+			(at 173.99 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2846,7 +2846,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 200.66 151.13 0)
+			(at 173.99 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2889,7 +2889,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky_Small")
-		(at 147.32 30.48 270)
+		(at 120.65 53.34 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2898,7 +2898,7 @@
 		(fields_autoplaced yes)
 		(uuid "791eb149-0519-4f6f-b8b0-e067f4393140")
 		(property "Reference" "D9"
-			(at 149.225 29.2099 90)
+			(at 122.555 52.0699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2907,7 +2907,7 @@
 			)
 		)
 		(property "Value" "VSSB410S-E3/52T"
-			(at 149.225 31.7499 90)
+			(at 122.555 54.6099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2916,7 +2916,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 147.32 30.48 90)
+			(at 120.65 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2925,7 +2925,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 147.32 30.48 90)
+			(at 120.65 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2934,7 +2934,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 147.32 30.48 0)
+			(at 120.65 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2943,7 +2943,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 147.32 30.48 0)
+			(at 120.65 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2952,7 +2952,7 @@
 			)
 		)
 		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 147.32 30.48 0)
+			(at 120.65 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2961,7 +2961,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 147.32 30.48 0)
+			(at 120.65 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2986,7 +2986,7 @@
 	)
 	(symbol
 		(lib_id "Device:Q_NMOS_GDS")
-		(at 144.78 167.64 0)
+		(at 191.77 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2995,7 +2995,7 @@
 		(fields_autoplaced yes)
 		(uuid "91240c2a-d28d-41f0-b551-b884444dc5c4")
 		(property "Reference" "Q13"
-			(at 151.13 166.37 0)
+			(at 198.12 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3004,7 +3004,7 @@
 			)
 		)
 		(property "Value" "2SK3065"
-			(at 151.13 168.91 0)
+			(at 198.12 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3013,7 +3013,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-89-3"
-			(at 149.86 165.1 0)
+			(at 196.85 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3022,7 +3022,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.pl/datasheet/2/196/Infineon_IRLL024Z_DataSheet_v01_01_EN-1227867.pdf"
-			(at 144.78 167.64 0)
+			(at 191.77 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3031,7 +3031,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 144.78 167.64 0)
+			(at 191.77 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3040,7 +3040,7 @@
 			)
 		)
 		(property "Url" ""
-			(at 144.78 167.64 0)
+			(at 191.77 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3049,7 +3049,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "IRLL024ZTRPBF"
-			(at 144.78 167.64 0)
+			(at 191.77 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3058,7 +3058,7 @@
 			)
 		)
 		(property "Mouser Part Number" "942-IRLL024ZTRPBF"
-			(at 144.78 167.64 0)
+			(at 191.77 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3067,7 +3067,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Infineon-Technologies/IRLL024ZTRPBF?qs=9%252BKlkBgLFf1b4odHOQZ9nw%3D%3D"
-			(at 144.78 167.64 0)
+			(at 191.77 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3096,7 +3096,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_1")
 		(lib_id "Device:R_Pack04_Split")
-		(at 187.96 151.13 90)
+		(at 161.29 85.09 90)
 		(unit 4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3105,7 +3105,7 @@
 		(fields_autoplaced yes)
 		(uuid "9f01a8b6-5e86-4f89-a8a4-92161917d4f2")
 		(property "Reference" "RN11"
-			(at 187.96 146.05 90)
+			(at 161.29 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3113,7 +3113,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 187.96 148.59 90)
+			(at 161.29 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3121,7 +3121,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 187.96 153.162 90)
+			(at 161.29 87.122 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3130,7 +3130,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 151.13 0)
+			(at 161.29 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3139,7 +3139,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 187.96 151.13 0)
+			(at 161.29 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3183,7 +3183,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_1")
 		(lib_id "Device:R_Pack04_Split")
-		(at 137.16 110.49 0)
+		(at 110.49 133.35 0)
 		(mirror y)
 		(unit 3)
 		(exclude_from_sim no)
@@ -3192,7 +3192,7 @@
 		(dnp no)
 		(uuid "a41755e7-9d98-44da-b60a-ec7be753aa5a")
 		(property "Reference" "RN12"
-			(at 134.62 109.2199 0)
+			(at 107.95 132.0799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3201,7 +3201,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 134.62 111.7599 0)
+			(at 107.95 134.6199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3210,7 +3210,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 139.192 110.49 90)
+			(at 112.522 133.35 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3219,7 +3219,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 110.49 0)
+			(at 110.49 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3228,7 +3228,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 137.16 110.49 0)
+			(at 110.49 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3272,7 +3272,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_3")
 		(lib_id "Device:R_Pack04_Split")
-		(at 132.08 167.64 90)
+		(at 179.07 129.54 90)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3281,7 +3281,7 @@
 		(fields_autoplaced yes)
 		(uuid "b400d302-2cc7-4b87-a32c-0b365860e96e")
 		(property "Reference" "RN11"
-			(at 132.08 162.56 90)
+			(at 179.07 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3289,7 +3289,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 132.08 165.1 90)
+			(at 179.07 127 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3297,7 +3297,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 132.08 169.672 90)
+			(at 179.07 131.572 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3306,7 +3306,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 167.64 0)
+			(at 179.07 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3315,7 +3315,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 132.08 167.64 0)
+			(at 179.07 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3359,7 +3359,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_2")
 		(lib_id "Device:R_Pack04_Split")
-		(at 137.16 48.26 0)
+		(at 110.49 71.12 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3368,7 +3368,7 @@
 		(dnp no)
 		(uuid "c5499631-6e8a-462b-94e4-cb18d5972cfa")
 		(property "Reference" "RN12"
-			(at 134.62 46.9899 0)
+			(at 107.95 69.8499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3377,7 +3377,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 134.62 49.5299 0)
+			(at 107.95 72.3899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3386,7 +3386,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 139.192 48.26 90)
+			(at 112.522 71.12 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3395,7 +3395,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 137.16 48.26 0)
+			(at 110.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3404,7 +3404,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 137.16 48.26 0)
+			(at 110.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3447,7 +3447,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 137.16 55.88 0)
+		(at 110.49 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3455,7 +3455,7 @@
 		(dnp no)
 		(uuid "ca3f6fba-aaae-452a-ac16-b733dce71ada")
 		(property "Reference" "#PWR053"
-			(at 137.16 62.23 0)
+			(at 110.49 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3464,7 +3464,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 137.287 60.2742 0)
+			(at 110.617 83.1342 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3472,7 +3472,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 55.88 0)
+			(at 110.49 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3481,7 +3481,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 55.88 0)
+			(at 110.49 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3490,7 +3490,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 137.16 55.88 0)
+			(at 110.49 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3513,7 +3513,7 @@
 	(symbol
 		(lib_name "GND_2")
 		(lib_id "power:GND")
-		(at 137.16 118.11 0)
+		(at 110.49 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3521,7 +3521,7 @@
 		(dnp no)
 		(uuid "d27ead2c-0828-43bd-9165-3f0163faec39")
 		(property "Reference" "#PWR054"
-			(at 137.16 124.46 0)
+			(at 110.49 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3530,7 +3530,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 137.287 122.5042 0)
+			(at 110.617 145.3642 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3538,7 +3538,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 118.11 0)
+			(at 110.49 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3547,7 +3547,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 118.11 0)
+			(at 110.49 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3556,7 +3556,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 137.16 118.11 0)
+			(at 110.49 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3579,7 +3579,7 @@
 	(symbol
 		(lib_name "R_Pack04_Split_4")
 		(lib_id "Device:R_Pack04_Split")
-		(at 132.08 105.41 90)
+		(at 105.41 128.27 90)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3588,7 +3588,7 @@
 		(fields_autoplaced yes)
 		(uuid "e29c1cf6-77d1-4fc5-ae7c-db2c6b85085f")
 		(property "Reference" "RN11"
-			(at 132.08 100.33 90)
+			(at 105.41 123.19 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3596,7 +3596,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 132.08 102.87 90)
+			(at 105.41 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3604,7 +3604,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 132.08 107.442 90)
+			(at 105.41 130.302 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3613,7 +3613,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 105.41 0)
+			(at 105.41 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3622,7 +3622,7 @@
 			)
 		)
 		(property "Description" "4 resistor network, parallel topology, split"
-			(at 132.08 105.41 0)
+			(at 105.41 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3665,7 +3665,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky_Small")
-		(at 147.32 154.94 270)
+		(at 194.31 116.84 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3674,7 +3674,7 @@
 		(fields_autoplaced yes)
 		(uuid "f63b8bc6-138b-400e-afcf-6e63b1e37b49")
 		(property "Reference" "D24"
-			(at 149.225 153.6699 90)
+			(at 196.215 115.5699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3683,7 +3683,7 @@
 			)
 		)
 		(property "Value" "VSSB410S-E3/52T"
-			(at 149.225 156.2099 90)
+			(at 196.215 118.1099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3692,7 +3692,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 147.32 154.94 90)
+			(at 194.31 116.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3701,7 +3701,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 147.32 154.94 90)
+			(at 194.31 116.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3710,7 +3710,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 147.32 154.94 0)
+			(at 194.31 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3719,7 +3719,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 147.32 154.94 0)
+			(at 194.31 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3728,7 +3728,7 @@
 			)
 		)
 		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 147.32 154.94 0)
+			(at 194.31 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3737,7 +3737,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 147.32 154.94 0)
+			(at 194.31 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3762,7 +3762,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky_Small")
-		(at 147.32 92.71 270)
+		(at 120.65 115.57 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3771,7 +3771,7 @@
 		(fields_autoplaced yes)
 		(uuid "fe491a1e-21b6-4a32-beae-8b9dcfdda6df")
 		(property "Reference" "D10"
-			(at 149.225 91.4399 90)
+			(at 122.555 114.2999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3780,7 +3780,7 @@
 			)
 		)
 		(property "Value" "VSSB410S-E3/52T"
-			(at 149.225 93.9799 90)
+			(at 122.555 116.8399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3789,7 +3789,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 147.32 92.71 90)
+			(at 120.65 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3798,7 +3798,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 147.32 92.71 90)
+			(at 120.65 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3807,7 +3807,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 147.32 92.71 0)
+			(at 120.65 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3816,7 +3816,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 147.32 92.71 0)
+			(at 120.65 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3825,7 +3825,7 @@
 			)
 		)
 		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 147.32 92.71 0)
+			(at 120.65 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3834,7 +3834,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 147.32 92.71 0)
+			(at 120.65 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)

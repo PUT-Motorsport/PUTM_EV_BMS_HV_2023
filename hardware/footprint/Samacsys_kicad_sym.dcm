@@ -53,4 +53,16 @@ D 14 Position, High Reliability Header Strips, 0.050&quot; pitch
 K
 F http://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-d-xxx-xx-mkt.pdf
 $ENDCMP
+#
+$CMP TLP152_TPL,E
+D Logic Output Optocouplers Gate Drive Phcplr 3750 Vrms
+K
+F http://toshiba.semicon-storage.com/info/docget.jsp?did=13615&prodName=TLP152
+$ENDCMP
+#
+$CMP TPL7407LADR
+D Gate Drivers 30-V, 7-Channel NMOS Array Low-Side Driver 16-SOIC -40 to 125
+K
+F http://www.ti.com/lit/gpn/tpl7407la
+$ENDCMP
 #End Doc Library
