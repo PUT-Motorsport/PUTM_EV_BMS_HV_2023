@@ -65,4 +65,10 @@ D Gate Drivers 30-V, 7-Channel NMOS Array Low-Side Driver 16-SOIC -40 to 125
 K
 F http://www.ti.com/lit/gpn/tpl7407la
 $ENDCMP
+#
+$CMP CDMA15M0D2500DE5
+D Thick Film Chip Dividers, Medium Voltage
+K
+F https://www.vishay.com/docs/68049/cdma.pdf
+$ENDCMP
 #End Doc Library

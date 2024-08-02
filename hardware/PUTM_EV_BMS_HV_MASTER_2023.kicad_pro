@@ -119,7 +119,7 @@
       "rule_severitieslegacy_no_courtyard_defined": false,
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.1,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.025,
         "min_hole_clearance": 0.25,
@@ -131,7 +131,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.2,
+        "min_track_width": 0.1,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.4,
         "solder_mask_to_copper_clearance": 0.005,
@@ -185,6 +185,8 @@
         0.1,
         0.2,
         0.25,
+        0.3,
+        0.4,
         0.5,
         0.75,
         1.0,
@@ -222,6 +224,10 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.45,
+          "drill": 0.2
         },
         {
           "diameter": 0.5,
@@ -1321,7 +1327,7 @@
           "group_by": false,
           "label": "Mouser Part Number",
           "name": "Mouser Part Number",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1351,6 +1357,18 @@
           "group_by": false,
           "label": "In Order",
           "name": "In Order",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
           "show": false
         }
       ],
@@ -1421,6 +1439,10 @@
     [
       "6dd12385-8249-456a-9bdd-ab767e747ed7",
       "Isolated ADC"
+    ],
+    [
+      "ce12d4e7-22c6-44b1-ad25-5b799a9893d1",
+      "Fan Control"
     ],
     [
       "6b45fd0b-238d-49b3-829e-372c6baba47f",

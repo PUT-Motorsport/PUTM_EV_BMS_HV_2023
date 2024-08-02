@@ -274,4 +274,22 @@ X COM 9 1100 -700 200 L 50 50 0 0 P
 P 5 0 1 6 200 100 900 100 900 -800 200 -800 200 100 N
 ENDDRAW
 ENDDEF
+DEF CDMA15M0D2500DE5 R 0 30 Y Y 1 F N
+F0 "R" 650 300 50 H V L CNN
+F1 "CDMA15M0D2500DE5" 650 200 50 H V L CNN
+F2 "Samacsys:CDMA5M00F5000DE5" 650 100 50 H I L CNN
+F3 "https://www.vishay.com/docs/68049/cdma.pdf" 650 0 50 H I L CNN
+F4 "Thick Film Chip Dividers, Medium Voltage" 650 -100 50 H I L CNN "Description"
+F5 "0.762" 650 -200 50 H I L CNN "Height"
+F6 "71-CDMA15M0D2500DE5" 650 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Vishay-Techno/CDMA15M0D2500DE5?qs=Znm5pLBrcAIdH5zqf9zCng%3D%3D" 650 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Vishay" 650 -500 50 H I L CNN "Manufacturer_Name"
+F9 "CDMA15M0D2500DE5" 650 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X 1 1 800 0 200 L 50 50 0 0 P
+X 2 2 0 0 200 R 50 50 0 0 P
+X 3 3 0 -100 200 R 50 50 0 0 P
+P 5 0 1 6 200 100 600 100 600 -200 200 -200 200 100 N
+ENDDRAW
+ENDDEF
 # End Library
