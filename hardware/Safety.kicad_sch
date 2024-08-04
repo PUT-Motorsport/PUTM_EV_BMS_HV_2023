@@ -3567,7 +3567,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 68.58) (xy 72.39 66.04)
+			(xy 72.39 71.12) (xy 72.39 66.04)
 		)
 		(stroke
 			(width 0)
@@ -3717,7 +3717,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 73.66) (xy 82.55 73.66)
+			(xy 80.01 76.2) (xy 82.55 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3787,7 +3787,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 78.74) (xy 72.39 81.28)
+			(xy 72.39 81.28) (xy 72.39 83.82)
 		)
 		(stroke
 			(width 0)
@@ -4492,28 +4492,6 @@
 		)
 		(uuid "efaf0d62-487c-4c56-8ab3-98cccb411210")
 	)
-	(label "AMS_FAULT"
-		(at 242.57 130.81 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "387d4371-4118-40eb-ab0d-c83ee7c9665e")
-	)
-	(label "AMS_FAULT"
-		(at 82.55 73.66 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "53f8759d-a74b-4703-9277-8c933200a804")
-	)
 	(label "EDGE_DETECT"
 		(at 109.22 137.16 0)
 		(fields_autoplaced yes)
@@ -4580,6 +4558,18 @@
 		)
 		(uuid "cd551207-63cb-43b6-8d28-dbd42db88e1e")
 	)
+	(hierarchical_label "WTDG_ERROR"
+		(shape output)
+		(at 242.57 130.81 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0ffd0b87-d840-4918-ace4-1a483b3ea80f")
+	)
 	(hierarchical_label "LED_ERR"
 		(shape input)
 		(at 82.55 66.04 0)
@@ -4604,7 +4594,7 @@
 		)
 		(uuid "5e48d9d9-0fb9-40e1-aace-359f1b2af726")
 	)
-	(hierarchical_label "MCU_AMS_FAULT"
+	(hierarchical_label "AMS_ERROR"
 		(shape input)
 		(at 58.42 135.89 180)
 		(fields_autoplaced yes)
@@ -4627,6 +4617,18 @@
 			(justify left)
 		)
 		(uuid "93db9640-7955-468b-a16b-4dd60f396458")
+	)
+	(hierarchical_label "WTDG_ERROR"
+		(shape output)
+		(at 82.55 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a2491704-593f-4a90-a28f-c6e3049885d6")
 	)
 	(symbol
 		(lib_name "GND_8")
@@ -5466,7 +5468,7 @@
 	(symbol
 		(lib_name "GND_5")
 		(lib_id "power:GND")
-		(at 72.39 81.28 0)
+		(at 72.39 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5474,7 +5476,7 @@
 		(dnp no)
 		(uuid "4a491721-6842-4dce-bade-c659e88e6809")
 		(property "Reference" "#PWR046"
-			(at 72.39 87.63 0)
+			(at 72.39 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5483,7 +5485,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 72.517 85.6742 0)
+			(at 72.517 88.2142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5491,7 +5493,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 81.28 0)
+			(at 72.39 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5500,7 +5502,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 81.28 0)
+			(at 72.39 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5509,7 +5511,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 72.39 81.28 0)
+			(at 72.39 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5710,7 +5712,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:2N7002")
-		(at 74.93 73.66 0)
+		(at 74.93 76.2 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5719,7 +5721,7 @@
 		(dnp no)
 		(uuid "619b6e21-721b-411f-875a-42c481e0b6f7")
 		(property "Reference" "Q3"
-			(at 83.82 76.4286 0)
+			(at 83.82 78.9686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5728,7 +5730,7 @@
 			)
 		)
 		(property "Value" "2N7002"
-			(at 83.82 78.74 0)
+			(at 83.82 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5737,7 +5739,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 69.85 75.565 0)
+			(at 69.85 78.105 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5748,7 +5750,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5758,7 +5760,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5767,7 +5769,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5776,7 +5778,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5785,7 +5787,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5794,7 +5796,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5803,7 +5805,7 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 74.93 73.66 0)
+			(at 74.93 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
