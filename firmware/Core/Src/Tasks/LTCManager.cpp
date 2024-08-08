@@ -18,9 +18,17 @@
 
 using namespace LtcConfig;
 
+template < typename T >
+using RegArray 	= std::array < T, LtcConfig::CHAIN_SIZE >;
+template < typename T >
+using DataArray = std::array < T, LtcConfig::CHAIN_SIZE * 12 >;
+template < typename T >
+using GpioArray = std::array < T, LtcConfig::CHAIN_SIZE * 5 >;
+
+using fsdi = FullStackDataInstance;
+
 static SPI_HandleTypeDef &hspi = hspi2;
 static Ltc6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
-using fsdi = FullStackDataInstance;
 
 enum struct States
 {
@@ -58,7 +66,8 @@ static void normal()
 	else if(fsdi::get().usb_events.discharge_optical_visualisation)
 		state = States::OpticalVisualization;
 
-	auto voltages = ltc_ctrl.readVoltages();
+	static DataArray < float > voltages;
+	ltc_ctrl.readVoltages(&voltages);
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{
 		size_t offset_cell = ltc * CELLS_PER_LTC;
@@ -66,39 +75,24 @@ static void normal()
 		{
 			size_t offset_ltc = ltc * 12;
 			size_t maped_cell = CELL_TO_CH_MAP[cell];
-			auto& volt = voltages[maped_cell + offset_ltc];
-			if(std::holds_alternative<float>(volt))
-			{
-				fsdi::set().ltc_data.voltages[cell + offset_cell] = std::get<float>(volt);
-			}
-			else
-			{
-				fsdi::set().ltc_data.voltages[cell + offset_cell] = -1.f;
-			}
+			fsdi::set().ltc_data.voltages[cell + offset_cell] = voltages[maped_cell + offset_ltc];
 		}
 	}
 
-	auto gpio = ltc_ctrl.readGpio();
+	static GpioArray < float > gpio;
+	ltc_ctrl.readGpio(&gpio);
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{
-		size_t offset = ltc * 5;
-		for(size_t i = 0; i < 5; i++)
+		size_t offset = ltc * TEMP_PER_LTC;
+		for(size_t i = 0; i < TEMP_PER_LTC; i++)
 		{
-			if(std::holds_alternative<float>(gpio[i + offset]))
-			{
-				fsdi::set().ltc_data.temp[i + offset] = std::get<float>(gpio[i + offset]);
-			}
-			else
-			{
-				fsdi::set().ltc_data.temp[i + offset] = -1.f;
-			}
+			fsdi::set().ltc_data.temp[i + offset] = gpio[i + offset];
 		}
-
 	}
 
-	//ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
-	//ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
-	//calcTemp();
+//	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
+//	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
+//	calcTemp();
 }
 
 static void charging()
@@ -106,38 +100,47 @@ static void charging()
 	if(not FullStackDataInstance::get().ltc_data.charger_connected)
 		state = States::Normal;
 
-	//ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
-	//ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
-	//ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
-	//calcTemp();
+//	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
+//	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
+//	ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
+//	calcTemp();
 }
 
 static void opticalVisualization()
 {
-	if(FullStackDataInstance::get().ltc_data.charger_connected)
-		state = States::Charging;
-	else if(not FullStackDataInstance::get().usb_events.discharge_optical_visualisation)
-		state = States::Normal;
-	//ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
-	//ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
+//	if(FullStackDataInstance::get().ltc_data.charger_connected)
+//		state = States::Charging;
+//	else if(not FullStackDataInstance::get().usb_events.discharge_optical_visualisation)
+//		state = States::Normal;
+//	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
+//	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
 
 	static size_t num = 0;
+	static size_t delay = 0;
 
-	for(size_t i = 0; i < LtcConfig::CHAIN_SIZE; i++)
+	static DataArray < bool > discharges { false };
+
+	delay++;
+	if (delay < 10) return;
+
+	for(size_t ltc = 0; ltc < LtcConfig::CHAIN_SIZE; ltc++)
 	{
-		for(size_t j = 0; j < 9; j ++)
+		for(size_t cell = 0; cell < LtcConfig::CELLS_PER_LTC; cell++)
 		{
-			size_t index = i * 9;
-			if(num == j)
-				FullStackDataInstance::set().ltc_data.discharge[index + j] = true;
+			size_t offset = ltc * 12;
+			size_t maped_cell = CELL_TO_CH_MAP[cell];
+			if(num == cell)
+				discharges[offset + maped_cell] = true;
 			else
-				FullStackDataInstance::set().ltc_data.discharge[index + j] = false;
+				discharges[offset + maped_cell] = false;
 		}
 	}
+
+	delay = 0;
 	num++;
-	if (num >= 9) num = 0;
-	//ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
-	//calcTemp();
+	if (num >= LtcConfig::CELLS_PER_LTC) num = 0;
+
+	ltc_ctrl.setDischarge(&discharges);
 }
 
 void vLTCManagerTask(void *argument)

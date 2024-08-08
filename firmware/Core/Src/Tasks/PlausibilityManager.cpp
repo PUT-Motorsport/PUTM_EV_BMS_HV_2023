@@ -13,7 +13,6 @@
 #include <PerypherialManagers/PlausibilityCheckerController.hpp>
 #include <PerypherialManagers/AIRdriver.hpp>
 
-
 extern GpioOut led_ok;
 extern GpioOut led_warning;
 extern GpioOut led_error;
@@ -27,7 +26,7 @@ void vPlausibilityManagerTask(void *argument)
 	AIRdriver airs;
 	auto& fsd = FullStackDataInstance::set();
 
-	bool ams_fault {false};
+	bool ams_fault { false };
 
 	while (true)
 	{
@@ -53,6 +52,7 @@ void vPlausibilityManagerTask(void *argument)
 		fsd.time.tick = HAL_GetTick();
 
 		//const bool charger_mode = fsd.charger.charged_detected;
+		//fsd.state.ts_activation_button = true;
 		if(fsd.state.ts_activation_button && AIRsm.get() == AIRstateEnum::Open)
 		{
 			AIRsm.TS_activation_button(HAL_GetTick());

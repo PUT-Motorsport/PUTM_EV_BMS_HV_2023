@@ -12,27 +12,22 @@
 #include <Config.hpp>
 #include <PerypherialManagers/GpioController.hpp>
 
-
-extern "C" {
 #include "SoC_EKF.h"
-}
 
-
-struct CellData{
-	Vector_col x{};
-	Matrix P{};
+struct CellData
+{
+	Vector_col x { };
+	Matrix P { };
 };
 
-static std::array<CellData,135> soc_array{};
-
+static std::array<CellData, LtcConfig::CELL_COUNT> soc_array { };
 
 void vSOCManagerTask(void *argument)
 {
-	while(true) osDelay(5000);
-	osDelay(5'000);
+	osDelay(1'000);
 
-
-	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i){
+	for(size_t i = 0; i < LtcConfig::CELL_COUNT; ++i)
+	{
 		auto &cell_soc = soc_array[i];
 		EKF_init(&cell_soc.x, &cell_soc.P);
 		EKF_set_SoC_based_on_voltage(&cell_soc.x, FullStackDataInstance::get().ltc_data.voltages[i].load());

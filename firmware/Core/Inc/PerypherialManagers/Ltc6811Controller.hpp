@@ -21,38 +21,10 @@
 #include <Interfaces/LTC6811Regs.hpp>
 #include <Config.hpp>
 
-enum struct PecStatus
+enum class LtcStatus
 {
 	Ok,
-	Error
-};
-
-enum struct PollStatus
-{
-	Busy,
-	Done
-};
-
-enum struct LtcCtrlStatus
-{
-	Ok					= 0x00,
-	Error				= 0x01,
-	PecError			= 0x02,
-	RegValMismatchError = 0x03
-};
-
-enum struct LtcError
-{
-	Error				= 0x00,
-	PecError 			= 0x01,
-	RegValMismatchError	= 0x02
-};
-
-enum struct LtcDiagnosisStatus
-{
-	Passed,
-	Warning,
-	Failed
+	PecError
 };
 
 class Ltc6811Controller
@@ -61,24 +33,30 @@ class Ltc6811Controller
 		Ltc6811Controller() = delete;
 		Ltc6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi);
 
+		template < typename T >
+		using RegArray 	= std::array < T, LtcConfig::CHAIN_SIZE >;
+		template < typename T >
+		using DataArray = std::array < T, LtcConfig::CHAIN_SIZE * 12 >;
+		template < typename T >
+		using GpioArray = std::array < T, LtcConfig::CHAIN_SIZE * 5 >;
+
 		/*
 		 * direct read
 		 */
 		template < Ltc6811::ReadRegisterGroup RdReg >
-		std::array < std::variant < RdReg, LtcError >, LtcConfig::CHAIN_SIZE > rawRead(Ltc6811::RCmd cmd);
+		LtcStatus rawRead(Ltc6811::RCmd cmd, RegArray < RdReg > *out, RegArray < LtcStatus > *out_pec);
 		/*
 		 * direct write overrides current mem
 		 */
 		template < Ltc6811::WriteReadRegisterGroup WrRdReg >
-		std::optional < LtcError > rawWrite(Ltc6811::WCmd cmd, std::array< WrRdReg, LtcConfig::CHAIN_SIZE > const &data);
-		std::optional < LtcError > rawWrite(Ltc6811::WCmd cmd);
+		LtcStatus rawWrite(Ltc6811::WCmd cmd, RegArray < WrRdReg> const *data);
+		LtcStatus rawWrite(Ltc6811::WCmd cmd);
 
-		//variant versions
-		std::optional < LtcError > configure();
-		std::array < std::variant < LtcError, float > , LtcConfig::CHAIN_SIZE * 12 > readVoltages();
-		std::optional < LtcError > setDischarge(const std::array< bool, LtcConfig::CHAIN_SIZE * 12 > &dis);
-		std::array < std::variant < LtcError, float > , LtcConfig::CHAIN_SIZE * 5 > readGpio();
-		std::variant < LtcError, float > readStackVoltage();
+		LtcStatus configure();
+		LtcStatus readVoltages(DataArray < float > *out);
+		LtcStatus setDischarge(DataArray < bool > const *in);
+		LtcStatus readGpio(GpioArray < float > *out);
+		LtcStatus readStackVoltage(float *out);
 
 		/*
 		 * the ltc will timeout and will go into idle / sleep mode
@@ -88,7 +66,7 @@ class Ltc6811Controller
 		void handleWatchDog();
 		void wakeUp();
 
-		PollStatus pollAdcStatus();
+		//LtcStatus pollAdcStatus();
 
 	private:
 		SPI_HandleTypeDef &hspi;
@@ -126,7 +104,7 @@ class Ltc6811Controller
 			return float(value * 20) * u_conv_coef;
 		}
 
-		std::array < Ltc6811::Config, LtcConfig::CHAIN_SIZE > configs;
+		RegArray <Ltc6811::Config > configs;
 		//std::array < Communication, chain_size > comm_settings;
 
 		constexpr static uint32_t twake_full = std::clamp(uint32_t(std::ceil(float(LtcConfig::CHAIN_SIZE) * twake_full_coef)), uint32_t(1), uint32_t(UINT32_MAX));

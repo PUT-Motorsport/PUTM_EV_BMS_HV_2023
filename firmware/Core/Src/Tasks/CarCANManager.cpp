@@ -52,7 +52,10 @@ static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 
 void vCarCANManagerTask(void *argument)
 {
-	startCan(hfdcan);
+	if(not startCan(hfdcan))
+	{
+		Error_Handler();
+	}
 
 	while (true)
 	{
@@ -62,10 +65,6 @@ void vCarCANManagerTask(void *argument)
 			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
 		}
 
-//		if (PUTM_CAN::can.get_aq_ts_button_new_data())
-//		{
-//			FullStackDataInstance::set().state.ts_activation_button = true;
-//		}
 		if (PUTM_CAN::can.get_dashboard_new_data() && PUTM_CAN::can.get_dashboard().ts_activation_button)
 		{
 			FullStackDataInstance::set().state.ts_activation_button = true;
@@ -73,19 +72,30 @@ void vCarCANManagerTask(void *argument)
 
 		const FullStackData &fsd = FullStackDataInstance::get();
 
-		PUTM_CAN::BMS_HV_main main_frame = {
+		bool ok;
+		if(fsd.state.error.has_value())
+		{
+			ok = false;
+		}
+		else
+		{
+			ok = true;
+		}
+
+		PUTM_CAN::BMS_HV_main main_frame =
+		{
 			.voltage_sum = static_cast<uint16_t>(fsd.charge_balance.voltage_sum * 100.0f),
 			.current = static_cast<int16_t>(fsd.external_data.acu_curr * 100.0f),
 			.temp_max = static_cast<uint8_t>(fsd.ltc_data.max_temp),
 			.temp_avg = static_cast<uint8_t>(fsd.ltc_data.min_temp),
-			.soc = static_cast<uint16_t>(fsd.soc.avg * 1'000.0f)};
+			.soc = static_cast<uint16_t>(fsd.soc.avg * 1'000.0f),
+			.ok = ok
+		};
 
-		auto status = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN).send(hfdcan);
+		auto msg = PUTM_CAN::Can_tx_message(main_frame, PUTM_CAN::can_tx_header_BMS_HV_MAIN);
+		auto status = msg.send(hfdcan);
 
-		auto status_2 = HAL_OK;
-		//auto status_2 = voltages_message(cell_send_index).send(hfdcan);
-
-		if (status not_eq HAL_OK or status_2 not_eq HAL_OK)
+		if (status not_eq HAL_OK)
 		{
 			Error_Handler();
 		}

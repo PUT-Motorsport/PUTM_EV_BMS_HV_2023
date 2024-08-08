@@ -283,19 +283,19 @@ namespace Ltc6811
 //		return destination;
 //	}
 
-//	template < ReadRegisterGroup RegisterGroup >
-//	void deserializeRegisterGroup(RegisterGroup &destination, uint8_t const *source)
-//	{
-//		std::memcpy(&destination, source, 6);
-//	}
-
 	template < ReadRegisterGroup RegisterGroup >
-	RegisterGroup deserializeRegisterGroup(uint8_t const *source)
+	void deserializeRegisterGroup(RegisterGroup *destination, uint8_t const *source)
 	{
-		static RegisterGroup destination;
-		std::memcpy(&destination, source, 6);
-		return destination;
+		std::memcpy(destination, source, 6);
 	}
+
+//	template < ReadRegisterGroup RegisterGroup >
+//	RegisterGroup deserializeRegisterGroup(uint8_t const *source)
+//	{
+//		static RegisterGroup destination;
+//		std::memcpy(&destination, source, 6);
+//		return destination;
+//	}
 }
 
 #endif /* INC_PERYPHERIALMANAGERS_LTC6811REGS_HPP_ */

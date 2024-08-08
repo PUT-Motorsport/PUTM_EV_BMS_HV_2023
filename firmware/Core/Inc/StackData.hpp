@@ -19,7 +19,7 @@ struct FullStackData
 	struct LTCData
 	{
 		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> voltages;
-		std::array<std::atomic<bool>, LtcConfig::CELL_COUNT> discharge{false};
+		std::array<std::atomic<bool>, LtcConfig::CELL_COUNT> discharge { false };
 		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp;
 		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp_C;
 		std::atomic<float> min_temp;
