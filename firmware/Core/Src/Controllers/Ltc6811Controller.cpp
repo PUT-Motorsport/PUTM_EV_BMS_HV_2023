@@ -5,9 +5,9 @@
  *      Author: piotr
  */
 
-#include <PerypherialManagers/Ltc6811Controller.hpp>
+#include <Controllers/Ltc6811Controller.hpp>
+#include <Controllers/SpiDmaController.hpp>
 #include <Utils/PEC15.hpp>
-#include <PerypherialManagers/SpiDmaController.hpp>
 #include <algorithm>
 #include <bitset>
 
@@ -251,9 +251,9 @@ LtcStatus Ltc6811Controller::readGpio(GpioArray < float > *out)
 		size_t offset = ltc * 5;
 		if(pec_a[ltc] == LtcStatus::Ok)
 		{
-			out->at(0 + offset) = float(reg_a[ltc].gpio[0].val);
-			out->at(1 + offset) = float(reg_a[ltc].gpio[1].val);
-			out->at(2 + offset) = float(reg_a[ltc].gpio[2].val);
+			out->at(0 + offset) = float(reg_a[ltc].gpio[0].val / 10'000.f);
+			out->at(1 + offset) = float(reg_a[ltc].gpio[1].val / 10'000.f);
+			out->at(2 + offset) = float(reg_a[ltc].gpio[2].val / 10'000.f);
 		}
 		else
 		{
@@ -263,8 +263,8 @@ LtcStatus Ltc6811Controller::readGpio(GpioArray < float > *out)
 		}
 		if(pec_b[ltc] == LtcStatus::Ok)
 		{
-			out->at(3 + offset) = float(reg_b[ltc].gpio[0].val);
-			out->at(4 + offset) = float(reg_b[ltc].gpio[1].val);
+			out->at(3 + offset) = float(reg_b[ltc].gpio[0].val / 10'000.f);
+			out->at(4 + offset) = float(reg_b[ltc].gpio[1].val / 10'000.f);
 		}
 		else
 		{

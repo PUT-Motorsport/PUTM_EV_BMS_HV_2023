@@ -5,8 +5,8 @@
  *      Author: jan
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_CHARGERCONTROLLER_HPP_
-#define INC_PERYPHERIALMANAGERS_CHARGERCONTROLLER_HPP_
+#ifndef INC_CONTROLLERS_CHARGERCONTROLLER_HPP_
+#define INC_CONTROLLERS_CHARGERCONTROLLER_HPP_
 
 #include <main.h>
 #include <array>
@@ -54,7 +54,7 @@ class ChargerCanTxMessage
 		}
 };
 
-class ChargerCanRxMessageHandler
+class ChargerCanRxController
 {
 	private:
 		constexpr static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
@@ -78,7 +78,7 @@ class ChargerCanRxMessageHandler
 
 		inline void processFrame()
 		{
-			FDCAN_RxHeaderTypeDef header{};
+			FDCAN_RxHeaderTypeDef header {};
 			auto status = HAL_FDCAN_GetRxMessage(&hfdcan, FDCAN_RX_FIFO0, &header, data.begin());
 
 			if (CHARGER_RX_ID == header.Identifier and HAL_OK == status)
@@ -116,4 +116,4 @@ class ChargerCanRxMessageHandler
 		}
 };
 
-#endif /* INC_PERYPHERIALMANAGERS_CHARGERCONTROLLER_HPP_ */
+#endif /* INC_CONTROLLERS_CHARGERCONTROLLER_HPP_ */

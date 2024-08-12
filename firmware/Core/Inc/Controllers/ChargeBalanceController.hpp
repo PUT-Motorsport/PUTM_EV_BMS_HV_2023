@@ -5,13 +5,14 @@
  *      Author: jan
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_CHARGEBALANCECONTROLLER_HPP_
-#define INC_PERYPHERIALMANAGERS_CHARGEBALANCECONTROLLER_HPP_
+#ifndef INC_CONTROLLERS_CHARGEBALANCECONTROLLER_HPP_
+#define INC_CONTROLLERS_CHARGEBALANCECONTROLLER_HPP_
 
 #include <main.h>
 #include <algorithm>
 #include <numeric>
 #include <cmath>
+#include <StackData.hpp>
 
 class ChargeBalanceController
 {
@@ -23,7 +24,7 @@ public:
 
     void update()
     {
-        const auto &v = fsd.ltc_data.voltages;
+        const auto &v = fsd.ltc.voltages;
         float max_v = *std::ranges::max_element(v.begin(), v.end());
         fsd.charge_balance.max_cell_voltage = max_v;
         float min_v = *std::ranges::min_element(v.begin(), v.end());
@@ -45,17 +46,17 @@ public:
 
     constexpr void disableBalance()
     {
-        std::ranges::fill(fsd.ltc_data.discharge, false);
+        std::ranges::fill(fsd.ltc.discharge, false);
     }
 
     constexpr void recalcBalance()
     {
-        for (size_t i = 0; i < fsd.ltc_data.voltages.size(); i++)
+        for (size_t i = 0; i < fsd.ltc.voltages.size(); i++)
         {
-            const bool balance = (fsd.ltc_data.voltages[i] > fsd.charge_balance.median_cell_voltage);
-            fsd.ltc_data.discharge[i] = balance;
+            const bool balance = (fsd.ltc.voltages[i] > fsd.charge_balance.median_cell_voltage);
+            fsd.ltc.discharge[i] = balance;
         }
     }
 };
 
-#endif /* INC_PERYPHERIALMANAGERS_CHARGEBALANCECONTROLLER_HPP_ */
+#endif /* INC_CONTROLLERS_CHARGEBALANCECONTROLLER_HPP_ */

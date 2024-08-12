@@ -10,7 +10,8 @@
 
 #include <stdint.h>
 
-struct UsbDataStruct{
+struct UsbDataStruct
+{
 	uint8_t new_data;
 	uint8_t ctr;
 	uint8_t len;

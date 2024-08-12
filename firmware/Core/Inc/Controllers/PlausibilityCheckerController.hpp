@@ -5,14 +5,14 @@
  *      Author: jan
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_
-#define INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_
+#ifndef INC_CONTROLLERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_
+#define INC_CONTROLLERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_
 
+#include <Controllers/ChecksController.hpp>
 #include <main.h>
 #include <array>
 
 #include <Interfaces/StateErrorWarning.hpp>
-#include <PerypherialManagers/ChecksController.hpp>
 #include <etl/utility.h>
 
 class PlausibilityChecker
@@ -71,4 +71,4 @@ public:
 	}
 };
 
-#endif /* INC_PERYPHERIALMANAGERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_ */
+#endif /* INC_CONTROLLERS_PLAUSIBILITYCHECKERCONTROLLER_HPP_ */

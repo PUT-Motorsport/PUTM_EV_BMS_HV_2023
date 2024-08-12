@@ -33,10 +33,10 @@
 /* USER CODE BEGIN Includes */
 #include <FreeRTOS.h>
 #include <app_freertos.h>
-#include <PerypherialManagers/SpiDmaController.hpp>
-#include <PerypherialManagers/GpioController.hpp>
-#include <PerypherialManagers/Ltc6811Controller.hpp>
-#include <PerypherialManagers/Mcp356xController.hpp>
+#include <Controllers/GpioController.hpp>
+#include <Controllers/Ltc6811Controller.hpp>
+#include <Controllers/Mcp356xController.hpp>
+#include <Controllers/SpiDmaController.hpp>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,6 +64,9 @@ GpioOut ams_status 		{ AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, false };
 //FIXME: charger and safety were swaped need to change in ioc
 GpioIn  safety_detect 	{ CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, true };
 GpioIn 	charger_detect	{ SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin, true };
+GpioIn 	air_m_detect	{ AIR_M_DETECT_GPIO_Port, AIR_M_DETECT_Pin };
+GpioIn 	air_p_detect	{ AIR_P_DETECT_GPIO_Port, AIR_P_DETECT_Pin };
+GpioIn 	air_pre_detect	{ AIR_PRE_DETECT_GPIO_Port, AIR_PRE_DETECT_Pin };
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,7 +118,6 @@ int main(void)
   MX_SPI3_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
-  MX_USB_Device_Init();
   MX_TIM3_Init();
   MX_ADC1_Init();
   MX_ADC3_Init();
@@ -133,13 +135,14 @@ int main(void)
   /* Init scheduler */
   osKernelInitialize();
 
-  /* Call init function for freertos objects (in freertos.c) */
+  /* Call init function for freertos objects (in cmsis_os2.c) */
   MX_FREERTOS_Init();
 
   /* Start scheduler */
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -162,23 +165,20 @@ void SystemClock_Config(void)
 
   /** Configure the main internal regulator output voltage
   */
-  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST);
+  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1);
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSI48
-                              |RCC_OSCILLATORTYPE_LSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
-  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV2;
-  RCC_OscInitStruct.PLL.PLLN = 42;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
+  RCC_OscInitStruct.PLL.PLLN = 18;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV8;
+  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV6;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {

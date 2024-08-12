@@ -19,8 +19,11 @@ namespace LtcConfig
 {
 	static constexpr size_t CHAIN_SIZE = 14;
 
-	static constexpr float UNDERVOLTAGE = 2.f;
-	static constexpr float OVERVOLTAGE = 4.f;
+//	static constexpr float UNDERVOLTAGE = 3.02f;
+//	static constexpr float OVERVOLTAGE = 4.18f;
+
+	static constexpr float OPEN_WIRE_MIN_VOLTAGE = 2.f;
+	static constexpr float OPEN_WIRE_MAX_VOLTAGE = 5.f;
 
 	//max 12;
 	static constexpr size_t CELLS_PER_LTC = 10;
@@ -29,14 +32,16 @@ namespace LtcConfig
 	static constexpr size_t CELL_COUNT = CHAIN_SIZE * CELLS_PER_LTC;
 
 	//max 5
-	static constexpr size_t TEMP_PER_LTC = 5;
+	static constexpr size_t TEMP_PER_LTC = 4;
+	//needs to be the size of TEMP_PER_LTC (max 5) and be indexed from 0-4
+	static constexpr std::array < size_t, TEMP_PER_LTC > TEMP_TO_CH_MAP { 0, 1, 3, 4 };
 	static constexpr size_t TEMP_COUNT = CHAIN_SIZE * TEMP_PER_LTC;
 }
 
 namespace ChecksConfig
 {
 	constexpr static float CELL_MAX_VOLTAGE = 4.18f;
-	constexpr static float CELL_MIN_VOLTAGE = 3.0f;
+	constexpr static float CELL_MIN_VOLTAGE = 3.02f;
 	constexpr static int32_t VOLTAGE_ERROR_COUNT_MAX = 40;
 	constexpr static float CELL_MAX_TEMPERATURE = 55.0f;
 	constexpr static float CELL_MIN_TEMPERATURE = -20.0f;
@@ -59,6 +64,11 @@ namespace ExternalConfig
 	constexpr static float ADC_VOLT_RES = 2'000.0;
 	constexpr static float ADC_VOLT_COEF = (800'000.0 + ADC_VOLT_RES) / ADC_VOLT_RES;
 	constexpr static float ADC_CURR_COEF = 200.0 / 1.25;
+}
+
+namespace PlausibilityConfig
+{
+	constexpr static uint32_t min_precharge_time = 2000; //
 }
 
 namespace

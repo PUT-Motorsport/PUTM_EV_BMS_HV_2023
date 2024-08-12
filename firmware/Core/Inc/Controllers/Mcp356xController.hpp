@@ -5,16 +5,16 @@
  *      Author: piotr
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_
-#define INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_
+#ifndef INC_CONTROLLERS_MCP356XCONTROLLER_HPP_
+#define INC_CONTROLLERS_MCP356XCONTROLLER_HPP_
 
 #include <main.h>
 #include <array>
 
-#include <PerypherialManagers/GpioController.hpp>
 #include <Interfaces/MCP356xCmd.hpp>
 #include <Interfaces/MCP356xRegs.hpp>
 #include <Config.hpp>
+#include <Controllers/GpioController.hpp>
 
 enum struct Mcp356xVersion
 {
@@ -73,4 +73,4 @@ class Mcp356xController
 		Mcp356x::DataFormat adc_variant;
 };
 
-#endif /* INC_PERYPHERIALMANAGERS_MCP356XCONTROLLER_HPP_ */
+#endif /* INC_CONTROLLERS_MCP356XCONTROLLER_HPP_ */

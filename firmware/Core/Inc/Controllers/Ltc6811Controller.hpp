@@ -16,10 +16,10 @@
 #include <optional>
 #include <variant>
 
-#include <PerypherialManagers/GpioController.hpp>
 #include <Interfaces/LTC6811Cmd.hpp>
 #include <Interfaces/LTC6811Regs.hpp>
 #include <Config.hpp>
+#include <Controllers/GpioController.hpp>
 
 enum class LtcStatus
 {
@@ -73,8 +73,8 @@ class Ltc6811Controller
 		GpioOut cs;
 
 		//uint16_t(0x0fff) - 12bit mask
-		constexpr static uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(LtcConfig::UNDERVOLTAGE * 625.0 - 1.0)));
-		constexpr static uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(LtcConfig::UNDERVOLTAGE * 625.0)));
+		constexpr static uint16_t vuv = std::min(uint16_t(0x0fff), uint16_t(std::round(ChecksConfig::CELL_MIN_VOLTAGE * 625.0 - 1.0)));
+		constexpr static uint16_t vov = std::min(uint16_t(0x0fff), uint16_t(std::round(ChecksConfig::CELL_MAX_VOLTAGE * 625.0)));
 		constexpr static float u_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
 		constexpr static float twake_full_coef = 0.2f;

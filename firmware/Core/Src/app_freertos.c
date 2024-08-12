@@ -232,6 +232,8 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_vPlausibilityManagerTask */
 __weak void vPlausibilityManagerTask(void *argument)
 {
+  /* init code for USB_Device */
+  MX_USB_Device_Init();
   /* USER CODE BEGIN vPlausibilityManagerTask */
   /* Infinite loop */
   for(;;)

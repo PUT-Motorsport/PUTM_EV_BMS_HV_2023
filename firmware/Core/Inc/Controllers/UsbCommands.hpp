@@ -5,8 +5,8 @@
  *      Author: jan
  */
 
-#ifndef INC_PERYPHERIALMANAGERS_USBCOMMANDS_HPP_
-#define INC_PERYPHERIALMANAGERS_USBCOMMANDS_HPP_
+#ifndef INC_CONTROLLERS_USBCOMMANDS_HPP_
+#define INC_CONTROLLERS_USBCOMMANDS_HPP_
 
 #include <algorithm>
 #include <array>
@@ -96,4 +96,4 @@ public:
 };
 
 
-#endif /* INC_PERYPHERIALMANAGERS_USBCOMMANDS_HPP_ */
+#endif /* INC_CONTROLLERS_USBCOMMANDS_HPP_ */

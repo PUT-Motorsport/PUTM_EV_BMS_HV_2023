@@ -16,7 +16,7 @@
 
 struct FullStackData
 {
-	struct LTCData
+	struct Ltc
 	{
 		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> voltages;
 		std::array<std::atomic<bool>, LtcConfig::CELL_COUNT> discharge { false };
@@ -26,34 +26,31 @@ struct FullStackData
 		std::atomic<float> max_temp;
 		std::atomic<float> bat_volt;
 		std::atomic<float> soc;
-		std::atomic<bool> charger_connected{true};
-	} ltc_data;
+	} ltc;
 
-	struct ExternalData
+	struct External
 	{
 		std::atomic<float> car_volt;
 		std::atomic<float> acu_volt;
 		std::atomic<float> acu_curr;
-		std::atomic<bool> safety_state{false};
-	} external_data;
 
-	struct Other
-	{
-		std::atomic<int> imd_state;
-	} other;
+		std::atomic<bool> tsms_on { false };
+		std::atomic<bool> charger_connected { true };
 
-	struct Air_detect
-	{
-		std::atomic<bool> pre_state{false};
 		std::atomic<bool> p_state{false};
 		std::atomic<bool> m_state{false};
-	} air_detect;
+		std::atomic<bool> pre_state{false};
+
+		std::atomic<int> imd_state { 0 };
+
+		std::atomic<bool> ts_activation_button { false };
+	} external;
 
 	struct State
 	{
-		std::atomic<bool> ts_activation_button{false};
 		std::optional<Checks::CriticalError> error{std::nullopt};
 		std::array<Checks::ErrorListElement, 6> list_of_errors;
+		std::atomic<bool> in_error { false };
 	} state;
 
 	struct ChargeBalance
@@ -75,8 +72,6 @@ struct FullStackData
 
 	struct Charger
 	{
-		std::atomic<bool> charged_detected;
-		// set by USB
 		std::atomic<bool> balance_enable{false};
 		std::atomic<uint32_t> balance_disable_tick{};
 		std::atomic<bool> charging_enable{false};
@@ -88,7 +83,8 @@ struct FullStackData
 		std::atomic<bool> discharge_optical_visualisation{false};
 	} usb_events;
 
-	struct Time{
+	struct Time
+	{
 		std::atomic<uint32_t> tick;
 	} time;
 

@@ -5,11 +5,11 @@
  *      Author: Piotr Lesicki
  */
 
+#include <Controllers/Mcp356xController.hpp>
+#include <Controllers/SpiDmaController.hpp>
 #include <array>
 #include <numeric>
 
-#include <PerypherialManagers/Mcp356xController.hpp>
-#include <PerypherialManagers/SpiDmaController.hpp>
 
 using namespace Mcp356x;
 
@@ -123,7 +123,9 @@ void Mcp356xController::restartAdc()
 
 bool Mcp356xController::dataReady()
 {
-	return not poolSatusByte().dr_status;
+	auto status = poolSatusByte();
+	auto mcp_ok = (status.ndev_addr0 xor status.dev_addr0);
+	return not status.dr_status and mcp_ok;
 }
 
 int32_t Mcp356xController::readData()
