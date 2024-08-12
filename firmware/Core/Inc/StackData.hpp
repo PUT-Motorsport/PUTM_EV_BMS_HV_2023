@@ -80,7 +80,8 @@ struct FullStackData
 
 	struct UsbEvents
 	{
-		std::atomic<bool> discharge_optical_visualisation{false};
+		std::atomic<bool> discharge_optical_visualisation {false};
+		std::atomic<bool> charger_on;
 	} usb_events;
 
 	struct Time

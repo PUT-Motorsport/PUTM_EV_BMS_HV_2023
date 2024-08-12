@@ -37,7 +37,7 @@ public:
                                          { return acc + (x - avg_v) * (x - avg_v); }) / v.size();
         fsd.charge_balance.std_dev_cell_voltage = std::sqrt(variance);
 
-        std::array<float, 135> vc;
+        std::array<float, LtcConfig::CELL_COUNT> vc;
         std::copy(v.begin(), v.end(), vc.begin());
         size_t n = vc.size() / 2;
         std::nth_element(vc.begin(), vc.begin()+n, vc.end());

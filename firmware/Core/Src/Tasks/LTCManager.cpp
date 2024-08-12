@@ -28,7 +28,7 @@ using DataArray = std::array < T, LtcConfig::CHAIN_SIZE * 12 >;
 template < typename T >
 using GpioArray = std::array < T, LtcConfig::CHAIN_SIZE * 5 >;
 
-using fsdi = FullStackDataInstance;
+static auto& fsd = FullStackDataInstance::set();
 
 static SPI_HandleTypeDef &hspi = hspi2;
 static Ltc6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
@@ -47,18 +47,18 @@ static void calcTemps()
 {
 	for(size_t i = 0; i < LtcConfig::TEMP_COUNT; ++i)
 	{
-		fsdi::set().ltc.temp_C.at(i) = ltcCalculateTemperature(fsdi::get().ltc.temp[i]); //- offsets.at(i);
+		fsd.ltc.temp_C.at(i) = ltcCalculateTemperature(fsd.ltc.temp[i]); //- offsets.at(i);
 	}
-	const auto& t_array = fsdi::set().ltc.temp_C;
+	const auto& t_array = fsd.ltc.temp_C;
 	float t_max = *std::ranges::max_element(t_array.begin(), t_array.end());
-	fsdi::set().ltc.max_temp = t_max;
+	fsd.ltc.max_temp = t_max;
 	float t_min = *std::ranges::min_element(t_array.begin(), t_array.end());
-	fsdi::set().ltc.min_temp = t_min;
+	fsd.ltc.min_temp = t_min;
 }
 
 static void readVoltages()
 {
-	float accumulator;
+	float accumulator = 0.f;
 	static DataArray < float > voltages;
 	ltc_ctrl.readVoltages(&voltages);
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
@@ -67,12 +67,30 @@ static void readVoltages()
 		size_t offset_ltc = ltc * LTC_CHANNEL_COUNT;
 		for(size_t cell = 0; cell < CELLS_PER_LTC; cell++)
 		{
-			size_t maped_cell = CELL_TO_CH_MAP[cell];
-			auto voltage = voltages[maped_cell + offset_ltc];
+			size_t mapped_cell = CELL_TO_CH_MAP[cell];
+			auto voltage = voltages[mapped_cell + offset_ltc];
 			voltage = voltage * (LtcConfig::OPEN_WIRE_MAX_VOLTAGE > voltage && voltage > LtcConfig::OPEN_WIRE_MIN_VOLTAGE);
-			fsdi::set().ltc.voltages[cell + offset_cell] = voltage;
+			fsd.ltc.voltages[cell + offset_cell] = voltage;
+			accumulator += voltage;
 		}
 	}
+	fsd.ltc.bat_volt = accumulator;
+}
+
+static void setDischarges()
+{
+	static DataArray < bool > discharge { 0 };
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
+	{
+		size_t offset_cell = ltc * CELLS_PER_LTC;
+		size_t offset_ltc = ltc * LTC_CHANNEL_COUNT;
+		for(size_t cell = 0; cell < CELLS_PER_LTC; cell++)
+		{
+			size_t mapped_cell = CELL_TO_CH_MAP[cell];
+			discharge[mapped_cell + offset_ltc] = fsd.ltc.discharge[cell + offset_cell];
+		}
+	}
+	ltc_ctrl.setDischarge(&discharge);
 }
 
 static void readTemps()
@@ -87,7 +105,7 @@ static void readTemps()
 		{
 			size_t mapped_gpio = TEMP_TO_CH_MAP[gpio];
 			auto temp = temps[mapped_gpio + offset_ltc];
-			fsdi::set().ltc.temp[gpio + offset_temp] = temp;
+			fsd.ltc.temp[gpio + offset_temp] = temp;
 		}
 	}
 }
@@ -100,10 +118,10 @@ static void init()
 
 static void normal()
 {
-	if(fsdi::get().external.charger_connected)
+	if(fsd.usb_events.charger_on)
 		state = States::Charging;
-	else if(fsdi::get().usb_events.discharge_optical_visualisation)
-		state = States::OpticalVisualization;
+//	else if(fsd.usb_events.discharge_optical_visualisation)
+//		state = States::OpticalVisualization;
 
 	readVoltages();
 	readTemps();
@@ -112,13 +130,13 @@ static void normal()
 
 static void charging()
 {
-	//if(not FullStackDataInstance::get().ltc_data.charger_connected)
-	state = States::Normal;
+	if(not fsd.usb_events.charger_on)
+		state = States::Normal;
 
-//	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
-//	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
-//	ltc_ctrl.setDischarge(FullStackDataInstance::get().ltc_data.discharge);
-//	calcTemp();
+	readVoltages();
+	readTemps();
+	calcTemps();
+	setDischarges();
 }
 
 static void opticalVisualization()

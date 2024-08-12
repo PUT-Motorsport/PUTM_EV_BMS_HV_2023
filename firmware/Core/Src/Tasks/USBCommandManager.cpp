@@ -48,10 +48,12 @@ void vUSBCommandManagerTask(void *argument)
 
 			case Command_type::StartCharging:
 				FullStackDataInstance::set().charger.charging_enable = true;
+				FullStackDataInstance::set().usb_events.charger_on = true;
 				break;
 
 			case Command_type::StopCharging:
 				FullStackDataInstance::set().charger.charging_enable = false;
+				FullStackDataInstance::set().usb_events.charger_on = false;
 				break;
 
 			case Command_type::StartBalance:

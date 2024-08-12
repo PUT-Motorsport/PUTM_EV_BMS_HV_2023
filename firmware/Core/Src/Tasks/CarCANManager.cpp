@@ -50,11 +50,10 @@ static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
 //	return PUTM_CAN::Can_tx_message(frame, PUTM_CAN::can_tx_header_BMS_HV_cell_voltages);
 //}
 
+static auto& fsd = FullStackDataInstance::set();
+
 void vCarCANManagerTask(void *argument)
 {
-	auto& fsd = FullStackDataInstance::set();
-
-
 	if(not startCan(hfdcan))
 	{
 		Error_Handler();

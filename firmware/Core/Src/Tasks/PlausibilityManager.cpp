@@ -19,13 +19,13 @@ extern GpioOut ams_status;
 
 static AirState air_state { AirState::Open };
 
-uint32_t precharge_start { 0 };
+static uint32_t precharge_start { 0 };
 
-auto& fsd = FullStackDataInstance::set();
+static auto& fsd = FullStackDataInstance::set();
 
-AirController air_driver;
+static AirController air_driver;
 
-PlausibilityChecker checker(FullStackDataInstance::get());
+static PlausibilityChecker checker(FullStackDataInstance::get());
 
 void vPlausibilityManagerTask(void *argument)
 {
@@ -56,45 +56,45 @@ void vPlausibilityManagerTask(void *argument)
 		{
 			case AirState::Open:
 			{
-				bool charger_mode 	= fsd.external.charger_connected;
+				bool charger_on 	= fsd.usb_events.charger_on;
 				bool ts_activation 	= fsd.external.ts_activation_button;
 				bool tsms_on		= fsd.external.tsms_on;
-				if((ts_activation or charger_mode) and tsms_on)
+				if((ts_activation or charger_on) and tsms_on)
 				{
 					fsd.external.ts_activation_button = false;
 					air_state = AirState::Precharge;
 					precharge_start = HAL_GetTick();
 				}
-
-			}break;
+			} break;
 			case AirState::Precharge:
 			{
 				//FIXM: preferably it should be the external acu mes
 				float pre_charge_margin = fsd.ltc.bat_volt * 0.95f;
-				float charge			= fsd.external.car_volt;
+				float pre_charge		= fsd.external.car_volt;
+				float bat_min_voltage	= LtcConfig::CELL_COUNT * ChecksConfig::CELL_MIN_VOLTAGE;
 				bool in_error			= fsd.state.in_error;
+				bool charger_on 		= fsd.usb_events.charger_on;
 				uint32_t time 			= HAL_GetTick();
-				uint32_t finish_time		= precharge_start + PlausibilityConfig::min_precharge_time;
-				if(charge > pre_charge_margin and time > finish_time)
+				uint32_t finish_time	= precharge_start + PlausibilityConfig::min_precharge_time;
+				if((pre_charge > pre_charge_margin) and (time > finish_time) and pre_charge_margin > bat_min_voltage)
 				{
 					air_state = AirState::Closed;
 				}
-				else if (in_error)
+				else if (in_error or not charger_on)
 				{
 					air_state = AirState::Open;
 				}
-				break;
-			}
+			} break;
 			case AirState::Closed:
 			{
 				bool tsms_on	= fsd.external.tsms_on;
+				bool charger_on = fsd.usb_events.charger_on;
 				bool in_error	= fsd.state.in_error;
-				if(in_error or not tsms_on)
+				if(in_error or not tsms_on or not charger_on)
 				{
 					air_state = AirState::Open;
 				}
-				break;
-			}
+			} break;
 		}
 
 		air_driver.setState(air_state);

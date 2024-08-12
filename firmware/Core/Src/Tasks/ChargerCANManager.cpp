@@ -17,16 +17,16 @@
 #include <Config.hpp>
 
 static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
+static auto& fsd = FullStackDataInstance::set();
 
 void vChargerCANManagerTask(void *argument)
 {
-	auto& fsd = FullStackDataInstance::set();
 
 	constexpr static float charge_voltage = LtcConfig::CELL_COUNT * (4.2f - 0.05f);
 	startCan(hfdcan);
 
 	static ChargerCanRxController charger_rx {};
-	static ChargeBalanceController balanceController(FullStackDataInstance::set());
+	static ChargeBalanceController balanceController(fsd);
 	balanceController.disableBalance();
 
 	uint32_t balance_start { HAL_GetTick() };
