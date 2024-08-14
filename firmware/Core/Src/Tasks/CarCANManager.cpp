@@ -13,7 +13,7 @@
 #include <Utils/CanUtils.hpp>
 #include <app_freertos.h>
 
-static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+static FDCAN_HandleTypeDef &hfdcan = hfdcan2;//hfdcan2;
 
 //auto voltages_message(size_t &cell_index)
 //{
@@ -56,7 +56,7 @@ void vCarCANManagerTask(void *argument)
 {
 	if(not startCan(hfdcan))
 	{
-		Error_Handler();
+		fsd.state.in_error = true;
 	}
 
 	while (true)
@@ -87,7 +87,9 @@ void vCarCANManagerTask(void *argument)
 
 		if (status not_eq HAL_OK)
 		{
-			Error_Handler();
+			// in error
+			fsd.state.in_error = true;
+			//Error_Handler();
 		}
 	}
 }

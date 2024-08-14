@@ -30,7 +30,7 @@ Ltc6811Controller::Ltc6811Controller(GpioOut cs, SPI_HandleTypeDef &hspi) : hspi
 		// set reference to shut down after conversion
 		configs[i].refon = 0;
 		// set adc clock to use higher speeds
-		configs[i].adcopt = 0;
+		configs[i].adcopt = 1;
 		// set all discharges to off
 		configs[i].dcc1 = 0;
 		configs[i].dcc2 = 0;
@@ -158,6 +158,134 @@ LtcStatus Ltc6811Controller::configure()
 	return rawWrite(CMD_WRCFGA, &configs);
 }
 
+LtcStatus Ltc6811Controller::readPdVoltages(DataArray < float > *out)
+{
+	auto status = LtcStatus::Ok;
+
+	static std::array < RegArray < CellVoltage >, 4> regs;
+	static std::array < RegArray < LtcStatus >, 4 > pecs;
+
+	for(size_t repeat = 0; repeat < 2; repeat++)
+	{
+		wakeUp();
+		rawWrite(CMD_ADOW(Mode::Filtered, Pull::Down, Discharge::NotPermited, Cell::All));
+		//rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+		osDelay(tadc);
+	}
+
+	wakeUp();
+	rawRead(CMD_RDCVA, &regs[0], &pecs[0]);
+	//wakeUp();
+	rawRead(CMD_RDCVB, &regs[1], &pecs[1]);
+	//wakeUp();
+	rawRead(CMD_RDCVC, &regs[2], &pecs[2]);
+	//wakeUp();
+	rawRead(CMD_RDCVD, &regs[3], &pecs[3]);
+
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
+	{
+		for(size_t r = 0; r < 3; r++)
+		{
+			if(pecs[r][ltc] == LtcStatus::Ok)
+			{
+				out->at(ltc*12 + r*3 + 0) = convRawToU(regs[r][ltc].channel[0].val);
+				out->at(ltc*12 + r*3 + 1) = convRawToU(regs[r][ltc].channel[1].val);
+				out->at(ltc*12 + r*3 + 2) = convRawToU(regs[r][ltc].channel[2].val);
+			}
+			else
+			{
+				out->at(ltc*12 + r*3 + 0) = -1.0f;
+				out->at(ltc*12 + r*3 + 1) = -1.0f;
+				out->at(ltc*12 + r*3 + 2) = -1.0f;
+			}
+		}
+	}
+
+	return status;
+}
+LtcStatus Ltc6811Controller::readPuVoltages(DataArray < float > *out)
+{
+	auto status = LtcStatus::Ok;
+
+	static std::array < RegArray < CellVoltage >, 4> regs;
+	static std::array < RegArray < LtcStatus >, 4 > pecs;
+
+	for(size_t repeat = 0; repeat < 2; repeat++)
+	{
+		wakeUp();
+		rawWrite(CMD_ADOW(Mode::Filtered, Pull::Up, Discharge::NotPermited, Cell::All));
+		//rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+		osDelay(tadc);
+	}
+
+	wakeUp();
+	rawRead(CMD_RDCVA, &regs[0], &pecs[0]);
+	//wakeUp();
+	rawRead(CMD_RDCVB, &regs[1], &pecs[1]);
+	//wakeUp();
+	rawRead(CMD_RDCVC, &regs[2], &pecs[2]);
+	//wakeUp();
+	rawRead(CMD_RDCVD, &regs[3], &pecs[3]);
+
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
+	{
+		for(size_t r = 0; r < 4; r++)
+		{
+			if(pecs[r][ltc] == LtcStatus::Ok)
+			{
+				out->at(ltc*12 + r*3 + 0) = convRawToU(regs[r][ltc].channel[0].val);
+				out->at(ltc*12 + r*3 + 1) = convRawToU(regs[r][ltc].channel[1].val);
+				out->at(ltc*12 + r*3 + 2) = convRawToU(regs[r][ltc].channel[2].val);
+			}
+			else
+			{
+				out->at(ltc*12 + r*3 + 0) = -1.0f;
+				out->at(ltc*12 + r*3 + 1) = -1.0f;
+				out->at(ltc*12 + r*3 + 2) = -1.0f;
+			}
+		}
+	}
+
+	return status;
+}
+
+LtcStatus Ltc6811Controller::checkOpenWire(DataArray < bool > *out)
+{
+	auto status = LtcStatus::Ok;
+
+	static DataArray < float > pd_v;
+	static DataArray < float > pu_v;
+
+	std::fill(out->begin(), out->end(), 0);
+
+	readPdVoltages(&pd_v);
+	readPuVoltages(&pu_v);
+
+	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
+	{
+		for(size_t cell = 0; cell < 12; cell++)
+		{
+			if(cell == 0)
+			{
+				if (pu_v[ltc * 12 + 0] < 2.f)
+					out->at(ltc * 12 + 0) = true;
+				continue;
+			}
+			if(cell == 11)
+			{
+				if (pd_v[ltc * 12 + 11] < 2.f)
+				out->at(ltc * 12 + 11) = true;
+				continue;
+			}
+
+			if (pu_v[ltc * 12 + cell] - pd_v[ltc * 12 + cell] < -0.4f)
+				out->at(ltc * 12 + cell) = true;
+		}
+	}
+
+	return status;
+}
+
 LtcStatus Ltc6811Controller::readVoltages(DataArray < float > *out)
 {
 	auto status = LtcStatus::Ok;
@@ -166,17 +294,17 @@ LtcStatus Ltc6811Controller::readVoltages(DataArray < float > *out)
 	static std::array < RegArray < LtcStatus >, 4 > pecs;
 
 	wakeUp();
-	rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));//CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
-
+	//rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
 	osDelay(tadc);
 
 	wakeUp();
 	rawRead(CMD_RDCVA, &regs[0], &pecs[0]);
-	wakeUp();
+	//wakeUp();
 	rawRead(CMD_RDCVB, &regs[1], &pecs[1]);
-	wakeUp();
+	//wakeUp();
 	rawRead(CMD_RDCVC, &regs[2], &pecs[2]);
-	wakeUp();
+	//wakeUp();
 	rawRead(CMD_RDCVD, &regs[3], &pecs[3]);
 
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
@@ -238,12 +366,10 @@ LtcStatus Ltc6811Controller::readGpio(GpioArray < float > *out)
 
 	wakeUp();
 	rawWrite(CMD_ADAX(Mode::Normal, Pin::All));
-
 	osDelay(tadc);
 
 	wakeUp();
 	rawRead(CMD_RDAUXA, &reg_a, &pec_a);
-	wakeUp();
 	rawRead(CMD_RDAUXB, &reg_b, &pec_b);
 
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)

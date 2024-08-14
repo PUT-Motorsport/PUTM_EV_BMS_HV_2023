@@ -42,10 +42,10 @@ namespace ChecksConfig
 {
 	constexpr static float CELL_MAX_VOLTAGE = 4.18f;
 	constexpr static float CELL_MIN_VOLTAGE = 3.02f;
-	constexpr static int32_t VOLTAGE_ERROR_COUNT_MAX = 40;
+	constexpr static int32_t VOLTAGE_ERROR_COUNT_MAX = 20;
 	constexpr static float CELL_MAX_TEMPERATURE = 55.0f;
 	constexpr static float CELL_MIN_TEMPERATURE = -20.0f;
-	constexpr static int32_t TEMP_ERROR_COUNT_MAX = 80;
+	constexpr static int32_t TEMP_ERROR_COUNT_MAX = 20;
 	constexpr static float BATTERY_MAX_CURRENT = 200.0f;
 	constexpr static float BATTERY_SENSOR_DISCONNECT = 350.0f;
 	constexpr static int32_t CURRENT_ERROR_COUNT_MAX = 40;
@@ -68,36 +68,42 @@ namespace ExternalConfig
 
 namespace PlausibilityConfig
 {
-	constexpr static uint32_t min_precharge_time = 2000; //
+	constexpr static uint32_t min_precharge_time = 2000;  	//
+	constexpr static float precharge_min_charge = 0.95f;		// in 0.0 - 1.0
+}
+
+namespace ChargerConfig
+{
+	constexpr static uint32_t balance_time = 5000;
 }
 
 namespace
 {
 	// DO NOT TOUCH, DONT U DARE
-	namespace Check1
-	{
-		template < size_t i >
-		static constexpr bool subCheck()
-		{
-			return LtcConfig::CELL_TO_CH_MAP[i] >= 0 && LtcConfig::CELL_TO_CH_MAP[i] <= 11;
-		}
-
-		template < size_t i >
-		static constexpr bool check()
-		{
-			if constexpr(i == 0) return subCheck<0>();
-			else return subCheck<i>() && check<i - 1>();
-		}
-
-		static constexpr bool checkCellToChMap()
-		{
-			return check<LtcConfig::CELLS_PER_LTC - 1>();
-		}
-	}
-
-	// DO NOT TOUCH, DONT U DARE
 	namespace AssertLtcCellConfig
 	{
+		// DO NOT TOUCH, DONT U DARE
+		namespace CheckCellMap
+		{
+			template < size_t i >
+			static constexpr bool subCheck()
+			{
+				return LtcConfig::CELL_TO_CH_MAP[i] >= 0 && LtcConfig::CELL_TO_CH_MAP[i] <= 11;
+			}
+
+			template < size_t i >
+			static constexpr bool check()
+			{
+				if constexpr(i == 0) return subCheck<0>();
+				else return subCheck<i>() && check<i - 1>();
+			}
+
+			static constexpr bool checkCellToChMap()
+			{
+				return check<LtcConfig::CELLS_PER_LTC - 1>();
+			}
+		}
+
 		// DO NOT TOUCH, DONT U DARE
 		static_assert(LtcConfig::CELL_TO_CH_MAP.size() <= 12);
 		static_assert(LtcConfig::CELL_TO_CH_MAP.size() >= 1);
@@ -109,12 +115,34 @@ namespace
 //		idk shit bellow doesnt work
 //		static_assert(std::is_same_v<decltype(LtcConfig::CELL_TO_CH_MAP), std::array<size_t, LtcConfig::CELLS_PER_LTC>>);
 
-		static_assert(Check1::checkCellToChMap(), "\"LtcConfig::CELL_TO_CH_MAP\" check failed: element > 11 or < 0");
+		static_assert(CheckCellMap::checkCellToChMap(), "\"LtcConfig::CELL_TO_CH_MAP\" check failed: element > 11 or < 0");
 	};
 
 	// DO NOT TOUCH, DONT U DARE
 	namespace AssertLtcTempConfig
 	{
+		// DO NOT TOUCH, DONT U DARE
+//		namespace CheckTempMap
+//		{
+//			template < size_t i >
+//			static constexpr bool subCheck()
+//			{
+//				return LtcConfig::TEMP_TO_CH_MAP[i] >= 0 && LtcConfig::TEMP_TO_CH_MAP[i] <= 4;
+//			}
+//
+//			template < size_t i >
+//			static constexpr bool check()
+//			{
+//				if constexpr(i == 0) return subCheck<0>();
+//				else return subCheck<i>() && check<i - 1>();
+//			}
+//
+//			static constexpr bool checkCellToChMap()
+//			{
+//				return check<LtcConfig::TEMP_PER_LTC - 1>();
+//			}
+//		}
+
 		static_assert(LtcConfig::TEMP_PER_LTC <= 5);
 		static_assert(LtcConfig::TEMP_PER_LTC >= 1);
 	};

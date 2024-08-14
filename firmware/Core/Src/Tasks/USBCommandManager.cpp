@@ -15,6 +15,7 @@
 #include <string.h>
 #include <usb_device.h>
 #include <usbd_cdc_if.h>
+#include <Controllers/ChargerController.hpp>
 
 //
 // https://community.st.com/t5/embedded-software-mcus/way-to-be-notified-on-cdc-transmit-complete/td-p/412336
@@ -103,7 +104,9 @@ void vUSBCommandManagerTask(void *argument)
 		json.add("car_voltage", FullStackDataInstance::get().external.car_volt.load());
 		json.add("soc", FullStackDataInstance::get().soc.cells_soc);
 		json.add("cell_voltage", FullStackDataInstance::get().ltc.voltages);
+		osDelay(100);
 		json.add("temperature", FullStackDataInstance::get().ltc.temp_C);
+		osDelay(100);
 
 		// new
 		json.add("discharge", FullStackDataInstance::get().ltc.discharge);

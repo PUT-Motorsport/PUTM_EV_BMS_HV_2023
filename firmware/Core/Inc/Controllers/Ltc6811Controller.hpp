@@ -54,6 +54,9 @@ class Ltc6811Controller
 
 		LtcStatus configure();
 		LtcStatus readVoltages(DataArray < float > *out);
+		LtcStatus readPdVoltages(DataArray < float > *out);
+		LtcStatus readPuVoltages(DataArray < float > *out);
+		LtcStatus checkOpenWire(DataArray < bool > *out);
 		LtcStatus setDischarge(DataArray < bool > const *in);
 		LtcStatus readGpio(GpioArray < float > *out);
 		LtcStatus readStackVoltage(float *out);
@@ -78,7 +81,7 @@ class Ltc6811Controller
 		constexpr static float u_conv_coef = 0.000'1f;
 		constexpr static float t_conv_coef = 0.000'1f / 0.007'5f;
 		constexpr static float twake_full_coef = 0.2f;
-		constexpr static size_t tadc = 15;
+		constexpr static size_t tadc = 25;//30;//15;
 
 		// convert ADC to cell voltage returns in [V]
 		constexpr float convRawToU(uint16_t value)

@@ -138,7 +138,8 @@ namespace Checks
     static OptionalError CurrentSensorDisconnect(const FullStackData &stackData)
     {
         static int32_t error_cntr{0};
-        bool disconnect = std::abs(stackData.external.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
+        //bool disconnect = std::abs(stackData.external.acu_curr) > ChecksConfig::BATTERY_MAX_CURRENT;
+        bool disconnect = std::abs(stackData.external.isens_ref) < 2.0f;// ChecksConfig::BATTERY_MAX_CURRENT;
         if (disconnect)
         {
             ++error_cntr;

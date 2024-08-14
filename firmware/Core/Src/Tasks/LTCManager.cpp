@@ -69,9 +69,15 @@ static void readVoltages()
 		{
 			size_t mapped_cell = CELL_TO_CH_MAP[cell];
 			auto voltage = voltages[mapped_cell + offset_ltc];
-			voltage = voltage * (LtcConfig::OPEN_WIRE_MAX_VOLTAGE > voltage && voltage > LtcConfig::OPEN_WIRE_MIN_VOLTAGE);
+			voltage = voltage * float(not open_wire[mapped_cell + offset_ltc]);
 			fsd.ltc.voltages[cell + offset_cell] = voltage;
 			accumulator += voltage;
+			if(cell == 0 or cell == 11) continue;
+			if(std::abs(fsd.ltc.voltages[cell + offset_cell + 0] - fsd.ltc.voltages[cell + offset_cell + 1]) > 0.5f)
+			{
+				fsd.ltc.voltages[cell + offset_cell + 0] = 0.f;
+				fsd.ltc.voltages[cell + offset_cell + 1] = 0.f;
+			}
 		}
 	}
 	fsd.ltc.bat_volt = accumulator;
@@ -123,8 +129,9 @@ static void normal()
 //	else if(fsd.usb_events.discharge_optical_visualisation)
 //		state = States::OpticalVisualization;
 
-	readVoltages();
+	//do not change the order
 	readTemps();
+	readVoltages();
 	calcTemps();
 }
 
@@ -133,21 +140,15 @@ static void charging()
 	if(not fsd.usb_events.charger_on)
 		state = States::Normal;
 
-	readVoltages();
+	//do not change the order
 	readTemps();
+	readVoltages();
 	calcTemps();
 	setDischarges();
 }
 
 static void opticalVisualization()
 {
-//	if(FullStackDataInstance::get().ltc_data.charger_connected)
-//		state = States::Charging;
-//	else if(not FullStackDataInstance::get().usb_events.discharge_optical_visualisation)
-//		state = States::Normal;
-//	ltc_ctrl.readVoltages(FullStackDataInstance::set().ltc_data.voltages);
-//	ltc_ctrl.readGpioTemp(FullStackDataInstance::set().ltc_data.temp);
-
 	static size_t num = 0;
 	static size_t delay = 0;
 
@@ -199,6 +200,7 @@ void vLTCManagerTask(void *argument)
 				break;
 		}
 
-		osDelay(100);
+		//task consists off multiple osDelay()
+		osDelay(1);
 	}
 }

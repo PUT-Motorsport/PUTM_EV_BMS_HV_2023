@@ -10,12 +10,12 @@
 
 #include <main.h>
 #include <array>
-
+#include <fdcan.h>
 
 class ChargerCanTxMessage
 {
 	private:
-		constexpr static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+		constexpr static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 		constexpr static uint32_t CHARGER_TX_ID = 0x1806E5F4;
 		std::array<uint8_t, 8> data;
 
@@ -57,7 +57,7 @@ class ChargerCanTxMessage
 class ChargerCanRxController
 {
 	private:
-		constexpr static FDCAN_HandleTypeDef &hfdcan = hfdcan2;
+		constexpr static FDCAN_HandleTypeDef &hfdcan = hfdcan3;
 		constexpr static uint32_t CHARGER_RX_ID = 0x18ff50e5;
 
 		std::array<uint8_t, 8> data{};

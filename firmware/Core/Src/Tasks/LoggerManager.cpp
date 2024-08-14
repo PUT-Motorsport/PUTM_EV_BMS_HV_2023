@@ -12,11 +12,9 @@
 
 void vLoggerManagerTask(void *argument)
 {
-  osDelay(2000);
-
 	while(true)
 	{
-		osDelay(1000);
+		osDelay(10000);
 	}
 }
 

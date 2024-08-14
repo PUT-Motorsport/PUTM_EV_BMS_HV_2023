@@ -25,6 +25,12 @@ static Mcp356xController isens(GpioOut(NMES_ISENS_CS_GPIO_Port, NMES_ISENS_CS_Pi
 // num of cyckles after which the adc mes will be restarted in case no new data was received
 static constexpr uint32_t timeout = 4;
 
+enum struct ISensMeasurement
+{
+	Current,
+	Reference
+};
+
 static constexpr Mcp356x::ConfigGroup std_config = []()
 {
 	Mcp356x::ConfigGroup c;
@@ -56,7 +62,7 @@ static constexpr Mcp356x::ConfigGroup isens_config = []()
 {
 	Mcp356x::ConfigGroup c;
 	c.adc_mode = Mcp356x::AdcMode::StandBy;
-	c.bias_current = Mcp356x::BiasCurrent::_0uA;
+	c.bias_current = Mcp356x::BiasCurrent::_15uA;
 	c.clk_sel = Mcp356x::ClockSelect::InternalNoOutput;
 	c.shut_down = Mcp356x::ShutDown::Active;
 	c.oversampling_ratio = Mcp356x::OversamplingRatio::_16384;
@@ -88,7 +94,7 @@ extern GpioIn air_pre_detect;
 constexpr float currentReggression(float u)
 {
 	constexpr float a = 171.5f;
-	constexpr float b = -0.28f;
+	constexpr float b = 0.06f;
 	return a * u + b;
 }
 
@@ -140,8 +146,26 @@ void vExternalMeasurmentsManagerTask(void *argument)
 		}
 		if(isens.dataReady())
 		{
-			float i = currentReggression(isens.readVoltage());
-			FullStackDataInstance::set().external.acu_curr = i;// isens.readVoltage();
+			static ISensMeasurement isens_meas { ISensMeasurement::Current };
+			switch (isens_meas)
+			{
+				case ISensMeasurement::Current:
+				{
+					float i = currentReggression(isens.readVoltage());
+					FullStackDataInstance::set().external.acu_curr = i;
+					isens.setChannels(Mcp356x::MuxIn::Ch1, Mcp356x::MuxIn::Agnd);
+					isens.restartAdc();
+					isens_meas = ISensMeasurement::Reference;
+				} break;
+				case ISensMeasurement::Reference:
+				{
+					float ref = isens.readVoltage();
+					FullStackDataInstance::set().external.isens_ref = ref;
+					isens.setChannels(Mcp356x::MuxIn::Ch0, Mcp356x::MuxIn::Ch1);
+					isens.restartAdc();
+					isens_meas = ISensMeasurement::Current;
+				} break;
+			}
 		}
 	}
 }

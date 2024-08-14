@@ -36,18 +36,16 @@ void vChargerCANManagerTask(void *argument)
 	{
 		osDelay(200);
 
-		if (not fsd.external.charger_connected)
-		{
-			continue;
-		}
+//		if (not fsd.usb_events.charger_on)
+//		{
+//			continue;
+//		}
 
 		balanceController.update();
 
-		constexpr static size_t BALANCE_TIME = 5'000;
-		if(HAL_GetTick() > balance_start + BALANCE_TIME)
+		if(HAL_GetTick() > balance_start + ChargerConfig::balance_time)
 		{
-			if(balance_toggle and FullStackDataInstance::get().charger.balance_enable
-							  and not FullStackDataInstance::get().charger.charging_enable)
+			if(balance_toggle and fsd.charger.balance_enable and not fsd.charger.charging_enable)
 			{
 				balanceController.recalcBalance();
 			}
@@ -69,6 +67,8 @@ void vChargerCANManagerTask(void *argument)
 			FullStackDataInstance::get().charger.charge_current,
 			FullStackDataInstance::get().charger.charging_enable
 		};
-		frame.send();
+		auto status = frame.send();
+		if(status != HAL_OK)
+			auto b = 'c';
 	}
 }

@@ -50,7 +50,8 @@ namespace Checks
 {
     using namespace std::literals;
 
-    constexpr static std::array ErrorNamesMap{
+    constexpr static std::array ErrorNamesMap
+	{
         // cell voltage
         "under_voltage"sv,
         "over_voltage"sv,

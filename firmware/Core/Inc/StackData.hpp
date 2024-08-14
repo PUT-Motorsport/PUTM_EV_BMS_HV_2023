@@ -33,6 +33,7 @@ struct FullStackData
 		std::atomic<float> car_volt;
 		std::atomic<float> acu_volt;
 		std::atomic<float> acu_curr;
+		std::atomic<float> isens_ref;
 
 		std::atomic<bool> tsms_on { false };
 		std::atomic<bool> charger_connected { true };
@@ -76,6 +77,8 @@ struct FullStackData
 		std::atomic<uint32_t> balance_disable_tick{};
 		std::atomic<bool> charging_enable{false};
 		std::atomic<float> charge_current{0.0f};
+		std::atomic<float> battery_voltage{0.0f};
+		std::atomic<float> battery_current{0.0f};
 	} charger;
 
 	struct UsbEvents
