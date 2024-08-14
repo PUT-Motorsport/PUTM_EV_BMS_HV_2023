@@ -31,7 +31,7 @@ void vPlausibilityManagerTask(void *argument)
 {
 	while (true)
 	{
-		osDelay(100);
+		osDelay(20);
 
 		// pcb alive
 		if(HAL_GetTick() < 1000)

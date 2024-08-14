@@ -69,15 +69,14 @@ static void readVoltages()
 		{
 			size_t mapped_cell = CELL_TO_CH_MAP[cell];
 			auto voltage = voltages[mapped_cell + offset_ltc];
-			voltage = voltage * float(not open_wire[mapped_cell + offset_ltc]);
+			//voltage = voltage * float(not open_wire[mapped_cell + offset_ltc]);
 			fsd.ltc.voltages[cell + offset_cell] = voltage;
 			accumulator += voltage;
-			if(cell == 0 or cell == 11) continue;
-			if(std::abs(fsd.ltc.voltages[cell + offset_cell + 0] - fsd.ltc.voltages[cell + offset_cell + 1]) > 0.5f)
-			{
-				fsd.ltc.voltages[cell + offset_cell + 0] = 0.f;
-				fsd.ltc.voltages[cell + offset_cell + 1] = 0.f;
-			}
+//			if(cell == 0 or cell == 11) continue;
+//			if(std::abs(fsd.ltc.voltages[cell + offset_cell + 0] - fsd.ltc.voltages[cell + offset_cell + 1]) > 0.5f)
+//			{
+//				fsd.ltc.voltages[cell + offset_cell + 0] = 0.f;
+//			}
 		}
 	}
 	fsd.ltc.bat_volt = accumulator;
