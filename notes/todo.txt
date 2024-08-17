@@ -1,0 +1,9 @@
+high prio:
+trzeba zmienić logikę latchowania
+programowanie z zewnątrz 
+zmienić limity max min
+pomiar stacka od strony baterii
+
+
+low prio:
+soc:

@@ -52,6 +52,12 @@ void vPlausibilityManagerTask(void *argument)
 		// Time update for some checks
 		fsd.time.tick = HAL_GetTick();
 
+		// reset ts_activation if tsms is not present
+		if(not fsd.external.tsms_on)
+		{
+			fsd.external.ts_activation_button = false;
+		}
+
 		switch (air_state)
 		{
 			case AirState::Open:
@@ -63,9 +69,9 @@ void vPlausibilityManagerTask(void *argument)
 
 				if((ts_activation or charger_connected) and tsms_on and not in_error)
 				{
-					fsd.external.ts_activation_button = false;
-					air_state = AirState::Precharge;
-					precharge_start = HAL_GetTick();
+					fsd.external.ts_activation_button 	= false;
+					air_state 							= AirState::Precharge;
+					precharge_start 					= HAL_GetTick();
 				}
 			} break;
 			case AirState::Precharge:
@@ -76,11 +82,10 @@ void vPlausibilityManagerTask(void *argument)
 				float pre_charge		= fsd.external.car_volt;
 				bool tsms_on			= fsd.external.tsms_on;
 				bool in_error			= fsd.state.in_error;
-				bool charger_on 		= fsd.charger.charging_enable;
 				uint32_t time 			= HAL_GetTick();
 				uint32_t finish_time	= precharge_start + PlausibilityConfig::min_precharge_time;
 
-				if(in_error or not tsms_on)
+				if(not tsms_on or in_error)
 				{
 					air_state = AirState::Open;
 					fsd.charger.charging_enable = false;
@@ -93,9 +98,8 @@ void vPlausibilityManagerTask(void *argument)
 			case AirState::Closed:
 			{
 				bool tsms_on	= fsd.external.tsms_on;
-				bool charger_on = fsd.charger.charging_enable;
 				bool in_error	= fsd.state.in_error;
-				if(in_error or not tsms_on)
+				if(not tsms_on or in_error)
 				{
 					air_state = AirState::Open;
 					fsd.charger.charging_enable = false;

@@ -77,6 +77,12 @@ namespace ChargerConfig
 	constexpr static uint32_t balance_time = 5000;
 }
 
+namespace LaGimela
+{
+	//ltc, meas - 0 - 13, 0 - 3
+	constexpr static std::array<std::pair<size_t, size_t>, 1> pomijanie_temperatury = { { {11, 2} } };
+}
+
 namespace
 {
 	// DO NOT TOUCH, DONT U DARE

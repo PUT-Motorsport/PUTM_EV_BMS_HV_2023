@@ -36,10 +36,10 @@ void vChargerCANManagerTask(void *argument)
 	{
 		osDelay(200);
 
-//		if (not fsd.usb_events.charger_on)
-//		{
-//			continue;
-//		}
+		if (not fsd.usb_events.charger_on)
+		{
+			continue;
+		}
 
 		balanceController.update();
 
