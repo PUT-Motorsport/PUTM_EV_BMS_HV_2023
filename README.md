@@ -1,4 +1,4 @@
-# PUTM_EV_BMS_HV_2023
+# PUTM_EV_BMS_HV_MASTER_2023
 Accumulator Managment System (High Voltage Battery Managment System)
 
 ## Overview
