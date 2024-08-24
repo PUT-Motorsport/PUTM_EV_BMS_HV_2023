@@ -145,6 +145,18 @@ const osThreadAttr_t SOCManager_attributes = {
   .cb_size = sizeof(SOCManagerControlBlock),
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for myTask09 */
+osThreadId_t myTask09Handle;
+uint32_t myTask09Buffer[ 128 ];
+osStaticThreadDef_t myTask09ControlBlock;
+const osThreadAttr_t myTask09_attributes = {
+  .name = "myTask09",
+  .stack_mem = &myTask09Buffer[0],
+  .stack_size = sizeof(myTask09Buffer),
+  .cb_mem = &myTask09ControlBlock,
+  .cb_size = sizeof(myTask09ControlBlock),
+  .priority = (osPriority_t) osPriorityNormal,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -159,6 +171,7 @@ extern void vUSBCommandManagerTask(void *argument);
 extern void vCarCANManagerTask(void *argument);
 extern void vChargerCANManagerTask(void *argument);
 extern void vSOCManagerTask(void *argument);
+extern void StartTask09(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -212,6 +225,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of SOCManager */
   SOCManagerHandle = osThreadNew(vSOCManagerTask, NULL, &SOCManager_attributes);
+
+  /* creation of myTask09 */
+  myTask09Handle = osThreadNew(StartTask09, NULL, &myTask09_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

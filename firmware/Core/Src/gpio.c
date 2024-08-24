@@ -67,10 +67,10 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(NMES_CAR_CS_GPIO_Port, NMES_CAR_CS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = CHARGER_DETECT_Pin;
+  GPIO_InitStruct.Pin = SAFETY_DETECT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(CHARGER_DETECT_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(SAFETY_DETECT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PAPin PAPin PAPin PAPin */
   GPIO_InitStruct.Pin = FAN_CTRL1_Pin|NMES_ISENS_CS_Pin|NMES_EXT_V_CS_Pin|NMES_EXT_I_CS_Pin;
@@ -104,7 +104,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin PBPin */
-  GPIO_InitStruct.Pin = AIR_M_DETECT_Pin|AIR_P_DETECT_Pin|SAFETY_DETECT_Pin;
+  GPIO_InitStruct.Pin = AIR_M_DETECT_Pin|AIR_P_DETECT_Pin|CHARGER_DETECT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);

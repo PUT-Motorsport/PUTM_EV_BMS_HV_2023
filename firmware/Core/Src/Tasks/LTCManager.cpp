@@ -33,6 +33,8 @@ static auto& fsd = FullStackDataInstance::set();
 static SPI_HandleTypeDef &hspi = hspi2;
 static Ltc6811Controller ltc_ctrl(GpioOut(NLTC2_CS_GPIO_Port, NLTC2_CS_Pin, true), hspi);
 
+extern GpioOut ams_status;
+
 enum struct States
 {
 	Init,
@@ -54,6 +56,7 @@ static void calcTemps()
 	fsd.ltc.max_temp = t_max;
 	float t_min = *std::ranges::min_element(t_array.begin(), t_array.end());
 	fsd.ltc.min_temp = t_min;
+	fsd.ltc.avg_temp = std::accumulate(t_array.begin(), t_array.end(), 0) / t_array.size();
 }
 
 static void readVoltages()
@@ -116,11 +119,7 @@ static void readTemps()
 	for(const auto& [scalak, pomiar] : LaGimela::pomijanie_temperatury)
 	{
 		size_t offset = scalak * TEMP_PER_LTC;
-		auto poprzedni = offset + pomiar - 1;
-		auto nastepny = offset + pomiar + 1;
-		if (poprzedni < 0) poprzedni = 2;
-		if (nastepny > fsd.ltc.temp.size()) nastepny = fsd.ltc.temp.size() - 2;
-		fsd.ltc.temp[offset + pomiar] =  0.0f;//((fsd.ltc.temp[nastepny] + fsd.ltc.temp[poprzedni]) / 2);
+		fsd.ltc.temp[offset + pomiar] =  0.0f;
 	}
 }
 
@@ -132,8 +131,8 @@ static void init()
 
 static void normal()
 {
-	if(fsd.usb_events.charger_on)
-		state = States::Charging;
+//	if(fsd.usb_events.charger_on)
+//		state = States::Charging;
 //	else if(fsd.usb_events.discharge_optical_visualisation)
 //		state = States::OpticalVisualization;
 
@@ -141,18 +140,21 @@ static void normal()
 	readTemps();
 	readVoltages();
 	calcTemps();
+	setDischarges();
 }
 
 static void charging()
 {
-	if(not fsd.usb_events.charger_on)
-		state = States::Normal;
+//	if(not fsd.usb_events.charger_on)
+//		state = States::Normal;
+//
+//	//do not change the order
+//	readTemps();
+//	readVoltages();
+//	calcTemps();
+//	setDischarges();
 
-	//do not change the order
-	readTemps();
-	readVoltages();
-	calcTemps();
-	setDischarges();
+	state = States::Normal;
 }
 
 static void opticalVisualization()

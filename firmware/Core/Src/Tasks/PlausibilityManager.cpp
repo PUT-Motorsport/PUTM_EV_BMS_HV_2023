@@ -29,6 +29,7 @@ static PlausibilityChecker checker(FullStackDataInstance::get());
 
 void vPlausibilityManagerTask(void *argument)
 {
+	ams_status.activate();
 	while (true)
 	{
 		osDelay(20);
@@ -42,10 +43,11 @@ void vPlausibilityManagerTask(void *argument)
 		//toggle on board watch dog
 		if(not fsd.state.in_error)
 		{
-			ams_status.toggle();
+			ams_status.activate();
 		}
 		else
 		{
+			ams_status.deactivate();
 			led_error.activate();
 		}
 
@@ -118,9 +120,10 @@ void vPlausibilityManagerTask(void *argument)
 		}
 		else
 		{
-			auto error = (*optonalError);
-			fsd.state.error = error;
-			fsd.state.in_error = true;
+//			FIXME:
+//			auto error = (*optonalError);
+//			fsd.state.error = error;
+//			fsd.state.in_error = true;
 		}
 
 	}

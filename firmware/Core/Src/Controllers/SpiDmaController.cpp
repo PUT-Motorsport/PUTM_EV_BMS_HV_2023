@@ -63,9 +63,9 @@ void SpiDmaController::waitForNotify()
 
 void HAL_SPI_Handle(SPI_HandleTypeDef * hspi)
 {
+	if(hspi == nullptr) Error_Handler();
 	SpiDmaController::SpiDmaHandle spiDmaHandle = { 0 };
 	QueueHandle_t queueHandle = SpiDmaController::assignQueue(hspi);
-	//TODO: ???
 	if(queueHandle == nullptr); //Error
 	if(xQueueIsQueueEmptyFromISR(queueHandle) == pdTRUE); //Error
 

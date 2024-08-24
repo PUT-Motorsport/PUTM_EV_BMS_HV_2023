@@ -47,6 +47,10 @@ void vUSBCommandManagerTask(void *argument)
 				usb_data_tick = HAL_GetTick();
 				break;
 
+			case Command_type::CommunicationTest:
+				FullStackDataInstance::set().usb_events.communication_test = true;
+				break;
+
 			case Command_type::StartCharging:
 				FullStackDataInstance::set().charger.charging_enable = true;
 				FullStackDataInstance::set().usb_events.charger_on = true;
@@ -110,6 +114,8 @@ void vUSBCommandManagerTask(void *argument)
 		json.add("discharge", FullStackDataInstance::get().ltc.discharge);
 		json.add("balance", FullStackDataInstance::get().charger.balance_enable.load());
 		json.add("charging", FullStackDataInstance::get().charger.charging_enable.load());
+
+		//json.add("test", FullStackDataInstance::get().usb_events.communication_test.load())
 
 		for (const auto& errorEl : FullStackDataInstance::get().state.list_of_errors)
 		{

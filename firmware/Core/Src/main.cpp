@@ -37,6 +37,7 @@
 #include <Controllers/Ltc6811Controller.hpp>
 #include <Controllers/Mcp356xController.hpp>
 #include <Controllers/SpiDmaController.hpp>
+#include <StackData.hpp>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,9 +62,8 @@ GpioOut led_ok 			{ LED1_GPIO_Port, LED1_Pin, true };
 GpioOut led_warning 	{ LED2_GPIO_Port, LED2_Pin, true };
 GpioOut led_error 		{ LED3_GPIO_Port, LED3_Pin, true };
 GpioOut ams_status 		{ AMS_FAULT_GPIO_Port, AMS_FAULT_Pin, false };
-//FIXME: charger and safety were swaped need to change in ioc
-GpioIn  safety_detect 	{ CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, true };
-GpioIn 	charger_detect	{ SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin, true };
+GpioIn  charger_detect 	{ CHARGER_DETECT_GPIO_Port, CHARGER_DETECT_Pin, true };
+GpioIn 	safety_detect	{ SAFETY_DETECT_GPIO_Port, SAFETY_DETECT_Pin, true };
 GpioIn 	air_m_detect	{ AIR_M_DETECT_GPIO_Port, AIR_M_DETECT_Pin };
 GpioIn 	air_p_detect	{ AIR_P_DETECT_GPIO_Port, AIR_P_DETECT_Pin };
 GpioIn 	air_pre_detect	{ AIR_PRE_DETECT_GPIO_Port, AIR_PRE_DETECT_Pin };

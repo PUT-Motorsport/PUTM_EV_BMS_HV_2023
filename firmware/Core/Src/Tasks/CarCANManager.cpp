@@ -37,7 +37,6 @@ static FDCAN_HandleTypeDef &hfdcan = hfdcan2;//hfdcan2;
 //		.v_cell_start_plus_3 = voltage_to_can(fsd.ltc_data.voltages.at(clmp(cell_index + 3))),
 //		.cell_end = static_cast<uint8_t>(clmp(cell_index + 3))};
 //
-//	// FIXME
 //	if (cell_index + 4 < fsd.ltc_data.voltages.size())
 //	{
 //		cell_index = cell_index + 4;
@@ -62,10 +61,10 @@ void vCarCANManagerTask(void *argument)
 	while (true)
 	{
 		osDelay(100);
-		while (getCanFifoMessageCount(hfdcan))
-		{
-			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
-		}
+//		while (getCanFifoMessageCount(hfdcan))
+//		{
+//			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
+//		}
 
 		if (PUTM_CAN::can.get_dashboard_new_data() && PUTM_CAN::can.get_dashboard().ts_activation_button)
 		{
@@ -77,7 +76,7 @@ void vCarCANManagerTask(void *argument)
 			.voltage_sum = static_cast<uint16_t>(fsd.charge_balance.voltage_sum * 100.0f),
 			.current = static_cast<int16_t>(fsd.external.acu_curr * 100.0f),
 			.temp_max = static_cast<uint8_t>(fsd.ltc.max_temp),
-			.temp_avg = static_cast<uint8_t>(fsd.ltc.min_temp),
+			.temp_avg = static_cast<uint8_t>(fsd.ltc.avg_temp),
 			.soc = static_cast<uint16_t>(fsd.soc.avg * 1'000.0f),
 			.ok = not fsd.state.in_error
 		};

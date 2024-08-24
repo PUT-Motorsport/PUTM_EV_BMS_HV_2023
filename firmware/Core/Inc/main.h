@@ -57,8 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define CHARGER_DETECT_Pin GPIO_PIN_13
-#define CHARGER_DETECT_GPIO_Port GPIOC
+#define SAFETY_DETECT_Pin GPIO_PIN_13
+#define SAFETY_DETECT_GPIO_Port GPIOC
 #define FAN_CTRL7_Pin GPIO_PIN_0
 #define FAN_CTRL7_GPIO_Port GPIOC
 #define FAN_CTRL6_Pin GPIO_PIN_1
@@ -133,8 +133,8 @@ void Error_Handler(void);
 #define FDCAN1_TX_GPIO_Port GPIOB
 #define NMES_ACU_CS_Pin GPIO_PIN_7
 #define NMES_ACU_CS_GPIO_Port GPIOB
-#define SAFETY_DETECT_Pin GPIO_PIN_9
-#define SAFETY_DETECT_GPIO_Port GPIOB
+#define CHARGER_DETECT_Pin GPIO_PIN_9
+#define CHARGER_DETECT_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

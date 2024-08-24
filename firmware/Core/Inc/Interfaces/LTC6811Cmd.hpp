@@ -246,12 +246,10 @@ namespace Ltc6811
 	constexpr static WCmd CMD_CLRSTAT{ 0b11100010011 };
 	/*
 	 * Poll ADC Conversion Status
-	 * FIXME: WCmd?
 	 */
 	constexpr static WCmd CMD_PLADC{ 0b11100010100 };
 	/*
 	 * Diagnose MUX and Poll Status
-	 * FIXME: WCmd?
 	 */
 	constexpr static WCmd CMD_DIAGN{ 0b11100010101 };
 	/*

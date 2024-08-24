@@ -69,39 +69,6 @@ constexpr static uint16_t pec_table[] =
 
 #endif
 
-
-/*uint16_t calcPEC (uint8_t *data , int len)
-{
-	uint16_t remainder;
-	uint16_t address;
-	remainder = 16;
-	for (int i = 0; i < len; i++)
-	{
-		address = ((remainder >> 7) ^ data[i]) & 0xff;
-		remainder = (remainder << 8 ) ^ pec_table[address];
-	}
-	return (remainder * 2);
-}*/
-//template < size_t size >
-//std::array < uint8_t, 2 > calcPEC (std::array < uint8_t, size > data)
-//{
-//	uint16_t remainder;
-//	uint16_t address;
-//	remainder = 16;
-//	for(uint8_t d : data)
-//	{
-//		address = ((remainder >> 7) ^ d) & 0xff;
-//		remainder = (remainder << 8 ) ^ pec_table[address];
-//	}
-//	remainder *= 2;
-////FIXME: not sure if remainder should be shifted to left by 1 cuz
-////algorithm gives a 15bit valuea and it should be send in the
-////[16:0] = { 15..0 0 } som im not sure if the provided by the doc
-////code takes it into account
-//#warning "not sure if remainder should be shifted to left by 1"
-//	return { uint8_t(remainder >> 8), uint8_t(remainder)} ;
-//}
-
 std::tuple< uint8_t, uint8_t > calcPEC (uint8_t const *begin, uint8_t const *end);
 #endif /* INC_PUTM_LTC_6811_LTC6804_LIB_PEC15_HPP_ */
 

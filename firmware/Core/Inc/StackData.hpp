@@ -18,22 +18,23 @@ struct FullStackData
 {
 	struct Ltc
 	{
-		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> voltages;
+		std::array<std::atomic<float>, LtcConfig::CELL_COUNT> voltages { 0.f };
 		std::array<std::atomic<bool>, LtcConfig::CELL_COUNT> discharge { false };
-		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp;
-		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp_C;
-		std::atomic<float> min_temp;
-		std::atomic<float> max_temp;
-		std::atomic<float> bat_volt;
-		std::atomic<float> soc;
+		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp { 0.f };
+		std::array<std::atomic<float>, LtcConfig::TEMP_COUNT> temp_C { 0.f };
+		std::atomic<float> min_temp { 0.f };
+		std::atomic<float> avg_temp { 0.f };
+		std::atomic<float> max_temp { 0.f };
+		std::atomic<float> bat_volt { 0.f };
+		std::atomic<float> soc { 0.f };
 	} ltc;
 
 	struct External
 	{
-		std::atomic<float> car_volt;
-		std::atomic<float> acu_volt;
-		std::atomic<float> acu_curr;
-		std::atomic<float> isens_ref;
+		std::atomic<float> car_volt { 0.f };
+		std::atomic<float> acu_volt { 0.f };
+		std::atomic<float> acu_curr { 0.f };
+		std::atomic<float> isens_ref { 0.f };
 
 		std::atomic<bool> tsms_on { false };
 		std::atomic<bool> charger_connected { true };
@@ -83,8 +84,9 @@ struct FullStackData
 
 	struct UsbEvents
 	{
-		std::atomic<bool> discharge_optical_visualisation {false};
-		std::atomic<bool> charger_on;
+		std::atomic<bool> discharge_optical_visualisation { false };
+		std::atomic<bool> charger_on { false };
+		std::atomic<bool> communication_test { false };
 	} usb_events;
 
 	struct Time

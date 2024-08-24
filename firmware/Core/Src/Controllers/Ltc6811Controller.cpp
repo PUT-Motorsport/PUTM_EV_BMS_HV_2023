@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <bitset>
 
+extern GpioOut ams_status;
+
 using namespace Ltc6811;
 using namespace LtcConfig;
 
@@ -293,6 +295,7 @@ LtcStatus Ltc6811Controller::readVoltages(DataArray < float > *out)
 	static std::array < RegArray < CellVoltage >, 4> regs;
 	static std::array < RegArray < LtcStatus >, 4 > pecs;
 
+	ams_status.activate();
 	wakeUp();
 	rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
 	//rawWrite(CMD_ADCV(Mode::Filtered, Discharge::NotPermited, Cell::All));
@@ -306,6 +309,7 @@ LtcStatus Ltc6811Controller::readVoltages(DataArray < float > *out)
 	rawRead(CMD_RDCVC, &regs[2], &pecs[2]);
 	//wakeUp();
 	rawRead(CMD_RDCVD, &regs[3], &pecs[3]);
+	ams_status.deactivate();
 
 	for(size_t ltc = 0; ltc < CHAIN_SIZE; ltc++)
 	{

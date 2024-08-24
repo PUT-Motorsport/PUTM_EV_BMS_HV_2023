@@ -22,6 +22,7 @@ extern void vUSBCommandManagerTask(void *argument);
 extern void vCarCANManagerTask(void *argument);
 extern void vChargerCANManagerTask(void *argument);
 extern void vSOCManagerTask(void *argument);
+extern void StartTask09(void *argument);
 
 void SystemClock_Config(void);
 

@@ -36,7 +36,7 @@ void vChargerCANManagerTask(void *argument)
 	{
 		osDelay(200);
 
-		if (not fsd.usb_events.charger_on)
+		if (not fsd.charger.balance_enable and not fsd.charger.charging_enable)
 		{
 			continue;
 		}
