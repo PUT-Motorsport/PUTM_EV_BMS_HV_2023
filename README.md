@@ -26,3 +26,6 @@ The AMS is powered by STM32G484xx, a powerful, new gen MCU capable of handling v
 <p align="center"> 
   <img src="https://github.com/user-attachments/assets/a7a89a94-febb-4723-b750-979644e198c7">
 </p>
+
+### The research and development work was carried out was a part of the Student Scientific Clubs Create Innovations (SKNTI) program. [Ministry of Science and Higher Education](https://www.gov.pl/web/nauka)
+![baner-sknti](https://github.com/PUT-Motorsport/PUTM_VP_SIM/assets/64833115/6471b760-8a2b-4a6e-99b0-7c81398ade27)
