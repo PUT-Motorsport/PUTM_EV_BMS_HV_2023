@@ -33,7 +33,7 @@ namespace Checks
             --error_cntr;
         }
 
-        if (error_cntr > ChecksConfig::VOLTAGE_ERROR_COUNT_MAX)
+        if (error_cntr > ChecksConfig::VOLTAGE_ERROR_COUNT_MAX and iter not_eq std::end(stackData.ltc.voltages))
         {
             return std::make_pair(CriticalErrorsEnum::UnderVoltage, std::distance(std::begin(stackData.ltc.voltages), iter));
         }
@@ -64,7 +64,7 @@ namespace Checks
             --error_cntr;
         }
 
-        if (error_cntr > ChecksConfig::VOLTAGE_ERROR_COUNT_MAX)
+        if (error_cntr > ChecksConfig::VOLTAGE_ERROR_COUNT_MAX and iter not_eq std::end(stackData.ltc.voltages))
         {
             return std::make_pair(CriticalErrorsEnum::OverVoltage, std::distance(std::begin(stackData.ltc.voltages), iter));
         }
@@ -85,7 +85,7 @@ namespace Checks
             --error_cntr;
         }
 
-        if (error_cntr > ChecksConfig::TEMP_ERROR_COUNT_MAX)
+        if (error_cntr > ChecksConfig::TEMP_ERROR_COUNT_MAX and iter not_eq std::end(stackData.ltc.voltages))
         {
             return std::make_pair(CriticalErrorsEnum::UnderTemperature, std::distance(std::begin(stackData.ltc.temp_C), iter));
         }
@@ -107,7 +107,7 @@ namespace Checks
             --error_cntr;
         }
 
-        if (error_cntr > ChecksConfig::TEMP_ERROR_COUNT_MAX)
+        if (error_cntr > ChecksConfig::TEMP_ERROR_COUNT_MAX and iter not_eq std::end(stackData.ltc.voltages))
         {
             return std::make_pair(CriticalErrorsEnum::OverTemperature, std::distance(std::begin(stackData.ltc.temp_C), iter));
         }

@@ -71,7 +71,7 @@ const osThreadAttr_t LTCManager_attributes = {
   .stack_size = sizeof(LTCManagerBuffer),
   .cb_mem = &LTCManagerControlBlock,
   .cb_size = sizeof(LTCManagerControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityNormal4,
 };
 /* Definitions for ExternalMeasurmentsManager */
 osThreadId_t ExternalMeasurmentsManagerHandle;
@@ -83,19 +83,7 @@ const osThreadAttr_t ExternalMeasurmentsManager_attributes = {
   .stack_size = sizeof(ExternalMeasurmentsManagerBuffer),
   .cb_mem = &ExternalMeasurmentsManagerControlBlock,
   .cb_size = sizeof(ExternalMeasurmentsManagerControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for LoggerManager */
-osThreadId_t LoggerManagerHandle;
-uint32_t LoggerManagerrBuffer[ 1024 ];
-osStaticThreadDef_t LoggerManagerrControlBlock;
-const osThreadAttr_t LoggerManager_attributes = {
-  .name = "LoggerManager",
-  .stack_mem = &LoggerManagerrBuffer[0],
-  .stack_size = sizeof(LoggerManagerrBuffer),
-  .cb_mem = &LoggerManagerrControlBlock,
-  .cb_size = sizeof(LoggerManagerrControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityNormal1,
 };
 /* Definitions for USBCommandManager */
 osThreadId_t USBCommandManagerHandle;
@@ -107,7 +95,7 @@ const osThreadAttr_t USBCommandManager_attributes = {
   .stack_size = sizeof(myTask05Buffer),
   .cb_mem = &myTask05ControlBlock,
   .cb_size = sizeof(myTask05ControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for CarCANManager */
 osThreadId_t CarCANManagerHandle;
@@ -119,7 +107,7 @@ const osThreadAttr_t CarCANManager_attributes = {
   .stack_size = sizeof(CarCANManagerBuffer),
   .cb_mem = &CarCANManagerControlBlock,
   .cb_size = sizeof(CarCANManagerControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityNormal7,
 };
 /* Definitions for ChargerCANManager */
 osThreadId_t ChargerCANManagerHandle;
@@ -131,7 +119,7 @@ const osThreadAttr_t ChargerCANManager_attributes = {
   .stack_size = sizeof(ChargerCANManagerBuffer),
   .cb_mem = &ChargerCANManagerControlBlock,
   .cb_size = sizeof(ChargerCANManagerControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityBelowNormal7,
 };
 /* Definitions for SOCManager */
 osThreadId_t SOCManagerHandle;
@@ -143,7 +131,7 @@ const osThreadAttr_t SOCManager_attributes = {
   .stack_size = sizeof(SOCManagerBuffer),
   .cb_mem = &SOCManagerControlBlock,
   .cb_size = sizeof(SOCManagerControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityBelowNormal6,
 };
 /* Definitions for myTask09 */
 osThreadId_t myTask09Handle;
@@ -155,7 +143,7 @@ const osThreadAttr_t myTask09_attributes = {
   .stack_size = sizeof(myTask09Buffer),
   .cb_mem = &myTask09ControlBlock,
   .cb_size = sizeof(myTask09ControlBlock),
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityNormal2,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -166,7 +154,6 @@ const osThreadAttr_t myTask09_attributes = {
 void vPlausibilityManagerTask(void *argument);
 extern void vLTCManagerTask(void *argument);
 extern void vExternalMeasurmentsManagerTask(void *argument);
-extern void vLoggerManagerTask(void *argument);
 extern void vUSBCommandManagerTask(void *argument);
 extern void vCarCANManagerTask(void *argument);
 extern void vChargerCANManagerTask(void *argument);
@@ -210,9 +197,6 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of ExternalMeasurmentsManager */
   ExternalMeasurmentsManagerHandle = osThreadNew(vExternalMeasurmentsManagerTask, NULL, &ExternalMeasurmentsManager_attributes);
-
-  /* creation of LoggerManager */
-  LoggerManagerHandle = osThreadNew(vLoggerManagerTask, NULL, &LoggerManager_attributes);
 
   /* creation of USBCommandManager */
   USBCommandManagerHandle = osThreadNew(vUSBCommandManagerTask, NULL, &USBCommandManager_attributes);

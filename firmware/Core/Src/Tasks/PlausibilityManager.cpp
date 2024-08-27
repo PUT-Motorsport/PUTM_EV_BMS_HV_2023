@@ -78,7 +78,7 @@ void vPlausibilityManagerTask(void *argument)
 			} break;
 			case AirState::Precharge:
 			{
-				//FIXM: preferably it should be the external acu mes
+				//FIXME: preferably it should be the external acu mes
 				float bat_min_voltage	= LtcConfig::CELL_COUNT * ChecksConfig::CELL_MIN_VOLTAGE;
 				float pre_charge_margin = std::max(fsd.ltc.bat_volt * PlausibilityConfig::precharge_min_charge, bat_min_voltage);
 				float pre_charge		= fsd.external.car_volt;
@@ -114,16 +114,19 @@ void vPlausibilityManagerTask(void *argument)
 		fsd.state.list_of_errors = checker.get_error_list();
 
 		Checks::OptionalError optonalError = checker.check();
+//		if(abs(std::max_element(fsd.ltc.voltages.begin(), fsd.ltc.voltages.end()) - std::min_element(fsd.ltc.voltages.begin(), fsd.ltc.voltages.end())) > ChecksConfig::IMBALANCE_MAX_VOLTAGE)
+//		{
+//			fsd.state.in_error = true;
+//		}
 		if (not optonalError.has_value())
 		{
 			continue;
 		}
 		else
 		{
-//			FIXME:
-//			auto error = (*optonalError);
-//			fsd.state.error = error;
-//			fsd.state.in_error = true;
+			auto error = (*optonalError);
+			fsd.state.error = error;
+			fsd.state.in_error = true;
 		}
 
 	}

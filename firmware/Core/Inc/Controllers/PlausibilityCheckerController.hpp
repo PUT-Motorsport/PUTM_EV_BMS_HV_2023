@@ -44,7 +44,8 @@ private:
 public:
 	constexpr PlausibilityChecker(const FullStackData &stackData) : stackData(stackData) { }
 
-	constexpr static size_t size(){
+	constexpr static size_t size()
+	{
 		return checks.size();
 	}
 
@@ -59,7 +60,11 @@ public:
 			if (evaluatedCheck.has_value())
 			{
 				ret = evaluatedCheck.value();
-				errors[i] = Checks::ErrorListElement{evaluatedCheck.value(), true};
+				if(not errors[i].second)
+				{
+					errors[i] = Checks::ErrorListElement{evaluatedCheck.value(), true};
+				}
+
 			}
 			++i;
 		}

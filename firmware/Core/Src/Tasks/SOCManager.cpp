@@ -20,6 +20,7 @@ struct CellData
 };
 
 static std::array<CellData, LtcConfig::CELL_COUNT> soc_array { };
+static constexpr float cell_count_f = (float)LtcConfig::CELL_COUNT;
 
 void vSOCManagerTask(void *argument)
 {
@@ -49,7 +50,7 @@ void vSOCManagerTask(void *argument)
 		}
 
 		FullStackDataInstance::set().soc.avg = std::accumulate(FullStackDataInstance::get().soc.cells_soc.begin(),
-															   FullStackDataInstance::get().soc.cells_soc.end(), 0.0f) / 135.0f;
+															   FullStackDataInstance::get().soc.cells_soc.end(), 0.0f) / cell_count_f;
 	}
 }
 

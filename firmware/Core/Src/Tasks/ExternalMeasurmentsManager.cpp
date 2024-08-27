@@ -91,11 +91,13 @@ extern GpioIn air_m_detect;
 extern GpioIn air_p_detect;
 extern GpioIn air_pre_detect;
 
-constexpr float currentReggression(float u)
+static float bcr = 0.f;
+
+float currentReggression(float u)
 {
 	constexpr float a = 171.5f;
-	constexpr float b = 0.06f;
-	return a * u + b;
+	//constexpr float b = -1.16f;
+	return a * u + bcr;
 }
 
 constexpr float voltageReggression(float u)
@@ -153,6 +155,12 @@ void vExternalMeasurmentsManagerTask(void *argument)
 				{
 					float i = currentReggression(isens.readVoltage());
 					FullStackDataInstance::set().external.acu_curr = i;
+					static bool done { false };
+					if(HAL_GetTick() > 2000 and not done)
+					{
+						bcr = -i;
+						done = true;
+					}
 					isens.setChannels(Mcp356x::MuxIn::Ch1, Mcp356x::MuxIn::Agnd);
 					isens.restartAdc();
 					isens_meas = ISensMeasurement::Reference;

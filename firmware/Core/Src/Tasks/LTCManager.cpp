@@ -61,6 +61,8 @@ static void calcTemps()
 
 static void readVoltages()
 {
+
+
 	float accumulator = 0.f;
 	static DataArray < float > voltages;
 	ltc_ctrl.readVoltages(&voltages);
@@ -75,7 +77,6 @@ static void readVoltages()
 			//voltage = voltage * float(not open_wire[mapped_cell + offset_ltc]);
 			fsd.ltc.voltages[cell + offset_cell] = voltage;
 			accumulator += voltage;
-//			if(cell == 0 or cell == 11) continue;
 //			if(std::abs(fsd.ltc.voltages[cell + offset_cell + 0] - fsd.ltc.voltages[cell + offset_cell + 1]) > 0.5f)
 //			{
 //				fsd.ltc.voltages[cell + offset_cell + 0] = 0.f;

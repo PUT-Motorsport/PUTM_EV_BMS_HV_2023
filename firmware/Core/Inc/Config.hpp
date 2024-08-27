@@ -29,6 +29,7 @@ namespace LtcConfig
 	static constexpr size_t CELLS_PER_LTC = 10;
 	//needs to be the size of CELLS_PER_LTC (max 12) and be indexed from 0-11
 	static constexpr std::array < size_t, CELLS_PER_LTC > CELL_TO_CH_MAP { 0, 1, 2, 3, 4, 6, 7, 8, 9, 10 };
+	//static constexpr std::array < size_t, CELLS_PER_LTC > CELL_TO_CH_MAP { 10, 9, 8, 7, 6, 4, 3, 2, 1, 0 };
 	static constexpr size_t CELL_COUNT = CHAIN_SIZE * CELLS_PER_LTC;
 
 	//max 5
@@ -42,11 +43,12 @@ namespace ChecksConfig
 {
 	constexpr static float CELL_MAX_VOLTAGE = 4.18f;
 	constexpr static float CELL_MIN_VOLTAGE = 3.02f;
-	constexpr static int32_t VOLTAGE_ERROR_COUNT_MAX = 20;
+	constexpr static int32_t VOLTAGE_ERROR_COUNT_MAX = 40;
+	constexpr static float IMBALANCE_MAX_VOLTAGE = 0.3f;
 	constexpr static float CELL_MAX_TEMPERATURE = 55.0f;
 	constexpr static float CELL_MIN_TEMPERATURE = -20.0f;
 	constexpr static int32_t TEMP_ERROR_COUNT_MAX = 20;
-	constexpr static float BATTERY_MAX_CURRENT = 200.0f;
+	constexpr static float BATTERY_MAX_CURRENT = 150.0f;
 	constexpr static float BATTERY_SENSOR_DISCONNECT = 350.0f;
 	constexpr static int32_t CURRENT_ERROR_COUNT_MAX = 40;
 }

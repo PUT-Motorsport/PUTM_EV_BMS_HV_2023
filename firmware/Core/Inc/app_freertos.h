@@ -17,7 +17,6 @@ void MX_FREERTOS_Init(void);
 void vPlausibilityManagerTask(void *argument);
 extern void vLTCManagerTask(void *argument);
 extern void vExternalMeasurmentsManagerTask(void *argument);
-extern void vLoggerManagerTask(void *argument);
 extern void vUSBCommandManagerTask(void *argument);
 extern void vCarCANManagerTask(void *argument);
 extern void vChargerCANManagerTask(void *argument);

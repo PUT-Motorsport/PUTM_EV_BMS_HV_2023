@@ -60,7 +60,7 @@ void vCarCANManagerTask(void *argument)
 
 	while (true)
 	{
-		osDelay(100);
+		osDelay(50);
 //		while (getCanFifoMessageCount(hfdcan))
 //		{
 //			PUTM_CAN::can.parse_message(PUTM_CAN::Can_rx_message(hfdcan));
