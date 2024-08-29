@@ -168,8 +168,8 @@ LtcStatus Ltc6811Controller::readPdVoltages(DataArray < float > *out)
 	for(size_t repeat = 0; repeat < 2; repeat++)
 	{
 		wakeUp();
-		rawWrite(CMD_ADOW(Mode::Filtered, Pull::Down, Discharge::NotPermited, Cell::All));
-		//rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+		//rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
+		rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
 		osDelay(tadc);
 	}
 
@@ -294,8 +294,8 @@ LtcStatus Ltc6811Controller::readVoltages(DataArray < float > *out)
 	static std::array < RegArray < LtcStatus >, 4 > pecs;
 
 	wakeUp();
-	//rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
-	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+	rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
+	//rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
 	osDelay(tadc);
 
 	wakeUp();
