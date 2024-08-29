@@ -82,7 +82,7 @@ namespace ChargerConfig
 namespace LaGimela
 {
 	//ltc, meas - 0 - 13, 0 - 3
-	constexpr static std::array<std::pair<size_t, size_t>, 1> pomijanie_temperatury = { { {11, 2} } };
+	constexpr static std::array<std::pair<size_t, size_t>, 2> pomijanie_temperatury = { { {11, 2}, {4, 2} } };
 }
 
 namespace
