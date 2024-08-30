@@ -117,6 +117,7 @@ static void readTemps()
 			fsd.ltc.temp[gpio + offset_temp] = temp;
 		}
 	}
+
 	for(const auto& [scalak, pomiar] : LaGimela::pomijanie_temperatury)
 	{
 		size_t offset = scalak * TEMP_PER_LTC;
