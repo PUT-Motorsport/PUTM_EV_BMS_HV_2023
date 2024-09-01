@@ -3749,6 +3749,10 @@
 		(uuid "dec81e11-c13a-494f-8c86-cd3c0b490929")
 	)
 	(no_connect
+		(at 111.76 105.41)
+		(uuid "e15fa7dc-6911-4c9a-9933-704141e07d96")
+	)
+	(no_connect
 		(at 111.76 156.21)
 		(uuid "e1715171-76e1-4af9-832a-a0d3d37ecf75")
 	)
@@ -4451,16 +4455,6 @@
 			(type default)
 		)
 		(uuid "94465e3b-0a60-4df5-af51-f912c27ac5be")
-	)
-	(wire
-		(pts
-			(xy 114.3 105.41) (xy 111.76 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "956c5d62-4742-4df9-a7e1-413cb8723d0f")
 	)
 	(wire
 		(pts
@@ -5336,18 +5330,6 @@
 			(justify right)
 		)
 		(uuid "12743b8d-3807-4a50-9f2d-263d90437056")
-	)
-	(hierarchical_label "BOOT0"
-		(shape input)
-		(at 114.3 105.41 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1895c444-6237-4251-84d6-da556772035b")
 	)
 	(hierarchical_label "SENS_IMD"
 		(shape input)
