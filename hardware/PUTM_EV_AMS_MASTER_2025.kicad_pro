@@ -476,7 +476,7 @@
     ]
   },
   "meta": {
-    "filename": "PUTM_EV_BMS_HV_MASTER_2023.kicad_pro",
+    "filename": "PUTM_EV_AMS_MASTER_2025.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -1255,7 +1255,7 @@
           "group_by": false,
           "label": "Reference",
           "name": "Reference",
-          "show": false
+          "show": true
         },
         {
           "group_by": true,

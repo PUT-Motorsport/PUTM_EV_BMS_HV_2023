@@ -1139,182 +1139,18 @@
 				)
 			)
 		)
-		(symbol "c2824c562jggacauto:C2824C562JGGACAUTO"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.762) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 8.89 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C2824C562JGGACAUTO"
-				(at 8.89 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Samacsys:C2824"
-				(at 8.89 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://content.kemet.com/datasheets/KEM_C1080_C0G_HV_AUTO_SMD.pdf"
-				(at 8.89 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "SMD Auto C0G HV, Ceramic, 5600 pF, 5%, 2000 VDC, 2400 VDC, 125C, -55C, C0G, SMD, MLCC, Ultra-Stable, Low Loss, High Voltage, Automotive Grade, 0.1 % , 100 GOhms, 540 mg, 2824, 7.1mm, 6.1mm, 2.5mm, 1.27mm, 300, 78  Weeks, 120"
-				(at 8.89 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Height" ""
-				(at 8.89 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "80-C2824C562JGGAUTO"
-				(at 8.89 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C2824C562JGGACAUTO?qs=5aG0NVq1C4xKMWO6DzsxHA%3D%3D"
-				(at 8.89 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "KEMET"
-				(at 8.89 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "C2824C562JGGACAUTO"
-				(at 8.89 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(symbol "C2824C562JGGACAUTO_0_1"
-				(polyline
-					(pts
-						(xy -0.508 -1.524) (xy -0.508 1.524)
-					)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.508 -1.524) (xy 0.508 1.524)
-					)
-					(stroke
-						(width 0.3302)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C2824C562JGGACAUTO_1_1"
-				(pin passive line
-					(at -2.54 0 0)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 	)
 	(junction
 		(at 95.25 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "22bb72f8-2d77-4db5-8879-482ee906a695")
+	)
+	(junction
+		(at 123.19 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26eb1dca-8ab6-4e57-bfe3-13909a5189b7")
 	)
 	(junction
 		(at 85.09 86.36)
@@ -1347,16 +1183,16 @@
 		(uuid "7bdbd021-029f-4c71-bd76-43bbee12c94b")
 	)
 	(junction
-		(at 191.77 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8e78e4cb-8820-4297-b5ca-63f18258c224")
-	)
-	(junction
 		(at 129.54 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8fbd754c-2657-44b5-b52f-c3b4c9e7cd0d")
+	)
+	(junction
+		(at 133.35 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "92e9d070-f3b9-4a0d-927f-b5024c1ab48c")
 	)
 	(junction
 		(at 95.25 109.22)
@@ -1364,31 +1200,15 @@
 		(color 0 0 0 0)
 		(uuid "bc6d07cd-02dc-405e-9aca-1d855ff52d94")
 	)
-	(junction
-		(at 191.77 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cf07459d-aea2-4ea1-ba19-2b6f7bb529d9")
-	)
 	(wire
 		(pts
-			(xy 191.77 81.28) (xy 194.31 81.28)
+			(xy 133.35 86.36) (xy 135.89 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "04e319ff-04d1-4730-9585-7aea23d187cb")
-	)
-	(wire
-		(pts
-			(xy 120.65 86.36) (xy 182.88 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c1409e1-c7ca-4983-b204-bfe9911a0e9d")
+		(uuid "08a0ee3c-9e5e-4854-88af-9b82a02db4ba")
 	)
 	(wire
 		(pts
@@ -1399,16 +1219,6 @@
 			(type default)
 		)
 		(uuid "183120dd-b1b8-4f7d-8311-0eb48e2e145f")
-	)
-	(wire
-		(pts
-			(xy 201.93 83.82) (xy 208.28 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1e0b7bef-b422-4101-a55f-2d6e90fb1bed")
 	)
 	(wire
 		(pts
@@ -1439,6 +1249,16 @@
 			(type default)
 		)
 		(uuid "2f17597d-6956-4232-bafe-adc1cbfd7487")
+	)
+	(wire
+		(pts
+			(xy 120.65 83.82) (xy 123.19 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33cc95cc-fdd1-4a18-b263-2d6c9085bbf8")
 	)
 	(wire
 		(pts
@@ -1512,16 +1332,6 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 83.82) (xy 182.88 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "515ad435-55ed-4049-a9c1-34e16d8739ab")
-	)
-	(wire
-		(pts
 			(xy 129.54 116.84) (xy 120.65 116.84)
 		)
 		(stroke
@@ -1529,16 +1339,6 @@
 			(type default)
 		)
 		(uuid "5657c9aa-04e5-4603-8de3-887992b5fbdd")
-	)
-	(wire
-		(pts
-			(xy 191.77 88.9) (xy 194.31 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b97396b-2328-4e53-b1ed-d2a7ef87e41f")
 	)
 	(wire
 		(pts
@@ -1572,16 +1372,6 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 81.28) (xy 201.93 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f41b066-ff41-47df-8455-95273656e020")
-	)
-	(wire
-		(pts
 			(xy 92.71 86.36) (xy 95.25 86.36)
 		)
 		(stroke
@@ -1592,16 +1382,6 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 87.63) (xy 191.77 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7386f63d-4083-479f-8cdd-314a1f9b902c")
-	)
-	(wire
-		(pts
 			(xy 92.71 81.28) (xy 95.25 81.28)
 		)
 		(stroke
@@ -1609,6 +1389,16 @@
 			(type default)
 		)
 		(uuid "7553f530-43fa-4e28-8fa0-f63ce64972ac")
+	)
+	(wire
+		(pts
+			(xy 123.19 81.28) (xy 123.19 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7954161b-e80e-4793-92f7-a34040124412")
 	)
 	(wire
 		(pts
@@ -1642,26 +1432,6 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 88.9) (xy 201.93 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86d9cd7f-b82a-46b6-9b05-de25eddd67b4")
-	)
-	(wire
-		(pts
-			(xy 201.93 88.9) (xy 201.93 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8794d69b-dea3-4945-b313-6b5571c26a2b")
-	)
-	(wire
-		(pts
 			(xy 95.25 86.36) (xy 95.25 83.82)
 		)
 		(stroke
@@ -1669,6 +1439,16 @@
 			(type default)
 		)
 		(uuid "88613082-f9a2-4c80-9e3f-174e9b450843")
+	)
+	(wire
+		(pts
+			(xy 133.35 81.28) (xy 133.35 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9266e5e0-0ae7-48e1-b23c-fa388bfb8e99")
 	)
 	(wire
 		(pts
@@ -1702,13 +1482,13 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 81.28) (xy 191.77 82.55)
+			(xy 125.73 81.28) (xy 123.19 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "acb5b3b3-e566-4168-8954-0be358a1b1e4")
+		(uuid "ae7d9c60-491f-44d1-a659-a1b5bf99c5ad")
 	)
 	(wire
 		(pts
@@ -1722,6 +1502,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 81.28) (xy 133.35 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af85ca6a-6821-46d6-990d-31c3a85aca72")
+	)
+	(wire
+		(pts
 			(xy 129.54 109.22) (xy 129.54 106.68)
 		)
 		(stroke
@@ -1729,6 +1519,16 @@
 			(type default)
 		)
 		(uuid "bc9e06bd-c60d-4413-974d-c0e5f48558bc")
+	)
+	(wire
+		(pts
+			(xy 120.65 86.36) (xy 133.35 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c122c3a5-73dd-48a7-9928-352763e65be7")
 	)
 	(wire
 		(pts
@@ -1762,26 +1562,6 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 88.9) (xy 191.77 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cfb23697-6f47-4db3-88f5-67bd15599ee4")
-	)
-	(wire
-		(pts
-			(xy 182.88 81.28) (xy 191.77 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0541335-ba96-476a-84f1-194aeaa1a625")
-	)
-	(wire
-		(pts
 			(xy 95.25 116.84) (xy 95.25 119.38)
 		)
 		(stroke
@@ -1812,33 +1592,13 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 83.82) (xy 182.88 83.82)
+			(xy 123.19 83.82) (xy 135.89 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e93ee68b-31b4-42d5-80f0-7bfcc10e863a")
-	)
-	(wire
-		(pts
-			(xy 201.93 86.36) (xy 208.28 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "edce094d-d8b1-4d06-88db-ef3ce9d534bd")
-	)
-	(wire
-		(pts
-			(xy 201.93 83.82) (xy 201.93 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f03f7521-bbaf-40a2-b5d8-edc88eed09c0")
+		(uuid "f4a476cc-1f02-4e98-9d39-a6a6a17987c7")
 	)
 	(wire
 		(pts
@@ -1849,29 +1609,6 @@
 			(type default)
 		)
 		(uuid "f5ccbde5-847e-4a8e-887d-8f65b536b590")
-	)
-	(wire
-		(pts
-			(xy 182.88 86.36) (xy 182.88 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9986f1f-7df8-4dc4-bdd3-c6048e36435f")
-	)
-	(rectangle
-		(start 153.67 53.34)
-		(end 236.22 115.57)
-		(stroke
-			(width 0)
-			(type dash)
-			(color 132 132 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 137de797-5351-490a-be31-ec5a37bbc4cb)
 	)
 	(rectangle
 		(start 59.69 53.34)
@@ -1900,45 +1637,9 @@
 		)
 		(uuid "0cce96e1-4f7c-4f5b-b0ca-172564cf79cf")
 	)
-	(text "GALVANIC ISOLATION"
-		(exclude_from_sim no)
-		(at 234.95 114.3 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 1)
-				(bold yes)
-				(color 132 132 132 1)
-			)
-			(justify right bottom)
-		)
-		(uuid "5197f7f7-26fd-44e1-9024-7f620740d186")
-	)
-	(label "I-"
-		(at 121.92 83.82 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.508 0.508)
-			)
-			(justify left bottom)
-		)
-		(uuid "bc18cf30-4d65-411f-bf82-8da7a2cf19f9")
-	)
-	(label "I+"
-		(at 121.92 86.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.508 0.508)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5d00d7f-3ac1-4807-a625-4e1d382608e0")
-	)
 	(hierarchical_label "OUT+"
 		(shape input)
-		(at 208.28 83.82 0)
+		(at 135.89 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1986,7 +1687,7 @@
 	)
 	(hierarchical_label "OUT-"
 		(shape input)
-		(at 208.28 86.36 0)
+		(at 135.89 86.36 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2258,153 +1959,6 @@
 		)
 	)
 	(symbol
-		(lib_id "c2824c562jggacauto:C2824C562JGGACAUTO")
-		(at 196.85 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1c83a7e7-1e10-466f-ac2d-76b4f938fc34")
-		(property "Reference" "C43"
-			(at 196.85 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10nF/1kV"
-			(at 196.85 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 205.74 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_C1080_C0G_HV_AUTO_SMD.pdf"
-			(at 205.74 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "SMD Auto C0G HV, Ceramic, 5600 pF, 5%, 2000 VDC, 2400 VDC, 125C, -55C, C0G, SMD, MLCC, Ultra-Stable, Low Loss, High Voltage, Automotive Grade, 0.1 % , 100 GOhms, 540 mg, 2824, 7.1mm, 6.1mm, 2.5mm, 1.27mm, 300, 78  Weeks, 120"
-			(at 205.74 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 205.74 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "80-C2824C562JGGAUTO"
-			(at 205.74 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C2824C562JGGACAUTO?qs=5aG0NVq1C4xKMWO6DzsxHA%3D%3D"
-			(at 205.74 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 205.74 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C2824C562JGGACAUTO"
-			(at 205.74 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 196.85 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 196.85 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 196.85 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a174ba40-4f20-4ee4-ad19-69795756d4f2")
-		)
-		(pin "2"
-			(uuid "c2a9a0a7-4132-494d-9f20-29a0dfe675e1")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/6b45fd0b-238d-49b3-829e-372c6baba47f"
-					(reference "C43")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "+3.3V_4")
 		(lib_id "power:+3.3V")
 		(at 95.25 76.2 0)
@@ -2650,153 +2204,6 @@
 		)
 	)
 	(symbol
-		(lib_id "c2824c562jggacauto:C2824C562JGGACAUTO")
-		(at 196.85 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7817ec92-3449-4201-9a43-506f3e8967a0")
-		(property "Reference" "C50"
-			(at 196.85 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10nF/1kV"
-			(at 196.85 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 205.74 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_C1080_C0G_HV_AUTO_SMD.pdf"
-			(at 205.74 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "SMD Auto C0G HV, Ceramic, 5600 pF, 5%, 2000 VDC, 2400 VDC, 125C, -55C, C0G, SMD, MLCC, Ultra-Stable, Low Loss, High Voltage, Automotive Grade, 0.1 % , 100 GOhms, 540 mg, 2824, 7.1mm, 6.1mm, 2.5mm, 1.27mm, 300, 78  Weeks, 120"
-			(at 205.74 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" ""
-			(at 205.74 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "80-C2824C562JGGAUTO"
-			(at 205.74 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/C2824C562JGGACAUTO?qs=5aG0NVq1C4xKMWO6DzsxHA%3D%3D"
-			(at 205.74 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 205.74 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "C2824C562JGGACAUTO"
-			(at 205.74 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 196.85 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 196.85 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 196.85 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a86263dc-36d0-4f54-bf81-30ae18684749")
-		)
-		(pin "2"
-			(uuid "d3e839d4-2d4d-440b-8c7b-c00f2b34e6bb")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/6b45fd0b-238d-49b3-829e-372c6baba47f"
-					(reference "C50")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_17")
 		(lib_id "power:GND")
 		(at 82.55 86.36 270)
@@ -2939,7 +2346,7 @@
 		(dnp no)
 		(uuid "92548649-77e8-4dfc-9096-b90592f6e2b2")
 		(property "Reference" "R16"
-			(at 125.73 100.33 90)
+			(at 125.73 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2947,7 +2354,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 125.73 102.235 90)
+			(at 125.73 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3110,8 +2517,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 191.77 85.09 0)
-		(mirror y)
+		(at 128.27 81.28 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3119,25 +2525,23 @@
 		(dnp no)
 		(uuid "9f1cc539-167b-4c77-b672-d7b15c6ec73a")
 		(property "Reference" "R20"
-			(at 190.5 83.82 0)
+			(at 128.27 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "120"
-			(at 190.5 86.36 0)
+			(at 128.27 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3146,7 +2550,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3155,7 +2559,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3164,7 +2568,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3173,7 +2577,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3182,7 +2586,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3191,7 +2595,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3200,7 +2604,7 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 191.77 85.09 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3233,7 +2637,7 @@
 		(dnp no)
 		(uuid "c7b9e440-2a9c-45aa-89f3-f3a6c92bb7ec")
 		(property "Reference" "R19"
-			(at 133.35 113.665 90)
+			(at 132.08 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3242,7 +2646,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 131.445 113.03 90)
+			(at 132.08 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
