@@ -77,4 +77,16 @@ D Body Features: Product Weight .75 G | Product Weight .026 OZ | Insulation Spec
 K
 F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=108-98024&DocType=Data%20Sheet&DocLang=English&PartCntxt=2-1462041-5&DocFormat=pdf
 $ENDCMP
+#
+$CMP UT6K30TCR
+D UT6K30TCR Dual N-Channel MOSFET, 3 A, 60 V UT6K30, 8-Pin DFN2020, HUML2020L ROHM
+K
+F https://fscdn.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/ut6k30-e.pdf
+$ENDCMP
+#
+$CMP DMT6018LDR-7
+D DIODES INC. - DMT6018LDR-7 - Dual MOSFET, N Channel, 60 V, 60 V, 8.8 A, 8.8 A, 0.013 ohm
+K
+F https://www.diodes.com/assets/Datasheets/DMT6018LDR.pdf
+$ENDCMP
 #End Doc Library

@@ -1806,6 +1806,15 @@
 				(hide yes)
 			)
 		)
+		(property "Url" ""
+			(at 90.17 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ed04974f-bedb-4460-bc11-deae65259b7a")
 		)
@@ -1893,6 +1902,15 @@
 			)
 		)
 		(property "Mouser Url" ""
+			(at 109.22 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
 			(at 109.22 100.33 0)
 			(effects
 				(font
@@ -2114,6 +2132,15 @@
 			)
 		)
 		(property "Mouser Url" ""
+			(at 90.17 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
 			(at 90.17 81.28 0)
 			(effects
 				(font
@@ -2433,6 +2460,15 @@
 				(hide yes)
 			)
 		)
+		(property "Url" ""
+			(at 125.73 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2ed94065-21be-4c7e-b282-f6b45dee3506")
 		)
@@ -2612,6 +2648,15 @@
 				(hide yes)
 			)
 		)
+		(property "Url" ""
+			(at 128.27 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0bc7641c-017b-41ee-8fd9-26101b4e7a77")
 		)
@@ -2718,6 +2763,15 @@
 			)
 		)
 		(property "Mouser Url" ""
+			(at 129.54 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
 			(at 129.54 111.76 0)
 			(effects
 				(font

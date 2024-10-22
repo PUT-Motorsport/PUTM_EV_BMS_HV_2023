@@ -444,6 +444,128 @@
 				)
 			)
 		)
+		(symbol "Device:R_Small"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0.762 0.508 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "R_Small"
+				(at 0.762 -1.016 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_Small_0_1"
+				(rectangle
+					(start -0.762 1.778)
+					(end 0.762 -1.778)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "GND_1"
 			(power)
 			(pin_names
@@ -636,40 +758,30 @@
 				)
 			)
 		)
-		(symbol "R_Pack04_Split_1"
-			(pin_names
-				(offset 0) hide)
+		(symbol "Samacsys_kicad_sym:DMT6018LDR-7"
+			(pin_names hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "RN5"
-				(at 2.54 1.2701 0)
+			(property "Reference" "Q"
+				(at 2.54 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
+					(justify left top)
 				)
 			)
-			(property "Value" "R_Pack04_Split"
-				(at 2.54 -1.2699 0)
+			(property "Value" "DMT6018LDR-7"
+				(at 2.54 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
+					(justify left top)
 				)
 			)
-			(property "Footprint" ""
-				(at -2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
+			(property "Footprint" "Samacsys:DMT6018LDR7"
 				(at 0 0 0)
 				(effects
 					(font
@@ -678,7 +790,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "4 resistor network, parallel topology, split"
+			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMT6018LDR.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -687,7 +799,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "R network parallel topology isolated"
+			(property "Description" "DIODES INC. - DMT6018LDR-7 - Dual MOSFET, N Channel, 60 V, 60 V, 8.8 A, 8.8 A, 0.013 ohm"
 				(at 0 0 0)
 				(effects
 					(font
@@ -696,7 +808,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*"
+			(property "Height" "0.85"
 				(at 0 0 0)
 				(effects
 					(font
@@ -705,871 +817,316 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_Pack04_Split_1_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
+			(property "Mouser Part Number" "621-DMT6018LDR-7"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/DMT6018LDR-7?qs=4EhzHfbM1GhfDx1FS0oSLQ%3D%3D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Diodes Incorporated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "DMT6018LDR-7"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DMT6018LDR-7_0_1"
+				(circle
+					(center -0.889 0)
+					(radius 2.794)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-			)
-			(symbol "R_Pack04_Split_1_1_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R1.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R1.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_1_2_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R2.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R2.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_1_3_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R3.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R3.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_1_4_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R4.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R4.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "R_Pack04_Split_2"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "RN5"
-				(at 2.54 1.2701 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "R_Pack04_Split"
-				(at 2.54 -1.2699 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at -2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "4 resistor network, parallel topology, split"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R network parallel topology isolated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_Pack04_Split_2_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
+				(circle
+					(center 0 -1.778)
+					(radius 0.254)
 					(stroke
-						(width 0.2032)
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.286 0) (xy -5.08 0)
+					)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-			)
-			(symbol "R_Pack04_Split_2_1_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R1.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
+				(polyline
+					(pts
+						(xy -2.286 1.905) (xy -2.286 -1.905)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R1.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_2_2_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R2.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R2.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_2_3_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R3.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R3.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_2_4_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R4.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R4.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "R_Pack04_Split_3"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "RN5"
-				(at 2.54 1.2701 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "R_Pack04_Split"
-				(at 2.54 -1.2699 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at -2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "4 resistor network, parallel topology, split"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R network parallel topology isolated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_Pack04_Split_3_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-			)
-			(symbol "R_Pack04_Split_3_1_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R1.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
+				(polyline
+					(pts
+						(xy -1.778 -1.27) (xy -1.778 -2.286)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R1.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_3_2_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R2.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R2.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_3_3_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R3.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R3.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_3_4_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R4.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R4.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "R_Pack04_Split_4"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "RN5"
-				(at 2.54 1.2701 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "R_Pack04_Split"
-				(at 2.54 -1.2699 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at -2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "4 resistor network, parallel topology, split"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R network parallel topology isolated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "DIP* SOIC* R*Array*Concave* R*Array*Convex* MSOP*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_Pack04_Split_4_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy -1.778 0.508) (xy -1.778 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -1.778 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 0) (xy -1.778 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -1.778) (xy 0.762 -1.778) (xy 0.762 1.778) (xy -1.778 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0) (xy -0.508 0.381) (xy -0.508 -0.381) (xy -1.524 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0.508) (xy 0.381 0.381) (xy 1.143 0.381) (xy 1.27 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.381) (xy 0.381 -0.254) (xy 1.143 -0.254) (xy 0.762 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 			)
-			(symbol "R_Pack04_Split_4_1_1"
+			(symbol "DMT6018LDR-7_1_1"
 				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R1.1"
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "G1"
 						(effects
 							(font
-								(size 0.635 0.635)
+								(size 1.27 1.27)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 0.635 0.635)
+								(size 1.27 1.27)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R1.2"
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "S1"
 						(effects
 							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_4_2_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R2.1"
-						(effects
-							(font
-								(size 0.635 0.635)
+								(size 1.27 1.27)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 0.635 0.635)
+								(size 1.27 1.27)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R2.2"
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "D1"
 						(effects
 							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_4_3_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R3.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R3.2"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-			)
-			(symbol "R_Pack04_Split_4_4_1"
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.635)
-					(name "R4.1"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 0.635 0.635)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.635)
-					(name "R4.2"
-						(effects
-							(font
-								(size 0.635 0.635)
+								(size 1.27 1.27)
 							)
 						)
 					)
 					(number "5"
 						(effects
 							(font
-								(size 0.635 0.635)
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "DMT6018LDR-7_2_1"
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "S2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "G2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "D2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -1674,138 +1231,134 @@
 		)
 	)
 	(junction
-		(at 198.12 49.53)
+		(at 194.31 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "124d6b94-02f8-4de1-9c40-0f4c5801bdeb")
 	)
 	(junction
-		(at 187.96 59.69)
+		(at 184.15 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "33f18ce5-082b-4236-9e57-31244de5298b")
 	)
 	(junction
-		(at 120.65 120.65)
+		(at 116.84 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "455e9ad8-2bdc-4869-a5c0-8d947351a9ac")
 	)
 	(junction
-		(at 184.15 139.7)
+		(at 180.34 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4717f7cb-976b-43f3-ae78-c94567b87fe6")
 	)
 	(junction
-		(at 110.49 76.2)
+		(at 106.68 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "585dc5e3-009d-4061-b4ac-84a659d0a335")
 	)
 	(junction
-		(at 110.49 138.43)
+		(at 106.68 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5a18d94c-037a-425b-806b-37c587c97e9f")
 	)
 	(junction
-		(at 198.12 59.69)
+		(at 194.31 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "67abc16e-1074-4cad-b698-67ab8e897dd1")
 	)
 	(junction
-		(at 120.65 58.42)
+		(at 116.84 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "69314f59-9b34-4f71-91a1-0b4be750adcc")
 	)
 	(junction
-		(at 166.37 69.85)
+		(at 162.56 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "70db783c-c6f4-462b-90cd-e9bc780564d5")
 	)
 	(junction
-		(at 176.53 59.69)
+		(at 172.72 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "732caf13-457a-40be-8bfe-04f2b80b476d")
 	)
 	(junction
-		(at 177.8 80.01)
+		(at 173.99 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "888c8b4e-7ba9-4821-90b5-8ccaf4abc8b0")
 	)
 	(junction
-		(at 184.15 129.54)
+		(at 180.34 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "928afdc0-34e1-4dfe-bcb6-c4b44b2489a3")
 	)
 	(junction
-		(at 208.28 59.69)
+		(at 204.47 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "95c87bab-0258-43b4-b2cd-e596a55fe8b6")
 	)
 	(junction
-		(at 110.49 66.04)
+		(at 106.68 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a68866cf-6f3c-4617-bb54-2f866cd51c4a")
 	)
 	(junction
-		(at 110.49 128.27)
+		(at 106.68 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "adfdb6fc-e592-42cc-bfd3-bb15dd25c280")
 	)
 	(junction
-		(at 166.37 49.53)
+		(at 162.56 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e27eb0cb-1cba-4e13-9879-4ced1a09c8ea")
 	)
 	(junction
-		(at 187.96 49.53)
+		(at 184.15 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f08e630e-cad2-4f65-83ec-4f73231dbab1")
 	)
 	(junction
-		(at 176.53 49.53)
+		(at 172.72 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f19025e0-5198-4cbd-a001-14f6a593334a")
 	)
 	(junction
-		(at 194.31 121.92)
+		(at 190.5 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f4a84888-5ede-4cd4-b478-ced0036b9727")
 	)
 	(no_connect
-		(at 245.11 146.05)
-		(uuid "11d64f1b-ef9a-49df-b059-9173761090ed")
+		(at 233.68 124.46)
+		(uuid "03095a03-c0cd-4916-9ad5-829c28ce7e22")
 	)
 	(no_connect
-		(at 237.49 146.05)
-		(uuid "182ea172-8c3c-4897-81a4-f54be90db9e4")
+		(at 233.68 134.62)
+		(uuid "56dc0340-aef7-4300-96e0-56320cbe7504")
 	)
 	(no_connect
-		(at 250.19 146.05)
-		(uuid "7afe67a9-0002-4f01-b8b8-cadae8090068")
-	)
-	(no_connect
-		(at 232.41 146.05)
-		(uuid "d76922bc-4c61-4882-aaa6-da6fe76b4eb9")
+		(at 226.06 129.54)
+		(uuid "e22053ef-5409-4e00-8413-e01d11764eaf")
 	)
 	(wire
 		(pts
-			(xy 194.31 121.92) (xy 196.85 121.92)
+			(xy 190.5 121.92) (xy 193.04 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1815,7 +1368,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 59.69) (xy 198.12 57.15)
+			(xy 194.31 59.69) (xy 194.31 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1825,7 +1378,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 76.2) (xy 120.65 76.2)
+			(xy 106.68 76.2) (xy 116.84 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1835,7 +1388,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 58.42) (xy 123.19 58.42)
+			(xy 116.84 58.42) (xy 119.38 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1845,7 +1398,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 129.54) (xy 184.15 129.54)
+			(xy 177.8 129.54) (xy 180.34 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1855,7 +1408,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 133.35) (xy 120.65 138.43)
+			(xy 116.84 134.62) (xy 116.84 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1865,7 +1418,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 129.54) (xy 186.69 129.54)
+			(xy 180.34 129.54) (xy 182.88 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1875,7 +1428,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 57.15) (xy 166.37 59.69)
+			(xy 162.56 57.15) (xy 162.56 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1885,7 +1438,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 55.88) (xy 120.65 58.42)
+			(xy 116.84 55.88) (xy 116.84 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1895,7 +1448,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 49.53) (xy 166.37 49.53)
+			(xy 160.02 49.53) (xy 162.56 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1905,7 +1458,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 52.07) (xy 208.28 49.53)
+			(xy 204.47 52.07) (xy 204.47 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1915,7 +1468,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 48.26) (xy 120.65 48.26)
+			(xy 119.38 48.26) (xy 116.84 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1925,7 +1478,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 69.85) (xy 166.37 72.39)
+			(xy 162.56 69.85) (xy 162.56 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1935,7 +1488,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 138.43) (xy 110.49 140.97)
+			(xy 106.68 139.7) (xy 106.68 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1945,7 +1498,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 80.01) (xy 177.8 80.01)
+			(xy 162.56 80.01) (xy 173.99 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1955,7 +1508,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 57.15) (xy 208.28 59.69)
+			(xy 204.47 57.15) (xy 204.47 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1965,7 +1518,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 49.53) (xy 166.37 52.07)
+			(xy 162.56 49.53) (xy 162.56 52.07)
 		)
 		(stroke
 			(width 0)
@@ -1975,7 +1528,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 73.66) (xy 110.49 76.2)
+			(xy 106.68 73.66) (xy 106.68 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1985,7 +1538,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 49.53) (xy 187.96 52.07)
+			(xy 184.15 49.53) (xy 184.15 52.07)
 		)
 		(stroke
 			(width 0)
@@ -1995,7 +1548,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 59.69) (xy 187.96 59.69)
+			(xy 172.72 59.69) (xy 184.15 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2005,7 +1558,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 49.53) (xy 198.12 49.53)
+			(xy 204.47 49.53) (xy 194.31 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2015,7 +1568,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 59.69) (xy 176.53 59.69)
+			(xy 162.56 59.69) (xy 172.72 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2025,7 +1578,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 110.49) (xy 120.65 113.03)
+			(xy 116.84 111.76) (xy 116.84 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2035,7 +1588,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 139.7) (xy 194.31 139.7)
+			(xy 180.34 139.7) (xy 190.5 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2045,7 +1598,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 58.42) (xy 120.65 60.96)
+			(xy 116.84 58.42) (xy 116.84 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2055,7 +1608,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 48.26) (xy 120.65 50.8)
+			(xy 116.84 48.26) (xy 116.84 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2065,7 +1618,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 69.85) (xy 166.37 69.85)
+			(xy 173.99 69.85) (xy 162.56 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2075,7 +1628,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 139.7) (xy 184.15 142.24)
+			(xy 180.34 139.7) (xy 180.34 142.24)
 		)
 		(stroke
 			(width 0)
@@ -2085,7 +1638,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 120.65) (xy 123.19 120.65)
+			(xy 116.84 121.92) (xy 119.38 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2095,7 +1648,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 129.54) (xy 184.15 132.08)
+			(xy 180.34 129.54) (xy 180.34 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2105,7 +1658,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 66.04) (xy 102.87 66.04)
+			(xy 96.52 66.04) (xy 99.06 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2115,7 +1668,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 66.04) (xy 113.03 66.04)
+			(xy 106.68 66.04) (xy 109.22 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2125,7 +1678,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 66.04) (xy 110.49 66.04)
+			(xy 104.14 66.04) (xy 106.68 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2135,7 +1688,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 120.65) (xy 120.65 123.19)
+			(xy 116.84 121.92) (xy 116.84 124.46)
 		)
 		(stroke
 			(width 0)
@@ -2145,7 +1698,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 134.62) (xy 194.31 139.7)
+			(xy 190.5 134.62) (xy 190.5 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2155,7 +1708,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 59.69) (xy 198.12 59.69)
+			(xy 204.47 59.69) (xy 194.31 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2165,7 +1718,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 76.2) (xy 110.49 78.74)
+			(xy 106.68 76.2) (xy 106.68 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2175,7 +1728,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 77.47) (xy 166.37 80.01)
+			(xy 162.56 77.47) (xy 162.56 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2185,7 +1738,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 128.27) (xy 102.87 128.27)
+			(xy 96.52 129.54) (xy 99.06 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2195,7 +1748,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 57.15) (xy 187.96 59.69)
+			(xy 184.15 57.15) (xy 184.15 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2205,7 +1758,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 59.69) (xy 208.28 62.23)
+			(xy 204.47 59.69) (xy 204.47 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2215,7 +1768,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 66.04) (xy 110.49 68.58)
+			(xy 106.68 66.04) (xy 106.68 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2225,7 +1778,7 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 111.76) (xy 194.31 111.76)
+			(xy 193.04 111.76) (xy 190.5 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2235,7 +1788,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 59.69) (xy 198.12 59.69)
+			(xy 184.15 59.69) (xy 194.31 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2245,7 +1798,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 69.85) (xy 166.37 69.85)
+			(xy 160.02 69.85) (xy 162.56 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2255,7 +1808,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 128.27) (xy 110.49 128.27)
+			(xy 104.14 129.54) (xy 106.68 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2265,7 +1818,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 49.53) (xy 176.53 52.07)
+			(xy 172.72 49.53) (xy 172.72 52.07)
 		)
 		(stroke
 			(width 0)
@@ -2275,7 +1828,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 80.01) (xy 177.8 82.55)
+			(xy 173.99 80.01) (xy 173.99 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2285,7 +1838,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 119.38) (xy 194.31 121.92)
+			(xy 190.5 119.38) (xy 190.5 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2295,7 +1848,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 128.27) (xy 110.49 130.81)
+			(xy 106.68 129.54) (xy 106.68 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2305,7 +1858,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 49.53) (xy 166.37 49.53)
+			(xy 172.72 49.53) (xy 162.56 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2315,7 +1868,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 121.92) (xy 194.31 124.46)
+			(xy 190.5 121.92) (xy 190.5 124.46)
 		)
 		(stroke
 			(width 0)
@@ -2325,7 +1878,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 57.15) (xy 176.53 59.69)
+			(xy 172.72 57.15) (xy 172.72 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2335,7 +1888,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 77.47) (xy 177.8 80.01)
+			(xy 173.99 77.47) (xy 173.99 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2345,7 +1898,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 118.11) (xy 120.65 120.65)
+			(xy 116.84 119.38) (xy 116.84 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2355,7 +1908,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 138.43) (xy 120.65 138.43)
+			(xy 106.68 139.7) (xy 116.84 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2365,7 +1918,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 111.76) (xy 194.31 114.3)
+			(xy 190.5 111.76) (xy 190.5 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2375,7 +1928,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 110.49) (xy 120.65 110.49)
+			(xy 119.38 111.76) (xy 116.84 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2385,7 +1938,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 49.53) (xy 187.96 49.53)
+			(xy 194.31 49.53) (xy 184.15 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2395,7 +1948,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 69.85) (xy 177.8 72.39)
+			(xy 173.99 69.85) (xy 173.99 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2405,7 +1958,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 129.54) (xy 176.53 129.54)
+			(xy 170.18 129.54) (xy 172.72 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2415,7 +1968,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 52.07) (xy 198.12 49.53)
+			(xy 194.31 52.07) (xy 194.31 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2425,7 +1978,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 135.89) (xy 110.49 138.43)
+			(xy 106.68 137.16) (xy 106.68 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2435,7 +1988,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 128.27) (xy 113.03 128.27)
+			(xy 106.68 129.54) (xy 109.22 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2445,7 +1998,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 137.16) (xy 184.15 139.7)
+			(xy 180.34 137.16) (xy 180.34 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2455,7 +2008,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 71.12) (xy 120.65 76.2)
+			(xy 116.84 71.12) (xy 116.84 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2465,7 +2018,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 49.53) (xy 176.53 49.53)
+			(xy 184.15 49.53) (xy 172.72 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2474,8 +2027,8 @@
 		(uuid "fab10ed2-562e-40f1-aa5e-c680c3ebe8dd")
 	)
 	(rectangle
-		(start 76.2 38.1)
-		(end 147.32 96.52)
+		(start 72.39 38.1)
+		(end 143.51 96.52)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2487,8 +2040,8 @@
 		(uuid 21e8c5dd-75b0-44aa-a281-41daf41b194c)
 	)
 	(rectangle
-		(start 149.86 38.1)
-		(end 220.98 96.52)
+		(start 146.05 38.1)
+		(end 217.17 96.52)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2500,21 +2053,8 @@
 		(uuid 329f81ee-7df2-40f6-b286-7fb5febcc972)
 	)
 	(rectangle
-		(start 223.52 129.54)
-		(end 259.08 157.48)
-		(stroke
-			(width 0)
-			(type dash)
-			(color 132 132 132 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 4c41c9f3-0458-49ac-9215-ea707cf8056e)
-	)
-	(rectangle
-		(start 149.86 99.06)
-		(end 220.98 157.48)
+		(start 146.05 99.06)
+		(end 217.17 157.48)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2526,8 +2066,8 @@
 		(uuid ad87d66b-288d-42a5-980a-85d985a34326)
 	)
 	(rectangle
-		(start 76.2 99.06)
-		(end 147.32 157.48)
+		(start 72.39 99.06)
+		(end 143.51 157.48)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2538,9 +2078,36 @@
 		)
 		(uuid c694e738-ac44-4c9e-9281-069f06fe5310)
 	)
+	(rectangle
+		(start 219.71 99.06)
+		(end 255.27 157.48)
+		(stroke
+			(width 0)
+			(type dash)
+			(color 132 132 132 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid f616180d-53ff-487d-92a2-e56aaebecd74)
+	)
+	(text "UNUSED"
+		(exclude_from_sim no)
+		(at 254 156.21 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 1)
+				(bold yes)
+				(color 132 132 132 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "562b65c3-63b3-49cd-90bb-b280e2a66add")
+	)
 	(text "NMOS 1"
 		(exclude_from_sim no)
-		(at 146.05 95.25 0)
+		(at 142.24 95.25 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2554,7 +2121,7 @@
 	)
 	(text "VDD DECOUPLING"
 		(exclude_from_sim no)
-		(at 219.71 95.25 0)
+		(at 215.9 95.25 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2568,7 +2135,7 @@
 	)
 	(text "NMOS 2"
 		(exclude_from_sim no)
-		(at 146.05 156.21 0)
+		(at 142.24 156.21 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2582,7 +2149,7 @@
 	)
 	(text "NMOS 3"
 		(exclude_from_sim no)
-		(at 219.71 156.21 0)
+		(at 215.9 156.21 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2594,23 +2161,9 @@
 		)
 		(uuid "f2450d16-6474-4693-990d-af8b8f66fd23")
 	)
-	(text "UNUSED"
-		(exclude_from_sim no)
-		(at 257.81 156.21 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 1)
-				(bold yes)
-				(color 132 132 132 1)
-			)
-			(justify right bottom)
-		)
-		(uuid "f3d9fd9d-ca28-4598-be25-1a6d8c469087")
-	)
 	(hierarchical_label "DRAIN3"
 		(shape input)
-		(at 196.85 121.92 0)
+		(at 193.04 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2622,7 +2175,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 123.19 110.49 0)
+		(at 119.38 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2634,7 +2187,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 123.19 48.26 0)
+		(at 119.38 48.26 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2646,7 +2199,7 @@
 	)
 	(hierarchical_label "SIGNAL2"
 		(shape input)
-		(at 100.33 128.27 180)
+		(at 96.52 129.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2658,7 +2211,7 @@
 	)
 	(hierarchical_label "SIGNAL3"
 		(shape input)
-		(at 173.99 129.54 180)
+		(at 170.18 129.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2670,7 +2223,7 @@
 	)
 	(hierarchical_label "DRAIN1"
 		(shape input)
-		(at 123.19 58.42 0)
+		(at 119.38 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2682,7 +2235,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 196.85 111.76 0)
+		(at 193.04 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2694,7 +2247,7 @@
 	)
 	(hierarchical_label "DRAIN2"
 		(shape input)
-		(at 123.19 120.65 0)
+		(at 119.38 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2706,7 +2259,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 163.83 69.85 180)
+		(at 160.02 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2718,7 +2271,7 @@
 	)
 	(hierarchical_label "VDD"
 		(shape passive)
-		(at 163.83 49.53 180)
+		(at 160.02 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2730,7 +2283,7 @@
 	)
 	(hierarchical_label "SIGNAL1"
 		(shape input)
-		(at 100.33 66.04 180)
+		(at 96.52 66.04 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2741,123 +2294,8 @@
 		(uuid "f4b6a335-62d9-4044-bc89-57062c76d602")
 	)
 	(symbol
-		(lib_name "R_Pack04_Split_3")
-		(lib_id "Device:R_Pack04_Split")
-		(at 184.15 134.62 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "02eed700-8e92-4de2-a53a-baddde1c4000")
-		(property "Reference" "RN12"
-			(at 181.61 135.8901 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 181.61 133.3501 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 182.118 134.62 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 184.15 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 184.15 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 184.15 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 184.15 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 184.15 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40f")
-		)
-		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ee")
-		)
-		(pin "2"
-			(uuid "052bbac7-3e38-488f-aa55-3ef658c03ebe")
-		)
-		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57520")
-		)
-		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6041")
-		)
-		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a178")
-		)
-		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2dd")
-		)
-		(pin "7"
-			(uuid "a96c62f0-3a69-46d6-a448-272b5c6da3bb")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN12")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Polarized_Small")
-		(at 177.8 74.93 0)
+		(at 173.99 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2865,7 +2303,7 @@
 		(dnp no)
 		(uuid "04344048-401c-4ebd-9c9e-3fe40c8cda85")
 		(property "Reference" "C64"
-			(at 175.26 73.1138 0)
+			(at 171.45 73.1138 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2874,7 +2312,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 175.26 75.6538 0)
+			(at 171.45 75.6538 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2883,7 +2321,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.8"
-			(at 177.8 74.93 0)
+			(at 173.99 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2892,7 +2330,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 177.8 74.93 0)
+			(at 173.99 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2901,7 +2339,16 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small symbol"
-			(at 177.8 74.93 0)
+			(at 173.99 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 173.99 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2926,7 +2373,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 198.12 54.61 180)
+		(at 194.31 54.61 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2934,7 +2381,7 @@
 		(dnp no)
 		(uuid "08ff27d8-0a49-4774-ae9f-e4ab2c5ed34d")
 		(property "Reference" "C62"
-			(at 195.58 53.5686 0)
+			(at 191.77 53.5686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2943,7 +2390,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 195.58 55.88 0)
+			(at 191.77 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2952,7 +2399,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2961,7 +2408,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2970,7 +2417,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2979,7 +2426,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "MCASH21GCC7684MTCA1J"
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2988,7 +2435,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CL21A107MQYNNWE"
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2997,7 +2444,7 @@
 			)
 		)
 		(property "In Order" ""
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3006,7 +2453,7 @@
 			)
 		)
 		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3015,7 +2462,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3024,7 +2471,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3033,7 +2480,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3042,7 +2489,16 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 198.12 54.61 0)
+			(at 194.31 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 194.31 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3067,7 +2523,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small")
-		(at 166.37 74.93 0)
+		(at 162.56 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3075,7 +2531,7 @@
 		(dnp no)
 		(uuid "2fdee5e0-e1d1-466a-b2eb-2440884c961f")
 		(property "Reference" "C63"
-			(at 163.83 73.1138 0)
+			(at 160.02 73.1138 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3084,7 +2540,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 163.83 75.6538 0)
+			(at 160.02 75.6538 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3093,7 +2549,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.8"
-			(at 166.37 74.93 0)
+			(at 162.56 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3102,7 +2558,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 166.37 74.93 0)
+			(at 162.56 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3111,7 +2567,16 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small symbol"
-			(at 166.37 74.93 0)
+			(at 162.56 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 162.56 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3135,122 +2600,8 @@
 		)
 	)
 	(symbol
-		(lib_name "R_Pack04_Split_2")
-		(lib_id "Device:R_Pack04_Split")
-		(at 105.41 66.04 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "32c5da5f-965b-4f62-a9ff-d975b92094fc")
-		(property "Reference" "RN11"
-			(at 105.41 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 105.41 63.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 105.41 68.072 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 105.41 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 105.41 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 105.41 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 105.41 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 105.41 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3588929b-a4d0-4a72-b316-e6d768d8b0b9")
-		)
-		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e4")
-		)
-		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d25")
-		)
-		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57517")
-		)
-		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6038")
-		)
-		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a16e")
-		)
-		(pin "8"
-			(uuid "cb473834-e202-4375-b349-84af67161656")
-		)
-		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c209")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
-		(at 208.28 54.61 180)
+		(at 204.47 54.61 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3258,7 +2609,7 @@
 		(dnp no)
 		(uuid "34169822-a9e3-4e3e-aad0-b5df1e684ed5")
 		(property "Reference" "C69"
-			(at 205.74 53.5686 0)
+			(at 201.93 53.5686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3267,7 +2618,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 205.74 55.88 0)
+			(at 201.93 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3276,7 +2627,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3285,7 +2636,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3294,7 +2645,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3303,7 +2654,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "MCASH21GCC7684MTCA1J"
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3312,7 +2663,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CL21A107MQYNNWE"
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3321,7 +2672,7 @@
 			)
 		)
 		(property "In Order" ""
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3330,7 +2681,7 @@
 			)
 		)
 		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3339,7 +2690,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3348,7 +2699,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3357,7 +2708,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3366,7 +2717,16 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 208.28 54.61 0)
+			(at 204.47 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 204.47 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3390,9 +2750,136 @@
 		)
 	)
 	(symbol
+		(lib_id "Samacsys_kicad_sym:DMT6018LDR-7")
+		(at 233.68 129.54 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "53816e49-953f-4ac2-86ee-a0beaf37ae1c")
+		(property "Reference" "Q1"
+			(at 237.49 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMT6018LDR-7"
+			(at 237.49 130.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Samacsys:DMT6018LDR7"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMT6018LDR.pdf"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DIODES INC. - DMT6018LDR-7 - Dual MOSFET, N Channel, 60 V, 60 V, 8.8 A, 8.8 A, 0.013 ohm"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.85"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "621-DMT6018LDR-7"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/DMT6018LDR-7?qs=4EhzHfbM1GhfDx1FS0oSLQ%3D%3D"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "DMT6018LDR-7"
+			(at 233.68 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "b8f3e0a9-fd58-4ee4-bef5-46d637740afc")
+		)
+		(pin "4"
+			(uuid "e11a2c5c-8d67-4385-adca-be89a56c7859")
+		)
+		(pin "2"
+			(uuid "253d7aa8-238b-4406-9634-e201aa8d149a")
+		)
+		(pin "6"
+			(uuid "a9f2a3e6-4698-4060-a12f-c58b3a8743d2")
+		)
+		(pin "3"
+			(uuid "b7ad20f4-7ca0-4f90-8391-31f110febbc0")
+		)
+		(pin "1"
+			(uuid "f73726e3-6356-43c2-96a9-69df67691b8e")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "Q1")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 184.15 142.24 0)
+		(at 180.34 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3400,7 +2887,7 @@
 		(dnp no)
 		(uuid "5863f9da-fc60-4cf1-a950-bdb4a0680357")
 		(property "Reference" "#PWR081"
-			(at 184.15 148.59 0)
+			(at 180.34 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3409,7 +2896,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 184.277 146.6342 0)
+			(at 180.467 146.6342 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3417,7 +2904,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 184.15 142.24 0)
+			(at 180.34 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3426,7 +2913,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 184.15 142.24 0)
+			(at 180.34 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3435,7 +2922,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 184.15 142.24 0)
+			(at 180.34 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3456,122 +2943,8 @@
 		)
 	)
 	(symbol
-		(lib_name "R_Pack04_Split_1")
-		(lib_id "Device:R_Pack04_Split")
-		(at 247.65 146.05 270)
-		(mirror x)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "74199137-1205-4f01-9787-db25fc1a0fb6")
-		(property "Reference" "RN12"
-			(at 247.65 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 247.65 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 247.65 148.082 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 247.65 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 247.65 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 247.65 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 247.65 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 247.65 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b41a")
-		)
-		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6eb")
-		)
-		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2e")
-		)
-		(pin "5"
-			(uuid "6b640740-5028-4768-abda-bbe1ed79729a")
-		)
-		(pin "4"
-			(uuid "7f42795e-4695-45a4-898e-2fefacc5d465")
-		)
-		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a175")
-		)
-		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e8")
-		)
-		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c212")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN12")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_Schottky_Small")
-		(at 120.65 53.34 270)
+		(at 116.84 53.34 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3580,7 +2953,7 @@
 		(fields_autoplaced yes)
 		(uuid "791eb149-0519-4f6f-b8b0-e067f4393140")
 		(property "Reference" "D9"
-			(at 122.555 52.0699 90)
+			(at 118.745 52.0699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3589,7 +2962,7 @@
 			)
 		)
 		(property "Value" "VSSB410S-E3/52T"
-			(at 122.555 54.6099 90)
+			(at 118.745 54.6099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3598,7 +2971,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 120.65 53.34 90)
+			(at 116.84 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3607,7 +2980,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 120.65 53.34 90)
+			(at 116.84 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3616,7 +2989,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3625,7 +2998,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3634,7 +3007,7 @@
 			)
 		)
 		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3643,7 +3016,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3652,7 +3025,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3661,7 +3034,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3670,7 +3043,16 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 120.65 53.34 0)
+			(at 116.84 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 116.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3695,7 +3077,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 62.23 0)
+		(at 204.47 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3703,7 +3085,7 @@
 		(dnp no)
 		(uuid "8dcf1c24-2291-4166-90f5-24f32c9ee919")
 		(property "Reference" "#PWR09"
-			(at 208.28 68.58 0)
+			(at 204.47 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3712,7 +3094,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 208.407 66.6242 0)
+			(at 204.597 66.6242 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3720,7 +3102,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 208.28 62.23 0)
+			(at 204.47 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3729,7 +3111,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 208.28 62.23 0)
+			(at 204.47 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3738,7 +3120,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 208.28 62.23 0)
+			(at 204.47 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3760,7 +3142,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 187.96 54.61 180)
+		(at 184.15 54.61 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3768,7 +3150,7 @@
 		(dnp no)
 		(uuid "943dbc64-5e4a-4134-a6ac-295badaaaca4")
 		(property "Reference" "C61"
-			(at 185.42 53.5686 0)
+			(at 181.61 53.5686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3777,7 +3159,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 185.42 55.88 0)
+			(at 181.61 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3786,7 +3168,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3795,7 +3177,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3804,7 +3186,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3813,7 +3195,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "MCASH21GCC7684MTCA1J"
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3822,7 +3204,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CL21A107MQYNNWE"
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3831,7 +3213,7 @@
 			)
 		)
 		(property "In Order" ""
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3840,7 +3222,7 @@
 			)
 		)
 		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3849,7 +3231,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3858,7 +3240,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3867,7 +3249,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3876,7 +3258,16 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 187.96 54.61 0)
+			(at 184.15 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 184.15 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3900,360 +3291,35 @@
 		)
 	)
 	(symbol
-		(lib_name "R_Pack04_Split_1")
-		(lib_id "Device:R_Pack04_Split")
-		(at 234.95 146.05 90)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9f01a8b6-5e86-4f89-a8a4-92161917d4f2")
-		(property "Reference" "RN11"
-			(at 234.95 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 234.95 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 234.95 148.082 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 234.95 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 234.95 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 234.95 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 234.95 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 234.95 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b419")
-		)
-		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6ea")
-		)
-		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d2d")
-		)
-		(pin "5"
-			(uuid "3a810850-5c83-4585-9c03-f7c4b07362ec")
-		)
-		(pin "4"
-			(uuid "881f6b4d-9ce9-48af-9924-9e0267ef0d9b")
-		)
-		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a174")
-		)
-		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e7")
-		)
-		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c211")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN11")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "R_Pack04_Split_1")
-		(lib_id "Device:R_Pack04_Split")
-		(at 110.49 133.35 0)
-		(mirror y)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a41755e7-9d98-44da-b60a-ec7be753aa5a")
-		(property "Reference" "RN12"
-			(at 107.95 132.0799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 107.95 134.6199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 112.522 133.35 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 110.49 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 110.49 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 110.49 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 110.49 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b413")
-		)
-		(pin "6"
-			(uuid "c0241e1f-b031-4cb2-825a-5b5e6003b2e4")
-		)
-		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d26")
-		)
-		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57518")
-		)
-		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf6039")
-		)
-		(pin "3"
-			(uuid "05f6204d-66f4-4cd3-84bd-9a75f02a9020")
-		)
-		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e1")
-		)
-		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20a")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN12")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "R_Pack04_Split_3")
-		(lib_id "Device:R_Pack04_Split")
-		(at 179.07 129.54 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b400d302-2cc7-4b87-a32c-0b365860e96e")
-		(property "Reference" "RN11"
-			(at 179.07 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 179.07 127 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 179.07 131.572 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 179.07 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 179.07 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 179.07 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 179.07 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 179.07 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b40d")
-		)
-		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e7")
-		)
-		(pin "2"
-			(uuid "0f6424fa-3558-414d-b27e-65653f2fe386")
-		)
-		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a5751d")
-		)
-		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf603e")
-		)
-		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a171")
-		)
-		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2db")
-		)
-		(pin "7"
-			(uuid "a68b8321-1387-4ca0-9bea-b2c9f7b6b94a")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN11")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 177.8 82.55 0)
+		(lib_id "Samacsys_kicad_sym:DMT6018LDR-7")
+		(at 190.5 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bd5e69fc-0dbe-4fae-a648-694cfe710d32")
-		(property "Reference" "#PWR010"
-			(at 177.8 88.9 0)
+		(fields_autoplaced yes)
+		(uuid "9ddb870d-608f-477d-86e8-ac75a8fb4db2")
+		(property "Reference" "Q1"
+			(at 194.31 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMT6018LDR-7"
+			(at 194.31 130.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Samacsys:DMT6018LDR7"
+			(at 190.5 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4261,16 +3327,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 177.927 86.9442 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 177.8 82.55 0)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMT6018LDR.pdf"
+			(at 190.5 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4278,8 +3336,124 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 177.8 82.55 0)
+		(property "Description" "DIODES INC. - DMT6018LDR-7 - Dual MOSFET, N Channel, 60 V, 60 V, 8.8 A, 8.8 A, 0.013 ohm"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.85"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "621-DMT6018LDR-7"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/DMT6018LDR-7?qs=4EhzHfbM1GhfDx1FS0oSLQ%3D%3D"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "DMT6018LDR-7"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "3c21c4b3-565a-4851-a1a5-37af1c840274")
+		)
+		(pin "4"
+			(uuid "8876c4aa-c633-41bf-88be-d18fac457fb7")
+		)
+		(pin "2"
+			(uuid "ac9771f6-a7a6-4632-aef9-35d24d868054")
+		)
+		(pin "6"
+			(uuid "7743dbe1-3ce7-452b-a087-f7c7d0e5f488")
+		)
+		(pin "3"
+			(uuid "8378bebb-c02a-4b42-944f-667af8cdb2b5")
+		)
+		(pin "1"
+			(uuid "95d46cd5-159a-474b-a50a-f1b07ec72371")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 101.6 129.54 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ac1eba43-c82b-496f-8a92-b3832434ca21")
+		(property "Reference" "R37"
+			(at 101.6 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 101.6 126.7714 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 101.6 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4288,7 +3462,129 @@
 			)
 		)
 		(property "Description" ""
-			(at 177.8 82.55 0)
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "--"
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "--"
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Url" ""
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 101.6 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "65a92b15-0e0e-48a2-95e0-f098e641b8e0")
+		)
+		(pin "2"
+			(uuid "ee252a3e-75ce-43aa-b264-40ac6e5f1c05")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "R37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 173.99 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd5e69fc-0dbe-4fae-a648-694cfe710d32")
+		(property "Reference" "#PWR010"
+			(at 173.99 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 174.117 86.9442 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 173.99 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 173.99 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 173.99 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4310,7 +3606,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 176.53 54.61 180)
+		(at 172.72 54.61 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4318,7 +3614,7 @@
 		(dnp no)
 		(uuid "c2ab4f1b-80e4-4a1a-813e-cd4f4341fa92")
 		(property "Reference" "C51"
-			(at 173.99 53.5686 0)
+			(at 170.18 53.5686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4327,7 +3623,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 173.99 55.88 0)
+			(at 170.18 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4336,7 +3632,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4345,7 +3641,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4354,7 +3650,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4363,7 +3659,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "MCASH21GCC7684MTCA1J"
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4372,7 +3668,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CL21A107MQYNNWE"
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4381,7 +3677,7 @@
 			)
 		)
 		(property "In Order" ""
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4390,7 +3686,7 @@
 			)
 		)
 		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4399,7 +3695,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4408,7 +3704,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4417,7 +3713,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4426,7 +3722,16 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 176.53 54.61 0)
+			(at 172.72 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 172.72 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4450,124 +3755,8 @@
 		)
 	)
 	(symbol
-		(lib_name "R_Pack04_Split_2")
-		(lib_id "Device:R_Pack04_Split")
-		(at 110.49 71.12 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c5499631-6e8a-462b-94e4-cb18d5972cfa")
-		(property "Reference" "RN12"
-			(at 107.95 69.8499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 107.95 72.3899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 112.522 71.12 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 110.49 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 110.49 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 110.49 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 110.49 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6789a1a5-e400-4194-ba0b-c6e4e169d923")
-		)
-		(pin "6"
-			(uuid "4c9868f1-c37c-4920-a51d-80533a41f6e6")
-		)
-		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d28")
-		)
-		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a57519")
-		)
-		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf603a")
-		)
-		(pin "3"
-			(uuid "f09b231f-5969-4839-a406-7ccb08d6a170")
-		)
-		(pin "8"
-			(uuid "4c19dd56-5d4b-4ec8-afab-47202e47fc1d")
-		)
-		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20c")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 110.49 78.74 0)
+		(at 106.68 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4575,7 +3764,7 @@
 		(dnp no)
 		(uuid "ca3f6fba-aaae-452a-ac16-b733dce71ada")
 		(property "Reference" "#PWR053"
-			(at 110.49 85.09 0)
+			(at 106.68 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4584,7 +3773,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 110.617 83.1342 0)
+			(at 106.807 83.1342 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4592,7 +3781,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 78.74 0)
+			(at 106.68 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4601,7 +3790,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 78.74 0)
+			(at 106.68 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4610,7 +3799,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 110.49 78.74 0)
+			(at 106.68 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4631,17 +3820,35 @@
 		)
 	)
 	(symbol
-		(lib_name "GND_2")
-		(lib_id "power:GND")
-		(at 110.49 140.97 0)
+		(lib_id "Device:R_Small")
+		(at 106.68 71.12 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d27ead2c-0828-43bd-9165-3f0163faec39")
-		(property "Reference" "#PWR054"
-			(at 110.49 147.32 0)
+		(uuid "cb79c1a8-3ab1-4f72-ab31-1df5a5178f31")
+		(property "Reference" "R47"
+			(at 104.902 69.9516 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 104.902 72.263 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 106.68 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4649,25 +3856,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 110.617 145.3642 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 110.49 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 110.49 140.97 0)
+		(property "Datasheet" "~"
+			(at 106.68 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4676,7 +3866,252 @@
 			)
 		)
 		(property "Description" ""
-			(at 110.49 140.97 0)
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "--"
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "--"
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Url" ""
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 106.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "615b714c-ff03-45ae-923a-3d600d99e739")
+		)
+		(pin "2"
+			(uuid "0d6f59c9-6608-4683-841e-985cfb918f50")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "R47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 175.26 129.54 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce85ebbc-736a-44da-adf6-e9fe31d50a20")
+		(property "Reference" "R45"
+			(at 175.26 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 175.26 126.7714 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "--"
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "--"
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Url" ""
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 175.26 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33572ea1-14fa-4048-9a8a-95acbb8d1e41")
+		)
+		(pin "2"
+			(uuid "fd6a0b07-1b41-4679-af98-945aa1510d96")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "R45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 106.68 142.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d27ead2c-0828-43bd-9165-3f0163faec39")
+		(property "Reference" "#PWR054"
+			(at 106.68 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 106.807 146.6342 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4697,148 +4132,35 @@
 		)
 	)
 	(symbol
-		(lib_name "R_Pack04_Split_4")
-		(lib_id "Device:R_Pack04_Split")
-		(at 105.41 128.27 90)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e29c1cf6-77d1-4fc5-ae7c-db2c6b85085f")
-		(property "Reference" "RN11"
-			(at 105.41 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 105.41 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0603"
-			(at 105.41 130.302 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 105.41 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "4 resistor network, parallel topology, split"
-			(at 105.41 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 105.41 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 105.41 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 105.41 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d7312eb-9307-4aa8-bb15-891d22f2b414")
-		)
-		(pin "6"
-			(uuid "63c70d1d-c10d-4815-acc5-83b847bf96f2")
-		)
-		(pin "2"
-			(uuid "b893b2a2-9059-4f9e-9bb8-14894edf9d29")
-		)
-		(pin "5"
-			(uuid "3316430e-1759-41db-b4f9-4fab91a5751b")
-		)
-		(pin "4"
-			(uuid "79ce528b-8b79-4340-8cda-67a987bf603c")
-		)
-		(pin "3"
-			(uuid "981a92d8-b1e2-4f91-96b9-cdbe6f9526e7")
-		)
-		(pin "8"
-			(uuid "a2639910-cc4e-45da-8699-d1a70fa7b2e2")
-		)
-		(pin "7"
-			(uuid "1b1795bc-f2ea-47af-8da9-dd7330c6c20d")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
-					(reference "RN11")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 166.37 54.61 180)
+		(lib_id "Device:R_Small")
+		(at 106.68 134.62 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e7ff5809-c870-4196-a67b-89ad24554958")
-		(property "Reference" "C15"
-			(at 163.83 53.5686 0)
+		(uuid "d575ecb9-31a6-425c-b568-da1c241308c1")
+		(property "Reference" "R46"
+			(at 104.902 133.4516 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "22uF"
-			(at 163.83 55.88 0)
+		(property "Value" "10k"
+			(at 104.902 135.763 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 166.37 54.61 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4847,7 +4169,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 166.37 54.61 0)
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4856,7 +4178,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 166.37 54.61 0)
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4864,8 +4186,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "MCASH21GCC7684MTCA1J"
-			(at 166.37 54.61 0)
+		(property "Manufacturer_Name" "--"
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4873,35 +4195,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CL21A107MQYNNWE"
-			(at 166.37 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "In Order" ""
-			(at 166.37 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
-			(at 166.37 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
-			(at 166.37 54.61 0)
+		(property "Manufacturer_Part_Number" "--"
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4910,7 +4205,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 166.37 54.61 0)
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4919,7 +4214,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 166.37 54.61 0)
+			(at 106.68 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4928,7 +4223,293 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 166.37 54.61 0)
+			(at 106.68 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 106.68 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "49b90978-3c7c-44a5-9971-c6309e98dd1f")
+		)
+		(pin "2"
+			(uuid "af49aeb8-fbb4-4a5c-b5bc-f9f75c869d35")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "R46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Samacsys_kicad_sym:DMT6018LDR-7")
+		(at 116.84 129.54 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e5fb6792-3fc4-47ac-9a6d-0f1520c5d8d4")
+		(property "Reference" "Q7"
+			(at 120.65 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMT6018LDR-7"
+			(at 120.65 130.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Samacsys:DMT6018LDR7"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMT6018LDR.pdf"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DIODES INC. - DMT6018LDR-7 - Dual MOSFET, N Channel, 60 V, 60 V, 8.8 A, 8.8 A, 0.013 ohm"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.85"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "621-DMT6018LDR-7"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/DMT6018LDR-7?qs=4EhzHfbM1GhfDx1FS0oSLQ%3D%3D"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "DMT6018LDR-7"
+			(at 116.84 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "b8f3e0a9-fd58-4ee4-bef5-46d637740afb")
+		)
+		(pin "4"
+			(uuid "8876c4aa-c633-41bf-88be-d18fac457fb8")
+		)
+		(pin "2"
+			(uuid "253d7aa8-238b-4406-9634-e201aa8d1499")
+		)
+		(pin "6"
+			(uuid "7743dbe1-3ce7-452b-a087-f7c7d0e5f489")
+		)
+		(pin "3"
+			(uuid "8378bebb-c02a-4b42-944f-667af8cdb2b6")
+		)
+		(pin "1"
+			(uuid "f73726e3-6356-43c2-96a9-69df67691b8d")
+		)
+		(instances
+			(project ""
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "Q7")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 162.56 54.61 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e7ff5809-c870-4196-a67b-89ad24554958")
+		(property "Reference" "C15"
+			(at 160.02 53.5686 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 160.02 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "MCASH21GCC7684MTCA1J"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CL21A107MQYNNWE"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "In Order" ""
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Url" ""
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 162.56 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4952,17 +4533,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 194.31 116.84 270)
+		(lib_id "Samacsys_kicad_sym:DMT6018LDR-7")
+		(at 116.84 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f63b8bc6-138b-400e-afcf-6e63b1e37b49")
-		(property "Reference" "D24"
-			(at 196.215 115.5699 90)
+		(uuid "e9833279-e6ba-466f-97f7-b70c2cfb80d0")
+		(property "Reference" "Q7"
+			(at 120.65 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4970,8 +4551,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 196.215 118.1099 90)
+		(property "Value" "DMT6018LDR-7"
+			(at 120.65 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4979,8 +4560,133 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 194.31 116.84 90)
+		(property "Footprint" "Samacsys:DMT6018LDR7"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMT6018LDR.pdf"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DIODES INC. - DMT6018LDR-7 - Dual MOSFET, N Channel, 60 V, 60 V, 8.8 A, 8.8 A, 0.013 ohm"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "0.85"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "621-DMT6018LDR-7"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/DMT6018LDR-7?qs=4EhzHfbM1GhfDx1FS0oSLQ%3D%3D"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "DMT6018LDR-7"
+			(at 116.84 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "b8f3e0a9-fd58-4ee4-bef5-46d637740afd")
+		)
+		(pin "4"
+			(uuid "8876c4aa-c633-41bf-88be-d18fac457fb9")
+		)
+		(pin "2"
+			(uuid "253d7aa8-238b-4406-9634-e201aa8d149b")
+		)
+		(pin "6"
+			(uuid "7743dbe1-3ce7-452b-a087-f7c7d0e5f48a")
+		)
+		(pin "3"
+			(uuid "8378bebb-c02a-4b42-944f-667af8cdb2b7")
+		)
+		(pin "1"
+			(uuid "f73726e3-6356-43c2-96a9-69df67691b8f")
+		)
+		(instances
+			(project ""
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 101.6 66.04 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ed1af9de-7205-4823-8c97-60b72fdddc03")
+		(property "Reference" "R44"
+			(at 101.6 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 101.6 63.2714 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4989,7 +4695,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 194.31 116.84 90)
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4998,7 +4704,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 194.31 116.84 0)
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5006,8 +4712,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 194.31 116.84 0)
+		(property "Manufacturer_Name" "--"
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5015,17 +4721,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 194.31 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 194.31 116.84 0)
+		(property "Manufacturer_Part_Number" "--"
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5034,7 +4731,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 194.31 116.84 0)
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5043,7 +4740,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 194.31 116.84 0)
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5052,7 +4749,149 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 194.31 116.84 0)
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7fbe79e-4b55-4932-8e05-bf7986d9ced1")
+		)
+		(pin "2"
+			(uuid "4cefbc88-f754-4ffb-ac00-bb201882ec7a")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "R44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky_Small")
+		(at 190.5 116.84 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f63b8bc6-138b-400e-afcf-6e63b1e37b49")
+		(property "Reference" "D24"
+			(at 193.04 115.3159 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 193.04 117.8559 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 190.5 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 190.5 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Url" ""
+			(at 190.5 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 190.5 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5076,35 +4915,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 120.65 115.57 270)
+		(lib_id "Device:R_Small")
+		(at 180.34 134.62 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fe491a1e-21b6-4a32-beae-8b9dcfdda6df")
-		(property "Reference" "D10"
-			(at 122.555 114.2999 90)
+		(uuid "f737947f-3cda-4df9-8ed1-35e1059a990e")
+		(property "Reference" "R48"
+			(at 178.562 133.4516 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 122.555 116.8399 90)
+		(property "Value" "10k"
+			(at 178.562 135.763 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 120.65 115.57 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5113,7 +4952,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 120.65 115.57 90)
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5122,7 +4961,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 120.65 115.57 0)
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5130,8 +4969,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 120.65 115.57 0)
+		(property "Manufacturer_Name" "--"
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5139,17 +4978,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 120.65 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 120.65 115.57 0)
+		(property "Manufacturer_Part_Number" "--"
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5158,7 +4988,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 120.65 115.57 0)
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5167,7 +4997,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 120.65 115.57 0)
+			(at 180.34 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5176,7 +5006,149 @@
 			)
 		)
 		(property "Mouser Url" ""
-			(at 120.65 115.57 0)
+			(at 180.34 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 180.34 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d126f509-9b78-427d-bd10-8f8eab2429b0")
+		)
+		(pin "2"
+			(uuid "e412f316-35ba-4087-8de5-f31f289993db")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/084f6cc5-ae27-4f1e-aa54-14c8f7f394d3"
+					(reference "R48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky_Small")
+		(at 116.84 116.84 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe491a1e-21b6-4a32-beae-8b9dcfdda6df")
+		(property "Reference" "D10"
+			(at 118.745 115.5699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 118.745 118.1099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 116.84 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Url" ""
+			(at 116.84 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Url" ""
+			(at 116.84 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
