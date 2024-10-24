@@ -294,8 +294,8 @@ LtcStatus Ltc6811Controller::readVoltages(DataArray < float > *out)
 	static std::array < RegArray < LtcStatus >, 4 > pecs;
 
 	wakeUp();
-	rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
-	//rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
+	//rawWrite(CMD_ADOW(Mode::Normal, Pull::Down, Discharge::NotPermited, Cell::All));
+	rawWrite(CMD_ADCV(Mode::Normal, Discharge::NotPermited, Cell::All));
 	osDelay(tadc);
 
 	wakeUp();

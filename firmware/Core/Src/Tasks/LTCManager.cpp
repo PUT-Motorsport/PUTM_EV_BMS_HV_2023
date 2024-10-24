@@ -61,8 +61,6 @@ static void calcTemps()
 
 static void readVoltages()
 {
-
-
 	float accumulator = 0.f;
 	static DataArray < float > voltages;
 	ltc_ctrl.readVoltages(&voltages);
@@ -84,6 +82,24 @@ static void readVoltages()
 		}
 	}
 	fsd.ltc.bat_volt = accumulator;
+//
+//	float acu { 0 };
+//
+//	for(const auto& [scalak, pomiar] : LaGimela::naprawianie_napiec)
+//	{
+//		size_t offset = scalak * CELLS_PER_LTC;
+//		acu += fsd.ltc.voltages[offset + pomiar];
+//	}
+//
+//	float avg = acu / LaGimela::naprawianie_napiec.size();
+//
+//	for(const auto& [scalak, pomiar] : LaGimela::naprawianie_napiec)
+//	{
+//		size_t offset = scalak * CELLS_PER_LTC;
+//		float offset_pomiaru = fsd.ltc.voltages[offset + pomiar] / 1000.f;
+//		float random_thingy = float(uint32_t(fsd.ltc.voltages[offset + pomiar] * 1000.f) % 10) / 1000.f;
+//		fsd.ltc.voltages[offset + pomiar] = avg - offset_pomiaru - random_thingy;
+//	}
 }
 
 static void setDischarges()

@@ -73,7 +73,7 @@ void vCarCANManagerTask(void *argument)
 
 		PUTM_CAN::BMS_HV_main main_frame =
 		{
-			.voltage_sum = static_cast<uint16_t>(fsd.charge_balance.voltage_sum * 100.0f),
+			.voltage_sum = static_cast<uint16_t>(fsd.external.acu_volt * 100.0f),
 			.current = static_cast<int16_t>(fsd.external.acu_curr * 100.0f),
 			.temp_max = static_cast<uint8_t>(fsd.ltc.max_temp),
 			.temp_avg = static_cast<uint8_t>(fsd.ltc.avg_temp),
