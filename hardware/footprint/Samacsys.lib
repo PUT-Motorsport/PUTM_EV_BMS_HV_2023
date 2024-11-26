@@ -336,4 +336,74 @@ X D2 6 900 -200 200 L 50 50 0 0 P
 P 5 0 1 6 200 100 700 100 700 -300 200 -300 200 100 N
 ENDDRAW
 ENDDEF
+DEF BQ79600PWRQ1 IC 0 30 Y Y 1 F N
+F0 "IC" 1750 300 50 H V L CNN
+F1 "BQ79600PWRQ1" 1750 200 50 H V L CNN
+F2 "Samacsys:SOP65P640X120-16N" 1750 100 50 H I L CNN
+F3 "https://www.arrow.com/en/products/bq79600pwrq1/texas-instruments" 1750 0 50 H I L CNN
+F4 "Battery Management Automotive SPI/UART communication interface functional-safety compliant with automatic host wakeup" 1750 -100 50 H I L CNN "Description"
+F5 "1.2" 1750 -200 50 H I L CNN "Height"
+F6 "595-BQ79600PWRQ1" 1750 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/BQ79600PWRQ1?qs=bAKSY%2FctAC74v4PXQeVHrA%3D%3D" 1750 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Texas Instruments" 1750 -500 50 H I L CNN "Manufacturer_Name"
+F9 "BQ79600PWRQ1" 1750 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X DVDD 1 0 0 200 R 50 50 0 0 P
+X NFAULT 2 0 -100 200 R 50 50 0 0 P
+X VIO 3 0 -200 200 R 50 50 0 0 P
+X MOSI/RX 4 0 -300 200 R 50 50 0 0 P
+X MISO/TX 5 0 -400 200 R 50 50 0 0 P
+X SCLK 6 0 -500 200 R 50 50 0 0 P
+X NCS 7 0 -600 200 R 50 50 0 0 P
+X NUART/SPI_(SPI_RDY) 8 0 -700 200 R 50 50 0 0 P
+X INH 16 1900 0 200 L 50 50 0 0 P
+X BAT 15 1900 -100 200 L 50 50 0 0 P
+X CVDD 14 1900 -200 200 L 50 50 0 0 P
+X COMHP 13 1900 -300 200 L 50 50 0 0 P
+X COMHN 12 1900 -400 200 L 50 50 0 0 P
+X COMLN 11 1900 -500 200 L 50 50 0 0 P
+X COMLP 10 1900 -600 200 L 50 50 0 0 P
+X GND 9 1900 -700 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1700 100 1700 -800 200 -800 200 100 N
+ENDDRAW
+ENDDEF
+DEF ETC1-1T-2TR T 0 30 Y Y 1 F N
+F0 "T" 1750 300 50 H V L CNN
+F1 "ETC1-1T-2TR" 1750 200 50 H V L CNN
+F2 "Samacsys:E_SERIES_1" 1750 100 50 H I L CNN
+F3 "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets_SAMA/85d3f36e6ccd244b2f23e0daa3d02a86.pdf" 1750 0 50 H I L CNN
+F4 "Audio Transformers / Signal Transformers .1-200MHz IL 1.5dB Impedance Ratio 1:1" 1750 -100 50 H I L CNN "Description"
+F5 "" 1750 -200 50 H I L CNN "Height"
+F6 "937-ETC1-1T-2" 1750 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/MACOM/ETC1-1T-2TR?qs=Z9twEOuL%252B%2FJJqd2fxpSi6w%3D%3D" 1750 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "MACOM" 1750 -500 50 H I L CNN "Manufacturer_Name"
+F9 "ETC1-1T-2TR" 1750 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X SECONDARY 1 1900 0 200 L 50 50 0 0 P
+X SECONDARY_CT 2 1900 -100 200 L 50 50 0 0 P
+X SECONDARY_DOT 3 1900 -200 200 L 50 50 0 0 P
+X PRIMARY_DOT 4 0 -100 200 R 50 50 0 0 P
+X PRIMARY 5 0 0 200 R 50 50 0 0 P
+P 5 0 1 6 200 100 1700 100 1700 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+DEF ESMIT-4180_C T 0 30 Y Y 1 F N
+F0 "T" 1050 300 50 H V L CNN
+F1 "ESMIT-4180_C" 1050 200 50 H V L CNN
+F2 "Samacsys:SOP254P914X350-4N" 1050 100 50 H I L CNN
+F3 "http://products.sumida.com/products/pdf/CBM5D33_Ver1.0_E.pdf" 1050 0 50 H I L CNN
+F4 "Audio Transformers / Signal Transformers 125uH min 120uH Nom" 1050 -100 50 H I L CNN "Description"
+F5 "3.5" 1050 -200 50 H I L CNN "Height"
+F6 "851-ESMIT-4180/C" 1050 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Sumida/ESMIT-4180-C?qs=uFNwyRpLCSIys3VDNoqXHQ%3D%3D" 1050 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Sumida" 1050 -500 50 H I L CNN "Manufacturer_Name"
+F9 "ESMIT-4180/C" 1050 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X PRI_1 1 0 0 200 R 50 50 0 0 P
+X PRI_2 2 0 -100 200 R 50 50 0 0 P
+X SEC_2 4 1200 0 200 L 50 50 0 0 P
+X SEC_1 3 1200 -100 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1000 100 1000 -200 200 -200 200 100 N
+ENDDRAW
+ENDDEF
 # End Library
