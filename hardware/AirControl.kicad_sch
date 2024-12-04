@@ -2347,7 +2347,7 @@
 				(hide yes)
 			)
 		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
 			(at 173.99 74.93 0)
 			(effects
 				(font
@@ -2452,7 +2452,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
+		(property "Mouser Part Number" ""
 			(at 194.31 54.61 0)
 			(effects
 				(font
@@ -2480,24 +2480,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 194.31 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 194.31 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 194.31 54.61 0)
 			(effects
 				(font
@@ -2575,7 +2557,7 @@
 				(hide yes)
 			)
 		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
 			(at 162.56 74.93 0)
 			(effects
 				(font
@@ -2680,7 +2662,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
+		(property "Mouser Part Number" ""
 			(at 204.47 54.61 0)
 			(effects
 				(font
@@ -2708,24 +2690,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 204.47 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 204.47 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 204.47 54.61 0)
 			(effects
 				(font
@@ -3042,24 +3006,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 116.84 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 116.84 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "047264f0-3fee-4329-8ef3-ae20a7db664d")
 		)
@@ -3221,7 +3167,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
+		(property "Mouser Part Number" ""
 			(at 184.15 54.61 0)
 			(effects
 				(font
@@ -3249,24 +3195,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 184.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 184.15 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 184.15 54.61 0)
 			(effects
 				(font
@@ -3506,24 +3434,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 101.6 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 101.6 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "65a92b15-0e0e-48a2-95e0-f098e641b8e0")
 		)
@@ -3685,7 +3595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
+		(property "Mouser Part Number" ""
 			(at 172.72 54.61 0)
 			(effects
 				(font
@@ -3713,24 +3623,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 172.72 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 172.72 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 172.72 54.61 0)
 			(effects
 				(font
@@ -3910,16 +3802,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 106.68 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 106.68 71.12 0)
 			(effects
 				(font
@@ -4024,24 +3907,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 175.26 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 175.26 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 175.26 129.54 0)
 			(effects
 				(font
@@ -4222,16 +4087,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 106.68 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 106.68 134.62 0)
 			(effects
 				(font
@@ -4463,7 +4319,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "187-CL21A107MQYNNWE"
+		(property "Mouser Part Number" ""
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -4491,24 +4347,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 162.56 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 162.56 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -4748,24 +4586,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "a7fbe79e-4b55-4932-8e05-bf7986d9ced1")
 		)
@@ -4881,24 +4701,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 190.5 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 190.5 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "aba60dfe-aada-4a6f-8ed4-a66d2a907713")
 		)
@@ -5005,16 +4807,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 180.34 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 180.34 134.62 0)
 			(effects
 				(font
@@ -5130,24 +4923,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 116.84 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 116.84 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 116.84 116.84 0)
 			(effects
 				(font

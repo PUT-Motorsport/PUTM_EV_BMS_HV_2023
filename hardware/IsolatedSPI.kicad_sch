@@ -3188,16 +3188,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 90.17 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
 			(at 90.17 86.36 0)
 			(effects
 				(font
@@ -3359,7 +3350,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
+		(property "Mouser Part Number" "LTC6820IMS#PBF"
 			(at 109.22 100.33 0)
 			(effects
 				(font
@@ -3368,7 +3359,7 @@
 				(hide yes)
 			)
 		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Analog-Devices/LTC6820IMSPBF?qs=hVkxg5c3xu9mQWZApkXW1Q%3D%3D"
 			(at 109.22 100.33 0)
 			(effects
 				(font
@@ -3590,24 +3581,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 224.79 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 224.79 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "3dd16b88-52c0-4583-8de5-f5aec0569dcd")
 		)
@@ -3771,24 +3744,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 217.17 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 217.17 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 217.17 107.95 0)
 			(effects
 				(font
@@ -4034,24 +3989,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 217.17 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 217.17 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "637549c3-4958-4cc0-8938-e6b3c4c16987")
 		)
@@ -4157,16 +4094,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 259.08 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 259.08 72.39 0)
 			(effects
 				(font
@@ -4279,16 +4207,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 90.17 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
 			(at 90.17 81.28 0)
 			(effects
 				(font
@@ -4458,24 +4377,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 245.11 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 245.11 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 245.11 102.87 0)
 			(effects
 				(font
@@ -4656,16 +4557,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 250.19 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 250.19 72.39 0)
 			(effects
 				(font
@@ -4845,24 +4737,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 234.95 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 234.95 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "47dab7fd-5783-4c3c-95c2-2dbc807e89de")
 		)
@@ -5034,16 +4908,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 179.07 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
 			(at 179.07 82.55 0)
 			(effects
 				(font
@@ -5157,16 +5022,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 266.7 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 266.7 72.39 0)
 			(effects
 				(font
@@ -5410,24 +5266,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 125.73 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 125.73 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2ed94065-21be-4c7e-b282-f6b45dee3506")
 		)
@@ -5598,24 +5436,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 128.27 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 128.27 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0bc7641c-017b-41ee-8fd9-26101b4e7a77")
 		)
@@ -5711,24 +5531,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 245.11 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 245.11 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 245.11 105.41 0)
 			(effects
 				(font
@@ -5842,24 +5644,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 129.54 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 129.54 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0c3eddd2-d03b-44ea-a99c-37ebe0719dc8")
 		)
@@ -5964,16 +5748,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 181.61 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
 			(at 181.61 118.11 0)
 			(effects
 				(font

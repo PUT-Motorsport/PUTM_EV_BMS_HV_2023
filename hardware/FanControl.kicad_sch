@@ -2734,16 +2734,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 227.33 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 227.33 48.26 0)
 			(effects
 				(font
@@ -3051,16 +3042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 153.67 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 153.67 111.76 0)
 			(effects
 				(font
@@ -3175,16 +3157,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 80.01 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 80.01 111.76 0)
 			(effects
 				(font
@@ -3500,24 +3473,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 237.49 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 237.49 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "20fde138-992d-43dc-9d53-d261564c64ee")
 		)
@@ -3624,16 +3579,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 80.01 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 80.01 48.26 0)
 			(effects
 				(font
@@ -3865,24 +3811,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 74.93 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 74.93 43.18 0)
 			(effects
 				(font
@@ -4138,24 +4066,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 90.17 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 90.17 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "252e9f59-5b3d-4b9f-8167-62eb9218ee7c")
 		)
@@ -4318,24 +4228,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 74.93 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 74.93 165.1 0)
 			(effects
 				(font
@@ -4586,24 +4478,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "55adafc6-f7d7-41cc-983e-b3eb025f51fd")
 		)
@@ -4842,16 +4716,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 153.67 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 153.67 48.26 0)
 			(effects
 				(font
@@ -4956,24 +4821,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 148.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 148.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 148.59 43.18 0)
 			(effects
 				(font
@@ -5224,24 +5071,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "656ab897-fef8-4bf6-a5f7-2f8d2454e400")
 		)
@@ -5422,24 +5251,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "16de1e1c-a0cd-4269-86d3-51bd8fd0a08a")
 		)
@@ -5536,24 +5347,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 222.25 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 222.25 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 222.25 106.68 0)
 			(effects
 				(font
@@ -5798,24 +5591,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 148.59 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 148.59 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2497fa27-c441-429a-a331-441b1d693ffd")
 		)
@@ -5977,24 +5752,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 222.25 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 222.25 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 222.25 43.18 0)
 			(effects
 				(font
@@ -6250,24 +6007,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "d2f13e09-bc18-43c8-9700-18408c1c8ae5")
 		)
@@ -6374,16 +6113,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 80.01 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 80.01 170.18 0)
 			(effects
 				(font
@@ -6498,16 +6228,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Url" ""
-			(at 227.33 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
 			(at 227.33 111.76 0)
 			(effects
 				(font
@@ -6612,24 +6333,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 74.93 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 74.93 106.68 0)
 			(effects
 				(font
@@ -6872,24 +6575,6 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Url" ""
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Url" ""
 			(at 237.49 93.98 0)
 			(effects
 				(font
