@@ -2869,6 +2869,12 @@
 		(uuid "2900dbce-5db8-46b7-a5a7-2b52069d4069")
 	)
 	(junction
+		(at 259.08 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2990fe54-f9cd-4a1e-a24e-6473b11e0dc6")
+	)
+	(junction
 		(at 116.84 175.26)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3053,6 +3059,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a315b3f5-2d7d-4d6b-a611-7511e91dd554")
+	)
+	(junction
+		(at 149.86 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a437ce90-1e3d-4afd-b147-e146e514e58d")
 	)
 	(junction
 		(at 135.89 99.06)
@@ -3895,6 +3907,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 92.71) (xy 67.31 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fe0c3b3-6ca0-43c5-8269-e4f43747e675")
+	)
+	(wire
+		(pts
 			(xy 148.59 99.06) (xy 148.59 101.6)
 		)
 		(stroke
@@ -4265,6 +4287,16 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 90.17) (xy 259.08 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1b907bf-7005-4427-854d-9624fa29558f")
+	)
+	(wire
+		(pts
 			(xy 227.33 102.87) (xy 227.33 105.41)
 		)
 		(stroke
@@ -4342,6 +4374,16 @@
 			(type default)
 		)
 		(uuid "c19c9067-196b-4cfe-b632-9913d215d656")
+	)
+	(wire
+		(pts
+			(xy 149.86 149.86) (xy 149.86 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c50f76ab-f780-4423-924b-117e04911af4")
 	)
 	(wire
 		(pts
@@ -4702,16 +4744,6 @@
 			(type default)
 		)
 		(uuid "fd71725c-2ddc-484c-9737-b522f689157d")
-	)
-	(wire
-		(pts
-			(xy 67.31 92.71) (xy 67.31 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe7d05ff-9975-401d-ac9f-bd5af8b25100")
 	)
 	(rectangle
 		(start 13.97 13.97)
@@ -5417,7 +5449,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 259.08 92.71 0)
+		(at 259.08 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5425,7 +5457,7 @@
 		(dnp no)
 		(uuid "12d77ce4-d499-4e3f-82f7-d7b54976d922")
 		(property "Reference" "#PWR065"
-			(at 259.08 96.52 0)
+			(at 259.08 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5434,7 +5466,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 259.08 88.9 0)
+			(at 259.08 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5442,7 +5474,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 92.71 0)
+			(at 259.08 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5451,7 +5483,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 92.71 0)
+			(at 259.08 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5460,7 +5492,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 259.08 92.71 0)
+			(at 259.08 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10655,6 +10687,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 259.08 92.71 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cba031f3-9a37-4ebb-80fc-967b80a50515")
+		(property "Reference" "TP9"
+			(at 261.62 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 257.81 91.4401 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+			(at 254 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 254 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 259.08 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bca3541f-2f9f-40f5-8651-4cc639e4c73d")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
+					(reference "TP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 153.67 26.67 0)
 		(unit 1)
@@ -10721,7 +10820,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 149.86 152.4 0)
+		(at 149.86 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10729,7 +10828,7 @@
 		(dnp no)
 		(uuid "e3f34122-ce3f-4f26-b4d9-af0df4989125")
 		(property "Reference" "#PWR076"
-			(at 149.86 156.21 0)
+			(at 149.86 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10738,7 +10837,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 149.86 148.59 0)
+			(at 149.86 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10746,7 +10845,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 152.4 0)
+			(at 149.86 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10755,7 +10854,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 152.4 0)
+			(at 149.86 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10764,7 +10863,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 152.4 0)
+			(at 149.86 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11308,6 +11407,73 @@
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
 					(reference "#PWR088")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 149.86 152.4 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f563d225-97db-47f4-a077-38195666d87c")
+		(property "Reference" "TP10"
+			(at 152.4 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 148.59 151.1301 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+			(at 144.78 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 144.78 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 149.86 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "09a711e7-83b8-4e09-8ab3-b14eaac3bc25")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/66c3869d-de11-4d8d-b4de-9d98c32ec205"
+					(reference "TP10")
 					(unit 1)
 				)
 			)

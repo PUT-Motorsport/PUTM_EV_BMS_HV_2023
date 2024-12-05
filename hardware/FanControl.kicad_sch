@@ -963,16 +963,16 @@
 		)
 	)
 	(junction
+		(at 163.83 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0fdf922c-67b9-4f03-b9a9-39b7dad48990")
+	)
+	(junction
 		(at 153.67 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "151a1371-e241-45c9-aaa9-4cad6e21c8f8")
-	)
-	(junction
-		(at 163.83 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1715c7c5-4085-41a9-aab9-48ed20e382da")
 	)
 	(junction
 		(at 80.01 53.34)
@@ -981,10 +981,22 @@
 		(uuid "2387a670-029a-4041-b6b4-0b3c15209df3")
 	)
 	(junction
+		(at 237.49 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28424904-39bb-4e28-a0ea-bb5502764312")
+	)
+	(junction
 		(at 80.01 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3be7c558-f378-415a-9241-91f94a68db40")
+	)
+	(junction
+		(at 237.49 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c451370-c869-45f3-a565-b9abbe4a7ef7")
 	)
 	(junction
 		(at 153.67 53.34)
@@ -999,22 +1011,28 @@
 		(uuid "605485cd-81fa-433d-8167-798d0bc7df8d")
 	)
 	(junction
-		(at 237.49 99.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "60fb3b2c-4064-4264-b79e-d61ddaa602ef")
-	)
-	(junction
 		(at 153.67 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6261d269-16a6-4353-8209-7e5f3bce1a8b")
 	)
 	(junction
+		(at 90.17 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68744f75-6550-42cc-9be6-880cedfdcd3d")
+	)
+	(junction
 		(at 153.67 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "75a7f07b-19b4-439f-9a3d-e228ad11fd34")
+	)
+	(junction
+		(at 90.17 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "784f5a60-3d87-45d8-9f34-00e1013b51f0")
 	)
 	(junction
 		(at 227.33 116.84)
@@ -1041,22 +1059,16 @@
 		(uuid "aff25712-669d-4c70-bd4c-d7e19fb0a59a")
 	)
 	(junction
+		(at 90.17 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b64f63a0-84f2-4d7e-a85c-ec07095cb8ec")
+	)
+	(junction
 		(at 163.83 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bdc3839b-5b95-4b32-a940-0190ed18a74b")
-	)
-	(junction
-		(at 90.17 99.06)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c476164e-523a-4501-876b-6b282a54e52d")
-	)
-	(junction
-		(at 237.49 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ca4656d6-1c60-4545-b60d-9748f4bff37b")
+		(uuid "c970a586-ccc2-4ade-ae64-c724a40cd41f")
 	)
 	(junction
 		(at 80.01 116.84)
@@ -1065,22 +1077,10 @@
 		(uuid "da012c79-c4c7-4824-9b08-eb8df4372ad9")
 	)
 	(junction
-		(at 90.17 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "deecf7be-358b-43e7-906f-55ddd412725a")
-	)
-	(junction
 		(at 80.01 175.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eb6672c2-36ca-4bb9-91de-172778f847ee")
-	)
-	(junction
-		(at 90.17 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fcd9ceab-da3c-43a6-a9d0-77c27071f9d7")
 	)
 	(junction
 		(at 227.33 53.34)
@@ -1122,23 +1122,13 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 43.18) (xy 153.67 43.18)
+			(xy 148.59 43.18) (xy 153.67 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "067c2c42-330c-4836-8a07-6ce8a7cd0ecf")
-	)
-	(wire
-		(pts
-			(xy 237.49 25.4) (xy 237.49 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d0fd511-8d64-4f66-a62c-bb437ba08614")
 	)
 	(wire
 		(pts
@@ -1222,6 +1212,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 25.4) (xy 237.49 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27aca083-43a9-49e9-ad6a-0fe025311b7d")
+	)
+	(wire
+		(pts
 			(xy 163.83 35.56) (xy 163.83 38.1)
 		)
 		(stroke
@@ -1239,6 +1239,16 @@
 			(type default)
 		)
 		(uuid "2d7d26d0-3f1f-493e-b65e-7befa7ea52ee")
+	)
+	(wire
+		(pts
+			(xy 90.17 147.32) (xy 90.17 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2db4bb19-bebd-47c9-9bb2-5391187eda46")
 	)
 	(wire
 		(pts
@@ -1262,7 +1272,17 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 106.68) (xy 219.71 106.68)
+			(xy 237.49 88.9) (xy 237.49 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "367e25ce-487d-419b-8b88-fb810fcab863")
+	)
+	(wire
+		(pts
+			(xy 214.63 106.68) (xy 217.17 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1279,16 +1299,6 @@
 			(type default)
 		)
 		(uuid "3ad3b99d-77ac-4fc9-8ba9-7e6d4d12083a")
-	)
-	(wire
-		(pts
-			(xy 237.49 33.02) (xy 237.49 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ba81fa5-8c64-4ecb-942f-d6bbdc3b59ba")
 	)
 	(wire
 		(pts
@@ -1312,27 +1322,27 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 88.9) (xy 90.17 91.44)
+			(xy 237.49 96.52) (xy 237.49 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "448ed5bc-52d5-4c64-acf0-7e8998e36bca")
+		(uuid "44ca64fe-87fc-4bbd-80fb-733e727d293b")
 	)
 	(wire
 		(pts
-			(xy 90.17 147.32) (xy 90.17 149.86)
+			(xy 163.83 88.9) (xy 163.83 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4c6608e2-314b-4b17-ad3a-82e92e851f8e")
+		(uuid "49dbc491-cf51-4384-bb44-cd32712b26af")
 	)
 	(wire
 		(pts
-			(xy 77.47 106.68) (xy 80.01 106.68)
+			(xy 74.93 106.68) (xy 80.01 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1352,23 +1362,23 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 96.52) (xy 163.83 99.06)
+			(xy 90.17 154.94) (xy 90.17 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "553a456a-661c-46c1-822b-8e795421f728")
+		(uuid "54a90c64-46aa-4a67-b136-c8cdc7324048")
 	)
 	(wire
 		(pts
-			(xy 163.83 88.9) (xy 163.83 91.44)
+			(xy 90.17 88.9) (xy 90.17 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5bba2796-9241-47f5-acca-596a16e08f30")
+		(uuid "58515a25-1847-4fa4-b093-15f84b866551")
 	)
 	(wire
 		(pts
@@ -1382,16 +1392,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 96.52) (xy 90.17 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f098177-d96f-4190-af8b-ff2eef5f8dc4")
-	)
-	(wire
-		(pts
 			(xy 227.33 50.8) (xy 227.33 53.34)
 		)
 		(stroke
@@ -1402,17 +1402,17 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 33.02) (xy 163.83 35.56)
+			(xy 163.83 25.4) (xy 163.83 27.94)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6b7ebb4b-7b3a-48eb-84c0-156f68f3ba54")
+		(uuid "6a888136-210d-49f2-978e-0f0ef7bc4656")
 	)
 	(wire
 		(pts
-			(xy 217.17 43.18) (xy 219.71 43.18)
+			(xy 214.63 43.18) (xy 217.17 43.18)
 		)
 		(stroke
 			(width 0)
@@ -1442,7 +1442,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 106.68) (xy 146.05 106.68)
+			(xy 140.97 106.68) (xy 143.51 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1462,7 +1462,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 106.68) (xy 153.67 106.68)
+			(xy 148.59 106.68) (xy 153.67 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1479,16 +1479,6 @@
 			(type default)
 		)
 		(uuid "840cd6dc-123d-4577-9b69-9f1abe85de93")
-	)
-	(wire
-		(pts
-			(xy 163.83 25.4) (xy 163.83 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "84a8ef6c-7cb9-4234-8f96-0d558ea14f54")
 	)
 	(wire
 		(pts
@@ -1522,17 +1512,37 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 88.9) (xy 237.49 91.44)
+			(xy 90.17 96.52) (xy 90.17 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93d749a5-0fb3-4ff3-bd7d-d0fbbc2163d9")
+		(uuid "924b6701-915a-45d2-9f5a-89bfb20e3483")
 	)
 	(wire
 		(pts
-			(xy 77.47 43.18) (xy 80.01 43.18)
+			(xy 90.17 33.02) (xy 90.17 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92f00c26-6f38-426d-8091-836830512ca3")
+	)
+	(wire
+		(pts
+			(xy 90.17 25.4) (xy 90.17 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93edc8c8-d656-4797-b445-0a857c329684")
+	)
+	(wire
+		(pts
+			(xy 74.93 43.18) (xy 80.01 43.18)
 		)
 		(stroke
 			(width 0)
@@ -1552,7 +1562,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 106.68) (xy 227.33 106.68)
+			(xy 222.25 106.68) (xy 227.33 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1562,7 +1572,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 165.1) (xy 72.39 165.1)
+			(xy 67.31 165.1) (xy 69.85 165.1)
 		)
 		(stroke
 			(width 0)
@@ -1582,23 +1592,13 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 106.68) (xy 72.39 106.68)
+			(xy 67.31 106.68) (xy 69.85 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a4257c8f-a8f1-46c5-a4e4-b3f236173368")
-	)
-	(wire
-		(pts
-			(xy 90.17 154.94) (xy 90.17 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a622f776-8620-4070-b494-15d29df2aebc")
 	)
 	(wire
 		(pts
@@ -1622,6 +1622,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 96.52) (xy 163.83 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac17d620-03ca-4c48-9624-ce1a2d8ef971")
+	)
+	(wire
+		(pts
 			(xy 153.67 116.84) (xy 153.67 119.38)
 		)
 		(stroke
@@ -1632,7 +1642,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 43.18) (xy 72.39 43.18)
+			(xy 67.31 43.18) (xy 69.85 43.18)
 		)
 		(stroke
 			(width 0)
@@ -1652,13 +1662,13 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 96.52) (xy 237.49 99.06)
+			(xy 163.83 33.02) (xy 163.83 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bc83079f-b064-4e0e-9649-3d9bf0f14e6a")
+		(uuid "b7af3ec7-bdfb-468b-aa6b-f29c9ac4db8f")
 	)
 	(wire
 		(pts
@@ -1672,23 +1682,13 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 43.18) (xy 146.05 43.18)
+			(xy 140.97 43.18) (xy 143.51 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c703fb50-24ba-4115-800e-710b2c760ab9")
-	)
-	(wire
-		(pts
-			(xy 90.17 33.02) (xy 90.17 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd617f7b-ca41-4c92-9e06-d91e8709d8e9")
 	)
 	(wire
 		(pts
@@ -1742,16 +1742,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 25.4) (xy 90.17 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dae61ce5-51f5-4b63-8be9-d31d0124358d")
-	)
-	(wire
-		(pts
 			(xy 163.83 48.26) (xy 163.83 53.34)
 		)
 		(stroke
@@ -1789,6 +1779,16 @@
 			(type default)
 		)
 		(uuid "e8141870-5b77-4064-93aa-3478dc77529b")
+	)
+	(wire
+		(pts
+			(xy 237.49 33.02) (xy 237.49 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e887d599-b3ed-42ed-8c7f-bce55824f14e")
 	)
 	(wire
 		(pts
@@ -1832,7 +1832,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 165.1) (xy 80.01 165.1)
+			(xy 74.93 165.1) (xy 80.01 165.1)
 		)
 		(stroke
 			(width 0)
@@ -1882,7 +1882,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 43.18) (xy 227.33 43.18)
+			(xy 222.25 43.18) (xy 227.33 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2142,7 +2142,7 @@
 		)
 		(uuid "e4f9f36e-618e-43f9-a576-d59389593039")
 	)
-	(text "NMOS 1"
+	(text "NMOS 7"
 		(exclude_from_sim no)
 		(at 115.57 194.31 0)
 		(effects
@@ -2155,6 +2155,83 @@
 			(justify right bottom)
 		)
 		(uuid "f55aa030-94e3-4d7b-bf0c-6c3fc4b72c20")
+	)
+	(label "G1"
+		(at 78.74 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "0f948a46-eb1e-4f0f-9e1f-ae13edb91780")
+	)
+	(label "G6"
+		(at 226.06 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "64a3240e-75f7-4e3a-b7d4-127bff3ee9e5")
+	)
+	(label "G2"
+		(at 78.74 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "7fedced7-f34f-480a-aacd-0000169d68e0")
+	)
+	(label "G3"
+		(at 152.4 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "b01d7a17-8a93-4227-a8aa-a72bd13c8001")
+	)
+	(label "G7"
+		(at 78.74 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "d9691b06-2dd7-410e-88cc-29d588ca95fa")
+	)
+	(label "G4"
+		(at 152.4 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "e44ce937-fcf3-413e-86fd-1766ceed66ee")
+	)
+	(label "G5"
+		(at 226.06 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "f41e43cb-c345-4310-842c-f13c5d9fd86e")
 	)
 	(hierarchical_label "FAN1_DRAIN"
 		(shape input)
@@ -2170,7 +2247,7 @@
 	)
 	(hierarchical_label "FAN2_CTRL"
 		(shape input)
-		(at 69.85 106.68 180)
+		(at 67.31 106.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2182,7 +2259,7 @@
 	)
 	(hierarchical_label "FAN5_CTRL"
 		(shape input)
-		(at 217.17 43.18 180)
+		(at 214.63 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2194,7 +2271,7 @@
 	)
 	(hierarchical_label "FAN4_CTRL"
 		(shape input)
-		(at 143.51 106.68 180)
+		(at 140.97 106.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2230,7 +2307,7 @@
 	)
 	(hierarchical_label "FAN1_CTRL"
 		(shape input)
-		(at 69.85 43.18 180)
+		(at 67.31 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2242,7 +2319,7 @@
 	)
 	(hierarchical_label "FAN3_CTRL"
 		(shape input)
-		(at 143.51 43.18 180)
+		(at 140.97 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2266,7 +2343,7 @@
 	)
 	(hierarchical_label "FAN7_CTRL"
 		(shape input)
-		(at 69.85 165.1 180)
+		(at 67.31 165.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2278,7 +2355,7 @@
 	)
 	(hierarchical_label "FAN6_CTRL"
 		(shape input)
-		(at 217.17 106.68 180)
+		(at 214.63 106.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2573,6 +2650,187 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky_Small")
+		(at 163.83 30.48 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0be93579-191a-4f19-9c19-4ea6543ba036")
+		(property "Reference" "D13"
+			(at 166.37 28.9559 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 166.37 31.4959 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 163.83 30.48 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 163.83 30.48 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 163.83 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 163.83 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 163.83 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 163.83 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 163.83 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 163.83 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a4b2ce1e-5f89-42aa-bd36-3a3d615fe750")
+		)
+		(pin "2"
+			(uuid "abd1a8cd-fcfa-49e3-9999-0d092c40da28")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 90.17 25.4 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1e882d32-aa51-4ff2-beb4-e78dd78596ea")
+		(property "Reference" "#PWR027"
+			(at 90.17 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 90.17 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 90.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0d4a1888-e60c-47c6-9207-72e97b3c8441")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -3067,6 +3325,121 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Schottky_Small")
+		(at 90.17 152.4 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2dc24072-d30d-46b5-bb81-8d423c65945c")
+		(property "Reference" "D21"
+			(at 92.71 150.8759 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 92.71 153.4159 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 90.17 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 90.17 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 90.17 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 90.17 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 90.17 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 90.17 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 90.17 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f7523a7-95f6-4d01-8b75-4ebb2deda12a")
+		)
+		(pin "2"
+			(uuid "2dbd1a9c-98aa-4789-bbfd-5a389d9f00ca")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "D21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 80.01 111.76 0)
 		(mirror x)
@@ -3309,71 +3682,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 153.67 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3fc3058e-2bc8-4672-b4df-84369a325076")
-		(property "Reference" "#PWR095"
-			(at 153.67 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 153.797 60.2742 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 153.67 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 153.67 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 153.67 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "03495b5c-8ad3-486b-a9a7-efec450a93b8")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR095")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_Schottky_Small")
 		(at 237.49 30.48 270)
 		(unit 1)
@@ -3382,9 +3690,9 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "47e2dfd2-24e4-4e0d-a843-f5072a832997")
-		(property "Reference" "D20"
-			(at 239.395 29.2099 90)
+		(uuid "3df2fa87-abd5-4010-9652-41a660d5bac1")
+		(property "Reference" "D17"
+			(at 240.03 28.9559 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3393,7 +3701,7 @@
 			)
 		)
 		(property "Value" "VSSB410S-E3/52T"
-			(at 239.395 31.7499 90)
+			(at 240.03 31.4959 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3474,15 +3782,80 @@
 			)
 		)
 		(pin "1"
-			(uuid "20fde138-992d-43dc-9d53-d261564c64ee")
+			(uuid "a67d2891-a94b-4384-a46b-75dee4a8b4e7")
 		)
 		(pin "2"
-			(uuid "a110ff90-9480-4cc7-9b71-d3da4551803d")
+			(uuid "b7f022b1-db7b-4458-bb68-4c771ab5ec12")
 		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "D20")
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 153.67 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3fc3058e-2bc8-4672-b4df-84369a325076")
+		(property "Reference" "#PWR095"
+			(at 153.67 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.797 60.2742 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 153.67 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03495b5c-8ad3-486b-a9a7-efec450a93b8")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "#PWR095")
 					(unit 1)
 				)
 			)
@@ -3598,6 +3971,72 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "R56")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 163.83 25.4 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5c8463e7-d35b-4647-9b6e-0f3d6b8c78d7")
+		(property "Reference" "#PWR056"
+			(at 163.83 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 163.83 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 163.83 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee8a976b-db15-4e8b-85d6-fa1948c83500")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -3732,7 +4171,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 74.93 43.18 90)
+		(at 72.39 43.18 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3741,7 +4180,7 @@
 		(dnp no)
 		(uuid "5e90dea1-87cd-4153-bafa-86b2c88ebb74")
 		(property "Reference" "R5"
-			(at 74.93 38.1 90)
+			(at 72.39 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3749,7 +4188,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 74.93 40.4114 90)
+			(at 72.39 40.4114 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3757,7 +4196,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3766,7 +4205,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3775,7 +4214,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3784,7 +4223,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3793,7 +4232,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3802,7 +4241,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3811,7 +4250,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 43.18 0)
+			(at 72.39 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3835,17 +4274,35 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
-		(at 90.17 25.4 0)
-		(mirror y)
+		(lib_id "Device:D_Schottky_Small")
+		(at 90.17 93.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6567f3bc-b7da-4687-afed-4f24e9902af9")
-		(property "Reference" "#PWR068"
-			(at 90.17 29.21 0)
+		(fields_autoplaced yes)
+		(uuid "5f2c447e-8b3e-43f5-b896-e94b4a4e58db")
+		(property "Reference" "D18"
+			(at 92.71 92.4559 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 92.71 94.9959 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 90.17 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3853,25 +4310,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+12V"
-			(at 90.17 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 25.4 0)
+		(property "Datasheet" "~"
+			(at 90.17 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3880,7 +4320,52 @@
 			)
 		)
 		(property "Description" ""
-			(at 90.17 25.4 0)
+			(at 90.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 90.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 90.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 90.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 90.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 90.17 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3889,12 +4374,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "b96593d6-4e1d-4ee2-9909-625f462a1035")
+			(uuid "191972fe-756f-4e29-ace6-e9887adcd824")
+		)
+		(pin "2"
+			(uuid "0667a38e-0e0c-44b3-a738-d94e63b0b175")
 		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR068")
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -3902,16 +4390,16 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 163.83 88.9 0)
+		(at 237.49 25.4 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "65cc4289-2c1a-4af0-ae6a-aaca7521af16")
-		(property "Reference" "#PWR0110"
-			(at 163.83 92.71 0)
+		(uuid "63c3fb37-fe9b-4bc6-9488-f88683517c6f")
+		(property "Reference" "#PWR058"
+			(at 237.49 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3920,7 +4408,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 163.83 85.09 0)
+			(at 237.49 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3928,7 +4416,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 88.9 0)
+			(at 237.49 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3937,7 +4425,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 88.9 0)
+			(at 237.49 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3946,7 +4434,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 163.83 88.9 0)
+			(at 237.49 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3955,12 +4443,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f307bd1-197d-4955-8b53-457c436e5a48")
+			(uuid "29f91e59-b6b1-44c9-a54a-0207622136f9")
 		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR0110")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -3975,9 +4463,9 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "6dd17e78-1c1d-4df0-b72c-9e2288a73f7f")
+		(uuid "68852330-a115-41d6-813b-49b33610685f")
 		(property "Reference" "D8"
-			(at 92.075 29.2099 90)
+			(at 92.71 28.9559 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3986,7 +4474,7 @@
 			)
 		)
 		(property "Value" "VSSB410S-E3/52T"
-			(at 92.075 31.7499 90)
+			(at 92.71 31.4959 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4067,10 +4555,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "252e9f59-5b3d-4b9f-8167-62eb9218ee7c")
+			(uuid "3da48ebf-c644-4c26-a462-d9f55bc04501")
 		)
 		(pin "2"
-			(uuid "c27718fe-b560-4a73-947a-a48728572dcf")
+			(uuid "1db1eca6-c789-4812-bb12-5a99770f8fd5")
 		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
@@ -4083,16 +4571,16 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 237.49 88.9 0)
+		(at 90.17 88.9 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7475f8f4-16f5-487e-8518-ecd08499d52e")
-		(property "Reference" "#PWR0114"
-			(at 237.49 92.71 0)
+		(uuid "71eecbb4-4c11-41f3-a050-d7fb21b0df67")
+		(property "Reference" "#PWR068"
+			(at 90.17 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4101,7 +4589,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 237.49 85.09 0)
+			(at 90.17 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4109,7 +4597,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 237.49 88.9 0)
+			(at 90.17 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4118,7 +4606,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 88.9 0)
+			(at 90.17 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4127,7 +4615,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 88.9 0)
+			(at 90.17 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4136,12 +4624,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "86088a0d-2f9b-4a1d-a362-5759d736c6fc")
+			(uuid "7d843dc3-cfee-40de-95ef-2c534feb369d")
 		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR0114")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -4149,7 +4637,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 74.93 165.1 90)
+		(at 72.39 165.1 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4158,7 +4646,7 @@
 		(dnp no)
 		(uuid "7644ad77-39f5-4e6b-8858-da8cb0a0b80b")
 		(property "Reference" "R66"
-			(at 74.93 160.02 90)
+			(at 72.39 160.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4166,7 +4654,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 74.93 162.3314 90)
+			(at 72.39 162.3314 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4174,7 +4662,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4183,7 +4671,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4192,7 +4680,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4201,7 +4689,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4210,7 +4698,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4219,7 +4707,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4228,7 +4716,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 165.1 0)
+			(at 72.39 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4246,6 +4734,121 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "R66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky_Small")
+		(at 237.49 93.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7afac5c0-3fd5-4290-95d0-0321704157f5")
+		(property "Reference" "D20"
+			(at 240.03 92.4559 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 240.03 94.9959 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 237.49 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 237.49 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 237.49 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 237.49 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 237.49 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 237.49 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "886c1367-15d1-4570-a167-38a8080e9d21")
+		)
+		(pin "2"
+			(uuid "1b991843-d272-4ea3-bc66-6c254e4e9b61")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "D20")
 					(unit 1)
 				)
 			)
@@ -4379,132 +4982,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 90.17 152.4 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7f24c7d2-d574-4241-9b5e-55ab6fb60f97")
-		(property "Reference" "D22"
-			(at 92.075 151.1299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 92.075 153.6699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 90.17 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 90.17 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "55adafc6-f7d7-41cc-983e-b3eb025f51fd")
-		)
-		(pin "2"
-			(uuid "2f5cf776-1390-430d-9db8-6184b56c637a")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "D22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+12V")
-		(at 163.83 25.4 0)
+		(at 163.83 88.9 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "856def71-9d44-4c87-98a0-3251dc6b8427")
-		(property "Reference" "#PWR0103"
-			(at 163.83 29.21 0)
+		(uuid "89faf18f-56aa-4d71-8424-9eceeda3db4d")
+		(property "Reference" "#PWR069"
+			(at 163.83 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4513,7 +5001,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 163.83 21.59 0)
+			(at 163.83 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4521,7 +5009,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 25.4 0)
+			(at 163.83 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4530,7 +5018,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 25.4 0)
+			(at 163.83 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4539,7 +5027,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 163.83 25.4 0)
+			(at 163.83 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4548,12 +5036,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f2932a72-c206-4eaf-9acb-a31684978e3c")
+			(uuid "fb5df2f4-2d3e-46e5-832f-7b2de761f2be")
 		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR0103")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -4742,7 +5230,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 148.59 43.18 90)
+		(at 146.05 43.18 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4751,7 +5239,7 @@
 		(dnp no)
 		(uuid "a326a736-1399-4e58-96a9-688c6f48ff47")
 		(property "Reference" "R58"
-			(at 148.59 38.1 90)
+			(at 146.05 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4759,7 +5247,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 148.59 40.4114 90)
+			(at 146.05 40.4114 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4767,7 +5255,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4776,7 +5264,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4785,7 +5273,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4794,7 +5282,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4803,7 +5291,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4812,7 +5300,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4821,7 +5309,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 148.59 43.18 0)
+			(at 146.05 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4839,6 +5327,138 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "R58")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 90.17 147.32 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a6fe1dc4-7708-40ec-a6f2-d088ee8f1cb6")
+		(property "Reference" "#PWR094"
+			(at 90.17 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 90.17 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 90.17 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3fcd76d-6d6f-4433-9e10-4a3f6ea242f6")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "#PWR094")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 237.49 88.9 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a700c915-3f2f-4c2a-a7d4-0824a3ef6599")
+		(property "Reference" "#PWR079"
+			(at 237.49 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 237.49 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 237.49 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b70935cc-e137-4a43-ade9-6a6195c3439c")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
@@ -4972,121 +5592,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 163.83 30.48 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "adc8067e-c191-4244-9246-98d434d7f3cf")
-		(property "Reference" "D18"
-			(at 165.735 29.2099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 165.735 31.7499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 163.83 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 163.83 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 163.83 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "656ab897-fef8-4bf6-a5f7-2f8d2454e400")
-		)
-		(pin "2"
-			(uuid "07255487-fc43-425b-a665-c63443b5e844")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "D18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 80.01 177.8 0)
 		(unit 1)
@@ -5152,123 +5657,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 163.83 93.98 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b5c8fe18-ce03-4ace-8e37-95a866619326")
-		(property "Reference" "D19"
-			(at 165.735 92.7099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 165.735 95.2499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 163.83 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 163.83 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 163.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "16de1e1c-a0cd-4269-86d3-51bd8fd0a08a")
-		)
-		(pin "2"
-			(uuid "a79f783f-dfd7-4ec1-9983-6cf837a925c7")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "D19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
-		(at 222.25 106.68 90)
+		(at 219.71 106.68 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5277,7 +5667,7 @@
 		(dnp no)
 		(uuid "beb66df0-e9f9-4427-9950-d1519bd633fb")
 		(property "Reference" "R63"
-			(at 222.25 101.6 90)
+			(at 219.71 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5285,7 +5675,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 222.25 103.9114 90)
+			(at 219.71 103.9114 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5293,7 +5683,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5302,7 +5692,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5311,7 +5701,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5320,7 +5710,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5329,7 +5719,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5338,7 +5728,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5347,7 +5737,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 222.25 106.68 0)
+			(at 219.71 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5371,140 +5761,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
-		(at 90.17 147.32 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c709b931-e8c0-46fb-8b79-fb608a2d7b31")
-		(property "Reference" "#PWR0116"
-			(at 90.17 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 90.17 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e653a84d-5473-4e4d-912e-c13c847c2133")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR0116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+12V")
-		(at 237.49 25.4 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c7b3fc02-3741-4644-adba-df5822928449")
-		(property "Reference" "#PWR0113"
-			(at 237.49 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 237.49 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 237.49 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 237.49 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 237.49 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bb7cd12a-4646-4f4a-bc9d-2db5fb71e4b0")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR0113")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
-		(at 148.59 106.68 90)
+		(at 146.05 106.68 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5513,7 +5771,7 @@
 		(dnp no)
 		(uuid "c84b6bfc-9041-4083-93b5-d815787967e6")
 		(property "Reference" "R59"
-			(at 148.59 101.6 90)
+			(at 146.05 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5521,7 +5779,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 148.59 103.9114 90)
+			(at 146.05 103.9114 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5529,7 +5787,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5538,7 +5796,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5547,7 +5805,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5556,7 +5814,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5565,7 +5823,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5574,7 +5832,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5583,7 +5841,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 148.59 106.68 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5673,7 +5931,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 222.25 43.18 90)
+		(at 219.71 43.18 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5682,7 +5940,7 @@
 		(dnp no)
 		(uuid "d3e13aab-c9d8-44af-b8ca-c799f88a4f9b")
 		(property "Reference" "R62"
-			(at 222.25 38.1 90)
+			(at 219.71 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5690,7 +5948,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 222.25 40.4114 90)
+			(at 219.71 40.4114 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5698,7 +5956,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5707,7 +5965,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5716,7 +5974,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5725,7 +5983,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5734,7 +5992,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5743,7 +6001,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5752,7 +6010,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 222.25 43.18 0)
+			(at 219.71 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5770,6 +6028,121 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "R62")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky_Small")
+		(at 163.83 93.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d92f8220-e23f-4fb3-b415-acd8dcefd190")
+		(property "Reference" "D19"
+			(at 166.37 92.4559 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSB410S-E3/52T"
+			(at 166.37 94.9959 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 163.83 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 163.83 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 163.83 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b36c3d6d-4457-4525-91ff-2431dc062d03")
+		)
+		(pin "2"
+			(uuid "88eb341c-59b6-4bbf-ac98-1317a679227e")
+		)
+		(instances
+			(project "PUTM_EV_AMS_MASTER_2025"
+				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
+					(reference "D19")
 					(unit 1)
 				)
 			)
@@ -5836,187 +6209,6 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "#PWR099")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+12V")
-		(at 90.17 88.9 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e72b7c43-0352-4ecb-870b-03cbc5ca4b78")
-		(property "Reference" "#PWR079"
-			(at 90.17 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 90.17 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0f3b8d7f-6d06-47d4-8832-0dfd7f82cabc")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "#PWR079")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 90.17 93.98 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f39b9e28-a618-4416-a0c8-cde22dfbbd1e")
-		(property "Reference" "D17"
-			(at 92.075 92.7099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 92.075 95.2499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 90.17 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 90.17 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d2f13e09-bc18-43c8-9700-18408c1c8ae5")
-		)
-		(pin "2"
-			(uuid "a8a668f1-ef90-4ba7-abbb-99fbf8951c65")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "D17")
 					(unit 1)
 				)
 			)
@@ -6254,7 +6446,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 74.93 106.68 90)
+		(at 72.39 106.68 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6263,7 +6455,7 @@
 		(dnp no)
 		(uuid "f582a42b-fdb3-42bd-9f21-d55aad9c344b")
 		(property "Reference" "R30"
-			(at 74.93 101.6 90)
+			(at 72.39 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6271,7 +6463,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 74.93 103.9114 90)
+			(at 72.39 103.9114 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6279,7 +6471,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6288,7 +6480,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6297,7 +6489,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6306,7 +6498,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6315,7 +6507,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6324,7 +6516,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6333,7 +6525,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 74.93 106.68 0)
+			(at 72.39 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6478,121 +6670,6 @@
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
 					(reference "Q3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky_Small")
-		(at 237.49 93.98 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fec890ca-57d6-49f0-8ed0-d6f4d488f306")
-		(property "Reference" "D21"
-			(at 239.395 92.7099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "VSSB410S-E3/52T"
-			(at 239.395 95.2499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 237.49 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 237.49 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 237.49 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e5831f9d-532b-4f3c-9139-60bad1bc6122")
-		)
-		(pin "2"
-			(uuid "007e18f5-724e-48a0-b859-a9231d163c7d")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/ce12d4e7-22c6-44b1-ad25-5b799a9893d1"
-					(reference "D21")
 					(unit 1)
 				)
 			)

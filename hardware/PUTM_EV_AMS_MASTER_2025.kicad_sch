@@ -1596,171 +1596,6 @@
 				)
 			)
 		)
-		(symbol "Device:D_Small"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.254) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at -1.27 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "D_Small"
-				(at -3.81 -2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Diode, small symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_Small_0_1"
-				(polyline
-					(pts
-						(xy -0.762 -1.016) (xy -0.762 1.016)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_Small_1_1"
-				(pin passive line
-					(at -2.54 0 0)
-					(length 1.778)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 1.778)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:LED_Small_ALT"
 			(pin_numbers hide)
 			(pin_names
@@ -7846,12 +7681,6 @@
 		(uuid "d78734dc-4897-4b80-9e32-3bd8de5aeb7b")
 	)
 	(junction
-		(at 35.56 257.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f6284c9c-b030-47b5-bbac-25a8351634a4")
-	)
-	(junction
 		(at 367.03 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8589,16 +8418,6 @@
 			(type default)
 		)
 		(uuid "34de3dbf-abec-4b34-83b5-156724597a27")
-	)
-	(wire
-		(pts
-			(xy 22.86 257.81) (xy 25.4 257.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35ef1de0-8a21-4f3b-83e3-39507e4fa918")
 	)
 	(wire
 		(pts
@@ -10429,16 +10248,6 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 255.27) (xy 22.86 257.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bffde89d-bee5-4569-81cd-938fac12f3e3")
-	)
-	(wire
-		(pts
 			(xy 173.99 146.05) (xy 213.36 146.05)
 		)
 		(stroke
@@ -10640,16 +10449,6 @@
 			(type default)
 		)
 		(uuid "d1ead75d-cad9-4562-845f-9f996d3f3b6d")
-	)
-	(wire
-		(pts
-			(xy 30.48 257.81) (xy 35.56 257.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d265e490-25bd-4c07-89bc-03c5415b29fb")
 	)
 	(wire
 		(pts
@@ -14050,74 +13849,6 @@
 			(project "PUTM_EV_BMS_HV_MASTER_2023"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
 					(reference "#PWR089")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Small")
-		(at 27.94 257.81 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2d09f68a-723d-4009-a594-1dc1af1a4c3e")
-		(property "Reference" "D15"
-			(at 27.94 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.5V/1A"
-			(at 27.94 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 27.94 257.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 27.94 257.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 27.94 257.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fa57428a-d7c7-4f8d-8ad4-a689c353ec6c")
-		)
-		(pin "2"
-			(uuid "5bb15e49-083a-42fa-a6be-1b548b31afda")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
-					(reference "D15")
 					(unit 1)
 				)
 			)
@@ -19016,73 +18747,6 @@
 		)
 	)
 	(symbol
-		(lib_name "+5V_1")
-		(lib_id "power:+5V")
-		(at 22.86 255.27 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e32d37c2-c676-4e49-846a-2a5befa1f280")
-		(property "Reference" "#PWR082"
-			(at 22.86 259.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "TSMS"
-			(at 22.86 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 22.86 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 22.86 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 22.86 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c93857d4-1735-4db2-ada1-a54a4ea715a6")
-		)
-		(instances
-			(project "PUTM_EV_BMS_HV_MASTER_2023"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
-					(reference "#PWR082")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_28")
 		(lib_id "power:GND")
 		(at 345.44 123.19 270)
@@ -21273,7 +20937,7 @@
 			)
 			(uuid "791bbc53-f66c-4620-9391-c40198d2bec6")
 		)
-		(pin "FAN4_SINK" input
+		(pin "FAN4_DRAIN" input
 			(at 162.56 261.62 180)
 			(effects
 				(font
@@ -21283,7 +20947,7 @@
 			)
 			(uuid "d6a70ab0-dc7b-4692-8847-5c64c82e4e0e")
 		)
-		(pin "FAN6_SINK" input
+		(pin "FAN6_DRAIN" input
 			(at 162.56 266.7 180)
 			(effects
 				(font
@@ -21293,7 +20957,7 @@
 			)
 			(uuid "66679900-ca8d-4e5f-b5d9-5ee3857afbc4")
 		)
-		(pin "FAN5_SINK" input
+		(pin "FAN5_DRAIN" input
 			(at 162.56 264.16 180)
 			(effects
 				(font
@@ -21303,7 +20967,7 @@
 			)
 			(uuid "706b7a0c-0b3a-4ffe-8858-63c9e359e6d5")
 		)
-		(pin "FAN7_SINK" input
+		(pin "FAN7_DRAIN" input
 			(at 162.56 269.24 180)
 			(effects
 				(font
@@ -21313,7 +20977,7 @@
 			)
 			(uuid "23be11fe-d084-4d7f-a651-fea0463d1d19")
 		)
-		(pin "FAN1_SINK" input
+		(pin "FAN1_DRAIN" input
 			(at 162.56 254 180)
 			(effects
 				(font
@@ -21323,7 +20987,7 @@
 			)
 			(uuid "c532e800-4b68-4b32-b6f5-0afb0c53c4d3")
 		)
-		(pin "FAN2_SINK" input
+		(pin "FAN2_DRAIN" input
 			(at 162.56 256.54 180)
 			(effects
 				(font
@@ -21333,7 +20997,7 @@
 			)
 			(uuid "7e04c87b-9277-4a2e-bf56-73523aec0fd1")
 		)
-		(pin "FAN3_SINK" input
+		(pin "FAN3_DRAIN" input
 			(at 162.56 259.08 180)
 			(effects
 				(font
