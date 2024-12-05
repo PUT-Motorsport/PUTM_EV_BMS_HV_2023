@@ -2290,16 +2290,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "13dd2352-705a-43cf-a639-b1b37b498cb1")
 	)
 	(polyline
 		(pts
-			(xy 156.21 124.46) (xy 148.59 124.46)
+			(xy 153.67 124.46) (xy 148.59 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "19828c89-651b-489f-be83-657f5533743c")
 	)
@@ -2400,6 +2402,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "3dfe65a5-2027-4ffe-b62e-6f2bbd04bf58")
 	)
@@ -2420,6 +2423,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "487143a6-0d78-4828-a9ea-156d438c2aef")
 	)
@@ -2430,6 +2434,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "49ee70a3-86d7-4b7b-aa46-d1cce936e1e2")
 	)
@@ -2440,6 +2445,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "5526a52b-0e43-4b3e-a748-979eddc44984")
 	)
@@ -2450,6 +2456,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "5642662a-5828-4e8b-acb4-2a22e5803a97")
 	)
@@ -2490,6 +2497,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "663d5365-cfb4-46c9-b111-4993d8026041")
 	)
@@ -2550,16 +2558,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "710788d9-b0b5-49d4-b64a-1a5e592c230d")
 	)
 	(polyline
 		(pts
-			(xy 156.21 124.46) (xy 158.75 124.46)
+			(xy 153.67 124.46) (xy 158.75 124.46)
 		)
 		(stroke
 			(width 0)
-			(type dot)
+			(type dash)
+			(color 132 0 132 1)
 		)
 		(uuid "73d28315-58aa-4cf7-852b-2e721a267123")
 	)
@@ -2660,6 +2670,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "a8bb9f13-fb73-4298-b381-f9f1b0b2b267")
 	)
@@ -2670,6 +2681,7 @@
 		(stroke
 			(width 0)
 			(type dash)
+			(color 132 0 132 1)
 		)
 		(uuid "ae278d7f-60b1-44d0-83d9-4f4e8f10de92")
 	)
@@ -2730,6 +2742,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "bafcc6a4-1327-4195-993d-b66f774707ad")
 	)
@@ -2750,6 +2763,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "bf59dd7d-da64-49c3-82d9-4170cda6a5d8")
 	)
@@ -2760,6 +2774,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "c0ca153e-60b9-4fd2-9a5f-ae4040ba75d5")
 	)
@@ -2820,6 +2835,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "cb53d2c1-c0d7-44d5-a6c5-8545fef60cff")
 	)
@@ -2860,6 +2876,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "d6318c0a-ec33-449a-876b-ac756688dd69")
 	)
@@ -2890,6 +2907,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(uuid "ec7f3ef4-8409-4e9a-9e87-c8911fe19b37")
 	)
@@ -2940,6 +2958,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(fill
 			(type none)
@@ -2966,6 +2985,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 132 0 132 1)
 		)
 		(fill
 			(type none)
@@ -3004,6 +3024,7 @@
 		(effects
 			(font
 				(size 1 1)
+				(color 132 0 132 1)
 			)
 		)
 		(uuid "08646405-7a8c-4677-bce5-0122d21a2050")
@@ -3014,6 +3035,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify top)
 		)
@@ -3025,6 +3047,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify left bottom)
 		)
@@ -3050,6 +3073,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify right bottom)
 		)
@@ -3089,6 +3113,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify right top)
 		)
@@ -3100,6 +3125,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify left bottom)
 		)
@@ -3111,6 +3137,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify left bottom)
 		)
@@ -3122,6 +3149,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(color 132 0 132 1)
 			)
 			(justify left bottom)
 		)
