@@ -4880,6 +4880,17 @@
 		)
 		(uuid "de59bd77-51a0-4fe9-aa71-e66ee0b30d60")
 	)
+	(label "F_U5V"
+		(at 49.53 102.87 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.5 0.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "0abdce6f-27df-4d3a-9b7d-28da987018cc")
+	)
 	(label "VCC_12V"
 		(at 129.54 46.99 180)
 		(fields_autoplaced yes)
@@ -8267,7 +8278,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via"
 			(at 154.94 109.22 0)
 			(effects
 				(font

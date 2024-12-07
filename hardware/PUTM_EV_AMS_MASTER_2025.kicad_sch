@@ -14002,73 +14002,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 45.72 54.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "33470a41-8634-43a5-a87b-f733ff6bb0b1")
-		(property "Reference" "TP1"
-			(at 43.18 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint_Small"
-			(at 46.99 55.8799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
-			(at 50.8 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 50.8 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 45.72 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ab4f7dc2-59aa-4271-b788-4c1a53ba6e89")
-		)
-		(instances
-			(project ""
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_28")
 		(lib_id "power:GND")
 		(at 186.69 91.44 90)
@@ -19971,7 +19904,7 @@
 			)
 		)
 		(pin "CAR_I" input
-			(at 74.93 133.35 180)
+			(at 74.93 135.89 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19981,7 +19914,7 @@
 			(uuid "46c05414-968d-4127-a628-d08e70886d08")
 		)
 		(pin "CAR_I_REF" input
-			(at 74.93 135.89 180)
+			(at 74.93 133.35 180)
 			(effects
 				(font
 					(size 1.27 1.27)

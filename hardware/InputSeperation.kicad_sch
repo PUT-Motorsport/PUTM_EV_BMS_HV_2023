@@ -1118,7 +1118,7 @@
 		)
 		(uuid "f1cadcac-3b37-4db7-925f-062ffc7d7dc2")
 	)
-	(label "EI1"
+	(label "IN+"
 		(at 151.13 86.36 180)
 		(fields_autoplaced yes)
 		(effects

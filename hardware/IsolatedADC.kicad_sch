@@ -2929,6 +2929,17 @@
 		)
 		(uuid "163262a7-a78d-4270-8ab0-95f4785f48ba")
 	)
+	(label "CAP"
+		(at 156.21 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.5 0.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "a40f1f74-0dce-4a0f-bad1-b0965bc83191")
+	)
 	(label "ACU-"
 		(at 121.92 87.63 180)
 		(fields_autoplaced yes)
@@ -2939,6 +2950,17 @@
 			(justify right bottom)
 		)
 		(uuid "a9f69d7d-7892-40e9-82ee-56c688cd0260")
+	)
+	(label "SET"
+		(at 250.19 92.71 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.5 0.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "b1902321-f011-4dd4-9e4e-26507a33555b")
 	)
 	(label "CAR+"
 		(at 121.92 92.71 180)

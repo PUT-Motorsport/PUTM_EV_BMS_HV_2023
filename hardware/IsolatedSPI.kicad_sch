@@ -2101,7 +2101,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 100.33) (xy 170.18 100.33)
+			(xy 165.1 100.33) (xy 170.18 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2561,7 +2561,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 100.33) (xy 162.56 100.33)
+			(xy 157.48 100.33) (xy 160.02 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2861,7 +2861,7 @@
 		)
 		(uuid f3edbf3f-6997-4cc0-9061-9828f5a54f69)
 	)
-	(text_box "Dual compability only one, ic should be used at one time"
+	(text_box "Dual compability only one ic should be used at one time"
 		(exclude_from_sim no)
 		(at 45.72 132.08 0)
 		(size 85.09 3.81)
@@ -2923,6 +2923,39 @@
 			(justify right bottom)
 		)
 		(uuid "b97e8332-d4e1-45fb-b8c6-f36a4e47f3c5")
+	)
+	(label "COM-"
+		(at 224.79 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.5 0.5)
+			)
+			(justify right bottom)
+		)
+		(uuid "506c2f8b-e2b5-4c7c-a0e2-3723913559e6")
+	)
+	(label "DVDD"
+		(at 168.91 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify right bottom)
+		)
+		(uuid "6c22f631-07d4-414b-a706-c608fddd6c08")
+	)
+	(label "COM+"
+		(at 224.79 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.5 0.5)
+			)
+			(justify right bottom)
+		)
+		(uuid "eae580c5-7de9-4973-9a23-3672a415fc92")
 	)
 	(hierarchical_label "SPI_RDY"
 		(shape output)
@@ -3243,7 +3276,7 @@
 	(symbol
 		(lib_name "GND_17")
 		(lib_id "power:GND")
-		(at 160.02 100.33 270)
+		(at 157.48 100.33 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3251,7 +3284,7 @@
 		(dnp no)
 		(uuid "0b63593c-8748-4759-862d-49aaccb76ebe")
 		(property "Reference" "#PWR0158"
-			(at 153.67 100.33 0)
+			(at 151.13 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3260,7 +3293,7 @@
 			)
 		)
 		(property "Value" "GNDISO"
-			(at 156.21 100.33 90)
+			(at 153.67 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3269,7 +3302,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 100.33 0)
+			(at 157.48 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3278,7 +3311,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 100.33 0)
+			(at 157.48 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3287,7 +3320,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 100.33 0)
+			(at 157.48 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5689,7 +5722,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 165.1 100.33 270)
+		(at 162.56 100.33 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5698,7 +5731,7 @@
 		(dnp no)
 		(uuid "cf928760-7737-430e-a46b-110b4df56d02")
 		(property "Reference" "C53"
-			(at 165.1 104.14 90)
+			(at 162.56 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5706,7 +5739,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 165.1 106.68 90)
+			(at 162.56 106.68 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5714,7 +5747,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5723,7 +5756,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5732,7 +5765,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5741,7 +5774,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5750,7 +5783,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5759,7 +5792,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5768,7 +5801,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5777,7 +5810,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
-			(at 165.1 100.33 0)
+			(at 162.56 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
