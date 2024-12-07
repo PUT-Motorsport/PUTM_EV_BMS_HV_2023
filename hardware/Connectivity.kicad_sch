@@ -2960,7 +2960,7 @@
 		)
 		(uuid e93426be-9894-45ab-97e5-f6a23a84b1dc)
 	)
-	(text "MCU DEBUG & USB"
+	(text "MCU USB"
 		(exclude_from_sim no)
 		(at 325.12 177.8 0)
 		(effects
