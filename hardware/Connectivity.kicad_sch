@@ -3072,7 +3072,7 @@
 	)
 	(hierarchical_label "UC_D+"
 		(shape bidirectional)
-		(at 279.4 139.7 180)
+		(at 279.4 132.08 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3120,7 +3120,7 @@
 	)
 	(hierarchical_label "EX_D+"
 		(shape bidirectional)
-		(at 309.88 139.7 0)
+		(at 309.88 132.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3192,7 +3192,7 @@
 	)
 	(hierarchical_label "UC_D-"
 		(shape bidirectional)
-		(at 279.4 132.08 180)
+		(at 279.4 139.7 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3204,7 +3204,7 @@
 	)
 	(hierarchical_label "UC_SPI_MOSI"
 		(shape bidirectional)
-		(at 270.51 74.93 180)
+		(at 270.51 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3228,7 +3228,7 @@
 	)
 	(hierarchical_label "EX_D-"
 		(shape bidirectional)
-		(at 309.88 132.08 0)
+		(at 309.88 139.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3288,7 +3288,7 @@
 	)
 	(hierarchical_label "UC_SPI_SCK"
 		(shape bidirectional)
-		(at 270.51 87.63 180)
+		(at 270.51 81.28 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3300,7 +3300,7 @@
 	)
 	(hierarchical_label "UC_SPI_MISO"
 		(shape bidirectional)
-		(at 270.51 81.28 180)
+		(at 270.51 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font

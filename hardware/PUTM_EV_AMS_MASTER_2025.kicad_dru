@@ -1,0 +1,7 @@
+(version 1)
+(rule "Optimal clearance"
+	(constraint clearance (min "0.3mm"))
+	(condition "A.Type == 'Track' && B.Type == 'Track' && A.NetClass == 'HighSpeed' && B.NetClass == 'HighSpeed' && !AB.isCoupledDiffPair()"))
+(rule "Optimal clearance - on In2.Cu"
+	(constraint clearance (min "0.3mm"))
+	(condition "A.Type == 'Track' && B.Type == 'Track' && B.existsOnLayer('In2.Cu')"))
