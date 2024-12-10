@@ -8055,7 +8055,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 210.82) (xy 271.78 210.82)
+			(xy 250.19 205.74) (xy 271.78 205.74)
 		)
 		(stroke
 			(width 0)
@@ -8196,7 +8196,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 213.36) (xy 271.78 213.36)
+			(xy 250.19 208.28) (xy 271.78 208.28)
 		)
 		(stroke
 			(width 0)
@@ -9855,7 +9855,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 208.28) (xy 271.78 208.28)
+			(xy 250.19 203.2) (xy 271.78 203.2)
 		)
 		(stroke
 			(width 0)
@@ -11080,7 +11080,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 205.74) (xy 271.78 205.74)
+			(xy 250.19 200.66) (xy 271.78 200.66)
 		)
 		(stroke
 			(width 0)
@@ -20591,7 +20591,7 @@
 			(uuid "fe6fbb3f-db40-44bb-a11f-85f262c83386")
 		)
 		(pin "CANFD1_RX" input
-			(at 250.19 210.82 0)
+			(at 250.19 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20601,7 +20601,7 @@
 			(uuid "45541c29-60b8-4017-bf7a-c42416fd6f13")
 		)
 		(pin "CANFD2_TX" output
-			(at 250.19 208.28 0)
+			(at 250.19 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20611,7 +20611,7 @@
 			(uuid "bffee84d-6332-47fb-b8b7-201c5be35069")
 		)
 		(pin "CANFD2_RX" input
-			(at 250.19 205.74 0)
+			(at 250.19 200.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20621,7 +20621,7 @@
 			(uuid "1c013192-21a0-409d-aca8-09f7a0a44a57")
 		)
 		(pin "CANFD1_TX" output
-			(at 250.19 213.36 0)
+			(at 250.19 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20929,7 +20929,7 @@
 			(uuid "3223f95a-c667-47e8-9ad9-e9492baccfcb")
 		)
 		(pin "UC_CANFD1_RX" output
-			(at 271.78 210.82 180)
+			(at 271.78 205.74 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20939,7 +20939,7 @@
 			(uuid "3ce35a50-d5ed-42bc-82c7-630c0d3b3bef")
 		)
 		(pin "UC_CANFD1_TX" input
-			(at 271.78 213.36 180)
+			(at 271.78 208.28 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20969,7 +20969,7 @@
 			(uuid "e6ce4d27-f593-4db0-ae99-e66e9c2ed342")
 		)
 		(pin "UC_CANFD2_TX" input
-			(at 271.78 208.28 180)
+			(at 271.78 203.2 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20979,7 +20979,7 @@
 			(uuid "1de9e96e-0827-4c9b-bc5b-f7b72a20e538")
 		)
 		(pin "UC_CANFD2_RX" output
-			(at 271.78 205.74 180)
+			(at 271.78 200.66 180)
 			(effects
 				(font
 					(size 1.27 1.27)

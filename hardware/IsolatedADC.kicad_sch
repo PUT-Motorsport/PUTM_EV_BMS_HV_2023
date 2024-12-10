@@ -1742,7 +1742,7 @@
 		(uuid "6e6064f1-d405-44c5-b4b8-9fca9712e71f")
 	)
 	(junction
-		(at 54.61 72.39)
+		(at 50.8 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7489d1b7-e771-4c7a-ba46-74a8f74a43a5")
@@ -1760,7 +1760,7 @@
 		(uuid "80d636cf-be2e-4bfd-8fa5-8cc13488e9c2")
 	)
 	(junction
-		(at 54.61 99.06)
+		(at 50.8 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "821e919e-318a-42a1-8061-467b1cea190f")
@@ -1772,7 +1772,7 @@
 		(uuid "9eabdd09-bf97-4248-b0d4-35f5d660ec1d")
 	)
 	(junction
-		(at 54.61 88.9)
+		(at 50.8 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ae51e6ee-307f-4942-9d73-c7017bf25978")
@@ -1784,7 +1784,7 @@
 		(uuid "b082038b-d885-477a-9e1c-11e3a182301e")
 	)
 	(junction
-		(at 54.61 62.23)
+		(at 50.8 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b5599d4c-b263-4b28-baa6-7f25d2160629")
@@ -1831,7 +1831,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 88.9) (xy 46.99 88.9)
+			(xy 40.64 88.9) (xy 43.18 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1871,7 +1871,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 72.39) (xy 46.99 72.39)
+			(xy 40.64 72.39) (xy 43.18 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1911,7 +1911,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 91.44) (xy 54.61 88.9)
+			(xy 50.8 91.44) (xy 50.8 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1921,7 +1921,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 62.23) (xy 54.61 62.23)
+			(xy 48.26 62.23) (xy 50.8 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1951,7 +1951,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 99.06) (xy 54.61 99.06)
+			(xy 48.26 99.06) (xy 50.8 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2051,7 +2051,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 72.39) (xy 54.61 72.39)
+			(xy 48.26 72.39) (xy 50.8 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2101,7 +2101,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 88.9) (xy 68.58 88.9)
+			(xy 50.8 88.9) (xy 68.58 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2201,7 +2201,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 99.06) (xy 68.58 99.06)
+			(xy 50.8 99.06) (xy 68.58 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2231,7 +2231,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 64.77) (xy 54.61 62.23)
+			(xy 50.8 64.77) (xy 50.8 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2361,7 +2361,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 62.23) (xy 46.99 62.23)
+			(xy 40.64 62.23) (xy 43.18 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2401,7 +2401,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 119.38) (xy 82.55 119.38)
+			(xy 40.64 119.38) (xy 82.55 119.38)
 		)
 		(stroke
 			(width 0)
@@ -2411,7 +2411,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 88.9) (xy 54.61 88.9)
+			(xy 48.26 88.9) (xy 50.8 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2421,7 +2421,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 121.92) (xy 85.09 121.92)
+			(xy 40.64 121.92) (xy 85.09 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2531,7 +2531,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 99.06) (xy 46.99 99.06)
+			(xy 40.64 99.06) (xy 43.18 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2551,7 +2551,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 69.85) (xy 54.61 72.39)
+			(xy 50.8 69.85) (xy 50.8 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2571,7 +2571,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 96.52) (xy 54.61 99.06)
+			(xy 50.8 96.52) (xy 50.8 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2631,7 +2631,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 72.39) (xy 68.58 72.39)
+			(xy 50.8 72.39) (xy 68.58 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2721,7 +2721,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 62.23) (xy 68.58 62.23)
+			(xy 50.8 62.23) (xy 68.58 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3008,7 +3008,7 @@
 	)
 	(hierarchical_label "ACU_V-"
 		(shape input)
-		(at 44.45 72.39 180)
+		(at 40.64 72.39 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3020,7 +3020,7 @@
 	)
 	(hierarchical_label "CAR_V+"
 		(shape input)
-		(at 44.45 88.9 180)
+		(at 40.64 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3032,7 +3032,7 @@
 	)
 	(hierarchical_label "CAR_V-"
 		(shape input)
-		(at 44.45 99.06 180)
+		(at 40.64 99.06 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3080,7 +3080,7 @@
 	)
 	(hierarchical_label "CAR_I"
 		(shape input)
-		(at 44.45 119.38 180)
+		(at 40.64 119.38 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3104,7 +3104,7 @@
 	)
 	(hierarchical_label "ACU_V+"
 		(shape input)
-		(at 44.45 62.23 180)
+		(at 40.64 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3128,7 +3128,7 @@
 	)
 	(hierarchical_label "CAR_I_REF"
 		(shape input)
-		(at 44.45 121.92 180)
+		(at 40.64 121.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3218,7 +3218,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 54.61 93.98 180)
+		(at 50.8 93.98 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3226,7 +3226,7 @@
 		(dnp no)
 		(uuid "106b04de-d671-482d-a04d-b99281d12610")
 		(property "Reference" "R55"
-			(at 55.88 92.71 0)
+			(at 52.07 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3235,7 +3235,7 @@
 			)
 		)
 		(property "Value" "100/.1%"
-			(at 55.88 95.25 0)
+			(at 52.07 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3244,7 +3244,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3253,7 +3253,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3262,7 +3262,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3271,7 +3271,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3280,7 +3280,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3289,7 +3289,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3298,7 +3298,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 54.61 93.98 0)
+			(at 50.8 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3390,7 +3390,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 49.53 62.23 270)
+		(at 45.72 62.23 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3399,15 +3399,15 @@
 		(dnp no)
 		(uuid "247cd5a2-7cc4-4039-afed-3d125a108e2d")
 		(property "Reference" "R1"
-			(at 49.53 57.15 90)
+			(at 45.72 57.15 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1M/.1%"
-			(at 49.53 59.69 90)
+		(property "Value" "1M/700V/.1%"
+			(at 45.72 59.69 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3415,7 +3415,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3424,7 +3424,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3433,7 +3433,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3442,7 +3442,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3451,7 +3451,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "754-RGV3216P-1004BT1"
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3460,7 +3460,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3469,7 +3469,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3478,7 +3478,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Susumu/RGV3216P-1004-B-T1?qs=sGAEpiMZZMvdGkrng054t1oDJztsiizWPbQI4UUpX5WjtnS%252BTZp2yw%3D%3D"
-			(at 49.53 62.23 0)
+			(at 45.72 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4363,7 +4363,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 49.53 99.06 90)
+		(at 45.72 99.06 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4371,15 +4371,15 @@
 		(dnp no)
 		(uuid "8f742b57-e0f8-4bd1-b0b3-e70d75773b85")
 		(property "Reference" "R54"
-			(at 49.53 101.6 90)
+			(at 45.72 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1M/.1%"
-			(at 49.53 104.14 90)
+		(property "Value" "1M/700V/.1%"
+			(at 45.72 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4387,7 +4387,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4396,7 +4396,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4405,7 +4405,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4414,7 +4414,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4423,7 +4423,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "754-RGV3216P-1004BT1"
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4432,7 +4432,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4441,7 +4441,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4450,7 +4450,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Susumu/RGV3216P-1004-B-T1?qs=sGAEpiMZZMvdGkrng054t1oDJztsiizWPbQI4UUpX5WjtnS%252BTZp2yw%3D%3D"
-			(at 49.53 99.06 0)
+			(at 45.72 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4767,7 +4767,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 49.53 72.39 90)
+		(at 45.72 72.39 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4775,15 +4775,15 @@
 		(dnp no)
 		(uuid "9e57aff9-e969-4792-ae59-78a14791fff6")
 		(property "Reference" "R2"
-			(at 49.53 74.93 90)
+			(at 45.72 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1M/.1%"
-			(at 49.53 77.47 90)
+		(property "Value" "1M/700V/.1%"
+			(at 45.72 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4791,7 +4791,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4800,7 +4800,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4809,7 +4809,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4818,7 +4818,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4827,7 +4827,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "754-RGV3216P-1004BT1"
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4836,7 +4836,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4845,7 +4845,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4854,7 +4854,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Susumu/RGV3216P-1004-B-T1?qs=sGAEpiMZZMvdGkrng054t1oDJztsiizWPbQI4UUpX5WjtnS%252BTZp2yw%3D%3D"
-			(at 49.53 72.39 0)
+			(at 45.72 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5098,7 +5098,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 54.61 67.31 180)
+		(at 50.8 67.31 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5106,7 +5106,7 @@
 		(dnp no)
 		(uuid "b9a55e36-2e84-4ca1-8532-46cd5941adcc")
 		(property "Reference" "R6"
-			(at 55.88 66.04 0)
+			(at 52.07 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5115,7 +5115,7 @@
 			)
 		)
 		(property "Value" "100/.1%"
-			(at 55.88 68.58 0)
+			(at 52.07 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5124,7 +5124,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5133,7 +5133,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5142,7 +5142,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5151,7 +5151,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5160,7 +5160,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5169,7 +5169,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5178,7 +5178,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 54.61 67.31 0)
+			(at 50.8 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5270,7 +5270,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 49.53 88.9 270)
+		(at 45.72 88.9 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5279,15 +5279,15 @@
 		(dnp no)
 		(uuid "c6b50336-6842-4983-9da5-2b5272ea7edf")
 		(property "Reference" "R53"
-			(at 49.53 83.82 90)
+			(at 45.72 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1M/.1%"
-			(at 49.53 86.36 90)
+		(property "Value" "1M/700V/.1%"
+			(at 45.72 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5295,7 +5295,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5304,7 +5304,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5313,7 +5313,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5322,7 +5322,7 @@
 			)
 		)
 		(property "Manufacturer_Name" ""
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5331,7 +5331,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "754-RGV3216P-1004BT1"
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5340,7 +5340,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5349,7 +5349,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5358,7 +5358,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Susumu/RGV3216P-1004-B-T1?qs=sGAEpiMZZMvdGkrng054t1oDJztsiizWPbQI4UUpX5WjtnS%252BTZp2yw%3D%3D"
-			(at 49.53 88.9 0)
+			(at 45.72 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)

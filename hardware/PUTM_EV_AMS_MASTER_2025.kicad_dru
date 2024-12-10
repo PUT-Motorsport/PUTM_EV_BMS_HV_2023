@@ -5,3 +5,6 @@
 (rule "Optimal clearance - on In2.Cu"
 	(constraint clearance (min "0.3mm"))
 	(condition "A.Type == 'Track' && B.Type == 'Track' && B.existsOnLayer('In2.Cu')"))
+(rule "Optimal fill clearance"
+	(constraint clearance (min "0.3mm"))
+	(condition "A.Type == 'Track' && A.NetClass == 'HighSpeed' && B.NetName == 'GND' || B.NetName == 'GNDISO'"))

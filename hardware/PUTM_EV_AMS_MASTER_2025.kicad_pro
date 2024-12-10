@@ -656,6 +656,10 @@
       {
         "netclass": "50Ohm",
         "pattern": "/CAN*"
+      },
+      {
+        "netclass": "HighSpeed",
+        "pattern": "/*CS*"
       }
     ]
   },
