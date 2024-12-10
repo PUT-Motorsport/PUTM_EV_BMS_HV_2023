@@ -7922,6 +7922,14 @@
 		(uuid "6c0283fe-0ce1-437a-8fb1-fd5ab2969e28")
 	)
 	(no_connect
+		(at 361.95 210.82)
+		(uuid "73d5a819-23ed-41b6-ba48-15a6add87d2b")
+	)
+	(no_connect
+		(at 361.95 213.36)
+		(uuid "776e4f89-3865-4e06-8d40-3743a0d182d7")
+	)
+	(no_connect
 		(at 361.95 215.9)
 		(uuid "77c1fe8a-bb1d-4406-8f3d-15ba64715e61")
 	)
@@ -8309,6 +8317,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 208.28) (xy 361.95 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d52f6eb-9fce-4ae5-9bd3-f840f0d84a03")
+	)
+	(wire
+		(pts
 			(xy 250.19 106.68) (xy 327.66 106.68)
 		)
 		(stroke
@@ -8646,6 +8664,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 200.66) (xy 361.95 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35f4d3a9-ad5b-4dd5-b7f3-210ae06bed24")
+	)
+	(wire
+		(pts
 			(xy 38.1 262.89) (xy 35.56 262.89)
 		)
 		(stroke
@@ -8794,6 +8822,16 @@
 			(type default)
 		)
 		(uuid "43cb7799-5cda-4774-9d42-6db951275f2d")
+	)
+	(wire
+		(pts
+			(xy 307.34 205.74) (xy 361.95 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "443e9130-6c8b-4a6d-b9a1-8614436009a7")
 	)
 	(wire
 		(pts
@@ -9332,16 +9370,6 @@
 	)
 	(wire
 		(pts
-			(xy 307.34 210.82) (xy 361.95 210.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e2fe764-2e17-4653-90f0-a23324019fc2")
-	)
-	(wire
-		(pts
 			(xy 208.28 81.28) (xy 213.36 81.28)
 		)
 		(stroke
@@ -9685,16 +9713,6 @@
 	)
 	(wire
 		(pts
-			(xy 307.34 208.28) (xy 361.95 208.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c00c712-b764-4b3e-b011-a8ff295a1b6c")
-	)
-	(wire
-		(pts
 			(xy 250.19 93.98) (xy 375.92 93.98)
 		)
 		(stroke
@@ -9776,16 +9794,6 @@
 	)
 	(wire
 		(pts
-			(xy 307.34 205.74) (xy 361.95 205.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "905dc245-43d5-4f86-9624-7ce84b6ca260")
-	)
-	(wire
-		(pts
 			(xy 179.07 62.23) (xy 181.61 62.23)
 		)
 		(stroke
@@ -9823,16 +9831,6 @@
 			(type default)
 		)
 		(uuid "962122d5-1029-4d56-9d59-88c5b5557c00")
-	)
-	(wire
-		(pts
-			(xy 250.19 203.2) (xy 271.78 203.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "978ac50d-d0b5-4ac9-a13e-38a58a8d5a3a")
 	)
 	(polyline
 		(pts
@@ -10363,16 +10361,6 @@
 	)
 	(wire
 		(pts
-			(xy 307.34 200.66) (xy 361.95 200.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6c7fc37-42a7-443c-a277-ba7b425e1652")
-	)
-	(wire
-		(pts
 			(xy 250.19 99.06) (xy 267.97 99.06)
 		)
 		(stroke
@@ -10540,16 +10528,6 @@
 			(type default)
 		)
 		(uuid "c3d1a23a-58bf-4141-96c8-8103fa07722e")
-	)
-	(wire
-		(pts
-			(xy 307.34 203.2) (xy 361.95 203.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c697f0a7-6498-49ea-90ab-ba16bb444471")
 	)
 	(polyline
 		(pts
@@ -11183,6 +11161,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 203.2) (xy 361.95 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f524a68d-deb9-45f7-ba7f-06be70f5fa78")
+	)
+	(wire
+		(pts
 			(xy 48.26 114.3) (xy 74.93 114.3)
 		)
 		(stroke
@@ -11240,16 +11228,6 @@
 			(type default)
 		)
 		(uuid "f84c136f-e0f8-4635-8679-6a393781e844")
-	)
-	(wire
-		(pts
-			(xy 250.19 200.66) (xy 271.78 200.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8660772-fe42-426f-8953-096a92adf5a5")
 	)
 	(wire
 		(pts
@@ -11351,16 +11329,6 @@
 			(color 132 132 132 1)
 		)
 		(uuid "fd0fd506-d2ae-42c1-bc5e-8e10ea484195")
-	)
-	(wire
-		(pts
-			(xy 307.34 213.36) (xy 361.95 213.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fdf14ab7-1d7f-4757-abbf-95345aeccb1c")
 	)
 	(rectangle
 		(start 157.48 242.57)
@@ -12146,7 +12114,7 @@
 		(uuid "3f702527-93ba-4b90-993f-98dfa6e5bb15")
 	)
 	(label "CANFD2-"
-		(at 337.82 208.28 0)
+		(at 337.82 203.2 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12221,17 +12189,6 @@
 			(justify right bottom)
 		)
 		(uuid "4e5615aa-360e-4ad1-9bd8-b27b0bc3fba8")
-	)
-	(label "CANFD3+"
-		(at 337.82 200.66 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4fc36a3c-c54e-48ab-af32-50c5d5457957")
 	)
 	(label "AMD"
 		(at 251.46 182.88 0)
@@ -12420,17 +12377,6 @@
 		)
 		(uuid "95e6be2f-a1cd-4c0c-9969-9700ac30d6b8")
 	)
-	(label "CANFD3-"
-		(at 337.82 203.2 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "98f266dd-6980-4529-bb80-5a361b187573")
-	)
 	(label "CCO+"
 		(at 44.45 172.72 180)
 		(fields_autoplaced yes)
@@ -12498,7 +12444,7 @@
 		(uuid "ae54dd52-25de-4bc4-8c36-e274abe6a0bb")
 	)
 	(label "CANFD1+"
-		(at 337.82 210.82 0)
+		(at 337.82 205.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12619,7 +12565,7 @@
 		(uuid "da8d2b2c-d479-4ded-bdc8-8b6b8cd23efc")
 	)
 	(label "CANFD1-"
-		(at 337.82 213.36 0)
+		(at 337.82 208.28 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12685,7 +12631,7 @@
 		(uuid "f8e1eb09-eeca-4a11-8c04-a49181e1ccb4")
 	)
 	(label "CANFD2+"
-		(at 337.82 205.74 0)
+		(at 337.82 200.66 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20414,16 +20360,6 @@
 			)
 			(uuid "4c33c4f4-5c45-4cd1-851d-67c46c795398")
 		)
-		(pin "DETECT_CHARGER" input
-			(at 250.19 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "0cc952ad-28f0-4e32-8d6d-6ca8bd6548ac")
-		)
 		(pin "DETECT_AIR_P" input
 			(at 250.19 185.42 0)
 			(effects
@@ -20543,16 +20479,6 @@
 				(justify left)
 			)
 			(uuid "098c3e52-f883-4bfd-a412-10bb6c59d86b")
-		)
-		(pin "DETECT_TSMS" input
-			(at 250.19 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "cb23dd95-f142-4b1d-a359-c341cd036ec1")
 		)
 		(pin "SIGNAL_AIR_M" output
 			(at 213.36 233.68 180)
@@ -20794,26 +20720,6 @@
 			)
 			(uuid "5e833387-3bbe-4801-b73a-24e1335e5991")
 		)
-		(pin "CANFD3_RX" input
-			(at 250.19 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "aa3b7051-e450-4655-a850-45e24e1d8381")
-		)
-		(pin "CANFD3_TX" output
-			(at 250.19 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "5c04bb0b-41c8-42fd-a09c-c4d0fa4b08b6")
-		)
 		(pin "DETECT_WTDG" input
 			(at 213.36 81.28 180)
 			(effects
@@ -20874,6 +20780,26 @@
 			)
 			(uuid "d90dd8e5-b326-4618-90f2-1998f5b2e288")
 		)
+		(pin "DETECT_CHARGER" input
+			(at 250.19 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ef85a100-bf70-4ae3-8b51-f036505f16d0")
+		)
+		(pin "DETECT_TSMS" input
+			(at 250.19 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3fcd7f33-6635-4c31-8617-f7ff5200c724")
+		)
 		(instances
 			(project "PUTM_EV_AMS_MASTER_2025"
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
@@ -20911,46 +20837,6 @@
 				)
 				(justify left top)
 			)
-		)
-		(pin "EX_CANFD3-" bidirectional
-			(at 307.34 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "64d15202-c99d-4297-8b29-d677917c9a7c")
-		)
-		(pin "EX_CANFD3+" bidirectional
-			(at 307.34 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "d7d84049-a1ab-4119-a2f0-51b04efb5cc5")
-		)
-		(pin "UC_CANFD3_RX" output
-			(at 271.78 200.66 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "b0da0b5a-6048-4714-9ace-50b2709ce244")
-		)
-		(pin "UC_CANFD3_TX" input
-			(at 271.78 203.2 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "fac094f0-d6d3-439d-ac29-dacb57402d0b")
 		)
 		(pin "EX_IN1" input
 			(at 307.34 190.5 0)
@@ -21023,7 +20909,7 @@
 			(uuid "f83beb2b-b83c-41d3-809d-a7f812345537")
 		)
 		(pin "EX_CANFD1-" bidirectional
-			(at 307.34 213.36 0)
+			(at 307.34 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21033,7 +20919,7 @@
 			(uuid "d7cc98b6-cc1f-4dcc-974c-f4619871be2e")
 		)
 		(pin "EX_CANFD1+" bidirectional
-			(at 307.34 210.82 0)
+			(at 307.34 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21063,7 +20949,7 @@
 			(uuid "651586b6-b737-4924-aa94-38e490fc3230")
 		)
 		(pin "EX_CANFD2+" bidirectional
-			(at 307.34 205.74 0)
+			(at 307.34 200.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21073,7 +20959,7 @@
 			(uuid "d3df3bdc-edcc-4fce-a899-5a7d240d28d1")
 		)
 		(pin "EX_CANFD2-" bidirectional
-			(at 307.34 208.28 0)
+			(at 307.34 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
