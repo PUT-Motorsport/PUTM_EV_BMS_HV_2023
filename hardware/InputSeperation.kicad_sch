@@ -782,16 +782,6 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 76.2) (xy 152.4 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0a9bef89-d895-4dbc-8dad-2967f68a9579")
-	)
-	(wire
-		(pts
 			(xy 152.4 99.06) (xy 152.4 96.52)
 		)
 		(stroke
@@ -959,16 +949,6 @@
 			(type default)
 		)
 		(uuid "a5d0065a-0233-4881-8338-6b57e0a2cbef")
-	)
-	(wire
-		(pts
-			(xy 152.4 83.82) (xy 152.4 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb43f5f2-83a6-41ee-949a-b57dc2eeaae6")
 	)
 	(wire
 		(pts
@@ -1463,88 +1443,6 @@
 		)
 	)
 	(symbol
-		(lib_name "VDD_2")
-		(lib_id "power:VDD")
-		(at 152.4 76.2 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "918a1a6e-b208-42e8-8ade-fb0e48b1002b")
-		(property "Reference" "#PWR0142"
-			(at 152.4 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+24V"
-			(at 152.4 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 152.4 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 152.4 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a4b86268-96ee-45cb-a592-f8cd8c8533d6")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/50824e4c-3a23-46ed-a6a0-b956059fc001"
-					(reference "#PWR0142")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/850c2180-a634-437d-8598-d7516be18fb3"
-					(reference "#PWR032")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/91f3f49c-791c-4c8e-878a-f1a86cae1b35"
-					(reference "#PWR071")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/af25626c-6516-4a84-af7c-6fa2b3e0256c"
-					(reference "#PWR0164")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/ca5dc7a3-a7a4-462d-9283-6de561582cc8"
-					(reference "#PWR0124")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 152.4 91.44 0)
 		(mirror y)
@@ -1661,127 +1559,6 @@
 				)
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/ca5dc7a3-a7a4-462d-9283-6de561582cc8"
 					(reference "R75")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 152.4 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b542a1cf-6d69-4b31-b61a-80ac77c82ef9")
-		(property "Reference" "R81"
-			(at 151.13 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TBD"
-			(at 151.13 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "--"
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "--"
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "45e49ffb-3e1a-43f8-831f-c86dba6632ac")
-		)
-		(pin "2"
-			(uuid "5168bd59-6fc8-4f80-8098-26a715af8164")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/50824e4c-3a23-46ed-a6a0-b956059fc001"
-					(reference "R81")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/850c2180-a634-437d-8598-d7516be18fb3"
-					(reference "R33")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/91f3f49c-791c-4c8e-878a-f1a86cae1b35"
-					(reference "R43")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/af25626c-6516-4a84-af7c-6fa2b3e0256c"
-					(reference "R105")
-					(unit 1)
-				)
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b/c7d64097-44d3-49d9-9a80-8f2f4ff55e04/ca5dc7a3-a7a4-462d-9283-6de561582cc8"
-					(reference "R74")
 					(unit 1)
 				)
 			)

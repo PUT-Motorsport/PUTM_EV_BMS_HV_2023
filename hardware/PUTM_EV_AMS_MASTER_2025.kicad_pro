@@ -616,7 +616,7 @@
       },
       {
         "netclass": "HighSpeed",
-        "pattern": "/D[+-]"
+        "pattern": "/*D+*"
       },
       {
         "netclass": "50Ohm",
@@ -701,6 +701,10 @@
       {
         "netclass": "HighCurrent",
         "pattern": "/Power/F_24V"
+      },
+      {
+        "netclass": "HighSpeed",
+        "pattern": "/*D-*"
       }
     ]
   },
