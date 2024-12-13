@@ -7950,6 +7950,10 @@
 		(uuid "919876a3-a40c-4718-ac65-788a90f84704")
 	)
 	(no_connect
+		(at 361.95 198.12)
+		(uuid "92e74ce0-816b-4183-84d1-cd2bd1c09da7")
+	)
+	(no_connect
 		(at 374.65 231.14)
 		(uuid "9549c160-b90e-43e3-91ee-55fab46c0027")
 	)
@@ -10667,16 +10671,6 @@
 	)
 	(wire
 		(pts
-			(xy 356.87 198.12) (xy 361.95 198.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d28ec115-0ca2-46f8-b743-d9a113bbb5a1")
-	)
-	(wire
-		(pts
 			(xy 361.95 213.36) (xy 359.41 213.36)
 		)
 		(stroke
@@ -12053,7 +12047,7 @@
 		(uuid "38114762-3e4f-4563-a5d5-a046a4fd6d0f")
 	)
 	(label "CRX2"
-		(at 251.46 200.66 0)
+		(at 251.46 205.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12097,7 +12091,7 @@
 		(uuid "3daa53ca-dc85-4dd4-b3ed-f890a23dbbc8")
 	)
 	(label "CTX2"
-		(at 251.46 203.2 0)
+		(at 251.46 208.28 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12119,13 +12113,13 @@
 		(uuid "3f702527-93ba-4b90-993f-98dfa6e5bb15")
 	)
 	(label "CANFD2-"
-		(at 337.82 203.2 0)
+		(at 359.41 208.28 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "437379c5-2f54-43e4-a0d5-21982d8b8de1")
 	)
@@ -12350,7 +12344,7 @@
 		(uuid "7d78ab38-0ad7-4dfb-aea9-9ea56e91efb7")
 	)
 	(label "CRX1"
-		(at 251.46 205.74 0)
+		(at 251.46 200.66 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12526,13 +12520,13 @@
 		(uuid "ae54dd52-25de-4bc4-8c36-e274abe6a0bb")
 	)
 	(label "CANFD1+"
-		(at 337.82 205.74 0)
+		(at 359.41 200.66 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "ae66a76f-7944-4734-9242-4eadfb7b53d2")
 	)
@@ -12647,13 +12641,13 @@
 		(uuid "da8d2b2c-d479-4ded-bdc8-8b6b8cd23efc")
 	)
 	(label "CANFD1-"
-		(at 337.82 208.28 0)
+		(at 359.41 203.2 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "dc9076c9-0aa7-4eab-b5f1-3eb56e79c73e")
 	)
@@ -12702,7 +12696,7 @@
 		(uuid "e7c469d4-ddf1-47fe-aab7-e00894629841")
 	)
 	(label "CTX1"
-		(at 251.46 208.28 0)
+		(at 251.46 203.2 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12735,13 +12729,13 @@
 		(uuid "f8e1eb09-eeca-4a11-8c04-a49181e1ccb4")
 	)
 	(label "CANFD2+"
-		(at 337.82 200.66 0)
+		(at 359.41 205.74 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "f951bb81-9a26-4bdc-8527-e05c796ac803")
 	)
@@ -15135,72 +15129,6 @@
 			(project ""
 				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "GND_5")
-		(lib_id "power:GND")
-		(at 356.87 198.12 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "542da839-5ed7-429f-8f9d-1f1f67a5b4ab")
-		(property "Reference" "#PWR047"
-			(at 350.52 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 351.79 198.12 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 356.87 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 356.87 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 356.87 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e41561b7-c3af-462a-8548-636a4d36fa21")
-		)
-		(instances
-			(project "PUTM_EV_AMS_MASTER_2025"
-				(path "/b456cffc-d9d7-4c91-91f2-36ec9a65dd1b"
-					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -20676,7 +20604,7 @@
 			(uuid "fe6fbb3f-db40-44bb-a11f-85f262c83386")
 		)
 		(pin "CANFD1_RX" input
-			(at 250.19 205.74 0)
+			(at 250.19 200.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20686,7 +20614,7 @@
 			(uuid "45541c29-60b8-4017-bf7a-c42416fd6f13")
 		)
 		(pin "CANFD2_TX" output
-			(at 250.19 203.2 0)
+			(at 250.19 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20696,7 +20624,7 @@
 			(uuid "bffee84d-6332-47fb-b8b7-201c5be35069")
 		)
 		(pin "CANFD2_RX" input
-			(at 250.19 200.66 0)
+			(at 250.19 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20706,7 +20634,7 @@
 			(uuid "1c013192-21a0-409d-aca8-09f7a0a44a57")
 		)
 		(pin "CANFD1_TX" output
-			(at 250.19 208.28 0)
+			(at 250.19 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20895,7 +20823,7 @@
 	)
 	(sheet
 		(at 271.78 130.81)
-		(size 35.56 102.87)
+		(size 35.56 80.01)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -20915,7 +20843,7 @@
 			)
 		)
 		(property "Sheetfile" "Connectivity.kicad_sch"
-			(at 271.78 234.2646 0)
+			(at 271.78 211.4046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20994,7 +20922,7 @@
 			(uuid "f83beb2b-b83c-41d3-809d-a7f812345537")
 		)
 		(pin "EX_CANFD1-" bidirectional
-			(at 307.34 208.28 0)
+			(at 307.34 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21004,7 +20932,7 @@
 			(uuid "d7cc98b6-cc1f-4dcc-974c-f4619871be2e")
 		)
 		(pin "EX_CANFD1+" bidirectional
-			(at 307.34 205.74 0)
+			(at 307.34 200.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21014,7 +20942,7 @@
 			(uuid "3223f95a-c667-47e8-9ad9-e9492baccfcb")
 		)
 		(pin "UC_CANFD1_RX" output
-			(at 271.78 205.74 180)
+			(at 271.78 200.66 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21024,7 +20952,7 @@
 			(uuid "3ce35a50-d5ed-42bc-82c7-630c0d3b3bef")
 		)
 		(pin "UC_CANFD1_TX" input
-			(at 271.78 208.28 180)
+			(at 271.78 203.2 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21034,7 +20962,7 @@
 			(uuid "651586b6-b737-4924-aa94-38e490fc3230")
 		)
 		(pin "EX_CANFD2+" bidirectional
-			(at 307.34 200.66 0)
+			(at 307.34 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21044,7 +20972,7 @@
 			(uuid "d3df3bdc-edcc-4fce-a899-5a7d240d28d1")
 		)
 		(pin "EX_CANFD2-" bidirectional
-			(at 307.34 203.2 0)
+			(at 307.34 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21054,7 +20982,7 @@
 			(uuid "e6ce4d27-f593-4db0-ae99-e66e9c2ed342")
 		)
 		(pin "UC_CANFD2_TX" input
-			(at 271.78 203.2 180)
+			(at 271.78 208.28 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21064,7 +20992,7 @@
 			(uuid "1de9e96e-0827-4c9b-bc5b-f7b72a20e538")
 		)
 		(pin "UC_CANFD2_RX" output
-			(at 271.78 200.66 180)
+			(at 271.78 205.74 180)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -8,3 +8,11 @@
 (rule "Optimal fill clearance"
 	(constraint clearance (min "0.3mm"))
 	(condition "A.Type == 'Track' && A.NetClass == 'HighSpeed' && B.NetName == 'GND' || B.NetName == 'GNDISO'"))
+
+(rule "Can1 TX/RX length matching"
+	(constraint length (min "12.0mm"))
+	(condition "A.NetName == '/CRX1' || A.NetName =='/CTX1'"))
+
+(rule "Can2 TX/RX length matching"
+	(constraint length (min "14.0mm"))
+	(condition "A.NetName == '/CRX2' || A.NetName =='/CTX2'"))

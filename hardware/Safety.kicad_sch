@@ -2456,7 +2456,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 78.74) (xy 74.93 78.74)
+			(xy 74.93 78.74) (xy 77.47 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2569,7 +2569,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 78.74) (xy 67.31 78.74)
+			(xy 64.77 78.74) (xy 69.85 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3241,6 +3241,17 @@
 		)
 		(uuid "df06600a-5709-4239-8e3f-678360367394")
 	)
+	(label "WEB"
+		(at 66.04 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.508 0.508)
+			)
+			(justify left bottom)
+		)
+		(uuid "1c2a1e13-3f03-414a-aa40-7b334fc7752f")
+	)
 	(label "CT_G"
 		(at 46.99 139.7 0)
 		(fields_autoplaced yes)
@@ -3347,7 +3358,7 @@
 	)
 	(hierarchical_label "WTDG_ERROR"
 		(shape output)
-		(at 74.93 78.74 0)
+		(at 77.47 78.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5986,7 +5997,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 69.85 78.74 90)
+		(at 72.39 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5994,7 +6005,7 @@
 		(dnp no)
 		(uuid "fb700340-926a-461f-8979-6711c718162c")
 		(property "Reference" "R15"
-			(at 69.85 73.66 90)
+			(at 72.39 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6002,7 +6013,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 69.85 76.2 90)
+			(at 72.39 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6010,7 +6021,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6019,7 +6030,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6028,7 +6039,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6037,7 +6048,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "--"
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6046,7 +6057,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6055,7 +6066,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6064,7 +6075,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 69.85 78.74 0)
+			(at 72.39 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
