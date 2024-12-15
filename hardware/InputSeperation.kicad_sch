@@ -1411,6 +1411,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 186.69 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dd7a8975-27c8-49bd-9acd-3f90af3ee929")
 		)
@@ -1525,6 +1534,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 152.4 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 152.4 91.44 0)
 			(effects
 				(font
@@ -1735,6 +1753,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 157.48 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ad4a04db-2880-4d6a-9c68-951c3ee55d82")
 		)
@@ -1858,6 +1885,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+			(at 147.32 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 147.32 91.44 0)
 			(effects
 				(font

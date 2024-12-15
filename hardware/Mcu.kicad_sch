@@ -5118,6 +5118,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "511-STM32H573RIT6"
+			(at 95.25 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "9724953c-0810-4fbc-b725-07ed449fb4c0")
 		)
@@ -5336,7 +5345,7 @@
 				)
 			)
 		)
-		(property "Value" "20pF"
+		(property "Value" "8pF/.1pF"
 			(at 226.06 143.51 90)
 			(effects
 				(font
@@ -5399,6 +5408,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 226.06 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "791-RF18N8R0B500CT"
 			(at 226.06 137.16 0)
 			(effects
 				(font
@@ -5505,7 +5523,7 @@
 				)
 			)
 		)
-		(property "Value" "20pF"
+		(property "Value" "8pF/.1pF"
 			(at 226.06 123.19 90)
 			(effects
 				(font
@@ -5568,6 +5586,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 226.06 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "791-RF18N8R0B500CT"
 			(at 226.06 127 0)
 			(effects
 				(font
@@ -5690,6 +5717,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 257.81 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fb9aed3b-c040-474a-8b48-263f1002f7e5")
 		)
@@ -5796,7 +5832,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
+			(at 212.09 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 212.09 59.69 0)
 			(effects
 				(font
@@ -5911,6 +5956,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 200.66 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6a7fac3a-bd44-436e-9379-0fe44504e4ed")
 		)
@@ -6017,7 +6071,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
+			(at 200.66 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 200.66 59.69 0)
 			(effects
 				(font
@@ -6141,6 +6204,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 223.52 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "27719d9a-e20c-4dcf-9303-c499e6fdd8dd")
 		)
@@ -6173,7 +6245,7 @@
 				)
 			)
 		)
-		(property "Value" "X322516MLB4SI"
+		(property "Value" "50MHz"
 			(at 238.76 123.19 90)
 			(effects
 				(font
@@ -6236,6 +6308,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 231.14 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "710-830108207809"
 			(at 231.14 132.08 0)
 			(effects
 				(font
@@ -6487,7 +6568,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+		(property "Mouser Price/Stock" ""
+			(at 72.39 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "603-CC603KPX7R9BB222"
 			(at 72.39 138.43 0)
 			(effects
 				(font
@@ -6675,6 +6765,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 269.24 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "989f586f-9f84-4131-8136-93b68a704c68")
 		)
@@ -6789,6 +6888,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 234.95 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b1f4dc1b-f05f-4b44-a40f-28788b19381c")
 		)
@@ -6895,7 +7003,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+		(property "Mouser Price/Stock" ""
+			(at 62.23 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "603-CC603KPX7R9BB222"
 			(at 62.23 138.43 0)
 			(effects
 				(font
@@ -7208,6 +7325,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+			(at 246.38 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 246.38 59.69 0)
 			(effects
 				(font

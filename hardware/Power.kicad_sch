@@ -5066,7 +5066,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1/1A"
+		(property "Value" "60V/0.5/3A"
 			(at 49.53 99.06 90)
 			(effects
 				(font
@@ -5094,6 +5094,15 @@
 			)
 		)
 		(property "Description" "Schottky diode, small symbol"
+			(at 46.99 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "637-SKL36"
 			(at 46.99 97.79 0)
 			(effects
 				(font
@@ -5172,6 +5181,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+			(at 160.02 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "647-UCM1V220MCL1GS"
 			(at 160.02 104.14 0)
 			(effects
 				(font
@@ -5276,7 +5294,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 210.82 52.07 0)
 			(effects
 				(font
@@ -5285,7 +5303,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 210.82 52.07 0)
 			(effects
 				(font
@@ -5671,7 +5689,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 247.65 107.95 0)
 			(effects
 				(font
@@ -6120,6 +6138,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "647-UCM1V220MCL1GS"
+			(at 148.59 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "341d76d8-4292-483b-ab1f-9b58f0e42a71")
 		)
@@ -6214,7 +6241,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 170.18 41.91 0)
 			(effects
 				(font
@@ -6410,7 +6437,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 106.68 160.02 0)
 			(effects
 				(font
@@ -6551,6 +6578,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "963-H168SC7224KTCA1J"
+			(at 102.87 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "198826f7-e7e0-4cbf-8a6f-9a380287e470")
 		)
@@ -6647,7 +6683,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 227.33 107.95 0)
 			(effects
 				(font
@@ -6868,6 +6904,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "750-TV02W260-G"
+			(at 135.89 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3c49a10e-9e03-4c60-8097-088ecf1a51b0")
 		)
@@ -7079,7 +7124,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 138.43 170.18 0)
 			(effects
 				(font
@@ -7088,7 +7133,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 138.43 170.18 0)
 			(effects
 				(font
@@ -7276,7 +7321,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 80.01 52.07 0)
 			(effects
 				(font
@@ -7285,7 +7330,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 80.01 52.07 0)
 			(effects
 				(font
@@ -7390,7 +7435,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "80-C0603C104J3R"
 			(at 259.08 107.95 0)
 			(effects
 				(font
@@ -7520,7 +7565,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 121.92 165.1 0)
 			(effects
 				(font
@@ -7650,7 +7695,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 185.42 46.99 0)
 			(effects
 				(font
@@ -7719,7 +7764,7 @@
 				)
 			)
 		)
-		(property "Value" "0.5/5A"
+		(property "Value" "60V/0.5/3A"
 			(at 140.97 96.52 0)
 			(effects
 				(font
@@ -7746,6 +7791,15 @@
 			)
 		)
 		(property "Description" "Schottky diode, small symbol"
+			(at 140.97 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "637-SKL36"
 			(at 140.97 99.06 0)
 			(effects
 				(font
@@ -7787,7 +7841,7 @@
 				)
 			)
 		)
-		(property "Value" "TPS7B92033DBVR"
+		(property "Value" "3.3V/0.5A"
 			(at 237.49 99.06 0)
 			(effects
 				(font
@@ -7998,7 +8052,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 200.66 52.07 0)
 			(effects
 				(font
@@ -8007,7 +8061,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 200.66 52.07 0)
 			(effects
 				(font
@@ -8130,7 +8184,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 190.5 52.07 0)
 			(effects
 				(font
@@ -8139,7 +8193,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 190.5 52.07 0)
 			(effects
 				(font
@@ -8235,6 +8289,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "637-SMF5.0A"
+			(at 67.31 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "23e26797-0246-46d8-ba6a-af5d42b0d500")
 		)
@@ -8297,6 +8360,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 160.02 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 160.02 109.22 0)
 			(effects
 				(font
@@ -8438,6 +8510,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+			(at 46.99 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "647-UCM1V220MCL1GS"
 			(at 46.99 107.95 0)
 			(effects
 				(font
@@ -9117,7 +9198,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 220.98 52.07 0)
 			(effects
 				(font
@@ -9126,7 +9207,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 220.98 52.07 0)
 			(effects
 				(font
@@ -9545,7 +9626,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 60.96 170.18 0)
 			(effects
 				(font
@@ -9677,7 +9758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 149.86 170.18 0)
 			(effects
 				(font
@@ -9686,7 +9767,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 149.86 170.18 0)
 			(effects
 				(font
@@ -10011,7 +10092,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 153.67 31.75 0)
 			(effects
 				(font
@@ -10020,7 +10101,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
 			(at 153.67 31.75 0)
 			(effects
 				(font
@@ -10133,7 +10214,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "LMR33640DDDAR"
+		(property "Mouser Part Number" "595-LMR33640DDDAR"
 			(at 140.97 41.91 0)
 			(effects
 				(font
@@ -10250,7 +10331,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "80-C0603C104J3R"
 			(at 215.9 107.95 0)
 			(effects
 				(font
@@ -10382,7 +10463,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "80-C0603C104J3R"
 			(at 128.27 52.07 0)
 			(effects
 				(font
@@ -10514,7 +10595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 38.1 170.18 0)
 			(effects
 				(font
@@ -10523,7 +10604,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 38.1 170.18 0)
 			(effects
 				(font
@@ -10646,7 +10727,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 49.53 170.18 0)
 			(effects
 				(font
@@ -10655,7 +10736,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 49.53 170.18 0)
 			(effects
 				(font
@@ -10744,6 +10825,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 259.08 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 259.08 92.71 0)
 			(effects
 				(font
@@ -10975,7 +11065,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 127 170.18 0)
 			(effects
 				(font
@@ -10984,7 +11074,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 127 170.18 0)
 			(effects
 				(font
@@ -11107,7 +11197,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "--"
 			(at 119.38 52.07 0)
 			(effects
 				(font
@@ -11116,7 +11206,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
 			(at 119.38 52.07 0)
 			(effects
 				(font
@@ -11239,7 +11329,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "80-C0603C104J3R"
 			(at 57.15 107.95 0)
 			(effects
 				(font
@@ -11337,6 +11427,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 160.02 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 160.02 99.06 0)
 			(effects
 				(font
@@ -11470,6 +11569,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 149.86 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 149.86 152.4 0)
 			(effects
 				(font
@@ -11637,7 +11745,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "810-C2012X5R1V226MAC"
 			(at 91.44 52.07 0)
 			(effects
 				(font
@@ -11646,7 +11754,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Samsung-Electro-Mechanics/CL21A107MQYNNWE?qs=81r%252BiQLm7BSNi6fWCnDBNQ%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 91.44 52.07 0)
 			(effects
 				(font

@@ -3306,6 +3306,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "708-RNCF1206BKE100R"
+			(at 50.8 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a657b9f6-1c1d-4665-b735-6b7a31d817bc")
 		)
@@ -3486,6 +3495,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "754-RGV3216P-1004BT1"
+			(at 45.72 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5befd965-d1ce-43b1-97a3-03901ce4d4a6")
 		)
@@ -3583,6 +3601,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 68.58 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 68.58 67.31 0)
 			(effects
 				(font
@@ -3703,6 +3730,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 162.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0080f20a-fb3f-4728-9781-98aa87820e65")
 		)
@@ -3803,7 +3839,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "ADC 24bit"
 			(at 140.97 76.2 0)
 			(effects
 				(font
@@ -3856,7 +3892,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "ADS131M04IRUKR"
+		(property "Mouser Part Number" "595-ADS131M04IRUKR"
 			(at 140.97 95.25 0)
 			(effects
 				(font
@@ -4026,6 +4062,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 119.38 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 119.38 80.01 0)
 			(effects
 				(font
@@ -4204,7 +4249,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 167.64 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 167.64 107.95 0)
 			(effects
 				(font
@@ -4458,6 +4512,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "754-RGV3216P-1004BT1"
+			(at 45.72 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f83c34e5-9595-457c-ba74-9fa4394eed0c")
 		)
@@ -4562,6 +4625,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+			(at 119.38 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 119.38 69.85 0)
 			(effects
 				(font
@@ -4750,6 +4822,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 251.46 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "54230a74-b6de-4b2d-8ad6-518c21ffa080")
 		)
@@ -4854,6 +4935,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Susumu/RGV3216P-1004-B-T1?qs=sGAEpiMZZMvdGkrng054t1oDJztsiizWPbQI4UUpX5WjtnS%252BTZp2yw%3D%3D"
+			(at 45.72 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "754-RGV3216P-1004BT1"
 			(at 45.72 72.39 0)
 			(effects
 				(font
@@ -4968,7 +5058,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 119.38 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 119.38 109.22 0)
 			(effects
 				(font
@@ -5081,6 +5180,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "603-RT0603FRD078K2L"
+			(at 256.54 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e4676e2e-5363-4acd-9246-3b944070a8cb")
 		)
@@ -5178,6 +5286,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 50.8 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "708-RNCF1206BKE100R"
 			(at 50.8 67.31 0)
 			(effects
 				(font
@@ -5366,6 +5483,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "754-RGV3216P-1004BT1"
+			(at 45.72 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "855d5d1e-6eec-4f95-9c83-aaa740f819f8")
 		)
@@ -5445,6 +5571,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 240.03 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "584-LTC1799CS5#TRPBF"
 			(at 240.03 92.71 0)
 			(effects
 				(font
@@ -5634,7 +5769,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 199.39 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 199.39 48.26 0)
 			(effects
 				(font
@@ -5748,6 +5892,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "963-H168SC7224KTCA1J"
+			(at 162.56 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "130cd617-aa34-4c75-bc37-06ed8b89c142")
 		)
@@ -5845,6 +5998,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 68.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 68.58 93.98 0)
 			(effects
 				(font

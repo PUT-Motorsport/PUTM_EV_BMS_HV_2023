@@ -2674,7 +2674,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 166.37 31.4959 90)
 			(effects
 				(font
@@ -2710,7 +2710,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 163.83 30.48 0)
 			(effects
 				(font
@@ -2719,7 +2719,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 163.83 30.48 0)
 			(effects
 				(font
@@ -2728,7 +2728,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 163.83 30.48 0)
 			(effects
 				(font
@@ -2992,7 +2992,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 227.33 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 227.33 48.26 0)
 			(effects
 				(font
@@ -3300,7 +3309,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 153.67 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 153.67 111.76 0)
 			(effects
 				(font
@@ -3343,7 +3361,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 92.71 153.4159 90)
 			(effects
 				(font
@@ -3379,7 +3397,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 90.17 152.4 0)
 			(effects
 				(font
@@ -3388,7 +3406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 90.17 152.4 0)
 			(effects
 				(font
@@ -3397,7 +3415,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 90.17 152.4 0)
 			(effects
 				(font
@@ -3530,7 +3548,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 80.01 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 80.01 111.76 0)
 			(effects
 				(font
@@ -3700,7 +3727,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 240.03 31.4959 90)
 			(effects
 				(font
@@ -3736,7 +3763,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 237.49 30.48 0)
 			(effects
 				(font
@@ -3745,7 +3772,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 237.49 30.48 0)
 			(effects
 				(font
@@ -3754,7 +3781,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 237.49 30.48 0)
 			(effects
 				(font
@@ -3952,7 +3979,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 80.01 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 80.01 48.26 0)
 			(effects
 				(font
@@ -4258,6 +4294,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 72.39 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "11895966-c6fc-46de-b72f-dd7f398e7e5a")
 		)
@@ -4292,7 +4337,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 92.71 94.9959 90)
 			(effects
 				(font
@@ -4328,7 +4373,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 90.17 93.98 0)
 			(effects
 				(font
@@ -4337,7 +4382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 90.17 93.98 0)
 			(effects
 				(font
@@ -4346,7 +4391,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 90.17 93.98 0)
 			(effects
 				(font
@@ -4473,7 +4518,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 92.71 31.4959 90)
 			(effects
 				(font
@@ -4509,7 +4554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 90.17 30.48 0)
 			(effects
 				(font
@@ -4518,7 +4563,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 90.17 30.48 0)
 			(effects
 				(font
@@ -4527,7 +4572,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 90.17 30.48 0)
 			(effects
 				(font
@@ -4724,6 +4769,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 72.39 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3ae7fa4c-320a-43f6-a6ed-d216eccffcca")
 		)
@@ -4758,7 +4812,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 240.03 94.9959 90)
 			(effects
 				(font
@@ -4794,7 +4848,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 237.49 93.98 0)
 			(effects
 				(font
@@ -4803,7 +4857,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 237.49 93.98 0)
 			(effects
 				(font
@@ -4812,7 +4866,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 237.49 93.98 0)
 			(effects
 				(font
@@ -5204,7 +5258,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 153.67 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 153.67 48.26 0)
 			(effects
 				(font
@@ -5309,6 +5372,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 146.05 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 146.05 43.18 0)
 			(effects
 				(font
@@ -5745,6 +5817,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 219.71 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "665c46fb-9614-4d99-b6c4-c51c4efddf84")
 		)
@@ -5841,6 +5922,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 146.05 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 146.05 106.68 0)
 			(effects
 				(font
@@ -6018,6 +6108,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 219.71 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8b163cc3-7af5-43c5-a9d2-6387cea3015c")
 		)
@@ -6052,7 +6151,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VSSB410S-E3/52T"
+		(property "Value" "60V/0.5/3A"
 			(at 166.37 94.9959 90)
 			(effects
 				(font
@@ -6088,7 +6187,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "VSSB410S-E3/52T"
+		(property "Manufacturer_Part_Number" ""
 			(at 163.83 93.98 0)
 			(effects
 				(font
@@ -6097,7 +6196,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "625-VSSB410S-E3/52T"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 163.83 93.98 0)
 			(effects
 				(font
@@ -6106,7 +6205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Vishay-General-Semiconductor/VSSB410S-E3-52T?qs=HSPD0Bff7ib64J9oD9YilA%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 163.83 93.98 0)
 			(effects
 				(font
@@ -6305,7 +6404,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 80.01 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 80.01 170.18 0)
 			(effects
 				(font
@@ -6420,7 +6528,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 227.33 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 227.33 111.76 0)
 			(effects
 				(font
@@ -6525,6 +6642,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 72.39 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 72.39 106.68 0)
 			(effects
 				(font

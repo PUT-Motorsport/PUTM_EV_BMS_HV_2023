@@ -3258,6 +3258,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 73.66 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ed04974f-bedb-4460-bc11-deae65259b7a")
 		)
@@ -3411,7 +3420,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "LTC6820IMS#PBF"
+		(property "Mouser Part Number" "584-LTC6820IMS#PBF"
 			(at 92.71 82.55 0)
 			(effects
 				(font
@@ -3642,6 +3651,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "581-06035A101K"
+			(at 208.28 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3dd16b88-52c0-4583-8de5-f5aec0569dcd")
 		)
@@ -3805,6 +3823,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 200.66 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 200.66 82.55 0)
 			(effects
 				(font
@@ -4050,6 +4077,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "963-H168SC7224KTCA1J"
+			(at 200.66 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "637549c3-4958-4cc0-8938-e6b3c4c16987")
 		)
@@ -4164,6 +4200,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 242.57 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dae1c737-604b-44eb-9748-49947faa4539")
 		)
@@ -4269,6 +4314,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+			(at 73.66 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 73.66 63.5 0)
 			(effects
 				(font
@@ -4438,6 +4492,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 228.6 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "594-MCT06030C5109FP5"
 			(at 228.6 85.09 0)
 			(effects
 				(font
@@ -4627,6 +4690,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 233.68 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6df7826b-3cea-44b2-ad66-36fa4d842c0e")
 		)
@@ -4790,6 +4862,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 218.44 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "581-06035A101K"
 			(at 218.44 92.71 0)
 			(effects
 				(font
@@ -4978,6 +5059,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 162.56 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "23dfb081-0742-4f77-9317-f6503e230119")
 		)
@@ -5083,7 +5173,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 250.19 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 250.19 54.61 0)
 			(effects
 				(font
@@ -5327,6 +5426,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 109.22 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2ed94065-21be-4c7e-b282-f6b45dee3506")
 		)
@@ -5497,6 +5605,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 111.76 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0bc7641c-017b-41ee-8fd9-26101b4e7a77")
 		)
@@ -5592,6 +5709,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 228.6 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "594-MCT06030C5109FP5"
 			(at 228.6 87.63 0)
 			(effects
 				(font
@@ -5705,6 +5831,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 113.03 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0c3eddd2-d03b-44ea-a99c-37ebe0719dc8")
 		)
@@ -5810,6 +5945,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+			(at 162.56 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 162.56 100.33 0)
 			(effects
 				(font

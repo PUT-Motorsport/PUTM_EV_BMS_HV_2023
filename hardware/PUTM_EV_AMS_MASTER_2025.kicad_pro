@@ -747,7 +747,7 @@
           "group_by": false,
           "label": "Reference",
           "name": "Reference",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
@@ -762,10 +762,10 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -825,7 +825,7 @@
           "group_by": false,
           "label": "Mouser Price/Stock",
           "name": "Mouser Price/Stock",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -837,6 +837,12 @@
           "group_by": false,
           "label": "In Order",
           "name": "In Order",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DigiKey Part Number",
+          "name": "DigiKey Part Number",
           "show": false
         }
       ],

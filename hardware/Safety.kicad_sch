@@ -3500,6 +3500,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 52.07 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "279d5789-a209-4bf0-a2c4-dd41f729c4fe")
 		)
@@ -3601,6 +3610,15 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/KEMET/C0603C104J3RACTU?qs=EHsFn6hSx4W0Oy0I8JUofQ%3D%3D"
+			(at 123.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 123.19 124.46 0)
 			(effects
 				(font
@@ -3838,7 +3856,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "SS16-LTP"
+		(property "Value" "60V/0.5/3A"
 			(at 34.29 44.45 90)
 			(effects
 				(font
@@ -3874,7 +3892,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SS16-LTP"
+		(property "Manufacturer_Part_Number" ""
 			(at 36.83 43.18 0)
 			(effects
 				(font
@@ -3883,7 +3901,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "833-SS16-LTP"
+		(property "Mouser Part Number" "637-SKL36"
 			(at 36.83 43.18 0)
 			(effects
 				(font
@@ -3892,7 +3910,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/Micro-Commercial-Components-MCC/SS16-LTP?qs=cLwp4wpikzDsiZm8qAd%2Fng%3D%3D"
+		(property "Mouser Price/Stock" ""
 			(at 36.83 43.18 0)
 			(effects
 				(font
@@ -4076,6 +4094,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "621-DMN65D8L-7"
+			(at 59.69 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "82d8e2c9-f691-4ea8-bd1b-5bfd69030e74")
 		)
@@ -4184,7 +4211,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 50.8 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 50.8 144.78 0)
 			(effects
 				(font
@@ -4276,6 +4312,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
+			(at 49.53 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "621-DMN65D8L-7"
 			(at 49.53 58.42 0)
 			(effects
 				(font
@@ -4457,7 +4502,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 109.22 146.05 0)
 			(effects
 				(font
@@ -4572,7 +4626,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 57.15 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 57.15 63.5 0)
 			(effects
 				(font
@@ -4880,7 +4943,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 106.68 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 106.68 76.2 0)
 			(effects
 				(font
@@ -5016,6 +5088,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 52.07 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 52.07 34.29 0)
 			(effects
 				(font
@@ -5452,6 +5533,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 74.93 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "446ce404-caf3-48f9-93b4-b7b2c2e02293")
 		)
@@ -5567,6 +5657,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 101.6 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e1daefec-a3ec-469b-98e9-ba71528c8474")
 		)
@@ -5670,7 +5769,16 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.pl/ProductDetail/YAGEO/RT0603DRE07100KL?qs=sGAEpiMZZMvdGkrng054t1nmr2c61WvadC66rbrHowc%3D"
+		(property "Mouser Price/Stock" ""
+			(at 67.31 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 67.31 58.42 0)
 			(effects
 				(font
@@ -5784,6 +5892,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 74.93 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4e61604f-3d3b-4b8f-b19a-05a15ddf1145")
 		)
@@ -5887,6 +6004,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "--"
+			(at 43.18 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cb0480d5-b8f7-4764-9555-804e32500f4f")
 		)
@@ -5969,6 +6095,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "--"
+			(at 58.42 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "621-DMN65D8L-7"
 			(at 58.42 139.7 0)
 			(effects
 				(font
@@ -6075,6 +6210,15 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
+			(at 72.39 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "--"
 			(at 72.39 78.74 0)
 			(effects
 				(font
