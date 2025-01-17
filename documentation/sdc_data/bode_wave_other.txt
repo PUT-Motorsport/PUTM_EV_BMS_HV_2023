@@ -1,0 +1,5 @@
+RIGOL Bode Data
+Para Set
+StartFreq:,100000
+StopFreq:,1e+07
+Freq(Hz),Gain(dB),Phase
