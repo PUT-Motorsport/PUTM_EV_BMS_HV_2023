@@ -4840,7 +4840,7 @@
 	)
 	(text "5V"
 		(exclude_from_sim no)
-		(at 172.72 194.31 0)
+		(at 162.56 186.69 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -4854,7 +4854,7 @@
 	)
 	(text "12V"
 		(exclude_from_sim no)
-		(at 280.67 76.2 0)
+		(at 232.41 68.58 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -4882,7 +4882,6 @@
 	)
 	(label "F_U5V"
 		(at 49.53 102.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4893,7 +4892,6 @@
 	)
 	(label "VCC_12V"
 		(at 129.54 46.99 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4904,7 +4902,6 @@
 	)
 	(label "EN_5V"
 		(at 74.93 165.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4915,7 +4912,6 @@
 	)
 	(label "F_24V"
 		(at 134.62 99.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4926,7 +4922,6 @@
 	)
 	(label "SW_12V"
 		(at 152.4 44.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4937,7 +4932,6 @@
 	)
 	(label "FB_5V"
 		(at 100.33 165.1 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4948,7 +4942,6 @@
 	)
 	(label "F_5V"
 		(at 128.27 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4959,7 +4952,6 @@
 	)
 	(label "BOOT_12V"
 		(at 152.4 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4970,7 +4962,6 @@
 	)
 	(label "SW_5V"
 		(at 100.33 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4981,7 +4972,6 @@
 	)
 	(label "F_+3.3V"
 		(at 250.19 102.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -4992,7 +4982,6 @@
 	)
 	(label "FB_12V"
 		(at 152.4 46.99 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -5003,7 +4992,6 @@
 	)
 	(label "F_12V"
 		(at 191.77 44.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -5014,7 +5002,6 @@
 	)
 	(label "BOOT_5V"
 		(at 100.33 160.02 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -5026,7 +5013,6 @@
 	(hierarchical_label "EN_12V"
 		(shape input)
 		(at 116.84 41.91 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5038,7 +5024,6 @@
 	(hierarchical_label "PG_12V"
 		(shape output)
 		(at 156.21 36.83 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)

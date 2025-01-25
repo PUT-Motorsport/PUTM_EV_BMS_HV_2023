@@ -4288,7 +4288,7 @@
 	)
 	(text "CLOCKS"
 		(exclude_from_sim no)
-		(at 281.94 162.56 0)
+		(at 245.11 151.13 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -4470,7 +4470,6 @@
 	)
 	(label "CLK_OUT"
 		(at 233.68 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4481,7 +4480,6 @@
 	)
 	(label "CLK_IN"
 		(at 72.39 73.66 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4492,7 +4490,6 @@
 	)
 	(label "CLK_IN"
 		(at 233.68 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4503,7 +4500,6 @@
 	)
 	(label "CLK_OUT"
 		(at 72.39 76.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4514,7 +4510,6 @@
 	)
 	(label "CAP1"
 		(at 73.66 128.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -4525,7 +4520,6 @@
 	)
 	(label "CAP2"
 		(at 73.66 130.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -4537,7 +4531,6 @@
 	(hierarchical_label "CANFD1_TX"
 		(shape output)
 		(at 120.65 125.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4549,7 +4542,6 @@
 	(hierarchical_label "SWDIO"
 		(shape bidirectional)
 		(at 120.65 95.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4561,7 +4553,6 @@
 	(hierarchical_label "~{ADC_DRY}"
 		(shape input)
 		(at 72.39 85.09 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4573,7 +4564,6 @@
 	(hierarchical_label "~{ADC_CS}"
 		(shape output)
 		(at 120.65 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4585,7 +4575,6 @@
 	(hierarchical_label "FAN3_CTRL"
 		(shape output)
 		(at 120.65 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4597,7 +4586,6 @@
 	(hierarchical_label "SIGNAL_LED_2"
 		(shape input)
 		(at 120.65 113.03 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4609,7 +4597,6 @@
 	(hierarchical_label "EN_12V"
 		(shape output)
 		(at 120.65 133.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4621,7 +4608,6 @@
 	(hierarchical_label "DETECT_WTDG"
 		(shape input)
 		(at 120.65 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4633,7 +4619,6 @@
 	(hierarchical_label "DETECT_CHARGER"
 		(shape input)
 		(at 72.39 118.11 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4645,7 +4630,6 @@
 	(hierarchical_label "SIGNAL_AIR_M"
 		(shape output)
 		(at 120.65 107.95 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4657,7 +4641,6 @@
 	(hierarchical_label "CANFD2_TX"
 		(shape output)
 		(at 120.65 120.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4669,7 +4652,6 @@
 	(hierarchical_label "COM_MOSI"
 		(shape output)
 		(at 72.39 115.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4681,7 +4663,6 @@
 	(hierarchical_label "SIGNAL_AIR_P"
 		(shape output)
 		(at 120.65 105.41 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4693,7 +4674,6 @@
 	(hierarchical_label "ADC_MOSI"
 		(shape output)
 		(at 120.65 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4705,7 +4685,6 @@
 	(hierarchical_label "~{FLT}"
 		(shape input)
 		(at 72.39 90.17 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4717,7 +4696,6 @@
 	(hierarchical_label "DETECT_AIR_P"
 		(shape input)
 		(at 72.39 107.95 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4729,7 +4707,6 @@
 	(hierarchical_label "DETECT_AIR_M"
 		(shape input)
 		(at 120.65 135.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4741,7 +4718,6 @@
 	(hierarchical_label "NRST"
 		(shape input)
 		(at 72.39 62.23 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4753,7 +4729,6 @@
 	(hierarchical_label "UART_TX"
 		(shape output)
 		(at 120.65 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4765,7 +4740,6 @@
 	(hierarchical_label "SWCLK"
 		(shape input)
 		(at 120.65 97.79 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4777,7 +4751,6 @@
 	(hierarchical_label "D-"
 		(shape bidirectional)
 		(at 120.65 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4789,7 +4762,6 @@
 	(hierarchical_label "ADC_SCK"
 		(shape output)
 		(at 120.65 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4801,7 +4773,6 @@
 	(hierarchical_label "SPI_RDY"
 		(shape input)
 		(at 72.39 87.63 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4813,7 +4784,6 @@
 	(hierarchical_label "FAN2_CTRL"
 		(shape output)
 		(at 120.65 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4825,7 +4795,6 @@
 	(hierarchical_label "D+"
 		(shape bidirectional)
 		(at 120.65 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4837,7 +4806,6 @@
 	(hierarchical_label "FAN4_CTRL"
 		(shape output)
 		(at 120.65 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4849,7 +4817,6 @@
 	(hierarchical_label "FAN6_CTRL"
 		(shape output)
 		(at 72.39 102.87 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4861,7 +4828,6 @@
 	(hierarchical_label "COM_SCK"
 		(shape output)
 		(at 72.39 110.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4873,7 +4839,6 @@
 	(hierarchical_label "PG_12V"
 		(shape input)
 		(at 120.65 130.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4885,7 +4850,6 @@
 	(hierarchical_label "SIGNAL_AMS_ERROR"
 		(shape output)
 		(at 72.39 92.71 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4897,7 +4861,6 @@
 	(hierarchical_label "DETECT_AIR_PRE"
 		(shape input)
 		(at 120.65 138.43 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4909,7 +4872,6 @@
 	(hierarchical_label "DETECT_TSMS"
 		(shape input)
 		(at 72.39 120.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4921,7 +4883,6 @@
 	(hierarchical_label "COM_MISO"
 		(shape input)
 		(at 72.39 113.03 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4933,7 +4894,6 @@
 	(hierarchical_label "CANFD1_RX"
 		(shape input)
 		(at 120.65 123.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4945,7 +4905,6 @@
 	(hierarchical_label "CANFD2_RX"
 		(shape input)
 		(at 120.65 118.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4957,7 +4916,6 @@
 	(hierarchical_label "~{COM_CS}"
 		(shape output)
 		(at 120.65 100.33 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4969,7 +4927,6 @@
 	(hierarchical_label "ADC_MISO"
 		(shape input)
 		(at 120.65 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4981,7 +4938,6 @@
 	(hierarchical_label "SIGNAL_AIR_PRE"
 		(shape output)
 		(at 72.39 97.79 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4993,7 +4949,6 @@
 	(hierarchical_label "SIGNAL_LED_1"
 		(shape input)
 		(at 120.65 115.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5005,7 +4960,6 @@
 	(hierarchical_label "FAN7_CTRL"
 		(shape output)
 		(at 72.39 105.41 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5017,7 +4971,6 @@
 	(hierarchical_label "FAN1_CTRL"
 		(shape output)
 		(at 120.65 62.23 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5029,7 +4982,6 @@
 	(hierarchical_label "FAN5_CTRL"
 		(shape output)
 		(at 72.39 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5041,7 +4993,6 @@
 	(hierarchical_label "SIGNAL_LED_3"
 		(shape input)
 		(at 72.39 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5053,7 +5004,6 @@
 	(hierarchical_label "UART_RX"
 		(shape input)
 		(at 120.65 87.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6496,7 +6446,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "2.2nF"
+		(property "Value" "2.2uF"
 			(at 69.85 139.7 0)
 			(effects
 				(font
@@ -6931,7 +6881,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2nF"
+		(property "Value" "2.2uF"
 			(at 59.69 139.7 0)
 			(effects
 				(font

@@ -2736,7 +2736,6 @@
 	)
 	(label "G3"
 		(at 179.07 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2747,7 +2746,6 @@
 	)
 	(label "G1"
 		(at 105.41 66.04 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2758,7 +2756,6 @@
 	)
 	(label "G2"
 		(at 105.41 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2770,7 +2767,6 @@
 	(hierarchical_label "DRAIN3"
 		(shape input)
 		(at 193.04 121.92 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2782,7 +2778,6 @@
 	(hierarchical_label "VDD"
 		(shape passive)
 		(at 119.38 111.76 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2794,7 +2789,6 @@
 	(hierarchical_label "VDD"
 		(shape passive)
 		(at 119.38 48.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2806,7 +2800,6 @@
 	(hierarchical_label "SIGNAL2"
 		(shape input)
 		(at 93.98 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2818,7 +2811,6 @@
 	(hierarchical_label "SIGNAL3"
 		(shape input)
 		(at 167.64 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2830,7 +2822,6 @@
 	(hierarchical_label "DRAIN1"
 		(shape input)
 		(at 119.38 58.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2842,7 +2833,6 @@
 	(hierarchical_label "VDD"
 		(shape passive)
 		(at 193.04 111.76 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2854,7 +2844,6 @@
 	(hierarchical_label "DRAIN2"
 		(shape input)
 		(at 119.38 121.92 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2866,7 +2855,6 @@
 	(hierarchical_label "VDD"
 		(shape passive)
 		(at 160.02 63.5 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2878,7 +2866,6 @@
 	(hierarchical_label "SIGNAL1"
 		(shape input)
 		(at 93.98 66.04 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)

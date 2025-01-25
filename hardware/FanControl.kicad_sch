@@ -2158,7 +2158,6 @@
 	)
 	(label "G1"
 		(at 78.74 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2169,7 +2168,6 @@
 	)
 	(label "G6"
 		(at 226.06 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2180,7 +2178,6 @@
 	)
 	(label "G2"
 		(at 78.74 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2191,7 +2188,6 @@
 	)
 	(label "G3"
 		(at 152.4 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2202,7 +2198,6 @@
 	)
 	(label "G7"
 		(at 78.74 165.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2213,7 +2208,6 @@
 	)
 	(label "G4"
 		(at 152.4 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2224,7 +2218,6 @@
 	)
 	(label "G5"
 		(at 226.06 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -2236,7 +2229,6 @@
 	(hierarchical_label "FAN1_DRAIN"
 		(shape input)
 		(at 92.71 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2248,7 +2240,6 @@
 	(hierarchical_label "FAN2_CTRL"
 		(shape input)
 		(at 67.31 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2260,7 +2251,6 @@
 	(hierarchical_label "FAN5_CTRL"
 		(shape input)
 		(at 214.63 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2272,7 +2262,6 @@
 	(hierarchical_label "FAN4_CTRL"
 		(shape input)
 		(at 140.97 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2284,7 +2273,6 @@
 	(hierarchical_label "FAN5_DRAIN"
 		(shape input)
 		(at 240.03 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2296,7 +2284,6 @@
 	(hierarchical_label "FAN7_DRAIN"
 		(shape input)
 		(at 92.71 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2308,7 +2295,6 @@
 	(hierarchical_label "FAN1_CTRL"
 		(shape input)
 		(at 67.31 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2320,7 +2306,6 @@
 	(hierarchical_label "FAN3_CTRL"
 		(shape input)
 		(at 140.97 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2332,7 +2317,6 @@
 	(hierarchical_label "FAN3_DRAIN"
 		(shape input)
 		(at 166.37 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2344,7 +2328,6 @@
 	(hierarchical_label "FAN7_CTRL"
 		(shape input)
 		(at 67.31 165.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2356,7 +2339,6 @@
 	(hierarchical_label "FAN6_CTRL"
 		(shape input)
 		(at 214.63 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2368,7 +2350,6 @@
 	(hierarchical_label "FAN2_DRAIN"
 		(shape input)
 		(at 92.71 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2380,7 +2361,6 @@
 	(hierarchical_label "FAN6_DRAIN"
 		(shape input)
 		(at 240.03 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2392,7 +2372,6 @@
 	(hierarchical_label "FAN4_DRAIN"
 		(shape input)
 		(at 166.37 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)

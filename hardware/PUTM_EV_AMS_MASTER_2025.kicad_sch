@@ -7684,19 +7684,19 @@
 		(uuid "3567e46c-44c5-4472-8399-0fb52d4cbf65")
 	)
 	(junction
-		(at 125.73 266.7)
+		(at 127 266.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3d5b7f97-769c-474d-8984-6607aed9bbb4")
 	)
 	(junction
-		(at 125.73 261.62)
+		(at 127 261.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "439b7146-d5f3-4395-a790-a23787371dbc")
 	)
 	(junction
-		(at 125.73 264.16)
+		(at 127 264.16)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "45f7bf7e-16f1-4274-abf4-e983c0e3b877")
@@ -7714,7 +7714,7 @@
 		(uuid "50dbc4b7-e116-4fbc-94d4-3ddad8adfa25")
 	)
 	(junction
-		(at 125.73 254)
+		(at 127 254)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "51f917ad-bf7d-4ca3-aa49-f7e53ce4473b")
@@ -7738,7 +7738,7 @@
 		(uuid "5c7b630e-8c83-4737-a804-b7652aa19f91")
 	)
 	(junction
-		(at 125.73 259.08)
+		(at 127 259.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5ebe35f1-e8ce-4675-a6f1-3cb33e1a874d")
@@ -7786,7 +7786,7 @@
 		(uuid "882db02a-2ae4-410b-b179-ff3f845dd0ab")
 	)
 	(junction
-		(at 125.73 256.54)
+		(at 127 256.54)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8e0f49a6-d672-4352-9a6f-44be1118bd37")
@@ -8081,7 +8081,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 269.24) (xy 128.27 269.24)
+			(xy 127 269.24) (xy 129.54 269.24)
 		)
 		(stroke
 			(width 0)
@@ -8141,7 +8141,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 259.08) (xy 128.27 259.08)
+			(xy 127 259.08) (xy 129.54 259.08)
 		)
 		(stroke
 			(width 0)
@@ -8394,7 +8394,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 269.24) (xy 125.73 266.7)
+			(xy 127 269.24) (xy 127 266.7)
 		)
 		(stroke
 			(width 0)
@@ -8538,7 +8538,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 256.54) (xy 128.27 256.54)
+			(xy 127 256.54) (xy 129.54 256.54)
 		)
 		(stroke
 			(width 0)
@@ -8670,7 +8670,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 264.16) (xy 128.27 264.16)
+			(xy 127 264.16) (xy 129.54 264.16)
 		)
 		(stroke
 			(width 0)
@@ -8922,7 +8922,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 256.54) (xy 125.73 254)
+			(xy 127 256.54) (xy 127 254)
 		)
 		(stroke
 			(width 0)
@@ -9083,7 +9083,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 266.7) (xy 162.56 266.7)
+			(xy 142.24 266.7) (xy 162.56 266.7)
 		)
 		(stroke
 			(width 0)
@@ -9286,7 +9286,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 266.7) (xy 128.27 266.7)
+			(xy 127 266.7) (xy 129.54 266.7)
 		)
 		(stroke
 			(width 0)
@@ -9396,7 +9396,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 264.16) (xy 162.56 264.16)
+			(xy 142.24 264.16) (xy 162.56 264.16)
 		)
 		(stroke
 			(width 0)
@@ -9426,7 +9426,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 254) (xy 128.27 254)
+			(xy 127 254) (xy 129.54 254)
 		)
 		(stroke
 			(width 0)
@@ -9566,7 +9566,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 261.62) (xy 125.73 264.16)
+			(xy 127 261.62) (xy 127 264.16)
 		)
 		(stroke
 			(width 0)
@@ -9699,7 +9699,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 269.24) (xy 162.56 269.24)
+			(xy 142.24 269.24) (xy 162.56 269.24)
 		)
 		(stroke
 			(width 0)
@@ -9729,7 +9729,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 251.46) (xy 125.73 254)
+			(xy 127 251.46) (xy 127 254)
 		)
 		(stroke
 			(width 0)
@@ -9749,7 +9749,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 256.54) (xy 162.56 256.54)
+			(xy 142.24 256.54) (xy 162.56 256.54)
 		)
 		(stroke
 			(width 0)
@@ -9921,7 +9921,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 259.08) (xy 162.56 259.08)
+			(xy 142.24 259.08) (xy 162.56 259.08)
 		)
 		(stroke
 			(width 0)
@@ -9941,7 +9941,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 259.08) (xy 125.73 261.62)
+			(xy 127 259.08) (xy 127 261.62)
 		)
 		(stroke
 			(width 0)
@@ -10002,7 +10002,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 261.62) (xy 162.56 261.62)
+			(xy 142.24 261.62) (xy 162.56 261.62)
 		)
 		(stroke
 			(width 0)
@@ -10225,7 +10225,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 254) (xy 162.56 254)
+			(xy 142.24 254) (xy 162.56 254)
 		)
 		(stroke
 			(width 0)
@@ -10407,7 +10407,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 264.16) (xy 125.73 266.7)
+			(xy 127 264.16) (xy 127 266.7)
 		)
 		(stroke
 			(width 0)
@@ -10437,7 +10437,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 259.08) (xy 125.73 256.54)
+			(xy 127 259.08) (xy 127 256.54)
 		)
 		(stroke
 			(width 0)
@@ -10832,7 +10832,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 261.62) (xy 128.27 261.62)
+			(xy 127 261.62) (xy 129.54 261.62)
 		)
 		(stroke
 			(width 0)
@@ -11696,7 +11696,7 @@
 	)
 	(text "13:PGR_TX\n14:PRG_RX"
 		(exclude_from_sim no)
-		(at 389.89 93.98 0)
+		(at 382.27 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11817,7 +11817,6 @@
 	)
 	(label "LED_ERROR"
 		(at 370.84 39.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11828,7 +11827,6 @@
 	)
 	(label "TSMS"
 		(at 359.41 193.04 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11839,7 +11837,6 @@
 	)
 	(label "AIR_P_DETECTION"
 		(at 309.88 185.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11850,7 +11847,6 @@
 	)
 	(label "ISO_COM_SCK"
 		(at 147.32 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11861,7 +11857,6 @@
 	)
 	(label "UART_TX"
 		(at 358.14 91.44 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11872,7 +11867,6 @@
 	)
 	(label "SAFETY_IN"
 		(at 248.92 46.99 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11883,7 +11877,6 @@
 	)
 	(label "OUT+"
 		(at 59.69 172.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -11892,12 +11885,11 @@
 		)
 		(uuid "0ef0be17-eac4-43b6-aa9c-e9b7aae33a8a")
 	)
-	(label "AIR_PRE"
+	(label "AIR_PRE-"
 		(at 52.07 267.97 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -11905,7 +11897,6 @@
 	)
 	(label "AED"
 		(at 251.46 180.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -11916,7 +11907,6 @@
 	)
 	(label "FC3"
 		(at 212.09 259.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -11927,7 +11917,6 @@
 	)
 	(label "ISO_ADC_MOSI"
 		(at 147.32 96.52 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11938,7 +11927,6 @@
 	)
 	(label "~{FLT}"
 		(at 147.32 156.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11949,7 +11937,6 @@
 	)
 	(label "~{ISO_ADC_DRY}"
 		(at 147.32 146.05 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11960,7 +11947,6 @@
 	)
 	(label "ISO_COM_MOSI"
 		(at 147.32 104.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11971,7 +11957,6 @@
 	)
 	(label "CHARGER_DETECTION"
 		(at 377.19 200.66 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11982,7 +11967,6 @@
 	)
 	(label "AIR_M_DETECTION"
 		(at 309.88 182.88 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11993,7 +11977,6 @@
 	)
 	(label "FC4"
 		(at 212.09 261.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12004,7 +11987,6 @@
 	)
 	(label "AIR_M_DETECTION"
 		(at 377.19 208.28 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12015,7 +11997,6 @@
 	)
 	(label "LED2"
 		(at 383.54 46.99 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12025,11 +12006,10 @@
 		(uuid "319ad76f-3a18-4a67-a278-35a69e33ff3a")
 	)
 	(label "FAN3-"
-		(at 142.24 259.08 0)
-		(fields_autoplaced yes)
+		(at 143.51 259.08 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12037,7 +12017,6 @@
 	)
 	(label "LED_OK"
 		(at 370.84 54.61 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12048,7 +12027,6 @@
 	)
 	(label "CRX2"
 		(at 251.46 205.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12058,11 +12036,10 @@
 		(uuid "39319245-8b1b-4022-8287-53621e80b7b3")
 	)
 	(label "FAN1-"
-		(at 142.24 254 0)
-		(fields_autoplaced yes)
+		(at 143.51 254 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12070,7 +12047,6 @@
 	)
 	(label "SAFETY_IN"
 		(at 359.41 218.44 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12081,7 +12057,6 @@
 	)
 	(label "LED1"
 		(at 383.54 54.61 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12092,7 +12067,6 @@
 	)
 	(label "CTX2"
 		(at 251.46 208.28 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12103,7 +12077,6 @@
 	)
 	(label "UART_RX"
 		(at 358.14 93.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12114,7 +12087,6 @@
 	)
 	(label "CANFD2-"
 		(at 359.41 208.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12125,7 +12097,6 @@
 	)
 	(label "FC7"
 		(at 212.09 269.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12136,7 +12107,6 @@
 	)
 	(label "SAE"
 		(at 212.09 238.76 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12147,7 +12117,6 @@
 	)
 	(label "AIR_PRE_DETECTION"
 		(at 309.88 180.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12157,11 +12126,10 @@
 		(uuid "457f62f3-4fed-4970-9844-82b67e649238")
 	)
 	(label "FAN6-"
-		(at 142.24 266.7 0)
-		(fields_autoplaced yes)
+		(at 143.51 266.7 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12169,7 +12137,6 @@
 	)
 	(label "OUT-"
 		(at 59.69 175.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12179,19 +12146,27 @@
 		(uuid "49f19a78-151a-4c17-9932-432119f949dc")
 	)
 	(label "FAN4-"
-		(at 142.24 261.62 0)
-		(fields_autoplaced yes)
+		(at 143.51 261.62 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
 		(uuid "4b8e5faf-d5dc-4e1d-8bcc-ba3b9c7abc95")
 	)
+	(label "ACU+"
+		(at 50.8 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4da322ab-abaf-4054-be13-a26112d21d8d")
+	)
 	(label "USBR_D-"
 		(at 364.4567 133.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12202,7 +12177,6 @@
 	)
 	(label "AMD"
 		(at 251.46 182.88 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12213,7 +12187,6 @@
 	)
 	(label "AMS_ERR"
 		(at 383.54 31.75 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12224,7 +12197,6 @@
 	)
 	(label "SWCLK"
 		(at 358.14 81.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12235,7 +12207,6 @@
 	)
 	(label "~{ISO_COM_CS}"
 		(at 147.32 109.22 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12246,7 +12217,6 @@
 	)
 	(label "SPI_RDY"
 		(at 147.32 153.67 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12257,7 +12227,6 @@
 	)
 	(label "AIR_P_DETECTION"
 		(at 377.19 203.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12268,7 +12237,6 @@
 	)
 	(label "CHARGER_DETECTION"
 		(at 309.88 193.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12279,7 +12247,6 @@
 	)
 	(label "ISO_COM_MISO"
 		(at 147.32 151.13 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12288,12 +12255,11 @@
 		)
 		(uuid "7322d3a3-3d9a-4512-a1b6-77b7ac004423")
 	)
-	(label "AIR_P"
+	(label "AIR_P-"
 		(at 52.07 265.43 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12301,7 +12267,6 @@
 	)
 	(label "AMS_ERROR"
 		(at 370.84 31.75 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12312,7 +12277,6 @@
 	)
 	(label "SWDIO"
 		(at 358.14 78.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12323,7 +12287,6 @@
 	)
 	(label "F_+5VISO"
 		(at 140.97 44.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -12334,7 +12297,6 @@
 	)
 	(label "FC1"
 		(at 212.09 254 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12345,7 +12307,6 @@
 	)
 	(label "CRX1"
 		(at 251.46 200.66 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12356,7 +12317,6 @@
 	)
 	(label "CC_D-"
 		(at 309.88 139.7 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12367,7 +12327,6 @@
 	)
 	(label "CC_D-"
 		(at 359.41 210.82 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12378,7 +12337,6 @@
 	)
 	(label "LED3"
 		(at 383.54 39.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12387,12 +12345,21 @@
 		)
 		(uuid "87a0920f-8474-431a-808f-5e770356c006")
 	)
-	(label "AIR_M"
-		(at 52.07 262.89 0)
-		(fields_autoplaced yes)
+	(label "CAR+"
+		(at 50.8 109.22 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8bc791d5-7df6-4058-96c4-a1f1236405f3")
+	)
+	(label "AIR_M-"
+		(at 52.07 262.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12400,7 +12367,6 @@
 	)
 	(label "SAP"
 		(at 212.09 236.22 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12409,9 +12375,18 @@
 		)
 		(uuid "927f59ed-1de2-4829-8ea6-97e7dba841bf")
 	)
+	(label "CAR_I"
+		(at 53.34 135.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "99bc9c8f-32aa-4622-9ce1-9513957fff15")
+	)
 	(label "DASH_LED"
 		(at 377.19 223.52 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12422,7 +12397,6 @@
 	)
 	(label "T"
 		(at 251.46 190.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12433,7 +12407,6 @@
 	)
 	(label "CCO+"
 		(at 44.45 172.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12444,7 +12417,6 @@
 	)
 	(label "FC5"
 		(at 212.09 264.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12455,7 +12427,6 @@
 	)
 	(label "AIR_PRE_DETECTION"
 		(at 377.19 205.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12465,11 +12436,10 @@
 		(uuid "9e95ef19-9ab3-4f7f-b73d-3bebe658689f")
 	)
 	(label "FAN5-"
-		(at 142.24 264.16 0)
-		(fields_autoplaced yes)
+		(at 143.51 264.16 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12477,7 +12447,6 @@
 	)
 	(label "CC_D+"
 		(at 359.41 213.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12488,7 +12457,6 @@
 	)
 	(label "SAM"
 		(at 212.09 233.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12499,7 +12467,6 @@
 	)
 	(label "~{ISO_ADC_CS}"
 		(at 147.32 101.6 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12510,7 +12477,6 @@
 	)
 	(label "SAFETY_OUT"
 		(at 248.92 44.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12521,7 +12487,6 @@
 	)
 	(label "CANFD1+"
 		(at 359.41 200.66 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12530,9 +12495,18 @@
 		)
 		(uuid "ae66a76f-7944-4734-9242-4eadfb7b53d2")
 	)
+	(label "CAR-"
+		(at 50.8 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b38a66be-6717-484b-a417-84c3d0c410e2")
+	)
 	(label "CD"
 		(at 251.46 193.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12542,11 +12516,10 @@
 		(uuid "bf0c1c2c-3b16-4fcc-b92e-d407acd00f31")
 	)
 	(label "FAN2-"
-		(at 142.24 256.54 0)
-		(fields_autoplaced yes)
+		(at 143.51 256.54 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12554,7 +12527,6 @@
 	)
 	(label "APD"
 		(at 251.46 185.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12565,7 +12537,6 @@
 	)
 	(label "USBR_D+"
 		(at 364.49 135.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12576,7 +12547,6 @@
 	)
 	(label "TSMS"
 		(at 309.88 190.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12586,11 +12556,10 @@
 		(uuid "ce0ab04a-524e-4ed6-8cb7-3e15e767d856")
 	)
 	(label "FAN7-"
-		(at 142.24 269.24 0)
-		(fields_autoplaced yes)
+		(at 143.51 269.24 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
@@ -12598,7 +12567,6 @@
 	)
 	(label "CC_D+"
 		(at 309.88 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12609,7 +12577,6 @@
 	)
 	(label "ISO_ADC_SCK"
 		(at 147.32 99.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12618,20 +12585,18 @@
 		)
 		(uuid "d1ff0354-a4ff-40e6-8374-5cd12e6e6754")
 	)
-	(label "TSMS_AIRS"
-		(at 40.64 257.81 180)
-		(fields_autoplaced yes)
+	(label "SDC_AIRS"
+		(at 52.07 257.81 0)
 		(effects
 			(font
-				(size 0.5 0.5)
+				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "d7293dc0-1839-4b5e-bc61-943b2d9ae511")
 	)
 	(label "F_+3VISO"
 		(at 52.07 44.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.5 0.5)
@@ -12642,7 +12607,6 @@
 	)
 	(label "CANFD1-"
 		(at 359.41 203.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12653,7 +12617,6 @@
 	)
 	(label "LED_WARNING"
 		(at 370.84 46.99 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12664,7 +12627,6 @@
 	)
 	(label "DASH_LED"
 		(at 248.92 36.83 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12675,7 +12637,6 @@
 	)
 	(label "ISO_ADC_MISO"
 		(at 147.32 148.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12686,7 +12647,6 @@
 	)
 	(label "FC6"
 		(at 212.09 266.7 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12697,7 +12657,6 @@
 	)
 	(label "CTX1"
 		(at 251.46 203.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12706,9 +12665,18 @@
 		)
 		(uuid "ebd578fe-7d0f-4b8c-9a73-50781a3b1bb9")
 	)
+	(label "CAR_I_REF"
+		(at 53.34 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f074bdff-3d1e-4e5c-a016-9081ebd1dd5f")
+	)
 	(label "NRST"
 		(at 358.14 88.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12717,9 +12685,18 @@
 		)
 		(uuid "f7724e0d-d763-4509-ac5b-7e692b483078")
 	)
+	(label "ACU-"
+		(at 50.8 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f774ae33-8d08-44a1-bda1-78606278b77f")
+	)
 	(label "CCO-"
 		(at 44.45 175.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -12730,7 +12707,6 @@
 	)
 	(label "CANFD2+"
 		(at 359.41 205.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12741,7 +12717,6 @@
 	)
 	(label "SAFETY_OUT"
 		(at 359.41 220.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12752,7 +12727,6 @@
 	)
 	(label "FC2"
 		(at 212.09 256.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -14699,7 +14673,7 @@
 	)
 	(symbol
 		(lib_id "Samacsys_kicad_sym:M80-51014XX")
-		(at 134.62 261.62 0)
+		(at 135.89 261.62 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14708,7 +14682,7 @@
 		(dnp no)
 		(uuid "46cde38f-7d34-4ad9-8f50-451b98834430")
 		(property "Reference" "J3"
-			(at 134.62 250.19 0)
+			(at 135.89 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14716,7 +14690,7 @@
 			)
 		)
 		(property "Value" "M80-51014XX"
-			(at 134.62 261.62 0)
+			(at 135.89 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14725,7 +14699,7 @@
 			)
 		)
 		(property "Footprint" "Samacsys:M80-51014YY"
-			(at 115.57 356.54 0)
+			(at 116.84 356.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14735,7 +14709,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn.harwin.com/pdfs/M80-510.pdf"
-			(at 115.57 456.54 0)
+			(at 116.84 456.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14745,7 +14719,7 @@
 			)
 		)
 		(property "Description" "Datamate J-Tek DIL Male Vertical 3mm Throughboard Connector, selective gold + tin/lead, with jackscrews + board mount, 7+7 contacts"
-			(at 134.62 261.62 0)
+			(at 135.89 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14754,7 +14728,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 115.57 656.54 0)
+			(at 116.84 656.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14764,7 +14738,7 @@
 			)
 		)
 		(property "Mouser Part Number" "855-M80-5101422"
-			(at 115.57 756.54 0)
+			(at 116.84 756.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14774,7 +14748,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Harwin/M80-5101422?qs=fW6Py%2FssUEkbBr1pTdzojA%3D%3D"
-			(at 115.57 856.54 0)
+			(at 116.84 856.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14784,7 +14758,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Harwin"
-			(at 115.57 956.54 0)
+			(at 116.84 956.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14794,7 +14768,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "M80-5101422"
-			(at 115.57 1056.54 0)
+			(at 116.84 1056.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14804,7 +14778,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 134.62 261.62 0)
+			(at 135.89 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14813,7 +14787,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 134.62 261.62 0)
+			(at 135.89 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14874,7 +14848,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 125.73 251.46 0)
+		(at 127 251.46 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14883,7 +14857,7 @@
 		(dnp no)
 		(uuid "4cea60f4-2e26-43a2-a32f-f9a581ae0a21")
 		(property "Reference" "#PWR034"
-			(at 125.73 255.27 0)
+			(at 127 255.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14892,7 +14866,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 125.73 247.65 0)
+			(at 127 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14900,7 +14874,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 125.73 251.46 0)
+			(at 127 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14909,7 +14883,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 251.46 0)
+			(at 127 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14918,7 +14892,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 125.73 251.46 0)
+			(at 127 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)

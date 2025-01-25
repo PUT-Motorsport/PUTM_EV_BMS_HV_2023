@@ -1100,7 +1100,6 @@
 	)
 	(label "IN+"
 		(at 151.13 86.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.508 0.508)
@@ -1112,7 +1111,6 @@
 	(hierarchical_label "OUT_3.3V"
 		(shape output)
 		(at 109.22 88.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1124,7 +1122,6 @@
 	(hierarchical_label "REF"
 		(shape input)
 		(at 129.54 91.44 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1136,7 +1133,6 @@
 	(hierarchical_label "IN_24V"
 		(shape input)
 		(at 162.56 86.36 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
