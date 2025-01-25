@@ -5,13 +5,12 @@ clear;
 
 gain = 10 .^ ((-1 * gain - 0.36) * 0.8 / 20);
 phase = -1 * phase;
-freq = freq * 2 * pi;
 
 e = exp(1i * phase * pi / 180);
 response = gain .* e; % To calculate frequency response
 frdsys = frd(response, freq); % To create a frequency response data (FRD) model sys using the complex response and frequency values
 
-tfsys = tfest(frdsys, `, 0)  % Estimate a transfer function model tf2 from gf
+tfsys = tfest(frdsys, 1, 0)  % Estimate a transfer function model tf2 from gf
 
 bode(frdsys, 'r', tfsys, 'b.-');
 legend;
