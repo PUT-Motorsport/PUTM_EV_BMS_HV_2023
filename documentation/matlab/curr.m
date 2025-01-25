@@ -1,6 +1,12 @@
-close all;
-clear;
+%low pass the data
+Ts = 2e-8;
+fs = 1 / Ts;
+fpass = 250000;
 
-[v, b1, b2] = csvimport('../sdc_data/current2.csv', 'columns', { 'CH1(V)', 't0', 'tInc' });
+v_filt = lowpass(v, fpass, fs, ImpulseResponse="iir", Steepness=0.8);
 
-plot(v);
+n = length(v_filt);
+t = (0 : n-1) * Ts;
+
+plot(t, v_filt);
+legend 't[s], u[v]'

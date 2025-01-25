@@ -1,5 +1,3 @@
-clear all;
-
 syms W
 
 s = linspace(0.09, 0.2, 20)
