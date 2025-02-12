@@ -57,14 +57,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define DET_CHARGER_Pin GPIO_PIN_13
+#define DET_CHARGER_GPIO_Port GPIOC
+#define DET_TSMS_Pin GPIO_PIN_14
+#define DET_TSMS_GPIO_Port GPIOC
 #define ADC_NDRY_Pin GPIO_PIN_0
 #define ADC_NDRY_GPIO_Port GPIOC
 #define SPI_RDY_Pin GPIO_PIN_1
 #define SPI_RDY_GPIO_Port GPIOC
 #define NFLT_Pin GPIO_PIN_2
 #define NFLT_GPIO_Port GPIOC
-#define SIGNAL_AMS_ERROR_Pin GPIO_PIN_3
-#define SIGNAL_AMS_ERROR_GPIO_Port GPIOC
+#define SIG_AMS_ERROR_Pin GPIO_PIN_3
+#define SIG_AMS_ERROR_GPIO_Port GPIOC
 #define FAN1_CTRL_Pin GPIO_PIN_0
 #define FAN1_CTRL_GPIO_Port GPIOA
 #define FAN2_CTRL_Pin GPIO_PIN_1
@@ -81,16 +85,28 @@ void Error_Handler(void);
 #define ADC_MISO_GPIO_Port GPIOA
 #define ADC_MOSI_Pin GPIO_PIN_7
 #define ADC_MOSI_GPIO_Port GPIOA
+#define SIG_AIR_PRE_Pin GPIO_PIN_5
+#define SIG_AIR_PRE_GPIO_Port GPIOC
+#define SIG_AIR_P_Pin GPIO_PIN_0
+#define SIG_AIR_P_GPIO_Port GPIOB
+#define SIG_AIR_M_Pin GPIO_PIN_1
+#define SIG_AIR_M_GPIO_Port GPIOB
 #define PG_12V_Pin GPIO_PIN_12
 #define PG_12V_GPIO_Port GPIOB
 #define EN_12V_Pin GPIO_PIN_13
 #define EN_12V_GPIO_Port GPIOB
+#define DET_AIR_M_Pin GPIO_PIN_14
+#define DET_AIR_M_GPIO_Port GPIOB
+#define DET_AIR_PRE_Pin GPIO_PIN_15
+#define DET_AIR_PRE_GPIO_Port GPIOB
 #define FAN5_CTRL_Pin GPIO_PIN_6
 #define FAN5_CTRL_GPIO_Port GPIOC
 #define FAN6_CTRL_Pin GPIO_PIN_7
 #define FAN6_CTRL_GPIO_Port GPIOC
 #define FAN7_CTRL_Pin GPIO_PIN_8
 #define FAN7_CTRL_GPIO_Port GPIOC
+#define DET_AIR_P_Pin GPIO_PIN_9
+#define DET_AIR_P_GPIO_Port GPIOC
 #define COM_NSS_Pin GPIO_PIN_15
 #define COM_NSS_GPIO_Port GPIOA
 #define COM_SCK_Pin GPIO_PIN_10

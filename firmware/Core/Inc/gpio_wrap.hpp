@@ -20,6 +20,11 @@ public:
 		HAL_GPIO_WritePin(gpio, pin, GPIO_PinState(inv ^ uint32_t(GPIO_PIN_SET)));
 	}
 
+	void set(bool state)
+	{
+		HAL_GPIO_WritePin(gpio, pin, GPIO_PinState(inv ^ uint32_t(state)));
+	}
+
 	void reset()
 	{
 		HAL_GPIO_WritePin(gpio, pin, GPIO_PinState(inv ^ uint32_t(GPIO_PIN_RESET)));
