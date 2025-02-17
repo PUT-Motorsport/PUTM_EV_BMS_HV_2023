@@ -8,6 +8,8 @@
 #ifndef INC_TMP_HPP_
 #define INC_TMP_HPP_
 
+#if 0
+
 #include "main.h"
 
 const size_t numFrameWords = 6; // Number of words in a full ADS131M04 SPI frame
@@ -89,6 +91,6 @@ void main()
 	GPIO.interuptEnable();					// Enable DRDY interrupt and begin streaming data
 }
 
-
+#endif //if 0
 
 #endif /* INC_TMP_HPP_ */

@@ -13,7 +13,7 @@
 class Gpio
 {
 public:
-	Gpio(GPIO_TypeDef *gpio, uint32_t pin, bool inv) : gpio(gpio), pin(pin), inv(uint32_t(inv)) { };
+	explicit Gpio(GPIO_TypeDef *gpio, uint32_t pin, bool inv) : gpio(gpio), pin(pin), inv(uint32_t(inv)) { };
 
 	void set()
 	{

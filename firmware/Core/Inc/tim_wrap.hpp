@@ -24,7 +24,7 @@ public:
 	 *	@param htim TIM_HandleTypeDef timer handle
 	 *	@param channel uint32_t TIM_CHANNEL_X
 	 */
-	Tim(TIM_HandleTypeDef *htim, uint32_t channel) : channel(channel), htim(htim) { };
+	explicit Tim(TIM_HandleTypeDef *htim, uint32_t channel) : channel(channel), htim(htim) { };
 
 	/*
 	 *	@brief start pwm
