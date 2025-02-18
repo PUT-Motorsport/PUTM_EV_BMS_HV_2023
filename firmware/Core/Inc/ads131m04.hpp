@@ -2,7 +2,7 @@
  * ads131m04.hpp
  *
  *  Created on: Feb 12, 2025
- *      Author: lenovo
+ *      Author: Piotr Lesicki
  */
 
 #ifndef INC_ADS131M04_HPP_
@@ -13,6 +13,13 @@
 #include "spi.h"
 #include "array"
 #include "functional"
+#include "atomic"
+#include "string"
+
+using afloat32_t = std::atomic<float_t>;
+using auint32_t = std::atomic<uint32_t>;
+
+static_assert(USE_HAL_SPI_REGISTER_CALLBACKS == 1UL, "Use registered callback for SPI");
 
 namespace Adc
 {
@@ -323,7 +330,7 @@ namespace Adc
 		 * @ret uint8_t register address corresponding to register struct
 		 */
 		template<typename T> requires IsReg<T>
-		static uint8_t constexpr sta()
+		static uint8_t consteval sta()
 		{
 			if constexpr(std::same_as<T, Regs::Id>) 			return 0x00;
 			if constexpr(std::same_as<T, Regs::Status>)			return 0x01;
@@ -400,7 +407,7 @@ namespace Adc
 	}
 
 	/*
-	 * @brief set spi in
+	 * @brief set spi in 24bit mode and enable register callbacks
 	 */
 	class Ads131m04
 	{
@@ -425,33 +432,57 @@ namespace Adc
 			return cmd;
 		}
 
-		SPI_HandleTypeDef *hspi { nullptr };
+		const SPI_HandleTypeDef *hspi { nullptr };
 
 	public:
-		std::array<uint32_t, 4> adc { 0 };
-
+		std::array<afloat32_t, 4> adc { 0.f };
+		std::atomic<Regs::Status> status;
 
 		explicit Ads131m04(SPI_HandleTypeDef *hspi) : hspi(hspi) { }
 
 		/*
-		 * @brief reset
+		 * @brief none for now
 		 */
-		void resetMsg()
+		void init()
 		{
-			std::array<uint32_t, 6> out { 0 };
-			std::array<uint32_t, 6> in { 0 };
-
-
-
-			out[0] = Cmd::Reset;
+			return;
 		}
 
-		void getStatus()
+		/*
+		 * @brief 	update adc data
+		 * @param	wait default(false) if spi busy -> wait till its not
+		 * @note 	function overrides spi callback while in use then returns them to their default state
+		 * 			wait is realized with HAL_Delay override it if you are using any rtos
+		 * @retval 	HAL status
+		 */
+		HAL_StatusTypeDef update(bool wait = false)
 		{
-			std::array<uint32_t, 6> out { 0 };
-			std::array<uint32_t, 6> in { 0 };
+			static constexpr size_t size = 6;
+			static std::array<auint32_t, size> out { 0 };
+			static std::array<auint32_t, size> in { 0 };
 
-			out[0] = Cmd::Null;
+			if(hspi->State != HAL_SPI_STATE_READY and not wait) return HAL_BUSY;
+
+
+			while(hspi->State != HAL_SPI_STATE_READY and wait) HAL_Delay(1);
+
+			out[0] = constructRead<Regs::Status>();
+
+			auto callback = [&](SPI_HandleTypeDef* hspi) -> void
+			{
+				if(hspi->State != HAL_SPI_STATE_ERROR and hspi->State != HAL_SPI_STATE_ABORT)
+				{
+					std::memcpy
+				}
+
+				if(auto err = HAL_SPI_UnRegisterCallback(hspi, HAL_SPI_TX_RX_COMPLETE_CB_ID); err != HAL_OK) Error_Handler();
+			};
+
+			if(auto err = HAL_SPI_RegisterCallback(hspi, HAL_SPI_TX_RX_COMPLETE_CB_ID, callback); err != HAL_OK) return err;
+
+			if(auto err = HAL_SPI_TransmitReceive_DMA(hspi, out.data() , in.data(), size); err != HAL_OK) return err;
+
+			return HAL_OK;
 		}
 	};
 }
